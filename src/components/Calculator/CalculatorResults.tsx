@@ -15,10 +15,10 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
   recommendedPanels
 }) => {
   const getInverterModel = (wattage: number) => {
-    if (wattage <= 3000) return "Deye 3kW Hybrid Inverter";
-    if (wattage <= 5000) return "Deye 5kW Hybrid Inverter";
+    if (wattage <= 3000) return "LVTOPSUN 3kW Hybrid Inverter";
+    if (wattage <= 6000) return "Deye 6kW Hybrid Inverter";
     if (wattage <= 8000) return "Deye 8kW Hybrid Inverter";
-    if (wattage <= 10000) return "Deye 10kW Hybrid Inverter";
+    if (wattage <= 12000) return "Deye 12kW Hybrid Inverter";
     return "Deye 12kW+ Hybrid Inverter";
   };
 

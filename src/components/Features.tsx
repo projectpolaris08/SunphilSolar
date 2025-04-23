@@ -30,7 +30,7 @@ export const Features: React.FC = () => {
     },
     {
       icon: <Clock className="h-10 w-10 text-primary-500" />,
-      title: '25-Year Warranty',
+      title: '12-Year Warranty',
       description: 'Industry-leading warranty coverage for peace of mind and long-term investment protection.'
     }
   ];

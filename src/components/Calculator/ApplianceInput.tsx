@@ -1,87 +1,94 @@
 import React from 'react';
-import { Appliance } from '../../types';
+import { Trash2 } from 'lucide-react';
+import { ApplianceSelector } from './ApplianceSelector';
+import { commonAppliancesList, applianceWattages } from './CommonAppliances';
+
+interface Appliance {
+  id: string;
+  name: string;
+  watts: number;
+  quantity: number;
+  hoursPerDay: number;
+}
 
 interface ApplianceInputProps {
   appliance: Appliance;
-  updateAppliance: (appliance: Appliance) => void;
+  onUpdate: (id: string, field: keyof Appliance, value: string | number) => void;
+  onRemove: (id: string) => void;
 }
 
-export const ApplianceInput: React.FC<ApplianceInputProps> = ({ 
-  appliance, 
-  updateAppliance 
+export const ApplianceInput: React.FC<ApplianceInputProps> = ({
+  appliance,
+  onUpdate,
+  onRemove
 }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+  // Handle appliance name change and auto-fill wattage if available
+  const handleApplianceChange = (value: string) => {
+    onUpdate(appliance.id, 'name', value);
     
-    let parsedValue: string | number = value;
-    
-    // Convert numeric fields to numbers
-    if (name === 'wattage' || name === 'quantity' || name === 'hoursPerDay') {
-      parsedValue = value === '' ? 0 : Math.max(0, parseFloat(value));
+    // Auto-fill the wattage if it's a common appliance
+    if (value in applianceWattages) {
+      onUpdate(appliance.id, 'watts', applianceWattages[value]);
     }
-    
-    updateAppliance({
-      ...appliance,
-      [name]: parsedValue
-    });
   };
 
   return (
-    <div className="grid grid-cols-12 gap-3 flex-grow">
+    <div className="grid grid-cols-12 gap-3 items-center">
       <div className="col-span-4">
-        <input
-          type="text"
-          name="name"
+        <ApplianceSelector
           value={appliance.name}
-          onChange={handleChange}
-          placeholder="Appliance name"
-          className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          onChange={handleApplianceChange}
+          commonAppliances={commonAppliancesList}
         />
       </div>
-      <div className="col-span-3">
-        <div className="relative">
+      <div className="col-span-2">
+        <div className="flex">
           <input
             type="number"
-            name="wattage"
-            min="0"
-            value={appliance.wattage || ''}
-            onChange={handleChange}
+            className="w-full border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
             placeholder="Watts"
-            className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            value={appliance.watts || ''}
+            onChange={(e) => onUpdate(appliance.id, 'watts', parseInt(e.target.value) || 0)}
           />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-secondary-500">
+          <span className="bg-gray-100 border border-l-0 border-gray-300 rounded-r px-3 py-2 text-gray-500">
             W
-          </div>
+          </span>
         </div>
       </div>
       <div className="col-span-2">
         <input
           type="number"
-          name="quantity"
-          min="1"
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
+          placeholder="Quantity"
           value={appliance.quantity}
-          onChange={handleChange}
-          placeholder="Qty"
-          className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          onChange={(e) => onUpdate(appliance.id, 'quantity', parseInt(e.target.value) || 1)}
+          min="1"
         />
       </div>
       <div className="col-span-3">
-        <div className="relative">
+        <div className="flex">
           <input
             type="number"
-            name="hoursPerDay"
+            className="w-full border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
+            placeholder="Hours"
+            value={appliance.hoursPerDay}
+            onChange={(e) => onUpdate(appliance.id, 'hoursPerDay', parseInt(e.target.value) || 0)}
             min="0"
             max="24"
-            step="0.5"
-            value={appliance.hoursPerDay}
-            onChange={handleChange}
-            placeholder="Hours/day"
-            className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-secondary-500">
+          <span className="bg-gray-100 border border-l-0 border-gray-300 rounded-r px-3 py-2 text-gray-500">
             hrs
-          </div>
+          </span>
         </div>
+      </div>
+      <div className="col-span-1 flex justify-center">
+        <button
+          onClick={() => onRemove(appliance.id)}
+          className="text-red-500 hover:text-red-700"
+          aria-label="Remove appliance"
+        >
+          <Trash2 className="h-5 w-5" />
+        </button>
       </div>
     </div>
   );
