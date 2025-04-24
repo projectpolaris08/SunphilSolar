@@ -19,6 +19,7 @@ export const commonAppliancesList = [
   "Blender",
   "Iron",
   "Electric Drill",
+  "Water Pump",  // ✅ Added here
   "Other"
 ];
 
@@ -43,5 +44,6 @@ export const applianceWattages: Record<string, number> = {
   "Toaster": 850,
   "Blender": 400,
   "Iron": 1100,
-  "Electric Drill": 800
+  "Electric Drill": 800,
+  "Water Pump": 750  // ✅ Wattage added here
 };

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Trash2 } from 'lucide-react';
-import { ApplianceSelector } from './ApplianceSelector';
-import { commonAppliancesList, applianceWattages } from './CommonAppliances';
+import React from "react";
+import { Trash2 } from "lucide-react";
+import { ApplianceSelector } from "./ApplianceSelector";
+import { commonAppliancesList, applianceWattages } from "./CommonAppliances";
 
 interface Appliance {
   id: string;
@@ -13,22 +13,29 @@ interface Appliance {
 
 interface ApplianceInputProps {
   appliance: Appliance;
-  onUpdate: (id: string, field: keyof Appliance, value: string | number) => void;
+  onUpdate: (
+    id: string,
+    field: keyof Appliance,
+    value: string | number
+  ) => void;
   onRemove: (id: string) => void;
 }
 
 export const ApplianceInput: React.FC<ApplianceInputProps> = ({
   appliance,
   onUpdate,
-  onRemove
+  onRemove,
 }) => {
   // Handle appliance name change and auto-fill wattage if available
   const handleApplianceChange = (value: string) => {
-    onUpdate(appliance.id, 'name', value);
-    
+    onUpdate(appliance.id, "name", value);
+
     // Auto-fill the wattage if it's a common appliance
-    if (value in applianceWattages) {
-      onUpdate(appliance.id, 'watts', applianceWattages[value]);
+    if (
+      (appliance.watts === 0 || !appliance.watts) &&
+      value in applianceWattages
+    ) {
+      onUpdate(appliance.id, "watts", applianceWattages[value]);
     }
   };
 
@@ -47,8 +54,10 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
             type="number"
             className="w-full border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
             placeholder="Watts"
-            value={appliance.watts || ''}
-            onChange={(e) => onUpdate(appliance.id, 'watts', parseInt(e.target.value) || 0)}
+            value={appliance.watts || ""}
+            onChange={(e) =>
+              onUpdate(appliance.id, "watts", parseInt(e.target.value) || 0)
+            }
           />
           <span className="bg-gray-100 border border-l-0 border-gray-300 rounded-r px-3 py-2 text-gray-500">
             W
@@ -61,7 +70,9 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
           placeholder="Quantity"
           value={appliance.quantity}
-          onChange={(e) => onUpdate(appliance.id, 'quantity', parseInt(e.target.value) || 1)}
+          onChange={(e) =>
+            onUpdate(appliance.id, "quantity", parseInt(e.target.value) || 1)
+          }
           min="1"
         />
       </div>
@@ -72,7 +83,13 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
             className="w-full border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
             placeholder="Hours"
             value={appliance.hoursPerDay}
-            onChange={(e) => onUpdate(appliance.id, 'hoursPerDay', parseInt(e.target.value) || 0)}
+            onChange={(e) =>
+              onUpdate(
+                appliance.id,
+                "hoursPerDay",
+                parseInt(e.target.value) || 0
+              )
+            }
             min="0"
             max="24"
           />
