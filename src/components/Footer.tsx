@@ -81,19 +81,19 @@ export const Footer: React.FC = () => {
               <li className="flex">
                 <MapPin className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
                 <span className="text-secondary-400">
-                  123 Solar Street, Sunny City, SC 12345
+                28C North Fairview Phase 8 Subdivision, Blk 85 Yen, Quezon City, 1121 Metro Manila
                 </span>
               </li>
               <li className="flex">
                 <Phone className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
                 <a href="tel:+1234567890" className="text-secondary-400 hover:text-primary-400 transition-colors">
-                  (123) 456-7890
+                  (+63) 935 365 8092
                 </a>
               </li>
               <li className="flex">
                 <Mail className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
-                <a href="mailto:info@sunphilsolar.com" className="text-secondary-400 hover:text-primary-400 transition-colors">
-                  info@sunphilsolar.com
+                <a href="mailto:sunphilsolarpowerinstallation@gmail.com" className="text-secondary-400 hover:text-primary-400 transition-colors">
+                  sunphilsolarpowerinstallation@gmail.com
                 </a>
               </li>
             </ul>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
 
 export const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ export const ContactForm: React.FC = () => {
   });
   
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -20,7 +21,6 @@ export const ContactForm: React.FC = () => {
       [name]: value
     });
     
-    // Clear error when field is being edited
     if (errors[name]) {
       setErrors({
         ...errors,
@@ -54,15 +54,33 @@ export const ContactForm: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (validate()) {
-      // In a real application, you would send this data to your backend
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
+    if (!validate()) return;
+
+    setIsLoading(true);
+    
+    try {
+      // Create form data object to send
+      const formDataToSend = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataToSend.append(key, value);
+      });
       
-      // Reset form after successful submission
+      // Send data to Google Apps Script using fetch
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbwSlgs1qafnGaNDpRext3eeTk3iC8ARMK33ka5bQyQvTI9l0ttXzhKAM_YECv-6gU8/exec', 
+        {
+          method: 'POST',
+          body: formDataToSend,
+          mode: 'no-cors' // This is important for CORS issues with Google Apps Script
+        }
+      );
+      
+      // Since we're using no-cors, we won't get a proper response to check
+      // So we'll assume success if no error is thrown
+      setSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -70,19 +88,24 @@ export const ContactForm: React.FC = () => {
         message: '',
         interest: 'residential'
       });
-      
-      // Reset the submitted state after 5 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setErrors(prev => ({
+        ...prev,
+        form: 'An error occurred while sending your message. Please try again or contact us directly.'
+      }));
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Left column content remains the same */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
+            {/* Information section - unchanged */}
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               Get in Touch
             </h2>
@@ -115,14 +138,14 @@ export const ContactForm: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <div className="flex-1">
                 <div className="text-secondary-900 font-medium mb-2">Email Us</div>
-                <a href="mailto:info@sunphilsolar.com" className="text-primary-600 hover:text-primary-700">
-                  info@sunphilsolar.com
+                <a href="mailto:sunphilsolarpowerinstallation@gmail.com" className="text-primary-600 hover:text-primary-700">
+                sunphilsolarpowerinstallation@gmail.com
                 </a>
               </div>
               <div className="flex-1">
                 <div className="text-secondary-900 font-medium mb-2">Call Us</div>
                 <a href="tel:+1234567890" className="text-primary-600 hover:text-primary-700">
-                  (123) 456-7890
+                  (+63) 935 365 8092
                 </a>
               </div>
             </div>
@@ -139,7 +162,7 @@ export const ContactForm: React.FC = () => {
                   <CheckCircle size={48} className="text-success-500 mb-4" />
                   <h4 className="text-xl font-medium text-secondary-900 mb-2">Thank You!</h4>
                   <p className="text-center text-secondary-600">
-                    Your message has been sent successfully. We'll get back to you as soon as possible.
+                    Your message has been sent successfully. We'll get back to you within 24 hours.
                   </p>
                 </div>
               ) : (
@@ -240,12 +263,28 @@ export const ContactForm: React.FC = () => {
                       <p className="mt-1 text-sm text-error-500">{errors.message}</p>
                     )}
                   </div>
+
+                  {errors.form && (
+                    <div className="p-2 text-sm text-error-500 bg-error-50 rounded">
+                      {errors.form}
+                    </div>
+                  )}
                   
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
+                    disabled={isLoading}
+                    className="w-full flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors disabled:opacity-70"
                   >
-                    Send Message <Send size={18} className="ml-2" />
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message <Send size={18} className="ml-2" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
