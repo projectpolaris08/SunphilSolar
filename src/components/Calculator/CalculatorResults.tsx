@@ -1,21 +1,25 @@
-import React from 'react';
-import { Battery } from 'lucide-react';
+// CalculatorResults.tsx
+import React from "react";
+import { Sun, Battery, Zap } from "lucide-react";
+
+interface RecommendedSystem {
+  inverterModel: string;
+  inverterSize: number;
+  maxLoadCapacity: number;
+  battery: string;
+  batteryCapacity: string;
+  solarPanels: number;
+  solarCapacity: string;
+  quantity: number;
+  note?: string;
+}
 
 interface CalculatorResultsProps {
   totalWattage: number;
   dailyEnergyUse: number;
   batteryChargingWattage: number;
   totalSystemWattage: number;
-  recommendedSystems: {
-    inverterModel: string;
-    inverterSize: number;
-    battery: string;
-    batteryCapacity: string;
-    solarPanels: number;
-    solarCapacity: string;
-    quantity: number;
-    note?: string;
-  }[];
+  recommendedSystems: RecommendedSystem[];
 }
 
 export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
@@ -23,99 +27,68 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
   dailyEnergyUse,
   batteryChargingWattage,
   totalSystemWattage,
-  recommendedSystems
+  recommendedSystems,
 }) => {
   return (
-    <div>
-      <h4 className="text-xl font-semibold text-secondary-900 mb-6">Your Results</h4>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-secondary-50 rounded-lg p-6">
-          <h5 className="text-lg font-medium text-secondary-900 mb-4">Power Analysis</h5>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center py-2 border-b border-secondary-200">
-              <span className="text-secondary-600">Appliance Load:</span>
-              <span className="font-semibold">{totalWattage.toLocaleString()} W</span>
-            </div>
-            {batteryChargingWattage > 0 && (
-              <>
-                <div className="flex justify-between items-center py-2 border-b border-secondary-200">
-                  <span className="text-secondary-600">Battery Charging Load:</span>
-                  <span className="font-semibold">{batteryChargingWattage.toLocaleString()} W</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-secondary-200">
-                  <span className="text-secondary-600">Total System Load:</span>
-                  <span className="font-semibold">{totalSystemWattage.toLocaleString()} W</span>
-                </div>
-              </>
-            )}
-            <div className="flex justify-between items-center py-2">
-              <span className="text-secondary-600">Daily Energy Use:</span>
-              <span className="font-semibold">{dailyEnergyUse} kWh</span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-primary-50 rounded-lg p-6">
-          <h5 className="text-lg font-medium text-secondary-900 mb-4">Recommended System</h5>
-          <div className="space-y-6">
-            {recommendedSystems.map((system, index) => (
-              <div key={index} className="border-b border-primary-100 pb-4 last:border-0">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="bg-primary-100 p-2 rounded-full">
-                      <Battery className="h-6 w-6 text-primary-600" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <div className="text-secondary-600 mb-1">
-                          {system.quantity > 1 ? `${system.quantity} × ` : ''}
-                          {system.inverterModel}
-                        </div>
-                        <div className="text-lg font-semibold text-secondary-900">
-                          {(system.inverterSize * system.quantity / 1000).toFixed(1)}kW Total Capacity
-                        </div>
-                      </div>
-                      <div className="text-primary-600 text-sm">
-                        {system.solarPanels} × {system.inverterModel.includes('3kW') ? '585W' : '615W'} Panels
-                      </div>
-                    </div>
-                    
-                    <div className="mt-3 grid grid-cols-2 gap-2">
-                      {system.battery !== "undefined × 0" && (
-                        <div>
-                          <div className="text-sm text-secondary-600">Battery:</div>
-                          <div className="text-sm font-medium">
-                            {system.battery} ({system.batteryCapacity})
-                          </div>
-                        </div>
-                      )}
-                      <div>
-                        <div className="text-sm text-secondary-600">Solar Capacity:</div>
-                        <div className="text-sm font-medium">
-                          {system.solarCapacity}
-                        </div>
-                      </div>
-                    </div>
+    <div className="mt-8 bg-white rounded-lg shadow-md p-6 space-y-6">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        ⚡ Solar System Estimation Results
+      </h2>
 
-                    {system.note && (
-                      <div className="mt-2 text-sm text-yellow-600">
-                        {system.note}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="flex flex-col items-center">
+          <Zap className="text-yellow-500 h-6 w-6 mb-1" />
+          <p className="text-sm text-gray-600">Total Load</p>
+          <p className="font-bold text-lg">{totalWattage} W</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <Sun className="text-orange-500 h-6 w-6 mb-1" />
+          <p className="text-sm text-gray-600">Daily Usage</p>
+          <p className="font-bold text-lg">{dailyEnergyUse} kWh</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <Battery className="text-blue-500 h-6 w-6 mb-1" />
+          <p className="text-sm text-gray-600">Battery Charging Load</p>
+          <p className="font-bold text-lg">{batteryChargingWattage} W</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <Zap className="text-green-600 h-6 w-6 mb-1" />
+          <p className="text-sm text-gray-600">Total System Load</p>
+          <p className="font-bold text-lg">{totalSystemWattage} W</p>
         </div>
       </div>
-      
-      <div className="mt-6 p-4 bg-secondary-100 rounded-lg text-sm text-secondary-600">
-        <p className="mb-2"><strong>Note:</strong> This calculator provides estimates based on the information you've provided.</p>
-        <p>For a detailed assessment and customized solution, please <a href="#contact" className="text-primary-600 hover:underline">contact our team</a> for a free consultation.</p>
+
+      <div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+          🔧 Recommended Solar System
+        </h3>
+        {recommendedSystems.map((system, index) => (
+          <div
+            key={index}
+            className="border rounded-lg p-4 mb-4 bg-white shadow-sm"
+          >
+            <p className="font-semibold text-gray-800">
+              Inverter: {system.inverterModel}
+            </p>
+            <p className="text-gray-800">
+              • Max Load Capacity: {system.maxLoadCapacity} W
+            </p>
+            <p className="text-gray-800">• Battery: {system.battery}</p>
+            <p className="text-gray-800">
+              • Battery Capacity: {system.batteryCapacity}
+            </p>
+            <p className="text-gray-800">
+              • Solar Panels: {system.solarPanels} × 615W
+            </p>
+            <p className="text-gray-800">
+              • Total Solar Capacity: {system.solarCapacity}
+            </p>
+            <p className="text-gray-800">• System Quantity: {system.quantity}</p>
+            {system.note && (
+              <p className="text-sm text-red-500 mt-2">{system.note}</p>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
