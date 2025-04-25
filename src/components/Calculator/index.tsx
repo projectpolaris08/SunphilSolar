@@ -144,7 +144,7 @@ const Calculator: React.FC = () => {
 
     const totalSystemWattage = totalApplianceWattage + batteryChargingWattage;
 
-    // Define your system configurations
+    // Define system configurations in priority order
     const systemConfigs: SystemConfig[] = [
       {
         name: "3kW LVPTOPSUN",
@@ -204,64 +204,62 @@ const Calculator: React.FC = () => {
     ];
 
     const recommendedSystems: RecommendedSystem[] = [];
+    let selectedConfig: SystemConfig | null = null;
+    let systemsNeeded = 1;
 
-    for (let i = 0; i < systemConfigs.length; i++) {
-      const config = systemConfigs[i];
-
-      // Calculate panels needed to match or slightly exceed total system wattage
-      const requiredPanelCount = Math.ceil(totalSystemWattage / config.panelWattage);
-
-      const canHandleBatteries =
-        batteryConfig.type === "none" ||
-        (batteryConfig.quantity <= config.maxBatteries &&
-          batteryChargingWattage <= config.maxBatteryWattage);
-
-      const canHandleLoad = totalSystemWattage <= config.maxLoadCapacity;
-      const canHandlePanels = requiredPanelCount <= config.maxPanels;
-
-      if (canHandleBatteries && canHandleLoad && canHandlePanels) {
-        recommendedSystems.push({
-          inverterModel: `${config.name} Hybrid Inverter`,
-          inverterSize: config.maxWattage,
-          maxLoadCapacity: config.maxLoadCapacity,
-          battery: batteryConfig.type !== "none"
-            ? `${batteryConfig.type} × ${batteryConfig.quantity}`
-            : "None",
-          batteryCapacity: batteryConfig.type !== "none"
-            ? (batteryConfig.type === "51.2v 314AH"
-              ? (16.08 * batteryConfig.quantity).toFixed(2)
-              : (14.34 * batteryConfig.quantity).toFixed(2)) + " kWh"
-            : "None",
-          solarPanels: requiredPanelCount,
-          solarCapacity: ((requiredPanelCount * config.panelWattage) / 1000).toFixed(2) + " kW",
-          quantity: 1,
-        });
-        break;
-      }
-
-      if (i === systemConfigs.length - 1) {
-        const maxPossiblePanels = Math.min(config.maxPanels, requiredPanelCount);
-        const maxPossibleBatteries = Math.min(config.maxBatteries, batteryConfig.quantity);
-
-        recommendedSystems.push({
-          inverterModel: `${config.name} Hybrid Inverter`,
-          inverterSize: config.maxWattage,
-          maxLoadCapacity: config.maxLoadCapacity,
-          battery: batteryConfig.type !== "none"
-            ? `${batteryConfig.type} × ${maxPossibleBatteries}`
-            : "None",
-          batteryCapacity: batteryConfig.type !== "none"
-            ? (batteryConfig.type === "51.2v 314AH"
-              ? (16.08 * maxPossibleBatteries).toFixed(2)
-              : (14.34 * maxPossibleBatteries).toFixed(2)) + " kWh"
-            : "None",
-          solarPanels: maxPossiblePanels,
-          solarCapacity: ((maxPossiblePanels * config.panelWattage) / 1000).toFixed(2) + " kW",
-          quantity: Math.ceil(totalSystemWattage / config.maxLoadCapacity),
-          note: "System requirements exceed single inverter capacity. Multiple systems recommended.",
-        });
-      }
+    // Implement specific selection logic
+    if (totalSystemWattage <= 20000) {
+      // Use 16kW for ≤20kW
+      selectedConfig = systemConfigs[4]; // 16kW
+      systemsNeeded = 1;
+    } else if (totalSystemWattage <= 24000) {
+      // Use 2×12kW for 20-24kW
+      selectedConfig = systemConfigs[3]; // 12kW
+      systemsNeeded = 2;
+    } else if (totalSystemWattage <= 32000) {
+      // Use 2×16kW for 24-32kW
+      selectedConfig = systemConfigs[4]; // 16kW
+      systemsNeeded = 2;
+    } else {
+      // For >32kW, scale with 16kW inverters
+      selectedConfig = systemConfigs[4]; // 16kW
+      systemsNeeded = Math.ceil(totalSystemWattage / selectedConfig.maxLoadCapacity);
     }
+
+    // Calculate panels needed (match load, not inverter capacity)
+    const requiredPanelCount = Math.ceil(totalSystemWattage / selectedConfig.panelWattage);
+    const maxPossiblePanels = selectedConfig.maxPanels * systemsNeeded;
+    const actualPanels = Math.min(requiredPanelCount, maxPossiblePanels);
+
+    // Calculate batteries - FIXED THIS SECTION
+    const batteriesPerSystem = batteryConfig.type !== "none" 
+      ? Math.min(
+          selectedConfig.maxBatteries,
+          Math.ceil(batteryConfig.quantity / systemsNeeded)
+        )
+      : 0;
+    const totalBatteries = batteriesPerSystem * systemsNeeded;
+
+    // Build the recommendation
+    recommendedSystems.push({
+      inverterModel: `${selectedConfig.name} Hybrid Inverter`,
+      inverterSize: selectedConfig.maxWattage,
+      maxLoadCapacity: selectedConfig.maxLoadCapacity,
+      battery: batteryConfig.type !== "none"
+        ? `${batteryConfig.type} × ${totalBatteries}`
+        : "None",
+      batteryCapacity: batteryConfig.type !== "none"
+        ? (batteryConfig.type === "51.2v 314AH"
+          ? (16.08 * totalBatteries).toFixed(2)
+          : (14.34 * totalBatteries).toFixed(2)) + " kWh"
+        : "None",
+      solarPanels: actualPanels,
+      solarCapacity: ((actualPanels * selectedConfig.panelWattage) / 1000).toFixed(2) + " kW",
+      quantity: systemsNeeded,
+      note: systemsNeeded > 1 
+        ? `Multiple systems required for ${totalSystemWattage.toLocaleString()}W load` 
+        : undefined
+    });
 
     return {
       totalWattage: totalApplianceWattage,

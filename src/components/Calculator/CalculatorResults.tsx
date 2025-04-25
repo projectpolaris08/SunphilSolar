@@ -1,5 +1,5 @@
 import React from 'react';
-import { Battery, Sun } from 'lucide-react';
+import { Battery } from 'lucide-react';
 
 interface CalculatorResultsProps {
   totalWattage: number;
@@ -14,6 +14,7 @@ interface CalculatorResultsProps {
     solarPanels: number;
     solarCapacity: string;
     quantity: number;
+    note?: string;
   }[];
 }
 
@@ -74,7 +75,7 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
                           {system.inverterModel}
                         </div>
                         <div className="text-lg font-semibold text-secondary-900">
-                          {(system.inverterSize / 1000).toFixed(1)}kW Capacity
+                          {(system.inverterSize * system.quantity / 1000).toFixed(1)}kW Total Capacity
                         </div>
                       </div>
                       <div className="text-primary-600 text-sm">
@@ -98,6 +99,12 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
                         </div>
                       </div>
                     </div>
+
+                    {system.note && (
+                      <div className="mt-2 text-sm text-yellow-600">
+                        {system.note}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
