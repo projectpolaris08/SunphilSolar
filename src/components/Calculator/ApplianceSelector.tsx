@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 interface ApplianceSelectorProps {
   value: string;
@@ -11,6 +11,7 @@ export const ApplianceSelector: React.FC<ApplianceSelectorProps> = ({
   onChange,
   commonAppliances
 }) => {
+  // Initialize state based on initial props
   const [selectedType, setSelectedType] = useState<string>(
     commonAppliances.includes(value) ? value : 'Other'
   );
@@ -18,20 +19,25 @@ export const ApplianceSelector: React.FC<ApplianceSelectorProps> = ({
     commonAppliances.includes(value) ? '' : value
   );
 
-  useEffect(() => {
-    if (selectedType === 'Other') {
-      onChange(customValue);
-    } else {
-      onChange(selectedType);
-    }
-  }, [selectedType, customValue, onChange]);
+  // Only call onChange when the user actively changes something
+  const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newType = e.target.value;
+    setSelectedType(newType);
+    onChange(newType === 'Other' ? customValue : newType);
+  };
+
+  const handleCustomChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    setCustomValue(newValue);
+    onChange(newValue);
+  };
 
   return (
     <div className="flex flex-col space-y-2 w-full">
       <select
         className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
         value={selectedType}
-        onChange={(e) => setSelectedType(e.target.value)}
+        onChange={handleTypeChange}
       >
         {commonAppliances.map((appliance) => (
           <option key={appliance} value={appliance}>
@@ -47,7 +53,7 @@ export const ApplianceSelector: React.FC<ApplianceSelectorProps> = ({
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
           placeholder="Enter custom appliance"
           value={customValue}
-          onChange={(e) => setCustomValue(e.target.value)}
+          onChange={handleCustomChange}
         />
       )}
     </div>
