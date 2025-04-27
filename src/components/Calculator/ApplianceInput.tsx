@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Trash2 } from "lucide-react";
 import { ApplianceSelector } from "./ApplianceSelector";
 import { commonAppliancesList, applianceWattages } from "./CommonAppliances";
@@ -23,6 +23,8 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
   onUpdate,
   onRemove,
 }) => {
+  const [localQuantity, setLocalQuantity] = useState<string>(appliance.quantity.toString());
+
   const handleApplianceChange = (value: string) => {
     onUpdate(appliance.id, "name", value);
 
@@ -31,18 +33,28 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
     }
   };
 
-  // Improved input handler that prevents invalid values
-  const handleNumberInputChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    field: keyof Appliance,
-    min: number = 0,
-    max: number = Infinity
-  ) => {
-    let value = parseInt(e.target.value);
-    if (isNaN(value)) value = min;
-    if (value < min) value = min;
-    if (value > max) value = max;
-    onUpdate(appliance.id, field, value);
+  // Special handler for quantity that allows empty value
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setLocalQuantity(value); // Store the raw string value
+    
+    // Only update the parent if we have a valid number
+    if (value === '') {
+      return; // Keep it empty temporarily
+    }
+    
+    const numValue = parseInt(value, 10);
+    if (!isNaN(numValue) && numValue >= 1) {
+      onUpdate(appliance.id, "quantity", numValue);
+    }
+  };
+
+  // When leaving the field, ensure we have a valid value
+  const handleQuantityBlur = () => {
+    if (localQuantity === '' || isNaN(parseInt(localQuantity, 10))) {
+      setLocalQuantity('1');
+      onUpdate(appliance.id, "quantity", 1);
+    }
   };
 
   return (
@@ -66,11 +78,11 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
       <div className="md:col-span-2 flex">
         <input
           type="number"
-          inputMode="numeric"
-          className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400 text-base md:text-sm"
+          className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
           placeholder="Watts"
           value={appliance.watts || ""}
-          onChange={(e) => handleNumberInputChange(e, "watts", 0)}
+          onChange={(e) => onUpdate(appliance.id, "watts", parseInt(e.target.value) || 0)}
+          min="0"
         />
         <span
           className="bg-gray-100 border border-l-0 border-gray-300 rounded-r px-2 py-2 text-gray-500 flex items-center cursor-help"
@@ -80,17 +92,17 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
         </span>
       </div>
 
-      {/* Quantity Input - Improved for mobile */}
+      {/* Quantity Input - Now with proper deletion */}
       <div className="md:col-span-2 flex">
         <input
           type="number"
           inputMode="numeric"
-          className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400 text-base md:text-sm"
+          className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
           placeholder="Qty"
-          value={appliance.quantity}
-          onChange={(e) => handleNumberInputChange(e, "quantity", 1)}
+          value={localQuantity}
+          onChange={handleQuantityChange}
+          onBlur={handleQuantityBlur}
           min="1"
-          step="1"
         />
         <span
           className="bg-gray-100 border border-l-0 border-gray-300 rounded-r px-2 py-2 text-gray-500 flex items-center cursor-help"
@@ -104,14 +116,12 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
       <div className="md:col-span-2 flex">
         <input
           type="number"
-          inputMode="numeric"
-          className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400 text-base md:text-sm"
+          className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
           placeholder="Hours"
           value={appliance.hoursPerDay}
-          onChange={(e) => handleNumberInputChange(e, "hoursPerDay", 0, 24)}
+          onChange={(e) => onUpdate(appliance.id, "hoursPerDay", parseInt(e.target.value) || 0)}
           min="0"
           max="24"
-          step="0.5"
         />
         <span
           className="bg-gray-100 border border-l-0 border-gray-300 rounded-r px-2 py-2 text-gray-500 flex items-center cursor-help"
@@ -125,7 +135,7 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
       <div className="md:col-span-2 flex justify-center">
         <button
           onClick={() => onRemove(appliance.id)}
-          className="text-red-500 hover:text-red-700 p-1"
+          className="text-red-500 hover:text-red-700"
           aria-label="Remove appliance"
         >
           <Trash2 className="h-5 w-5" />
