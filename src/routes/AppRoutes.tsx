@@ -5,6 +5,7 @@ import { BlogPage } from '../pages/BlogPage';
 import { Layout } from '../components/layout/Layout';
 import ProductsPage from '../pages/ProductsPage';
 import AboutPage from '../pages/AboutPage';
+import { ContactForm } from '../components/sections/ContactForm'; // Correct import path
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactForm />} /> {/* Add route for ContactForm */}
         </Route>
 
         {/* Catch-all redirect */}

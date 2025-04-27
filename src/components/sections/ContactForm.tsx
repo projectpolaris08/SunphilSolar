@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, Loader2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 export const ContactForm: React.FC = () => {
+  const location = useLocation();
+  const product = location.state?.product;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    message: '',
-    interest: 'residential'
+    message: product 
+      ? `I'm interested in purchasing: ${product.name} (${product.price})`
+      : '',
+    interest: product ? 'battery' : 'residential'
   });
   
   const [submitted, setSubmitted] = useState(false);
@@ -62,24 +68,26 @@ export const ContactForm: React.FC = () => {
     setIsLoading(true);
     
     try {
-      // Create form data object to send
       const formDataToSend = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
         formDataToSend.append(key, value);
       });
       
-      // Send data to Google Apps Script using fetch
+      if (product) {
+        formDataToSend.append('product_id', product.id);
+        formDataToSend.append('product_name', product.name);
+        formDataToSend.append('product_price', product.price);
+      }
+      
       await fetch(
         'https://script.google.com/macros/s/AKfycbwSlgs1qafnGaNDpRext3eeTk3iC8ARMK33ka5bQyQvTI9l0ttXzhKAM_YECv-6gU8/exec', 
         {
           method: 'POST',
           body: formDataToSend,
-          mode: 'no-cors' // This is important for CORS issues with Google Apps Script
+          mode: 'no-cors'
         }
       );
       
-      // Since we're using no-cors, we won't get a proper response to check
-      // So we'll assume success if no error is thrown
       setSubmitted(true);
       setFormData({
         name: '',
@@ -102,10 +110,8 @@ export const ContactForm: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Left column content remains the same */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            {/* Information section - unchanged */}
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               Get in Touch
             </h2>
@@ -139,7 +145,7 @@ export const ContactForm: React.FC = () => {
               <div className="flex-1">
                 <div className="text-secondary-900 font-medium mb-2">Email Us</div>
                 <a href="mailto:sunphilsolarpowerinstallation@gmail.com" className="text-primary-600 hover:text-primary-700">
-                sunphilsolarpowerinstallation@gmail.com
+                  sunphilsolarpowerinstallation@gmail.com
                 </a>
               </div>
               <div className="flex-1">
@@ -166,127 +172,138 @@ export const ContactForm: React.FC = () => {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-1">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-2 border ${
-                        errors.name ? 'border-error-500' : 'border-secondary-300'
-                      } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
-                    />
-                    {errors.name && (
-                      <p className="mt-1 text-sm text-error-500">{errors.name}</p>
-                    )}
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-1">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-2 border ${
-                          errors.email ? 'border-error-500' : 'border-secondary-300'
-                        } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
-                      />
-                      {errors.email && (
-                        <p className="mt-1 text-sm text-error-500">{errors.email}</p>
-                      )}
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 mb-1">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-2 border ${
-                          errors.phone ? 'border-error-500' : 'border-secondary-300'
-                        } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
-                      />
-                      {errors.phone && (
-                        <p className="mt-1 text-sm text-error-500">{errors.phone}</p>
-                      )}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="interest" className="block text-sm font-medium text-secondary-700 mb-1">
-                      I'm Interested In
-                    </label>
-                    <select
-                      id="interest"
-                      name="interest"
-                      value={formData.interest}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    >
-                      <option value="residential">Residential Solar Installation</option>
-                      <option value="commercial">Commercial Solar Installation</option>
-                      <option value="battery">Battery Storage Solutions</option>
-                      <option value="maintenance">Maintenance & Support</option>
-                      <option value="other">Other Inquiry</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-1">
-                      Your Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-2 border ${
-                        errors.message ? 'border-error-500' : 'border-secondary-300'
-                      } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
-                    ></textarea>
-                    {errors.message && (
-                      <p className="mt-1 text-sm text-error-500">{errors.message}</p>
-                    )}
-                  </div>
-
-                  {errors.form && (
-                    <div className="p-2 text-sm text-error-500 bg-error-50 rounded">
-                      {errors.form}
+                <>
+                  {product && (
+                    <div className="mb-6 p-4 bg-primary-50 rounded-lg border-l-4 border-primary-500">
+                      <h4 className="font-medium text-secondary-900 mb-1">Product Inquiry</h4>
+                      <p className="text-secondary-700">
+                        {product.name} - {product.price}
+                      </p>
                     </div>
                   )}
                   
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors disabled:opacity-70"
-                  >
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message <Send size={18} className="ml-2" />
-                      </>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-1">
+                        Your Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className={`w-full px-4 py-2 border ${
+                          errors.name ? 'border-error-500' : 'border-secondary-300'
+                        } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
+                      />
+                      {errors.name && (
+                        <p className="mt-1 text-sm text-error-500">{errors.name}</p>
+                      )}
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-1">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className={`w-full px-4 py-2 border ${
+                            errors.email ? 'border-error-500' : 'border-secondary-300'
+                          } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
+                        />
+                        {errors.email && (
+                          <p className="mt-1 text-sm text-error-500">{errors.email}</p>
+                        )}
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 mb-1">
+                          Phone Number *
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className={`w-full px-4 py-2 border ${
+                            errors.phone ? 'border-error-500' : 'border-secondary-300'
+                          } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
+                        />
+                        {errors.phone && (
+                          <p className="mt-1 text-sm text-error-500">{errors.phone}</p>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="interest" className="block text-sm font-medium text-secondary-700 mb-1">
+                        I'm Interested In
+                      </label>
+                      <select
+                        id="interest"
+                        name="interest"
+                        value={formData.interest}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      >
+                        <option value="residential">Residential Solar Installation</option>
+                        <option value="commercial">Commercial Solar Installation</option>
+                        <option value="battery">Battery Storage Solutions</option>
+                        <option value="maintenance">Maintenance & Support</option>
+                        <option value="other">Other Inquiry</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-1">
+                        Your Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className={`w-full px-4 py-2 border ${
+                          errors.message ? 'border-error-500' : 'border-secondary-300'
+                        } rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent`}
+                      ></textarea>
+                      {errors.message && (
+                        <p className="mt-1 text-sm text-error-500">{errors.message}</p>
+                      )}
+                    </div>
+
+                    {errors.form && (
+                      <div className="p-2 text-sm text-error-500 bg-error-50 rounded">
+                        {errors.form}
+                      </div>
                     )}
-                  </button>
-                </form>
+                    
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors disabled:opacity-70"
+                    >
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message <Send size={18} className="ml-2" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
               )}
             </div>
           </div>

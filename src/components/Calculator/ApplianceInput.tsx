@@ -95,7 +95,7 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
       </div>
 
       {/* Hours Input */}
-      <div className="md:col-span-3 flex">
+      <div className="md:col-span-2 flex">
         <input
           type="number"
           className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
@@ -120,7 +120,7 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
       </div>
 
       {/* Remove Button */}
-      <div className="md:col-span-1 flex justify-center">
+      <div className="md:col-span-2 flex justify-center">
         <button
           onClick={() => onRemove(appliance.id)}
           className="text-red-500 hover:text-red-700"
