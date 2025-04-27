@@ -80,7 +80,7 @@ export const ContactForm: React.FC = () => {
       }
       
       await fetch(
-        'https://script.google.com/macros/s/AKfycbwSlgs1qafnGaNDpRext3eeTk3iC8ARMK33ka5bQyQvTI9l0ttXzhKAM_YECv-6gU8/exec', 
+        import.meta.env.VITE_GOOGLE_SCRIPT_URL, 
         {
           method: 'POST',
           body: formDataToSend,
