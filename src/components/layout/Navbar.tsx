@@ -1,34 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "../Logo";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  scrolled?: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Calculator", path: "/calculator" },
-    { name: "Products", path: "#products" },
+    { name: "Products", path: "/products" },
     { name: "Features", path: "#features" },
     { name: "Services", path: "#services" },
     { name: "Blog", path: "/blog" },
-    { name: "About Us", path: "#about-us" },
+    { name: "About Us", path: "/about" },
   ];
 
   const isOnHomePage = location.pathname === "/";
@@ -40,21 +35,24 @@ export const Navbar: React.FC = () => {
           ? "bg-white shadow-md text-gray-900"
           : "bg-white/80 backdrop-blur-md text-gray-900"
       }`}
-      style={{ height: "6rem" }} // Lock header height
+      style={{ height: "5rem" }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
-          <Logo />
+          {/* Updated Logo with RouterLink */}
+          <RouterLink to="/">
+            <Logo />
+          </RouterLink>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-10">
+          <nav className="hidden lg:flex space-x-6 xl:space-x-10">
             {navItems.map((item) =>
               item.path.startsWith("#") ? (
                 <HashLink
                   key={item.name}
                   smooth
                   to={isOnHomePage ? item.path : `/${item.path}`}
-                  className="text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2"
+                  className="text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2 whitespace-nowrap"
                 >
                   {item.name}
                 </HashLink>
@@ -62,7 +60,7 @@ export const Navbar: React.FC = () => {
                 <RouterLink
                   key={item.name}
                   to={item.path}
-                  className="text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2"
+                  className="text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2 whitespace-nowrap"
                 >
                   {item.name}
                 </RouterLink>
@@ -71,11 +69,11 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <HashLink
               smooth
               to={isOnHomePage ? "#contact" : "/#contact"}
-              className="transition-all duration-300 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
+              className="transition-all duration-300 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700 whitespace-nowrap"
             >
               Get Started
               <span className="ml-2">→</span>
@@ -83,7 +81,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={toggleMenu}
               type="button"
@@ -102,18 +100,19 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+        className={`lg:hidden fixed top-20 left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out overflow-y-auto ${
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
+        style={{ zIndex: 40 }}
       >
-        <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 bg-white shadow-md">
+        <div className="px-4 pt-2 pb-6 space-y-3">
           {navItems.map((item) =>
             item.path.startsWith("#") ? (
               <HashLink
                 key={item.name}
                 smooth
                 to={isOnHomePage ? item.path : `/${item.path}`}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600"
+                className="block px-4 py-3 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
                 onClick={toggleMenu}
               >
                 {item.name}
@@ -122,22 +121,24 @@ export const Navbar: React.FC = () => {
               <RouterLink
                 key={item.name}
                 to={item.path}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600"
+                className="block px-4 py-3 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
                 onClick={toggleMenu}
               >
                 {item.name}
               </RouterLink>
             )
           )}
-          <HashLink
-            smooth
-            to={isOnHomePage ? "#contact" : "/#contact"}
-            className="transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
-          >
-            Get Started
-            <span className="ml-2">→</span>
-          </HashLink>
-
+          <div className="pt-2">
+            <HashLink
+              smooth
+              to={isOnHomePage ? "#contact" : "/#contact"}
+              className="transition-all duration-200 inline-flex items-center justify-center w-full px-6 py-3 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
+              onClick={toggleMenu}
+            >
+              Get Started
+              <span className="ml-2">→</span>
+            </HashLink>
+          </div>
         </div>
       </div>
     </header>

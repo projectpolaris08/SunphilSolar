@@ -1,40 +1,40 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background image with overlay */}
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px]">
+      {/* Fixed background image implementation */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            'url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: 'url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 to-secondary-800/60"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32 pb-16 md:pt-40 md:pb-24 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
           <div className="text-white max-w-2xl">
             <div className="mb-6">
-              <h1 className="text-display font-bold leading-tight mb-6 animate-[fadeIn_1s_ease-in]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-[fadeIn_1s_ease-in]">
                 The Power of Renewable Energy!
               </h1>
               <div className="h-1 w-20 bg-primary-500 rounded mb-6"></div>
-              <p className="text-subtitle text-secondary-100 mb-8">
+              <p className="text-lg md:text-xl text-secondary-100 mb-8">
                 Explore the endless possibilities of renewable energy with Sunphil Solar. Our innovative solutions harness the power of nature to provide sustainable, reliable, and eco-friendly energy. Join us in making a difference for a greener future.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#calculator"
+              <RouterLink
+                to="/calculator"
                 className="inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-full text-base font-medium bg-primary-600 text-white hover:bg-primary-700 transition duration-300 ease-in-out transform hover:-translate-y-1"
               >
                 Calculate Your Needs
-              </a>
+              </RouterLink>
               <a
                 href="#features"
                 className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/30 rounded-full text-base font-medium text-white hover:bg-white/10 transition duration-300 ease-in-out"

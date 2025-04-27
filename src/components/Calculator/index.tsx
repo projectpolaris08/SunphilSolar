@@ -43,7 +43,13 @@ const Calculator: React.FC = () => {
   const defaultAppliances: Appliance[] = [
     { id: "1", name: "Refrigerator", watts: 150, quantity: 1, hoursPerDay: 24 },
     { id: "2", name: "LED TV", watts: 100, quantity: 1, hoursPerDay: 4 },
-    { id: "3", name: "Air Conditioner", watts: 1500, quantity: 2, hoursPerDay: 12 },
+    {
+      id: "3",
+      name: "Air Conditioner",
+      watts: 1500,
+      quantity: 2,
+      hoursPerDay: 12,
+    },
   ];
 
   const [appliances, setAppliances] = useState<Appliance[]>(defaultAppliances);
@@ -73,11 +79,13 @@ const Calculator: React.FC = () => {
   const removeAppliance = (id: string) =>
     setAppliances(appliances.filter((a) => a.id !== id));
 
-  const updateAppliance = (id: string, field: keyof Appliance, value: string | number) =>
+  const updateAppliance = (
+    id: string,
+    field: keyof Appliance,
+    value: string | number
+  ) =>
     setAppliances(
-      appliances.map((a) =>
-        a.id === id ? { ...a, [field]: value } : a
-      )
+      appliances.map((a) => (a.id === id ? { ...a, [field]: value } : a))
     );
 
   const calculateTotalWattage = () =>
@@ -151,7 +159,8 @@ const Calculator: React.FC = () => {
     const batteryCap =
       batteryConfig.type !== "none"
         ? (
-            (batteryConfig.type === "51.2v 314AH" ? 16.08 : 14.34) * batteryConfig.quantity
+            (batteryConfig.type === "51.2v 314AH" ? 16.08 : 14.34) *
+            batteryConfig.quantity
           ).toFixed(2) + " kWh"
         : "None";
 
@@ -183,7 +192,9 @@ const Calculator: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-6 text-center">☀️ Solar Calculator</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">
+        💡 Appliance Calculator
+      </h1>
 
       {appliances.map((appliance) => (
         <div key={appliance.id} className="mb-4">
@@ -255,4 +266,3 @@ const Calculator: React.FC = () => {
 };
 
 export default Calculator;
-

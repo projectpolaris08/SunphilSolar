@@ -26,7 +26,7 @@ export const Features: React.FC = () => {
     {
       icon: <PiggyBank className="h-10 w-10 text-primary-500" />,
       title: 'Financing Options',
-      description: 'Flexible payment plans and financing solutions to make solar energy accessible to everyone.'
+      description: 'Currently accepting cash payments, with flexible financing options coming soon to make solar energy even more accessible!'
     },
     {
       icon: <Clock className="h-10 w-10 text-primary-500" />,

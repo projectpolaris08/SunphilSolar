@@ -65,7 +65,7 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
         {recommendedSystems.map((system, index) => (
           <div
             key={index}
-            className="border rounded-lg p-4 mb-4 bg-white shadow-sm"
+            className="bg-white rounded-lg p-8 shadow-elevation-1 hover:shadow-elevation-3 transition-all duration-300 transform hover:-translate-y-2"
           >
             <p className="font-semibold text-gray-800">
               Inverter: {system.inverterModel}

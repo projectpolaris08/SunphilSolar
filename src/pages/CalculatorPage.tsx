@@ -13,7 +13,7 @@ export const CalculatorPage = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-8">Solar Calculator</h1>
+        <h1 className="text-3xl font-bold mb-8">Solar System Calculator</h1>
         <Calculator />
       </div>
     </section>
