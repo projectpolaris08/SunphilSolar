@@ -31,7 +31,7 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
 }) => {
   return (
     <div className="mt-8 bg-white rounded-lg shadow-md p-6 space-y-6">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center md:text-left">
         ⚡ Solar System Estimation Results
       </h2>
 
@@ -59,7 +59,7 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center md:text-left">
           🔧 Recommended Solar System
         </h3>
         {recommendedSystems.map((system, index) => (
