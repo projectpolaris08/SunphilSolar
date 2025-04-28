@@ -147,6 +147,7 @@ export const Footer: React.FC = () => {
 
         <div className="mt-12 pt-8 border-t border-secondary-800 text-center text-secondary-500 text-sm">
           <p>&copy; {new Date().getFullYear()} Sunphil Solar. All rights reserved.</p>
+          <p className="mt-1">Developed by Jayar Barallas</p>
         </div>
       </div>
     </footer>
