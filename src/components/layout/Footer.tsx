@@ -147,7 +147,17 @@ export const Footer: React.FC = () => {
 
         <div className="mt-12 pt-8 border-t border-secondary-800 text-center text-secondary-500 text-sm">
           <p>&copy; {new Date().getFullYear()} Sunphil Solar. All rights reserved.</p>
-          <p className="mt-1">Developed by Jayar Barallas</p>
+          <p className="mt-1">
+            Developed by{' '}
+            <a 
+              href="https://www.facebook.com/jayar.barallas/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary-400 hover:text-primary-300 transition-colors"
+            >
+              Jayar Barallas
+            </a>
+          </p>
         </div>
       </div>
     </footer>
