@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import { Plus } from "lucide-react";
 import { ApplianceInput } from "./ApplianceInput";
 import { CalculatorResults } from "./CalculatorResults";
@@ -12,7 +12,7 @@ interface Appliance {
   hoursPerDay: number;
 }
 
-type BatteryType = "51.2v 280AH" | "51.2v 314AH" | "none";
+type BatteryType = "51.2v 280AH" | "51.2v 314AH" | "24v 280AH" | "none";
 
 interface BatteryConfig {
   type: BatteryType;
@@ -108,6 +108,8 @@ const Calculator: React.FC = () => {
       batteryChargingWattage = 3500 * batteryConfig.quantity;
     } else if (batteryConfig.type === "51.2v 314AH") {
       batteryChargingWattage = 4000 * batteryConfig.quantity;
+    } else if (batteryConfig.type === "24v 280AH") {
+      batteryChargingWattage = 2000 * batteryConfig.quantity; // updated from 1510 to 2000
     }
 
     const totalSystemWattage = totalWattage + batteryChargingWattage;
@@ -147,7 +149,7 @@ const Calculator: React.FC = () => {
       inverterLabel = `${systemsNeeded}× 16kW`;
     }
 
-    const panelWattage = 615;
+    const panelWattage = inverterSize === 3000 ? 585 : 615;
     const requiredPanels = Math.ceil(totalSystemWattage / panelWattage);
     const totalSolarCapacity = (requiredPanels * panelWattage) / 1000;
 
@@ -159,8 +161,11 @@ const Calculator: React.FC = () => {
     const batteryCap =
       batteryConfig.type !== "none"
         ? (
-            (batteryConfig.type === "51.2v 314AH" ? 16.08 : 14.34) *
-            batteryConfig.quantity
+            (batteryConfig.type === "51.2v 314AH"
+              ? 16.08
+              : batteryConfig.type === "51.2v 280AH"
+              ? 14.34
+              : 6.72) * batteryConfig.quantity
           ).toFixed(2) + " kWh"
         : "None";
 
@@ -229,6 +234,7 @@ const Calculator: React.FC = () => {
           <option value="none">None</option>
           <option value="51.2v 280AH">51.2v 280AH</option>
           <option value="51.2v 314AH">51.2v 314AH</option>
+          <option value="24v 280AH">24v 280AH</option>
         </select>
 
         {batteryConfig.type !== "none" && (
@@ -236,8 +242,10 @@ const Calculator: React.FC = () => {
             <label className="block mb-1 font-medium">Battery Quantity</label>
             <input
               type="number"
+              inputMode="numeric"
               min={1}
               max={10}
+              step={1}
               value={batteryConfig.quantity}
               onChange={(e) =>
                 setBatteryConfig({
@@ -245,7 +253,7 @@ const Calculator: React.FC = () => {
                   quantity: Math.max(1, parseInt(e.target.value) || 1),
                 })
               }
-              className="border border-gray-300 rounded px-3 py-2 w-full"
+              className="border border-gray-300 rounded px-3 py-2 w-full appearance-auto"
             />
           </div>
         )}

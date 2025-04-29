@@ -1,4 +1,3 @@
-// CalculatorResults.tsx
 import React from "react";
 import { Sun, Battery, Zap } from "lucide-react";
 
@@ -78,12 +77,21 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
               • Battery Capacity: {system.batteryCapacity}
             </p>
             <p className="text-gray-800">
-              • Solar Panels: {system.solarPanels} × 615W
+              • Solar Panels: {system.solarPanels} ×{" "}
+              {system.inverterModel.includes("3kW") ? "585W" : "615W"}
             </p>
             <p className="text-gray-800">
               • Total Solar Capacity: {system.solarCapacity}
             </p>
             <p className="text-gray-800">• System Quantity: {system.quantity}</p>
+
+            {/* Battery Note */}
+            {system.battery.toLowerCase().includes("24v 280ah") && (
+              <p className="text-sm text-red-500 mt-2">
+                This Battery supports 3kW system only
+              </p>
+            )}
+
             {system.note && (
               <p className="text-sm text-red-500 mt-2">{system.note}</p>
             )}
