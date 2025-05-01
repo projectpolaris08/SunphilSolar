@@ -149,7 +149,7 @@ const Calculator: React.FC = () => {
       inverterLabel = `${systemsNeeded}× 16kW`;
     }
 
-    const panelWattage = inverterSize === 3000 ? 585 : 615;
+    const panelWattage = inverterSize === 3000 ? 585 : 600;
     const requiredPanels = Math.ceil(totalSystemWattage / panelWattage);
     const totalSolarCapacity = (requiredPanels * panelWattage) / 1000;
 

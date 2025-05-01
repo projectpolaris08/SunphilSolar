@@ -78,7 +78,7 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
             </p>
             <p className="text-gray-800">
               • Solar Panels: {system.solarPanels} ×{" "}
-              {system.inverterModel.includes("3kW") ? "585W" : "615W"}
+              {system.inverterModel.includes("3kW") ? "585W" : "600W"}
             </p>
             <p className="text-gray-800">
               • Total Solar Capacity: {system.solarCapacity}
