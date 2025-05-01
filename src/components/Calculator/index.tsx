@@ -109,7 +109,7 @@ const Calculator: React.FC = () => {
     } else if (batteryConfig.type === "51.2v 314AH") {
       batteryChargingWattage = 4000 * batteryConfig.quantity;
     } else if (batteryConfig.type === "24v 280AH") {
-      batteryChargingWattage = 2000 * batteryConfig.quantity; // updated from 1510 to 2000
+      batteryChargingWattage = 2000 * batteryConfig.quantity;
     }
 
     const totalSystemWattage = totalWattage + batteryChargingWattage;
@@ -224,9 +224,8 @@ const Calculator: React.FC = () => {
           value={batteryConfig.type}
           onChange={(e) =>
             setBatteryConfig({
-              ...batteryConfig,
               type: e.target.value as BatteryType,
-              quantity: e.target.value === "none" ? 0 : batteryConfig.quantity,
+              quantity: e.target.value === "none" ? 0 : 1,
             })
           }
           className="border border-gray-300 rounded px-3 py-2 w-full"
@@ -240,21 +239,22 @@ const Calculator: React.FC = () => {
         {batteryConfig.type !== "none" && (
           <div className="mt-3">
             <label className="block mb-1 font-medium">Battery Quantity</label>
-            <input
-              type="number"
-              inputMode="numeric"
-              min={1}
-              max={10}
-              step={1}
+            <select
               value={batteryConfig.quantity}
               onChange={(e) =>
                 setBatteryConfig({
                   ...batteryConfig,
-                  quantity: Math.max(1, parseInt(e.target.value) || 1),
+                  quantity: parseInt(e.target.value),
                 })
               }
-              className="border border-gray-300 rounded px-3 py-2 w-full appearance-auto"
-            />
+              className="border border-gray-300 rounded px-3 py-2 w-full"
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                <option key={num} value={num}>
+                  {num}
+                </option>
+              ))}
+            </select>
           </div>
         )}
       </div>
