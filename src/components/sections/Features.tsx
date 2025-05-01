@@ -1,37 +1,40 @@
 import React from 'react';
 import { Sun, Battery, Zap, ShieldCheck, PiggyBank, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Features: React.FC = () => {
   const features = [
     {
       icon: <Sun className="h-10 w-10 text-primary-500" />,
       title: 'Solar Panel Installation',
-      description: 'Premium quality solar panels professionally installed to maximize energy production and efficiency.'
+      description: 'Premium quality solar panels professionally installed to maximize energy production and efficiency.',
     },
     {
       icon: <Battery className="h-10 w-10 text-primary-500" />,
       title: 'Battery Storage',
-      description: "Store excess energy with cutting-edge battery solutions for use when the sun isn't shining."
+      description: "Store excess energy with cutting-edge battery solutions for use when the sun isn't shining.",
+      link: '/products#battery',
     },
     {
       icon: <Zap className="h-10 w-10 text-primary-500" />,
       title: 'Inverter Solutions',
-      description: 'Deye Hybrid Inverters that efficiently convert solar energy into usable electricity for your home.'
+      description: 'Deye Hybrid Inverters that efficiently convert solar energy into usable electricity for your home.',
+      link: '/products#inverter',
     },
     {
       icon: <ShieldCheck className="h-10 w-10 text-primary-500" />,
       title: 'Maintenance & Support',
-      description: 'Regular system checks and maintenance to ensure optimal performance throughout the year.'
+      description: 'Regular system checks and maintenance to ensure optimal performance throughout the year.',
     },
     {
       icon: <PiggyBank className="h-10 w-10 text-primary-500" />,
       title: 'Financing Options',
-      description: 'Currently accepting cash payments, with flexible financing options coming soon to make solar energy even more accessible!'
+      description: 'Currently accepting cash payments, with flexible financing options coming soon to make solar energy even more accessible!',
     },
     {
       icon: <Clock className="h-10 w-10 text-primary-500" />,
       title: '12-Year Warranty',
-      description: 'Industry-leading warranty coverage for peace of mind and long-term investment protection.'
+      description: 'Industry-leading warranty coverage for peace of mind and long-term investment protection.',
     }
   ];
 
@@ -48,16 +51,26 @@ export const Features: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-lg p-8 shadow-elevation-1 hover:shadow-elevation-3 transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="mb-5">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-secondary-900 mb-3">{feature.title}</h3>
-              <p className="text-secondary-600">{feature.description}</p>
-            </div>
-          ))}
+          {features.map((feature, index) => {
+            const content = (
+              <div
+                key={index}
+                className="bg-white rounded-lg p-8 shadow-elevation-1 hover:shadow-elevation-3 transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="mb-5">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{feature.title}</h3>
+                <p className="text-secondary-600">{feature.description}</p>
+              </div>
+            );
+
+            return feature.link ? (
+              <Link to={feature.link} key={index} className="block">
+                {content}
+              </Link>
+            ) : (
+              content
+            );
+          })}
         </div>
       </div>
     </section>

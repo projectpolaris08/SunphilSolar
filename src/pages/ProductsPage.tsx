@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Battery, Zap } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ProductsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'battery' | 'inverter'>('battery');
+  const location = useLocation();
   const navigate = useNavigate();
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash === 'battery' || hash === 'inverter') {
+      setActiveTab(hash);
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100); // Small delay to ensure DOM is ready
+    }
+  }, [location.hash]);
+
+  const handleTabChange = (tab: 'battery' | 'inverter') => {
+    setActiveTab(tab);
+    navigate(`#${tab}`, { replace: true });
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
 
   const batteries = [
     {
@@ -97,7 +117,7 @@ const ProductsPage: React.FC = () => {
   };
 
   return (
-    <section id="products" className="py-20 bg-secondary-50">
+    <section id="products" ref={sectionRef} className="py-20 bg-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">Our Products</h2>
@@ -110,7 +130,7 @@ const ProductsPage: React.FC = () => {
         {/* Tabs */}
         <div className="flex justify-center mb-12 space-x-4">
           <button
-            onClick={() => setActiveTab('battery')}
+            onClick={() => handleTabChange('battery')}
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
               activeTab === 'battery'
                 ? 'bg-primary-500 text-white shadow-elevation-2'
@@ -120,7 +140,7 @@ const ProductsPage: React.FC = () => {
             Battery Storage
           </button>
           <button
-            onClick={() => setActiveTab('inverter')}
+            onClick={() => handleTabChange('inverter')}
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
               activeTab === 'inverter'
                 ? 'bg-primary-500 text-white shadow-elevation-2'
