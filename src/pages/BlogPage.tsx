@@ -70,7 +70,7 @@ export const BlogPage = () => {
           </p>
         </article>
 
-        {/* Blog Post 4 - EV and Solar Energy */}
+        {/* Blog Post 4 */}
         <article className="bg-white rounded-2xl shadow-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-secondary-900 mb-4">How Solar Energy is Powering EVs in the Philippines</h2>
           <p className="text-secondary-500 text-sm mb-4">Author: Admin Jayar</p>
@@ -90,8 +90,8 @@ export const BlogPage = () => {
           </p>
         </article>
 
-        {/* Blog Post 5 - Latest Solar Tech Trends */}
-        <article className="bg-white rounded-2xl shadow-lg p-8">
+        {/* Blog Post 5 */}
+        <article className="bg-white rounded-2xl shadow-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-secondary-900 mb-4">Latest Solar Technology Trends in 2025 You Need to Know</h2>
           <p className="text-secondary-500 text-sm mb-4">Author: Admin Jayar</p>
           <p className="text-secondary-700 mb-6">
@@ -109,6 +109,45 @@ export const BlogPage = () => {
           </p>
         </article>
 
+        {/* Blog Post 6 - Japan’s Perovskite Solar Revolution */}
+        <article className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+            Japan's Perovskite Solar Revolution: Matching 20 Nuclear Reactors by 2040
+          </h2>
+          <p className="text-secondary-500 text-sm mb-4">Author: Admin Jayar</p>
+          <p className="text-secondary-700 mb-6">
+            Japan is charting a bold course toward a sustainable future with its investment in perovskite solar cell (PSC) technology. The government aims to generate 20 gigawatts (GW) of electricity through PSCs by 2040, equivalent to the output of 20 nuclear reactors. This initiative is a cornerstone of Japan's strategy to achieve net-zero emissions by 2050 and to increase the share of renewable energy in its power mix to 36–38% by 2030.
+          </p>
+
+          <h3 className="text-2xl font-semibold text-secondary-900 mb-2">What Are Perovskite Solar Cells?</h3>
+          <p className="text-secondary-700 mb-6">
+            Perovskite solar cells are a next-generation photovoltaic technology known for their lightweight and flexible properties. Unlike traditional silicon-based panels, PSCs can be applied to a variety of surfaces, including windows, walls, and even streetlights, turning urban environments into energy-generating landscapes.
+          </p>
+
+          <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Leveraging Domestic Resources</h3>
+          <p className="text-secondary-700 mb-6">
+            A significant advantage for Japan is its domestic supply of iodine, a critical component in PSC manufacturing. Japan holds approximately 30% of the global iodine production, enabling the country to build a stable and independent supply chain for this essential material.
+          </p>
+
+          <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Economic and Environmental Impact</h3>
+          <p className="text-secondary-700 mb-6">
+            The deployment of PSCs is expected to have a profound impact on both the environment and Japan’s economy. The Japanese government has earmarked roughly $20 billion to scale up the commercialization of this technology, supporting domestic companies like Sekisui Chemical and EneCoat Technologies.
+          </p>
+
+          <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Cost and Scalability Targets</h3>
+          <p className="text-secondary-700 mb-6">
+            Japan plans to bring the production cost of PSCs down to ¥20 ($0.13) per watt by 2025, with further reductions to ¥14 by 2030 and ¥10 by 2040. These targets are designed to make perovskite solar cells competitive with traditional solar panels.
+          </p>
+
+          <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Challenges Ahead</h3>
+          <p className="text-secondary-700 mb-6">
+            Despite their promise, perovskite cells face technical challenges like durability in harsh weather and long-term stability. Japan’s roadmap anticipates resolving these hurdles before full-scale rollout in the 2030s.
+          </p>
+
+          <p className="text-secondary-700 mb-6">
+            With government backing, cutting-edge research, and the integration of PSCs into buildings and infrastructure, Japan is poised to become a global leader in next-generation solar power.
+          </p>
+        </article>
       </div>
     </section>
   );
