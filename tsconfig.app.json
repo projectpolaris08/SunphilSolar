@@ -16,8 +16,10 @@
 
     /* Path aliases */
     "baseUrl": "./src",
-     
-    
+    "paths": {
+      "@/*": ["./*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
