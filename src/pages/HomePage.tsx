@@ -40,43 +40,52 @@ export const HomePage = () => {
   return (
     <>
       <Hero />
-      <Stats />
-      <Features />
-      
+
       {/* Featured Blogs Section - 3-column grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Featured Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredBlogs.map((blog) => (
-              <div key={blog.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                <img
-                  className="w-full h-48 object-cover"
-                  src={blog.featuredImage}
-                  alt={blog.title}
-                />
+              <Link
+                to={`/blog/${blog.slug}`}
+                key={blog.id}
+                className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-blue-400"
+              >
+                <div className="relative overflow-hidden h-48">
+                  <img
+                    src={blog.featuredImage}
+                    alt={blog.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="text-sm text-gray-500">{blog.date}</span>
-                    <span className="text-sm text-gray-500">{blog.readingTime} min read</span>
+                  <div className="flex justify-between items-start mb-2 text-sm text-gray-500">
+                    <span>{blog.date}</span>
+                    <span>{blog.readingTime} min read</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2 group-hover:text-blue-600">
                     {blog.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {blog.excerpt}
-                  </p>
-                  <Link
-                    to={`/blog/${blog.slug}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-                  >
+                  <p className="text-gray-600 mb-4 line-clamp-3">{blog.excerpt}</p>
+                  <span className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
                     Read More
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    <svg
+                      className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
                     </svg>
-                  </Link>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-10">
@@ -90,6 +99,8 @@ export const HomePage = () => {
         </div>
       </section>
 
+      <Stats />
+      <Features />
       <Services /> {/* "Our Solar Energy Solutions" section */}
       <ContactForm />
     </>
