@@ -7,25 +7,30 @@ import ProductsPage from '../pages/ProductsPage';
 import AboutPage from '../pages/AboutPage';
 import { ContactForm } from '../components/sections/ContactForm'; 
 import { PostPage } from '../pages/PostPage';
+import { NotFoundPage } from '../pages/NotFoundPage';
 
 const AppRoutes = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Full page structure */}
       <Routes>
-        {/* Wrap main pages inside Layout */}
+        {/* Main layout wrapper */}
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
-          <Route path="/blog" element={<BlogPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactForm />} /> {/* Add route for ContactForm */}
-          <Route path="/blog/:slug" element={<PostPage />} />
+          <Route path="/contact" element={<ContactForm />} />
+          
+          {/* Blog routes */}
+          <Route path="/blog">
+            <Route index element={<BlogPage />} />
+            <Route path=":slug" element={<PostPage />} />
+          </Route>
+          
+          {/* 404 handling */}
+          <Route path="/not-found" element={<NotFoundPage />} />
+          <Route path="*" element={<Navigate to="/not-found" replace />} />
         </Route>
-
-        {/* Catch-all redirect */}
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );

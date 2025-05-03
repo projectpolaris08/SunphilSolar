@@ -17,7 +17,7 @@ declare module '@pages/*';
 declare module '@assets/*';
 declare module '@routes/*';
 
-// Add type for Appliance
+// Appliance type for calculator
 export interface Appliance {
   id: number;
   name: string;
@@ -25,3 +25,4 @@ export interface Appliance {
   quantity: number;
   hoursPerDay: number;
 }
+

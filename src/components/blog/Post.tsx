@@ -4,19 +4,17 @@ import PostTitle from "./PostTitle";
 import PostMeta from "./PostMeta";
 import PostContent from "./PostContent";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
+import { BlogPost } from '@/types/blog';
 
-type PostProps = {
-  title: string;
-  date: string;
-  author?: string;
-  tags?: string[];
-  featuredImage?: string;
-  excerpt?: string; // Add excerpt for meta description
-  slug?: string;    // Add slug for canonical URL
+type PostProps = Pick<BlogPost, 
+  'id' | 'title' | 'date' | 'author' | 'tags' | 'featuredImage' | 'excerpt' | 
+  'slug' | 'readingTime' | 'isFeatured' | 'metaDescription' // Added metaDescription
+> & {
   children: React.ReactNode;
 };
 
 const Post = ({ 
+  id,
   title, 
   date, 
   author, 
@@ -24,6 +22,8 @@ const Post = ({
   featuredImage, 
   excerpt,
   slug,
+  readingTime,
+  isFeatured,
   children 
 }: PostProps) => {
   // Prepare SEO data
@@ -31,15 +31,20 @@ const Post = ({
   const siteTitle = "SunPhil Solar";
   const pageTitle = `${title} | ${siteTitle} Blog`;
   const description = excerpt || "Learn about solar energy solutions and sustainable power options from SunPhil Solar.";
-  const imageUrl = featuredImage ? `https://sunphilsolar.com${featuredImage}` : "";
+  const imageUrl = featuredImage?.url 
+    ? (featuredImage.url.startsWith('http') 
+        ? featuredImage.url 
+        : `https://sunphilsolar.com${featuredImage.url}`) 
+    : "";
   
-  // Create structured data for this blog post
+  // Enhanced structured data with ID
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `https://sunphilsolar.com/blog/${id}`, // Added ID for better SEO
     "headline": title,
     "datePublished": date,
-    "dateModified": date, // Update if you track modification dates
+    "dateModified": date,
     "image": imageUrl,
     "url": postUrl,
     "description": description,
@@ -59,6 +64,9 @@ const Post = ({
     },
     ...(tags && tags.length > 0 && {
       "keywords": tags.join(", ")
+    }),
+    ...(isFeatured && {
+      "isFeatured": true
     })
   };
 
@@ -69,20 +77,20 @@ const Post = ({
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
         
-        {/* Open Graph tags for social sharing */}
+        {/* Open Graph tags */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
         {slug && <meta property="og:url" content={postUrl} />}
-        {featuredImage && <meta property="og:image" content={imageUrl} />}
+        {featuredImage?.url && <meta property="og:image" content={imageUrl} />}
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        {featuredImage && <meta name="twitter:image" content={imageUrl} />}
+        {featuredImage?.url && <meta name="twitter:image" content={imageUrl} />}
         
-        {/* Canonical URL to prevent duplicate content issues */}
+        {/* Canonical URL */}
         {slug && <link rel="canonical" href={postUrl} />}
         
         {/* Structured Data JSON-LD */}
@@ -91,29 +99,38 @@ const Post = ({
         </script>
       </Helmet>
 
-      <article className="mx-auto my-12 max-w-4xl px-4">
-        {featuredImage && (
+      <article 
+        className="mx-auto my-12 max-w-4xl px-4"
+        id={`post-${id}`} // Added ID to the article element
+      >
+        {featuredImage?.url && (
           <img
-            src={featuredImage}
-            alt={`${title} - Featured Image`} // Improved alt text
+            src={featuredImage.url}
+            alt={featuredImage.alt || `${title} - Featured Image`}
             className="mb-6 h-64 w-full rounded-2xl object-cover shadow-md"
-            loading="lazy" // Add lazy loading for performance
+            loading="lazy"
+            {...(featuredImage.width && { width: featuredImage.width })}
+            {...(featuredImage.height && { height: featuredImage.height })}
           />
         )}
 
         <PostTitle>{title}</PostTitle>
 
         <PostMeta>
-          <time dateTime={date}>{date}</time> {/* Use time tag for better semantic HTML */}
+          <time dateTime={date}>{date}</time>
           {author && <span className="mx-2">•</span>}
           {author && <span>{author}</span>}
+          {readingTime && <span className="mx-2">•</span>}
+          {readingTime && <span>{readingTime} min read</span>}
+          {isFeatured && <span className="mx-2">•</span>}
+          {isFeatured && <span className="text-primary-500">Featured</span>}
         </PostMeta>
 
         {tags && tags.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
-                key={tag}
+                key={`${id}-${tag}`} // Enhanced key with post ID
                 className="rounded-full bg-secondary-100 px-3 py-1 text-xs font-medium text-secondary-700 dark:bg-secondary-800 dark:text-secondary-100"
               >
                 #{tag}

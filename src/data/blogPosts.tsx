@@ -1,24 +1,4 @@
-import { ReactNode } from "react";
-
-export type BlogPost = {
-  id: number;
-  title: string;
-  author: string;
-  date: string; // Changed to ISO format (YYYY-MM-DD)
-  slug: string;
-  tags: string[];
-  excerpt: string;
-  metaDescription: string;
-  featuredImage?: {
-    url: string;
-    alt: string;
-    width?: number; // Added for performance
-    height?: number; // Added for performance
-  };
-  fullContent: ReactNode;
-  readingTime?: number; // Added for UX
-  isFeatured?: boolean; // Added for featured posts
-};
+import { BlogPost } from '@/types/blog';
 
 export const blogPosts: BlogPost[] = [
   {
@@ -216,15 +196,19 @@ export const blogPosts: BlogPost[] = [
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           A Perfect Match: EV + Solar
         </h3>
-        <p className="text-secondary-700">
+        <p className="text-secondary-700 mb-6">
           By combining EVs with solar energy, you lower your carbon footprint
           even further. As the Philippines moves toward cleaner transportation,
           solar energy will be a major player in making EV ownership more
           affordable and sustainable.
         </p>
+        <p className="text-secondary-700 font-semibold">
+          Need solar for your EV and Home? <a href="https://sunphilsolar.com/#contact" className="text-primary-500 hover:underline">Contact us today for a free consultation!</a>
+        </p>
       </>
     ),
     readingTime: 5,
+    isFeatured: true,
   },
   {
     id: 5,
