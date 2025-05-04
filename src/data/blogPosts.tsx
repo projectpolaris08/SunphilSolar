@@ -1,4 +1,4 @@
-import { BlogPost } from '@/types/blog';
+import { BlogPost } from "@/types/blog";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -76,22 +76,42 @@ export const blogPosts: BlogPost[] = [
         <p className="text-secondary-700 mb-6">
           Have you ever wondered how solar panels turn sunlight into usable
           electricity? It's a fascinating process that harnesses the power of
-          nature and transforms it into clean energy for homes, businesses, and even vehicles. This beginner-friendly guide breaks it down simply, so you can understand exactly what happens when sunlight meets solar technology.
+          nature and transforms it into clean energy for homes, businesses, and
+          even vehicles. This beginner-friendly guide breaks it down simply, so
+          you can understand exactly what happens when sunlight meets solar
+          technology.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           The Science Behind Solar Power
         </h3>
         <p className="text-secondary-700 mb-6">
-          At the core of every solar panel is something called a photovoltaic (PV) cell — usually made from silicon, one of the most abundant materials on Earth. When sunlight (composed of particles called photons) strikes these cells, it knocks electrons loose from atoms, generating a flow of electricity. This process is called the <strong>photovoltaic effect</strong>.
+          At the core of every solar panel is something called a photovoltaic
+          (PV) cell — usually made from silicon, one of the most abundant
+          materials on Earth. When sunlight (composed of particles called
+          photons) strikes these cells, it knocks electrons loose from atoms,
+          generating a flow of electricity. This process is called the{" "}
+          <strong>photovoltaic effect</strong>.
         </p>
         <p className="text-secondary-700 mb-6">
-          The electricity generated is in the form of direct current (DC). However, most household appliances and devices run on alternating current (AC). This is where the <strong>solar inverter</strong> comes in — it converts DC into AC so the electricity can power your lights, fridge, TV, and more.
+          The electricity generated is in the form of direct current (DC).
+          However, most household appliances and devices run on alternating
+          current (AC). This is where the <strong>solar inverter</strong> comes
+          in — it converts DC into AC so the electricity can power your lights,
+          fridge, TV, and more.
         </p>
         <p className="text-secondary-700 mb-6">
-          For a deeper dive, the U.S. Department of Energy offers a helpful overview of this process: <a href="https://www.energy.gov/eere/solar/how-does-solar-work" className="text-primary-500 hover:underline" target="_blank">How Does Solar Work?</a>
+          For a deeper dive, the U.S. Department of Energy offers a helpful
+          overview of this process:{" "}
+          <a
+            href="https://www.energy.gov/eere/solar/how-does-solar-work"
+            className="text-primary-500 hover:underline"
+            target="_blank"
+          >
+            How Does Solar Work?
+          </a>
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Components of a Solar System
         </h3>
@@ -99,45 +119,97 @@ export const blogPosts: BlogPost[] = [
           A complete solar energy system usually includes:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li><strong>Solar panels</strong> – capture sunlight and generate electricity</li>
-          <li><strong>Inverter</strong> – converts DC to AC</li>
-          <li><strong>Mounting system</strong> – holds the panels in place on your roof or ground</li>
-          <li><strong>Batteries (optional)</strong> – store excess energy for later use</li>
-          <li><strong>Monitoring system</strong> – tracks energy production and usage</li>
+          <li>
+            <strong>Solar panels</strong> – capture sunlight and generate
+            electricity
+          </li>
+          <li>
+            <strong>Inverter</strong> – converts DC to AC
+          </li>
+          <li>
+            <strong>Mounting system</strong> – holds the panels in place on your
+            roof or ground
+          </li>
+          <li>
+            <strong>Batteries (optional)</strong> – store excess energy for
+            later use
+          </li>
+          <li>
+            <strong>Monitoring system</strong> – tracks energy production and
+            usage
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           What Happens to Extra Energy?
         </h3>
         <p className="text-secondary-700 mb-6">
-          On sunny days, your solar system might generate more electricity than you use. This surplus power can be:
+          On sunny days, your solar system might generate more electricity than
+          you use. This surplus power can be:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li><strong>Stored in batteries</strong> for use at night or during brownouts</li>
-          <li><strong>Fed back into the power grid</strong> via <em>net metering</em>, where your utility company gives you credit for the excess energy</li>
+          <li>
+            <strong>Stored in batteries</strong> for use at night or during
+            brownouts
+          </li>
+          <li>
+            <strong>Fed back into the power grid</strong> via{" "}
+            <em>net metering</em>, where your utility company gives you credit
+            for the excess energy
+          </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          In the Philippines, net metering is supported under the Renewable Energy Act of 2008. Residential systems up to 100kW can apply to sell excess energy to the grid, reducing their monthly bills. Learn more at the <a href="https://www.doe.gov.ph" className="text-primary-500 hover:underline" target="_blank">Department of Energy’s official site</a>.
+          In the Philippines, net metering is supported under the Renewable
+          Energy Act of 2008. Residential systems up to 100kW can apply to sell
+          excess energy to the grid, reducing their monthly bills. Learn more at
+          the{" "}
+          <a
+            href="https://www.doe.gov.ph"
+            className="text-primary-500 hover:underline"
+            target="_blank"
+          >
+            Department of Energy’s official site
+          </a>
+          .
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Is Solar Worth It?
         </h3>
         <p className="text-secondary-700 mb-6">
-          In a country like the Philippines with abundant sunlight, solar is a highly cost-effective investment. According to a 2024 report by the <a href="https://www.irena.org" className="text-primary-500 hover:underline" target="_blank">International Renewable Energy Agency (IRENA)</a>, the average cost of solar installation has dropped by over 70% in the last decade, making solar more accessible to households and small businesses.
+          In a country like the Philippines with abundant sunlight, solar is a
+          highly cost-effective investment. According to a 2024 report by the{" "}
+          <a
+            href="https://www.irena.org"
+            className="text-primary-500 hover:underline"
+            target="_blank"
+          >
+            International Renewable Energy Agency (IRENA)
+          </a>
+          , the average cost of solar installation has dropped by over 70% in
+          the last decade, making solar more accessible to households and small
+          businesses.
         </p>
         <p className="text-secondary-700 mb-6">
-          Plus, with the rising cost of electricity (Meralco rates increased nearly 20% over the last 3 years), solar can protect your household from inflation and power outages.
+          Plus, with the rising cost of electricity (Meralco rates increased
+          nearly 20% over the last 3 years), solar can protect your household
+          from inflation and power outages.
         </p>
-  
+
         <p className="text-secondary-700 font-semibold">
-          Interested in going solar? <a href="https://sunphilsolar.com/#contact" className="text-primary-500 hover:underline">Contact us today for a free solar consultation!</a>
+          Interested in going solar?{" "}
+          <a
+            href="https://sunphilsolar.com/#contact"
+            className="text-primary-500 hover:underline"
+          >
+            Contact us today for a free solar consultation!
+          </a>
         </p>
       </>
     ),
     readingTime: 6,
   },
-  
+
   {
     id: 3,
     title: "Top 5 Reasons to Install Solar Panels on Your Home",
@@ -195,7 +267,6 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
     readingTime: 6,
-    isFeatured: true,
   },
   {
     id: 4,
@@ -219,77 +290,113 @@ export const blogPosts: BlogPost[] = [
         <p className="text-secondary-700 mb-6">
           With electric vehicles (EVs) becoming increasingly popular in the
           Philippines, many are now exploring how solar energy can power their
-          eco-friendly rides. Installing solar panels at home or in businesses not
-          only charges EVs with clean energy but also helps drivers save on
-          electricity costs in the long run. As of 2024, the Department of Energy
-          reported a 40% year-on-year increase in EV adoption, driven by rising fuel
-          costs and government incentives.
+          eco-friendly rides. Installing solar panels at home or in businesses
+          not only charges EVs with clean energy but also helps drivers save on
+          electricity costs in the long run. As of 2024, the Department of
+          Energy reported a 40% year-on-year increase in EV adoption, driven by
+          rising fuel costs and government incentives.
         </p>
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Solar-Powered Charging Stations
         </h3>
         <p className="text-secondary-700 mb-6">
-          More Filipino homeowners and entrepreneurs are setting up solar-powered
-          EV charging systems. These can range from simple rooftop panel setups to
-          larger carport-style installations. For instance, companies like
-          <a href="https://sunphilsolar.com" className="text-primary-500 hover:underline"> Sunphil Solar</a> now offer
-          customized solar charging packages for residential and commercial use.
+          More Filipino homeowners and entrepreneurs are setting up
+          solar-powered EV charging systems. These can range from simple rooftop
+          panel setups to larger carport-style installations. For instance,
+          companies like
+          <a
+            href="https://sunphilsolar.com"
+            className="text-primary-500 hover:underline"
+          >
+            {" "}
+            Sunphil Solar
+          </a>{" "}
+          now offer customized solar charging packages for residential and
+          commercial use.
         </p>
         <p className="text-secondary-700 mb-6">
-          According to the <a href="https://doe.gov.ph" className="text-primary-500 hover:underline">Department of Energy (DOE)</a>,
-          the Philippines currently has over 500 registered EV charging stations.
-          While most are grid-tied, hybrid and solar-only systems are gaining
-          popularity, particularly in areas with unstable grid access or high
-          electricity prices.
+          According to the{" "}
+          <a
+            href="https://doe.gov.ph"
+            className="text-primary-500 hover:underline"
+          >
+            Department of Energy (DOE)
+          </a>
+          , the Philippines currently has over 500 registered EV charging
+          stations. While most are grid-tied, hybrid and solar-only systems are
+          gaining popularity, particularly in areas with unstable grid access or
+          high electricity prices.
         </p>
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           How Solar EV Charging Works
         </h3>
         <p className="text-secondary-700 mb-6">
-          A basic solar EV setup includes photovoltaic panels, an inverter, and a
-          Level 2 charger. Optional batteries can store energy for night charging or
-          backup power during outages. With a 5kW solar system under optimal
-          sunlight, you can charge an average EV with around 30–40 km of range per
-          hour. This makes daily charging viable for most commuters.
+          A basic solar EV setup includes photovoltaic panels, an inverter, and
+          a Level 2 charger. Optional batteries can store energy for night
+          charging or backup power during outages. With a 5kW solar system under
+          optimal sunlight, you can charge an average EV with around 30–40 km of
+          range per hour. This makes daily charging viable for most commuters.
         </p>
         <p className="text-secondary-700 mb-6">
-          In provinces where brownouts are common, solar hybrid systems with battery
-          backup provide uninterrupted charging, making EVs truly independent of
-          fossil fuels and unreliable grids.
+          In provinces where brownouts are common, solar hybrid systems with
+          battery backup provide uninterrupted charging, making EVs truly
+          independent of fossil fuels and unreliable grids.
         </p>
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           A Perfect Match: EV + Solar
         </h3>
         <p className="text-secondary-700 mb-6">
-          Combining EVs with solar power is a perfect synergy. EVs reduce emissions,
-          and solar ensures that these reductions aren't offset by coal-powered grid
-          electricity. According to a 2023 report by the <a href="https://www.irena.org/" className="text-primary-500 hover:underline">International Renewable Energy Agency (IRENA)</a>, solar-charged EVs cut lifetime carbon emissions by up to 90% compared to gasoline vehicles.
+          Combining EVs with solar power is a perfect synergy. EVs reduce
+          emissions, and solar ensures that these reductions aren't offset by
+          coal-powered grid electricity. According to a 2023 report by the{" "}
+          <a
+            href="https://www.irena.org/"
+            className="text-primary-500 hover:underline"
+          >
+            International Renewable Energy Agency (IRENA)
+          </a>
+          , solar-charged EVs cut lifetime carbon emissions by up to 90%
+          compared to gasoline vehicles.
         </p>
         <p className="text-secondary-700 mb-6">
           Financially, solar EV owners also benefit from energy independence and
-          protection against Meralco rate hikes, which have seen a 20% rise over the
-          last three years.
+          protection against Meralco rate hikes, which have seen a 20% rise over
+          the last three years.
         </p>
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Government Support & Incentives
         </h3>
         <p className="text-secondary-700 mb-6">
           Under the Electric Vehicle Industry Development Act (EVIDA), the
-          government mandates EV-ready infrastructure in new buildings and offers
-          tax incentives for EV imports. Meanwhile, solar systems up to 100kW are
-          eligible for net metering — allowing users to sell excess energy to the
-          grid at retail rates (<a href="https://www.doe.gov.ph/sites/default/files/pdf/announcements/net-metering-guidelines-2021.pdf" className="text-primary-500 hover:underline">DOE Net Metering Guidelines</a>).
+          government mandates EV-ready infrastructure in new buildings and
+          offers tax incentives for EV imports. Meanwhile, solar systems up to
+          100kW are eligible for net metering — allowing users to sell excess
+          energy to the grid at retail rates (
+          <a
+            href="https://www.doe.gov.ph/sites/default/files/pdf/announcements/net-metering-guidelines-2021.pdf"
+            className="text-primary-500 hover:underline"
+          >
+            DOE Net Metering Guidelines
+          </a>
+          ).
         </p>
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Real-World Example: Laguna Homeowner
         </h3>
         <p className="text-secondary-700 mb-6">
-          A homeowner in Laguna installed an 8kW solar system with a battery and now
-          powers a BYD Dolphin EV exclusively with solar. His monthly electric bill
-          dropped by ₱6,000, and he hasn’t visited a gas station in over a year.
+          A homeowner in Laguna installed an 8kW solar system with a battery and
+          now powers a BYD Dolphin EV exclusively with solar. His monthly
+          electric bill dropped by ₱6,000, and he hasn’t visited a gas station
+          in over a year.
         </p>
         <p className="text-secondary-700 font-semibold">
-          Ready to charge your EV with clean energy? <a href="https://sunphilsolar.com/#contact" className="text-primary-500 hover:underline">Get in touch with us for a free solar consultation today!</a>
+          Ready to charge your EV with clean energy?{" "}
+          <a
+            href="https://sunphilsolar.com/#contact"
+            className="text-primary-500 hover:underline"
+          >
+            Get in touch with us for a free solar consultation today!
+          </a>
         </p>
       </>
     ),
@@ -663,7 +770,6 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
     readingTime: 8,
-    isFeatured: true,
   },
   {
     id: 8,
@@ -807,7 +913,6 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
     readingTime: 5,
-    isFeatured: true,
   },
   {
     id: 9,
@@ -815,109 +920,164 @@ export const blogPosts: BlogPost[] = [
     author: "Admin Jayar",
     date: "2025-05-03",
     slug: "hybrid-vs-grid-tie-inverter",
-    tags: ["solar energy", "Philippines", "hybrid inverter", "grid tie inverter"],
+    tags: [
+      "solar energy",
+      "Philippines",
+      "hybrid inverter",
+      "grid tie inverter",
+    ],
     excerpt:
-    "Understanding the difference between hybrid and grid-tie inverters is key to building the right solar setup for your home or business.",
+      "Understanding the difference between hybrid and grid-tie inverters is key to building the right solar setup for your home or business.",
     metaDescription:
-    "Explore the pros and cons of hybrid and grid-tie inverters to find out which solar inverter solution best fits your energy needs in the Philippines.",
+      "Explore the pros and cons of hybrid and grid-tie inverters to find out which solar inverter solution best fits your energy needs in the Philippines.",
     featuredImage: {
-    url: "/images/hybrid-vs-gridtie.jpg",
-    alt: "Comparison of hybrid and grid-tie inverters",
-    width: 1200,
-    height: 630,
-  },
-  fullContent: (
-    <>
-      <p className="text-secondary-700 mb-6">
-      Choosing the right inverter is one of the most important steps when installing a solar energy system in the Philippines. With brownouts still common in many provinces and electricity rates on the rise, understanding the difference between a hybrid inverter and a grid-tie inverter can help you design a solar system that fits your budget and lifestyle.
-      </p>
-    <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-      What Is a Grid-Tie Inverter?
-    </h3>
-      <p className="text-secondary-700 mb-6">
-      A grid-tie inverter converts the DC electricity produced by your solar panels into AC electricity used in your home. When your solar system produces more energy than you consume, the excess power is sent to the grid. In return, your electric company provides energy credits through <a href="https://www.doe.gov.ph/sites/default/files/pdf/announcements/net-metering-guidelines-2021.pdf" className="text-primary-500 hover:underline">Net Metering</a>, reducing your electric bill.
-      </p>
-      <p className="text-secondary-700 mb-6">
-      These systems are ideal in urban areas like Metro Manila or Cebu where grid power is reliable and outages are rare. They are also more affordable upfront since they don’t require batteries.
-      </p>
-    <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-      Pros:
-    </h4>
-      <ul className="list-disc pl-6 text-secondary-700 mb-4">
-        <li>Lower installation cost compared to hybrid systems</li>
-        <li>Maximizes ROI through net metering</li>
-        <li>Simpler design, fewer components to maintain</li>
-      </ul>
-    <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-      Cons:
-    </h4>
-      <ul className="list-disc pl-6 text-secondary-700 mb-6">
-        <li>No backup power during brownouts</li>
-        <li>Dependent on grid availability — not ideal for off-grid living</li>
-      </ul>
-    <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-      What Is a Hybrid Inverter?
-    </h3>
-      <p className="text-secondary-700 mb-6">
-      A hybrid inverter combines the functionality of a grid-tie inverter with battery charging capabilities. This means you can store solar energy for later use — during peak hours, at night, or when the grid is down. Hybrid systems are becoming increasingly popular in the Philippines, especially in areas prone to typhoons and brownouts.
-      </p>
-      <p className="text-secondary-700 mb-6">
-      They also give users energy independence by allowing seamless switching between solar, battery, and grid power, depending on availability and demand. This makes hybrid inverters suitable for residential homes in provinces, farms, and even commercial facilities needing uninterrupted power supply.
-      </p>
-    <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-      Pros:
-    </h4>
-      <ul className="list-disc pl-6 text-secondary-700 mb-4">
-        <li>Provides backup power during outages</li>
-        <li>Increased energy independence and security</li>
-        <li>Can be optimized with time-of-use settings to reduce reliance on expensive grid power</li>
-      </ul>
-    <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-      Cons:
-    </h4>
-      <ul className="list-disc pl-6 text-secondary-700 mb-6">
-        <li>Higher upfront cost due to battery and additional hardware</li>
-        <li>Battery maintenance and replacement add to long-term costs</li>
-      </ul>
-    <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-      Cost Comparison (2025 Estimates in the Philippines)
-    </h3>
-      <p className="text-secondary-700 mb-6">
-      - <strong>Grid-Tie Inverter Setup (5kW):</strong> ₱250,000 - ₱350,000  
-      <br />
-      - <strong>Hybrid Inverter Setup (5kW + Battery):</strong> ₱400,000 - ₱650,000  
-      </p>
-      <p className="text-secondary-700 mb-6">
-      While grid-tie systems are more affordable, hybrid systems can deliver long-term savings by reducing your dependence on the utility company and protecting against rising electricity costs.
-      </p>
-    <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-      Real-World Examples
-    </h3>
-      <p className="text-secondary-700 mb-6">
-      <strong>Business in Davao:</strong> A small BPO company installed a hybrid system to keep operations running during frequent brownouts. Their setup automatically switches to battery power, preventing downtime.
-      </p>
-      <p className="text-secondary-700 mb-6">
-        <strong>Household in Cavite:</strong> A family opted for a grid-tie system with net metering to cut monthly Meralco bills in half. While they lose power during outages, they say the savings are worth it.
-      </p>
-    <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-      Final Thoughts: Which Inverter Is Best for You?
-    </h3>
-      <p className="text-secondary-700 mb-6">
-      If your top priority is affordability and lowering your monthly bill, a grid-tie inverter is a solid choice. But if you're aiming for reliability, resilience, and long-term energy independence — especially in brownout-prone or off-grid areas — a hybrid inverter is well worth the investment.
-      </p>
-      <p className="text-secondary-700 mb-6">
-      As battery technology becomes cheaper and more efficient, many experts believe hybrid systems will soon become the standard for Philippine homes and businesses (<a href="https://www.irena.org/publications/2023" className="text-primary-500 hover:underline">IRENA 2023 Report</a>).
-      </p>
-      <p className="text-secondary-700 font-semibold">
-      Want to know which system is best for your site? <a href="https://sunphilsolar.com/#contact" className="text-primary-500 hover:underline">Get a free assessment from our solar experts today!</a>
-      </p>
-    </>
+      url: "/images/hybrid-vs-gridtie.jpg",
+      alt: "Comparison of hybrid and grid-tie inverters",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          Choosing the right inverter is one of the most important steps when
+          installing a solar energy system in the Philippines. With brownouts
+          still common in many provinces and electricity rates on the rise,
+          understanding the difference between a hybrid inverter and a grid-tie
+          inverter can help you design a solar system that fits your budget and
+          lifestyle.
+        </p>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          What Is a Grid-Tie Inverter?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          A grid-tie inverter converts the DC electricity produced by your solar
+          panels into AC electricity used in your home. When your solar system
+          produces more energy than you consume, the excess power is sent to the
+          grid. In return, your electric company provides energy credits through{" "}
+          <a
+            href="https://www.doe.gov.ph/sites/default/files/pdf/announcements/net-metering-guidelines-2021.pdf"
+            className="text-primary-500 hover:underline"
+          >
+            Net Metering
+          </a>
+          , reducing your electric bill.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          These systems are ideal in urban areas like Metro Manila or Cebu where
+          grid power is reliable and outages are rare. They are also more
+          affordable upfront since they don’t require batteries.
+        </p>
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">Pros:</h4>
+        <ul className="list-disc pl-6 text-secondary-700 mb-4">
+          <li>Lower installation cost compared to hybrid systems</li>
+          <li>Maximizes ROI through net metering</li>
+          <li>Simpler design, fewer components to maintain</li>
+        </ul>
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">Cons:</h4>
+        <ul className="list-disc pl-6 text-secondary-700 mb-6">
+          <li>No backup power during brownouts</li>
+          <li>
+            Dependent on grid availability — not ideal for off-grid living
+          </li>
+        </ul>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          What Is a Hybrid Inverter?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          A hybrid inverter combines the functionality of a grid-tie inverter
+          with battery charging capabilities. This means you can store solar
+          energy for later use — during peak hours, at night, or when the grid
+          is down. Hybrid systems are becoming increasingly popular in the
+          Philippines, especially in areas prone to typhoons and brownouts.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          They also give users energy independence by allowing seamless
+          switching between solar, battery, and grid power, depending on
+          availability and demand. This makes hybrid inverters suitable for
+          residential homes in provinces, farms, and even commercial facilities
+          needing uninterrupted power supply.
+        </p>
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">Pros:</h4>
+        <ul className="list-disc pl-6 text-secondary-700 mb-4">
+          <li>Provides backup power during outages</li>
+          <li>Increased energy independence and security</li>
+          <li>
+            Can be optimized with time-of-use settings to reduce reliance on
+            expensive grid power
+          </li>
+        </ul>
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">Cons:</h4>
+        <ul className="list-disc pl-6 text-secondary-700 mb-6">
+          <li>Higher upfront cost due to battery and additional hardware</li>
+          <li>Battery maintenance and replacement add to long-term costs</li>
+        </ul>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Cost Comparison (2025 Estimates in the Philippines)
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          - <strong>Grid-Tie Inverter Setup (5kW):</strong> ₱250,000 - ₱350,000
+          <br />- <strong>Hybrid Inverter Setup (5kW + Battery):</strong>{" "}
+          ₱400,000 - ₱650,000
+        </p>
+        <p className="text-secondary-700 mb-6">
+          While grid-tie systems are more affordable, hybrid systems can deliver
+          long-term savings by reducing your dependence on the utility company
+          and protecting against rising electricity costs.
+        </p>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Real-World Examples
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          <strong>Business in Davao:</strong> A small BPO company installed a
+          hybrid system to keep operations running during frequent brownouts.
+          Their setup automatically switches to battery power, preventing
+          downtime.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          <strong>Household in Cavite:</strong> A family opted for a grid-tie
+          system with net metering to cut monthly Meralco bills in half. While
+          they lose power during outages, they say the savings are worth it.
+        </p>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts: Which Inverter Is Best for You?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          If your top priority is affordability and lowering your monthly bill,
+          a grid-tie inverter is a solid choice. But if you're aiming for
+          reliability, resilience, and long-term energy independence —
+          especially in brownout-prone or off-grid areas — a hybrid inverter is
+          well worth the investment.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          As battery technology becomes cheaper and more efficient, many experts
+          believe hybrid systems will soon become the standard for Philippine
+          homes and businesses (
+          <a
+            href="https://www.irena.org/publications/2023"
+            className="text-primary-500 hover:underline"
+          >
+            IRENA 2023 Report
+          </a>
+          ).
+        </p>
+        <p className="text-secondary-700 font-semibold">
+          Want to know which system is best for your site?{" "}
+          <a
+            href="https://sunphilsolar.com/#contact"
+            className="text-primary-500 hover:underline"
+          >
+            Get a free assessment from our solar experts today!
+          </a>
+        </p>
+      </>
     ),
     readingTime: 5,
+    isFeatured: true,
   },
   {
-    id: 6,
-    title: "Net Metering vs. Battery Storage in the Philippines: Which One Saves More?",
+    id: 10,
+    title:
+      "Net Metering vs. Battery Storage in the Philippines: Which One Saves More?",
     author: "Admin Jayar",
     date: "2025-05-04",
     slug: "net-metering-vs-battery-storage-philippines",
@@ -938,46 +1098,96 @@ export const blogPosts: BlogPost[] = [
           Understanding Net Metering in the Philippines
         </p>
         <p className="text-secondary-700 mb-6">
-          Net metering is a government-supported policy that allows solar users to send excess electricity back to the grid in exchange for peso credits on their electric bill.
+          Net metering is a government-supported policy that allows solar users
+          to send excess electricity back to the grid in exchange for peso
+          credits on their electric bill.
         </p>
         <p className="text-secondary-700 mb-6">
-          Under the Renewable Energy Act of 2008 (RA 9513) and ERC Resolution No. 09 (2013), residential and commercial users with solar setups (up to 100 kW) are eligible to apply for net metering with their utility provider (like Meralco).
+          Under the Renewable Energy Act of 2008 (RA 9513) and ERC Resolution
+          No. 09 (2013), residential and commercial users with solar setups (up
+          to 100 kW) are eligible to apply for net metering with their utility
+          provider (like Meralco).
         </p>
         <ul className="text-secondary-700 mb-6 list-disc pl-6">
-          <li><strong>Lower Electric Bills:</strong> Exported energy offsets your monthly charges.</li>
-          <li><strong>No Need for Batteries:</strong> Reduces system complexity and costs.</li>
-          <li><strong>Use the Grid as a “Virtual Battery”:</strong> You draw power at night or during cloudy days, and export when your panels produce more than you need.</li>
+          <li>
+            <strong>Lower Electric Bills:</strong> Exported energy offsets your
+            monthly charges.
+          </li>
+          <li>
+            <strong>No Need for Batteries:</strong> Reduces system complexity
+            and costs.
+          </li>
+          <li>
+            <strong>Use the Grid as a “Virtual Battery”:</strong> You draw power
+            at night or during cloudy days, and export when your panels produce
+            more than you need.
+          </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          Meralco estimates peso credits from exported solar can offset up to ₱8.00 per kWh on your generation charge, depending on your usage and connection setup.
+          Meralco estimates peso credits from exported solar can offset up to
+          ₱8.00 per kWh on your generation charge, depending on your usage and
+          connection setup.
         </p>
 
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">The Case for Solar Batteries</h3>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          The Case for Solar Batteries
+        </h3>
         <p className="text-secondary-700 mb-6">
-          Solar batteries allow homeowners to store unused solar energy and use it later—especially during power interruptions or at night. This makes them valuable in rural areas or in locations prone to frequent blackouts, like coastal towns and storm-prone provinces.
+          Solar batteries allow homeowners to store unused solar energy and use
+          it later—especially during power interruptions or at night. This makes
+          them valuable in rural areas or in locations prone to frequent
+          blackouts, like coastal towns and storm-prone provinces.
         </p>
         <p className="text-secondary-700 mb-6">
           However, batteries also come with certain limitations:
         </p>
         <ul className="text-secondary-700 mb-6 list-disc pl-6">
-          <li><strong>High Cost:</strong> Quality battery systems can cost between ₱150,000–₱300,000 or more.</li>
-          <li><strong>Efficiency Losses:</strong> About 20–30% of energy is lost during the charge/discharge process.</li>
-          <li><strong>Limited Lifespan:</strong> Batteries may need replacing every 5–10 years, sometimes before they pay for themselves.</li>
-          <li><strong>Backup Limits:</strong> Running high-power appliances for extended periods requires multiple batteries—raising the cost even higher.</li>
+          <li>
+            <strong>High Cost:</strong> Quality battery systems can cost between
+            ₱150,000–₱300,000 or more.
+          </li>
+          <li>
+            <strong>Efficiency Losses:</strong> About 20–30% of energy is lost
+            during the charge/discharge process.
+          </li>
+          <li>
+            <strong>Limited Lifespan:</strong> Batteries may need replacing
+            every 5–10 years, sometimes before they pay for themselves.
+          </li>
+          <li>
+            <strong>Backup Limits:</strong> Running high-power appliances for
+            extended periods requires multiple batteries—raising the cost even
+            higher.
+          </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          ROI for battery-based systems typically ranges from 3–7 years, depending on energy usage, battery quality, and maintenance.
+          ROI for battery-based systems typically ranges from 3–7 years,
+          depending on energy usage, battery quality, and maintenance.
         </p>
 
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Power Outages: Should You Still Get a Battery?</h3>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Power Outages: Should You Still Get a Battery?
+        </h3>
         <p className="text-secondary-700 mb-6">
-          While net metering is ideal for long-term savings, it doesn't work during grid outages. If backup power is important to you, a battery can provide essential energy when the grid is down.
+          While net metering is ideal for long-term savings, it doesn't work
+          during grid outages. If backup power is important to you, a battery
+          can provide essential energy when the grid is down.
         </p>
+        <p className="text-secondary-700 mb-6">But here's the good news:</p>
         <p className="text-secondary-700 mb-6">
-          But here's the good news:
-        </p>
-        <p className="text-secondary-700 mb-6">
-          <strong>At <a href="https://sunphilsolar.com/products#battery" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Sunphil Solar</a>, we offer affordable and high-quality solar batteries</strong> that give you dependable backup power—without the heavy price tag.
+          <strong>
+            At{" "}
+            <a
+              href="https://sunphilsolar.com/products#battery"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              Sunphil Solar
+            </a>
+            , we offer affordable and high-quality solar batteries
+          </strong>{" "}
+          that give you dependable backup power—without the heavy price tag.
         </p>
         <p className="text-secondary-700 mb-6">
           Our battery solutions are perfect for:
@@ -988,10 +1198,14 @@ export const blogPosts: BlogPost[] = [
           <li>Homeowners who want peace of mind during typhoon season</li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          With Sunphil Solar, you don’t need to spend like a big corporation to enjoy battery backup. Our products are designed for Filipino homes—durable, efficient, and budget-friendly.
+          With Sunphil Solar, you don’t need to spend like a big corporation to
+          enjoy battery backup. Our products are designed for Filipino
+          homes—durable, efficient, and budget-friendly.
         </p>
 
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Net Metering vs. Battery: A Side-by-Side Comparison</h3>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Net Metering vs. Battery: A Side-by-Side Comparison
+        </h3>
         <table className="text-secondary-700 mb-6 w-full table-auto border border-collapse">
           <thead>
             <tr>
@@ -1024,35 +1238,100 @@ export const blogPosts: BlogPost[] = [
             <tr>
               <td className="border px-4 py-2">Best For</td>
               <td className="border px-4 py-2">Grid-connected areas</td>
-              <td className="border px-4 py-2">Areas with frequent blackouts</td>
+              <td className="border px-4 py-2">
+                Areas with frequent blackouts
+              </td>
             </tr>
           </tbody>
         </table>
 
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Final Thoughts: Which Option is Right for You?</h3>
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts: Which Option is Right for You?
+        </h3>
         <p className="text-secondary-700 mb-6">
-          If your main goal is to reduce electricity bills and maximize ROI, a grid-tied solar system with net metering is your best bet—especially in areas with a stable grid like Metro Manila, Cebu, or Davao.
+          If your main goal is to reduce electricity bills and maximize ROI, a
+          grid-tied solar system with net metering is your best bet—especially
+          in areas with a stable grid like Metro Manila, Cebu, or Davao.
         </p>
         <p className="text-secondary-700 mb-6">
-          However, if you experience frequent brownouts or want energy security during storms, consider a hybrid system with backup batteries from <a href="https://sunphilsolar.com/products#battery" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Sunphil Solar</a>.
+          However, if you experience frequent brownouts or want energy security
+          during storms, consider a hybrid system with backup batteries from{" "}
+          <a
+            href="https://sunphilsolar.com/products#battery"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline"
+          >
+            Sunphil Solar
+          </a>
+          .
         </p>
         <p className="text-secondary-700 mb-6">
-          Whether you choose net metering, battery storage, or both—going solar is one of the smartest ways to reduce your carbon footprint and achieve long-term energy independence.
+          Whether you choose net metering, battery storage, or both—going solar
+          is one of the smartest ways to reduce your carbon footprint and
+          achieve long-term energy independence.
         </p>
-        <h4 className="text-xl font-semibold text-secondary-900 mb-2">Sources & Further Reading:</h4>
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Sources & Further Reading:
+        </h4>
         <ul className="text-secondary-700 list-disc pl-6">
-          <li><a href="https://lawphil.net/statutes/repacts/ra2008/ra_9513_2008.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Renewable Energy Act of 2008 (RA 9513)</a></li>
-          <li><a href="https://www.erc.gov.ph/ContentPage/40935" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">ERC Resolution No. 09, Series of 2013</a></li>
-          <li><a href="https://company.meralco.com.ph/news-and-advisories/2022/01/14/meralco-s-net-metering-program-empowering-consumers" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Meralco Net Metering Program</a></li>
-          <li><a href="https://sunphilsolar.com/products#battery" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Sunphil Solar Battery Products</a></li>
-          <li><a href="https://www.nrel.gov/grid/solar-resource/basics.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">National Renewable Energy Laboratory (NREL): Battery storage efficiency data</a></li>
+          <li>
+            <a
+              href="https://lawphil.net/statutes/repacts/ra2008/ra_9513_2008.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              Renewable Energy Act of 2008 (RA 9513)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.erc.gov.ph/ContentPage/40935"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              ERC Resolution No. 09, Series of 2013
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://company.meralco.com.ph/news-and-advisories/2022/01/14/meralco-s-net-metering-program-empowering-consumers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              Meralco Net Metering Program
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://sunphilsolar.com/products#battery"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              Sunphil Solar Battery Products
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.nrel.gov/grid/solar-resource/basics.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              National Renewable Energy Laboratory (NREL): Battery storage
+              efficiency data
+            </a>
+          </li>
         </ul>
       </>
     ),
     readingTime: 6,
-  }
-  
-
+    isFeatured: true,
+  },
 ];
 
 // Utility functions for handling large datasets
