@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
     id: 2,
     title: "How Solar Panels Work: A Beginner's Guide",
     author: "Admin Jayar",
-    date: "2025-04-27", // Updated to ISO format
+    date: "2025-04-27",
     slug: "how-solar-panels-work",
     tags: ["solar panels", "technology", "education"],
     excerpt:
@@ -76,30 +76,68 @@ export const blogPosts: BlogPost[] = [
         <p className="text-secondary-700 mb-6">
           Have you ever wondered how solar panels turn sunlight into usable
           electricity? It's a fascinating process that harnesses the power of
-          nature and transforms it into energy we can use every day.
+          nature and transforms it into clean energy for homes, businesses, and even vehicles. This beginner-friendly guide breaks it down simply, so you can understand exactly what happens when sunlight meets solar technology.
         </p>
+  
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           The Science Behind Solar Power
         </h3>
         <p className="text-secondary-700 mb-6">
-          Solar panels are made up of photovoltaic (PV) cells. When sunlight
-          hits these cells, it creates an electric field. This direct current
-          (DC) electricity is then converted into alternating current (AC)
-          electricity through an inverter — the type of power your home uses.
+          At the core of every solar panel is something called a photovoltaic (PV) cell — usually made from silicon, one of the most abundant materials on Earth. When sunlight (composed of particles called photons) strikes these cells, it knocks electrons loose from atoms, generating a flow of electricity. This process is called the <strong>photovoltaic effect</strong>.
         </p>
+        <p className="text-secondary-700 mb-6">
+          The electricity generated is in the form of direct current (DC). However, most household appliances and devices run on alternating current (AC). This is where the <strong>solar inverter</strong> comes in — it converts DC into AC so the electricity can power your lights, fridge, TV, and more.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          For a deeper dive, the U.S. Department of Energy offers a helpful overview of this process: <a href="https://www.energy.gov/eere/solar/how-does-solar-work" className="text-primary-500 hover:underline" target="_blank">How Does Solar Work?</a>
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Components of a Solar System
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          A complete solar energy system usually includes:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li><strong>Solar panels</strong> – capture sunlight and generate electricity</li>
+          <li><strong>Inverter</strong> – converts DC to AC</li>
+          <li><strong>Mounting system</strong> – holds the panels in place on your roof or ground</li>
+          <li><strong>Batteries (optional)</strong> – store excess energy for later use</li>
+          <li><strong>Monitoring system</strong> – tracks energy production and usage</li>
+        </ul>
+  
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           What Happens to Extra Energy?
         </h3>
-        <p className="text-secondary-700">
-          If your system produces more energy than you need, the surplus can be
-          stored in batteries or fed back into the electrical grid — often
-          earning you credits on your bill through a process called net
-          metering.
+        <p className="text-secondary-700 mb-6">
+          On sunny days, your solar system might generate more electricity than you use. This surplus power can be:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li><strong>Stored in batteries</strong> for use at night or during brownouts</li>
+          <li><strong>Fed back into the power grid</strong> via <em>net metering</em>, where your utility company gives you credit for the excess energy</li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          In the Philippines, net metering is supported under the Renewable Energy Act of 2008. Residential systems up to 100kW can apply to sell excess energy to the grid, reducing their monthly bills. Learn more at the <a href="https://www.doe.gov.ph" className="text-primary-500 hover:underline" target="_blank">Department of Energy’s official site</a>.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Is Solar Worth It?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          In a country like the Philippines with abundant sunlight, solar is a highly cost-effective investment. According to a 2024 report by the <a href="https://www.irena.org" className="text-primary-500 hover:underline" target="_blank">International Renewable Energy Agency (IRENA)</a>, the average cost of solar installation has dropped by over 70% in the last decade, making solar more accessible to households and small businesses.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Plus, with the rising cost of electricity (Meralco rates increased nearly 20% over the last 3 years), solar can protect your household from inflation and power outages.
+        </p>
+  
+        <p className="text-secondary-700 font-semibold">
+          Interested in going solar? <a href="https://sunphilsolar.com/#contact" className="text-primary-500 hover:underline">Contact us today for a free solar consultation!</a>
         </p>
       </>
     ),
-    readingTime: 5,
+    readingTime: 6,
   },
+  
   {
     id: 3,
     title: "Top 5 Reasons to Install Solar Panels on Your Home",
@@ -874,9 +912,146 @@ export const blogPosts: BlogPost[] = [
       Want to know which system is best for your site? <a href="https://sunphilsolar.com/#contact" className="text-primary-500 hover:underline">Get a free assessment from our solar experts today!</a>
       </p>
     </>
-  ),
-  readingTime: 5,
-}
+    ),
+    readingTime: 5,
+  },
+  {
+    id: 6,
+    title: "Net Metering vs. Battery Storage in the Philippines: Which One Saves More?",
+    author: "Admin Jayar",
+    date: "2025-05-04",
+    slug: "net-metering-vs-battery-storage-philippines",
+    tags: ["solar", "net metering", "batteries", "philippines"],
+    excerpt:
+      "Discover whether net metering or battery storage is the better option for maximizing your solar energy investment in the Philippines. Learn about costs, ROI, and when batteries make sense.",
+    metaDescription:
+      "Learn the pros and cons of net metering vs. battery storage for solar energy in the Philippines. Find out which solution offers better savings, lower investment, and more reliability.",
+    featuredImage: {
+      url: "/images/net-metering-vs-battery.jpg",
+      alt: "Solar panels and battery storage setup comparison",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          Understanding Net Metering in the Philippines
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Net metering is a government-supported policy that allows solar users to send excess electricity back to the grid in exchange for peso credits on their electric bill.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Under the Renewable Energy Act of 2008 (RA 9513) and ERC Resolution No. 09 (2013), residential and commercial users with solar setups (up to 100 kW) are eligible to apply for net metering with their utility provider (like Meralco).
+        </p>
+        <ul className="text-secondary-700 mb-6 list-disc pl-6">
+          <li><strong>Lower Electric Bills:</strong> Exported energy offsets your monthly charges.</li>
+          <li><strong>No Need for Batteries:</strong> Reduces system complexity and costs.</li>
+          <li><strong>Use the Grid as a “Virtual Battery”:</strong> You draw power at night or during cloudy days, and export when your panels produce more than you need.</li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          Meralco estimates peso credits from exported solar can offset up to ₱8.00 per kWh on your generation charge, depending on your usage and connection setup.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">The Case for Solar Batteries</h3>
+        <p className="text-secondary-700 mb-6">
+          Solar batteries allow homeowners to store unused solar energy and use it later—especially during power interruptions or at night. This makes them valuable in rural areas or in locations prone to frequent blackouts, like coastal towns and storm-prone provinces.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          However, batteries also come with certain limitations:
+        </p>
+        <ul className="text-secondary-700 mb-6 list-disc pl-6">
+          <li><strong>High Cost:</strong> Quality battery systems can cost between ₱150,000–₱300,000 or more.</li>
+          <li><strong>Efficiency Losses:</strong> About 20–30% of energy is lost during the charge/discharge process.</li>
+          <li><strong>Limited Lifespan:</strong> Batteries may need replacing every 5–10 years, sometimes before they pay for themselves.</li>
+          <li><strong>Backup Limits:</strong> Running high-power appliances for extended periods requires multiple batteries—raising the cost even higher.</li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          ROI for battery-based systems typically ranges from 3–7 years, depending on energy usage, battery quality, and maintenance.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Power Outages: Should You Still Get a Battery?</h3>
+        <p className="text-secondary-700 mb-6">
+          While net metering is ideal for long-term savings, it doesn't work during grid outages. If backup power is important to you, a battery can provide essential energy when the grid is down.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          But here's the good news:
+        </p>
+        <p className="text-secondary-700 mb-6">
+          <strong>At <a href="https://sunphilsolar.com/products#battery" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Sunphil Solar</a>, we offer affordable and high-quality solar batteries</strong> that give you dependable backup power—without the heavy price tag.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Our battery solutions are perfect for:
+        </p>
+        <ul className="text-secondary-700 mb-6 list-disc pl-6">
+          <li>Essential backup (lights, Wi-Fi, fans, refrigerator)</li>
+          <li>Hybrid solar systems with partial storage</li>
+          <li>Homeowners who want peace of mind during typhoon season</li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          With Sunphil Solar, you don’t need to spend like a big corporation to enjoy battery backup. Our products are designed for Filipino homes—durable, efficient, and budget-friendly.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Net Metering vs. Battery: A Side-by-Side Comparison</h3>
+        <table className="text-secondary-700 mb-6 w-full table-auto border border-collapse">
+          <thead>
+            <tr>
+              <th className="border px-4 py-2">Feature</th>
+              <th className="border px-4 py-2">Net Metering</th>
+              <th className="border px-4 py-2">Battery Storage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border px-4 py-2">Upfront Cost</td>
+              <td className="border px-4 py-2">Lower (no battery)</td>
+              <td className="border px-4 py-2">Higher (battery + inverter)</td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2">ROI</td>
+              <td className="border px-4 py-2">2–3 years</td>
+              <td className="border px-4 py-2">3–7 years</td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2">Backup During Outage</td>
+              <td className="border px-4 py-2">No</td>
+              <td className="border px-4 py-2">Yes (depending on capacity)</td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2">Maintenance</td>
+              <td className="border px-4 py-2">Minimal</td>
+              <td className="border px-4 py-2">Moderate</td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2">Best For</td>
+              <td className="border px-4 py-2">Grid-connected areas</td>
+              <td className="border px-4 py-2">Areas with frequent blackouts</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Final Thoughts: Which Option is Right for You?</h3>
+        <p className="text-secondary-700 mb-6">
+          If your main goal is to reduce electricity bills and maximize ROI, a grid-tied solar system with net metering is your best bet—especially in areas with a stable grid like Metro Manila, Cebu, or Davao.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          However, if you experience frequent brownouts or want energy security during storms, consider a hybrid system with backup batteries from <a href="https://sunphilsolar.com/products#battery" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Sunphil Solar</a>.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Whether you choose net metering, battery storage, or both—going solar is one of the smartest ways to reduce your carbon footprint and achieve long-term energy independence.
+        </p>
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">Sources & Further Reading:</h4>
+        <ul className="text-secondary-700 list-disc pl-6">
+          <li><a href="https://lawphil.net/statutes/repacts/ra2008/ra_9513_2008.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Renewable Energy Act of 2008 (RA 9513)</a></li>
+          <li><a href="https://www.erc.gov.ph/ContentPage/40935" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">ERC Resolution No. 09, Series of 2013</a></li>
+          <li><a href="https://company.meralco.com.ph/news-and-advisories/2022/01/14/meralco-s-net-metering-program-empowering-consumers" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Meralco Net Metering Program</a></li>
+          <li><a href="https://sunphilsolar.com/products#battery" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Sunphil Solar Battery Products</a></li>
+          <li><a href="https://www.nrel.gov/grid/solar-resource/basics.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">National Renewable Energy Laboratory (NREL): Battery storage efficiency data</a></li>
+        </ul>
+      </>
+    ),
+    readingTime: 6,
+  }
+  
 
 ];
 
