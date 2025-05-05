@@ -1073,7 +1073,6 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
     readingTime: 5,
-    isFeatured: true,
   },
   {
     id: 10,
@@ -1333,6 +1332,161 @@ export const blogPosts: BlogPost[] = [
     readingTime: 6,
     isFeatured: true,
   },
+  {
+    id: 11,
+    title: "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
+    author: "Admin Jayar, Solar Advocate at SunPhil Solar",
+    date: "2025-05-05",
+    slug: "solar-roi-philippines",
+    tags: [
+      "solar ROI Philippines",
+      "return on investment of solar",
+      "solar panel payback period",
+      "is solar worth it Philippines",
+      "cost of solar installation Philippines",
+      "net metering Philippines"
+    ],
+    excerpt:
+      "Is solar worth the investment in the Philippines? This article breaks down ROI, costs, savings, payback periods, and includes a real-life example from Cavite.",
+    metaDescription:
+      "Discover how solar panels can pay off in the Philippines. We break down the ROI of solar installations using real data, average costs, savings, and payback periods.",
+    featuredImage: {
+      url: "/images/solar-roi-philippines.jpg",
+      alt: "Solar panels installed on a rooftop in the Philippines with blue skies",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          As a long-time advocate of renewable energy, I often get asked one question: <em>“Is solar really worth it in the Philippines?”</em> The short answer? Absolutely—if you understand the Return on Investment (ROI). In this post, I’ll break down the numbers, explain what affects your ROI, and help you see why solar isn’t just good for the environment, it’s a smart financial move for homeowners and businesses alike.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">What is ROI in Solar Energy?</h3>
+        <p className="text-secondary-700 mb-6">
+          <strong>Return on Investment (ROI)</strong> in solar refers to how long it takes for your energy savings to cover the initial cost of your solar panel installation. After that break-even point, you’re essentially enjoying free electricity for years to come.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>Initial installation cost</li>
+          <li>Monthly electricity bill</li>
+          <li>Solar system size</li>
+          <li>Net metering or battery storage options</li>
+          <li>Local sunlight availability</li>
+          <li>Government incentives or subsidies</li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Average Cost of Solar Installation in the Philippines</h3>
+        <p className="text-secondary-700 mb-6">
+          According to industry data, the cost of installing a <strong>5kWp solar system</strong> in the Philippines ranges from <strong>₱250,000 to ₱350,000</strong> as of 2025.
+        </p>
+        <table className="mb-6 w-full border text-sm">
+          <thead>
+            <tr className="bg-secondary-100 text-secondary-800">
+              <th className="px-4 py-2 text-left">System Size</th>
+              <th className="px-4 py-2 text-left">Approx. Cost (₱)</th>
+              <th className="px-4 py-2 text-left">Monthly Savings (₱)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="px-4 py-2">3 kWp</td>
+              <td className="px-4 py-2">180,000 – 220,000</td>
+              <td className="px-4 py-2">3,000 – 4,000</td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2">5 kWp</td>
+              <td className="px-4 py-2">250,000 – 350,000</td>
+              <td className="px-4 py-2">5,000 – 7,000</td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2">10 kWp</td>
+              <td className="px-4 py-2">480,000 – 650,000</td>
+              <td className="px-4 py-2">9,000 – 12,000</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="text-secondary-700 mb-6">
+          With an average household Meralco bill of ₱10,000/month, a 5kWp system could offset 50–70% of that cost, depending on usage and weather conditions.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">How Long Before Solar Pays for Itself?</h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li><strong>Annual savings:</strong> ₱72,000</li>
+          <li><strong>System cost:</strong> ₱300,000</li>
+          <li><strong>Payback period:</strong> 4.1 years</li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          After that, the system can continue to generate power for 20 to 25 years, offering significant long-term savings.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Key ROI Boosters in the Philippines</h3>
+  
+        <h4 className="text-xl font-semibold text-secondary-800 mb-1">1. Net Metering</h4>
+        <p className="text-secondary-700 mb-4">
+          The <a href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines" className="text-primary-600 underline">Net Metering</a> program allows homeowners to send excess solar energy back to the grid and earn credits on their bill. This can drastically reduce your payback period.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          ✅ <em>Tip:</em> Net metering works best for daytime-heavy usage like offices, schools, or work-from-home setups.
+        </p>
+  
+        <h4 className="text-xl font-semibold text-secondary-800 mb-1">2. Solar Incentives</h4>
+        <p className="text-secondary-700 mb-6">
+          While there is currently no nationwide subsidy, some LGUs offer tax incentives, and zero-VAT on renewable energy systems still applies under Philippine law (RA 9513 – Renewable Energy Act).
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Comparison: Solar ROI vs Traditional Investments</h3>
+        <p className="text-secondary-700 mb-6">
+          Let’s say you invest ₱300,000 in a time deposit at 4% interest annually. You’d earn around ₱12,000/year. With solar, you could save ₱72,000/year—an <strong>equivalent of 24% annual return</strong>, plus it increases your property value and reduces your carbon footprint.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Environmental Bonus: Carbon Savings</h3>
+        <p className="text-secondary-700 mb-6">
+          A 5kWp solar system offsets approximately <strong>4–5 tons of CO₂ emissions annually</strong>—the same as planting over 200 trees every year.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Real-Life Example: A Homeowner in Cavite</h3>
+        <p className="text-secondary-700 mb-2">
+          One of our clients in Cavite installed a 6kW solar system in early 2025. Before switching to solar, their monthly electricity bill averaged ₱9,000. After the installation, their monthly expense dropped to around ₱2,000.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-4 space-y-2">
+          <li><strong>Monthly Savings:</strong> ₱7,000</li>
+          <li><strong>Annual Savings:</strong> ₱84,000</li>
+          <li><strong>Estimated Payback Period:</strong> ~4 years</li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          🎥 <a href="https://www.facebook.com/reel/653115067173359" className="text-primary-600 underline">Watch their story here</a>
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Conclusion: Is Solar Worth the Investment?</h3>
+        <p className="text-secondary-700 mb-6">
+          If you're paying ₱6,000 or more per month in electricity, switching to solar is one of the smartest financial decisions you can make. Not only do you protect yourself from rising energy prices, but you also enjoy peace of mind knowing your home is powered by clean, renewable energy.
+        </p>
+        <p className="text-secondary-700">
+          📞 <a href="https://sunphilsolar.com/#contact" className="text-primary-600 underline">Contact us today</a> for a free solar assessment and personalized ROI calculation.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mt-8 mb-2">FAQ</h3>
+        <ul className="text-secondary-700 space-y-4">
+          <li>
+            <strong>Q:</strong> How much can I save monthly with solar in the Philippines?<br />
+            <strong>A:</strong> You can save between ₱3,000 to ₱12,000 per month depending on system size and usage.
+          </li>
+          <li>
+            <strong>Q:</strong> What’s the average payback period for solar?<br />
+            <strong>A:</strong> Between 4 to 6 years, depending on your energy consumption and system size.
+          </li>
+          <li>
+            <strong>Q:</strong> Is solar a good investment in the Philippines?<br />
+            <strong>A:</strong> Yes. With high electricity rates and abundant sunlight, ROI can reach up to 24% annually.
+          </li>
+        </ul>
+      </>
+    ),
+    readingTime: 6,
+    isFeatured: true,
+  },
+  
+
 ];
 
 // Utility functions for handling large datasets

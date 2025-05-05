@@ -19,14 +19,14 @@ const featuredBlogs = [
     date: "2025-05-04",
   },
   {
-    id: 9,
-    title: "Hybrid Inverter vs Grid Tie Inverter: Which One Should You Choose?",
+    id: 11,
+    title: "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
     excerpt:
-      "Understanding the difference between hybrid and grid-tie inverters is key to building the right solar setup for your home or business.",
-    slug: "hybrid-vs-grid-tie-inverter",
-    featuredImage: "/images/hybrid-vs-gridtie.jpg",
-    readingTime: 5,
-    date: "2025-05-03",
+      "Is solar worth the investment in the Philippines? This article breaks down ROI, costs, savings, payback periods, and includes a real-life example from Cavite.",
+    slug: "solar-roi-philippines",
+    featuredImage: "/images/solar-roi-philippines.jpg",
+    readingTime: 6,
+    date: "2025-05-05",
   },
   {
     id: 8,
