@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Crawl-delay: 10
+
+User-agent: Googlebot
+Allow: /
+Allow: /blog
+Crawl-delay: 5
+
+Sitemap: https://sunphilsolar.com/sitemap.xml
