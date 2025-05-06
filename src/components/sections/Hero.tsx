@@ -1,32 +1,40 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
+import { WeatherWidget } from '../weather';
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px]">
-      {/* Fixed background image implementation */}
+      {/* Background */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)',
+          backgroundImage:
+            'url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 to-secondary-800/60"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32 pb-16 md:pt-40 md:pb-24 h-full">
+      {/* Main content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 md:pt-20 pb-16 md:pb-24 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
           <div className="text-white max-w-2xl">
-            <div className="mb-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-[fadeIn_1s_ease-in]">
-                The Power of Renewable Energy!
-              </h1>
-              <div className="h-1 w-20 bg-primary-500 rounded mb-6"></div>
-              <p className="text-lg md:text-xl text-secondary-100 mb-8">
-                Explore the endless possibilities of renewable energy with Sunphil Solar. Our innovative solutions harness the power of nature to provide sustainable, reliable, and eco-friendly energy. Join us in making a difference for a greener future.
-              </p>
+            {/* Weather Widget (mobile only - above title) */}
+            <div className="block lg:hidden mb-4">
+              <WeatherWidget />
             </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-[fadeIn_1s_ease-in]">
+              The Power of Renewable Energy!
+            </h1>
+
+            <div className="h-1 w-20 bg-primary-500 rounded mb-6"></div>
+
+            <p className="text-lg md:text-xl text-secondary-100 mb-8">
+              Explore the endless possibilities of renewable energy with Sunphil Solar. Our innovative solutions harness the power of nature to provide sustainable, reliable, and eco-friendly energy. Join us in making a difference for a greener future.
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <RouterLink
@@ -44,6 +52,7 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
+          {/* Right column */}
           <div className="hidden lg:block">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-elevation-3 border border-white/20">
               <h3 className="text-white text-xl font-semibold mb-4">
@@ -73,6 +82,11 @@ export const Hero: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Weather Widget (desktop only - top right) */}
+      <div className="hidden lg:block absolute top-6 right-6 z-20">
+        <WeatherWidget />
       </div>
     </section>
   );
