@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { WeatherData, WeatherWidgetProps } from './WeatherTypes';
 import { fetchWeatherData } from './WeatherService';
 
-export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '', city = 'San Jose del Monte' }) => {
+export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '', city }) => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -11,19 +11,40 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '', ci
     const getWeatherData = async () => {
       try {
         setLoading(true);
-        const data = await fetchWeatherData(city);
-        setWeather(data);
-        setError(null);
+
+        if (!city && navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            async (position) => {
+              const { latitude, longitude } = position.coords;
+              const locationQuery = `${latitude},${longitude}`;
+              const data = await fetchWeatherData(locationQuery);
+              setWeather(data);
+              setError(null);
+              setLoading(false);
+            },
+            async (geoError) => {
+              console.warn('Geolocation failed or denied:', geoError);
+              const fallbackData = await fetchWeatherData('San Jose del Monte');
+              setWeather(fallbackData);
+              setError(null);
+              setLoading(false);
+            }
+          );
+        } else {
+          const data = await fetchWeatherData(city || 'San Jose del Monte');
+          setWeather(data);
+          setError(null);
+          setLoading(false);
+        }
       } catch (err) {
+        console.error('Error fetching weather:', err);
         setError('Unable to fetch weather data');
-        console.error(err);
-      } finally {
         setLoading(false);
       }
     };
 
     getWeatherData();
-    const intervalId = setInterval(getWeatherData, 30 * 60 * 1000);
+    const intervalId = setInterval(getWeatherData, 30 * 60 * 1000); // refresh every 30 mins
     return () => clearInterval(intervalId);
   }, [city]);
 
