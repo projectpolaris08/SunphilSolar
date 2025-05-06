@@ -11,40 +11,36 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '', ci
     const getWeatherData = async () => {
       try {
         setLoading(true);
+        let locationQuery = city;
 
-        if (!city && navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            async (position) => {
-              const { latitude, longitude } = position.coords;
-              const locationQuery = `${latitude},${longitude}`;
-              const data = await fetchWeatherData(locationQuery);
-              setWeather(data);
-              setError(null);
-              setLoading(false);
-            },
-            async (geoError) => {
-              console.warn('Geolocation failed or denied:', geoError);
-              const fallbackData = await fetchWeatherData('San Jose del Monte');
-              setWeather(fallbackData);
-              setError(null);
-              setLoading(false);
-            }
-          );
-        } else {
-          const data = await fetchWeatherData(city || 'San Jose del Monte');
-          setWeather(data);
-          setError(null);
-          setLoading(false);
+        if (!locationQuery) {
+          try {
+            const position = await new Promise<GeolocationPosition>((resolve, reject) =>
+              navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 5000 })
+            );
+            const { latitude, longitude } = position.coords;
+            locationQuery = `${latitude},${longitude}`;
+          } catch (geoError) {
+            console.warn('Geolocation failed or denied, falling back to IP location.');
+            const ipRes = await fetch('https://ipapi.co/json/');
+            const ipData = await ipRes.json();
+            locationQuery = ipData.city || 'San Jose del Monte';
+          }
         }
+
+        const data = await fetchWeatherData(locationQuery);
+        setWeather(data);
+        setError(null);
       } catch (err) {
-        console.error('Error fetching weather:', err);
         setError('Unable to fetch weather data');
+        console.error(err);
+      } finally {
         setLoading(false);
       }
     };
 
     getWeatherData();
-    const intervalId = setInterval(getWeatherData, 30 * 60 * 1000); // refresh every 30 mins
+    const intervalId = setInterval(getWeatherData, 30 * 60 * 1000);
     return () => clearInterval(intervalId);
   }, [city]);
 
