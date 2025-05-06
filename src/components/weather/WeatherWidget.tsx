@@ -11,36 +11,33 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '', ci
     const getWeatherData = async () => {
       try {
         setLoading(true);
-        let locationQuery = city;
+
+        let locationQuery = city; // Use provided city prop if available
 
         if (!locationQuery) {
-          try {
-            const position = await new Promise<GeolocationPosition>((resolve, reject) =>
-              navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 5000 })
-            );
-            const { latitude, longitude } = position.coords;
-            locationQuery = `${latitude},${longitude}`;
-          } catch (geoError) {
-            console.warn('Geolocation failed or denied, falling back to IP location.');
-            const ipRes = await fetch('https://ipapi.co/json/');
-            const ipData = await ipRes.json();
-            locationQuery = ipData.city || 'San Jose del Monte';
-          }
+          // Attempt to get user's current location
+          const position = await new Promise<GeolocationPosition>((resolve, reject) =>
+            navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 5000 })
+          );
+          const { latitude, longitude } = position.coords;
+          locationQuery = `${latitude},${longitude}`;
         }
 
         const data = await fetchWeatherData(locationQuery);
         setWeather(data);
         setError(null);
       } catch (err) {
+        console.error('Geolocation or fetch error:', err);
         setError('Unable to fetch weather data');
-        console.error(err);
+        const fallbackData = await fetchWeatherData(); // Defaults to 'San Jose del Monte'
+        setWeather(fallbackData);
       } finally {
         setLoading(false);
       }
     };
 
     getWeatherData();
-    const intervalId = setInterval(getWeatherData, 30 * 60 * 1000);
+    const intervalId = setInterval(getWeatherData, 30 * 60 * 1000); // Refresh every 30 minutes
     return () => clearInterval(intervalId);
   }, [city]);
 
