@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { WeatherData, WeatherWidgetProps } from './WeatherTypes';
 import { fetchWeatherData } from './WeatherService';
 
-export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
+export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '', city = 'San Jose del Monte' }) => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -11,7 +11,7 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) 
     const getWeatherData = async () => {
       try {
         setLoading(true);
-        const data = await fetchWeatherData();
+        const data = await fetchWeatherData(city);
         setWeather(data);
         setError(null);
       } catch (err) {
@@ -25,19 +25,7 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) 
     getWeatherData();
     const intervalId = setInterval(getWeatherData, 30 * 60 * 1000);
     return () => clearInterval(intervalId);
-  }, []);
-
-  // Comment this out when using real API
-  useEffect(() => {
-    setWeather({
-      location: 'San Jose del Monte',
-      temperature: 29,
-      condition: 'Partly Cloudy',
-      icon: 'https://openweathermap.org/img/wn/02d@2x.png',
-      alerts: ['Thunder nearby']
-    });
-    setLoading(false);
-  }, []);
+  }, [city]);
 
   const renderWeatherIcon = () => {
     if (weather?.icon) {

@@ -8,4 +8,5 @@ export interface WeatherData {
   
   export interface WeatherWidgetProps {
     className?: string;
+    city?: string;
   }
