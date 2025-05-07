@@ -27,4 +27,12 @@ dist-ssr
 .env
 
 # Ignore .bolt directory
-.bolt/
+.bolt/.env
+.env.local
+.env*.backup
+
+# Environment
+.env
+.env.local
+*.secret
+

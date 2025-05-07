@@ -1,7 +1,7 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Link as RouterLink } from 'react-router-dom';
-import { WeatherWidget } from '../weather';
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
+import { WeatherWidget } from "../weather";
 
 export const Hero: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            'url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)',
+            "url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 to-secondary-800/60"></div>
@@ -21,11 +21,6 @@ export const Hero: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 md:pt-20 pb-16 md:pb-24 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
           <div className="text-white max-w-2xl">
-            {/* Weather Widget (mobile only - above title) */}
-            <div className="block lg:hidden mb-4">
-              <WeatherWidget />
-            </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-[fadeIn_1s_ease-in]">
               The Power of Renewable Energy!
             </h1>
@@ -33,7 +28,10 @@ export const Hero: React.FC = () => {
             <div className="h-1 w-20 bg-primary-500 rounded mb-6"></div>
 
             <p className="text-lg md:text-xl text-secondary-100 mb-8">
-              Explore the endless possibilities of renewable energy with Sunphil Solar. Our innovative solutions harness the power of nature to provide sustainable, reliable, and eco-friendly energy. Join us in making a difference for a greener future.
+              Explore the endless possibilities of renewable energy with Sunphil
+              Solar. Our innovative solutions harness the power of nature to
+              provide sustainable, reliable, and eco-friendly energy. Join us in
+              making a difference for a greener future.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -60,11 +58,11 @@ export const Hero: React.FC = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  'Reduce your electricity bills by up to 70%',
-                  'Environmentally friendly renewable energy source',
-                  'Increase your property value',
-                  'Energy independence and security',
-                  'Low maintenance costs and long lifespan',
+                  "Reduce your electricity bills by up to 70%",
+                  "Environmentally friendly renewable energy source",
+                  "Increase your property value",
+                  "Energy independence and security",
+                  "Low maintenance costs and long lifespan",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center mr-3">
@@ -84,9 +82,11 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Weather Widget (desktop only - top right) */}
-      <div className="hidden lg:block absolute top-6 right-6 z-20">
-        <WeatherWidget />
+      {/* Weather Widget - always top left on mobile, top right on desktop */}
+      <div className="hidden lg:block absolute top-2 right-12 z-30">
+        <div className="text-white">
+          <WeatherWidget />
+        </div>
       </div>
     </section>
   );

@@ -1,41 +1,112 @@
-import { WeatherData } from './WeatherTypes';
+import { WeatherData } from "../../types/weather";
 
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-
-/**
- * Fetches weather data for a given location.
- * The `locationQuery` can be a city name (e.g., "Manila") or coordinates (e.g., "14.5995,120.9842").
- */
-export const fetchWeatherData = async (locationQuery: string = 'San Jose del Monte'): Promise<WeatherData> => {
+export const fetchWeatherData = async (
+  city?: string,
+  apiKey?: string
+): Promise<WeatherData> => {
   try {
+    const WEATHER_API_KEY = apiKey || import.meta.env.VITE_WEATHER_API_KEY;
+    const location = city || "Manila";
+
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${encodeURIComponent(locationQuery)}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${location}&aqi=no`
     );
 
     if (!response.ok) {
-      throw new Error('Weather data not available');
+      throw new Error("Failed to fetch weather data");
     }
 
     const data = await response.json();
-    const hasThunder = data.current.condition.text.toLowerCase().includes('thunder');
+    const hasThunder = data.current.condition.text
+      .toLowerCase()
+      .includes("thunder");
 
     return {
       location: data.location.name,
-      temperature: Math.round(data.current.temp_c),
+      temperature: data.current.temp_c,
       condition: data.current.condition.text,
-      icon: data.current.condition.icon,
-      alerts: hasThunder ? ['Thunder nearby'] : undefined,
+      humidity: data.current.humidity,
+      windSpeed: data.current.wind_kph,
+      icon: data.current.condition.icon.startsWith("//")
+        ? `https:${data.current.condition.icon}`
+        : data.current.condition.icon,
+      alerts: hasThunder ? ["Thunderstorm warning"] : undefined,
+      coordinates: {
+        lat: data.location.lat,
+        lng: data.location.lon,
+      },
     };
   } catch (error) {
-    console.error('Error fetching weather data:', error);
-
-    // Fallback mock data
-    return {
-      location: 'San Jose del Monte',
-      temperature: 29,
-      condition: 'Partly Cloudy',
-      icon: '//cdn.weatherapi.com/weather/64x64/day/116.png',
-      alerts: Math.random() > 0.5 ? ['Thunder nearby'] : undefined,
-    };
+    console.error("Error fetching weather data:", error);
+    throw error;
   }
+};
+
+export const fetchWeatherByCoords = async (
+  lat: number,
+  lng: number,
+  apiKey?: string
+): Promise<WeatherData> => {
+  try {
+    const WEATHER_API_KEY = apiKey || import.meta.env.VITE_WEATHER_API_KEY;
+    const query = `${lat},${lng}`;
+
+    const response = await fetch(
+      `https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${query}&aqi=no`
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch weather data by coordinates");
+    }
+
+    const data = await response.json();
+    const hasThunder = data.current.condition.text
+      .toLowerCase()
+      .includes("thunder");
+
+    return {
+      location: data.location.name,
+      temperature: data.current.temp_c,
+      condition: data.current.condition.text,
+      humidity: data.current.humidity,
+      windSpeed: data.current.wind_kph,
+      icon: data.current.condition.icon.startsWith("//")
+        ? `https:${data.current.condition.icon}`
+        : data.current.condition.icon,
+      alerts: hasThunder ? ["Thunderstorm warning"] : undefined,
+      coordinates: {
+        lat: data.location.lat,
+        lng: data.location.lon,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching weather by coordinates:", error);
+    return fetchWeatherData(undefined, apiKey);
+  }
+};
+
+export const reverseGeocode = async (
+  lat: number,
+  lng: number,
+  googleApiKey: string
+): Promise<string> => {
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${googleApiKey}`;
+  const response = await fetch(url);
+  const data = await response.json();
+
+  if (data.status === "OK" && data.results.length > 0) {
+    // Try to find the city/locality in address_components
+    for (const result of data.results) {
+      const locality = result.address_components.find((component: any) =>
+        component.types.includes("locality")
+      );
+      if (locality) {
+        return locality.long_name;
+      }
+    }
+    // Fallback: use the formatted address (less accurate)
+    return data.results[0].formatted_address;
+  }
+
+  throw new Error("Reverse geocoding failed");
 };
