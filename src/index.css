@@ -12,3 +12,10 @@ html, body {
   html {
     scroll-behavior: smooth;
   }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }

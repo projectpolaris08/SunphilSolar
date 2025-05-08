@@ -10,11 +10,16 @@ interface Appliance {
   watts: number;
   quantity: number;
   hoursPerDay: number;
+  period: "AM" | "PM";
 }
 
 interface ApplianceInputProps {
   appliance: Appliance;
-  onUpdate: (id: string, field: keyof Appliance, value: string | number) => void;
+  onUpdate: (
+    id: string,
+    field: keyof Appliance,
+    value: string | number
+  ) => void;
   onRemove: (id: string) => void;
 }
 
@@ -23,12 +28,17 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
   onUpdate,
   onRemove,
 }) => {
-  const [localQuantity, setLocalQuantity] = useState<string>(appliance.quantity.toString());
+  const [localQuantity, setLocalQuantity] = useState<string>(
+    appliance.quantity.toString()
+  );
 
   const handleApplianceChange = (value: string) => {
     onUpdate(appliance.id, "name", value);
 
-    if ((appliance.watts === 0 || !appliance.watts) && value in applianceWattages) {
+    if (
+      (appliance.watts === 0 || !appliance.watts) &&
+      value in applianceWattages
+    ) {
       onUpdate(appliance.id, "watts", applianceWattages[value]);
     }
   };
@@ -37,12 +47,12 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setLocalQuantity(value); // Store the raw string value
-    
+
     // Only update the parent if we have a valid number
-    if (value === '') {
+    if (value === "") {
       return; // Keep it empty temporarily
     }
-    
+
     const numValue = parseInt(value, 10);
     if (!isNaN(numValue) && numValue >= 1) {
       onUpdate(appliance.id, "quantity", numValue);
@@ -51,8 +61,8 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
 
   // When leaving the field, ensure we have a valid value
   const handleQuantityBlur = () => {
-    if (localQuantity === '' || isNaN(parseInt(localQuantity, 10))) {
-      setLocalQuantity('1');
+    if (localQuantity === "" || isNaN(parseInt(localQuantity, 10))) {
+      setLocalQuantity("1");
       onUpdate(appliance.id, "quantity", 1);
     }
   };
@@ -81,7 +91,9 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
           className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
           placeholder="Watts"
           value={appliance.watts || ""}
-          onChange={(e) => onUpdate(appliance.id, "watts", parseInt(e.target.value) || 0)}
+          onChange={(e) =>
+            onUpdate(appliance.id, "watts", parseInt(e.target.value) || 0)
+          }
           min="0"
         />
         <span
@@ -119,7 +131,9 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
           className="w-full min-w-[80px] border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
           placeholder="Hours"
           value={appliance.hoursPerDay}
-          onChange={(e) => onUpdate(appliance.id, "hoursPerDay", parseInt(e.target.value) || 0)}
+          onChange={(e) =>
+            onUpdate(appliance.id, "hoursPerDay", parseInt(e.target.value) || 0)
+          }
           min="0"
           max="24"
         />
@@ -132,7 +146,7 @@ export const ApplianceInput: React.FC<ApplianceInputProps> = ({
       </div>
 
       {/* Remove Button */}
-      <div className="md:col-span-2 flex justify-center">
+      <div className="md:col-span-1 flex justify-center">
         <button
           onClick={() => onRemove(appliance.id)}
           className="text-red-500 hover:text-red-700"
