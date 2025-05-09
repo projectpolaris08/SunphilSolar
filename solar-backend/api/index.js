@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { createClient } = require("@supabase/supabase-js");
 const { Resend } = require("resend");
+const serverless = require("serverless-http");
 
 const app = express();
 
@@ -177,4 +178,4 @@ app.get("/api/health", (req, res) => {
 });
 
 // Export for Vercel
-module.exports = app;
+module.exports = serverless(app);
