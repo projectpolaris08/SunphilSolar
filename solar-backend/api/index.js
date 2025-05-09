@@ -178,4 +178,4 @@ app.get("/api/health", (req, res) => {
 });
 
 // Export for Vercel
-module.exports = require("serverless-http")(app);
+module.exports = serverless(app);
