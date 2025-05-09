@@ -119,7 +119,7 @@ app.post("/api/send-estimate", async (req, res) => {
         </div>
       </div>
       <h3 style="font-size: 1.3em; color: #222; margin-bottom: 16px; text-align: left;">🔧 Recommended Solar System</h3>
-      ${recommendedSystems
+      ${(results.recommendedSystems || [])
         .map(
           (system) => `
         <div style="background: #fafbfc; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 24px 20px; margin: 0 auto 24px 0; text-align: left;">
