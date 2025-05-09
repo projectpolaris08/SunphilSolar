@@ -9,7 +9,7 @@ const app = express();
 // CORS: Only allow your frontend domains
 const corsOptions = {
   origin: ["https://sunphilsolar.com", "https://www.sunphilsolar.com"],
-  methods: ["POST", "GET"],
+  methods: ["POST", "GET", "OPTIONS"],
   credentials: true,
 };
 app.use(cors(corsOptions));
