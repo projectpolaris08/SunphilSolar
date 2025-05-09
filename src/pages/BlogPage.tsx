@@ -2,10 +2,15 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useSearchParams } from "react-router-dom";
-import { blogPosts } from "../data/blogPosts.tsx";
+import { getSortedPaginatedPosts } from "../data/blogPosts.tsx";
 import {
-  SunIcon, LightbulbIcon, ListIcon, CarIcon,
-  TrendingUpIcon, LabIcon, HomeIcon
+  SunIcon,
+  LightbulbIcon,
+  ListIcon,
+  CarIcon,
+  TrendingUpIcon,
+  LabIcon,
+  HomeIcon,
 } from "../components/icons";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -13,22 +18,32 @@ export const BlogPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const pageParam = parseInt(searchParams.get("page") || "1");
   const [currentPage, setCurrentPage] = useState(pageParam);
+  const [sortBy, setSortBy] = useState<"newest" | "oldest">("newest");
 
   const postsPerPage = 6;
-  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const currentPosts = blogPosts.slice(startIndex, startIndex + postsPerPage);
+  const { posts: currentPosts, totalPages } = getSortedPaginatedPosts(
+    currentPage,
+    postsPerPage,
+    sortBy
+  );
 
   const seoData = {
     title: "Blog | SunPhil Solar",
-    description: "Explore the latest articles about solar energy, sustainable power solutions, and renewable energy trends from SunPhil Solar.",
-    url: "https://sunphilsolar.com/blog"
+    description:
+      "Explore the latest articles about solar energy, sustainable power solutions, and renewable energy trends from SunPhil Solar.",
+    url: "https://sunphilsolar.com/blog",
   };
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     setSearchParams({ page: page.toString() });
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleSortChange = (newSort: "newest" | "oldest") => {
+    setSortBy(newSort);
+    setCurrentPage(1); // Reset to first page when changing sort
+    setSearchParams({ page: "1" });
   };
 
   useEffect(() => {
@@ -48,12 +63,38 @@ export const BlogPage = () => {
           <link rel="canonical" href={seoData.url} />
         </Helmet>
 
-        <h1 className="text-4xl font-bold text-white mb-12">Blog</h1>
+        <div className="flex justify-between items-center mb-12">
+          <h1 className="text-4xl font-bold text-white">Blog</h1>
+
+          {/* Sorting Controls */}
+          <div className="flex space-x-4">
+            <button
+              onClick={() => handleSortChange("newest")}
+              className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                sortBy === "newest"
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-secondary-800 hover:bg-blue-100 hover:text-blue-600"
+              }`}
+            >
+              Newest Posts
+            </button>
+            <button
+              onClick={() => handleSortChange("oldest")}
+              className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                sortBy === "oldest"
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-secondary-800 hover:bg-blue-100 hover:text-blue-600"
+              }`}
+            >
+              Oldest Posts
+            </button>
+          </div>
+        </div>
 
         {/* Blog Cards with Fade Animation */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={currentPage}
+            key={`${currentPage}-${sortBy}`}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}

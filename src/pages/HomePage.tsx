@@ -8,15 +8,15 @@ import { Link } from "react-router-dom"; // or 'next/link' if using Next.js
 // Mock data array for 3 featured blogs
 const featuredBlogs = [
   {
-    id: 10,
+    id: 12,
     title:
-      "Net Metering vs. Battery Storage in the Philippines: Which One Saves More?",
+      "Can Solar Panels Work During Rainy Weather? Insights for the Philippines' Unusual Summer Rain Pattern",
     excerpt:
-      "Discover whether net metering or battery storage is the better option for maximizing your solar energy investment in the Philippines. Learn about costs, ROI, and when batteries make sense.",
-    slug: "net-metering-vs-battery-storage-philippines",
-    featuredImage: "/images/net-metering-vs-battery.jpg",
+      "Is solar energy still effective in rainy weather? Learn how solar panels perform in the Philippines' current rainy-but-summer weather system and why they remain a smart investment.",
+    slug: "solar-panels-in-rainy-weather-philippines",
+    featuredImage: "/images/solar-panels-rain.jpg",
     readingTime: 6,
-    date: "2025-05-04",
+    date: "2025-05-09",
   },
   {
     id: 11,

@@ -1,6 +1,5 @@
 import { BlogPost } from "@/types/blog";
 
-
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
@@ -169,7 +168,7 @@ export const blogPosts: BlogPost[] = [
             className="text-primary-500 hover:underline"
             target="_blank"
           >
-            Department of Energy’s official site
+            Department of Energy's official site
           </a>
           .
         </p>
@@ -387,7 +386,7 @@ export const blogPosts: BlogPost[] = [
         <p className="text-secondary-700 mb-6">
           A homeowner in Laguna installed an 8kW solar system with a battery and
           now powers a BYD Dolphin EV exclusively with solar. His monthly
-          electric bill dropped by ₱6,000, and he hasn’t visited a gas station
+          electric bill dropped by ₱6,000, and he hasn't visited a gas station
           in over a year.
         </p>
         <p className="text-secondary-700 font-semibold">
@@ -525,7 +524,7 @@ export const blogPosts: BlogPost[] = [
             this scale.
           </li>
           <li>
-            <strong>Policy Support:</strong> Japan’s{" "}
+            <strong>Policy Support:</strong> Japan's{" "}
             <a
               href="https://www.meti.go.jp/english/policy/energy_environment/global_warming/index.html"
               target="_blank"
@@ -540,7 +539,7 @@ export const blogPosts: BlogPost[] = [
 
         <h3 className="text-xl font-semibold mb-3">Global Implications</h3>
         <p>
-          If successful, Japan’s initiative could reduce global reliance on
+          If successful, Japan's initiative could reduce global reliance on
           fossil fuels and position the country as a leader in next-gen solar
           tech. Analysts from{" "}
           <a
@@ -775,7 +774,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 8,
     title:
-      "World’s Most Powerful Flexible Solar Cell: Japan’s 26.5% Efficiency Breakthrough Sets Global Standard",
+      "World's Most Powerful Flexible Solar Cell: Japan's 26.5% Efficiency Breakthrough Sets Global Standard",
     author: "Admin Jayar",
     date: "2025-05-03", // ISO format
     slug: "japan-flexible-solar-cell-26-percent-efficiency",
@@ -789,7 +788,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Japanese researchers have shattered records with a flexible perovskite solar cell achieving 26.5% efficiency—surpassing silicon in performance while being lightweight and bendable. Discover the science behind this leap.",
     metaDescription:
-      "Japan unveils the world’s most efficient flexible solar cell at 26.5%, outperforming rigid silicon panels. Learn how this breakthrough could revolutionize solar energy applications.",
+      "Japan unveils the world's most efficient flexible solar cell at 26.5%, outperforming rigid silicon panels. Learn how this breakthrough could revolutionize solar energy applications.",
     featuredImage: {
       url: "/images/flexible-perovskite-solar.jpg",
       alt: "Japanese engineer holding a thin, flexible perovskite solar cell",
@@ -802,7 +801,7 @@ export const blogPosts: BlogPost[] = [
           A New Era for Solar Technology
         </h2>
         <p className="text-secondary-700 mb-6">
-          A team from Japan’s{" "}
+          A team from Japan's{" "}
           <a
             href="https://www.kyoto-u.ac.jp/en"
             target="_blank"
@@ -864,7 +863,7 @@ export const blogPosts: BlogPost[] = [
         </h3>
         <p className="mb-4">
           Earlier flexible PSCs struggled with durability and efficiency losses
-          under real-world conditions. The team’s innovation—published in{" "}
+          under real-world conditions. The team's innovation—published in{" "}
           <a
             href="https://www.science.org/doi/10.1126/science.adn2636"
             target="_blank"
@@ -899,7 +898,7 @@ export const blogPosts: BlogPost[] = [
         </p>
 
         <p className="mt-4">
-          Japan’s{" "}
+          Japan's{" "}
           <a
             href="https://www.meti.go.jp/english/policy/energy_environment/global_warming/roadmap.html"
             target="_blank"
@@ -966,7 +965,7 @@ export const blogPosts: BlogPost[] = [
         <p className="text-secondary-700 mb-6">
           These systems are ideal in urban areas like Metro Manila or Cebu where
           grid power is reliable and outages are rare. They are also more
-          affordable upfront since they don’t require batteries.
+          affordable upfront since they don't require batteries.
         </p>
         <h4 className="text-xl font-semibold text-secondary-900 mb-2">Pros:</h4>
         <ul className="list-disc pl-6 text-secondary-700 mb-4">
@@ -1118,7 +1117,7 @@ export const blogPosts: BlogPost[] = [
             and costs.
           </li>
           <li>
-            <strong>Use the Grid as a “Virtual Battery”:</strong> You draw power
+            <strong>Use the Grid as a "Virtual Battery":</strong> You draw power
             at night or during cloudy days, and export when your panels produce
             more than you need.
           </li>
@@ -1198,7 +1197,7 @@ export const blogPosts: BlogPost[] = [
           <li>Homeowners who want peace of mind during typhoon season</li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          With Sunphil Solar, you don’t need to spend like a big corporation to
+          With Sunphil Solar, you don't need to spend like a big corporation to
           enjoy battery backup. Our products are designed for Filipino
           homes—durable, efficient, and budget-friendly.
         </p>
@@ -1334,7 +1333,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 11,
-    title: "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
+    title:
+      "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
     author: "Admin Jayar, Solar Advocate at SunPhil Solar",
     date: "2025-05-05",
     slug: "solar-roi-philippines",
@@ -1344,7 +1344,7 @@ export const blogPosts: BlogPost[] = [
       "solar panel payback period",
       "is solar worth it Philippines",
       "cost of solar installation Philippines",
-      "net metering Philippines"
+      "net metering Philippines",
     ],
     excerpt:
       "Is solar worth the investment in the Philippines? This article breaks down ROI, costs, savings, payback periods, and includes a real-life example from Cavite.",
@@ -1359,12 +1359,23 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          As a long-time advocate of renewable energy, I often get asked one question: <em>“Is solar really worth it in the Philippines?”</em> The short answer? Absolutely—if you understand the Return on Investment (ROI). In this post, I’ll break down the numbers, explain what affects your ROI, and help you see why solar isn’t just good for the environment, it’s a smart financial move for homeowners and businesses alike.
+          As a long-time advocate of renewable energy, I often get asked one
+          question: <em>"Is solar really worth it in the Philippines?"</em> The
+          short answer? Absolutely—if you understand the Return on Investment
+          (ROI). In this post, I'll break down the numbers, explain what affects
+          your ROI, and help you see why solar isn't just good for the
+          environment, it's a smart financial move for homeowners and businesses
+          alike.
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">What is ROI in Solar Energy?</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          What is ROI in Solar Energy?
+        </h3>
         <p className="text-secondary-700 mb-6">
-          <strong>Return on Investment (ROI)</strong> in solar refers to how long it takes for your energy savings to cover the initial cost of your solar panel installation. After that break-even point, you’re essentially enjoying free electricity for years to come.
+          <strong>Return on Investment (ROI)</strong> in solar refers to how
+          long it takes for your energy savings to cover the initial cost of
+          your solar panel installation. After that break-even point, you're
+          essentially enjoying free electricity for years to come.
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
           <li>Initial installation cost</li>
@@ -1374,10 +1385,14 @@ export const blogPosts: BlogPost[] = [
           <li>Local sunlight availability</li>
           <li>Government incentives or subsidies</li>
         </ul>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Average Cost of Solar Installation in the Philippines</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Average Cost of Solar Installation in the Philippines
+        </h3>
         <p className="text-secondary-700 mb-6">
-          According to industry data, the cost of installing a <strong>5kWp solar system</strong> in the Philippines ranges from <strong>₱250,000 to ₱350,000</strong> as of 2025.
+          According to industry data, the cost of installing a{" "}
+          <strong>5kWp solar system</strong> in the Philippines ranges from{" "}
+          <strong>₱250,000 to ₱350,000</strong> as of 2025.
         </p>
         <table className="mb-6 w-full border text-sm">
           <thead>
@@ -1406,78 +1421,155 @@ export const blogPosts: BlogPost[] = [
           </tbody>
         </table>
         <p className="text-secondary-700 mb-6">
-          With an average household Meralco bill of ₱10,000/month, a 5kWp system could offset 50–70% of that cost, depending on usage and weather conditions.
+          With an average household Meralco bill of ₱10,000/month, a 5kWp system
+          could offset 50–70% of that cost, depending on usage and weather
+          conditions.
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">How Long Before Solar Pays for Itself?</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How Long Before Solar Pays for Itself?
+        </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
-          <li><strong>Annual savings:</strong> ₱72,000</li>
-          <li><strong>System cost:</strong> ₱300,000</li>
-          <li><strong>Payback period:</strong> 4.1 years</li>
+          <li>
+            <strong>Annual savings:</strong> ₱72,000
+          </li>
+          <li>
+            <strong>System cost:</strong> ₱300,000
+          </li>
+          <li>
+            <strong>Payback period:</strong> 4.1 years
+          </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          After that, the system can continue to generate power for 20 to 25 years, offering significant long-term savings.
+          After that, the system can continue to generate power for 20 to 25
+          years, offering significant long-term savings.
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Key ROI Boosters in the Philippines</h3>
-  
-        <h4 className="text-xl font-semibold text-secondary-800 mb-1">1. Net Metering</h4>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Key ROI Boosters in the Philippines
+        </h3>
+
+        <h4 className="text-xl font-semibold text-secondary-800 mb-1">
+          1. Net Metering
+        </h4>
         <p className="text-secondary-700 mb-4">
-          The <a href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines" className="text-primary-600 underline">Net Metering</a> program allows homeowners to send excess solar energy back to the grid and earn credits on their bill. This can drastically reduce your payback period.
+          The{" "}
+          <a
+            href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
+            className="text-primary-600 underline"
+          >
+            Net Metering
+          </a>{" "}
+          program allows homeowners to send excess solar energy back to the grid
+          and earn credits on their bill. This can drastically reduce your
+          payback period.
         </p>
         <p className="text-secondary-700 mb-6">
-          ✅ <em>Tip:</em> Net metering works best for daytime-heavy usage like offices, schools, or work-from-home setups.
+          ✅ <em>Tip:</em> Net metering works best for daytime-heavy usage like
+          offices, schools, or work-from-home setups.
         </p>
-  
-        <h4 className="text-xl font-semibold text-secondary-800 mb-1">2. Solar Incentives</h4>
+
+        <h4 className="text-xl font-semibold text-secondary-800 mb-1">
+          2. Solar Incentives
+        </h4>
         <p className="text-secondary-700 mb-6">
-          While there is currently no nationwide subsidy, some LGUs offer tax incentives, and zero-VAT on renewable energy systems still applies under Philippine law (RA 9513 – Renewable Energy Act).
+          While there is currently no nationwide subsidy, some LGUs offer tax
+          incentives, and zero-VAT on renewable energy systems still applies
+          under Philippine law (RA 9513 – Renewable Energy Act).
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Comparison: Solar ROI vs Traditional Investments</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Comparison: Solar ROI vs Traditional Investments
+        </h3>
         <p className="text-secondary-700 mb-6">
-          Let’s say you invest ₱300,000 in a time deposit at 4% interest annually. You’d earn around ₱12,000/year. With solar, you could save ₱72,000/year—an <strong>equivalent of 24% annual return</strong>, plus it increases your property value and reduces your carbon footprint.
+          Let's say you invest ₱300,000 in a time deposit at 4% interest
+          annually. You'd earn around ₱12,000/year. With solar, you could save
+          ₱72,000/year—an <strong>equivalent of 24% annual return</strong>, plus
+          it increases your property value and reduces your carbon footprint.
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Environmental Bonus: Carbon Savings</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Environmental Bonus: Carbon Savings
+        </h3>
         <p className="text-secondary-700 mb-6">
-          A 5kWp solar system offsets approximately <strong>4–5 tons of CO₂ emissions annually</strong>—the same as planting over 200 trees every year.
+          A 5kWp solar system offsets approximately{" "}
+          <strong>4–5 tons of CO₂ emissions annually</strong>—the same as
+          planting over 200 trees every year.
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Real-Life Example: A Homeowner in Cavite</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Real-Life Example: A Homeowner in Cavite
+        </h3>
         <p className="text-secondary-700 mb-2">
-          One of our clients in Cavite installed a 6kW solar system in early 2025. Before switching to solar, their monthly electricity bill averaged ₱9,000. After the installation, their monthly expense dropped to around ₱2,000.
+          One of our clients in Cavite installed a 6kW solar system in early
+          2025. Before switching to solar, their monthly electricity bill
+          averaged ₱9,000. After the installation, their monthly expense dropped
+          to around ₱2,000.
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-4 space-y-2">
-          <li><strong>Monthly Savings:</strong> ₱7,000</li>
-          <li><strong>Annual Savings:</strong> ₱84,000</li>
-          <li><strong>Estimated Payback Period:</strong> ~4 years</li>
+          <li>
+            <strong>Monthly Savings:</strong> ₱7,000
+          </li>
+          <li>
+            <strong>Annual Savings:</strong> ₱84,000
+          </li>
+          <li>
+            <strong>Estimated Payback Period:</strong> ~4 years
+          </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          🎥 <a href="https://www.facebook.com/reel/653115067173359" className="text-primary-600 underline">Watch their story here</a>
+          🎥{" "}
+          <a
+            href="https://www.facebook.com/reel/653115067173359"
+            className="text-primary-600 underline"
+          >
+            Watch their story here
+          </a>
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">Conclusion: Is Solar Worth the Investment?</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Conclusion: Is Solar Worth the Investment?
+        </h3>
         <p className="text-secondary-700 mb-6">
-          If you're paying ₱6,000 or more per month in electricity, switching to solar is one of the smartest financial decisions you can make. Not only do you protect yourself from rising energy prices, but you also enjoy peace of mind knowing your home is powered by clean, renewable energy.
+          If you're paying ₱6,000 or more per month in electricity, switching to
+          solar is one of the smartest financial decisions you can make. Not
+          only do you protect yourself from rising energy prices, but you also
+          enjoy peace of mind knowing your home is powered by clean, renewable
+          energy.
         </p>
         <p className="text-secondary-700">
-          📞 <a href="https://sunphilsolar.com/#contact" className="text-primary-600 underline">Contact us today</a> for a free solar assessment and personalized ROI calculation.
+          📞{" "}
+          <a
+            href="https://sunphilsolar.com/#contact"
+            className="text-primary-600 underline"
+          >
+            Contact us today
+          </a>{" "}
+          for a free solar assessment and personalized ROI calculation.
         </p>
-  
-        <h3 className="text-2xl font-semibold text-secondary-900 mt-8 mb-2">FAQ</h3>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mt-8 mb-2">
+          FAQ
+        </h3>
         <ul className="text-secondary-700 space-y-4">
           <li>
-            <strong>Q:</strong> How much can I save monthly with solar in the Philippines?<br />
-            <strong>A:</strong> You can save between ₱3,000 to ₱12,000 per month depending on system size and usage.
+            <strong>Q:</strong> How much can I save monthly with solar in the
+            Philippines?
+            <br />
+            <strong>A:</strong> You can save between ₱3,000 to ₱12,000 per month
+            depending on system size and usage.
           </li>
           <li>
-            <strong>Q:</strong> What’s the average payback period for solar?<br />
-            <strong>A:</strong> Between 4 to 6 years, depending on your energy consumption and system size.
+            <strong>Q:</strong> What's the average payback period for solar?
+            <br />
+            <strong>A:</strong> Between 4 to 6 years, depending on your energy
+            consumption and system size.
           </li>
           <li>
-            <strong>Q:</strong> Is solar a good investment in the Philippines?<br />
-            <strong>A:</strong> Yes. With high electricity rates and abundant sunlight, ROI can reach up to 24% annually.
+            <strong>Q:</strong> Is solar a good investment in the Philippines?
+            <br />
+            <strong>A:</strong> Yes. With high electricity rates and abundant
+            sunlight, ROI can reach up to 24% annually.
           </li>
         </ul>
       </>
@@ -1485,8 +1577,182 @@ export const blogPosts: BlogPost[] = [
     readingTime: 6,
     isFeatured: true,
   },
-  
 
+  {
+    id: 12,
+    title:
+      "Can Solar Panels Work During Rainy Weather? Insights for the Philippines' Unusual Summer Rain Pattern",
+    author: "Admin Jayar",
+    date: "2025-05-09",
+    slug: "solar-panels-in-rainy-weather-philippines",
+    tags: [
+      "solar panels in the Philippines",
+      "solar energy in rainy weather",
+      "renewable energy",
+      "Philippines weather",
+      "net metering",
+    ],
+    excerpt:
+      "Is solar energy still effective in rainy weather? Learn how solar panels perform in the Philippines' current rainy-but-summer weather system and why they remain a smart investment.",
+    metaDescription:
+      "Can solar panels work during rainy days in the Philippines? Discover how modern systems still generate power during overcast weather and why solar remains a reliable investment.",
+    featuredImage: {
+      url: "/images/solar-panels-rain.jpg",
+      alt: "Rain falling on solar panels installed on a rooftop in the Philippines",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          The Philippines is currently experiencing a unique weather
+          pattern—though it's still technically summer, most afternoons bring
+          rainfall. PAGASA has not declared the start of the rainy season, but
+          this shift in weather has many people wondering:{" "}
+          <strong>Can solar panels still produce energy in the rain?</strong>
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Do Solar Panels Work in Cloudy or Rainy Conditions?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Absolutely. Solar panels do not need direct sunlight to generate
+          electricity—they rely on light (photons), which can still penetrate
+          cloud cover. In fact, panels can still generate{" "}
+          <strong>10% to 25% of their rated output</strong> during overcast
+          days, according to the U.S. Department of Energy.
+        </p>
+
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>
+            <strong>Diffused Light Capture:</strong> Even when the sky is
+            overcast, sunlight scatters and reaches the solar panels.
+          </li>
+          <li>
+            <strong>Natural Cleaning:</strong> Rain washes away dust and dirt
+            from panels, improving their performance when the sun returns.
+          </li>
+          <li>
+            <strong>Weather-Resilient Panels:</strong> Modern panels are built
+            to perform in low-light conditions and withstand storms.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Solar Energy Performance in the Philippines
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The Philippines receives an average of{" "}
+          <strong>4.5 to 5.5 peak sun hours</strong> daily—even during rainy
+          months. According to the Department of Energy, solar radiation
+          potential in the country remains strong year-round.
+        </p>
+
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>
+            Locations like <strong>Metro Manila, Palawan, and Mindoro</strong>{" "}
+            continue to see reliable solar output even with over 100 rainy days
+            per year.
+          </li>
+          <li>
+            Rain is intermittent and often occurs in the afternoon, meaning
+            panels can still produce in the morning.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How to Maximize Solar Efficiency During Rainy Weather
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>
+            <strong>Install high-efficiency panels</strong> like monocrystalline
+            types that work better in low light.
+          </li>
+          <li>
+            <strong>Add battery storage</strong> to save energy generated during
+            sunny periods.
+          </li>
+          <li>
+            <strong>Use net metering</strong> to earn credits for surplus
+            electricity sent to the grid.
+          </li>
+          <li>
+            <strong>Schedule regular maintenance</strong> to keep panels clean
+            and systems running efficiently.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Myth vs. Reality
+        </h3>
+        <div className="text-secondary-700 mb-6">
+          <p>
+            <strong>Myth:</strong> Solar panels don't work when it rains.
+          </p>
+          <p>
+            <strong>Reality:</strong> They still produce electricity—just at
+            reduced capacity.
+          </p>
+          <p>
+            <strong>Myth:</strong> Panels are prone to damage in wet weather.
+          </p>
+          <p>
+            <strong>Reality:</strong> High-quality panels are built to handle
+            rain, wind, and heat.
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Internal Resources and Further Reading
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>
+            <a href="/products" className="text-primary-600 underline">
+              Explore our solar panel products
+            </a>
+          </li>
+          <li>
+            <a
+              href="/blog/net-metering-philippines"
+              className="text-primary-600 underline"
+            >
+              How Net Metering Works in the Philippines
+            </a>
+          </li>
+          <li>
+            <a
+              href="/blog/solar-battery-benefits"
+              className="text-primary-600 underline"
+            >
+              Why Add Solar Battery Storage?
+            </a>
+          </li>
+          <li>
+            <a href="/contact" className="text-primary-600 underline">
+              Request a Free Solar Consultation
+            </a>
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Conclusion
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Solar energy remains a reliable and cost-effective choice in the
+          Philippines—even during this unusual wet summer. With proper planning
+          and modern systems, you can enjoy sustainable power,{" "}
+          <strong>rain or shine</strong>. Ready to future-proof your energy
+          source? Talk to our experts at{" "}
+          <a href="/contact" className="text-primary-600 underline">
+            SunPhil Solar
+          </a>{" "}
+          today.
+        </p>
+      </>
+    ),
+    readingTime: 6,
+    isFeatured: true,
+  },
 ];
 
 // Utility functions for handling large datasets
@@ -1524,4 +1790,38 @@ export const searchPosts = (query: string): BlogPost[] => {
         post.tags.some((tag) => tag.toLowerCase().includes(term))
     )
   );
+};
+
+// Add these new functions to src/data/blogPosts.tsx
+
+// Function to get posts sorted by newest first
+export const getNewestPosts = (): BlogPost[] => {
+  return [...blogPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+};
+
+// Function to get posts sorted by oldest first
+export const getOldestPosts = (): BlogPost[] => {
+  return [...blogPosts].sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+};
+
+// Function to get paginated posts with sorting option
+export const getSortedPaginatedPosts = (
+  page: number,
+  perPage: number = 10,
+  sortBy: "newest" | "oldest" = "newest"
+) => {
+  const sortedPosts = sortBy === "newest" ? getNewestPosts() : getOldestPosts();
+  const start = (page - 1) * perPage;
+  const end = start + perPage;
+
+  return {
+    posts: sortedPosts.slice(start, end),
+    totalPages: Math.ceil(sortedPosts.length / perPage),
+    currentPage: page,
+    sortBy,
+  };
 };
