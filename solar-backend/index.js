@@ -21,6 +21,14 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 app.post("/api/send-estimate", async (req, res) => {
   const { email, calculation_data } = req.body;
 
+  // Debug logging
+  console.log("Incoming /api/send-estimate request", {
+    email,
+    calculation_data,
+  });
+  console.log("RESEND_API_KEY present:", !!process.env.RESEND_API_KEY);
+  console.log("RESEND_FROM:", process.env.RESEND_FROM);
+
   if (!email || !calculation_data) {
     return res
       .status(400)
@@ -40,11 +48,44 @@ app.post("/api/send-estimate", async (req, res) => {
   // Send email via Resend
   try {
     const results = calculation_data;
+    const appliances = calculation_data.appliances || [];
+    const appliancesHtml = appliances.length
+      ? `
+        <h3 style="font-size: 1.1em; color: #222; margin-bottom: 8px; text-align: left;">📝 Appliances Entered</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+          <thead>
+            <tr>
+              <th style="border: 1px solid #eee; padding: 6px;">Name</th>
+              <th style="border: 1px solid #eee; padding: 6px;">Watts</th>
+              <th style="border: 1px solid #eee; padding: 6px;">Qty</th>
+              <th style="border: 1px solid #eee; padding: 6px;">Hours/Day</th>
+              <th style="border: 1px solid #eee; padding: 6px;">Period</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${appliances
+              .map(
+                (app) => `
+              <tr>
+                <td style="border: 1px solid #eee; padding: 6px;">${app.name}</td>
+                <td style="border: 1px solid #eee; padding: 6px;">${app.watts}</td>
+                <td style="border: 1px solid #eee; padding: 6px;">${app.quantity}</td>
+                <td style="border: 1px solid #eee; padding: 6px;">${app.hoursPerDay}</td>
+                <td style="border: 1px solid #eee; padding: 6px;">${app.period || ""}</td>
+              </tr>
+            `
+              )
+              .join("")}
+          </tbody>
+        </table>
+      `
+      : "";
     const htmlContent = `
       <div style="font-family: Arial, sans-serif; color: #222; max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 32px;">
         <h2 style="font-size: 1.7em; color: #222; margin-bottom: 24px; text-align: center;">
           ⚡ Solar System Estimation Results
         </h2>
+        ${appliancesHtml}
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-bottom: 32px;">
           <div style="flex: 1 1 120px; text-align: center; min-width: 120px;">
             <div style="font-size: 2em; color: #facc15;">⚡</div>
@@ -67,11 +108,11 @@ app.post("/api/send-estimate", async (req, res) => {
             <div style="font-weight: bold; font-size: 1.3em;">${results.totalSystemWattage} W</div>
           </div>
         </div>
-        <h3 style="font-size: 1.3em; color: #222; margin-bottom: 16px; text-align: center;">🔧 Recommended Solar System</h3>
+        <h3 style="font-size: 1.3em; color: #222; margin-bottom: 16px; text-align: left;">🔧 Recommended Solar System</h3>
         ${results.recommendedSystems
           .map(
             (system) => `
-          <div style="background: #fafbfc; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 24px 20px; margin-bottom: 24px;">
+          <div style="background: #fafbfc; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 24px 20px; margin: 0 auto 24px 0; text-align: left;">
             <div style="font-weight: bold; font-size: 1.1em; margin-bottom: 8px;">Inverter: ${system.inverterModel}</div>
             <ul style="margin: 0 0 0 1.2em; padding: 0; color: #222;">
               <li>Max Load Capacity: ${system.maxLoadCapacity} W</li>
@@ -99,18 +140,33 @@ app.post("/api/send-estimate", async (req, res) => {
         <p style="color: #888; font-size: 12px; text-align: center;">Sunphil Solar &copy; ${new Date().getFullYear()}</p>
       </div>
     `;
+    console.log("About to send email via Resend", {
+      from: process.env.RESEND_FROM,
+      to: email,
+    });
     await resend.emails.send({
       from: process.env.RESEND_FROM,
       to: email,
       subject: "Your Solar System Estimation Results",
       html: htmlContent,
     });
+    console.log("Email sent successfully");
     res.json({ success: true });
   } catch (err) {
+    console.error("Resend error:", err);
     res.status(500).json({ error: "Failed to send email." });
   }
 });
 
-// Start server
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
+
+// For local development
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+// Export for Vercel
+module.exports = app;
