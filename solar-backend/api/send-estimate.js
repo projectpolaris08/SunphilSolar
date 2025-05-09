@@ -80,9 +80,6 @@ export default async function handler(req, res) {
         ⚡ Solar System Estimation Results
       </h2>
       ${appliancesHtml}
-      <a href="https://sunphilsolar.com/download?leadId=LEAD_ID" style="display:block;margin:16px 0 24px 0;text-align:center;color:#2563eb;text-decoration:underline;" target="_blank">
-        Download this estimate as PDF
-      </a>
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-bottom: 32px;">
         <div style="flex: 1 1 120px; text-align: center; min-width: 120px;">
           <div style="font-size: 2em; color: #facc15;">⚡</div>
