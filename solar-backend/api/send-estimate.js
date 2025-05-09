@@ -1,42 +1,18 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const { createClient } = require("@supabase/supabase-js");
-const { Resend } = require("resend");
-const serverless = require("serverless-http");
+import { createClient } from "@supabase/supabase-js";
+import { Resend } from "resend";
 
-const app = express();
-
-// CORS: Only allow your frontend domains
-const corsOptions = {
-  origin: ["https://sunphilsolar.com", "https://www.sunphilsolar.com"],
-  methods: ["POST", "GET", "OPTIONS"],
-  credentials: true,
-};
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
-app.use(express.json());
-
-// Supabase setup
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
-
-// Resend setup
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// POST /api/send-estimate
-app.post("/api/send-estimate", async (req, res) => {
-  const { email, calculation_data } = req.body;
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
 
-  // Debug logging
-  console.log("Incoming /api/send-estimate request", {
-    email,
-    calculation_data,
-  });
-  console.log("RESEND_API_KEY present:", !!process.env.RESEND_API_KEY);
-  console.log("RESEND_FROM:", process.env.RESEND_FROM);
+  const { email, calculation_data } = req.body;
 
   if (!email || !calculation_data) {
     return res
@@ -50,16 +26,13 @@ app.post("/api/send-estimate", async (req, res) => {
     .insert([{ email, calculation_data }]);
 
   if (dbError) {
-    console.log("Supabase Insert Error:", dbError);
     return res.status(500).json({ error: "Failed to store lead in Supabase." });
   }
 
   // Defensive array checks
   const appliances = calculation_data.appliances || [];
   const results = calculation_data;
-  const recommendedSystems = results.recommendedSystems || [];
 
-  // Email HTML
   const appliancesHtml = appliances.length
     ? `
       <h3 style="font-size: 1.1em; color: #222; margin-bottom: 8px; text-align: left;">📝 Appliances Entered</h3>
@@ -154,28 +127,14 @@ app.post("/api/send-estimate", async (req, res) => {
   `;
 
   try {
-    console.log("About to send email via Resend", {
-      from: process.env.RESEND_FROM,
-      to: email,
-    });
     await resend.emails.send({
       from: process.env.RESEND_FROM,
       to: email,
       subject: "Your Solar System Estimation Results",
       html: htmlContent,
     });
-    console.log("Email sent successfully");
-    res.json({ success: true });
+    res.status(200).json({ success: true });
   } catch (err) {
-    console.error("Resend error:", err);
     res.status(500).json({ error: "Failed to send email." });
   }
-});
-
-// Health check endpoint
-app.get("/api/health", (req, res) => {
-  res.json({ status: "ok" });
-});
-
-// Export for Vercel
-module.exports = serverless(app);
+}
