@@ -1708,12 +1708,12 @@ export const blogPosts: BlogPost[] = [
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
           <li>
             <a href="/products" className="text-primary-600 underline">
-              Explore our solar panel products
+              Explore our Hybrid Inverters and LiFeP04 Battery Storage
             </a>
           </li>
           <li>
             <a
-              href="/blog/net-metering-philippines"
+              href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
               className="text-primary-600 underline"
             >
               How Net Metering Works in the Philippines
@@ -1721,7 +1721,7 @@ export const blogPosts: BlogPost[] = [
           </li>
           <li>
             <a
-              href="/blog/solar-battery-benefits"
+              href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
               className="text-primary-600 underline"
             >
               Why Add Solar Battery Storage?
@@ -1744,7 +1744,7 @@ export const blogPosts: BlogPost[] = [
           <strong>rain or shine</strong>. Ready to future-proof your energy
           source? Talk to our experts at{" "}
           <a href="/contact" className="text-primary-600 underline">
-            SunPhil Solar
+            Sunphil Solar
           </a>{" "}
           today.
         </p>
