@@ -31,7 +31,7 @@ export const Services: React.FC = () => {
     {
       icon: <PieChart className="h-12 w-12 text-primary-500" />,
       title: 'Performance Monitoring',
-      description: 'Advanced monitoring systems to track your solar production and energy consumption in real-time.'
+      description: 'We’re building a powerful mobile app to let you track your solar production and energy usage anytime, anywhere—stay tuned!'
     }
   ];
 
