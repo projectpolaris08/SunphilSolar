@@ -96,7 +96,7 @@ const ProductsPage: React.FC = () => {
     {
       id: "inverter-4",
       icon: <Zap className="h-10 w-10 text-primary-500" />,
-      image: "/images/inverter-4.png",
+      image: "/images/Deye-12kW.png",
       title: "12kW Deye Hybrid Inverter",
       brand: "Deye",
       warranty: "5 Years Warranty",
