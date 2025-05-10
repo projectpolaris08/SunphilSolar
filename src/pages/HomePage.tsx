@@ -29,14 +29,13 @@ const featuredBlogs = [
     date: "2025-05-05",
   },
   {
-    id: 8,
-    title: "How Solar Energy is Powering EVs in the Philippines",
+    id: 13,
+    title: "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
     excerpt:
-      "With electric vehicles (EVs) becoming increasingly popular in the Philippines, many are now exploring how solar energy can power their eco-friendly rides.",
-    slug: "solar-energy-powering-evs-philippines",
-    featuredImage: "/images/ev-charging.jpg",
-    readingTime: 5,
-    date: "2025-04-20",
+      "Donald Trump’s return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here’s what you need to know.",
+    featuredImage: "/images/trump-solar-impact.jpg",
+    readingTime: 8,
+    date: "2025-05-10",
   },
 ];
 

@@ -1753,6 +1753,131 @@ export const blogPosts: BlogPost[] = [
     readingTime: 6,
     isFeatured: true,
   },
+  {
+    id: 13,
+    title: "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
+    author: "Sunphil Solar",
+    date: "2025-05-10",
+    slug: "trump-2025-impact-solar-philippines",
+    tags: ["Trump 2025", "solar industry Philippines", "renewable energy"],
+    excerpt:
+      "Donald Trump’s return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here’s what you need to know.",
+    metaDescription:
+      "How a Trump presidency in 2025 could affect the Philippine solar industry through tariffs, investment uncertainty, and local opportunities in renewable energy.",
+    featuredImage: {
+      url: "/images/trump-solar-impact.jpg",
+      alt: "Solar panels with Trump silhouette and U.S.-Philippine flags",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          With Donald Trump back in the U.S. presidency in 2025, big changes are expected in
+          global trade and energy policies. While the Philippines is geographically distant,
+          the local solar industry could feel real impacts—especially through tariffs, foreign
+          investment shifts, and changing global supply chains. Let’s break down how a second
+          Trump term could affect the Philippine solar energy market, the challenges we may face,
+          and the local opportunities we can tap to move forward.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Tariffs and Rising Costs for Solar Panels
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          One of the biggest concerns is the potential return of broad tariffs on imports,
+          similar to what Trump implemented during his previous term. A universal 10% tariff on
+          solar panel imports hurt Southeast Asian manufacturers—the very suppliers many Philippine
+          solar installers depend on. If those tariffs come back, the cost of solar panels imported
+          from China, Malaysia, and Vietnam may increase, affecting pricing here at home.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Residential solar systems in the Philippines were projected to cost ₱30,000 to ₱40,000
+          per kW in 2025 according to <a href="https://sgasolar.com.ph/" target="_blank" className="text-primary-600 underline">SGA Solar</a>,
+          but tariffs may prevent those prices from falling as expected. That’s a challenge for
+          middle-class households who are already feeling the pinch from inflation and rising living costs.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Global Investment Uncertainty
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Another concern is the potential pullback in global renewable energy investments.
+          Trump has openly favored fossil fuels and previously rolled back clean energy incentives,
+          including parts of the Inflation Reduction Act (IRA). If those policies resurface, some
+          investors may hesitate to support renewable energy projects—even in countries like the
+          Philippines.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Still, the Philippine market remains promising. According to <a href="https://www.expertmarketresearch.com/reports/philippines-solar-energy-market" target="_blank" className="text-primary-600 underline">Expert Market Research</a>,
+          the local solar energy sector is forecasted to grow at a CAGR of 17.90% between 2025
+          and 2034, eventually reaching 11.57 TWh. That growth is being driven by local demand,
+          supportive policies, and the need for sustainable energy sources.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Strong Local Incentives Still in Place
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Thankfully, the Philippine government has continued offering strong support for solar
+          energy. Tax incentives, net metering policies, and solar subsidies are helping make
+          solar more affordable for homes and businesses. Net metering in particular allows
+          homeowners to sell excess energy back to the grid—lowering bills and improving
+          ROI on installations.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The national goal is to hit 35% renewable energy in the power mix by 2030, and solar
+          is expected to be a key part of that transition. <a href="https://www.nativtechniks.com/" target="_blank" className="text-primary-600 underline">Nativ Techniks </a>
+          reports continued strong momentum for residential and commercial installations alike.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Opportunities for Local Manufacturing and Innovation
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The current global trade uncertainty offers a silver lining—there’s a strong case for
+          investing in local solar manufacturing. If we can produce solar panels, batteries,
+          and inverters locally, we reduce our exposure to international price shocks and tariffs.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          With a growing talent pool in tech and engineering, the Philippines is well-positioned
+          to scale up solar production and innovate for local needs. Public-private partnerships (PPP)
+          could also unlock new technologies like solar-powered desalination systems—addressing both
+          energy and water security.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Moving Forward: Strategies for Resilience
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          A Trump presidency may bring headwinds, but the Philippine solar industry can adapt.
+          Here are a few strategies that can keep us moving forward:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li><strong>Diversify Supply Chains:</strong> Work with suppliers in regions unaffected by U.S. tariffs to stabilize prices.</li>
+          <li><strong>Strengthen Policy Support:</strong> Maintain tax incentives and net metering, and enforce the Renewable Energy Act.</li>
+          <li><strong>Promote R&D:</strong> Invest in efficient solar tech and offer alternative financing models like leasing and pay-as-you-go.</li>
+          <li><strong>Encourage PPP:</strong> Partner with the private sector to fund large-scale projects and solar innovations.</li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Conclusion: Staying the Course
+        </h3>
+        <p className="text-secondary-700">
+          While a second Trump term may introduce new global challenges, the Philippines has
+          the tools and momentum to keep growing its solar sector. With the right mix of policy
+          support, local innovation, and strategic investment, the country can continue its
+          transition to a cleaner and more resilient energy future.
+        </p>
+      </>
+    ),
+    readingTime: 8,
+    isFeatured: true,
+  },
+  
+
+
+
 ];
 
 // Utility functions for handling large datasets
