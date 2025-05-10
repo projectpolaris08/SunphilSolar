@@ -33,6 +33,7 @@ const featuredBlogs = [
     title: "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
     excerpt:
       "Donald Trump’s return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here’s what you need to know.",
+    slug: "trump-2025-impact-solar-philippines",  
     featuredImage: "/images/trump-solar-impact.jpg",
     readingTime: 8,
     date: "2025-05-10",
