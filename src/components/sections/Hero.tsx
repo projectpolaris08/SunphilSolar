@@ -74,7 +74,7 @@ export const Hero: React.FC = () => {
               </ul>
               <div className="mt-6 text-center">
                 <span className="inline-block px-4 py-1 bg-primary-500/20 rounded-full text-primary-300 text-sm">
-                  12 Year Panel Warranty
+                  Power Up Your Future—Today!
                 </span>
               </div>
             </div>
