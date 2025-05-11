@@ -20,7 +20,8 @@ const featuredBlogs = [
   },
   {
     id: 11,
-    title: "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
+    title:
+      "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
     excerpt:
       "Is solar worth the investment in the Philippines? This article breaks down ROI, costs, savings, payback periods, and includes a real-life example from Cavite.",
     slug: "solar-roi-philippines",
@@ -30,13 +31,51 @@ const featuredBlogs = [
   },
   {
     id: 13,
-    title: "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
+    title:
+      "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
     excerpt:
-      "Donald Trump’s return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here’s what you need to know.",
-    slug: "trump-2025-impact-solar-philippines",  
+      "Donald Trump's return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here's what you need to know.",
+    slug: "trump-2025-impact-solar-philippines",
     featuredImage: "/images/trump-solar-impact.jpg",
     readingTime: 8,
     date: "2025-05-10",
+  },
+];
+
+// Mock data array for 3 featured projects
+const featuredProjects = [
+  {
+    image: "/images/project1.jpg",
+    location: "Sariaya, Quezon, PH",
+    system: "32kW Hybrid Solar",
+    date: "2024-04-30",
+    specification: [
+      "2 units 16kW Deye Hybrid Inverter",
+      "54 pcs 615W Canadian Bifacial Solar Panel",
+      "4 units 51.2v 280Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    image: "/images/project2.jpg",
+    location: "Goa, Camarines Sur, PH",
+    system: "24kW Hybrid Solar",
+    date: "2024-03-18",
+    specification: [
+      "2 units 12kW Hybrid Inverter",
+      "48 pcs 610W Canadian Bifacial Solar Panel",
+      "4 units 51.2v 314Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    image: "/images/project3.jpg",
+    location: "Cabanatuan City, PH",
+    system: "12kW Hybrid Solar",
+    date: "2024-04-12",
+    specification: [
+      "12kW Hybrid Inverter",
+      "24 pcs 615W Canadian Bifacial Solar Panel",
+      "2 units 51.2v 280Ah LiFePO4 Battery",
+    ],
   },
 ];
 
@@ -44,6 +83,56 @@ export const HomePage = () => {
   return (
     <>
       <Hero />
+      {/* Featured Projects Section - 3-column grid */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((proj, idx) => (
+              <Link
+                to="/projects"
+                key={idx}
+                className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-blue-400"
+              >
+                <div className="relative overflow-hidden h-48">
+                  <img
+                    src={proj.image}
+                    alt={proj.location}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <div className="font-bold text-black mb-1">
+                    {proj.location}
+                  </div>
+                  <div className="text-black mb-1">{proj.system}</div>
+                  <div className="text-black mb-2">{proj.date}</div>
+                  <ul className="text-black font-semibold text-center mt-2">
+                    {proj.specification.map((spec, i) => (
+                      <li
+                        key={i}
+                        className="text-black font-semibold text-center"
+                      >
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/projects"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition inline-block"
+            >
+              View All Projects
+            </Link>
+          </div>
+        </div>
+      </section>
       {/* Featured Blogs Section - 3-column grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">

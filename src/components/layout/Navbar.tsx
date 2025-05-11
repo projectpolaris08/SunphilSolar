@@ -19,9 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Calculator", path: "/calculator" },
-    { name: "Products", path: "/products" },
     { name: "Features", path: "#features" },
-    { name: "Services", path: "#services" },
     { name: "Blog", path: "/blog" },
     { name: "About Us", path: "/about" },
   ];
@@ -47,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-6 xl:space-x-10">
             {navItems.map((item) =>
-              item.path.startsWith("#") ? (
+              item.name === "Services" ? null : item.path.startsWith("#") ? (
                 <HashLink
                   key={item.name}
                   smooth
@@ -66,6 +64,33 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 </RouterLink>
               )
             )}
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <span className="text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2 whitespace-nowrap cursor-pointer">
+                Services
+              </span>
+              <div className="absolute left-0 mt-2 w-48 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+                <HashLink
+                  smooth
+                  to={isOnHomePage ? "#services" : "/#services"}
+                  className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                >
+                  All Services
+                </HashLink>
+                <RouterLink
+                  to="/products"
+                  className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                >
+                  Products
+                </RouterLink>
+                <RouterLink
+                  to="/projects"
+                  className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                >
+                  Projects
+                </RouterLink>
+              </div>
+            </div>
           </nav>
 
           {/* CTA Button */}
@@ -107,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       >
         <div className="px-4 pt-2 pb-6 space-y-3">
           {navItems.map((item) =>
-            item.path.startsWith("#") ? (
+            item.name === "Services" ? null : item.path.startsWith("#") ? (
               <HashLink
                 key={item.name}
                 smooth
@@ -128,6 +153,34 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               </RouterLink>
             )
           )}
+          {/* Services Dropdown for Mobile */}
+          <div className="pt-2">
+            <span className="block px-4 py-3 rounded-lg text-base font-medium text-gray-900">
+              Services
+            </span>
+            <HashLink
+              smooth
+              to={isOnHomePage ? "#services" : "/#services"}
+              className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+              onClick={toggleMenu}
+            >
+              All Services
+            </HashLink>
+            <RouterLink
+              to="/products"
+              className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+              onClick={toggleMenu}
+            >
+              Products
+            </RouterLink>
+            <RouterLink
+              to="/projects"
+              className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+              onClick={toggleMenu}
+            >
+              Projects
+            </RouterLink>
+          </div>
           <div className="pt-2">
             <HashLink
               smooth

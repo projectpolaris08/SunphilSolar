@@ -1,0 +1,135 @@
+import React, { useState } from "react";
+
+const projects = [
+  {
+    image: "/images/project1.jpg",
+    location: "Sariaya, Quezon, PH",
+    system: "32kW Hybrid Solar",
+    date: "2024-04-30",
+    specification: [
+      "2 units 16kW Deye Hybrid Inverter",
+      "54 pcs 615W Canadian Bifacial Solar Panel",
+      "4 units 51.2v 280Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    image: "/images/project2.jpg",
+    location: "Goa, Camarines Sur, PH",
+    system: "24kW Hybrid Solar",
+    date: "2024-03-18",
+    specification: [
+      "2 units 12kW Hybrid Inverter",
+      "48 pcs 610W Canadian Bifacial Solar Panel",
+      "4 units 51.2v 314Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    image: "/images/project3.jpg",
+    location: "Cabanatuan City, PH",
+    system: "12kW Hybrid Solar",
+    date: "2024-04-12",
+    specification: [
+      "12kW Hybrid Inverter",
+      "24 pcs 615W Canadian Bifacial Solar Panel",
+      "2 units 51.2v 280Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    image: "/images/project4.jpg",
+    location: "Porac, Pampanga, PH",
+    system: "8kW Hybrid Solar",
+    date: "2024-03-03",
+    specification: [
+      "8kW Hybrid Inverter",
+      "18 pcs 615W Canadian Bifacial Solar Panel",
+      "51.2v 280Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    image: "/images/project5.jpg",
+    location: "BIR Village, Quezon City, PH",
+    system: "12kW Hybrid Solar",
+    date: "2024-03-07",
+    specification: [
+      "12kW Hybrid Inverter",
+      "24 pcs 615W Canadian Bifacial Solar Panel",
+      "3 units 48v 280Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    image: "/images/project6.jpg",
+    location: "Cabanatuan City, PH",
+    system: "6kW Hybrid Solar",
+    date: "2024-03-15",
+    specification: [
+      "6kW Hybrid Inverter",
+      "13 pcs 615W Canadian Bifacial Solar Panel",
+      "51.2v 314Ah LiFePO4 Battery",
+    ],
+  },
+  // Add more projects as needed
+];
+
+const projectsPerPage = 6;
+
+const ProjectsPage: React.FC = () => {
+  const [page, setPage] = useState(1);
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const paginated = projects.slice(
+    (page - 1) * projectsPerPage,
+    page * projectsPerPage
+  );
+
+  return (
+    <section className="py-20 bg-secondary-50 min-h-screen">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8 text-center">Our Projects</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {paginated.map((proj, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-lg p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-gray-200 hover:border-primary-500"
+            >
+              <img
+                src={proj.image}
+                alt={proj.location}
+                className="w-full h-50 object-contain rounded mb-2 bg-gray-100"
+              />
+              <div className="font-bold text-black">{proj.location}</div>
+              <div className="text-black">{proj.system}</div>
+              <div className="text-black">{proj.date}</div>
+              <ul className="text-black font-semibold text-center mt-2">
+                {proj.specification.map((spec, i) => (
+                  <li key={i} className="text-black font-semibold text-center">
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center mt-6 gap-2">
+          <button
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={page === 1}
+            className="px-4 py-2 rounded bg-primary-500 text-white disabled:bg-gray-300"
+          >
+            Prev
+          </button>
+          <span className="px-4 py-2">
+            {page} / {totalPages}
+          </span>
+          <button
+            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            disabled={page === totalPages}
+            className="px-4 py-2 rounded bg-primary-500 text-white disabled:bg-gray-300"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsPage;

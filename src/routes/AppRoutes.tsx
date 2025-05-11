@@ -9,6 +9,7 @@ import { ContactForm } from "../components/sections/ContactForm";
 import { PostPage } from "../pages/PostPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 import WeatherWidget from "../components/weather/WeatherWidget";
+import ProjectsPage from "../pages/ProjectsPage";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -29,6 +30,7 @@ const AppRoutes = ({
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactForm />} />
+          <Route path="/projects" element={<ProjectsPage />} />
 
           {/* Weather widget route */}
           <Route

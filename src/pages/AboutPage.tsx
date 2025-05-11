@@ -20,7 +20,7 @@ const AboutPage: React.FC = () => {
       title: "Owner/Head of Operations",
       description:
         "Ensuring smooth project execution and customer satisfaction.",
-        image: "/images/Jhayar.jpeg",
+      image: "/images/Jhayar.jpeg",
     },
   ];
 
