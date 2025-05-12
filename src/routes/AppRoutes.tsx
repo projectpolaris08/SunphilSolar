@@ -10,6 +10,8 @@ import { PostPage } from "../pages/PostPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 import WeatherWidget from "../components/weather/WeatherWidget";
 import ProjectsPage from "../pages/ProjectsPage";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import Cookies from "../pages/Cookies";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -31,6 +33,8 @@ const AppRoutes = ({
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookies" element={<Cookies />} />
 
           {/* Weather widget route */}
           <Route

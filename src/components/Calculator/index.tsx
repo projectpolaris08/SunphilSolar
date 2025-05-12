@@ -86,6 +86,8 @@ const Calculator: React.FC = () => {
   const [userEmail, setUserEmail] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
+  const [privacyPolicyAgreed, setPrivacyPolicyAgreed] = useState(false);
+  const [privacyPolicyError, setPrivacyPolicyError] = useState("");
 
   const generateId = () => `appliance-${Date.now()}`;
 
@@ -368,17 +370,20 @@ const Calculator: React.FC = () => {
       {/* Email Prompt Modal/Card */}
       {showEmailPrompt && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
-          {/* Animated Gradient Border Wrapper */}
+          {/* Fixed Gradient Border Wrapper */}
           <div
             className="relative p-1 rounded-2xl overflow-hidden"
-            style={{ width: "100%", maxWidth: "420px" }}
+            style={{
+              width: "100%",
+              maxWidth: "420px",
+              background: "linear-gradient(135deg, #2563eb 0%, #60a5fa 100%)",
+            }}
           >
-            {/* Animated Gradient */}
+            {/* Static Gradient Border */}
             <div
-              className="absolute inset-0 animate-spin-slow"
+              className="absolute inset-0"
               style={{
-                background:
-                  "conic-gradient(from 0deg, #2563eb, #60a5fa, #2563eb 100%)",
+                background: "linear-gradient(135deg, #2563eb 0%, #60a5fa 100%)",
                 zIndex: 1,
                 filter: "blur(2px)",
               }}
@@ -451,11 +456,58 @@ const Calculator: React.FC = () => {
                     value={userEmail}
                     onChange={(e) => setUserEmail(e.target.value)}
                   />
+                  <div className="flex items-start mb-4">
+                    <div className="flex items-center h-5">
+                      <input
+                        id="privacyPolicyEmail"
+                        name="privacyPolicyEmail"
+                        type="checkbox"
+                        checked={privacyPolicyAgreed}
+                        onChange={(e) => {
+                          setPrivacyPolicyAgreed(e.target.checked);
+                          setPrivacyPolicyError("");
+                        }}
+                        className={`h-4 w-4 rounded border ${
+                          privacyPolicyError
+                            ? "border-red-500"
+                            : "border-gray-300"
+                        } text-primary-600 focus:ring-primary-500`}
+                      />
+                    </div>
+                    <div className="ml-3 text-sm">
+                      <label
+                        htmlFor="privacyPolicyEmail"
+                        className="text-gray-700"
+                      >
+                        I agree to the{" "}
+                        <a
+                          href="/privacy-policy"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary-600 hover:text-primary-700 underline"
+                        >
+                          Privacy Policy
+                        </a>
+                        *
+                      </label>
+                      {privacyPolicyError && (
+                        <p className="mt-1 text-sm text-red-500">
+                          {privacyPolicyError}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                   <button
                     className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
-                    onClick={() =>
-                      sendEstimate(userEmail, calculateRecommendedSystem())
-                    }
+                    onClick={() => {
+                      if (!privacyPolicyAgreed) {
+                        setPrivacyPolicyError(
+                          "You must agree to the Privacy Policy"
+                        );
+                        return;
+                      }
+                      sendEstimate(userEmail, calculateRecommendedSystem());
+                    }}
                     disabled={!userEmail}
                   >
                     Send Results

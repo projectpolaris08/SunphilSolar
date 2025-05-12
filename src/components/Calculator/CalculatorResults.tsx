@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Sun, Battery, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface RecommendedSystem {
   inverterModel: string;
@@ -19,6 +20,7 @@ interface CalculatorResultsProps {
   batteryChargingWattage: number;
   totalSystemWattage: number;
   recommendedSystems: RecommendedSystem[];
+  onPrivacyPolicyAgree?: (agreed: boolean) => void;
 }
 
 export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
@@ -27,7 +29,22 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
   batteryChargingWattage,
   totalSystemWattage,
   recommendedSystems,
+  onPrivacyPolicyAgree,
 }) => {
+  const [privacyPolicyAgreed, setPrivacyPolicyAgreed] = useState(false);
+  const [privacyPolicyError, setPrivacyPolicyError] = useState("");
+
+  const handlePrivacyPolicyChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const agreed = e.target.checked;
+    setPrivacyPolicyAgreed(agreed);
+    setPrivacyPolicyError("");
+    if (onPrivacyPolicyAgree) {
+      onPrivacyPolicyAgree(agreed);
+    }
+  };
+
   return (
     <div className="mt-8 bg-white rounded-lg shadow-md p-6 space-y-6">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center md:text-left">
@@ -83,7 +100,9 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
             <p className="text-gray-800">
               • Total Solar Capacity: {system.solarCapacity}
             </p>
-            <p className="text-gray-800">• System Quantity: {system.quantity}</p>
+            <p className="text-gray-800">
+              • System Quantity: {system.quantity}
+            </p>
 
             {/* Battery Note */}
             {system.battery.toLowerCase().includes("24v 280ah") && (
@@ -97,6 +116,36 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({
             )}
           </div>
         ))}
+      </div>
+
+      <div className="flex items-start mt-6">
+        <div className="flex items-center h-5">
+          <input
+            id="privacyPolicy"
+            name="privacyPolicy"
+            type="checkbox"
+            checked={privacyPolicyAgreed}
+            onChange={handlePrivacyPolicyChange}
+            className={`h-4 w-4 rounded border ${
+              privacyPolicyError ? "border-error-500" : "border-secondary-300"
+            } text-primary-600 focus:ring-primary-500`}
+          />
+        </div>
+        <div className="ml-3 text-sm">
+          <label htmlFor="privacyPolicy" className="text-secondary-700">
+            I agree to the{" "}
+            <Link
+              to="/privacy-policy"
+              className="text-primary-600 hover:text-primary-700"
+            >
+              Privacy Policy
+            </Link>
+            *
+          </label>
+          {privacyPolicyError && (
+            <p className="mt-1 text-sm text-error-500">{privacyPolicyError}</p>
+          )}
+        </div>
       </div>
     </div>
   );

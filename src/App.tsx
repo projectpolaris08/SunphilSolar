@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes"; // Correct path to your AppRoutes
 import WeatherWidget from "./components/weather/WeatherWidget";
+import CookieBanner from "./components/CookieBanner";
 
 function App() {
   const GOOGLE_MAPS_API_KEY =
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <CookieBanner />
         {/* You can pass your API keys as props to AppRoutes if needed */}
         <AppRoutes
           googleMapsApiKey={GOOGLE_MAPS_API_KEY}
