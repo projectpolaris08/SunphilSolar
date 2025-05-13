@@ -80,7 +80,7 @@ export const ContactForm: React.FC = () => {
     try {
       const formDataToSend = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        formDataToSend.append(key, value);
+        formDataToSend.append(key, String(value));
       });
 
       if (product) {
@@ -89,7 +89,12 @@ export const ContactForm: React.FC = () => {
         formDataToSend.append("product_price", product.price);
       }
 
-      await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
+      const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+      if (!scriptUrl) {
+        throw new Error("Google Script URL is not defined");
+      }
+
+      await fetch(scriptUrl, {
         method: "POST",
         body: formDataToSend,
         mode: "no-cors",
