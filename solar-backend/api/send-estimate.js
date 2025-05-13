@@ -40,39 +40,57 @@ export default async function handler(req, res) {
 
   // Defensive array checks
   const appliances = calculation_data.appliances || [];
-  const results = calculation_data;
+  const amAppliances = appliances.filter((app) => app.period === "AM");
+  const pmAppliances = appliances.filter((app) => app.period === "PM");
 
-  const appliancesHtml = appliances.length
-    ? `
-      <h3 style="font-size: 1.1em; color: #222; margin-bottom: 8px; text-align: left;">📝 Appliances Entered</h3>
-      <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
-        <thead>
-          <tr>
-            <th style="border: 1px solid #eee; padding: 6px;">Name</th>
-            <th style="border: 1px solid #eee; padding: 6px;">Watts</th>
-            <th style="border: 1px solid #eee; padding: 6px;">Qty</th>
-            <th style="border: 1px solid #eee; padding: 6px;">Hours/Day</th>
-            <th style="border: 1px solid #eee; padding: 6px;">Period</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${appliances
-            .map(
-              (app) => `
-            <tr>
-              <td style="border: 1px solid #eee; padding: 6px;">${app.name}</td>
-              <td style="border: 1px solid #eee; padding: 6px;">${app.watts}</td>
-              <td style="border: 1px solid #eee; padding: 6px;">${app.quantity}</td>
-              <td style="border: 1px solid #eee; padding: 6px;">${app.hoursPerDay}</td>
-              <td style="border: 1px solid #eee; padding: 6px;">${app.period || ""}</td>
+  function appliancesTableHtml(appliancesArr, label) {
+    if (!appliancesArr.length) return "";
+    return `
+      <div style="background: #f8fafc; border-radius: 12px; padding: 24px; margin-bottom: 32px; border: 1px solid #e2e8f0;">
+        <h3 style="font-size: 1.15em; color: #1e293b; margin-bottom: 16px; text-align: left; font-weight: 600;">
+          📝 ${label} Appliances
+        </h3>
+        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden;">
+          <thead>
+            <tr style="background: #f1f5f9;">
+              <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left; color: #475569;">Name</th>
+              <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left; color: #475569;">Watts</th>
+              <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left; color: #475569;">Qty</th>
+              <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left; color: #475569;">Hours/Day</th>
+              <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left; color: #475569;">Period</th>
             </tr>
-          `
-            )
-            .join("")}
-        </tbody>
-      </table>
-    `
-    : "";
+          </thead>
+          <tbody>
+            ${appliancesArr
+              .map(
+                (app) => `
+              <tr>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; color: #334155;">${app.name}</td>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; color: #334155;">${app.watts} W</td>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; color: #334155;">${app.quantity}</td>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; color: #334155;">${app.hoursPerDay}</td>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; color: #334155;">${app.period || "-"}</td>
+              </tr>
+            `
+              )
+              .join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  const appliancesHtml =
+    appliances.length && (amAppliances.length || pmAppliances.length)
+      ? `
+        <div style="margin-bottom: 8px;">
+          ${appliancesTableHtml(amAppliances, "AM")}
+          ${appliancesTableHtml(pmAppliances, "PM")}
+        </div>
+      `
+      : "";
+
+  const results = calculation_data;
 
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; color: #222; max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 32px;">

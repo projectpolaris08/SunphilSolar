@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 import { ApplianceInput } from "./ApplianceInput";
 import { CalculatorResults } from "./CalculatorResults";
 import { commonAppliancesList, applianceWattages } from "./CommonAppliances";
+import { useNavigate } from "react-router-dom";
 
 interface Appliance {
   id: string;
@@ -88,6 +89,7 @@ const Calculator: React.FC = () => {
   const [messageSent, setMessageSent] = useState(false);
   const [privacyPolicyAgreed, setPrivacyPolicyAgreed] = useState(false);
   const [privacyPolicyError, setPrivacyPolicyError] = useState("");
+  const navigate = useNavigate();
 
   const generateId = () => `appliance-${Date.now()}`;
 
@@ -254,6 +256,7 @@ const Calculator: React.FC = () => {
         setTimeout(() => {
           setShowEmailPrompt(false);
           setMessageSent(false);
+          navigate("/contact");
         }, 2000);
       } else {
         alert("Failed to send email: " + (data.error || "Unknown error"));
@@ -506,7 +509,10 @@ const Calculator: React.FC = () => {
                         );
                         return;
                       }
-                      sendEstimate(userEmail, calculateRecommendedSystem());
+                      sendEstimate(userEmail, {
+                        ...calculateRecommendedSystem(),
+                        appliances,
+                      });
                     }}
                     disabled={!userEmail}
                   >
