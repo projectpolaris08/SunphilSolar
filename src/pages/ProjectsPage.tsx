@@ -67,6 +67,17 @@ const projects = [
       "51.2v 314Ah LiFePO4 Battery",
     ],
   },
+  {
+    image: "/images/project7.jpg",
+    location: "Lubao, Pampanga, PH",
+    system: "8kW Hybrid Solar",
+    date: "2024-05-09",
+    specification: [
+      "8kW Hybrid Inverter",
+      "18 pcs 615W Canadian Bifacial Solar Panel",
+      "2 units 51.2v 314Ah LiFePO4 Battery",
+    ],
+  },
   // Add more projects as needed
 ];
 
