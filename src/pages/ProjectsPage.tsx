@@ -78,6 +78,17 @@ const projects = [
       "2 units 51.2v 314Ah LiFePO4 Battery",
     ],
   },
+  {
+    image: "/images/project8.jpg",
+    location: "Umingan, Pangasinan, PH",
+    system: "8kW Hybrid Solar",
+    date: "2024-05-13",
+    specification: [
+      "8kW Hybrid Inverter",
+      "16 pcs 615W Canadian Bifacial Solar Panel",
+      "51.2v 314Ah LiFePO4 Battery",
+    ],
+  },
   // Add more projects as needed
 ];
 

@@ -2004,7 +2004,136 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
     readingTime: 5,
-  }
+  },
+  {
+    id: 15,
+    title: "Solar Panel Installation Guide for Homes in the Philippines (2025)",
+    author: "Sunphil Solar",
+    date: "2025-05-14",
+    slug: "solar-panel-installation-guide-philippines-2025",
+    tags: [
+      "solar panel installation Philippines",
+      "residential solar guide",
+      "solar energy 2025",
+      "Philippines renewable energy",
+      "home solar power"
+    ],
+    excerpt:
+      "Learn how to install solar panels for your home in the Philippines in 2025. This updated guide covers everything—costs, types, steps, and local tips to help you go solar efficiently.",
+    metaDescription:
+      "Discover how to install solar panels for your home in the Philippines. Learn about solar system types, costs, installation steps, and maintenance tips tailored to the 2025 market.",
+    featuredImage: {
+      url: "/images/solar-panel-installation-philippines-guide.jpg",
+      alt: "Technicians installing solar panels on a Filipino home's rooftop",
+      width: 1200,
+      height: 630
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          <strong>Going solar in 2025 is easier and more rewarding than ever in the Philippines.</strong> Whether you’re aiming to cut electricity bills, reduce your carbon footprint, or achieve energy independence, installing solar panels at home is a smart investment. This guide walks you through the essential steps—from planning and choosing the right panels to installation, cost estimates, and maintenance.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          1. Why Install Solar Panels at Home?
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li><strong>Save on electricity bills:</strong> Reduce Meralco and other utility charges significantly.</li>
+          <li><strong>Energy independence:</strong> Generate your own power and rely less on the grid.</li>
+          <li><strong>Environmental impact:</strong> Lower carbon emissions and support clean energy goals.</li>
+          <li><strong>Incentives:</strong> Benefit from Net Metering and government support.</li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          2. Types of Home Solar Systems
+        </h3>
+        <div className="overflow-x-auto mb-6">
+          <table className="min-w-full text-secondary-700 border border-secondary-200">
+            <thead>
+              <tr>
+                <th className="px-4 py-2 border-b">System Type</th>
+                <th className="px-4 py-2 border-b">Description</th>
+                <th className="px-4 py-2 border-b">Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="px-4 py-2 border-b">Grid-Tied</td>
+                <td className="px-4 py-2 border-b">Connected to the utility grid; can export excess power (Net Metering).</td>
+                <td className="px-4 py-2 border-b">Urban homes with stable electricity.</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2 border-b">Off-Grid</td>
+                <td className="px-4 py-2 border-b">Completely independent; uses batteries for storage.</td>
+                <td className="px-4 py-2 border-b">Remote areas with no grid access.</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2 border-b">Hybrid</td>
+                <td className="px-4 py-2 border-b">Grid-connected but includes batteries for backup.</td>
+                <td className="px-4 py-2 border-b">Areas with frequent brownouts or energy-conscious homes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          3. Step-by-Step Solar Installation Process
+        </h3>
+        <ol className="list-decimal list-inside text-secondary-700 mb-6 space-y-2">
+          <li><strong>Energy audit:</strong> <a href="https://sunphilsolar.com/calculator" className="text-primary-600 underline" target="_blank" rel="noopener">Calculate</a> your household’s daily kWh usage.</li>
+          <li><strong>System sizing:</strong> Determine how many panels you need.</li>
+          <li><strong>Site assessment:</strong> Check your roof’s orientation, shading, and strength.</li>
+          <li><strong>Quotation:</strong> Get a proposal from licensed installers.</li>
+          <li><strong>Permits:</strong> Secure barangay clearance, HOA approval (if needed), and electrical permits.</li>
+          <li><strong>Installation:</strong> Mount panels, install inverters, and connect wiring.</li>
+          <li><strong>Net Metering:</strong> Apply through your utility (like Meralco) to export excess power.</li>
+          <li><strong>Commissioning:</strong> Test the system and switch on solar power!</li>
+        </ol>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          4. Cost of Solar Panel Installation in the Philippines (2025)
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Prices vary depending on system size, brand, and installer, but here’s a ballpark:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li><strong>3kW Hybrid System:</strong> ₱120,000–₱180,000 (suitable for small households)</li>
+          <li><strong>6kW Hybrid System:</strong> ₱280,000–₱320,000 (ideal for mid-sized homes with occasional outages)</li>
+          <li><strong>12kW Hybrid System:</strong> ₱550,000–₱700,000 (complete independence)</li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          5. Maintenance and Lifespan
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li><strong>Cleaning:</strong> Wipe down panels 1–2 times per year (more often if near dust or trees).</li>
+          <li><strong>Inverter replacement:</strong> Every 10–15 years.</li>
+          <li><strong>Panel lifespan:</strong> 25 years with warranties.</li>
+          <li><strong>Annual inspection:</strong> Recommended for system health and safety.</li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Resources and Support
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li><a href="https://www.doe.gov.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">Department of Energy (DOE)</a></li>
+          <li><a href="https://www.meralco.com.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">Meralco Net Metering Program</a></li>
+          <li><a href="https://www.philippinesolar.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">Philippine Solar Industry Portal</a></li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts: A Brighter Home in 2025
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Whether you live in Manila, Cebu, or a rural barangay, solar panels can bring cleaner, cheaper energy to your home. 2025 is the perfect time to make the switch—with better prices, more efficient systems, and stronger support from government and installers.
+          <br /><br />
+          <strong>Need help getting started?</strong> <a href="/contact" className="text-primary-600 underline">Talk to Sunphil Solar today for a free consultation and custom system recommendation.</a>
+        </p>
+      </>
+    ),
+    readingTime: 6
+  },
+  
 
 ];
 

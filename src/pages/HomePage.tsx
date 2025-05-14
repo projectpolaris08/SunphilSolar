@@ -30,15 +30,15 @@ const featuredBlogs = [
     date: "2025-05-05",
   },
   {
-    id: 13,
+    id: 15,
     title:
-      "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
+      "Solar Panel Installation Guide for Homes in the Philippines (2025)",
     excerpt:
-      "Donald Trump's return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here's what you need to know.",
-    slug: "trump-2025-impact-solar-philippines",
-    featuredImage: "/images/trump-solar-impact.jpg",
-    readingTime: 8,
-    date: "2025-05-10",
+      "Learn how to install solar panels for your home in the Philippines in 2025. This updated guide covers everything—costs, types, steps, and local tips to help you go solar efficiently.",
+    slug: "solar-panel-installation-guide-philippines-2025",
+    featuredImage: "/images/solar-panel-installation-philippines-guide.jpg",
+    readingTime: 4,
+    date: "2025-05-14",
   },
 ];
 
