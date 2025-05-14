@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const projects = [
   {
@@ -91,10 +91,23 @@ const ProjectsPage: React.FC = () => {
     page * projectsPerPage
   );
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  }, [page]);
+
   return (
     <section className="py-20 bg-secondary-50 min-h-screen">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Our Projects</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center">Our Projects</h2>
+        <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
+          At Sunphil Solar/Fairview Solarista, your energy needs come first.
+          Whether you're powering a home or a business, we customize each solar
+          installation to suit your lifestyle and goals—ensuring dependable,
+          cost-effective, and sustainable energy for years to come.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {paginated.map((proj, idx) => (
             <div
@@ -109,13 +122,15 @@ const ProjectsPage: React.FC = () => {
               <div className="font-bold text-black">{proj.location}</div>
               <div className="text-black">{proj.system}</div>
               <div className="text-black">{proj.date}</div>
-              <ul className="text-black font-semibold text-center mt-2">
-                {proj.specification.map((spec, i) => (
-                  <li key={i} className="text-black font-semibold text-center">
-                    {spec}
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-gray-50 rounded p-3 mt-3 text-left">
+                <ul className="list-disc pl-5 text-black font-semibold">
+                  {proj.specification.map((spec, i) => (
+                    <li key={i} className="text-black font-semibold">
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

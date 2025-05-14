@@ -37,7 +37,16 @@ export const BlogPage = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     setSearchParams({ page: page.toString() });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Ensure we scroll to top immediately and smoothly
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    // Backup scroll in case smooth scroll doesn't work
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   };
 
   const handleSortChange = (newSort: "newest" | "oldest") => {
@@ -63,10 +72,16 @@ export const BlogPage = () => {
           <link rel="canonical" href={seoData.url} />
         </Helmet>
 
-        <div className="flex justify-between items-center mb-12">
-          <h1 className="text-4xl font-bold text-white">Blog</h1>
-
-          {/* Sorting Controls */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">Blog</h1>
+          <p className="text-secondary-100 text-lg">
+            Stay informed with the latest updates, insights, and trends in solar
+            technology. Our blog covers everything from advanced panel systems
+            and policy changes to practical tips for maximizing your solar
+            investment in the Philippines.
+          </p>
+        </div>
+        <div className="flex justify-end mb-8">
           <div className="flex space-x-4">
             <button
               onClick={() => handleSortChange("newest")}
@@ -99,7 +114,7 @@ export const BlogPage = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           >
             {currentPosts.map((post) => (
               <Link
