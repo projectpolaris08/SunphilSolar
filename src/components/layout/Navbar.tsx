@@ -95,14 +95,16 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <HashLink
-              smooth
-              to={isOnHomePage ? "#contact" : "/#contact"}
-              className="transition-all duration-300 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700 whitespace-nowrap"
-            >
-              Get Started
-              <span className="ml-2">→</span>
-            </HashLink>
+            <div className="animated-gradient-border rounded-full inline-block">
+              <HashLink
+                smooth
+                to={isOnHomePage ? "#contact" : "/#contact"}
+                className="relative z-10 transition-all duration-300 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700 whitespace-nowrap"
+              >
+                Get a Quote
+                <span className="ml-2">→</span>
+              </HashLink>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

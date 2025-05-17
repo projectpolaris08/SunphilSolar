@@ -112,7 +112,7 @@ const ProjectsPage: React.FC = () => {
   return (
     <section className="py-20 bg-secondary-50 min-h-screen">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-4 text-center">Our Projects</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center">Solar Projects</h2>
         <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
           At Sunphil Solar/Fairview Solarista, your energy needs come first.
           Whether you're powering a home or a business, we customize each solar

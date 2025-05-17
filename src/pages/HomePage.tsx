@@ -31,8 +31,7 @@ const featuredBlogs = [
   },
   {
     id: 15,
-    title:
-      "Solar Panel Installation Guide for Homes in the Philippines (2025)",
+    title: "Solar Panel Installation Guide for Homes in the Philippines (2025)",
     excerpt:
       "Learn how to install solar panels for your home in the Philippines in 2025. This updated guide covers everything—costs, types, steps, and local tips to help you go solar efficiently.",
     slug: "solar-panel-installation-guide-philippines-2025",
@@ -109,16 +108,18 @@ export const HomePage = () => {
                   </div>
                   <div className="text-black mb-1">{proj.system}</div>
                   <div className="text-black mb-2">{proj.date}</div>
-                  <ul className="text-black font-semibold text-center mt-2">
-                    {proj.specification.map((spec, i) => (
-                      <li
-                        key={i}
-                        className="text-black font-semibold text-center"
-                      >
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="bg-gray-50 p-4 rounded-lg mt-4">
+                    <ul className="text-left list-disc pl-5">
+                      {proj.specification.map((spec, i) => (
+                        <li
+                          key={i}
+                          className="text-black font-semibold mb-2 last:mb-0"
+                        >
+                          {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </Link>
             ))}

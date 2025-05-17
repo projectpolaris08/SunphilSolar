@@ -35,12 +35,14 @@ export const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <RouterLink
-                to="/calculator"
-                className="inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-full text-base font-medium bg-primary-600 text-white hover:bg-primary-700 transition duration-300 ease-in-out transform hover:-translate-y-1"
-              >
-                Calculate Your Needs
-              </RouterLink>
+              <div className="animated-gradient-border rounded-full inline-block">
+                <RouterLink
+                  to="/calculator"
+                  className="relative z-10 inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-full text-base font-medium bg-primary-600 text-white hover:bg-primary-700 transition duration-300 ease-in-out transform hover:-translate-y-1"
+                >
+                  Calculate Your Needs
+                </RouterLink>
+              </div>
               <a
                 href="#features"
                 className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/30 rounded-full text-base font-medium text-white hover:bg-white/10 transition duration-300 ease-in-out"
