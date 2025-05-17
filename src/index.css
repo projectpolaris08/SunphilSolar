@@ -26,6 +26,7 @@ html {
 .animated-gradient-border {
   position: relative;
   z-index: 0;
+  overflow: visible; /* Ensure glow is visible */
 }
 .animated-gradient-border::before {
   content: "";
@@ -44,6 +45,7 @@ html {
   );
   background-size: 400% 400%;
   animation: borderGradientMove 6s ease infinite;
+  transition: inset 0.2s, padding 0.2s;
 }
 @keyframes borderGradientMove {
   0% {
@@ -54,5 +56,17 @@ html {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 640px) {
+  .animated-gradient-border::before {
+    inset: -1px;
+    padding: 1px;
+    border-radius: 9999px;
+  }
+  .animated-gradient-border {
+    max-width: 100%;
   }
 }
