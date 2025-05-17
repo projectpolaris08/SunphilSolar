@@ -22,14 +22,14 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
           <div className="text-white max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-[fadeIn_1s_ease-in]">
-              The Power of Renewable Energy!
+             Solar Energy Made Simple and Affordable!
             </h1>
 
             <div className="h-1 w-20 bg-primary-500 rounded mb-6"></div>
 
             <p className="text-lg md:text-xl text-secondary-100 mb-8">
-              Explore the endless possibilities of renewable energy with Sunphil
-              Solar. Our innovative solutions harness the power of nature to
+              Explore the endless possibilities of solar energy with Sunphil
+              Solar. Our innovative solutions harness the power of Sun to
               provide sustainable, reliable, and eco-friendly energy. Join us in
               making a difference for a greener future.
             </p>
