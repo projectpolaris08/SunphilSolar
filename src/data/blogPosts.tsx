@@ -2133,6 +2133,87 @@ export const blogPosts: BlogPost[] = [
     ),
     readingTime: 6
   },
+  {
+    id: 16,
+    title: "SSS Main Office Goes Solar with 500 Panels—Here’s Why You Should Too",
+    author: "Sunphil Solar",
+    date: "2025-05-17",
+    slug: "sss-main-office-goes-solar-2025",
+    tags: ["solar", "government", "renewable energy"],
+    excerpt:
+      "The SSS Main Office in Quezon City now runs on solar with 500 panels and 285 kW capacity. Here's what it means for homeowners and businesses thinking of going solar.",
+    metaDescription:
+      "SSS Main Office installs a 285 kW solar energy system with 500 panels. Learn why it's a sign for Filipino homeowners and businesses to make the solar switch today.",
+    featuredImage: {
+      url: "/images/sss-solar-panel-installation-quezon-city.jpg",
+      alt: "Solar panels installed on SSS building rooftop",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          When the Social Security System (SSS)—one of the country’s most essential government agencies—decides to go solar, you know it’s not just a trend. It’s the future.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Just recently, the SSS Main Office in Quezon City completed the installation of <strong>500 solar panels</strong> on its rooftop. That’s a massive <strong>285 kilowatts (kW)</strong> of clean, renewable power now working every day to reduce electricity bills and carbon emissions.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          And if a building as big and busy as the SSS can confidently run on solar, imagine what it can do for your home or business.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Why Did SSS Go Solar?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          It’s simple: the rising cost of electricity, paired with the growing urgency to reduce carbon emissions, makes solar the smart, responsible choice. Government offices like the SSS are leading by example, showing us all that clean energy isn’t just possible—it’s practical.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li><strong>Saving millions</strong> in long-term energy costs</li>
+          <li><strong>Reducing its environmental impact</strong></li>
+          <li><strong>Setting a powerful example</strong> for other institutions and companies to follow</li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          What This Means for Homeowners and Businesses
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          If you’re a homeowner or a business owner, this is your sign.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          With prices of solar technology more affordable than ever—and with government programs encouraging renewable energy—<strong>now is the best time to invest in solar</strong>.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          At <a href="https://sunphilsolar.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline font-medium">Sunphil Solar</a>, we help homes and businesses across the Philippines make the switch to clean, efficient, and cost-saving solar energy. Whether you're looking to lower your monthly Meralco bill or you want to future-proof your business, we’ve got the solutions to fit your needs.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          The Benefits of Going Solar with Sunphil:
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>☀ <strong>Huge Energy Savings</strong> – Say goodbye to unpredictable electricity rates</li>
+          <li>☀ <strong>Low Maintenance</strong> – Our systems are designed to last for decades</li>
+          <li>☀ <strong>Environmentally Friendly</strong> – Be part of the clean energy movement</li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thought
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The SSS took the leap—and it’s already paying off. If they can power a huge government office with solar, you can definitely power your home or business.
+        </p>
+        <p className="text-secondary-700">
+          👉 Ready to go solar? <strong>Let Sunphil Solar help you get started.</strong><br />
+          Visit us at <a href="https://sunphilsolar.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline font-medium">sunphilsolar.com</a> or contact us for a free consultation.
+        </p>
+        <p className="text-secondary-700 mt-4">
+          <strong>Clean energy isn’t just for big institutions—it’s for all of us.</strong>
+        </p>
+      </>
+    ),
+    readingTime: 5,
+  }
+  
   
 
 ];

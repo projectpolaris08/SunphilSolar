@@ -19,15 +19,15 @@ const featuredBlogs = [
     date: "2025-05-09",
   },
   {
-    id: 11,
+    id: 16,
     title:
-      "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
+      "SSS Main Office Goes Solar with 500 Panels—Here’s Why You Should Too",
     excerpt:
-      "Is solar worth the investment in the Philippines? This article breaks down ROI, costs, savings, payback periods, and includes a real-life example from Cavite.",
-    slug: "solar-roi-philippines",
-    featuredImage: "/images/solar-roi-philippines.jpg",
-    readingTime: 6,
-    date: "2025-05-05",
+      "The SSS Main Office in Quezon City now runs on solar with 500 panels and 285 kW capacity. Here's what it means for homeowners and businesses thinking of going solar.",
+    slug: "sss-main-office-goes-solar-2025",
+    featuredImage: "/images/sss-solar-panel-installation-quezon-city.jpg",
+    readingTime: 4,
+    date: "2025-05-17",
   },
   {
     id: 15,
