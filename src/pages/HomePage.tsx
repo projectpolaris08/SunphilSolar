@@ -21,7 +21,7 @@ const featuredBlogs = [
   {
     id: 16,
     title:
-      "SSS Main Office Goes Solar with 500 Panels—Here’s Why You Should Too",
+      "SSS Main Office Goes Solar with 500 Panels—Here's Why You Should Too",
     excerpt:
       "The SSS Main Office in Quezon City now runs on solar with 500 panels and 285 kW capacity. Here's what it means for homeowners and businesses thinking of going solar.",
     slug: "sss-main-office-goes-solar-2025",
@@ -91,7 +91,7 @@ export const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((proj, idx) => (
               <Link
-                to="/projects"
+                to="/solarprojects"
                 key={idx}
                 className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-blue-400"
               >
@@ -126,7 +126,7 @@ export const HomePage = () => {
           </div>
           <div className="text-center mt-10">
             <Link
-              to="/projects"
+              to="/solarprojects"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition inline-block"
             >
               View All Projects

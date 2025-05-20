@@ -19,7 +19,6 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Calculator", path: "/calculator" },
-    { name: "Features", path: "#features" },
     { name: "Blog", path: "/blog" },
     { name: "About Us", path: "/about" },
   ];
@@ -77,6 +76,13 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 >
                   All Services
                 </HashLink>
+                <HashLink
+                  smooth
+                  to={isOnHomePage ? "#features" : "/#features"}
+                  className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                >
+                  Features
+                </HashLink>
                 <RouterLink
                   to="/products"
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
@@ -84,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   Products
                 </RouterLink>
                 <RouterLink
-                  to="/projects"
+                  to="/solarprojects"
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
                 >
                   Projects
@@ -168,6 +174,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             >
               All Services
             </HashLink>
+            <HashLink
+              smooth
+              to={isOnHomePage ? "#features" : "/#features"}
+              className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+              onClick={toggleMenu}
+            >
+              Features
+            </HashLink>
             <RouterLink
               to="/products"
               className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
@@ -176,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               Products
             </RouterLink>
             <RouterLink
-              to="/projects"
+              to="/solarprojects"
               className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
               onClick={toggleMenu}
             >
@@ -199,3 +213,5 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
     </header>
   );
 };
+
+export default Navbar;

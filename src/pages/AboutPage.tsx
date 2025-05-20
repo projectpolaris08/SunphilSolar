@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MdCheckCircle } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const AboutPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<
@@ -11,16 +13,17 @@ const AboutPage: React.FC = () => {
       initial: "K",
       name: "Ma. Katrina Bascon",
       title: "Owner",
-      description: "Leading our vision for a sustainable future.",
-      image: "/images/Katrina.jpeg",
+      description:
+        "Ma. Katrina Bascon owns Sunphil Solar and leads its day-to-day operations based in Fairview, Quezon City. She oversees sales, operations, legal, and finance, and manages the company’s customer relationship management (CRM) system to keep client interactions organized and efficient. Katrina is passionate about expanding access to clean energy and building a reliable, customer-focused solar company.",
+      image: "/images/Sunphil.jpg",
     },
     {
       initial: "J",
       name: 'Jhayar "Gar" Bacolod',
       title: "Owner/Head of Operations",
       description:
-        "Ensuring smooth project execution and customer satisfaction.",
-      image: "/images/Jhayar.jpeg",
+        "Jhayar is the Head of Operations and Chief Technical Officer at Sunphil Solar. He oversees daily operations and drives the company’s technical direction—from system design to installation. Known for his hands-on expertise and strong leadership, Jhayar works closely with teams to ensure every project is completed efficiently, safely, and on time.",
+      image: "/images/Sunphil.jpg",
     },
   ];
 
@@ -51,14 +54,14 @@ const AboutPage: React.FC = () => {
       name: "Ely",
       title: "Admin Assistant",
       description: "Building strong client relationships daily.",
-      image: "/images/Ely.jpeg",
+      image: "/images/Sunphil.jpg",
     },
     {
       initial: "J",
       name: "Jen",
       title: "Admin Assistant",
       description: "Building strong client relationships daily.",
-      image: "/images/Jen.jpeg",
+      image: "/images/Sunphil.jpg",
     },
     {
       initial: "M",
@@ -190,14 +193,14 @@ const AboutPage: React.FC = () => {
       name: "Joshua",
       title: "Builder",
       description: "Inverter Technical Specialist.",
-      image: "/images/Joshua.jpeg",
+      image: "/images/Sunphil.jpg",
     },
     {
       initial: "D",
       name: "David",
       title: "Builder",
       description: "Inverter Technical Specialist.",
-      image: "/images/David.jpeg",
+      image: "/images/Sunphil.jpg",
     },
     {
       initial: "D",
@@ -227,9 +230,7 @@ const AboutPage: React.FC = () => {
           </h2>
           <div className="h-1 w-20 bg-primary-500 mx-auto rounded mb-6"></div>
           <p className="text-lg text-secondary-600">
-            Empowering homes and businesses with clean, renewable energy
-            solutions built on innovation, reliability, and a commitment to a
-            sustainable future.
+            Empowering the Philippines with Clean, Affordable Solar Energy.
           </p>
         </div>
 
@@ -239,12 +240,19 @@ const AboutPage: React.FC = () => {
             Our Story
           </h3>
           <p className="text-secondary-600 mb-6">
-            Founded with a vision to make solar energy accessible to everyone,
-            we are a team of dedicated professionals passionate about creating a
-            greener planet. Our expertise spans across solar panel installation,
-            hybrid inverters, battery storage solutions, and customer-first
-            maintenance services. We believe in providing not just products, but
-            a complete lifestyle transformation toward energy independence.
+            Sunphil Solar, also known in the community as Fairview Solarista,
+            was founded in 2018 from a simple dream—to bring affordable and
+            reliable solar energy to Filipino homes and businesses. What started
+            as a local initiative powered by passion and grit has grown into one
+            of Metro Manila's trusted names in solar power solutions. Our
+            journey began with a small team of electricians who believed that
+            clean energy should not be a luxury. With hard work, dedication, and
+            community trust, we've installed hundreds of solar systems across
+            Luzon and Visayas helping our clients reduce electricity bills and
+            transition toward sustainable living. Today, Sunphil Solar
+            specializes in solar panel installations, hybrid inverters, battery
+            storage systems, and custom solar solutions for residential and
+            commercial.
           </p>
 
           <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
@@ -260,17 +268,116 @@ const AboutPage: React.FC = () => {
           <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
             Why Choose Us?
           </h3>
-          <ul className="list-disc list-inside text-secondary-600 space-y-3">
-            <li>
-              Premium quality solar panels, inverters, and battery systems
+          <ul className="space-y-5 text-secondary-600">
+            <li className="flex items-start gap-3">
+              <MdCheckCircle className="text-green-500 mt-1" size={24} />
+              <div>
+                <span className="font-bold text-secondary-900">
+                  Local Expertise with a National Reach
+                </span>
+                <br />
+                We understand the Filipino climate, energy consumption habits,
+                and building structures—allowing us to offer tailored solar
+                solutions that work for you.
+              </div>
             </li>
-            <li>Expert installation with industry-leading workmanship</li>
-            <li>Exceptional customer support and after-sales service</li>
-            <li>
-              Flexible, future-proof energy solutions tailored to your needs
+            <li className="flex items-start gap-3">
+              <MdCheckCircle className="text-green-500 mt-1" size={24} />
+              <div>
+                <span className="font-bold text-secondary-900">
+                  High-Quality Products
+                </span>
+                <br />
+                We use only top-tier solar panels, inverters, and batteries
+                backed by trusted international brands and solid manufacturer
+                warranties.
+              </div>
             </li>
-            <li>Transparent pricing and trusted partnerships</li>
+            <li className="flex items-start gap-3">
+              <MdCheckCircle className="text-green-500 mt-1" size={24} />
+              <div>
+                <span className="font-bold text-secondary-900">
+                  Professional, Certified Installation Team
+                </span>
+                <br />
+                Our team is composed of trained and accredited installers
+                committed to safe, efficient, and standards-compliant system
+                design.
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <MdCheckCircle className="text-green-500 mt-1" size={24} />
+              <div>
+                <span className="font-bold text-secondary-900">
+                  Transparent Pricing, No Hidden Costs
+                </span>
+                <br />
+                We provide detailed system proposals and clear pricing, helping
+                clients make informed decisions without pressure.
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <MdCheckCircle className="text-green-500 mt-1" size={24} />
+              <div>
+                <span className="font-bold text-secondary-900">
+                  Exceptional After-Sales Support
+                </span>
+                <br />
+                From monitoring to maintenance, our team is always one call
+                away. We treat your solar system as our long-term commitment.
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <MdCheckCircle className="text-green-500 mt-1" size={24} />
+              <div>
+                <span className="font-bold text-secondary-900">
+                  Customized Solutions
+                </span>
+                <br />
+                No two homes or businesses are the same. We assess your power
+                needs and recommend the best system for maximum savings and
+                performance.
+              </div>
+            </li>
           </ul>
+
+          {/* Our Promise Section */}
+          <div className="mt-10">
+            <h3 className="text-xl font-bold mb-2 text-secondary-900">
+              Our Promise
+            </h3>
+            <p className="text-secondary-700 mb-6">
+              At Sunphil Solar, we're not just installing solar panels—we're{" "}
+              <span className="font-bold">powering a movement</span>. A movement
+              for cleaner air, lower electricity bills, and empowered Filipino
+              households. Whether you're a homeowner looking to reduce your
+              Meralco bill or a business owner seeking energy resilience, we're
+              here to guide you every step of the way.
+            </p>
+            <hr className="my-6" />
+            <div className="flex items-start gap-3 mt-6">
+              <span className="text-2xl mt-1 text-yellow-500">
+                <MdCheckCircle />
+              </span>
+              <div>
+                <span className="text-lg font-bold text-secondary-900">
+                  Ready to Go Solar?
+                </span>
+                <p className="mt-1">
+                  <span className="font-bold">
+                    <Link
+                      to="/contact"
+                      className="text-primary-600 hover:underline"
+                    >
+                      Get in touch with us
+                    </Link>
+                  </span>{" "}
+                  for a free consultation and discover how solar energy can work
+                  for you.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Meet Our Team */}

@@ -10,6 +10,7 @@ import { PostPage } from "../pages/PostPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 import WeatherWidget from "../components/weather/WeatherWidget";
 import ProjectsPage from "../pages/ProjectsPage";
+import ProjectDetailPage from "../pages/ProjectDetailPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Cookies from "../pages/Cookies";
 
@@ -36,7 +37,10 @@ const AppRoutes = ({
           <Route path="/solarcalculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactForm />} />
-          <Route path="/projects" element={<ProjectsPage />} />
+          <Route
+            path="/projects"
+            element={<Navigate to="/solarprojects" replace />}
+          />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<Cookies />} />
 
@@ -53,6 +57,12 @@ const AppRoutes = ({
               </div>
             }
           />
+
+          {/* Project routes */}
+          <Route path="/solarprojects">
+            <Route index element={<ProjectsPage />} />
+            <Route path=":projectId" element={<ProjectDetailPage />} />
+          </Route>
 
           {/* Blog routes */}
           <Route path="/blog">

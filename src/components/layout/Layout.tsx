@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Navbar } from './Navbar';
-import { Outlet, useLocation } from 'react-router-dom';
-import { Footer } from './Footer';
+import React, { useState, useEffect } from "react";
+import Navbar from "./Navbar";
+import { Outlet, useLocation } from "react-router-dom";
+import { Footer } from "./Footer";
 
 export const Layout: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,7 +12,7 @@ export const Layout: React.FC = () => {
     const smoothScroll = () => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     };
 
@@ -21,11 +21,11 @@ export const Layout: React.FC = () => {
 
     // Handle hash links
     if (location.hash) {
-      const id = location.hash.replace('#', '');
+      const id = location.hash.replace("#", "");
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }
@@ -37,8 +37,8 @@ export const Layout: React.FC = () => {
       setScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

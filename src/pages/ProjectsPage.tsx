@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
+    id: "sariaya-quezon",
     image: "/images/project1.jpg",
     location: "Sariaya, Quezon, PH",
     system: "32kW Hybrid Solar",
@@ -13,6 +15,7 @@ const projects = [
     ],
   },
   {
+    id: "goa-camarines-sur",
     image: "/images/project2.jpg",
     location: "Goa, Camarines Sur, PH",
     system: "24kW Hybrid Solar",
@@ -24,69 +27,75 @@ const projects = [
     ],
   },
   {
+    id: "cabanatuan-nueva-ecija",
     image: "/images/project3.jpg",
-    location: "Cabanatuan City, PH",
+    location: "Cabanatuan City, Nueva Ecija, PH",
     system: "12kW Hybrid Solar",
     date: "2024-04-12",
     specification: [
-      "12kW Hybrid Inverter",
+      "1 unit 12kW Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
       "2 units 51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
+    id: "porac-pampanga",
     image: "/images/project4.jpg",
     location: "Porac, Pampanga, PH",
     system: "8kW Hybrid Solar",
     date: "2024-03-03",
     specification: [
-      "8kW Hybrid Inverter",
+      "1 unit 8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "51.2v 280Ah LiFePO4 Battery",
+      "1 unit 51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
+    id: "birvillage-qc",
     image: "/images/project5.jpg",
-    location: "BIR Village, Quezon City, PH",
+    location: "BIR Village, Quezon City, Metro Manila, PH",
     system: "12kW Hybrid Solar",
     date: "2024-03-07",
     specification: [
-      "12kW Hybrid Inverter",
+      "1 unit 12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "3 units 48v 280Ah LiFePO4 Battery",
+      "3 units 51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
+    id: "cabanatuan-nueva-ecija-6kw",
     image: "/images/project6.jpg",
-    location: "Cabanatuan City, PH",
+    location: "Cabanatuan City, Nueva Ecija, PH",
     system: "6kW Hybrid Solar",
     date: "2024-03-15",
     specification: [
-      "6kW Hybrid Inverter",
+      "1 unit 6kW Deye Hybrid Inverter",
       "13 pcs 615W Canadian Bifacial Solar Panel",
-      "51.2v 314Ah LiFePO4 Battery",
+      "1 unit 51.2v 314Ah LiFePO4 Battery",
     ],
   },
   {
+    id: "lubao-pampanga",
     image: "/images/project7.jpg",
     location: "Lubao, Pampanga, PH",
     system: "8kW Hybrid Solar",
-    date: "2024-05-09",
+    date: "2024-05-08",
     specification: [
-      "8kW Hybrid Inverter",
+      "1 unit 8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
       "2 units 51.2v 314Ah LiFePO4 Battery",
     ],
   },
   {
+    id: "umingan-pangasinan",
     image: "/images/project8.jpg",
     location: "Umingan, Pangasinan, PH",
     system: "8kW Hybrid Solar",
     date: "2024-05-13",
     specification: [
-      "8kW Hybrid Inverter",
+      "1 unit 8kW Deye Hybrid Inverter",
       "16 pcs 615W Canadian Bifacial Solar Panel",
-      "51.2v 314Ah LiFePO4 Battery",
+      "1 unit 51.2v 314Ah LiFePO4 Battery",
     ],
   },
   // Add more projects as needed
@@ -121,9 +130,10 @@ const ProjectsPage: React.FC = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {paginated.map((proj, idx) => (
-            <div
+            <Link
+              to={`/solarprojects/${proj.id}`}
               key={idx}
-              className="bg-white rounded-lg p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-gray-200 hover:border-primary-500"
+              className="bg-white rounded-lg p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-gray-200 hover:border-primary-500 cursor-pointer"
             >
               <img
                 src={proj.image}
@@ -142,7 +152,7 @@ const ProjectsPage: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center mt-6 gap-2">
