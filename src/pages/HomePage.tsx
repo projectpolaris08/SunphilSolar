@@ -83,6 +83,7 @@ export const HomePage = () => {
   return (
     <>
       <Hero />
+      <BrandLogos />
       {/* Featured Projects Section - 3-column grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -199,7 +200,6 @@ export const HomePage = () => {
       <Stats />
       <Features />
       <Services />
-      <BrandLogos />
       <ContactForm />
     </>
   );
