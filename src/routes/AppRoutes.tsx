@@ -29,7 +29,11 @@ const AppRoutes = ({
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
-          <Route path="/calculator" element={<CalculatorPage />} />
+          <Route
+            path="/calculator"
+            element={<Navigate to="/solarcalculator" replace />}
+          />
+          <Route path="/solarcalculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/projects" element={<ProjectsPage />} />
