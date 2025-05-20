@@ -3,6 +3,7 @@ import { Stats } from "../components/sections/Stats";
 import { Features } from "../components/sections/Features";
 import { Services } from "../components/sections/Services";
 import { ContactForm } from "../components/sections/ContactForm";
+import { BrandLogos } from "../components/sections/BrandLogos";
 import { Link } from "react-router-dom"; // or 'next/link' if using Next.js
 
 // Mock data array for 3 featured blogs
@@ -197,7 +198,8 @@ export const HomePage = () => {
       </section>
       <Stats />
       <Features />
-      <Services /> {/* "Our Solar Energy Solutions" section */}
+      <Services />
+      <BrandLogos />
       <ContactForm />
     </>
   );

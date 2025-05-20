@@ -1755,13 +1755,14 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 13,
-    title: "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
+    title:
+      "How a Trump Presidency in 2025 Could Impact the Solar Industry in the Philippines",
     author: "Sunphil Solar",
     date: "2025-05-10",
     slug: "trump-2025-impact-solar-philippines",
     tags: ["Trump 2025", "solar industry Philippines", "renewable energy"],
     excerpt:
-      "Donald Trump’s return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here’s what you need to know.",
+      "Donald Trump's return to the White House in 2025 could create ripple effects in the Philippine solar market—from rising solar panel prices to shifts in global investment. Here's what you need to know.",
     metaDescription:
       "How a Trump presidency in 2025 could affect the Philippine solar industry through tariffs, investment uncertainty, and local opportunities in renewable energy.",
     featuredImage: {
@@ -1773,101 +1774,146 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          With Donald Trump back in the U.S. presidency in 2025, big changes are expected in
-          global trade and energy policies. While the Philippines is geographically distant,
-          the local solar industry could feel real impacts—especially through tariffs, foreign
-          investment shifts, and changing global supply chains. Let’s break down how a second
-          Trump term could affect the Philippine solar energy market, the challenges we may face,
-          and the local opportunities we can tap to move forward.
+          With Donald Trump back in the U.S. presidency in 2025, big changes are
+          expected in global trade and energy policies. While the Philippines is
+          geographically distant, the local solar industry could feel real
+          impacts—especially through tariffs, foreign investment shifts, and
+          changing global supply chains. Let's break down how a second Trump
+          term could affect the Philippine solar energy market, the challenges
+          we may face, and the local opportunities we can tap to move forward.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Tariffs and Rising Costs for Solar Panels
         </h3>
         <p className="text-secondary-700 mb-6">
-          One of the biggest concerns is the potential return of broad tariffs on imports,
-          similar to what Trump implemented during his previous term. A universal 10% tariff on
-          solar panel imports hurt Southeast Asian manufacturers—the very suppliers many Philippine
-          solar installers depend on. If those tariffs come back, the cost of solar panels imported
-          from China, Malaysia, and Vietnam may increase, affecting pricing here at home.
+          One of the biggest concerns is the potential return of broad tariffs
+          on imports, similar to what Trump implemented during his previous
+          term. A universal 10% tariff on solar panel imports hurt Southeast
+          Asian manufacturers—the very suppliers many Philippine solar
+          installers depend on. If those tariffs come back, the cost of solar
+          panels imported from China, Malaysia, and Vietnam may increase,
+          affecting pricing here at home.
         </p>
         <p className="text-secondary-700 mb-6">
-          Residential solar systems in the Philippines were projected to cost ₱30,000 to ₱40,000
-          per kW in 2025 according to <a href="https://sgasolar.com.ph/" target="_blank" className="text-primary-600 underline">SGA Solar</a>,
-          but tariffs may prevent those prices from falling as expected. That’s a challenge for
-          middle-class households who are already feeling the pinch from inflation and rising living costs.
+          Residential solar systems in the Philippines were projected to cost
+          ₱30,000 to ₱40,000 per kW in 2025 according to{" "}
+          <a
+            href="https://sgasolar.com.ph/"
+            target="_blank"
+            className="text-primary-600 underline"
+          >
+            SGA Solar
+          </a>
+          , but tariffs may prevent those prices from falling as expected.
+          That's a challenge for middle-class households who are already feeling
+          the pinch from inflation and rising living costs.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Global Investment Uncertainty
         </h3>
         <p className="text-secondary-700 mb-6">
-          Another concern is the potential pullback in global renewable energy investments.
-          Trump has openly favored fossil fuels and previously rolled back clean energy incentives,
-          including parts of the Inflation Reduction Act (IRA). If those policies resurface, some
-          investors may hesitate to support renewable energy projects—even in countries like the
-          Philippines.
+          Another concern is the potential pullback in global renewable energy
+          investments. Trump has openly favored fossil fuels and previously
+          rolled back clean energy incentives, including parts of the Inflation
+          Reduction Act (IRA). If those policies resurface, some investors may
+          hesitate to support renewable energy projects—even in countries like
+          the Philippines.
         </p>
         <p className="text-secondary-700 mb-6">
-          Still, the Philippine market remains promising. According to <a href="https://www.expertmarketresearch.com/reports/philippines-solar-energy-market" target="_blank" className="text-primary-600 underline">Expert Market Research</a>,
-          the local solar energy sector is forecasted to grow at a CAGR of 17.90% between 2025
-          and 2034, eventually reaching 11.57 TWh. That growth is being driven by local demand,
-          supportive policies, and the need for sustainable energy sources.
+          Still, the Philippine market remains promising. According to{" "}
+          <a
+            href="https://www.expertmarketresearch.com/reports/philippines-solar-energy-market"
+            target="_blank"
+            className="text-primary-600 underline"
+          >
+            Expert Market Research
+          </a>
+          , the local solar energy sector is forecasted to grow at a CAGR of
+          17.90% between 2025 and 2034, eventually reaching 11.57 TWh. That
+          growth is being driven by local demand, supportive policies, and the
+          need for sustainable energy sources.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Strong Local Incentives Still in Place
         </h3>
         <p className="text-secondary-700 mb-6">
-          Thankfully, the Philippine government has continued offering strong support for solar
-          energy. Tax incentives, net metering policies, and solar subsidies are helping make
-          solar more affordable for homes and businesses. Net metering in particular allows
-          homeowners to sell excess energy back to the grid—lowering bills and improving
-          ROI on installations.
+          Thankfully, the Philippine government has continued offering strong
+          support for solar energy. Tax incentives, net metering policies, and
+          solar subsidies are helping make solar more affordable for homes and
+          businesses. Net metering in particular allows homeowners to sell
+          excess energy back to the grid—lowering bills and improving ROI on
+          installations.
         </p>
         <p className="text-secondary-700 mb-6">
-          The national goal is to hit 35% renewable energy in the power mix by 2030, and solar
-          is expected to be a key part of that transition. <a href="https://www.nativtechniks.com/" target="_blank" className="text-primary-600 underline">Nativ Techniks </a>
-          reports continued strong momentum for residential and commercial installations alike.
+          The national goal is to hit 35% renewable energy in the power mix by
+          2030, and solar is expected to be a key part of that transition.{" "}
+          <a
+            href="https://www.nativtechniks.com/"
+            target="_blank"
+            className="text-primary-600 underline"
+          >
+            Nativ Techniks{" "}
+          </a>
+          reports continued strong momentum for residential and commercial
+          installations alike.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Opportunities for Local Manufacturing and Innovation
         </h3>
         <p className="text-secondary-700 mb-6">
-          The current global trade uncertainty offers a silver lining—there’s a strong case for
-          investing in local solar manufacturing. If we can produce solar panels, batteries,
-          and inverters locally, we reduce our exposure to international price shocks and tariffs.
+          The current global trade uncertainty offers a silver lining—there's a
+          strong case for investing in local solar manufacturing. If we can
+          produce solar panels, batteries, and inverters locally, we reduce our
+          exposure to international price shocks and tariffs.
         </p>
         <p className="text-secondary-700 mb-6">
-          With a growing talent pool in tech and engineering, the Philippines is well-positioned
-          to scale up solar production and innovate for local needs. Public-private partnerships (PPP)
-          could also unlock new technologies like solar-powered desalination systems—addressing both
+          With a growing talent pool in tech and engineering, the Philippines is
+          well-positioned to scale up solar production and innovate for local
+          needs. Public-private partnerships (PPP) could also unlock new
+          technologies like solar-powered desalination systems—addressing both
           energy and water security.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Moving Forward: Strategies for Resilience
         </h3>
         <p className="text-secondary-700 mb-6">
-          A Trump presidency may bring headwinds, but the Philippine solar industry can adapt.
-          Here are a few strategies that can keep us moving forward:
+          A Trump presidency may bring headwinds, but the Philippine solar
+          industry can adapt. Here are a few strategies that can keep us moving
+          forward:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li><strong>Diversify Supply Chains:</strong> Work with suppliers in regions unaffected by U.S. tariffs to stabilize prices.</li>
-          <li><strong>Strengthen Policy Support:</strong> Maintain tax incentives and net metering, and enforce the Renewable Energy Act.</li>
-          <li><strong>Promote R&D:</strong> Invest in efficient solar tech and offer alternative financing models like leasing and pay-as-you-go.</li>
-          <li><strong>Encourage PPP:</strong> Partner with the private sector to fund large-scale projects and solar innovations.</li>
+          <li>
+            <strong>Diversify Supply Chains:</strong> Work with suppliers in
+            regions unaffected by U.S. tariffs to stabilize prices.
+          </li>
+          <li>
+            <strong>Strengthen Policy Support:</strong> Maintain tax incentives
+            and net metering, and enforce the Renewable Energy Act.
+          </li>
+          <li>
+            <strong>Promote R&D:</strong> Invest in efficient solar tech and
+            offer alternative financing models like leasing and pay-as-you-go.
+          </li>
+          <li>
+            <strong>Encourage PPP:</strong> Partner with the private sector to
+            fund large-scale projects and solar innovations.
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Conclusion: Staying the Course
         </h3>
         <p className="text-secondary-700">
-          While a second Trump term may introduce new global challenges, the Philippines has
-          the tools and momentum to keep growing its solar sector. With the right mix of policy
-          support, local innovation, and strategic investment, the country can continue its
-          transition to a cleaner and more resilient energy future.
+          While a second Trump term may introduce new global challenges, the
+          Philippines has the tools and momentum to keep growing its solar
+          sector. With the right mix of policy support, local innovation, and
+          strategic investment, the country can continue its transition to a
+          cleaner and more resilient energy future.
         </p>
       </>
     ),
@@ -1876,7 +1922,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 14,
-    title: "Advantage of Bifacial Solar Panels: Complete Guide for the Philippines",
+    title:
+      "Advantage of Bifacial Solar Panels: Complete Guide for the Philippines",
     author: "Sunphil Solar",
     date: "2025-05-13",
     slug: "bifacial-solar-panels-philippines-2025",
@@ -1885,10 +1932,10 @@ export const blogPosts: BlogPost[] = [
       "solar panel efficiency",
       "renewable energy solutions",
       "solar installation",
-      "solar energy Philippines"
+      "solar energy Philippines",
     ],
     excerpt:
-      "Bifacial solar panels are revolutionizing solar energy in the Philippines. Discover how these advanced panels deliver higher efficiency, longer lifespan, and better returns-perfect for the country’s climate and energy needs.",
+      "Bifacial solar panels are revolutionizing solar energy in the Philippines. Discover how these advanced panels deliver higher efficiency, longer lifespan, and better returns-perfect for the country's climate and energy needs.",
     metaDescription:
       "Explore the key advantages of bifacial solar panels in the Philippines. Learn how they boost energy efficiency, durability, and cost savings for homes and businesses, with data and sources.",
     featuredImage: {
@@ -1900,31 +1947,90 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          <strong>Bifacial solar panels are changing the landscape of renewable energy in the Philippines.</strong> Unlike conventional solar panels, bifacial modules capture sunlight from both the front and rear sides-maximizing every ray and reflection. With the Philippines’ high solar irradiance, reflective rooftops, and challenging weather, bifacial panels are quickly becoming the preferred choice for Filipino households and businesses seeking efficiency and resilience.
+          <strong>
+            Bifacial solar panels are changing the landscape of renewable energy
+            in the Philippines.
+          </strong>{" "}
+          Unlike conventional solar panels, bifacial modules capture sunlight
+          from both the front and rear sides-maximizing every ray and
+          reflection. With the Philippines' high solar irradiance, reflective
+          rooftops, and challenging weather, bifacial panels are quickly
+          becoming the preferred choice for Filipino households and businesses
+          seeking efficiency and resilience.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           What Are Bifacial Solar Panels?
         </h3>
         <p className="text-secondary-700 mb-6">
-          Bifacial solar panels feature photovoltaic cells on both surfaces, allowing them to absorb direct sunlight and light reflected from surfaces such as white-painted roofs, concrete, sand, or water. This dual-sided design can increase energy yield by <strong>up to 30%</strong> compared to traditional monofacial panels (<a href="https://pv-magazine-usa.com/2023/07/17/bifacial-solar-panels-boost-yield/" target="_blank" rel="noopener" className="text-primary-600 underline">PV Magazine</a>). Their transparent or dual-glass construction also enhances durability, making them ideal for the Philippines’ tropical conditions.
+          Bifacial solar panels feature photovoltaic cells on both surfaces,
+          allowing them to absorb direct sunlight and light reflected from
+          surfaces such as white-painted roofs, concrete, sand, or water. This
+          dual-sided design can increase energy yield by{" "}
+          <strong>up to 30%</strong> compared to traditional monofacial panels (
+          <a
+            href="https://pv-magazine-usa.com/2023/07/17/bifacial-solar-panels-boost-yield/"
+            target="_blank"
+            rel="noopener"
+            className="text-primary-600 underline"
+          >
+            PV Magazine
+          </a>
+          ). Their transparent or dual-glass construction also enhances
+          durability, making them ideal for the Philippines' tropical
+          conditions.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Why Bifacial Solar Panels Are Perfect for the Philippines
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
           <li>
-            <strong>Abundant Sunlight & Reflective Surfaces:</strong> The Philippines receives an average of <strong>4.5 to 5.5 kWh/m²/day</strong> of solar energy (<a href="https://www.doe.gov.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">DOE</a>). Coastal areas, white rooftops, and sandy terrain increase surface reflectivity, which bifacial panels can harness for extra power.
+            <strong>Abundant Sunlight & Reflective Surfaces:</strong> The
+            Philippines receives an average of{" "}
+            <strong>4.5 to 5.5 kWh/m²/day</strong> of solar energy (
+            <a
+              href="https://www.doe.gov.ph/"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
+              DOE
+            </a>
+            ). Coastal areas, white rooftops, and sandy terrain increase surface
+            reflectivity, which bifacial panels can harness for extra power.
           </li>
           <li>
-            <strong>Weather & Heat Resistance:</strong> With double-glass and robust frames, bifacial panels resist heat, humidity, typhoons, and salt mist-essential for the Philippine archipelago (<a href="https://www.iea.org/reports/solar-pv" target="_blank" rel="noopener" className="text-primary-600 underline">IEA</a>).
+            <strong>Weather & Heat Resistance:</strong> With double-glass and
+            robust frames, bifacial panels resist heat, humidity, typhoons, and
+            salt mist-essential for the Philippine archipelago (
+            <a
+              href="https://www.iea.org/reports/solar-pv"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
+              IEA
+            </a>
+            ).
           </li>
           <li>
-            <strong>Longer Lifespan & Lower Maintenance:</strong> Bifacial panels typically last up to <strong>30 years</strong>, with less degradation and fewer replacements needed, reducing long-term costs (<a href="https://waaree.com/blog/what-are-the-benefits-of-bifacial-solar-panels-over-traditional-models/" target="_blank" rel="noopener" className="text-primary-600 underline">Waaree</a>).
+            <strong>Longer Lifespan & Lower Maintenance:</strong> Bifacial
+            panels typically last up to <strong>30 years</strong>, with less
+            degradation and fewer replacements needed, reducing long-term costs
+            (
+            <a
+              href="https://waaree.com/blog/what-are-the-benefits-of-bifacial-solar-panels-over-traditional-models/"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
+              Waaree
+            </a>
+            ).
           </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Key Advantages of Bifacial Solar Panels
         </h3>
@@ -1940,66 +2046,128 @@ export const blogPosts: BlogPost[] = [
             <tbody>
               <tr>
                 <td className="px-4 py-2 border-b">Higher Energy Yield</td>
-                <td className="px-4 py-2 border-b">Generates 10–30% more electricity by capturing direct and reflected sunlight.</td>
-                <td className="px-4 py-2 border-b">Maximizes output in sunny, reflective environments-ideal for Philippine rooftops and open spaces.</td>
+                <td className="px-4 py-2 border-b">
+                  Generates 10–30% more electricity by capturing direct and
+                  reflected sunlight.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Maximizes output in sunny, reflective environments-ideal for
+                  Philippine rooftops and open spaces.
+                </td>
               </tr>
               <tr>
                 <td className="px-4 py-2 border-b">Improved Durability</td>
-                <td className="px-4 py-2 border-b">Double-glass or transparent backsheet resists weather, UV, and mechanical stress.</td>
-                <td className="px-4 py-2 border-b">Withstands typhoons, heavy rainfall, and high humidity common in the Philippines.</td>
+                <td className="px-4 py-2 border-b">
+                  Double-glass or transparent backsheet resists weather, UV, and
+                  mechanical stress.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Withstands typhoons, heavy rainfall, and high humidity common
+                  in the Philippines.
+                </td>
               </tr>
               <tr>
                 <td className="px-4 py-2 border-b">Cost-Effectiveness</td>
-                <td className="px-4 py-2 border-b">Higher output and lifespan lower the Levelized Cost of Electricity (LCOE) over time.</td>
-                <td className="px-4 py-2 border-b">Reduces electricity bills and accelerates ROI for homes and businesses.</td>
+                <td className="px-4 py-2 border-b">
+                  Higher output and lifespan lower the Levelized Cost of
+                  Electricity (LCOE) over time.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Reduces electricity bills and accelerates ROI for homes and
+                  businesses.
+                </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Better Performance in Diffuse Light</td>
-                <td className="px-4 py-2 border-b">Efficient even on cloudy or rainy days by capturing diffused and reflected light.</td>
-                <td className="px-4 py-2 border-b">Great for the Philippines’ rainy season and variable weather patterns.</td>
+                <td className="px-4 py-2 border-b">
+                  Better Performance in Diffuse Light
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Efficient even on cloudy or rainy days by capturing diffused
+                  and reflected light.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Great for the Philippines' rainy season and variable weather
+                  patterns.
+                </td>
               </tr>
               <tr>
                 <td className="px-4 py-2 border-b">Versatile Installation</td>
-                <td className="px-4 py-2 border-b">Suitable for rooftops, ground mounts, carports, and solar canopies.</td>
-                <td className="px-4 py-2 border-b">Supports residential, commercial, and industrial solar projects nationwide.</td>
+                <td className="px-4 py-2 border-b">
+                  Suitable for rooftops, ground mounts, carports, and solar
+                  canopies.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Supports residential, commercial, and industrial solar
+                  projects nationwide.
+                </td>
               </tr>
               <tr>
                 <td className="px-4 py-2 border-b">Environmental Benefits</td>
-                <td className="px-4 py-2 border-b">Reduces carbon footprint and land use due to higher efficiency per panel.</td>
-                <td className="px-4 py-2 border-b">Aligns with the Philippines’ climate goals and renewable energy targets.</td>
+                <td className="px-4 py-2 border-b">
+                  Reduces carbon footprint and land use due to higher efficiency
+                  per panel.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Aligns with the Philippines' climate goals and renewable
+                  energy targets.
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Supporting Data & Sources
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
           <li>
-            <a href="https://www.doe.gov.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">
+            <a
+              href="https://www.doe.gov.ph/"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
               Department of Energy – Solar Energy in the Philippines
             </a>
           </li>
           <li>
-            <a href="https://waaree.com/blog/what-are-the-benefits-of-bifacial-solar-panels-over-traditional-models/" target="_blank" rel="noopener" className="text-primary-600 underline">
+            <a
+              href="https://waaree.com/blog/what-are-the-benefits-of-bifacial-solar-panels-over-traditional-models/"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
               Waaree – Benefits of Bifacial Solar Panels Over Traditional Models
             </a>
           </li>
           <li>
-            <a href="https://www.iea.org/reports/solar-pv" target="_blank" rel="noopener" className="text-primary-600 underline">
+            <a
+              href="https://www.iea.org/reports/solar-pv"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
               International Energy Agency – Solar PV Report
             </a>
           </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Conclusion: Why Bifacial Solar is the Future for the Philippines
         </h3>
         <p className="text-secondary-700 mb-6">
-          Bifacial solar panels offer Filipino homeowners and businesses a powerful upgrade: higher energy yields, greater durability, and better long-term savings. Their ability to thrive in the Philippines’ sunny, reflective, and sometimes harsh climate makes them the smart choice for maximizing solar benefits and supporting the nation’s clean energy future.
-          <br /><br />
-          <strong>Ready to upgrade?</strong> <a href="/contact" className="text-primary-600 underline">Contact Sunphil Solar for a free bifacial solar assessment today!</a>
+          Bifacial solar panels offer Filipino homeowners and businesses a
+          powerful upgrade: higher energy yields, greater durability, and better
+          long-term savings. Their ability to thrive in the Philippines' sunny,
+          reflective, and sometimes harsh climate makes them the smart choice
+          for maximizing solar benefits and supporting the nation's clean energy
+          future.
+          <br />
+          <br />
+          <strong>Ready to upgrade?</strong>{" "}
+          <a href="/contact" className="text-primary-600 underline">
+            Contact Sunphil Solar for a free bifacial solar assessment today!
+          </a>
         </p>
       </>
     ),
@@ -2016,7 +2184,7 @@ export const blogPosts: BlogPost[] = [
       "residential solar guide",
       "solar energy 2025",
       "Philippines renewable energy",
-      "home solar power"
+      "home solar power",
     ],
     excerpt:
       "Learn how to install solar panels for your home in the Philippines in 2025. This updated guide covers everything—costs, types, steps, and local tips to help you go solar efficiently.",
@@ -2026,24 +2194,44 @@ export const blogPosts: BlogPost[] = [
       url: "/images/solar-panel-installation-philippines-guide.jpg",
       alt: "Technicians installing solar panels on a Filipino home's rooftop",
       width: 1200,
-      height: 630
+      height: 630,
     },
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          <strong>Going solar in 2025 is easier and more rewarding than ever in the Philippines.</strong> Whether you’re aiming to cut electricity bills, reduce your carbon footprint, or achieve energy independence, installing solar panels at home is a smart investment. This guide walks you through the essential steps—from planning and choosing the right panels to installation, cost estimates, and maintenance.
+          <strong>
+            Going solar in 2025 is easier and more rewarding than ever in the
+            Philippines.
+          </strong>{" "}
+          Whether you're aiming to cut electricity bills, reduce your carbon
+          footprint, or achieve energy independence, installing solar panels at
+          home is a smart investment. This guide walks you through the essential
+          steps—from planning and choosing the right panels to installation,
+          cost estimates, and maintenance.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           1. Why Install Solar Panels at Home?
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
-          <li><strong>Save on electricity bills:</strong> Reduce Meralco and other utility charges significantly.</li>
-          <li><strong>Energy independence:</strong> Generate your own power and rely less on the grid.</li>
-          <li><strong>Environmental impact:</strong> Lower carbon emissions and support clean energy goals.</li>
-          <li><strong>Incentives:</strong> Benefit from Net Metering and government support.</li>
+          <li>
+            <strong>Save on electricity bills:</strong> Reduce Meralco and other
+            utility charges significantly.
+          </li>
+          <li>
+            <strong>Energy independence:</strong> Generate your own power and
+            rely less on the grid.
+          </li>
+          <li>
+            <strong>Environmental impact:</strong> Lower carbon emissions and
+            support clean energy goals.
+          </li>
+          <li>
+            <strong>Incentives:</strong> Benefit from Net Metering and
+            government support.
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           2. Types of Home Solar Systems
         </h3>
@@ -2059,83 +2247,182 @@ export const blogPosts: BlogPost[] = [
             <tbody>
               <tr>
                 <td className="px-4 py-2 border-b">Grid-Tied</td>
-                <td className="px-4 py-2 border-b">Connected to the utility grid; can export excess power (Net Metering).</td>
-                <td className="px-4 py-2 border-b">Urban homes with stable electricity.</td>
+                <td className="px-4 py-2 border-b">
+                  Connected to the utility grid; can export excess power (Net
+                  Metering).
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Urban homes with stable electricity.
+                </td>
               </tr>
               <tr>
                 <td className="px-4 py-2 border-b">Off-Grid</td>
-                <td className="px-4 py-2 border-b">Completely independent; uses batteries for storage.</td>
-                <td className="px-4 py-2 border-b">Remote areas with no grid access.</td>
+                <td className="px-4 py-2 border-b">
+                  Completely independent; uses batteries for storage.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Remote areas with no grid access.
+                </td>
               </tr>
               <tr>
                 <td className="px-4 py-2 border-b">Hybrid</td>
-                <td className="px-4 py-2 border-b">Grid-connected but includes batteries for backup.</td>
-                <td className="px-4 py-2 border-b">Areas with frequent brownouts or energy-conscious homes.</td>
+                <td className="px-4 py-2 border-b">
+                  Grid-connected but includes batteries for backup.
+                </td>
+                <td className="px-4 py-2 border-b">
+                  Areas with frequent brownouts or energy-conscious homes.
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           3. Step-by-Step Solar Installation Process
         </h3>
         <ol className="list-decimal list-inside text-secondary-700 mb-6 space-y-2">
-          <li><strong>Energy audit:</strong> <a href="https://sunphilsolar.com/calculator" className="text-primary-600 underline" target="_blank" rel="noopener">Calculate</a> your household’s daily kWh usage.</li>
-          <li><strong>System sizing:</strong> Determine how many panels you need.</li>
-          <li><strong>Site assessment:</strong> Check your roof’s orientation, shading, and strength.</li>
-          <li><strong>Quotation:</strong> Get a proposal from licensed installers.</li>
-          <li><strong>Permits:</strong> Secure barangay clearance, HOA approval (if needed), and electrical permits.</li>
-          <li><strong>Installation:</strong> Mount panels, install inverters, and connect wiring.</li>
-          <li><strong>Net Metering:</strong> Apply through your utility (like Meralco) to export excess power.</li>
-          <li><strong>Commissioning:</strong> Test the system and switch on solar power!</li>
+          <li>
+            <strong>Energy audit:</strong>{" "}
+            <a
+              href="https://sunphilsolar.com/calculator"
+              className="text-primary-600 underline"
+              target="_blank"
+              rel="noopener"
+            >
+              Calculate
+            </a>{" "}
+            your household's daily kWh usage.
+          </li>
+          <li>
+            <strong>System sizing:</strong> Determine how many panels you need.
+          </li>
+          <li>
+            <strong>Site assessment:</strong> Check your roof's orientation,
+            shading, and strength.
+          </li>
+          <li>
+            <strong>Quotation:</strong> Get a proposal from licensed installers.
+          </li>
+          <li>
+            <strong>Permits:</strong> Secure barangay clearance, HOA approval
+            (if needed), and electrical permits.
+          </li>
+          <li>
+            <strong>Installation:</strong> Mount panels, install inverters, and
+            connect wiring.
+          </li>
+          <li>
+            <strong>Net Metering:</strong> Apply through your utility (like
+            Meralco) to export excess power.
+          </li>
+          <li>
+            <strong>Commissioning:</strong> Test the system and switch on solar
+            power!
+          </li>
         </ol>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           4. Cost of Solar Panel Installation in the Philippines (2025)
         </h3>
         <p className="text-secondary-700 mb-6">
-          Prices vary depending on system size, brand, and installer, but here’s a ballpark:
+          Prices vary depending on system size, brand, and installer, but here's
+          a ballpark:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
-          <li><strong>3kW Hybrid System:</strong> ₱120,000–₱180,000 (suitable for small households)</li>
-          <li><strong>6kW Hybrid System:</strong> ₱280,000–₱320,000 (ideal for mid-sized homes with occasional outages)</li>
-          <li><strong>12kW Hybrid System:</strong> ₱550,000–₱700,000 (complete independence)</li>
+          <li>
+            <strong>3kW Hybrid System:</strong> ₱120,000–₱180,000 (suitable for
+            small households)
+          </li>
+          <li>
+            <strong>6kW Hybrid System:</strong> ₱280,000–₱320,000 (ideal for
+            mid-sized homes with occasional outages)
+          </li>
+          <li>
+            <strong>12kW Hybrid System:</strong> ₱550,000–₱700,000 (complete
+            independence)
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           5. Maintenance and Lifespan
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
-          <li><strong>Cleaning:</strong> Wipe down panels 1–2 times per year (more often if near dust or trees).</li>
-          <li><strong>Inverter replacement:</strong> Every 10–15 years.</li>
-          <li><strong>Panel lifespan:</strong> 25 years with warranties.</li>
-          <li><strong>Annual inspection:</strong> Recommended for system health and safety.</li>
+          <li>
+            <strong>Cleaning:</strong> Wipe down panels 1–2 times per year (more
+            often if near dust or trees).
+          </li>
+          <li>
+            <strong>Inverter replacement:</strong> Every 10–15 years.
+          </li>
+          <li>
+            <strong>Panel lifespan:</strong> 25 years with warranties.
+          </li>
+          <li>
+            <strong>Annual inspection:</strong> Recommended for system health
+            and safety.
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Resources and Support
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
-          <li><a href="https://www.doe.gov.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">Department of Energy (DOE)</a></li>
-          <li><a href="https://www.meralco.com.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">Meralco Net Metering Program</a></li>
-          <li><a href="https://www.philippinesolar.ph/" target="_blank" rel="noopener" className="text-primary-600 underline">Philippine Solar Industry Portal</a></li>
+          <li>
+            <a
+              href="https://www.doe.gov.ph/"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
+              Department of Energy (DOE)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.meralco.com.ph/"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
+              Meralco Net Metering Program
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.philippinesolar.ph/"
+              target="_blank"
+              rel="noopener"
+              className="text-primary-600 underline"
+            >
+              Philippine Solar Industry Portal
+            </a>
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Final Thoughts: A Brighter Home in 2025
         </h3>
         <p className="text-secondary-700 mb-6">
-          Whether you live in Manila, Cebu, or a rural barangay, solar panels can bring cleaner, cheaper energy to your home. 2025 is the perfect time to make the switch—with better prices, more efficient systems, and stronger support from government and installers.
-          <br /><br />
-          <strong>Need help getting started?</strong> <a href="/contact" className="text-primary-600 underline">Talk to Sunphil Solar today for a free consultation and custom system recommendation.</a>
+          Whether you live in Manila, Cebu, or a rural barangay, solar panels
+          can bring cleaner, cheaper energy to your home. 2025 is the perfect
+          time to make the switch—with better prices, more efficient systems,
+          and stronger support from government and installers.
+          <br />
+          <br />
+          <strong>Need help getting started?</strong>{" "}
+          <a href="/contact" className="text-primary-600 underline">
+            Talk to Sunphil Solar today for a free consultation and custom
+            system recommendation.
+          </a>
         </p>
       </>
     ),
-    readingTime: 6
+    readingTime: 6,
   },
   {
     id: 16,
-    title: "SSS Main Office Goes Solar with 500 Panels—Here’s Why You Should Too",
+    title:
+      "SSS Main Office Goes Solar with 500 Panels—Here's Why You Should Too",
     author: "Sunphil Solar",
     date: "2025-05-17",
     slug: "sss-main-office-goes-solar-2025",
@@ -2153,69 +2440,328 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          When the Social Security System (SSS)—one of the country’s most essential government agencies—decides to go solar, you know it’s not just a trend. It’s the future.
+          When the Social Security System (SSS)—one of the country's most
+          essential government agencies—decides to go solar, you know it's not
+          just a trend. It's the future.
         </p>
         <p className="text-secondary-700 mb-6">
-          Just recently, the SSS Main Office in Quezon City completed the installation of <strong>500 solar panels</strong> on its rooftop. That’s a massive <strong>285 kilowatts (kW)</strong> of clean, renewable power now working every day to reduce electricity bills and carbon emissions.
+          Just recently, the SSS Main Office in Quezon City completed the
+          installation of <strong>500 solar panels</strong> on its rooftop.
+          That's a massive <strong>285 kilowatts (kW)</strong> of clean,
+          renewable power now working every day to reduce electricity bills and
+          carbon emissions.
         </p>
         <p className="text-secondary-700 mb-6">
-          And if a building as big and busy as the SSS can confidently run on solar, imagine what it can do for your home or business.
+          And if a building as big and busy as the SSS can confidently run on
+          solar, imagine what it can do for your home or business.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Why Did SSS Go Solar?
         </h3>
         <p className="text-secondary-700 mb-6">
-          It’s simple: the rising cost of electricity, paired with the growing urgency to reduce carbon emissions, makes solar the smart, responsible choice. Government offices like the SSS are leading by example, showing us all that clean energy isn’t just possible—it’s practical.
+          It's simple: the rising cost of electricity, paired with the growing
+          urgency to reduce carbon emissions, makes solar the smart, responsible
+          choice. Government offices like the SSS are leading by example,
+          showing us all that clean energy isn't just possible—it's practical.
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li><strong>Saving millions</strong> in long-term energy costs</li>
-          <li><strong>Reducing its environmental impact</strong></li>
-          <li><strong>Setting a powerful example</strong> for other institutions and companies to follow</li>
+          <li>
+            <strong>Saving millions</strong> in long-term energy costs
+          </li>
+          <li>
+            <strong>Reducing its environmental impact</strong>
+          </li>
+          <li>
+            <strong>Setting a powerful example</strong> for other institutions
+            and companies to follow
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           What This Means for Homeowners and Businesses
         </h3>
         <p className="text-secondary-700 mb-6">
-          If you’re a homeowner or a business owner, this is your sign.
+          If you're a homeowner or a business owner, this is your sign.
         </p>
         <p className="text-secondary-700 mb-6">
-          With prices of solar technology more affordable than ever—and with government programs encouraging renewable energy—<strong>now is the best time to invest in solar</strong>.
+          With prices of solar technology more affordable than ever—and with
+          government programs encouraging renewable energy—
+          <strong>now is the best time to invest in solar</strong>.
         </p>
         <p className="text-secondary-700 mb-6">
-          At <a href="https://sunphilsolar.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline font-medium">Sunphil Solar</a>, we help homes and businesses across the Philippines make the switch to clean, efficient, and cost-saving solar energy. Whether you're looking to lower your monthly Meralco bill or you want to future-proof your business, we’ve got the solutions to fit your needs.
+          At{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            Sunphil Solar
+          </a>
+          , we help homes and businesses across the Philippines make the switch
+          to clean, efficient, and cost-saving solar energy. Whether you're
+          looking to lower your monthly Meralco bill or you want to future-proof
+          your business, we've got the solutions to fit your needs.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           The Benefits of Going Solar with Sunphil:
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li>☀ <strong>Huge Energy Savings</strong> – Say goodbye to unpredictable electricity rates</li>
-          <li>☀ <strong>Low Maintenance</strong> – Our systems are designed to last for decades</li>
-          <li>☀ <strong>Environmentally Friendly</strong> – Be part of the clean energy movement</li>
+          <li>
+            ☀ <strong>Huge Energy Savings</strong> – Say goodbye to
+            unpredictable electricity rates
+          </li>
+          <li>
+            ☀ <strong>Low Maintenance</strong> – Our systems are designed to
+            last for decades
+          </li>
+          <li>
+            ☀ <strong>Environmentally Friendly</strong> – Be part of the clean
+            energy movement
+          </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Final Thought
         </h3>
         <p className="text-secondary-700 mb-6">
-          The SSS took the leap—and it’s already paying off. If they can power a huge government office with solar, you can definitely power your home or business.
+          The SSS took the leap—and it's already paying off. If they can power a
+          huge government office with solar, you can definitely power your home
+          or business.
         </p>
         <p className="text-secondary-700">
-          👉 Ready to go solar? <strong>Let Sunphil Solar help you get started.</strong><br />
-          Visit us at <a href="https://sunphilsolar.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline font-medium">sunphilsolar.com</a> or contact us for a free consultation.
+          👉 Ready to go solar?{" "}
+          <strong>Let Sunphil Solar help you get started.</strong>
+          <br />
+          Visit us at{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            sunphilsolar.com
+          </a>{" "}
+          or contact us for a free consultation.
         </p>
         <p className="text-secondary-700 mt-4">
-          <strong>Clean energy isn’t just for big institutions—it’s for all of us.</strong>
+          <strong>
+            Clean energy isn't just for big institutions—it's for all of us.
+          </strong>
         </p>
       </>
     ),
     readingTime: 5,
-  }
-  
-  
+  },
+  {
+    id: 17,
+    title:
+      "DC Power Optimizers: How to Maximize Solar Panel Efficiency in Any Condition",
+    author: "Sunphil Solar",
+    date: "2025-05-20",
+    slug: "dc-power-optimizers-solar-efficiency",
+    tags: ["solar", "technology", "dc power optimizer"],
+    excerpt:
+      "DC power optimizers can dramatically improve your solar panel performance—even in shaded or complex roof conditions. Here's why they matter and how to know if they're right for you.",
+    metaDescription:
+      "Learn how DC power optimizers enhance solar panel efficiency, especially for rooftops with shade or multiple angles. Discover when to use them and why they're worth considering.",
+    featuredImage: {
+      url: "/images/dc-power-optimizers-rooftop.jpg",
+      alt: "DC power optimizer mounted under solar panels on rooftop",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          If you're exploring ways to get the most out of your solar investment,
+          you've likely come across the term <strong>DC power optimizer</strong>
+          . These small yet powerful devices can dramatically boost your
+          system's efficiency—especially in homes with shading, unique roof
+          layouts, or future battery plans.
+        </p>
 
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          What Exactly Is a DC Power Optimizer?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          A DC power optimizer is a device installed underneath each solar
+          panel. Its main role is to maximize the energy output of every
+          individual panel by adjusting its voltage and current before sending
+          power to the inverter. This allows your system to work efficiently
+          even when one or more panels are underperforming due to shade or dirt.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How Do They Work?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          In a traditional solar system, panels are wired in a series, meaning
+          one poorly performing panel affects the entire array. With DC power
+          optimizers, each panel operates independently. The optimizer ensures
+          every panel performs at its best, even in challenging conditions.
+        </p>
+        <div className="flex justify-center my-6">
+          <img
+            src="/images/dc-optimizer-diagram.jpg"
+            alt="DC Power Optimizer Diagram"
+            className="rounded-lg shadow-md max-w-full h-auto"
+            style={{ maxWidth: 500 }}
+          />
+        </div>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          When Should You Use DC Power Optimizers?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          While not every home needs them, DC optimizers are ideal if:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>Your roof experiences partial shade during the day</li>
+          <li>
+            You have panels facing multiple directions or different angles
+          </li>
+          <li>You want detailed, panel-level performance monitoring</li>
+          <li>You're considering battery storage in the future</li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          5 Key Benefits of DC Power Optimizers
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            ⚡ <strong>Better Performance in Shade</strong> – Each panel
+            operates independently, reducing energy loss.
+          </li>
+          <li>
+            ⚡ <strong>Ideal for Complex Roofs</strong> – Panels at different
+            angles or orientations can still perform optimally.
+          </li>
+          <li>
+            ⚡ <strong>Real-Time Monitoring</strong> – View each panel's
+            performance from a user-friendly dashboard.
+          </li>
+          <li>
+            ⚡ <strong>Battery-Ready</strong> – DC optimizers pair well with
+            DC-coupled battery systems for added efficiency.
+          </li>
+          <li>
+            ⚡ <strong>Smaller Inverter Requirement</strong> – Optimizers do
+            some of the heavy lifting, so your central inverter can be smaller
+            and more affordable.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Things to Keep in Mind
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Like any advanced technology, DC power optimizers come with
+          considerations:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            🔧 <strong>Brand Compatibility</strong> – Most optimizers only work
+            with specific inverter brands (e.g., SolarEdge).
+          </li>
+          <li>
+            💰 <strong>Higher Upfront Costs</strong> – Installing one per panel
+            adds to your initial budget.
+          </li>
+          <li>
+            📄 <strong>Warranty Differences</strong> – Optimizers and inverters
+            may have different warranty terms, so check before you buy.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          DC Optimizers vs. Microinverters
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Both technologies improve solar efficiency at the panel level, but
+          they differ in how they do it.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>DC Optimizers:</strong> Condition DC output before sending
+            it to a centralized inverter.
+          </li>
+          <li>
+            <strong>Microinverters:</strong> Convert DC to AC at each panel—no
+            central inverter needed.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          Choose DC optimizers if you prefer centralized conversion, have shade
+          concerns, or plan to install a battery. Go with microinverters if you
+          want full independence per panel and a simpler design.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Should You Install DC Power Optimizers?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          DC power optimizers are an excellent solution for homeowners with
+          shaded roofs, multi-angle panel layouts, or future energy storage
+          goals. They help you get the most out of your solar investment by
+          improving output and adding system insight.
+        </p>
+
+        <p className="text-secondary-700 mb-6">
+          At{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            Sunphil Solar
+          </a>
+          , we help you choose the right solar technology tailored to your home.
+          Whether it's a basic setup or a smart system with optimizers and
+          batteries, we've got the expertise and products to make it happen.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          If you want to boost performance, minimize energy loss, and prepare
+          for future solar upgrades, <strong>DC power optimizers</strong> are
+          worth considering. They're smart, efficient, and adaptable—just like
+          your solar journey should be.
+        </p>
+
+        <p className="text-secondary-700">
+          👉 Ready to take your solar system to the next level?{" "}
+          <strong>
+            Let Sunphil Solar help you customize the best setup for your home or
+            business.
+          </strong>
+          <br />
+          Visit{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            sunphilsolar.com
+          </a>{" "}
+          or contact us today for a free assessment.
+        </p>
+        <p className="text-secondary-700 mt-4">
+          <strong>
+            Smarter solar starts with smarter choices—and Sunphil Solar is here
+            to help you every step of the way.
+          </strong>
+        </p>
+      </>
+    ),
+    readingTime: 6,
+  },
 ];
 
 // Utility functions for handling large datasets
