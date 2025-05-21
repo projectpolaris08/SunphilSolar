@@ -20,6 +20,14 @@ const brands = [
     name: "Canadian Solar",
     logo: "/images/CanadianSolar.png",
   },
+  {
+    name: "AESolar",
+    logo: "/images/AESolar.png",
+  },
+  {
+    name: "TrinaSolar",
+    logo: "/images/Trinasolar.png",
+  },
 ];
 
 export const BrandLogos: React.FC = () => {
