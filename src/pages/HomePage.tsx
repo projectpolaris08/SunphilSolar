@@ -1,10 +1,21 @@
 import { Hero } from "../components/sections/Hero";
-import { Stats } from "../components/sections/Stats";
 import { Features } from "../components/sections/Features";
 import { Services } from "../components/sections/Services";
 import { ContactForm } from "../components/sections/ContactForm";
 import { BrandLogos } from "../components/sections/BrandLogos";
 import { Link } from "react-router-dom"; // or 'next/link' if using Next.js
+import {
+  MapPin,
+  Sun,
+  Calendar,
+  Settings,
+  PanelTop,
+  Battery,
+  CheckCircle,
+  Star,
+} from "lucide-react";
+import { Helmet } from "react-helmet";
+import { Testimonials } from "../components/sections/Testimonials";
 
 // Mock data array for 3 featured blogs
 const featuredBlogs = [
@@ -50,9 +61,9 @@ const featuredProjects = [
     system: "32kW Hybrid Solar",
     date: "2024-04-30",
     specification: [
-      "2 units 16kW Deye Hybrid Inverter",
+      "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
-      "4 units 51.2v 280Ah LiFePO4 Battery",
+      "4 x 51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
@@ -61,9 +72,9 @@ const featuredProjects = [
     system: "24kW Hybrid Solar",
     date: "2024-03-18",
     specification: [
-      "2 units 12kW Hybrid Inverter",
+      "2 x 12kW Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
-      "4 units 51.2v 314Ah LiFePO4 Battery",
+      "4 x 51.2v 314Ah LiFePO4 Battery",
     ],
   },
   {
@@ -74,7 +85,7 @@ const featuredProjects = [
     specification: [
       "12kW Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "2 units 51.2v 280Ah LiFePO4 Battery",
+      "2 x 51.2v 280Ah LiFePO4 Battery",
     ],
   },
 ];
@@ -82,8 +93,10 @@ const featuredProjects = [
 export const HomePage = () => {
   return (
     <>
+      <Helmet>
+        <title>Home | SunPhil Solar</title>
+      </Helmet>
       <Hero />
-      <BrandLogos />
       {/* Featured Projects Section - 3-column grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -105,22 +118,49 @@ export const HomePage = () => {
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <div className="font-bold text-black mb-1">
-                    {proj.location}
+                  <div className="flex items-center justify-center gap-2 font-bold text-black mb-1">
+                    <MapPin className="text-primary-500" size={18} />
+                    <span>{proj.location}</span>
                   </div>
-                  <div className="text-black mb-1">{proj.system}</div>
-                  <div className="text-black mb-2">{proj.date}</div>
+                  <div className="flex items-center justify-center gap-2 text-black mb-1">
+                    <Sun className="text-yellow-500" size={18} />
+                    <span>{proj.system}</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-black mb-2">
+                    <Calendar className="text-primary-500" size={18} />
+                    <span>{proj.date}</span>
+                  </div>
                   <div className="bg-gray-50 p-4 rounded-lg mt-4">
-                    <ul className="text-left list-disc pl-5">
-                      {proj.specification.map((spec, i) => (
-                        <li
-                          key={i}
-                          className="text-black font-semibold mb-2 last:mb-0"
-                        >
-                          {spec}
-                        </li>
-                      ))}
+                    <ul className="text-left pl-5 space-y-2">
+                      {proj.specification.map((spec, i) => {
+                        let Icon = Settings;
+                        if (/inverter/i.test(spec)) Icon = Settings;
+                        else if (/solar panel/i.test(spec)) Icon = PanelTop;
+                        else if (/battery/i.test(spec)) Icon = Battery;
+                        return (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-black font-semibold mb-2 last:mb-0"
+                          >
+                            <Icon className="text-primary-500 mt-1" size={20} />
+                            <span>{spec}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
+                    <div className="flex items-center gap-2 mt-4">
+                      <CheckCircle className="text-green-500" size={20} />
+                      <span className="font-semibold text-black">
+                        Client Review:
+                      </span>
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="text-yellow-400 fill-yellow-400"
+                          size={20}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -197,9 +237,10 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <Stats />
       <Features />
       <Services />
+      <BrandLogos />
+      <Testimonials />
       <ContactForm />
     </>
   );

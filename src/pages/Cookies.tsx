@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Cookies: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-12">
+      <Helmet>
+        <title>Cookies Policy | SunPhil Solar</title>
+      </Helmet>
       <h1 className="text-3xl font-bold mb-8">Cookie Policy</h1>
       <div className="prose prose-lg max-w-none">
         <p>

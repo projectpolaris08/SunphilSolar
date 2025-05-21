@@ -63,7 +63,7 @@ export const BlogPage = () => {
     <section className="py-20 bg-gradient-to-b from-secondary-900 to-secondary-800 min-h-screen">
       <div className="container mx-auto px-4">
         <Helmet>
-          <title>{seoData.title}</title>
+          <title>Blog | SunPhil Solar</title>
           <meta name="description" content={seoData.description} />
           <meta property="og:title" content={seoData.title} />
           <meta property="og:description" content={seoData.description} />

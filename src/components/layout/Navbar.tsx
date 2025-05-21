@@ -25,6 +25,16 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
 
   const isOnHomePage = location.pathname === "/";
 
+  const handleNavClick = (path: string) => {
+    if (
+      location.pathname === path ||
+      (path === "/" && location.pathname === "/")
+    ) {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+    setIsOpen(false); // For mobile menu
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -37,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Updated Logo with RouterLink */}
-          <RouterLink to="/">
+          <RouterLink to="/" onClick={() => handleNavClick("/")}>
             <Logo />
           </RouterLink>
 
@@ -50,6 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   smooth
                   to={isOnHomePage ? item.path : `/${item.path}`}
                   className="text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2 whitespace-nowrap"
+                  onClick={() => handleNavClick(item.path)}
                 >
                   {item.name}
                 </HashLink>
@@ -58,6 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   key={item.name}
                   to={item.path}
                   className="text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2 whitespace-nowrap"
+                  onClick={() => handleNavClick(item.path)}
                 >
                   {item.name}
                 </RouterLink>
@@ -71,27 +83,31 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               <div className="absolute left-0 mt-2 w-48 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
                 <HashLink
                   smooth
-                  to={isOnHomePage ? "#services" : "/#services"}
+                  to={isOnHomePage ? "#services" : `/#services`}
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/#services")}
                 >
                   All Services
                 </HashLink>
                 <HashLink
                   smooth
-                  to={isOnHomePage ? "#features" : "/#features"}
+                  to={isOnHomePage ? "#features" : `/#features`}
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/#features")}
                 >
                   Features
                 </HashLink>
                 <RouterLink
                   to="/products"
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/products")}
                 >
                   Products
                 </RouterLink>
                 <RouterLink
                   to="/solarprojects"
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/solarprojects")}
                 >
                   Projects
                 </RouterLink>
@@ -146,7 +162,10 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 smooth
                 to={isOnHomePage ? item.path : `/${item.path}`}
                 className="block px-4 py-3 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                onClick={toggleMenu}
+                onClick={() => {
+                  handleNavClick(item.path);
+                  toggleMenu();
+                }}
               >
                 {item.name}
               </HashLink>
@@ -155,7 +174,10 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 key={item.name}
                 to={item.path}
                 className="block px-4 py-3 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                onClick={toggleMenu}
+                onClick={() => {
+                  handleNavClick(item.path);
+                  toggleMenu();
+                }}
               >
                 {item.name}
               </RouterLink>
@@ -168,31 +190,43 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             </span>
             <HashLink
               smooth
-              to={isOnHomePage ? "#services" : "/#services"}
+              to={isOnHomePage ? "#services" : `/#services`}
               className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-              onClick={toggleMenu}
+              onClick={() => {
+                handleNavClick("/#services");
+                toggleMenu();
+              }}
             >
               All Services
             </HashLink>
             <HashLink
               smooth
-              to={isOnHomePage ? "#features" : "/#features"}
+              to={isOnHomePage ? "#features" : `/#features`}
               className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-              onClick={toggleMenu}
+              onClick={() => {
+                handleNavClick("/#features");
+                toggleMenu();
+              }}
             >
               Features
             </HashLink>
             <RouterLink
               to="/products"
               className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-              onClick={toggleMenu}
+              onClick={() => {
+                handleNavClick("/products");
+                toggleMenu();
+              }}
             >
               Products
             </RouterLink>
             <RouterLink
               to="/solarprojects"
               className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-              onClick={toggleMenu}
+              onClick={() => {
+                handleNavClick("/solarprojects");
+                toggleMenu();
+              }}
             >
               Projects
             </RouterLink>

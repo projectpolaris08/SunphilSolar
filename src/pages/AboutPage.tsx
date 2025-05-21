@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdCheckCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AboutPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<
@@ -14,7 +15,7 @@ const AboutPage: React.FC = () => {
       name: "Ma. Katrina Bascon",
       title: "Owner",
       description:
-        "Ma. Katrina Bascon owns Sunphil Solar and leads its day-to-day operations based in Fairview, Quezon City. She oversees sales, operations, legal, and finance, and manages the company’s customer relationship management (CRM) system to keep client interactions organized and efficient. Katrina is passionate about expanding access to clean energy and building a reliable, customer-focused solar company.",
+        "Ma. Katrina Bascon owns Sunphil Solar and leads its day-to-day operations based in Fairview, Quezon City. She oversees sales, operations, legal, and finance, and manages the company's customer relationship management (CRM) system to keep client interactions organized and efficient. Katrina is passionate about expanding access to clean energy and building a reliable, customer-focused solar company.",
       image: "/images/Sunphil.jpg",
     },
     {
@@ -22,7 +23,7 @@ const AboutPage: React.FC = () => {
       name: 'Jhayar "Gar" Bacolod',
       title: "Owner/Head of Operations",
       description:
-        "Jhayar is the Head of Operations and Chief Technical Officer at Sunphil Solar. He oversees daily operations and drives the company’s technical direction—from system design to installation. Known for his hands-on expertise and strong leadership, Jhayar works closely with teams to ensure every project is completed efficiently, safely, and on time.",
+        "Jhayar is the Head of Operations and Chief Technical Officer at Sunphil Solar. He oversees daily operations and drives the company's technical direction—from system design to installation. Known for his hands-on expertise and strong leadership, Jhayar works closely with teams to ensure every project is completed efficiently, safely, and on time.",
       image: "/images/Sunphil.jpg",
     },
   ];
@@ -222,6 +223,9 @@ const AboutPage: React.FC = () => {
 
   return (
     <section id="about" className="py-20 bg-secondary-50">
+      <Helmet>
+        <title>About Us | SunPhil Solar</title>
+      </Helmet>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Section */}
         <div className="text-center max-w-3xl mx-auto mb-12">

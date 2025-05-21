@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {
+  CheckCircle,
+  MapPin,
+  Sun,
+  Calendar,
+  Settings,
+  PanelTop,
+  Battery,
+  Star,
+} from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const projects = [
   {
@@ -9,9 +20,9 @@ const projects = [
     system: "32kW Hybrid Solar",
     date: "2024-04-30",
     specification: [
-      "2 units 16kW Deye Hybrid Inverter",
+      "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
-      "4 units 51.2v 280Ah LiFePO4 Battery",
+      "4 x 51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
@@ -21,9 +32,9 @@ const projects = [
     system: "24kW Hybrid Solar",
     date: "2024-03-18",
     specification: [
-      "2 units 12kW Hybrid Inverter",
+      "2 x 12kW Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
-      "4 units 51.2v 314Ah LiFePO4 Battery",
+      "4 x 51.2v 314Ah LiFePO4 Battery",
     ],
   },
   {
@@ -33,9 +44,9 @@ const projects = [
     system: "12kW Hybrid Solar",
     date: "2024-04-12",
     specification: [
-      "1 unit 12kW Hybrid Inverter",
+      "12kW Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "2 units 51.2v 280Ah LiFePO4 Battery",
+      "2 x 51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
@@ -45,9 +56,9 @@ const projects = [
     system: "8kW Hybrid Solar",
     date: "2024-03-03",
     specification: [
-      "1 unit 8kW Deye Hybrid Inverter",
+      "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "1 unit 51.2v 280Ah LiFePO4 Battery",
+      "51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
@@ -57,9 +68,9 @@ const projects = [
     system: "12kW Hybrid Solar",
     date: "2024-03-07",
     specification: [
-      "1 unit 12kW Deye Hybrid Inverter",
+      "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "3 units 51.2v 280Ah LiFePO4 Battery",
+      "3 x 51.2v 280Ah LiFePO4 Battery",
     ],
   },
   {
@@ -69,9 +80,9 @@ const projects = [
     system: "6kW Hybrid Solar",
     date: "2024-03-15",
     specification: [
-      "1 unit 6kW Deye Hybrid Inverter",
+      "6kW Deye Hybrid Inverter",
       "13 pcs 615W Canadian Bifacial Solar Panel",
-      "1 unit 51.2v 314Ah LiFePO4 Battery",
+      "51.2v 314Ah LiFePO4 Battery",
     ],
   },
   {
@@ -81,9 +92,9 @@ const projects = [
     system: "8kW Hybrid Solar",
     date: "2024-05-08",
     specification: [
-      "1 unit 8kW Deye Hybrid Inverter",
+      "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "2 units 51.2v 314Ah LiFePO4 Battery",
+      "2 x 51.2v 314Ah LiFePO4 Battery",
     ],
   },
   {
@@ -93,9 +104,21 @@ const projects = [
     system: "8kW Hybrid Solar",
     date: "2024-05-13",
     specification: [
-      "1 unit 8kW Deye Hybrid Inverter",
+      "8kW Deye Hybrid Inverter",
       "16 pcs 615W Canadian Bifacial Solar Panel",
-      "1 unit 51.2v 314Ah LiFePO4 Battery",
+      "51.2v 314Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    id: "bacoor-cavite",
+    image: "/images/project9.jpg",
+    location: "Bacoor, Cavite, PH",
+    system: "12kW Hybrid Solar",
+    date: "2024-05-19",
+    specification: [
+      "12kW Deye Hybrid Inverter",
+      "14 pcs 615W Canadian Bifacial Solar Panel",
+      "2 x 51.2v 314Ah LiFePO4 Battery",
     ],
   },
   // Add more projects as needed
@@ -120,6 +143,9 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <section className="py-20 bg-secondary-50 min-h-screen">
+      <Helmet>
+        <title>Projects | SunPhil Solar</title>
+      </Helmet>
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-4 text-center">Solar Projects</h2>
         <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
@@ -140,17 +166,49 @@ const ProjectsPage: React.FC = () => {
                 alt={proj.location}
                 className="w-full h-50 object-contain rounded mb-2 bg-gray-100"
               />
-              <div className="font-bold text-black">{proj.location}</div>
-              <div className="text-black">{proj.system}</div>
-              <div className="text-black">{proj.date}</div>
+              <div className="flex items-center justify-center gap-2 font-bold text-black mb-1">
+                <MapPin className="text-primary-500" size={18} />
+                <span>{proj.location}</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-black mb-1">
+                <Sun className="text-yellow-500" size={18} />
+                <span>{proj.system}</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-black">
+                <Calendar className="text-primary-500" size={18} />
+                <span>{proj.date}</span>
+              </div>
               <div className="bg-gray-50 rounded p-3 mt-3 text-left">
-                <ul className="list-disc pl-5 text-black font-semibold">
-                  {proj.specification.map((spec, i) => (
-                    <li key={i} className="text-black font-semibold">
-                      {spec}
-                    </li>
-                  ))}
+                <ul className="pl-5 text-black font-semibold space-y-2">
+                  {proj.specification.map((spec, i) => {
+                    let Icon = CheckCircle;
+                    if (/inverter/i.test(spec)) Icon = Settings;
+                    else if (/solar panel/i.test(spec)) Icon = PanelTop;
+                    else if (/battery/i.test(spec)) Icon = Battery;
+                    return (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-black font-semibold"
+                      >
+                        <Icon className="text-primary-500 mt-1" size={20} />
+                        <span>{spec}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
+                <div className="flex items-center gap-2 mt-4">
+                  <CheckCircle className="text-green-500" size={20} />
+                  <span className="font-semibold text-black">
+                    Client Review:
+                  </span>
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="text-yellow-400 fill-yellow-400"
+                      size={20}
+                    />
+                  ))}
+                </div>
               </div>
             </Link>
           ))}

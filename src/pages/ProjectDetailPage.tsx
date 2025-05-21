@@ -6,8 +6,9 @@ import {
   MdLocationOn,
   MdHome,
   MdSolarPower,
-  MdBattery50,
 } from "react-icons/md";
+import { CheckCircle, Star, } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 interface Project {
   image: string;
@@ -28,9 +29,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-04-30",
     clientType: "Residential",
     specification: [
-      "2 units 16kW Deye Hybrid Inverter",
+      "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
-      "4 units 51.2v 280Ah LiFePO4 Battery",
+      "4 x 51.2v 280Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Energy Independence: This hybrid setup allows the homeowner to rely less on the grid and stay powered during outages.",
@@ -49,9 +50,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-03-18",
     clientType: "Residential / Small Commercial",
     specification: [
-      "2 units 12kW Deye Hybrid Inverter",
+      "2 x 12kW Deye Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
-      "4 units 51.2v 314Ah LiFePO4 Battery",
+      "4 x 51.2v 314Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Hybrid Power Reliability: Offers energy independence and backup power capability in areas with unstable grid supply.",
@@ -70,9 +71,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-04-12",
     clientType: "Residential",
     specification: [
-      "1 unit 12kW Deye Hybrid Inverter",
+      "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "2 units 51.2v 280Ah LiFePO4 Battery",
+      "2 x 51.2v 280Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Lower Electricity Bills: Significantly reduces monthly Meralco or local utility charges through solar self-consumption.",
@@ -91,9 +92,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-03-03",
     clientType: "Residential",
     specification: [
-      "1 unit 8kW Deye Hybrid Inverter",
+      "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "1 unit 51.2v 280Ah LiFePO4 Battery",
+      "51.2v 280Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Lower Electric Bills: Reduces monthly energy costs through efficient solar generation and smart energy use.",
@@ -112,9 +113,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-03-07",
     clientType: "Residential",
     specification: [
-      "1 unit 12kW Deye Hybrid Inverter",
+      "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "3 units 51.2v 280Ah LiFePO4 Battery",
+      "3 x 51.2v 280Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Monthly Savings: Significant reduction in electricity bills through solar energy self-consumption.",
@@ -133,9 +134,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-03-15",
     clientType: "Residential",
     specification: [
-      "1 unit 6kW Deye Hybrid Inverter",
+      "6kW Deye Hybrid Inverter",
       "13 pcs 615W Canadian Bifacial Solar Panel",
-      "1 unit 51.2v 314Ah LiFePO4 Battery",
+      "51.2v 314Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Reduced Energy Bills: Homeowners enjoy monthly savings by relying on solar power for daily consumption.",
@@ -154,9 +155,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-05-08",
     clientType: "Residential",
     specification: [
-      "1 unit 8kW Deye Hybrid Inverter",
+      "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "2 units 51.2v 314Ah LiFePO4 Battery",
+      "2 x 51.2v 314Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Significant Monthly Savings: Reduces reliance on grid power and lowers electric bills.",
@@ -175,9 +176,9 @@ const projects: { [key: string]: Project } = {
     date: "2024-05-13",
     clientType: "Residential",
     specification: [
-      "1 unit 8kW Deye Hybrid Inverter",
+      "8kW Deye Hybrid Inverter",
       "16 pcs 615W Canadian Bifacial Solar Panel",
-      "1 unit 51.2v 314Ah LiFePO4 Battery",
+      "51.2v 314Ah LiFePO₄ Battery",
     ],
     benefits: [
       "Lower Power Bills: Reduces grid dependency and monthly expenses.",
@@ -188,6 +189,27 @@ const projects: { [key: string]: Project } = {
     ],
     description:
       "Sunphil Solar successfully installed an 8kW hybrid solar system in Umingan, Pangasinan, designed to meet the energy needs of a modern Filipino household. With efficient solar panels, a powerful inverter, and reliable battery storage, this system ensures lower electricity bills and backup power during outages—perfect for rural and semi-urban homes in Northern Luzon.",
+  },
+  "bacoor-cavite": {
+    image: "/images/project9.jpg",
+    location: "Bacoor, Cavite, PH",
+    system: "12kW Hybrid Solar",
+    date: "2024-05-19",
+    clientType: "Residential",
+    specification: [
+      "12kW Deye Hybrid Inverter",
+      "14 615W Canadian Solar Bifacial Panels",
+      "2 x 51.2V 314Ah LiFePO₄ Lithium Batteries",
+    ],
+    benefits: [
+      "Lower Monthly Bills: Reduces grid electricity usage, resulting in significant savings.",
+      "Reliable Backup Power: Ensures critical appliances stay operational during outages.",
+      "Efficient Solar Harvesting: Bifacial panels deliver up to 10–15% more energy, especially in sunny Cavite.",
+      "Clean Energy: Offsets approximately 800–1,000 kg of CO₂ emissions per month, contributing to a greener environment.",
+      "Future-Ready Setup: Easily expandable with additional panels or batteries.",
+    ],
+    description:
+      "Sunphil Solar completed a 12kW hybrid solar system installation for a residential client in Bacoor, Cavite, designed to deliver substantial energy savings while providing backup power during outages. This setup is ideal for households with high electricity usage and a need for uninterrupted power supply.",
   },
   // Add more projects as needed
 };
@@ -216,6 +238,13 @@ const ProjectDetailPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary-50 py-20">
+      <Helmet>
+        <title>
+          {project
+            ? `${project.system} in ${project.location} | SunPhil Solar`
+            : "Project Details | SunPhil Solar"}
+        </title>
+      </Helmet>
       <div className="container mx-auto px-4">
         <Link
           to="/solarprojects"
@@ -251,6 +280,17 @@ const ProjectDetailPage: React.FC = () => {
                 <MdHome className="text-primary-500 mr-2" />
                 <span>{project.clientType}</span>
               </div>
+            </div>
+            <div className="flex items-center gap-2 mb-8">
+              <CheckCircle className="text-green-500" size={20} />
+              <span className="font-semibold text-black">Client Review:</span>
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="text-yellow-400 fill-yellow-400"
+                  size={20}
+                />
+              ))}
             </div>
 
             <div className="mb-8">

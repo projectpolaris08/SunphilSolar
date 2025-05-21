@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
             "url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 to-secondary-800/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/60 to-secondary-800/30"></div>
       </div>
 
       {/* Main content */}
@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
           <div className="text-white max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-[fadeIn_1s_ease-in]">
-             Solar Energy Made Simple and Affordable!
+              Solar Energy Made Simple and Affordable!
             </h1>
 
             <div className="h-1 w-20 bg-primary-500 rounded mb-6"></div>
