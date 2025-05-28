@@ -31,15 +31,15 @@ const featuredBlogs = [
     date: "2025-05-09",
   },
   {
-    id: 16,
+    id: 10,
     title:
-      "SSS Main Office Goes Solar with 500 Panels—Here's Why You Should Too",
+      "Net Metering vs. Battery Storage in the Philippines: Which One Saves More?",
     excerpt:
-      "The SSS Main Office in Quezon City now runs on solar with 500 panels and 285 kW capacity. Here's what it means for homeowners and businesses thinking of going solar.",
-    slug: "sss-main-office-goes-solar-2025",
-    featuredImage: "/images/sss-solar-panel-installation-quezon-city.jpg",
-    readingTime: 4,
-    date: "2025-05-17",
+      "Discover whether net metering or battery storage is the better option for maximizing your solar energy investment in the Philippines. Learn about costs, ROI, and when batteries make sense.",
+    slug: "net-metering-vs-battery-storage-philippines",
+    featuredImage: "/images/net-metering-vs-battery.jpg",
+    readingTime: 6,
+    date: "2025-05-04",
   },
   {
     id: 15,
