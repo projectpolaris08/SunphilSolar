@@ -194,7 +194,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project9.jpg",
     location: "Bacoor, Cavite, PH",
     system: "12kW Hybrid Solar",
-    date: "2024-05-19",
+    date: "2025-05-19",
     clientType: "Residential",
     specification: [
       "12kW Deye Hybrid Inverter",
