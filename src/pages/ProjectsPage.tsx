@@ -114,7 +114,7 @@ const projects = [
     image: "/images/project9.jpg",
     location: "Bacoor, Cavite, PH",
     system: "12kW Hybrid Solar",
-    date: "2024-05-19",
+    date: "2025-05-19",
     specification: [
       "12kW Deye Hybrid Inverter",
       "14 pcs 615W Canadian Bifacial Solar Panel",
