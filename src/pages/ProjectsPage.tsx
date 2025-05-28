@@ -18,7 +18,7 @@ const projects = [
     image: "/images/project1.jpg",
     location: "Sariaya, Quezon, PH",
     system: "32kW Hybrid Solar",
-    date: "2024-04-30",
+    date: "2025-04-30",
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
@@ -30,7 +30,7 @@ const projects = [
     image: "/images/project2.jpg",
     location: "Goa, Camarines Sur, PH",
     system: "24kW Hybrid Solar",
-    date: "2024-03-18",
+    date: "2025-03-18",
     specification: [
       "2 x 12kW Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
@@ -42,7 +42,7 @@ const projects = [
     image: "/images/project3.jpg",
     location: "Cabanatuan City, Nueva Ecija, PH",
     system: "12kW Hybrid Solar",
-    date: "2024-04-12",
+    date: "2025-04-12",
     specification: [
       "12kW Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
@@ -54,7 +54,7 @@ const projects = [
     image: "/images/project4.jpg",
     location: "Porac, Pampanga, PH",
     system: "8kW Hybrid Solar",
-    date: "2024-03-03",
+    date: "2025-03-03",
     specification: [
       "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
@@ -66,7 +66,7 @@ const projects = [
     image: "/images/project5.jpg",
     location: "BIR Village, Quezon City, Metro Manila, PH",
     system: "12kW Hybrid Solar",
-    date: "2024-03-07",
+    date: "2025-03-07",
     specification: [
       "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
@@ -78,7 +78,7 @@ const projects = [
     image: "/images/project6.jpg",
     location: "Cabanatuan City, Nueva Ecija, PH",
     system: "6kW Hybrid Solar",
-    date: "2024-03-15",
+    date: "2025-03-15",
     specification: [
       "6kW Deye Hybrid Inverter",
       "13 pcs 615W Canadian Bifacial Solar Panel",
@@ -90,7 +90,7 @@ const projects = [
     image: "/images/project7.jpg",
     location: "Lubao, Pampanga, PH",
     system: "8kW Hybrid Solar",
-    date: "2024-05-08",
+    date: "2025-05-08",
     specification: [
       "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
@@ -102,7 +102,7 @@ const projects = [
     image: "/images/project8.jpg",
     location: "Umingan, Pangasinan, PH",
     system: "8kW Hybrid Solar",
-    date: "2024-05-13",
+    date: "2025-05-13",
     specification: [
       "8kW Deye Hybrid Inverter",
       "16 pcs 615W Canadian Bifacial Solar Panel",

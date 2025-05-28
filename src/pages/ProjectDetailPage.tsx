@@ -26,7 +26,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project1.jpg",
     location: "Sariaya, Quezon, PH",
     system: "32kW Hybrid Solar",
-    date: "2024-04-30",
+    date: "2025-04-30",
     clientType: "Residential",
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
@@ -47,7 +47,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project2.jpg",
     location: "Goa, Camarines Sur, PH",
     system: "24kW Hybrid Solar",
-    date: "2024-03-18",
+    date: "2025-03-18",
     clientType: "Residential / Small Commercial",
     specification: [
       "2 x 12kW Deye Hybrid Inverter",
@@ -68,7 +68,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project3.jpg",
     location: "Cabanatuan City, Nueva Ecija, PH",
     system: "12kW Hybrid Solar",
-    date: "2024-04-12",
+    date: "2025-04-12",
     clientType: "Residential",
     specification: [
       "12kW Deye Hybrid Inverter",
@@ -89,7 +89,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project4.jpg",
     location: "Porac, Pampanga, PH",
     system: "8kW Hybrid Solar",
-    date: "2024-03-03",
+    date: "2025-03-03",
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter",
@@ -110,7 +110,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project5.jpg",
     location: "BIR Village, Quezon City, Metro Manila, PH",
     system: "12kW Hybrid Solar",
-    date: "2024-03-07",
+    date: "2025-03-07",
     clientType: "Residential",
     specification: [
       "12kW Deye Hybrid Inverter",
@@ -131,7 +131,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project6.jpg",
     location: "Cabanatuan City, Nueva Ecija, PH",
     system: "6kW Hybrid Solar",
-    date: "2024-03-15",
+    date: "2025-03-15",
     clientType: "Residential",
     specification: [
       "6kW Deye Hybrid Inverter",
@@ -152,7 +152,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project7.jpg",
     location: "Lubao, Pampanga, PH",
     system: "8kW Hybrid Solar",
-    date: "2024-05-08",
+    date: "2025-05-08",
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter",
@@ -173,7 +173,7 @@ const projects: { [key: string]: Project } = {
     image: "/images/project8.jpg",
     location: "Umingan, Pangasinan, PH",
     system: "8kW Hybrid Solar",
-    date: "2024-05-13",
+    date: "2025-05-13",
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter",

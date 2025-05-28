@@ -59,7 +59,7 @@ const featuredProjects = [
     image: "/images/project1.jpg",
     location: "Sariaya, Quezon, PH",
     system: "32kW Hybrid Solar",
-    date: "2024-04-30",
+    date: "2025-04-30",
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
@@ -70,7 +70,7 @@ const featuredProjects = [
     image: "/images/project2.jpg",
     location: "Goa, Camarines Sur, PH",
     system: "24kW Hybrid Solar",
-    date: "2024-03-18",
+    date: "2025-03-18",
     specification: [
       "2 x 12kW Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
@@ -81,7 +81,7 @@ const featuredProjects = [
     image: "/images/project3.jpg",
     location: "Cabanatuan City, PH",
     system: "12kW Hybrid Solar",
-    date: "2024-04-12",
+    date: "2025-04-12",
     specification: [
       "12kW Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
