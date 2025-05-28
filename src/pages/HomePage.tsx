@@ -110,11 +110,11 @@ export const HomePage = () => {
                 key={idx}
                 className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-blue-400"
               >
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
                   <img
                     src={proj.image}
                     alt={proj.location}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="p-6 text-center">

@@ -121,8 +121,72 @@ const projects = [
       "2 x 51.2v 314Ah LiFePO4 Battery",
     ],
   },
+  {
+    id: "bagumbong-caloocan",
+    image: "/images/project10.jpg",
+    location: "Bagumbong, Caloocan, Metro Manila, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-25",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "13 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO4 Lithium Battery",
+    ],
+  },
+  {
+    id: "lemery-batangas",
+    image: "/images/project11.jpg",
+    location: "Lemery, Batangas, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-10",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO4 Battery",
+    ],
+  },
+  {
+    id: "pandacan-manila",
+    image: "/images/project12.jpg",
+    location: "Pandacan, Manila, NCR, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-26",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO4 Lithium Battery",
+    ],
+  },
+  {
+    id: "alisha-nueva-ecija",
+    image: "/images/project13.jpg",
+    location: "Alisha, Nueva Ecija, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-27",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "13 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO4 Lithium Battery",
+    ],
+  },
+  {
+    id: "iba-zambales",
+    image: "/images/project14.jpg",
+    location: "Iba, Zambales, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-28",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "13 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO4 Lithium Battery",
+    ],
+  },
   // Add more projects as needed
 ];
+
+projects.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
 
 const projectsPerPage = 6;
 

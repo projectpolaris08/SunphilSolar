@@ -7,7 +7,7 @@ import {
   MdHome,
   MdSolarPower,
 } from "react-icons/md";
-import { CheckCircle, Star, } from "lucide-react";
+import { CheckCircle, Star } from "lucide-react";
 import { Helmet } from "react-helmet";
 
 interface Project {
@@ -211,6 +211,106 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar completed a 12kW hybrid solar system installation for a residential client in Bacoor, Cavite, designed to deliver substantial energy savings while providing backup power during outages. This setup is ideal for households with high electricity usage and a need for uninterrupted power supply.",
   },
+  "bagumbong-caloocan": {
+    image: "/images/project10.jpg",
+    location: "Bagumbong, Caloocan, Metro Manila, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-25",
+    clientType: "Residential",
+    specification: [
+      "6kW Deye Hybrid Inverter – Handles energy from solar, grid, and battery sources with seamless switching and intelligent load management.",
+      "13 × 615W Canadian Solar Bifacial Panels – High-efficiency panels that harvest energy from both sides for maximum performance, even on limited rooftop space.",
+      "51.2V 314Ah LiFePO₄ Lithium Battery – Long-lasting and safe battery backup system for night use and power interruptions.",
+    ],
+    benefits: [
+      "Cost Savings: Offsets a major portion of daily electricity use, reducing bills by up to 60%.",
+      "Backup Protection: Ensures that essential appliances like lights, Wi-Fi, fans, and refrigerators stay powered during brownouts.",
+      "Smart Solar Investment: Provides reliable performance, low maintenance, and a strong ROI within 5–6 years.",
+      "Clean Power for Caloocan: Offsets approximately 400–600 kg of CO₂ emissions monthly, promoting sustainable living in the city.",
+    ],
+    description:
+      "Sunphil Solar delivered a compact yet powerful 6kW hybrid solar system for a homeowner in Bagumbong, Caloocan. This system is engineered to handle the home's daily energy needs while providing dependable backup power during outages, which are common in densely populated areas of Metro Manila. This installation reflects Sunphil Solar's dedication to bringing sustainable energy solutions to urban households in Caloocan, Quezon City, Valenzuela, and surrounding communities. Whether you're dealing with high bills or frequent outages, our hybrid systems offer the flexibility and performance you need.",
+  },
+  "lemery-batangas": {
+    image: "/images/project11.jpg",
+    location: "Lemery, Batangas, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-10",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Supports grid, solar, and battery input with intelligent energy management for seamless performance.",
+      "16 × 615W Canadian Solar Bifacial Panels – Premium bifacial modules that capture sunlight from both sides, ideal for maximizing solar output in sunny Batangas.",
+      "51.2V 314Ah LiFePO₄ Battery – High-capacity lithium battery designed for long lifespan, safety, and deep discharge for nighttime and emergency use.",
+    ],
+    benefits: [
+      "Energy Savings: Cuts monthly electric bills by up to 65%.",
+      "Backup Power: Keeps appliances like lights, fans, and refrigerators running during outages.",
+      "Environmentally Friendly: Reduces carbon emissions by an estimated 600–800 kg/month.",
+      "Low Maintenance: Clean energy system with minimal upkeep and strong long-term value.",
+    ],
+    description:
+      "This 8kW hybrid solar system installed in Lemery, Batangas is designed to meet the growing energy needs of a modern household while providing reliable backup power during grid interruptions. With efficient solar harvesting and battery storage, the system helps the homeowner save on electricity costs and ensures peace of mind during brownouts. This Lemery-based project showcases Sunphil Solar's expertise in delivering hybrid solar solutions tailored to the needs of homeowners in Batangas, including Tanauan, Lipa, and Taal. Our systems are built for reliability, cost-efficiency, and long-term performance.",
+  },
+  "pandacan-manila": {
+    image: "/images/project12.jpg",
+    location: "Pandacan, Manila, NCR, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-26",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart inverter capable of managing solar, grid, and battery sources for optimized energy flow and seamless switching.",
+      "16 × 615W Canadian Solar Bifacial Panels – High-efficiency bifacial modules that capture sunlight from both sides for increased energy generation in limited rooftop spaces.",
+      "51.2V 314Ah LiFePO₄ Lithium Battery – Advanced energy storage with deep-cycle capabilities and long lifespan, ideal for city homes with frequent brownouts.",
+    ],
+    benefits: [
+      "Monthly Savings: Offsets grid consumption by up to 60%, lowering electric bills significantly.",
+      "Power Security: Keeps essential home appliances running during power outages.",
+      "Sustainable Solution: Reduces carbon emissions by around 600–800 kg per month.",
+      "Ideal for Urban Homes: Compact system layout suited for residential rooftops in dense city areas.",
+    ],
+    description:
+      "Sunphil Solar successfully installed an 8kW hybrid solar system in Pandacan, Manila, tailored to meet the high daytime energy demand of a Metro Manila household while ensuring dependable backup power. This setup provides clean, sustainable electricity and protection from frequent urban power interruptions. This project highlights Sunphil Solar's commitment to helping Manila residents gain energy independence through high-performance hybrid solar systems. From Pandacan to Sampaloc, Tondo, and beyond—we bring solar energy to every home that needs it.",
+  },
+  "alisha-nueva-ecija": {
+    image: "/images/project13.jpg",
+    location: "Alisha, Nueva Ecija, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-27",
+    clientType: "Residential",
+    specification: [
+      "6kW Deye Hybrid Inverter – Supports seamless switching between solar, grid, and battery power with intelligent energy management.",
+      "13 × 615W Canadian Bifacial Solar Panels – High-performance panels capable of absorbing sunlight from both front and rear sides, delivering enhanced power generation even in shaded or diffused light conditions.",
+      "51.2V 314Ah LiFePO₄ Lithium Battery – Advanced lithium battery offering long-lasting storage, safety, and deep cycling for optimal night-time or emergency usage.",
+    ],
+    benefits: [
+      "Lower Energy Bills: Offsets a large portion of grid electricity use, saving the homeowner up to 60% monthly.",
+      "Uninterrupted Power: Supports lighting, refrigeration, internet routers, and other essentials during brownouts.",
+      "Eco-Friendly: Helps reduce approximately 400–600 kg of CO₂ emissions per month.",
+      "Rural-Ready: Durable and low-maintenance—perfect for homes in provincial areas.",
+    ],
+    description:
+      "Sunphil Solar deployed a 6kW hybrid solar energy system for a residential client in Alisha, Nueva Ecija, tailored to handle everyday household power needs while ensuring reliable energy supply during frequent grid interruptions. This system is an ideal choice for provinces where stable energy access is crucial for comfort and savings. This project is part of Sunphil Solar's expanding reach in Central Luzon, delivering quality hybrid solar systems to residential communities in Alisha, Cabanatuan, San Jose, and beyond. Our mission is to bring affordable, clean, and reliable power to Filipino homes—wherever they are.",
+  },
+  "iba-zambales": {
+    image: "/images/project14.jpg",
+    location: "Iba, Zambales, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-28",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart inverter that integrates solar, grid, and battery inputs to ensure consistent, efficient power flow.",
+      "13 × 615W Canadian Solar Bifacial Panels – High-efficiency panels with bifacial technology to harvest more sunlight—even from reflective surfaces—maximizing output.",
+      "51.2V 314Ah LiFePO₄ Lithium Battery – Long-lasting, high-capacity battery designed to supply energy during nighttime use and grid outages.",
+    ],
+    benefits: [
+      "Significant Cost Reduction: Reduces monthly electricity bills by up to 60%.",
+      "Power Stability: Keeps household essentials running even during power outages.",
+      "Environmentally Friendly: Offsets an estimated 600–800 kg of CO₂ emissions monthly.",
+      "Perfect for Provincial Homes: Designed for homes that experience voltage fluctuations or unreliable grid access.",
+    ],
+    description:
+      "Sunphil Solar completed a customized 8kW hybrid solar system for a residential property in Iba, Zambales, offering dependable daytime power generation and seamless backup support during brownouts. This installation is designed to address the energy needs of modern homes in rural and coastal areas, where energy reliability is essential. This solar installation reflects Sunphil Solar's growing footprint in Western Luzon, bringing clean, hybrid solar power to areas like Iba, Subic, San Narciso, and nearby communities. Our hybrid systems are tailor-fit for coastal regions that experience frequent brownouts and rising electricity costs.",
+  },
   // Add more projects as needed
 };
 
@@ -254,11 +354,17 @@ const ProjectDetailPage: React.FC = () => {
         </Link>
 
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="relative h-96">
+          <div className="relative w-full aspect-[4/3] flex items-center justify-center overflow-hidden">
             <img
               src={project.image}
               alt={project.location}
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover filter blur-lg scale-110"
+              aria-hidden="true"
+            />
+            <img
+              src={project.image}
+              alt={project.location}
+              className="relative z-10 max-h-full max-w-full object-contain"
             />
           </div>
 
