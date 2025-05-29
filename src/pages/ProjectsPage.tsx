@@ -181,6 +181,18 @@ const projects = [
       "51.2V 314Ah LiFePO4 Lithium Battery",
     ],
   },
+  {
+    id: "binangonan-rizal",
+    image: "/images/project15.jpg",
+    location: "Binangonan, Rizal, PH",
+    system: "16kW Hybrid Solar",
+    date: "2025-05-29",
+    specification: [
+      "16kW Deye Hybrid Inverter",
+      "30 × 615W Canadian Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
   // Add more projects as needed
 ];
 

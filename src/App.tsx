@@ -1,8 +1,8 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes"; // Correct path to your AppRoutes
-import WeatherWidget from "./components/weather/WeatherWidget";
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
+import ChatBot from "./components/ChatBot";
 
 function App() {
   const GOOGLE_MAPS_API_KEY =
@@ -20,6 +20,7 @@ function App() {
           googleMapsApiKey={GOOGLE_MAPS_API_KEY}
           weatherApiKey={WEATHER_API_KEY}
         />
+        <ChatBot />
       </BrowserRouter>
     </>
   );

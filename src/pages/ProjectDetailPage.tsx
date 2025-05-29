@@ -311,6 +311,25 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar completed a customized 8kW hybrid solar system for a residential property in Iba, Zambales, offering dependable daytime power generation and seamless backup support during brownouts. This installation is designed to address the energy needs of modern homes in rural and coastal areas, where energy reliability is essential. This solar installation reflects Sunphil Solar's growing footprint in Western Luzon, bringing clean, hybrid solar power to areas like Iba, Subic, San Narciso, and nearby communities. Our hybrid systems are tailor-fit for coastal regions that experience frequent brownouts and rising electricity costs.",
   },
+  "binangonan-rizal": {
+    image: "/images/project15.jpg",
+    location: "Binangonan, Rizal, PH",
+    system: "16kW Hybrid Solar",
+    date: "2025-05-29",
+    clientType: "Residential",
+    specification: [
+      "1 × 16kW Deye Hybrid Inverter – Advanced hybrid inverter that efficiently balances power between solar input, grid supply, and battery storage.",
+      "30 × 615W Canadian Bifacial Solar Panels – Premium high-efficiency panels with bifacial technology that captures sunlight from both sides for enhanced output.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Durable, high-capacity lithium batteries ideal for storing surplus solar energy for nighttime use or grid outages.",
+    ],
+    benefits: [
+      "Massive Energy Offset: Covers up to 80–90% of the household's monthly electricity usage.",
+      "Backup Readiness: Provides full backup power for essentials during blackouts or peak demand.",
+      "Sustainability: Reduces carbon emissions by approximately 1,200–1,600 kg per month.",
+      "Perfect for Expanding Households: Future-ready system that supports additional loads or electric vehicle charging.",
+    ],
+    description: `Sunphil Solar delivered a high-capacity 16kW hybrid solar system in Binangonan, Rizal, designed for a large household with high energy consumption. This setup ensures uninterrupted power, significant savings, and long-term energy independence in a growing urban community. Sunphil Solar is proud to support homeowners in Binangonan and throughout Rizal Province with dependable hybrid solar solutions. Our installations empower customers to take control of their energy while reducing dependency on the national grid. Considering going solar in Binangonan or nearby areas like Antipolo, Taytay, or Angono? Sunphil Solar offers customized systems with expert installation and lifetime support. Big System Capacity | Expert Design | Eco-Friendly Power.`,
+  },
   // Add more projects as needed
 };
 
@@ -404,6 +423,12 @@ const ProjectDetailPage: React.FC = () => {
                 🔋 Project Overview
               </h2>
               <p className="text-secondary-700">{project.description}</p>
+              <a
+                href="/contact"
+                className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors mt-4"
+              >
+                Book a Free Solar Consultation Now
+              </a>
             </div>
 
             <div className="mb-8">
