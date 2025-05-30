@@ -16,6 +16,9 @@ import {
 } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { Testimonials } from "../components/sections/Testimonials";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Mock data array for 3 featured blogs
 const featuredBlogs = [
@@ -53,8 +56,16 @@ const featuredBlogs = [
   },
 ];
 
+type Project = {
+  image: string;
+  location: string;
+  system: string;
+  date: string;
+  specification: string[];
+};
+
 // Mock data array for 3 featured projects
-const featuredProjects = [
+const featuredProjects: Project[] = [
   {
     image: "/images/project1.jpg",
     location: "Sariaya, Quezon, PH",
@@ -91,80 +102,107 @@ const featuredProjects = [
 ];
 
 export const HomePage = () => {
+  const projectCard = (proj: Project, idx: number) => (
+    <Link
+      to="/solarprojects"
+      key={idx}
+      className="group bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-400 relative"
+    >
+      <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+        <img
+          src={proj.image}
+          alt={proj.location}
+          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+        />
+        {/* Overlay with summary on hover */}
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-300">
+          <div className="flex items-center gap-2 text-white text-lg font-bold mb-1">
+            <MapPin className="text-primary-400" size={20} />
+            <span>{proj.location}</span>
+          </div>
+          <div className="text-white text-base">{proj.system}</div>
+        </div>
+      </div>
+      <div className="p-6 text-center">
+        <div className="flex items-center justify-center gap-2 font-bold text-black mb-1">
+          <MapPin className="text-primary-500" size={18} />
+          <span>{proj.location}</span>
+        </div>
+        <div className="flex items-center justify-center gap-2 text-black mb-1">
+          <Sun className="text-yellow-500" size={18} />
+          <span>{proj.system}</span>
+        </div>
+        <div className="flex items-center justify-center gap-2 text-black mb-2">
+          <Calendar className="text-primary-500" size={18} />
+          <span>{proj.date}</span>
+        </div>
+        <div className="bg-gray-50 p-4 rounded-lg mt-4">
+          <ul className="text-left pl-5 space-y-2">
+            {proj.specification.map((spec: string, i: number) => {
+              let Icon = Settings;
+              if (/inverter/i.test(spec)) Icon = Settings;
+              else if (/solar panel/i.test(spec)) Icon = PanelTop;
+              else if (/battery/i.test(spec)) Icon = Battery;
+              return (
+                <li
+                  key={i}
+                  className="flex items-start gap-2 text-black font-semibold mb-2 last:mb-0"
+                >
+                  <Icon className="text-primary-500 mt-1" size={20} />
+                  <span>{spec}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="flex items-center gap-2 mt-4">
+            <CheckCircle className="text-green-500" size={20} />
+            <span className="font-semibold text-black">Client Review:</span>
+            {[...Array(5)].map((_, i: number) => (
+              <Star
+                key={i}
+                className="text-yellow-400 fill-yellow-400"
+                size={20}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+
+  const projectSliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    adaptiveHeight: true,
+  };
+
   return (
     <>
       <Helmet>
         <title>Home | SunPhil Solar</title>
       </Helmet>
       <Hero />
-      {/* Featured Projects Section - 3-column grid */}
+      {/* Featured Projects Section - Carousel on mobile, grid on desktop */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((proj, idx) => (
-              <Link
-                to="/solarprojects"
-                key={idx}
-                className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-blue-400"
-              >
-                <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                  <img
-                    src={proj.image}
-                    alt={proj.location}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <div className="flex items-center justify-center gap-2 font-bold text-black mb-1">
-                    <MapPin className="text-primary-500" size={18} />
-                    <span>{proj.location}</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-black mb-1">
-                    <Sun className="text-yellow-500" size={18} />
-                    <span>{proj.system}</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-black mb-2">
-                    <Calendar className="text-primary-500" size={18} />
-                    <span>{proj.date}</span>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg mt-4">
-                    <ul className="text-left pl-5 space-y-2">
-                      {proj.specification.map((spec, i) => {
-                        let Icon = Settings;
-                        if (/inverter/i.test(spec)) Icon = Settings;
-                        else if (/solar panel/i.test(spec)) Icon = PanelTop;
-                        else if (/battery/i.test(spec)) Icon = Battery;
-                        return (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-black font-semibold mb-2 last:mb-0"
-                          >
-                            <Icon className="text-primary-500 mt-1" size={20} />
-                            <span>{spec}</span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    <div className="flex items-center gap-2 mt-4">
-                      <CheckCircle className="text-green-500" size={20} />
-                      <span className="font-semibold text-black">
-                        Client Review:
-                      </span>
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="text-yellow-400 fill-yellow-400"
-                          size={20}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          {/* Mobile Carousel */}
+          <div className="block md:hidden">
+            <Slider {...projectSliderSettings}>
+              {featuredProjects.map((proj, idx) => projectCard(proj, idx))}
+            </Slider>
+          </div>
+          {/* Desktop Grid */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((proj, idx) => projectCard(proj, idx))}
           </div>
           <div className="text-center mt-10">
             <Link

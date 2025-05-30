@@ -1,14 +1,25 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowRight, Sun, Zap, DollarSign } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
 import { WeatherWidget } from "../weather";
 
 export const Hero: React.FC = () => {
+  const [monthlyBill, setMonthlyBill] = useState("");
+  const [estimatedSavings, setEstimatedSavings] = useState<number | null>(null);
+
+  const calculateSavings = () => {
+    if (!monthlyBill) return;
+    const bill = parseFloat(monthlyBill);
+    // Assuming average savings of 80% on solar
+    const savings = bill * 0.8;
+    setEstimatedSavings(savings);
+  };
+
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px]">
-      {/* Background */}
+      {/* Background with subtle animation */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat animate-[slowZoom_30s_ease-in-out_infinite]"
         style={{
           backgroundImage:
             "url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)",
@@ -34,13 +45,29 @@ export const Hero: React.FC = () => {
               making a difference for a greener future.
             </p>
 
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="text-2xl font-bold text-primary-400">80%</div>
+                <div className="text-sm text-white/80">Energy Savings</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="text-2xl font-bold text-primary-400">25+</div>
+                <div className="text-sm text-white/80">Years Lifespan</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="text-2xl font-bold text-primary-400">100%</div>
+                <div className="text-sm text-white/80">Clean Energy</div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 px-2">
               <div className="animated-gradient-border rounded-full w-full sm:w-auto inline-block">
                 <RouterLink
                   to="/calculator"
                   className="relative z-10 inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 border border-transparent rounded-full text-base font-medium bg-primary-600 text-white hover:bg-primary-700 transition duration-300 ease-in-out transform hover:-translate-y-1"
                 >
-                  Calculate Your Needs
+                  Energy Calculator
                 </RouterLink>
               </div>
               <a
@@ -60,7 +87,7 @@ export const Hero: React.FC = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Reduce your electricity bills by up to 70%",
+                  "Reduce your electricity bills by up to 80%",
                   "Environmentally friendly renewable energy source",
                   "Increase your property value",
                   "Energy independence and security",
@@ -75,9 +102,79 @@ export const Hero: React.FC = () => {
                 ))}
               </ul>
               <div className="mt-6 text-center">
-                <span className="inline-block px-4 py-1 bg-primary-500/20 rounded-full text-primary-300 text-sm">
+                <span className="inline-block px-4 py-1 bg-primary-500/20 rounded-full text-white text-sm">
                   Power Up Your Future—Today!
                 </span>
+              </div>
+            </div>
+
+            {/* Quick Savings Calculator */}
+            <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-elevation-3 border border-white/20">
+              <h3 className="text-white text-xl font-semibold mb-4 text-center">
+                Quick Savings Estimate
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="monthlyBill"
+                    className="block text-white/90 mb-2"
+                  >
+                    Your Monthly Electric Bill
+                  </label>
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/70">
+                      ₱
+                    </span>
+                    <input
+                      type="number"
+                      id="monthlyBill"
+                      value={monthlyBill}
+                      onChange={(e) => setMonthlyBill(e.target.value)}
+                      placeholder="Enter amount"
+                      className="w-full bg-white/10 border border-white/20 rounded-lg py-2 pl-8 pr-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    />
+                  </div>
+                </div>
+                <button
+                  onClick={calculateSavings}
+                  className="w-full bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300"
+                >
+                  Calculate Savings
+                </button>
+                {estimatedSavings !== null && (
+                  <div className="bg-white/10 rounded-lg p-4 text-center">
+                    <div className="text-white/90 mb-2">
+                      Estimated Monthly Savings
+                    </div>
+                    <div className="text-3xl font-bold text-primary-400">
+                      ₱
+                      {estimatedSavings.toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
+                    </div>
+                    <div className="text-white/70 text-sm mt-2">
+                      {`That's ₱${(estimatedSavings * 12).toLocaleString(
+                        undefined,
+                        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+                      )} per year!`}
+                    </div>
+                  </div>
+                )}
+                <div className="flex items-center justify-center gap-4 text-white/70 text-sm">
+                  <div className="flex items-center">
+                    <Sun className="w-4 h-4 mr-1" />
+                    Clean Energy
+                  </div>
+                  <div className="flex items-center">
+                    <Zap className="w-4 h-4 mr-1" />
+                    Reliable Power
+                  </div>
+                  <div className="flex items-center">
+                    <DollarSign className="w-4 h-4 mr-1" />
+                    Big Savings
+                  </div>
+                </div>
               </div>
             </div>
           </div>
