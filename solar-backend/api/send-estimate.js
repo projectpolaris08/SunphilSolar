@@ -145,7 +145,7 @@ export default async function handler(req, res) {
         <a href="mailto:sunphilsolarpowerinstallation@gmail.com">sunphilsolarpowerinstallation@gmail.com</a>
         <br>
         or contact us on
-        <a href="https://www.facebook.com/profile.php?id=100094173168805" target="_blank" style="color: #2563eb; text-decoration: underline;">
+        <a href="https://m.me/fairview.solarista.admn.jayar" target="_blank" style="color: #2563eb; text-decoration: underline;">
           Facebook
         </a>.
       </p>
