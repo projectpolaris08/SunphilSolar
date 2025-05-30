@@ -13,6 +13,7 @@ import ProjectsPage from "../pages/ProjectsPage";
 import ProjectDetailPage from "../pages/ProjectDetailPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Cookies from "../pages/Cookies";
+import FAQ from "../pages/FAQ";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -37,6 +38,7 @@ const AppRoutes = ({
           <Route path="/solarcalculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactForm />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route
             path="/projects"
             element={<Navigate to="/solarprojects" replace />}

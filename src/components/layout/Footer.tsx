@@ -83,6 +83,7 @@ export const Footer: React.FC = () => {
                 { label: "Features", path: "#features" },
                 { label: "Services", path: "#services" },
                 { label: "Contact", path: "#contact" },
+                { label: "FAQ", path: "/faq" },
               ].map((link, index) => (
                 <li key={index}>
                   {link.path.startsWith("#") ? (

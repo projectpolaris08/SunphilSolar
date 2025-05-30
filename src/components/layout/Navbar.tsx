@@ -21,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
     { name: "Calculator", path: "/calculator" },
     { name: "Blog", path: "/blog" },
     { name: "About Us", path: "/about" },
+    { name: "FAQ", path: "/faq" },
   ];
 
   const isOnHomePage = location.pathname === "/";
