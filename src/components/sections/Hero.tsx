@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
 
             <div className="h-1 w-20 bg-primary-500 rounded mb-6"></div>
 
-            <p className="text-lg md:text-xl text-secondary-100 mb-8">
+            <p className="text-lg md:text-xl text-white-100 mb-8">
               Explore the endless possibilities of solar energy with Sunphil
               Solar. Our innovative solutions harness the power of Sun to
               provide sustainable, reliable, and eco-friendly energy. Join us in
@@ -49,15 +49,15 @@ export const Hero: React.FC = () => {
             <div className="grid grid-cols-3 gap-4 mb-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                 <div className="text-2xl font-bold text-primary-400">80%</div>
-                <div className="text-sm text-white/80">Energy Savings</div>
+                <div className="text-sm text-white/100">Energy Savings</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                 <div className="text-2xl font-bold text-primary-400">25+</div>
-                <div className="text-sm text-white/80">Years Lifespan</div>
+                <div className="text-sm text-white/100">Years Lifespan</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                 <div className="text-2xl font-bold text-primary-400">100%</div>
-                <div className="text-sm text-white/80">Clean Energy</div>
+                <div className="text-sm text-white/100">Clean Energy</div>
               </div>
             </div>
 
@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
                     <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center mr-3">
                       <span className="text-white text-sm font-bold">✓</span>
                     </div>
-                    <span className="text-white/90">{item}</span>
+                    <span className="text-white/100">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -117,7 +117,7 @@ export const Hero: React.FC = () => {
                 <div>
                   <label
                     htmlFor="monthlyBill"
-                    className="block text-white/90 mb-2"
+                    className="block text-white/100 mb-2"
                   >
                     Your Monthly Electric Bill
                   </label>
@@ -161,7 +161,7 @@ export const Hero: React.FC = () => {
                     </div>
                   </div>
                 )}
-                <div className="flex items-center justify-center gap-4 text-white/70 text-sm">
+                <div className="flex items-center justify-center gap-4 text-white/100 text-sm">
                   <div className="flex items-center">
                     <Sun className="w-4 h-4 mr-1" />
                     Clean Energy

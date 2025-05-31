@@ -1,6 +1,4 @@
 import { Hero } from "../components/sections/Hero";
-import { Features } from "../components/sections/Features";
-import { Services } from "../components/sections/Services";
 import { ContactForm } from "../components/sections/ContactForm";
 import { BrandLogos } from "../components/sections/BrandLogos";
 import { Link } from "react-router-dom"; // or 'next/link' if using Next.js
@@ -277,8 +275,6 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <Features />
-      <Services />
       <BrandLogos />
       <Testimonials />
       <ContactForm />

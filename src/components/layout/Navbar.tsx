@@ -82,22 +82,20 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 Services
               </span>
               <div className="absolute left-0 mt-2 w-48 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
-                <HashLink
-                  smooth
-                  to={isOnHomePage ? "#services" : `/#services`}
+                <RouterLink
+                  to="/services"
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
-                  onClick={() => handleNavClick("/#services")}
+                  onClick={() => handleNavClick("/services")}
                 >
                   All Services
-                </HashLink>
-                <HashLink
-                  smooth
-                  to={isOnHomePage ? "#features" : `/#features`}
+                </RouterLink>
+                <RouterLink
+                  to="/services#services"
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
-                  onClick={() => handleNavClick("/#features")}
+                  onClick={() => handleNavClick("/services#services")}
                 >
-                  Features
-                </HashLink>
+                  Service List
+                </RouterLink>
                 <RouterLink
                   to="/products"
                   className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
@@ -199,17 +197,6 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               }}
             >
               All Services
-            </HashLink>
-            <HashLink
-              smooth
-              to={isOnHomePage ? "#features" : `/#features`}
-              className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-              onClick={() => {
-                handleNavClick("/#features");
-                toggleMenu();
-              }}
-            >
-              Features
             </HashLink>
             <RouterLink
               to="/products"
