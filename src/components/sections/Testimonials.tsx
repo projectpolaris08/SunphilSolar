@@ -81,8 +81,8 @@ export const Testimonials: React.FC = () => {
         </h2>
         <Slider {...settings}>
           {testimonials.map((t, idx) => (
-            <div key={idx}>
-              <div className="relative bg-secondary-50 rounded-xl shadow p-4 sm:p-8 flex flex-col items-center h-full w-full">
+            <div key={idx} className="px-3">
+              <div className="relative bg-white border-2 border-blue-500 rounded-2xl shadow-2xl p-6 sm:p-10 flex flex-col items-center h-full w-full min-h-[380px] transition-all duration-300">
                 <img
                   src={t.photo}
                   alt={t.name}
