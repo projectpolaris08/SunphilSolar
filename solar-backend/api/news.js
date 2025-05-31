@@ -1,24 +1,22 @@
-import { EventRegistry } from "eventregistry";
+const EventRegistry = require("eventregistry");
 
-export default async function handler(req, res) {
-  const er = new EventRegistry({
-    apiKey: process.env.NEWSAPI_KEY,
-  });
+module.exports = async function handler(req, res) {
+  const er = new EventRegistry({ apiKey: process.env.NEWSAPI_KEY });
 
   try {
-    // Fetch latest 3 English articles
-    const response = await er.getJson("eventRegistry", {
-      action: "getArticles",
-      articlesPage: 1,
-      articlesCount: 3,
-      articlesSortBy: "date",
-      articlesSortByAsc: false,
-      articlesArticleBodyLen: 300,
-      articlesLang: "eng",
-    });
+    const q = er.queryArticles();
+    q.setRequestedResult(er.RequestedResultArticlesInfo);
+    q.setArticlesPage(1);
+    q.setArticlesCount(3);
+    q.setSortBy("date");
+    q.setSortByAsc(false);
+    q.setArticleBodyLen(300);
+    q.setLang("eng");
+
+    const response = await er.execQuery(q);
     res.status(200).json(response);
   } catch (err) {
     console.error("Error fetching news:", err);
     res.status(500).json({ error: "Failed to fetch news" });
   }
-}
+};
