@@ -31,7 +31,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 280Ah LiFePO₄ Battery",
+      "4 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
     benefits: [
       "Energy Independence: This hybrid setup allows the homeowner to rely less on the grid and stay powered during outages.",
@@ -52,7 +52,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "2 x 12kW Deye Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 314Ah LiFePO₄ Battery",
+      "4 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
     benefits: [
       "Hybrid Power Reliability: Offers energy independence and backup power capability in areas with unstable grid supply.",
@@ -73,7 +73,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 280Ah LiFePO₄ Battery",
+      "2 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
     benefits: [
       "Lower Electricity Bills: Significantly reduces monthly Meralco or local utility charges through solar self-consumption.",
@@ -115,7 +115,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "3 x 51.2v 280Ah LiFePO₄ Battery",
+      "3 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
     benefits: [
       "Monthly Savings: Significant reduction in electricity bills through solar energy self-consumption.",
@@ -157,7 +157,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 314Ah LiFePO₄ Battery",
+      "2 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
     benefits: [
       "Significant Monthly Savings: Reduces reliance on grid power and lowers electric bills.",
@@ -199,7 +199,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "12kW Deye Hybrid Inverter",
       "14 615W Canadian Solar Bifacial Panels",
-      "2 x 51.2V 314Ah LiFePO₄ Lithium Batteries",
+      "2 x 51.2V 314Ah LiFePO₄ Batteries",
     ],
     benefits: [
       "Lower Monthly Bills: Reduces grid electricity usage, resulting in significant savings.",
@@ -220,7 +220,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "6kW Deye Hybrid Inverter – Handles energy from solar, grid, and battery sources with seamless switching and intelligent load management.",
       "13 × 615W Canadian Solar Bifacial Panels – High-efficiency panels that harvest energy from both sides for maximum performance, even on limited rooftop space.",
-      "51.2V 314Ah LiFePO₄ Lithium Battery – Long-lasting and safe battery backup system for night use and power interruptions.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-lasting and safe battery backup system for night use and power interruptions.",
     ],
     benefits: [
       "Cost Savings: Offsets a major portion of daily electricity use, reducing bills by up to 60%.",
@@ -260,7 +260,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "8kW Deye Hybrid Inverter – Smart inverter capable of managing solar, grid, and battery sources for optimized energy flow and seamless switching.",
       "16 × 615W Canadian Solar Bifacial Panels – High-efficiency bifacial modules that capture sunlight from both sides for increased energy generation in limited rooftop spaces.",
-      "51.2V 314Ah LiFePO₄ Lithium Battery – Advanced energy storage with deep-cycle capabilities and long lifespan, ideal for city homes with frequent brownouts.",
+      "51.2V 314Ah LiFePO₄ Battery – Advanced energy storage with deep-cycle capabilities and long lifespan, ideal for city homes with frequent brownouts.",
     ],
     benefits: [
       "Monthly Savings: Offsets grid consumption by up to 60%, lowering electric bills significantly.",
@@ -280,7 +280,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "6kW Deye Hybrid Inverter – Supports seamless switching between solar, grid, and battery power with intelligent energy management.",
       "13 × 615W Canadian Bifacial Solar Panels – High-performance panels capable of absorbing sunlight from both front and rear sides, delivering enhanced power generation even in shaded or diffused light conditions.",
-      "51.2V 314Ah LiFePO₄ Lithium Battery – Advanced lithium battery offering long-lasting storage, safety, and deep cycling for optimal night-time or emergency usage.",
+      "51.2V 314Ah LiFePO₄ Battery – Advanced lithium battery offering long-lasting storage, safety, and deep cycling for optimal night-time or emergency usage.",
     ],
     benefits: [
       "Lower Energy Bills: Offsets a large portion of grid electricity use, saving the homeowner up to 60% monthly.",
@@ -300,7 +300,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "8kW Deye Hybrid Inverter – Smart inverter that integrates solar, grid, and battery inputs to ensure consistent, efficient power flow.",
       "13 × 615W Canadian Solar Bifacial Panels – High-efficiency panels with bifacial technology to harvest more sunlight—even from reflective surfaces—maximizing output.",
-      "51.2V 314Ah LiFePO₄ Lithium Battery – Long-lasting, high-capacity battery designed to supply energy during nighttime use and grid outages.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-lasting, high-capacity battery designed to supply energy during nighttime use and grid outages.",
     ],
     benefits: [
       "Significant Cost Reduction: Reduces monthly electricity bills by up to 60%.",
@@ -329,6 +329,26 @@ const projects: { [key: string]: Project } = {
       "Perfect for Expanding Households: Future-ready system that supports additional loads or electric vehicle charging.",
     ],
     description: `Sunphil Solar delivered a high-capacity 16kW hybrid solar system in Binangonan, Rizal, designed for a large household with high energy consumption. This setup ensures uninterrupted power, significant savings, and long-term energy independence in a growing urban community. Sunphil Solar is proud to support homeowners in Binangonan and throughout Rizal Province with dependable hybrid solar solutions. Our installations empower customers to take control of their energy while reducing dependency on the national grid. Considering going solar in Binangonan or nearby areas like Antipolo, Taytay, or Angono? Sunphil Solar offers customized systems with expert installation and lifetime support. Big System Capacity | Expert Design | Eco-Friendly Power.`,
+  },
+  "siruma-camarines-sur": {
+    image: "/images/project16.jpg",
+    location: "Siruma, Camarines Sur, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-05-31",
+    clientType: "Residential / Small Commercial",
+    specification: [
+      "2 × 16kW Deye Hybrid Inverters – Smart and scalable solution capable of handling large loads and ensuring seamless switching between solar, battery, and grid power sources.",
+      "56 × 620W Canadian Bifacial Solar Panels – State-of-the-art bifacial modules with high conversion efficiency and dual-sided sunlight absorption, ideal for maximizing energy yield in open or rural settings.",
+      "4 × 51.2V 314Ah LiFePO₄ Batteries – Long-lasting, deep-cycle batteries designed to store substantial amounts of energy for reliable nighttime and blackout use.",
+    ],
+    benefits: [
+      "Massive Power Capacity: Supports an entire household or small business operation including air conditioning, refrigeration, water pumps, and appliances.",
+      "Off-Grid Ready: Perfect for remote locations like Siruma where grid reliability may be limited.",
+      "Energy Cost Savings: Reduces electricity expenses by up to 80–90% monthly.",
+      "Environmental Impact: Cuts down approximately 2,000–2,400 kg of CO₂ emissions per month.",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 32kW hybrid solar energy system in the remote coastal municipality of Siruma, Camarines Sur. Designed to meet the high energy demands of a large residence or small business, this system provides powerful off-grid backup capabilities while significantly reducing electricity bills and environmental impact. This Siruma project demonstrates Sunphil Solar's commitment to bringing clean, renewable energy to rural and hard-to-reach areas. Whether for residential or commercial use, our high-performance hybrid systems are tailored to provide power independence in off-grid or low-grid environments.",
   },
   // Add more projects as needed
 };

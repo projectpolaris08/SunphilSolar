@@ -14,6 +14,18 @@ import { Helmet } from "react-helmet";
 
 const projects = [
   {
+    id: "siruma-camarines-sur",
+    image: "/images/project16.jpg",
+    location: "Siruma, Camarines Sur, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-05-31",
+    specification: [
+      "2 × 16kW Deye Hybrid Inverters",
+      "56 × 620W Canadian Bifacial Solar Panels",
+      "4 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
     id: "sariaya-quezon",
     image: "/images/project1.jpg",
     location: "Sariaya, Quezon, PH",
@@ -22,7 +34,7 @@ const projects = [
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 280Ah LiFePO4 Battery",
+      "4 x 51.2v 280Ah LiFePO4 Batteries",
     ],
   },
   {
@@ -34,7 +46,7 @@ const projects = [
     specification: [
       "2 x 12kW Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 314Ah LiFePO4 Battery",
+      "4 x 51.2v 314Ah LiFePO4 Batteries",
     ],
   },
   {
@@ -46,7 +58,7 @@ const projects = [
     specification: [
       "12kW Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 280Ah LiFePO4 Battery",
+      "2 x 51.2v 280Ah LiFePO4 Batteries",
     ],
   },
   {
@@ -70,7 +82,7 @@ const projects = [
     specification: [
       "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "3 x 51.2v 280Ah LiFePO4 Battery",
+      "3 x 51.2v 280Ah LiFePO4 Batteries",
     ],
   },
   {
@@ -94,7 +106,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 314Ah LiFePO4 Battery",
+      "2 x 51.2v 314Ah LiFePO4 Batteries",
     ],
   },
   {
@@ -118,7 +130,7 @@ const projects = [
     specification: [
       "12kW Deye Hybrid Inverter",
       "14 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 314Ah LiFePO4 Battery",
+      "2 x 51.2v 314Ah LiFePO4 Batteries",
     ],
   },
   {
@@ -130,7 +142,7 @@ const projects = [
     specification: [
       "6kW Deye Hybrid Inverter",
       "13 × 615W Canadian Solar Bifacial Panels",
-      "51.2V 314Ah LiFePO4 Lithium Battery",
+      "51.2V 314Ah LiFePO4 Battery",
     ],
   },
   {
@@ -154,7 +166,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "16 × 615W Canadian Solar Bifacial Panels",
-      "51.2V 314Ah LiFePO4 Lithium Battery",
+      "51.2V 314Ah LiFePO4 Battery",
     ],
   },
   {
@@ -166,7 +178,7 @@ const projects = [
     specification: [
       "6kW Deye Hybrid Inverter",
       "13 × 615W Canadian Bifacial Solar Panels",
-      "51.2V 314Ah LiFePO4 Lithium Battery",
+      "51.2V 314Ah LiFePO4 Battery",
     ],
   },
   {
@@ -178,7 +190,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "13 × 615W Canadian Solar Bifacial Panels",
-      "51.2V 314Ah LiFePO4 Lithium Battery",
+      "51.2V 314Ah LiFePO4 Battery",
     ],
   },
   {

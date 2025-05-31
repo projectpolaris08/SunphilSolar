@@ -88,14 +88,14 @@ const featuredProjects: Project[] = [
     ],
   },
   {
-    image: "/images/project3.jpg",
-    location: "Cabanatuan City, PH",
-    system: "12kW Hybrid Solar",
-    date: "2025-04-12",
+    image: "/images/project16.jpg",
+    location: "Siruma, Camarines Sur, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-05-31",
     specification: [
-      "12kW Hybrid Inverter",
-      "24 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 280Ah LiFePO4 Battery",
+      "2 × 16kW Deye Hybrid Inverters",
+      "56 × 620W Canadian Bifacial Solar Panels",
+      "4 x 51.2v 314Ah LiFePO4 Batteries",
     ],
   },
 ];
