@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
                   to="/calculator"
                   className="relative z-10 inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 border border-transparent rounded-full text-base font-medium bg-primary-600 text-white hover:bg-primary-700 transition duration-300 ease-in-out transform hover:-translate-y-1"
                 >
-                  Energy Calculator
+                  Solar Energy Calculator
                 </RouterLink>
               </div>
               <a
