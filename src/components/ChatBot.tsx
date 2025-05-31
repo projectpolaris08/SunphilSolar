@@ -238,7 +238,7 @@ const ChatBot = () => {
           <MessageSquare size={24} />
         </button>
       ) : (
-        <div className="bg-white rounded-lg shadow-xl w-96 h-[500px] flex flex-col">
+        <div className="bg-white rounded-lg shadow-xl w-80 h-[400px] md:w-96 md:h-[500px] flex flex-col">
           {/* Header */}
           <div className="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
             <h3 className="font-semibold">Solara</h3>
