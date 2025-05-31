@@ -4,6 +4,7 @@ import { ApplianceInput } from "./ApplianceInput";
 import { CalculatorResults } from "./CalculatorResults";
 import { commonAppliancesList, applianceWattages } from "./CommonAppliances";
 import { useNavigate } from "react-router-dom";
+import { useSound } from "react-sounds";
 
 interface Appliance {
   id: string;
@@ -90,6 +91,8 @@ const Calculator: React.FC = () => {
   const [privacyPolicyAgreed, setPrivacyPolicyAgreed] = useState(false);
   const [privacyPolicyError, setPrivacyPolicyError] = useState("");
   const navigate = useNavigate();
+  const { play: playButton } = useSound("ui/button_hard", { volume: 0.4 });
+  const { play: playSubmit } = useSound("ui/submit", { volume: 0.5 });
 
   const generateId = () => `appliance-${Date.now()}`;
 
@@ -231,7 +234,10 @@ const Calculator: React.FC = () => {
     };
   };
 
-  const handleCalculate = () => setShowEmailPrompt(true);
+  const handleCalculate = () => {
+    playSubmit();
+    setShowEmailPrompt(true);
+  };
 
   // Send estimate to backend
   const sendEstimate = async (email: string, calculationData: any) => {
@@ -509,6 +515,7 @@ const Calculator: React.FC = () => {
                         );
                         return;
                       }
+                      playSubmit();
                       sendEstimate(userEmail, {
                         ...calculateRecommendedSystem(),
                         appliances,

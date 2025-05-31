@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "../Logo";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useSound } from "react-sounds";
 
 interface NavbarProps {
   scrolled?: boolean;
@@ -11,8 +12,10 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { play: playButton } = useSound("ui/button_hard", { volume: 0.4 });
 
   const toggleMenu = () => {
+    playButton();
     setIsOpen(!isOpen);
   };
 
@@ -27,6 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
   const isOnHomePage = location.pathname === "/";
 
   const handleNavClick = (path: string) => {
+    playButton();
     if (
       location.pathname === path ||
       (path === "/" && location.pathname === "/")
@@ -121,6 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 smooth
                 to={isOnHomePage ? "#contact" : "/#contact"}
                 className="relative z-10 transition-all duration-300 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700 whitespace-nowrap"
+                onClick={() => playButton()}
               >
                 Get a Quote
                 <span className="ml-2">→</span>

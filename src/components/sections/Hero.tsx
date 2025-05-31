@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { ArrowRight, Sun, Zap, DollarSign } from "lucide-react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { WeatherWidget } from "../weather";
+import { useSound } from "react-sounds";
 
 export const Hero: React.FC = () => {
   const [monthlyBill, setMonthlyBill] = useState("");
   const [estimatedSavings, setEstimatedSavings] = useState<number | null>(null);
+  const { play: playSubmit } = useSound("ui/submit", { volume: 0.5 });
+  const { play: playButton } = useSound("ui/button_hard", { volume: 0.4 });
+  const navigate = useNavigate();
 
   const calculateSavings = () => {
     if (!monthlyBill) return;
@@ -13,6 +17,15 @@ export const Hero: React.FC = () => {
     // Assuming average savings of 80% on solar
     const savings = bill * 0.8;
     setEstimatedSavings(savings);
+    playSubmit();
+  };
+
+  const handleCalculatorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    playButton();
+    setTimeout(() => {
+      navigate("/calculator");
+    }, 120);
   };
 
   return (
@@ -65,6 +78,7 @@ export const Hero: React.FC = () => {
               <div className="animated-gradient-border rounded-full w-full sm:w-auto inline-block">
                 <RouterLink
                   to="/calculator"
+                  onClick={handleCalculatorClick}
                   className="relative z-10 inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 border border-transparent rounded-full text-base font-medium bg-primary-600 text-white hover:bg-primary-700 transition duration-300 ease-in-out transform hover:-translate-y-1"
                 >
                   Solar Energy Calculator

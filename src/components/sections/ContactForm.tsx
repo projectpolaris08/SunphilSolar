@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { useLocation, Link } from "react-router-dom";
+import { useSound } from "react-sounds";
 
 export const ContactForm: React.FC = () => {
   const location = useLocation();
@@ -20,6 +21,8 @@ export const ContactForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const { play: playSubmit } = useSound("ui/submit", { volume: 0.5 });
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -72,7 +75,7 @@ export const ContactForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    playSubmit();
     if (!validate()) return;
 
     setIsLoading(true);

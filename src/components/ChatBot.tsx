@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageSquare, X, Send, Phone, Headphones } from "lucide-react";
+import { useSound } from "react-sounds";
 
 interface Message {
   id: number;
@@ -26,6 +27,9 @@ const ChatBot = () => {
   const [rehideTimeout, setRehideTimeout] = useState<NodeJS.Timeout | null>(
     null
   );
+
+  const { play: playButton } = useSound("ui/button_hard", { volume: 0.4 });
+  const { play: playSubmit } = useSound("ui/submit", { volume: 0.5 });
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -195,6 +199,8 @@ const ChatBot = () => {
       };
       setMessages((prev) => [...prev, botResponse]);
     }, 1000);
+
+    playSubmit();
   };
 
   // Helper to convert URLs in text to clickable links
@@ -225,7 +231,10 @@ const ChatBot = () => {
     <div className="fixed bottom-4 right-4 z-50">
       {!isOpen ? (
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={() => {
+            setIsOpen(true);
+            playButton();
+          }}
           className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition-all duration-300"
         >
           <MessageSquare size={24} />
@@ -239,6 +248,7 @@ const ChatBot = () => {
               onClick={() => {
                 setIsOpen(false);
                 setMessages(initialMessages);
+                playButton();
               }}
               className="hover:bg-blue-700 rounded-full p-1"
             >
@@ -276,7 +286,10 @@ const ChatBot = () => {
             {showContactBar ? (
               <div
                 className="border-t p-4 bg-gray-50 flex justify-center space-x-4 mb-4"
-                onMouseEnter={handleContactIconEnter}
+                onMouseEnter={() => {
+                  handleContactIconEnter();
+                  playButton();
+                }}
                 onMouseLeave={handleContactIconLeave}
               >
                 <a
@@ -299,7 +312,10 @@ const ChatBot = () => {
             ) : (
               <div
                 className="absolute left-1/2 -translate-x-1/2 bottom-0 mb-2 cursor-pointer"
-                onMouseEnter={handleContactIconEnter}
+                onMouseEnter={() => {
+                  handleContactIconEnter();
+                  playButton();
+                }}
                 onMouseLeave={handleContactIconLeave}
               >
                 <MessageSquare
