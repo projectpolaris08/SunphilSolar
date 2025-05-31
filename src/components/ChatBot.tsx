@@ -295,29 +295,6 @@ const ChatBot = () => {
                   <Headphones size={20} />
                   <span>Live Agent</span>
                 </a>
-                {isDesktop && (
-                  <a
-                    href="https://www.facebook.com/fairview.solarista.2025"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="16" cy="16" r="16" fill="#0084FF" />
-                      <path
-                        d="M8.5 21.5L13.5 16.5L17 19.5L22.5 13.5L17.5 18.5L14 15.5L8.5 21.5Z"
-                        fill="white"
-                      />
-                    </svg>
-                    <span>Message Us</span>
-                  </a>
-                )}
                 <a
                   href="tel:+639606921760"
                   className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"
