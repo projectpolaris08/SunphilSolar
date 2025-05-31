@@ -22,17 +22,10 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [inputMessage, setInputMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
   const [showContactBar, setShowContactBar] = useState(true);
   const [rehideTimeout, setRehideTimeout] = useState<NodeJS.Timeout | null>(
     null
   );
-
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
