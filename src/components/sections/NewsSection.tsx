@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface NewsArticle {
   id: string;
@@ -9,7 +9,7 @@ interface NewsArticle {
   image?: string;
 }
 
-const backendUrl = import.meta.env.VITE_NEWS_API_URL;
+const backendUrl = "/api/news";
 
 export const NewsSection = () => {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
