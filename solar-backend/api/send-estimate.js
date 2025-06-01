@@ -94,6 +94,10 @@ export default async function handler(req, res) {
 
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; color: #222; max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 32px;">
+      <p style="font-size: 1.1em; margin-bottom: 18px;">
+        Hi Madam/Sir,<br><br>
+        Thank you for using our Solar Energy Calculator. Based on the details you provided, here are your customized results:
+      </p>
       <h2 style="font-size: 1.7em; color: #222; margin-bottom: 24px; text-align: center;">
         ⚡ Solar System Estimation Results
       </h2>
@@ -145,7 +149,7 @@ export default async function handler(req, res) {
         <a href="mailto:sunphilsolarpowerinstallation@gmail.com">sunphilsolarpowerinstallation@gmail.com</a>
         <br>
         or contact us on
-        <a href="https://m.me/fairview.solarista.admn.jayar" target="_blank" style="color: #2563eb; text-decoration: underline;">
+        <a href="https://m.me.fairview.solarista.admn.jayar" target="_blank" style="color: #2563eb; text-decoration: underline;">
           Facebook
         </a>.
       </p>
