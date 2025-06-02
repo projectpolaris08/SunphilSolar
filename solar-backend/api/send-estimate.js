@@ -93,7 +93,11 @@ export default async function handler(req, res) {
   const results = calculation_data;
 
   const htmlContent = `
-    <div style="font-family: Arial, sans-serif; color: #222; max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 32px;">
+    <div style="background: #2563eb; color: #fff; border-radius: 12px 12px 0 0; padding: 32px 20px 18px 20px; text-align: center; font-family: Arial, sans-serif;">
+      <div style="font-size: 2em; margin-bottom: 8px;">🫶 Thank You!</div>
+      <div style="font-size: 1.15em;">For choosing Sunphil Solar for your energy needs</div>
+    </div>
+    <div style="font-family: Arial, sans-serif; color: #222; max-width: 600px; margin: auto; background: #fff; border-radius: 0 0 12px 12px; box-shadow: 0 2px 8px #0001; padding: 32px;">
       <p style="font-size: 1.1em; margin-bottom: 18px;">
         Hi Madam/Sir,<br><br>
         Thank you for using our Solar Energy Calculator. Based on the details you provided, here are your customized results:
@@ -144,16 +148,81 @@ export default async function handler(req, res) {
       `
         )
         .join("")}
-      <p style="margin-top: 24px; text-align: center;">
-        If you have any questions, reply to this email at
-        <a href="mailto:sunphilsolarpowerinstallation@gmail.com">sunphilsolarpowerinstallation@gmail.com</a>
-        <br>
-        or contact us on
-        <a href="https://m.me.fairview.solarista.admn.jayar" target="_blank" style="color: #2563eb; text-decoration: underline;">
-          Facebook
-        </a>.
-      </p>
-      <p style="color: #888; font-size: 12px; text-align: center;">Sunphil Solar &copy; ${new Date().getFullYear()}</p>
+
+      <!-- Next Steps Section -->
+      <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 20px; margin: 32px 0 20px 0; border-radius: 5px;">
+        <h3 style="margin-top: 0; color: #2563eb;">🎯 Your Next Steps:</h3>
+        <p>Based on your calculation results, we believe we can design a perfect solar solution for your needs. Our team is ready to help you:</p>
+        <ul style="margin: 0 0 0 1.2em; padding: 0; color: #222;">
+          <li>Refine your system specifications</li>
+          <li>Provide detailed cost analysis</li>
+          <li>Arrange a free site assessment</li>
+          <li>Discuss payment options</li>
+        </ul>
+      </div>
+
+      <!-- Benefits Section -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin: 30px 0;">
+        <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+          <div style="font-size: 40px; margin-bottom: 10px;">💰</div>
+          <h4 style="margin: 0;">Save Money</h4>
+          <p style="margin: 0;">Reduce your electricity bills by up to 90%</p>
+        </div>
+        <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+          <div style="font-size: 40px; margin-bottom: 10px;">🌱</div>
+          <h4 style="margin: 0;">Go Green</h4>
+          <p style="margin: 0;">Reduce your carbon footprint significantly</p>
+        </div>
+        <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+          <div style="font-size: 40px; margin-bottom: 10px;">⚡</div>
+          <h4 style="margin: 0;">Energy Independence</h4>
+          <p style="margin: 0;">Generate your own clean electricity</p>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div style="text-align: center;">
+        <a href="https://sunphilsolar.com/contact" style="display: inline-block; background: #2563eb; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin: 20px 0; transition: background 0.3s; font-size: 1.1em;">
+          📞 Schedule Free Consultation
+        </a>
+      </div>
+
+      <!-- Special Offer -->
+      <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 20px; margin: 32px 0 20px 0; border-radius: 5px;">
+        <h3 style="margin-top: 0; color: #2563eb;">🎁 Special Offer for Calculator Users</h3>
+        <p><strong>Get P5,000.00 discount on your solar installation</strong> when you mention this email during your consultation!</p>
+        <p><em>Offer valid for 30 days from this email date.</em></p>
+      </div>
+
+      <!-- Contact and Closing Section -->
+      <div style="margin-top: 32px;">
+        <h3 style="margin-bottom: 8px; color: #2563eb;">Have questions? Don't hesitate to reach out:</h3>
+        <ul style="list-style: none; padding: 0; margin: 0 0 16px 0; color: #222;">
+          <li>📧 Email: <a href="mailto:sunphilsolar@sunphilsolar.com" style="color: #2563eb; text-decoration: underline;">sunphilsolar@sunphilsolar.com</a></li>
+          <li>📱 Phone: 09606921760</li>
+          <li>🌐 Website: <a href="https://sunphilsolar.com" style="color: #2563eb; text-decoration: underline;">sunphilsolar.com</a></li>
+        </ul>
+        <p>We're here to make your transition to solar energy as smooth as possible!</p>
+        <p style="margin-top: 30px;">
+          Best regards,<br>
+          <strong>Admin Jayar</strong><br>
+          Solar Consultant<br>
+          Sunphil Solar
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div style="background: #333; color: white; padding: 20px; text-align: center; border-radius: 0 0 12px 12px; margin-top: 32px;">
+        <div style="margin: 15px 0;">
+          <a href="https://m.me.fairview.solarsta.admin.jayar" style="color: #2563eb; margin: 0 10px; text-decoration: none;">Facebook Messenger</a> |
+          <a href="https://sunphilsolar.com" style="color: #2563eb; margin: 0 10px; text-decoration: none;">Website</a>
+        </div>
+        <p style="margin: 0;">&copy; ${new Date().getFullYear()} Sunphil Solar. All rights reserved.</p>
+        <p style="font-size: 12px; color: #ccc; margin: 8px 0 0 0;">
+          You received this email because you used our solar calculator.
+          <a href="#" style="color: #2563eb;">Unsubscribe</a>
+        </p>
+      </div>
     </div>
   `;
 
