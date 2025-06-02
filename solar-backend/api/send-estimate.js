@@ -222,7 +222,7 @@ export default async function handler(req, res) {
       <!-- Footer -->
       <div style="background: #333; color: white; padding: 20px; text-align: center; border-radius: 0 0 12px 12px; margin-top: 32px;">
         <div style="margin: 15px 0;">
-          <a href="https://m.me.fairview.solarsta.admin.jayar" style="color: #2563eb; margin: 0 10px; text-decoration: none;">Facebook Messenger</a> |
+          <a href="https://m.me/fairview.solarista.admn.jayar" style="color: #2563eb; margin: 0 10px; text-decoration: none;">Facebook Messenger</a> |
           <a href="https://sunphilsolar.com" style="color: #2563eb; margin: 0 10px; text-decoration: none;">Website</a>
         </div>
         <p style="margin: 0;">&copy; ${new Date().getFullYear()} Sunphil Solar. All rights reserved.</p>
