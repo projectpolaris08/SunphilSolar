@@ -161,24 +161,32 @@ export default async function handler(req, res) {
         </ul>
       </div>
 
-      <!-- Benefits Section -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin: 30px 0;">
-        <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
-          <div style="font-size: 40px; margin-bottom: 10px;">💰</div>
-          <h4 style="margin: 0;">Save Money</h4>
-          <p style="margin: 0;">Reduce your electricity bills by up to 90%</p>
-        </div>
-        <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
-          <div style="font-size: 40px; margin-bottom: 10px;">🌱</div>
-          <h4 style="margin: 0;">Go Green</h4>
-          <p style="margin: 0;">Reduce your carbon footprint significantly</p>
-        </div>
-        <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
-          <div style="font-size: 40px; margin-bottom: 10px;">⚡</div>
-          <h4 style="margin: 0;">Energy Independence</h4>
-          <p style="margin: 0;">Generate your own clean electricity</p>
-        </div>
-      </div>
+      <!-- Benefits Section (Table-based for email compatibility) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0; border-spacing: 0; border-collapse: separate;">
+        <tr>
+          <td align="center" valign="top" style="padding: 0 8px;">
+            <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px; font-family: Arial, sans-serif;">
+              <div style="font-size: 40px; margin-bottom: 10px;">💰</div>
+              <h4 style="margin: 0; font-size: 1.1em;">Save Money</h4>
+              <p style="margin: 0; font-size: 1em; color: #222;">Reduce your electricity bills by up to 90%</p>
+            </div>
+          </td>
+          <td align="center" valign="top" style="padding: 0 8px;">
+            <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px; font-family: Arial, sans-serif;">
+              <div style="font-size: 40px; margin-bottom: 10px;">🌱</div>
+              <h4 style="margin: 0; font-size: 1.1em;">Go Green</h4>
+              <p style="margin: 0; font-size: 1em; color: #222;">Reduce your carbon footprint significantly</p>
+            </div>
+          </td>
+          <td align="center" valign="top" style="padding: 0 8px;">
+            <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px; font-family: Arial, sans-serif;">
+              <div style="font-size: 40px; margin-bottom: 10px;">⚡</div>
+              <h4 style="margin: 0; font-size: 1.1em;">Energy Independence</h4>
+              <p style="margin: 0; font-size: 1em; color: #222;">Generate your own clean electricity</p>
+            </div>
+          </td>
+        </tr>
+      </table>
 
       <!-- Call to Action -->
       <div style="text-align: center;">
