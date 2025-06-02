@@ -2902,7 +2902,197 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
     readingTime: 6,
-  }
+  },
+  {
+    id: 19,
+    title: "San Marcelino Solar Farm: The Largest Solar Project in the Philippines",
+    author: "Sunphil Solar",
+    date: "2025-06-02",
+    slug: "san-marcelino-solar-farm",
+    tags: ["solar energy", "Zambales", "renewable energy", "ACEN", "Philippines"],
+    excerpt:
+      "Discover how the San Marcelino Solar Farm is transforming Zambales into a renewable energy powerhouse. With 585 MW of clean energy capacity, it’s the largest solar project in the Philippines.",
+    metaDescription:
+      "Learn about the San Marcelino Solar Farm in Zambales—the Philippines' largest solar project by ACEN. Explore its capacity, impact, technology, and role in the nation’s clean energy future.",
+    featuredImage: {
+      url: "/images/san-marcelino-solar.jpg",
+      alt: "San Marcelino Solar Farm solar panels in Zambales, Philippines",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          In the heart of Zambales lies a renewable energy breakthrough: the{" "}
+          <strong>San Marcelino Solar Farm</strong>, a groundbreaking solar power facility developed by{" "}
+          <a
+            href="https://www.acenrenewables.com/portfolio/sanmar-solar/"
+            className="text-primary-500 hover:underline"
+            target="_blank"
+          >
+            ACEN
+          </a>
+          , the energy arm of the Ayala Group. Designed to be the{" "}
+          <strong>largest solar farm in the Philippines</strong>, this project marks a major milestone in the country’s
+          transition to clean, sustainable energy.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Massive Scale, Massive Impact
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The SanMar Solar Farm, as it’s locally called, is set on{" "}
+          <strong>500 hectares of lahar-covered land</strong>—an innovative reuse of otherwise non-arable land from the
+          1991 Mount Pinatubo eruption. With a projected total capacity of{" "}
+          <strong>585 megawatts (MW)</strong>, it will generate over{" "}
+          <strong>421 gigawatt-hours (GWh)</strong> of renewable electricity annually—enough to power more than{" "}
+          <strong>187,000 Filipino households</strong>.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          That output also means avoiding an estimated{" "}
+          <strong>287,796 metric tons of CO₂ emissions</strong> each year—equivalent to taking 62,000 gasoline-powered
+          vehicles off the road.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Built in Phases for Maximum Efficiency
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The project is being developed in three phases:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Phase 1 (284 MW)</strong> – Already supplying clean energy to the Luzon grid.
+          </li>
+          <li>
+            <strong>Phase 2 (101 MW)</strong> – Completed to complement Phase 1.
+          </li>
+          <li>
+            <strong>Phase 3 (200 MW)</strong> – Financed with a{" "}
+            <a
+              href="https://www.bworldonline.com/corporate/2024/05/22/594173/acen-secures-p1-92-b-loan-for-zambales-solar-project/"
+              className="text-primary-500 hover:underline"
+              target="_blank"
+            >
+              ₱1.92 billion loan
+            </a>{" "}
+            and expected to be operational within the next year.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          These phases ensure steady power supply integration and scalable growth aligned with grid capacity.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Smart, Sustainable Technology
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          SanMar Solar is built using advanced solar technologies:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>East-West Panel Orientation</strong> for extended daylight capture
+          </li>
+          <li>
+            <strong>String Inverters</strong> that maximize individual panel performance
+          </li>
+          <li>
+            <strong>Digital monitoring systems</strong> for real-time diagnostics and optimization
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          These innovations increase energy yield, reliability, and maintainability—setting new benchmarks in solar
+          engineering.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Empowering Local Communities
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Beyond electricity, ACEN has integrated strong social impact programs into the SanMar project:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Constructed two new concrete bridges and six kilometers of roads for better access
+          </li>
+          <li>
+            Built a 14-kilometer transmission line linking to the Luzon grid
+          </li>
+          <li>
+            Partnered with the{" "}
+            <a
+              href="https://www.ayalafoundation.org/"
+              className="text-primary-500 hover:underline"
+              target="_blank"
+            >
+              Ayala Foundation
+            </a>{" "}
+            to launch a tech-integrated Center of Excellence in Public Elementary Education
+          </li>
+          <li>
+            Deployed{" "}
+            <a
+              href="https://www.starlink.com/"
+              className="text-primary-500 hover:underline"
+              target="_blank"
+            >
+              Starlink
+            </a>{" "}
+            internet to rural schools and donated tablets and training tools
+          </li>
+        </ul>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Why Zambales?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Zambales was chosen for a combination of high solar irradiance, accessibility to the Luzon power grid, and
+          availability of idle volcanic land. What was once barren lahar fields now serves as the foundation of the
+          Philippines’ renewable energy future.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          ACEN’s Net Zero Commitment
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          SanMar is just one part of ACEN’s broader mission to reach{" "}
+          <strong>100% renewable energy generation by 2025</strong> and grow its portfolio to{" "}
+          <strong>20 GW by 2030</strong>. With operations in Vietnam, Indonesia, and Australia, ACEN is one of Southeast
+          Asia’s most aggressive clean energy developers.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          As of early 2025, ACEN has over <strong>4.7 GW of renewable capacity</strong>, 98% of which comes from solar,
+          wind, and geothermal energy.
+        </p>
+  
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts: The Bright Future of Solar in the Philippines
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The San Marcelino Solar Farm is more than just a power plant—it’s a symbol of resilience, innovation, and
+          commitment to a cleaner tomorrow. By transforming wastelands into power hubs and investing in communities,
+          ACEN’s SanMar project sets the gold standard for Philippine renewable energy.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          As the climate crisis intensifies and energy demands grow, projects like this aren’t optional—they’re
+          essential.
+        </p>
+  
+        <p className="text-secondary-700 font-semibold">
+          Want to stay updated on renewable energy developments in the Philippines?{" "}
+          <a
+            href="https://sunphilsolar.com/blog"
+            className="text-primary-500 hover:underline"
+          >
+            Read our latest blog post
+          </a>{" "}
+          and follow the future of solar.
+        </p>
+      </>
+    ),
+    readingTime: 8,
+  },
+  
   
 ];
 
