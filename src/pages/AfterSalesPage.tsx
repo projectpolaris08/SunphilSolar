@@ -9,7 +9,7 @@ const AfterSalesPage: React.FC = () => {
         <title>After Sales | SunPhil Solar</title>
       </Helmet>
       <div className="container mx-auto px-4 max-w-2xl">
-        <h1 className="text-3xl font-bold mb-6 text-center text-primary-700">
+        <h1 className="text-4xl font-bold mb-8 text-center text-black">
           After Sales Support
         </h1>
         <p className="mb-8 text-center text-secondary-700">
@@ -18,36 +18,59 @@ const AfterSalesPage: React.FC = () => {
           you with any concerns regarding your solar installation.
         </p>
         <div className="bg-white rounded-lg shadow p-6 mb-8">
-          <h2 className="text-xl font-semibold mb-2">Contact Number</h2>
-          <p className="mb-4 text-primary-700 font-bold flex items-center gap-2">
+          <h2 className="text-xl font-semibold mb-2 text-black">
+            Contact Number
+          </h2>
+          <p className="mb-4 text-black font-bold flex items-center gap-2">
             <Phone className="inline-block text-primary-600" size={20} />
-            (+63) 935 365 8092 / (+63) 965 447 4377
+            <a
+              href="tel:+639353658092"
+              className="hover:underline text-black font-bold"
+            >
+              (+63) 935 365 8092
+            </a>
+            /
+            <a
+              href="tel:+639654474377"
+              className="hover:underline text-black font-bold"
+            >
+              (+63) 965 447 4377
+            </a>
           </p>
-          <h2 className="text-xl font-semibold mb-2">Email Address</h2>
-          <p className="mb-4 text-primary-700 font-bold flex items-center gap-2">
+          <h2 className="text-xl font-semibold mb-2 text-black">
+            Email Address
+          </h2>
+          <p className="mb-4 text-black font-bold flex items-center gap-2">
             <Mail className="inline-block text-primary-600" size={20} />
-            sunphilsolarpowerinstallation@gmail.com
+            <a
+              href="mailto:sunphilsolarpowerinstallation@gmail.com"
+              className="hover:underline text-black font-bold"
+            >
+              sunphilsolarpowerinstallation@gmail.com
+            </a>
           </p>
-          <h2 className="text-xl font-semibold mb-2">Facebook</h2>
-          <p className="mb-4 flex items-center gap-2">
+          <h2 className="text-xl font-semibold mb-2 text-black">Facebook</h2>
+          <p className="mb-4 flex items-center gap-2 text-black font-bold">
             <Facebook className="inline-block text-primary-600" size={20} />
             <a
               href="https://www.facebook.com/fairview.solarista.2025"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-700 font-bold hover:underline"
+              className="hover:underline text-black font-bold"
             >
               facebook.com/fairview.solarista.2025
             </a>
           </p>
-          <h2 className="text-xl font-semibold mb-2">Office Address</h2>
-          <p className="mb-4 text-primary-700 font-bold flex items-center gap-2">
+          <h2 className="text-xl font-semibold mb-2 text-black">
+            Office Address
+          </h2>
+          <p className="mb-4 text-black font-bold flex items-center gap-2">
             <MapPin className="inline-block text-primary-600" size={20} />
             <a
               href="https://www.google.com/maps/place/Sunphil+Solar+Installation+Services/@14.7133426,121.0545683,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b1a837ab86cd:0x12fa7ee4ac4b47b!8m2!3d14.7133374!4d121.0571432!16s%2Fg%2F11vwtgf832?entry=ttu"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="hover:underline text-black font-bold"
             >
               28C North Fairview Phase 8 Subdivision, Blk 85 Yen, Quezon City,
               1121 Metro Manila
