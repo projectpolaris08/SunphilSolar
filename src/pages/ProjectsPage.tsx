@@ -276,12 +276,12 @@ const ProjectsPage: React.FC = () => {
             <Link
               to={`/solarprojects/${proj.id}`}
               key={idx}
-              className="bg-white rounded-lg p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-gray-200 hover:border-primary-500 cursor-pointer"
+              className="flex flex-col bg-white rounded-lg p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-gray-200 hover:border-primary-500 cursor-pointer min-h-[540px]"
             >
               <img
                 src={proj.image}
                 alt={proj.location}
-                className="w-full h-50 object-contain rounded mb-2 bg-gray-100"
+                className="w-full h-48 object-cover rounded mb-2 bg-gray-100"
               />
               <div className="flex items-center justify-center gap-2 font-bold text-black mb-1">
                 <MapPin className="text-primary-500" size={18} />
@@ -295,7 +295,7 @@ const ProjectsPage: React.FC = () => {
                 <Calendar className="text-primary-500" size={18} />
                 <span>{proj.date}</span>
               </div>
-              <div className="bg-gray-50 rounded p-3 mt-3 text-left">
+              <div className="bg-gray-50 rounded p-3 mt-3 text-left flex flex-col h-full">
                 <ul className="pl-5 text-black font-semibold space-y-2">
                   {proj.specification.map((spec, i) => {
                     let Icon = CheckCircle;
@@ -313,7 +313,7 @@ const ProjectsPage: React.FC = () => {
                     );
                   })}
                 </ul>
-                <div className="flex items-center gap-2 mt-4">
+                <div className="flex items-center gap-2 mt-auto pt-4">
                   <CheckCircle className="text-green-500" size={20} />
                   <span className="font-semibold text-black">
                     Client Review:
@@ -326,6 +326,12 @@ const ProjectsPage: React.FC = () => {
                     />
                   ))}
                 </div>
+                <Link
+                  to={`/solarprojects/${proj.id}`}
+                  className="inline-block text-primary-600 hover:underline font-medium mt-2 transition-colors"
+                >
+                  Read more &rarr;
+                </Link>
               </div>
             </Link>
           ))}

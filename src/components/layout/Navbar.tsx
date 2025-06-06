@@ -114,6 +114,13 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 >
                   Projects
                 </RouterLink>
+                <RouterLink
+                  to="/aftersales"
+                  className="block px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/aftersales")}
+                >
+                  After Sales
+                </RouterLink>
               </div>
             </div>
           </nav>
@@ -222,6 +229,16 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               }}
             >
               Projects
+            </RouterLink>
+            <RouterLink
+              to="/aftersales"
+              className="block px-8 py-2 rounded-lg text-base font-medium text-gray-900 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+              onClick={() => {
+                handleNavClick("/aftersales");
+                toggleMenu();
+              }}
+            >
+              After Sales
             </RouterLink>
           </div>
           <div className="pt-2">
