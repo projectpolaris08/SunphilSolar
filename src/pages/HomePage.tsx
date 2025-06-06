@@ -73,18 +73,18 @@ const featuredProjects: Project[] = [
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 280Ah LiFePO4 Battery",
+      "4 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
   },
   {
-    image: "/images/project2.jpg",
-    location: "Goa, Camarines Sur, PH",
-    system: "24kW Hybrid Solar",
-    date: "2025-03-18",
+    image: "/images/project17.jpg",
+    location: "San Antonio, Quezon, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-06-04",
     specification: [
-      "2 x 12kW Hybrid Inverter",
-      "48 pcs 610W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 314Ah LiFePO4 Battery",
+      "2 × 16kW Deye Hybrid Inverters",
+      "56 × 615W Canadian Bifacial Solar Panels",
+      "5 × 51.2V 314Ah LiFePO₄ Batteries",
     ],
   },
   {
@@ -95,7 +95,7 @@ const featuredProjects: Project[] = [
     specification: [
       "2 × 16kW Deye Hybrid Inverters",
       "56 × 620W Canadian Bifacial Solar Panels",
-      "4 x 51.2v 314Ah LiFePO4 Batteries",
+      "4 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
   },
 ];

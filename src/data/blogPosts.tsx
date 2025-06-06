@@ -2764,7 +2764,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 18,
-    title: "Solar Lightning Arrester: Sustainable Protection from Storms and Strikes",
+    title:
+      "Solar Lightning Arrester: Sustainable Protection from Storms and Strikes",
     author: "Sunphil Solar",
     date: "2025-05-28",
     slug: "solar-lightning-arrester-protection",
@@ -2782,23 +2783,36 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          As lightning storms become more frequent due to climate change, protecting lives and property is more crucial than ever. Enter the <strong>solar lightning arrester</strong>—a high-tech, self-powered device that offers round-the-clock lightning protection using clean, renewable energy.
+          As lightning storms become more frequent due to climate change,
+          protecting lives and property is more crucial than ever. Enter the{" "}
+          <strong>solar lightning arrester</strong>—a high-tech, self-powered
+          device that offers round-the-clock lightning protection using clean,
+          renewable energy.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           What Is a Solar Lightning Arrester?
         </h3>
         <p className="text-secondary-700 mb-6">
-          A solar lightning arrester is an upgraded lightning protection system that integrates solar panels with early streamer emission (ESE) technology. Unlike traditional passive arrester, this system actively detects and attracts lightning strikes while running entirely on solar power. It also operates independently from the grid, making it ideal for remote or off-grid areas.
+          A solar lightning arrester is an upgraded lightning protection system
+          that integrates solar panels with early streamer emission (ESE)
+          technology. Unlike traditional passive arrester, this system actively
+          detects and attracts lightning strikes while running entirely on solar
+          power. It also operates independently from the grid, making it ideal
+          for remote or off-grid areas.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           How Does It Work?
         </h3>
         <p className="text-secondary-700 mb-6">
-          The solar panel charges an internal battery, enabling the system to monitor atmospheric conditions 24/7. Once high-voltage conditions are detected, the arrester emits an upward leader to intercept the lightning bolt, redirecting the electrical energy safely into the ground.
+          The solar panel charges an internal battery, enabling the system to
+          monitor atmospheric conditions 24/7. Once high-voltage conditions are
+          detected, the arrester emits an upward leader to intercept the
+          lightning bolt, redirecting the electrical energy safely into the
+          ground.
         </p>
-  
+
         <div className="flex justify-center my-6">
           <img
             src="/images/solar-arrester-diagram.jpg"
@@ -2807,28 +2821,33 @@ export const blogPosts: BlogPost[] = [
             style={{ maxWidth: 500 }}
           />
         </div>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Key Benefits of Solar Lightning Arrester
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            🌞 <strong>Energy Independent</strong> – No external power source needed; it runs on solar energy.
+            🌞 <strong>Energy Independent</strong> – No external power source
+            needed; it runs on solar energy.
           </li>
           <li>
-            🛡️ <strong>Wider Protection Radius</strong> – ESE technology provides broader and more effective coverage.
+            🛡️ <strong>Wider Protection Radius</strong> – ESE technology
+            provides broader and more effective coverage.
           </li>
           <li>
-            📶 <strong>Smart Monitoring</strong> – Some models offer real-time strike counting and system health diagnostics.
+            📶 <strong>Smart Monitoring</strong> – Some models offer real-time
+            strike counting and system health diagnostics.
           </li>
           <li>
-            🌱 <strong>Sustainable</strong> – Reduces environmental impact compared to traditional electric systems.
+            🌱 <strong>Sustainable</strong> – Reduces environmental impact
+            compared to traditional electric systems.
           </li>
           <li>
-            ⚡ <strong>Disaster Resilient</strong> – Operates during blackouts or off-grid scenarios, crucial during storms.
+            ⚡ <strong>Disaster Resilient</strong> – Operates during blackouts
+            or off-grid scenarios, crucial during storms.
           </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Where Are They Used?
         </h3>
@@ -2842,28 +2861,40 @@ export const blogPosts: BlogPost[] = [
           <li>Solar farms and renewable energy plants</li>
           <li>Eco-friendly resorts and green-certified buildings</li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Installation & Maintenance
         </h3>
         <p className="text-secondary-700 mb-6">
-          Installation involves positioning the arrester at the highest point of the structure, connecting it to a grounding system, and ensuring the solar panel faces optimal sunlight. Routine maintenance includes checking the solar panel, replacing batteries every 5–7 years, and reviewing monitoring data.
+          Installation involves positioning the arrester at the highest point of
+          the structure, connecting it to a grounding system, and ensuring the
+          solar panel faces optimal sunlight. Routine maintenance includes
+          checking the solar panel, replacing batteries every 5–7 years, and
+          reviewing monitoring data.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Why the Philippines Should Invest in Solar Lightning Arrester
         </h3>
         <p className="text-secondary-700 mb-6">
-          With frequent storms and lightning-prone weather, the Philippines stands to benefit greatly from this technology. Solar lightning arrester can help protect vulnerable areas, improve storm resilience, and support the country’s shift to renewable infrastructure—all while reducing long-term costs and increasing safety.
+          With frequent storms and lightning-prone weather, the Philippines
+          stands to benefit greatly from this technology. Solar lightning
+          arrester can help protect vulnerable areas, improve storm resilience,
+          and support the country's shift to renewable infrastructure—all while
+          reducing long-term costs and increasing safety.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Final Thoughts
         </h3>
         <p className="text-secondary-700 mb-6">
-          Solar lightning arrester represent the perfect marriage of safety and sustainability. Whether you're protecting a rural school, a high-rise building, or a solar farm, these systems provide reliable lightning protection with no ongoing energy costs. They're an investment in both property safety and environmental responsibility.
+          Solar lightning arrester represent the perfect marriage of safety and
+          sustainability. Whether you're protecting a rural school, a high-rise
+          building, or a solar farm, these systems provide reliable lightning
+          protection with no ongoing energy costs. They're an investment in both
+          property safety and environmental responsibility.
         </p>
-  
+
         <p className="text-secondary-700 mb-6">
           At{" "}
           <a
@@ -2874,9 +2905,11 @@ export const blogPosts: BlogPost[] = [
           >
             Sunphil Solar
           </a>
-          , we’re committed to helping you power and protect your property with smart solar solutions. From rooftop systems to advanced safety tech like solar lightning arrester, we’ll guide you every step of the way.
+          , we're committed to helping you power and protect your property with
+          smart solar solutions. From rooftop systems to advanced safety tech
+          like solar lightning arrester, we'll guide you every step of the way.
         </p>
-  
+
         <p className="text-secondary-700">
           👉 Ready to make your property lightning-safe and solar-smart?{" "}
           <strong>
@@ -2905,26 +2938,39 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 19,
-    title: "San Marcelino Solar Farm: The Largest Solar Project in the Philippines",
+    title:
+      "San Marcelino Solar Farm: The Largest Solar Project in the Philippines",
     author: "Sunphil Solar",
     date: "2025-06-02",
     slug: "san-marcelino-solar-farm",
-    tags: ["solar energy", "Zambales", "renewable energy", "ACEN", "Philippines"],
+    tags: [
+      "solar energy",
+      "Zambales",
+      "renewable energy",
+      "ACEN",
+      "Philippines",
+    ],
     excerpt:
-      "Discover how the San Marcelino Solar Farm is transforming Zambales into a renewable energy powerhouse. With 585 MW of clean energy capacity, it’s the largest solar project in the Philippines.",
+      "Discover how the San Marcelino Solar Farm is transforming Zambales into a renewable energy powerhouse. With 585 MW of clean energy capacity, it's the largest solar project in the Philippines.",
     metaDescription:
-      "Learn about the San Marcelino Solar Farm in Zambales—the Philippines' largest solar project by ACEN. Explore its capacity, impact, technology, and role in the nation’s clean energy future.",
+      "Learn about the San Marcelino Solar Farm in Zambales—the Philippines' largest solar project by ACEN. Explore its capacity, impact, technology, and role in the nation's clean energy future.",
     featuredImage: {
       url: "/images/san-marcelino-solar.jpg",
       alt: "San Marcelino Solar Farm solar panels in Zambales, Philippines",
       width: 1200,
       height: 630,
+      credits: {
+        author: "Raffy Tima",
+        source: "Facebook",
+        link: "https://www.facebook.com/photo/?fbid=1252395499589262&set=pcb.1252395579589254",
+      },
     },
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
           In the heart of Zambales lies a renewable energy breakthrough: the{" "}
-          <strong>San Marcelino Solar Farm</strong>, a groundbreaking solar power facility developed by{" "}
+          <strong>San Marcelino Solar Farm</strong>, a groundbreaking solar
+          power facility developed by{" "}
           <a
             href="https://www.acenrenewables.com/portfolio/sanmar-solar/"
             className="text-primary-500 hover:underline"
@@ -2933,27 +2979,44 @@ export const blogPosts: BlogPost[] = [
             ACEN
           </a>
           , the energy arm of the Ayala Group. Designed to be the{" "}
-          <strong>largest solar farm in the Philippines</strong>, this project marks a major milestone in the country’s
-          transition to clean, sustainable energy.
+          <strong>largest solar farm in the Philippines</strong>, this project
+          marks a major milestone in the country's transition to clean,
+          sustainable energy.
         </p>
-  
+
+        <div className="text-sm text-secondary-500 mb-6 italic">
+          Featured image credit: Photo by{" "}
+          <a
+            href="https://www.facebook.com/photo/?fbid=1252395499589262&set=pcb.1252395579589254"
+            className="text-primary-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Raffy Tima
+          </a>{" "}
+          on Facebook
+        </div>
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Massive Scale, Massive Impact
         </h3>
         <p className="text-secondary-700 mb-6">
-          The SanMar Solar Farm, as it’s locally called, is set on{" "}
-          <strong>500 hectares of lahar-covered land</strong>—an innovative reuse of otherwise non-arable land from the
-          1991 Mount Pinatubo eruption. With a projected total capacity of{" "}
+          The SanMar Solar Farm, as it's locally called, is set on{" "}
+          <strong>500 hectares of lahar-covered land</strong>—an innovative
+          reuse of otherwise non-arable land from the 1991 Mount Pinatubo
+          eruption. With a projected total capacity of{" "}
           <strong>585 megawatts (MW)</strong>, it will generate over{" "}
-          <strong>421 gigawatt-hours (GWh)</strong> of renewable electricity annually—enough to power more than{" "}
+          <strong>421 gigawatt-hours (GWh)</strong> of renewable electricity
+          annually—enough to power more than{" "}
           <strong>187,000 Filipino households</strong>.
         </p>
         <p className="text-secondary-700 mb-6">
           That output also means avoiding an estimated{" "}
-          <strong>287,796 metric tons of CO₂ emissions</strong> each year—equivalent to taking 62,000 gasoline-powered
-          vehicles off the road.
+          <strong>287,796 metric tons of CO₂ emissions</strong> each
+          year—equivalent to taking 62,000 gasoline-powered vehicles off the
+          road.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Built in Phases for Maximum Efficiency
         </h3>
@@ -2962,7 +3025,8 @@ export const blogPosts: BlogPost[] = [
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>Phase 1 (284 MW)</strong> – Already supplying clean energy to the Luzon grid.
+            <strong>Phase 1 (284 MW)</strong> – Already supplying clean energy
+            to the Luzon grid.
           </li>
           <li>
             <strong>Phase 2 (101 MW)</strong> – Completed to complement Phase 1.
@@ -2980,9 +3044,10 @@ export const blogPosts: BlogPost[] = [
           </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          These phases ensure steady power supply integration and scalable growth aligned with grid capacity.
+          These phases ensure steady power supply integration and scalable
+          growth aligned with grid capacity.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Smart, Sustainable Technology
         </h3>
@@ -2991,29 +3056,34 @@ export const blogPosts: BlogPost[] = [
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>East-West Panel Orientation</strong> for extended daylight capture
+            <strong>East-West Panel Orientation</strong> for extended daylight
+            capture
           </li>
           <li>
-            <strong>String Inverters</strong> that maximize individual panel performance
+            <strong>String Inverters</strong> that maximize individual panel
+            performance
           </li>
           <li>
-            <strong>Digital monitoring systems</strong> for real-time diagnostics and optimization
+            <strong>Digital monitoring systems</strong> for real-time
+            diagnostics and optimization
           </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          These innovations increase energy yield, reliability, and maintainability—setting new benchmarks in solar
-          engineering.
+          These innovations increase energy yield, reliability, and
+          maintainability—setting new benchmarks in solar engineering.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Empowering Local Communities
         </h3>
         <p className="text-secondary-700 mb-6">
-          Beyond electricity, ACEN has integrated strong social impact programs into the SanMar project:
+          Beyond electricity, ACEN has integrated strong social impact programs
+          into the SanMar project:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            Constructed two new concrete bridges and six kilometers of roads for better access
+            Constructed two new concrete bridges and six kilometers of roads for
+            better access
           </li>
           <li>
             Built a 14-kilometer transmission line linking to the Luzon grid
@@ -3027,7 +3097,8 @@ export const blogPosts: BlogPost[] = [
             >
               Ayala Foundation
             </a>{" "}
-            to launch a tech-integrated Center of Excellence in Public Elementary Education
+            to launch a tech-integrated Center of Excellence in Public
+            Elementary Education
           </li>
           <li>
             Deployed{" "}
@@ -3041,45 +3112,51 @@ export const blogPosts: BlogPost[] = [
             internet to rural schools and donated tablets and training tools
           </li>
         </ul>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Why Zambales?
         </h3>
         <p className="text-secondary-700 mb-6">
-          Zambales was chosen for a combination of high solar irradiance, accessibility to the Luzon power grid, and
-          availability of idle volcanic land. What was once barren lahar fields now serves as the foundation of the
-          Philippines’ renewable energy future.
+          Zambales was chosen for a combination of high solar irradiance,
+          accessibility to the Luzon power grid, and availability of idle
+          volcanic land. What was once barren lahar fields now serves as the
+          foundation of the Philippines' renewable energy future.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          ACEN’s Net Zero Commitment
+          ACEN's Net Zero Commitment
         </h3>
         <p className="text-secondary-700 mb-6">
-          SanMar is just one part of ACEN’s broader mission to reach{" "}
-          <strong>100% renewable energy generation by 2025</strong> and grow its portfolio to{" "}
-          <strong>20 GW by 2030</strong>. With operations in Vietnam, Indonesia, and Australia, ACEN is one of Southeast
-          Asia’s most aggressive clean energy developers.
+          SanMar is just one part of ACEN's broader mission to reach{" "}
+          <strong>100% renewable energy generation by 2025</strong> and grow its
+          portfolio to <strong>20 GW by 2030</strong>. With operations in
+          Vietnam, Indonesia, and Australia, ACEN is one of Southeast Asia's
+          most aggressive clean energy developers.
         </p>
         <p className="text-secondary-700 mb-6">
-          As of early 2025, ACEN has over <strong>4.7 GW of renewable capacity</strong>, 98% of which comes from solar,
-          wind, and geothermal energy.
+          As of early 2025, ACEN has over{" "}
+          <strong>4.7 GW of renewable capacity</strong>, 98% of which comes from
+          solar, wind, and geothermal energy.
         </p>
-  
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Final Thoughts: The Bright Future of Solar in the Philippines
         </h3>
         <p className="text-secondary-700 mb-6">
-          The San Marcelino Solar Farm is more than just a power plant—it’s a symbol of resilience, innovation, and
-          commitment to a cleaner tomorrow. By transforming wastelands into power hubs and investing in communities,
-          ACEN’s SanMar project sets the gold standard for Philippine renewable energy.
+          The San Marcelino Solar Farm is more than just a power plant—it's a
+          symbol of resilience, innovation, and commitment to a cleaner
+          tomorrow. By transforming wastelands into power hubs and investing in
+          communities, ACEN's SanMar project sets the gold standard for
+          Philippine renewable energy.
         </p>
         <p className="text-secondary-700 mb-6">
-          As the climate crisis intensifies and energy demands grow, projects like this aren’t optional—they’re
-          essential.
+          As the climate crisis intensifies and energy demands grow, projects
+          like this aren't optional—they're essential.
         </p>
-  
+
         <p className="text-secondary-700 font-semibold">
-          Want to stay updated on renewable energy developments in the Philippines?{" "}
+          Want to stay updated on renewable energy developments in the
+          Philippines?{" "}
           <a
             href="https://sunphilsolar.com/blog"
             className="text-primary-500 hover:underline"
@@ -3092,8 +3169,6 @@ export const blogPosts: BlogPost[] = [
     ),
     readingTime: 8,
   },
-  
-  
 ];
 
 // Utility functions for handling large datasets

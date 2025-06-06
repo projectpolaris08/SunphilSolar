@@ -14,6 +14,11 @@ export interface BlogPost {
     alt: string;
     width?: number;
     height?: number;
+    credits?: {
+      author: string;
+      source: string;
+      link: string;
+    };
   };
   fullContent: ReactNode;
   readingTime?: number;
@@ -21,4 +26,4 @@ export interface BlogPost {
 }
 
 // Export everything to make sure the types are accessible
-export * from './blog';
+export * from "./blog";

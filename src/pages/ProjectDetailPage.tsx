@@ -350,6 +350,26 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar successfully installed a 32kW hybrid solar energy system in the remote coastal municipality of Siruma, Camarines Sur. Designed to meet the high energy demands of a large residence or small business, this system provides powerful off-grid backup capabilities while significantly reducing electricity bills and environmental impact. This Siruma project demonstrates Sunphil Solar's commitment to bringing clean, renewable energy to rural and hard-to-reach areas. Whether for residential or commercial use, our high-performance hybrid systems are tailored to provide power independence in off-grid or low-grid environments.",
   },
+  "san-antonio-quezon": {
+    image: "/images/project17.jpg",
+    location: "San Antonio, Quezon, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-06-04",
+    clientType: "Residential Estate / Small Business",
+    specification: [
+      "2 × 16kW Deye Hybrid Inverters – Intelligent hybrid inverters capable of managing high power loads and optimizing the use of solar, battery, and grid energy.",
+      "56 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules that capture sunlight from both sides, maximizing efficiency and output—perfect for open installations in provincial areas.",
+      "5 × 51.2V 314Ah LiFePO₄ Batteries – Large-capacity lithium batteries offering extended backup capabilities and deep-cycle performance for reliable, long-lasting energy storage.",
+    ],
+    benefits: [
+      "Significant Power Capacity: Covers virtually all electrical needs including air conditioning, heavy appliances, refrigeration, and business operations.",
+      "Energy Independence: Enables off-grid capability or reduced reliance on the grid—essential in areas with unreliable electricity supply.",
+      "Major Cost Savings: Offsets up to 90% of monthly electricity costs, with long-term savings over the system's lifespan.",
+      "Environmental Impact: Reduces carbon emissions by an estimated 2,000–2,600 kg per month.",
+    ],
+    description:
+      "Sunphil Solar designed and installed a powerful 32kW hybrid solar system for a large property in San Antonio, Quezon. This installation supports the energy needs of a spacious household or a small commercial operation, providing reliable daytime power and substantial energy storage for night use or grid outages. The system offers an excellent return on investment while promoting environmental sustainability. Sunphil Solar is committed to helping communities in Quezon Province—including San Antonio, Lucena, Candelaria, and beyond—achieve energy independence through advanced hybrid solar systems. Our mission is to make solar energy accessible, reliable, and financially rewarding for every Filipino home and business.",
+  },
   // Add more projects as needed
 };
 

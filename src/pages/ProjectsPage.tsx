@@ -205,6 +205,18 @@ const projects = [
       "2 × 51.2V 314Ah LiFePO₄ Batteries",
     ],
   },
+  {
+    id: "san-antonio-quezon",
+    image: "/images/project17.jpg",
+    location: "San Antonio, Quezon, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-06-04",
+    specification: [
+      "2 × 16kW Deye Hybrid Inverters",
+      "56 × 615W Canadian Bifacial Solar Panels",
+      "5 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
   // Add more projects as needed
 ];
 
@@ -235,12 +247,29 @@ const ProjectsPage: React.FC = () => {
         <title>Projects | SunPhil Solar</title>
       </Helmet>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-4 text-center">Solar Projects</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center">
+          Our Hybrid Solar Installations Across the Philippines
+        </h2>
         <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
-          At Sunphil Solar/Fairview Solarista, your energy needs come first.
-          Whether you're powering a home or a business, we customize each solar
-          installation to suit your lifestyle and goals—ensuring dependable,
-          cost-effective, and sustainable energy for years to come.
+          At Sunphil Solar, we are proud to design and install high-performance
+          hybrid solar systems for homes and businesses throughout the
+          Philippines. From residential rooftops in Quezon City to large estates
+          in Quezon Province, and remote coastal communities in Camarines Sur to
+          urban centers in Metro Manila, our projects help customers achieve
+          energy independence, lower electricity costs, and a greener future.
+        </p>
+        <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
+          Every project we complete is tailored to meet the unique needs of our
+          clients—whether it's a 6kW hybrid system for a family home, a 32kW
+          system for a business operation, or a fully off-grid solution in a
+          rural province. We use only premium components from trusted brands
+          like Deye, Canadian Solar, and LiFePO₄ batteries, ensuring durability,
+          efficiency, and maximum savings.
+        </p>
+        <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
+          Explore our growing portfolio of hybrid solar installations and see
+          how Sunphil Solar can help you harness the power of the sun—anywhere
+          in the Philippines.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {paginated.map((proj, idx) => (
