@@ -34,7 +34,7 @@ const projects = [
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
       "54 pcs 615W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 280Ah LiFePO4 Batteries",
+      "4 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
   },
   {
@@ -46,7 +46,7 @@ const projects = [
     specification: [
       "2 x 12kW Hybrid Inverter",
       "48 pcs 610W Canadian Bifacial Solar Panel",
-      "4 x 51.2v 314Ah LiFePO4 Batteries",
+      "4 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     specification: [
       "12kW Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 280Ah LiFePO4 Batteries",
+      "2 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
   },
   {
@@ -70,7 +70,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "51.2v 280Ah LiFePO4 Battery",
+      "51.2v 280Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -82,7 +82,7 @@ const projects = [
     specification: [
       "12kW Deye Hybrid Inverter",
       "24 pcs 615W Canadian Bifacial Solar Panel",
-      "3 x 51.2v 280Ah LiFePO4 Batteries",
+      "3 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
   },
   {
@@ -94,7 +94,7 @@ const projects = [
     specification: [
       "6kW Deye Hybrid Inverter",
       "13 pcs 615W Canadian Bifacial Solar Panel",
-      "51.2v 314Ah LiFePO4 Battery",
+      "51.2v 314Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -106,7 +106,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "18 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 314Ah LiFePO4 Batteries",
+      "2 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
   },
   {
@@ -118,7 +118,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "16 pcs 615W Canadian Bifacial Solar Panel",
-      "51.2v 314Ah LiFePO4 Battery",
+      "51.2v 314Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -130,7 +130,7 @@ const projects = [
     specification: [
       "12kW Deye Hybrid Inverter",
       "14 pcs 615W Canadian Bifacial Solar Panel",
-      "2 x 51.2v 314Ah LiFePO4 Batteries",
+      "2 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
   },
   {
@@ -142,7 +142,7 @@ const projects = [
     specification: [
       "6kW Deye Hybrid Inverter",
       "13 × 615W Canadian Solar Bifacial Panels",
-      "51.2V 314Ah LiFePO4 Battery",
+      "51.2V 314Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -154,7 +154,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "16 × 615W Canadian Solar Bifacial Panels",
-      "51.2V 314Ah LiFePO4 Battery",
+      "51.2V 314Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -166,7 +166,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "16 × 615W Canadian Solar Bifacial Panels",
-      "51.2V 314Ah LiFePO4 Battery",
+      "51.2V 314Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -178,7 +178,7 @@ const projects = [
     specification: [
       "6kW Deye Hybrid Inverter",
       "13 × 615W Canadian Bifacial Solar Panels",
-      "51.2V 314Ah LiFePO4 Battery",
+      "51.2V 314Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -190,7 +190,7 @@ const projects = [
     specification: [
       "8kW Deye Hybrid Inverter",
       "13 × 615W Canadian Solar Bifacial Panels",
-      "51.2V 314Ah LiFePO4 Battery",
+      "51.2V 314Ah LiFePO₄ Battery",
     ],
   },
   {
@@ -215,6 +215,18 @@ const projects = [
       "2 × 16kW Deye Hybrid Inverters",
       "56 × 615W Canadian Bifacial Solar Panels",
       "5 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "upper-bicutan-taguig",
+    image: "/images/project18.jpg",
+    location: "Upper Bicutan, Taguig City, Metro Manila, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-06",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "18 × 620W AE Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
     ],
   },
   // Add more projects as needed
@@ -251,25 +263,21 @@ const ProjectsPage: React.FC = () => {
           Our Hybrid Solar Installations Across the Philippines
         </h2>
         <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
-          At Sunphil Solar, we are proud to design and install high-performance
-          hybrid solar systems for homes and businesses throughout the
-          Philippines. From residential rooftops in Quezon City to large estates
-          in Quezon Province, and remote coastal communities in Camarines Sur to
-          urban centers in Metro Manila, our projects help customers achieve
-          energy independence, lower electricity costs, and a greener future.
-        </p>
-        <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
-          Every project we complete is tailored to meet the unique needs of our
-          clients—whether it's a 6kW hybrid system for a family home, a 32kW
-          system for a business operation, or a fully off-grid solution in a
-          rural province. We use only premium components from trusted brands
-          like Deye, Canadian Solar, and LiFePO₄ batteries, ensuring durability,
-          efficiency, and maximum savings.
-        </p>
-        <p className="text-center max-w-2xl mx-auto mb-8 text-secondary-700">
-          Explore our growing portfolio of hybrid solar installations and see
-          how Sunphil Solar can help you harness the power of the sun—anywhere
-          in the Philippines.
+          At Sunphil Solar, we proudly design and install high-performance
+          hybrid solar systems for homes and businesses across the
+          Philippines—from residential rooftops in Quezon City to large estates
+          in Quezon Province, from remote coastal communities in Camarines Sur
+          to bustling urban centers in Metro Manila, and throughout the northern
+          regions of Luzon—helping customers achieve energy independence, lower
+          electricity costs, and a greener future. Every project is tailored to
+          meet the unique needs of our clients—whether it's a 6kW hybrid system
+          for a family home, a 32kW system for a business, or a fully off-grid
+          solution in a rural province—using only premium components from
+          trusted brands like Deye, Canadian Solar, and LiFePO₄ batteries to
+          ensure durability, efficiency, and maximum savings. Explore our
+          growing portfolio of hybrid solar installations and discover how
+          Sunphil Solar can help you harness the power of the sun—anywhere in
+          the Philippines.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {paginated.map((proj, idx) => (

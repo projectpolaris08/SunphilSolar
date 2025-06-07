@@ -3169,6 +3169,281 @@ export const blogPosts: BlogPost[] = [
     ),
     readingTime: 8,
   },
+  {
+    id: 19,
+    title: "Solar 101: How Solar Energy System Works Step by Step",
+    author: "Sunphil Solar",
+    date: "2025-06-07",
+    slug: "solar-101-how-solar-energy-system-works",
+    tags: [
+      "solar",
+      "solar energy",
+      "solar panels",
+      "renewable energy",
+      "solar system guide",
+    ],
+    excerpt:
+      "Curious about how a solar energy system works? This easy Solar 101 guide from Sunphil Solar walks you through the process step by step — from sunlight to savings.",
+    metaDescription:
+      "Learn how solar panels, inverters, and batteries work together to power your home. Sunphil Solar explains the solar energy process step by step in this beginner-friendly Solar 101 guide.",
+    featuredImage: {
+      url: "/images/solar-energy-system.jpg",
+      alt: "Modern solar panels installed on a rooftop under clear blue sky",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          Have you ever looked up at the sun and thought,{" "}
+          <em>"How can I turn all that free energy into power for my home?"</em>
+          You're not alone! More and more people are switching to solar energy,
+          but not everyone understands how it actually works.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          At{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            Sunphil Solar
+          </a>
+          , we believe going solar should be simple—and so should learning about
+          it. Here's an easy Solar 101 guide that shows you{" "}
+          <strong>how a solar energy system works, step by step</strong>.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          What Is Solar Energy?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Solar energy is power that comes from the sun. When sunlight hits your
+          solar panels, it gets converted into electricity that you can use to
+          run your lights, TV, fridge—basically everything in your home.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How Does a Solar Energy System Work?
+        </h3>
+        <div className="flex justify-center my-6">
+          <img
+            src="/images/project17.jpg"
+            alt="Hybrid solar installation example"
+            className="rounded-lg shadow-md max-w-full h-auto"
+            style={{ maxWidth: 600 }}
+          />
+        </div>
+        <p className="text-secondary-700 mb-6">
+          The entire process is simple and happens in{" "}
+          <strong>four key steps</strong>:
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          1️⃣ Sunlight Hits Your Solar Panels
+        </h4>
+        <p className="text-secondary-700 mb-6">
+          Solar panels, also known as{" "}
+          <strong>photovoltaic panels (PV panels)</strong>, are made of special
+          materials (usually silicon) that capture sunlight and turn it into{" "}
+          <strong>direct current (DC) electricity</strong>.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          When photons from the sun hit the panels, they knock electrons loose
+          from atoms, creating a flow of electricity.
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          2️⃣ Inverter Converts DC to AC Power
+        </h4>
+        <div className="flex justify-center my-6">
+          <img
+            src="/images/Deye-inverter.jpg"
+            alt="Deye Hybrid Inverter used in solar energy systems"
+            className="rounded-lg shadow-md max-w-full h-auto"
+            style={{ maxWidth: 500 }}
+          />
+        </div>
+        <p className="text-secondary-700 mb-6">
+          The electricity created by your solar panels is DC power, but your
+          home appliances use AC power. That's where the{" "}
+          <strong>solar inverter</strong> comes in.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The inverter converts DC electricity into usable{" "}
+          <strong>AC electricity</strong> so your lights, appliances, and
+          gadgets can run smoothly.
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          3️⃣ Electricity Powers Your Home
+        </h4>
+        <div className="flex justify-center my-6">
+          <img
+            src="/images/electric-meter.jpg"
+            alt="Electric meter showing solar power usage in a home"
+            className="rounded-lg shadow-md max-w-full h-auto"
+            style={{ maxWidth: 500 }}
+          />
+        </div>
+        <p className="text-secondary-700 mb-6">
+          Now your home is ready to run on <strong>solar energy</strong>! The
+          converted AC electricity flows through your home's electrical panel
+          and powers everything from lights to air conditioners.
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          4️⃣ Monitoring and Saving
+        </h4>
+        <div className="flex justify-center my-6">
+          <img
+            src="/images/monitoring-app.jpg"
+            alt="Solar monitoring app displaying energy production and savings"
+            className="rounded-lg shadow-md max-w-full h-auto"
+            style={{ maxWidth: 500 }}
+          />
+        </div>
+        <p className="text-secondary-700 mb-6">
+          Most modern solar systems come with{" "}
+          <strong>smart monitoring tools</strong> so you can track your energy
+          production and usage from your phone or computer.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Why Choose Solar Energy?
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            🌍 <strong>Good for the planet</strong> – Solar is clean, renewable
+            energy that helps fight climate change.
+          </li>
+          <li>
+            💰 <strong>Good for your wallet</strong> – Save money on your energy
+            bills and enjoy long-term financial benefits.
+          </li>
+          <li>
+            ⚡ <strong>Energy independence</strong> – Gain more control over
+            your power, especially with battery storage.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How Long Does It Take to Set Up Solar?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Here's a quick look at a typical installation timeline:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>Initial consultation & system design – 1–2 weeks</li>
+          <li>Permits & approvals – 2–4 weeks</li>
+          <li className="text-sm text-secondary-600">
+            <em>
+              Note: Some cities, subdivisions, or barangays require a permit
+              before solar installation. Check with your local authorities or
+              HOA.
+            </em>
+          </li>
+          <li>Installation – 1–2 days</li>
+          <li>
+            Final inspection & activation – usually done immediately after
+            installation
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          In most cases, you'll be enjoying solar power in about{" "}
+          <strong>1–2 months</strong> from start to finish!
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          See? Solar energy isn't complicated—it's just <strong>smart!</strong>{" "}
+          By understanding how the system works, you'll feel more confident
+          about making the switch to solar.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          At{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            Sunphil Solar
+          </a>
+          , we love helping homeowners and businesses go solar with ease. If
+          you're ready to take the next step or have questions,{" "}
+          <strong>reach out to us today</strong>—we'd be happy to help!
+        </p>
+
+        <p className="text-secondary-700">
+          👉 Ready to power your future with the sun?{" "}
+          <strong>
+            <a
+              href="https://sunphilsolar.com/#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline font-medium"
+            >
+              Contact Sunphil Solar now for a free solar consultation and
+              personalized quote.
+            </a>
+          </strong>
+          <br />
+          Visit{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            sunphilsolar.com
+          </a>{" "}
+          to learn more or request your free quote today.
+        </p>
+        <p className="text-secondary-700 mt-4">
+          <strong>
+            Smart energy starts with smart choices—choose Sunphil Solar.
+          </strong>
+        </p>
+        <div className="mt-8">
+          <strong>Related Articles:</strong>
+          <br />
+          <a
+            href="https://sunphilsolar.com/blog/solar-panels-in-rainy-weather-philippines"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline"
+          >
+            Can Solar Panels Work During Rainy Weather? Insights for the
+            Philippines
+          </a>
+          <br />
+          <a
+            href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline"
+          >
+            Net Metering vs. Battery Storage in the Philippines: Which One Saves
+            More?
+          </a>
+          <br />
+          <a
+            href="https://sunphilsolar.com/blog/hybrid-vs-grid-tie-inverter"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline"
+          >
+            Hybrid Inverter vs Grid Tie Inverter: Which One Should You Choose?
+          </a>
+        </div>
+      </>
+    ),
+    readingTime: 6,
+  },
 ];
 
 // Utility functions for handling large datasets

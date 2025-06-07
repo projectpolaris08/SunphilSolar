@@ -370,6 +370,26 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar designed and installed a powerful 32kW hybrid solar system for a large property in San Antonio, Quezon. This installation supports the energy needs of a spacious household or a small commercial operation, providing reliable daytime power and substantial energy storage for night use or grid outages. The system offers an excellent return on investment while promoting environmental sustainability. Sunphil Solar is committed to helping communities in Quezon Province—including San Antonio, Lucena, Candelaria, and beyond—achieve energy independence through advanced hybrid solar systems. Our mission is to make solar energy accessible, reliable, and financially rewarding for every Filipino home and business.",
   },
+  "upper-bicutan-taguig": {
+    image: "/images/project18.jpg",
+    location: "Upper Bicutan, Taguig City, Metro Manila, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-06",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Manages the flow of energy between solar panels, battery storage, and the grid for optimal efficiency and reliability.",
+      "18 × 620W AE Bifacial Solar Panels – High-performance bifacial panels designed to maximize sunlight capture from both front and rear sides, delivering higher energy yields.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Large-capacity lithium batteries that store excess solar energy for use at night or during power interruptions.",
+    ],
+    benefits: [
+      "Energy Savings: Offsets up to 70–80% of the household's electricity consumption",
+      "Backup Power: Maintains essential loads during grid outages, ensuring continuous power for lights, appliances, and home electronics",
+      "Environmentally Friendly: Reduces carbon emissions by approximately 800–1,000 kg per month",
+      "Ideal for Urban Homes: Hybrid system provides both energy savings and power stability in Metro Manila's urban environment",
+    ],
+    description:
+      "Sunphil Solar installed a modern 8kW hybrid solar system for a home in Upper Bicutan, Taguig. This system offers clean, renewable energy with battery storage—perfect for homeowners in Metro Manila looking to reduce electricity costs and stay protected during grid outages. Sunphil Solar is dedicated to providing reliable hybrid solar systems in Taguig and across Metro Manila, helping families and businesses gain energy independence and cost control in a fast-growing urban setting.",
+  },
   // Add more projects as needed
 };
 
