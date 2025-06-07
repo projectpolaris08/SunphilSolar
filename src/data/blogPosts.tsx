@@ -2956,7 +2956,7 @@ export const blogPosts: BlogPost[] = [
       "Learn about the San Marcelino Solar Farm in Zambales—the Philippines' largest solar project by ACEN. Explore its capacity, impact, technology, and role in the nation's clean energy future.",
     featuredImage: {
       url: "/images/san-marcelino-solar.jpg",
-      alt: "San Marcelino Solar Farm solar panels in Zambales, Philippines",
+      alt: "San Marcelino Solar Farm aerial view",
       width: 1200,
       height: 630,
       credits: {
