@@ -3170,7 +3170,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: 8,
   },
   {
-    id: 19,
+    id: 20,
     title: "Solar 101: How Solar Energy System Works Step by Step",
     author: "Sunphil Solar",
     date: "2025-06-07",
@@ -3229,85 +3229,16 @@ export const blogPosts: BlogPost[] = [
         </h3>
         <div className="flex justify-center my-6">
           <img
-            src="/images/project17.jpg"
-            alt="Hybrid solar installation example"
+            src="/images/solar-energy-system.jpg"
+            alt="Diagram showing how solar energy works in a home"
             className="rounded-lg shadow-md max-w-full h-auto"
             style={{ maxWidth: 600 }}
           />
         </div>
         <p className="text-secondary-700 mb-6">
-          The entire process is simple and happens in{" "}
-          <strong>four key steps</strong>:
-        </p>
-
-        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-          1️⃣ Sunlight Hits Your Solar Panels
-        </h4>
-        <p className="text-secondary-700 mb-6">
-          Solar panels, also known as{" "}
-          <strong>photovoltaic panels (PV panels)</strong>, are made of special
-          materials (usually silicon) that capture sunlight and turn it into{" "}
-          <strong>direct current (DC) electricity</strong>.
-        </p>
-        <p className="text-secondary-700 mb-6">
-          When photons from the sun hit the panels, they knock electrons loose
-          from atoms, creating a flow of electricity.
-        </p>
-
-        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-          2️⃣ Inverter Converts DC to AC Power
-        </h4>
-        <div className="flex justify-center my-6">
-          <img
-            src="/images/Deye-inverter.jpg"
-            alt="Deye Hybrid Inverter used in solar energy systems"
-            className="rounded-lg shadow-md max-w-full h-auto"
-            style={{ maxWidth: 500 }}
-          />
-        </div>
-        <p className="text-secondary-700 mb-6">
-          The electricity created by your solar panels is DC power, but your
-          home appliances use AC power. That's where the{" "}
-          <strong>solar inverter</strong> comes in.
-        </p>
-        <p className="text-secondary-700 mb-6">
-          The inverter converts DC electricity into usable{" "}
-          <strong>AC electricity</strong> so your lights, appliances, and
-          gadgets can run smoothly.
-        </p>
-
-        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-          3️⃣ Electricity Powers Your Home
-        </h4>
-        <div className="flex justify-center my-6">
-          <img
-            src="/images/electric-meter.jpg"
-            alt="Electric meter showing solar power usage in a home"
-            className="rounded-lg shadow-md max-w-full h-auto"
-            style={{ maxWidth: 500 }}
-          />
-        </div>
-        <p className="text-secondary-700 mb-6">
-          Now your home is ready to run on <strong>solar energy</strong>! The
-          converted AC electricity flows through your home's electrical panel
-          and powers everything from lights to air conditioners.
-        </p>
-
-        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-          4️⃣ Monitoring and Saving
-        </h4>
-        <div className="flex justify-center my-6">
-          <img
-            src="/images/monitoring-app.jpg"
-            alt="Solar monitoring app displaying energy production and savings"
-            className="rounded-lg shadow-md max-w-full h-auto"
-            style={{ maxWidth: 500 }}
-          />
-        </div>
-        <p className="text-secondary-700 mb-6">
-          Most modern solar systems come with{" "}
-          <strong>smart monitoring tools</strong> so you can track your energy
-          production and usage from your phone or computer.
+          Residential solar systems consist of solar panels mounted on your
+          roof. These panels convert sunlight into electricity that powers your
+          appliances and reduces your monthly electricity bill.
         </p>
 
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
@@ -3443,6 +3374,951 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
     readingTime: 6,
+  },
+  {
+    id: 21,
+    title:
+      "Solar vs Wind Energy in the Philippines: What's Better for Your Home?",
+    author: "Sunphil Solar",
+    date: "2025-06-08",
+    slug: "solar-vs-wind-energy-philippines",
+    tags: [
+      "solar",
+      "wind energy",
+      "solar energy",
+      "renewable energy",
+      "solar vs wind",
+      "philippines renewable energy",
+    ],
+    excerpt:
+      "Discover whether solar panels or wind turbines are better for homes in the Philippines. Learn how the habagat season impacts performance, costs, and energy savings.",
+    metaDescription:
+      "Solar panels vs wind turbines: Which is better for your home in the Philippines? Sunphil Solar explains pros, cons, and how the habagat season affects performance.",
+    featuredImage: {
+      url: "/images/solar-vs-wind-energy.jpg",
+      alt: "Philippines renewable energy - solar panels vs wind turbines",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <h2 className="text-2xl font-semibold text-secondary-900 mb-4">
+          Solar vs. Wind Energy: Which Is Better for Homes in the Philippines?
+        </h2>
+
+        <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+          Key Takeaways
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Solar panels are a more practical option for Filipino homes than
+            wind turbines.
+          </li>
+          <li>
+            Residential wind power requires specific wind conditions and large
+            open spaces—rare in urban and suburban settings.
+          </li>
+          <li>
+            The Philippines' <strong>habagat (southwest monsoon)</strong> season
+            brings cloudy weather and strong winds that affect both solar and
+            wind energy performance.
+          </li>
+          <li>
+            A well-designed solar system with battery storage provides the most
+            reliable and resilient renewable energy for Filipino households.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Solar vs. Wind Energy: What's the Best Option for Your Home?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Both solar energy and wind energy are clean and renewable—but when it
+          comes to residential use, the two options are not created equal.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Across the Philippines,{" "}
+          <strong>solar panels are the better option for powering homes</strong>
+          . Wind turbines are less developed for residential use, require more
+          specific wind conditions, and need large amounts of space to operate
+          efficiently—something most Filipino homeowners do not have.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Let's explore why solar makes more sense for most homes in our
+          country, and when wind energy may still play a role.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How Solar Energy Works
+        </h3>
+        <div className="flex justify-center my-6">
+          <img
+            src="/images/solarenergy-vs-windenergy.jpg"
+            alt="Diagram showing how solar panels installed in roof"
+            className="rounded-lg shadow-md max-w-full h-auto"
+            style={{ maxWidth: 600 }}
+          />
+        </div>
+        <p className="text-secondary-700 mb-6">
+          Residential solar systems consist of solar panels mounted on your
+          roof. These panels convert sunlight into electricity that powers your
+          appliances and reduces your monthly electricity bill.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Why Solar Works Well in the Philippines
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The Philippines enjoys{" "}
+          <strong>high solar potential throughout the year</strong>, with an
+          average of <strong>4.5 to 5.5 kWh/m²/day</strong> of solar radiation.
+          Even during the rainy season, solar panels can still generate
+          electricity on cloudy days—though at reduced output.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          The Impact of Habagat
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          During <strong>habagat (southwest monsoon)</strong>, which typically
+          runs from June to October, we experience:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Frequent rains and cloudy weather, which can reduce solar output by
+            up to <strong>20–50%</strong> on overcast days.
+          </li>
+          <li>
+            Strong winds and typhoons, which make it crucial to install solar
+            panels using wind-resistant mounting systems.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          Despite this, <strong>solar remains highly viable year-round</strong>
+          —especially when paired with <strong>battery storage</strong> to
+          maintain supply during brownouts and grid outages common during
+          storms.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-green-600 mb-3">
+              Pros of Solar Panels
+            </h4>
+            <ul className="list-disc list-inside text-secondary-700 space-y-2">
+              <li>Lower electricity bills</li>
+              <li>Simple and reliable technology</li>
+              <li>Suitable for urban and rural homes</li>
+              <li>Works in various weather conditions</li>
+              <li>Long lifespan and low maintenance</li>
+            </ul>
+          </div>
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-red-600 mb-3">
+              Cons of Solar Panels
+            </h4>
+            <ul className="list-disc list-inside text-secondary-700 space-y-2">
+              <li>Initial investment required</li>
+              <li>Reduced output on very cloudy days</li>
+              <li>Must be securely installed to withstand strong winds</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How Wind Energy Works
+        </h3>
+        <div className="flex justify-center my-6">
+          <img
+            src="/images/banguiwindfarms.jpeg"
+            alt="Bangui Wind Farm in the Philippines"
+            className="rounded-lg shadow-md max-w-full h-auto"
+            style={{ maxWidth: 600 }}
+          />
+        </div>
+        <p className="text-secondary-700 mb-6">
+          Wind turbines generate electricity by capturing the kinetic energy of
+          wind with large spinning blades.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          When Wind Power Works in the Philippines
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Wind power is best suited to areas with:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Consistent average wind speeds of <strong>5.5 m/s or higher</strong>
+            .
+          </li>
+          <li>
+            Open, unobstructed land (coastal areas, elevated rural areas).
+          </li>
+          <li>Few zoning restrictions.</li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          The Impact of Habagat on Wind Energy
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          During habagat, wind speeds generally increase—potentially improving
+          turbine output. However, the same season also brings:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Extreme winds and typhoons that can damage small residential
+            turbines unless they are specifically designed to handle such
+            conditions.
+          </li>
+          <li>Increased maintenance needs.</li>
+        </ul>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-green-600 mb-3">
+              Pros of Wind Energy
+            </h4>
+            <ul className="list-disc list-inside text-secondary-700 space-y-2">
+              <li>Produces power day and night</li>
+              <li>Works well in windy rural and coastal locations</li>
+              <li>Complements solar energy in hybrid systems</li>
+            </ul>
+          </div>
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-red-600 mb-3">
+              Cons of Wind Energy
+            </h4>
+            <ul className="list-disc list-inside text-secondary-700 space-y-2">
+              <li>Requires large, open land</li>
+              <li>
+                Residential wind turbines are rare and costly in the Philippines
+              </li>
+              <li>Maintenance is more complex</li>
+              <li>Not suitable for dense urban areas</li>
+              <li>Vulnerable to storm damage</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          How Much Do Solar and Wind Systems Cost?
+        </h3>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Solar Panels in the Philippines (2025)
+        </h4>
+        <div className="overflow-x-auto mb-6">
+          <table className="table-auto w-full text-left border border-secondary-300">
+            <thead>
+              <tr className="bg-secondary-100">
+                <th className="px-4 py-2 text-secondary-900">System Size</th>
+                <th className="px-4 py-2 text-secondary-900">Cost (₱)</th>
+                <th className="px-4 py-2 text-secondary-900">Typical Use</th>
+              </tr>
+            </thead>
+            <tbody className="text-secondary-700">
+              <tr>
+                <td className="border px-4 py-2">3 kW</td>
+                <td className="border px-4 py-2">₱250,000–₱350,000</td>
+                <td className="border px-4 py-2">Small home or condo</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">5 kW</td>
+                <td className="border px-4 py-2">₱400,000–₱600,000</td>
+                <td className="border px-4 py-2">Average family home</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">8 kW</td>
+                <td className="border px-4 py-2">₱600,000–₱900,000</td>
+                <td className="border px-4 py-2">
+                  Large home with high energy use
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">Battery Storage</td>
+                <td className="border px-4 py-2">₱100,000–₱300,000 extra</td>
+                <td className="border px-4 py-2">
+                  Optional but highly recommended
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Wind Turbines in the Philippines (2025)
+        </h4>
+        <div className="overflow-x-auto mb-6">
+          <table className="table-auto w-full text-left border border-secondary-300">
+            <thead>
+              <tr className="bg-secondary-100">
+                <th className="px-4 py-2 text-secondary-900">System Size</th>
+                <th className="px-4 py-2 text-secondary-900">Cost (₱)</th>
+                <th className="px-4 py-2 text-secondary-900">Typical Use</th>
+              </tr>
+            </thead>
+            <tbody className="text-secondary-700">
+              <tr>
+                <td className="border px-4 py-2">1–3 kW</td>
+                <td className="border px-4 py-2">₱200,000–₱500,000+</td>
+                <td className="border px-4 py-2">Rural homes in windy areas</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">5–10 kW</td>
+                <td className="border px-4 py-2">₱500,000–₱1,200,000</td>
+                <td className="border px-4 py-2">
+                  Large rural properties or farms
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className="text-secondary-700 mb-6">
+          <strong>Important:</strong> Solar is supported by a mature industry in
+          the Philippines, with many local installers such as{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            Sunphil Solar
+          </a>
+          . Wind is still a niche option; finding qualified installers and
+          storm-rated equipment is difficult.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Should You Get a Residential Wind Turbine or Solar Panels?
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Logistically speaking,{" "}
+          <strong>
+            solar panels are the better option for homes in the Philippines
+          </strong>
+          . Here's why:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            The residential solar industry is well-developed, with many
+            experienced local installers and government support through net
+            metering.
+          </li>
+          <li>
+            Solar works well even during habagat, provided the system is
+            properly designed and installed.
+          </li>
+          <li>
+            Solar panels can be mounted on virtually any roof and require far
+            less space than wind turbines.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          In contrast, residential wind turbines require large amounts of space,
+          consistent wind conditions, and costly maintenance—conditions that are
+          hard to meet in most Philippine neighborhoods.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          When Might Wind Make Sense?
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>You live in a very windy rural or coastal area.</li>
+          <li>You have ample land and no zoning restrictions.</li>
+          <li>
+            You want to build a hybrid solar + wind system for maximum energy
+            resilience.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          In a country with abundant sunlight and frequent storms,{" "}
+          <strong>
+            solar panels remain the most practical and cost-effective renewable
+            energy option for Filipino homes
+          </strong>
+          .
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Wind energy has potential in specific areas, but is unlikely to
+          replace solar as the primary home solution anytime soon.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          If you're ready to explore a solar system for your home—designed to
+          handle Philippine weather—{" "}
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            contact Sunphil Solar today
+          </a>
+          . We'll help you build a system that saves money and provides reliable
+          clean energy, year-round.
+        </p>
+
+        <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+          Sources
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <a
+              href="https://www.doe.gov.ph/pep"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              Department of Energy Philippines – Renewable Energy Roadmap
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://globalsolaratlas.info/map"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              Global Solar Atlas – Philippines Solar Resource Data
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://bagong.pagasa.dost.gov.ph/climate/philippine-climate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              PAGASA – Monsoon Monitoring
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://globalwindatlas.info/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              Global Wind Atlas – Philippines Wind Resource Data
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://sunphilsolar.com/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              Sunphil Solar Blog
+            </a>
+          </li>
+        </ul>
+
+        <p className="text-secondary-700 mb-6">
+          <strong>Note:</strong> The information provided is for educational
+          purposes only. Always consult with a professional before making any
+          decisions related to solar or wind energy systems.
+        </p>
+      </>
+    ),
+    readingTime: 8,
+  },
+  {
+    id: 22,
+    title: "Ultimate Guide to Solar Financing in the Philippines (2025)",
+    author: "Sunphil Solar",
+    date: "2025-06-05",
+    slug: "solar-financing-philippines-2025",
+    tags: [
+      "solar",
+      "solar financing",
+      "solar loans",
+      "solar installation",
+      "renewable energy financing",
+      "philippines solar",
+    ],
+    excerpt:
+      "Discover the most comprehensive guide to solar financing options in the Philippines. Learn about residential and commercial loans, government incentives, and how to make the switch to clean energy affordable.",
+    metaDescription:
+      "Complete guide to solar financing in the Philippines 2025. Discover solar loans, government incentives, green bonds, and financing options for homes and businesses.",
+    featuredImage: {
+      url: "/images/solar-financing-philippines.jpg",
+      alt: "Solar financing options in the Philippines - solar panels with money",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <h2 className="text-2xl font-semibold text-secondary-900 mb-4">
+          Ultimate Guide to Solar Financing in the Philippines (2025)
+        </h2>
+
+        <p className="text-secondary-700 mb-6">
+          As the Philippines moves toward a sustainable and energy-secure
+          future, solar power is emerging as one of the most practical and
+          cost-effective solutions. But despite the long-term savings, the
+          upfront cost of solar installation remains a common barrier. This is
+          where solar financing comes into play.
+        </p>
+
+        <p className="text-secondary-700 mb-6">
+          This comprehensive guide explains everything you need to know about
+          solar financing in the Philippines for 2025: the latest loan programs,
+          bank offers, SME and LGU options, comparative case studies, cost
+          breakdowns, and how to choose the best route based on your needs.
+          Whether you're a homeowner, business owner, or developer, this
+          resource will help you make an informed decision.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Why Solar Financing Matters
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Solar financing refers to the various ways individuals, businesses,
+          and government entities can afford to install solar energy systems. It
+          removes the cost barrier by enabling installment-based payment
+          structures, access to soft loans, and eligibility for government
+          incentives.
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Benefits include:
+        </h4>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>Reduced upfront cost</li>
+          <li>Immediate savings on electricity bills</li>
+          <li>Increased property value</li>
+          <li>Access to government incentives</li>
+          <li>Support for clean, sustainable living</li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Overview of Solar Financing Options in the Philippines
+        </h3>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          1. Cash Purchase
+        </h4>
+        <p className="text-secondary-700 mb-4">
+          For those who can afford it, paying upfront for a solar system yields
+          the highest return:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>No interest or loan servicing costs</li>
+          <li>Full ownership of the system</li>
+          <li>Full access to tax incentives and net metering benefits</li>
+        </ul>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          2. Solar Loans (Secured and Unsecured)
+        </h4>
+        <p className="text-secondary-700 mb-4">
+          Solar loans are offered by banks, cooperatives, and government
+          institutions. These allow you to spread the cost over time with low
+          monthly payments.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>
+            <strong>Secured Loans:</strong> Require collateral (e.g., property
+            or the system itself)
+          </li>
+          <li>
+            <strong>Unsecured Loans:</strong> No collateral needed but usually
+            have higher interest rates
+          </li>
+        </ul>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          Notable Options:
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Pag-IBIG Home Improvement Loan:</strong> Up to ₱500,000, low
+            BSP-guided interest, long terms (up to 30 years)
+          </li>
+          <li>
+            <strong>BPI Green Energy Loan / Helios Mortgage:</strong>{" "}
+            ₱400K–₱10M, bundled with home financing
+          </li>
+          <li>
+            <strong>Security Bank:</strong> Up to ₱2M, unsecured, flexible terms
+          </li>
+          <li>
+            <strong>Sterling Bank (SolarUp):</strong> ₱30K–₱1M, no collateral,
+            1.25–1.5% monthly interest
+          </li>
+        </ul>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          3. Leasing & Power Purchase Agreements (PPAs)
+        </h4>
+        <p className="text-secondary-700 mb-4">
+          Ideal for users who prefer no upfront payment:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Lease:</strong> Pay a fixed monthly fee to use the system
+          </li>
+          <li>
+            <strong>PPA:</strong> Pay per kilowatt-hour generated at a
+            discounted rate
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          These models reduce short-term costs but offer limited ownership
+          benefits.
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          4. Government Incentives & Rebates
+        </h4>
+        <p className="text-secondary-700 mb-4">
+          Make sure to take advantage of national energy programs:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Net Metering:</strong> Sell surplus energy back to the grid
+          </li>
+          <li>
+            <strong>VAT Exemption:</strong> On imported solar components
+          </li>
+          <li>
+            <strong>Income Tax Holidays:</strong> Under the Renewable Energy Act
+            and FIT schemes
+          </li>
+        </ul>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          5. Green Bonds & Sustainable Financing
+        </h4>
+        <p className="text-secondary-700 mb-4">
+          Used primarily by SMEs and LGUs, these loans provide favorable terms
+          for eco-friendly projects:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Land Bank "Go Green Inclusive Financing":</strong> Covers up
+            to 90% of project costs
+          </li>
+          <li>
+            <strong>DBP's Renewable Energy Finance Program:</strong> Merchant
+            plant and commercial use
+          </li>
+          <li>
+            <strong>IFC Risk-Sharing Facilities:</strong> For private firms via
+            local bank partners
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Golden Opportunities: Loans & Programs in 2025
+        </h3>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Residential Solar Loans
+        </h4>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          Pag‑IBIG Fund
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>Home improvement top-up loan: up to ₱500,000</li>
+          <li>Up to 30-year terms</li>
+          <li>~4.5% interest for ₱450,000</li>
+        </ul>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          Commercial Bank Financing
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>BPI Green Energy Loan / Helios Solar Mortgage:</strong>{" "}
+            ₱400K–₱10M
+          </li>
+          <li>
+            <strong>Security Bank:</strong> Personal loans up to ₱2M
+          </li>
+          <li>
+            <strong>Sterling Bank SolarUp:</strong> ₱30K–₱1M, no collateral
+          </li>
+        </ul>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          SME & LGU Financing
+        </h4>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          DBP Renewable Energy Projects
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>Up to 70% financing + lease options</li>
+          <li>Designed for merchant power and commercial rollouts</li>
+        </ul>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          Land Bank "Go Green"
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>Up to 90% financing backed by green bonds</li>
+        </ul>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          IFC Risk-Sharing
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>Covers 70% of capital costs via local partner banks</li>
+          <li>3–7 year staggered loan terms</li>
+        </ul>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Utility-Scale & Merchant Solar
+        </h4>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          DBP SMPP Program
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>For large-scale developers participating in the WESM</li>
+        </ul>
+
+        <h5 className="text-lg font-semibold text-secondary-900 mb-2">
+          World Bank Support
+        </h5>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>Loan packages for RE grid integration and capacity building</li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Key Loan Data & Lending Trends
+        </h3>
+
+        <div className="overflow-x-auto mb-6">
+          <table className="table-auto w-full text-left border border-secondary-300">
+            <thead>
+              <tr className="bg-blue-100 text-blue-900">
+                <th className="px-4 py-2 border">Financing Option</th>
+                <th className="px-4 py-2 border">Coverage</th>
+                <th className="px-4 py-2 border">Tenor</th>
+                <th className="px-4 py-2 border">Collateral</th>
+                <th className="px-4 py-2 border">Interest / Notes</th>
+              </tr>
+            </thead>
+            <tbody className="text-secondary-700">
+              <tr>
+                <td className="border px-4 py-2">Pag‑IBIG top-up mortgage</td>
+                <td className="border px-4 py-2">Up to ₱500,000</td>
+                <td className="border px-4 py-2">Up to 30 years</td>
+                <td className="border px-4 py-2">Yes</td>
+                <td className="border px-4 py-2">
+                  ~4–6% p.a. via BSP-guidance
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">
+                  BPI / Helios solar mortgage
+                </td>
+                <td className="border px-4 py-2">₱400K–₱10M</td>
+                <td className="border px-4 py-2">Home loan term</td>
+                <td className="border px-4 py-2">Yes</td>
+                <td className="border px-4 py-2">Commercial bank rates</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">
+                  Security Bank personal loan
+                </td>
+                <td className="border px-4 py-2">Up to ₱2M</td>
+                <td className="border px-4 py-2">≤ 36 months</td>
+                <td className="border px-4 py-2">No</td>
+                <td className="border px-4 py-2">~1.3–1.8% per month</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">Sterling Bank – SolarUp</td>
+                <td className="border px-4 py-2">₱30K–₱1M</td>
+                <td className="border px-4 py-2">6–36 months</td>
+                <td className="border px-4 py-2">No</td>
+                <td className="border px-4 py-2">1.25–1.5% per month</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">
+                  DBP renewable energy finance
+                </td>
+                <td className="border px-4 py-2">Up to 70% of cost</td>
+                <td className="border px-4 py-2">3–12+ years</td>
+                <td className="border px-4 py-2">Yes</td>
+                <td className="border px-4 py-2">Floating rates</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">Land Bank Go Green</td>
+                <td className="border px-4 py-2">Up to 90% of cost</td>
+                <td className="border px-4 py-2">Project-based</td>
+                <td className="border px-4 py-2">Yes</td>
+                <td className="border px-4 py-2">Tiered competitive rates</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">World Bank DPL / grants</td>
+                <td className="border px-4 py-2">National programs</td>
+                <td className="border px-4 py-2">Program-based</td>
+                <td className="border px-4 py-2">N/A</td>
+                <td className="border px-4 py-2">Soft loans and grants</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Use Case Scenarios: Matching Needs with Loans
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-green-600 mb-3">
+              Case A: Off-mortgage Homeowner
+            </h4>
+            <p className="text-secondary-700">
+              <strong>Choose:</strong> Security Bank or Sterling Bank (SolarUp)
+              for fast, no-collateral approval
+            </p>
+          </div>
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-green-600 mb-3">
+              Case B: Mortgage Holder
+            </h4>
+            <p className="text-secondary-700">
+              <strong>Choose:</strong> Pag‑IBIG top-up or BPI Helios for bundled
+              long-term financing
+            </p>
+          </div>
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-green-600 mb-3">
+              Case C: SME or Local Government (50 kW–1 MW)
+            </h4>
+            <p className="text-secondary-700">
+              <strong>Choose:</strong> Land Bank or DBP loans + IFC support
+            </p>
+          </div>
+          <div className="border border-secondary-300 rounded-lg p-4">
+            <h4 className="text-lg font-semibold text-green-600 mb-3">
+              Case D: Utility-Scale Developer
+            </h4>
+            <p className="text-secondary-700">
+              <strong>Choose:</strong> DBP SMPP + WESM trading + World Bank
+              project finance
+            </p>
+          </div>
+        </div>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Cost Breakdown, Incentives & Value
+        </h3>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          System Cost
+        </h4>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>1 kW residential system: ₱30K–₱40K (excluding batteries)</li>
+          <li>Battery systems: ₱100K and up</li>
+        </ul>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          LCOE (Levelized Cost of Energy)
+        </h4>
+        <p className="text-secondary-700 mb-4">
+          ₱2.50–₱3.50 per kWh — cheaper than grid rates
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Government Incentives
+        </h4>
+        <p className="text-secondary-700 mb-4">
+          Net-metering, VAT exemptions, FIT income tax holidays
+        </p>
+
+        <h4 className="text-xl font-semibold text-secondary-900 mb-2">
+          Soft Loan Advantage
+        </h4>
+        <p className="text-secondary-700 mb-6">
+          Pag‑IBIG and IFC loans offer longer paybacks and lower monthly
+          payments
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Summary Table: Comparing Financing Options
+        </h3>
+
+        <div className="overflow-x-auto mb-6">
+          <table className="table-auto w-full text-left border border-secondary-300">
+            <thead>
+              <tr className="bg-blue-100 text-blue-900">
+                <th className="px-4 py-2 border">Financing Option</th>
+                <th className="px-4 py-2 border">Ownership</th>
+                <th className="px-4 py-2 border">Upfront Cost</th>
+                <th className="px-4 py-2 border">Monthly Payment</th>
+                <th className="px-4 py-2 border">Best For</th>
+              </tr>
+            </thead>
+            <tbody className="text-secondary-700">
+              <tr>
+                <td className="border px-4 py-2">Cash Purchase</td>
+                <td className="border px-4 py-2">Full</td>
+                <td className="border px-4 py-2">High</td>
+                <td className="border px-4 py-2">None</td>
+                <td className="border px-4 py-2">High-income users</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">Solar Loan</td>
+                <td className="border px-4 py-2">Full</td>
+                <td className="border px-4 py-2">Low-Medium</td>
+                <td className="border px-4 py-2">Yes</td>
+                <td className="border px-4 py-2">Middle-income homeowners</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">Lease / PPA</td>
+                <td className="border px-4 py-2">Third-Party</td>
+                <td className="border px-4 py-2">None</td>
+                <td className="border px-4 py-2">Yes (Fixed)</td>
+                <td className="border px-4 py-2">Renters, short-term users</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Final Thoughts: Let the Sun Pay Your Bill
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Solar energy is no longer a luxury. With today's financing models,
+          it's an investment with guaranteed returns. Whether you're aiming to
+          slash electricity bills, boost property value, or lead in sustainable
+          practices—there's a solar financing option for you.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Sunphil Solar is your trusted partner to navigate these options,
+          install reliable solar solutions, and ensure your system performs for
+          decades.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          <a
+            href="https://sunphilsolar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline font-medium"
+          >
+            Contact us now for a free solar consultation
+          </a>
+        </p>
+
+        <p className="text-secondary-700 mb-6">
+          <strong>Note:</strong> The information provided is for educational
+          purposes only. Always consult with financial institutions and solar
+          professionals before making any decisions related to solar financing.
+        </p>
+      </>
+    ),
+    readingTime: 12,
   },
 ];
 
