@@ -153,45 +153,49 @@ const Post = ({
           </div>
         )}
 
-        <PostContent>{children}</PostContent>
-
-        <RelatedArticles currentPostId={id} />
-
-        <div className="mt-12 flex items-center gap-4 text-gray-500 dark:text-gray-400">
-          <span>Share:</span>
-          <a
-            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              postUrl
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-600"
-            aria-label="Share on Facebook"
-          >
-            <Facebook size={20} />
-          </a>
-          <a
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              postUrl
-            )}&text=${encodeURIComponent(title)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-sky-500"
-            aria-label="Share on Twitter"
-          >
-            <Twitter size={20} />
-          </a>
-          <a
-            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-              postUrl
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-700"
-            aria-label="Share on LinkedIn"
-          >
-            <Linkedin size={20} />
-          </a>
+        {/* Responsive layout: ToC sidebar on desktop, hidden on mobile */}
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Main Content */}
+          <div className="w-full md:w-2/3 lg:w-3/4">
+            <PostContent>{children}</PostContent>
+            <RelatedArticles currentPostId={id} />
+            <div className="mt-12 flex items-center gap-4 text-gray-500 dark:text-gray-400">
+              <span>Share:</span>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                  postUrl
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600"
+                aria-label="Share on Facebook"
+              >
+                <Facebook size={20} />
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                  postUrl
+                )}&text=${encodeURIComponent(title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-sky-500"
+                aria-label="Share on Twitter"
+              >
+                <Twitter size={20} />
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                  postUrl
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-700"
+                aria-label="Share on LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </div>
         </div>
       </article>
     </>

@@ -3,56 +3,270 @@ import { BlogPost } from "@/types/blog";
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Why Solar Energy is the Future",
-    author: "Admin Jayar",
+    title:
+      "Why Solar Energy is the Future: Cutting High Electricity Costs and Powering a Greener Tomorrow",
+    author: "SunPhil Solar",
     date: "2025-04-26", // Updated to ISO format
     slug: "why-solar-energy-is-the-future",
-    tags: ["solar energy", "renewable", "sustainability"],
+    tags: [
+      "solar energy",
+      "renewable",
+      "sustainability",
+      "high electricity rates",
+      "energy independence",
+      "solar panels Philippines",
+      "solar power for businesses",
+      "net metering Philippines",
+      "solar installation",
+      "solar financing Philippines",
+      "cut electricity bills",
+      "solar calculator",
+    ],
     excerpt:
-      "In today's world, energy consumption is higher than ever. As we face environmental challenges, Solar Energy offers a clean, renewable solution that benefits both the planet and your wallet.",
+      "Learn how solar energy helps combat high electricity rates and reduce your energy burden. Discover the cost savings, environmental benefits, and practical advantages of going solar in 2025.",
     metaDescription:
-      "Discover why solar energy is becoming the preferred renewable energy solution for homes and businesses. Learn about cost savings and environmental benefits.",
+      "Learn how solar energy helps combat high electricity rates and reduce your energy burden. Discover the cost savings, environmental benefits, and practical advantages of going solar in 2025. Try our Solar Calculator today.",
     featuredImage: {
       url: "/images/solar-panels.jpg",
-      alt: "Solar panels on a residential rooftop with blue sky background",
+      alt: "Solar panels on a residential rooftop helping lower high electricity bills and supporting energy independence in the Philippines",
       width: 1200,
       height: 630,
     },
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          In today's world, energy consumption is higher than ever. As we face
-          environmental challenges, Solar Energy offers a clean, renewable
-          solution that benefits both the planet and your wallet.
+          In today's fast-paced world, energy consumption is higher than
+          ever—and so are electricity bills. From households to businesses,
+          millions of people worldwide are feeling the pinch of rising utility
+          costs.
         </p>
+        <p className="text-secondary-700 mb-6">
+          At the same time, concerns about climate change and environmental
+          degradation are pushing us to rethink how we power our lives.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          One solution stands out: solar energy—clean, renewable, and now more
+          affordable than ever. But beyond the environmental benefits, solar
+          energy is becoming a vital tool to help households and businesses
+          manage the growing burden of high electricity rates.
+        </p>
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          The Key Benefits of Solar Power
+          {" "}
+          The Reality: Soaring Electricity Prices
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Across many parts of the world, electricity rates have risen sharply
+          over the last decade due to several factors:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>
+            <strong>Fossil fuel volatility:</strong> Global oil and gas prices
+            fluctuate with geopolitical tensions, supply chain issues, and
+            market instability.
+          </li>
+          <li>
+            <strong>Grid maintenance costs:</strong> Aging infrastructure and
+            transmission upgrades often lead to higher utility charges.
+          </li>
+          <li>
+            <strong>Regulatory fees and taxes:</strong> Environmental compliance
+            and policy-driven charges can also push rates higher.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          <strong>Real-life example:</strong> In countries like the Philippines,
+          average residential electricity rates are among the highest in
+          Southeast Asia—reaching ₱10 to ₱12 per kWh, compared to just ₱4 to ₱5
+          per kWh in neighboring countries with more renewable energy in the
+          mix.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          <strong>Impact:</strong>
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>Small businesses struggle to stay competitive.</li>
+          <li>
+            Families face monthly bill shock, sometimes sacrificing other
+            essentials.
+          </li>
+          <li>
+            Manufacturing and agriculture sectors see squeezed margins due to
+            rising operating costs.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          {" "}
+          How Solar Energy Lowers the Electricity Burden
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Here's where solar power makes a real difference:
+        </p>
+
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>
+            <strong>Generate Your Own Power:</strong> Installing solar panels
+            allows homes and businesses to generate a large portion of their own
+            electricity—reducing reliance on the grid.
+            <br />
+            <br />
+            <em>Example:</em> A typical 6 kW residential solar system in Metro
+            Manila can produce around 500–700 kWh per month, offsetting
+            ₱5,000–₱7,000 in monthly utility costs—an annual savings of over
+            ₱60,000–₱84,000.
+          </li>
+          <li>
+            <strong>Hedge Against Future Rate Increases:</strong> Solar provides
+            a fixed cost for electricity. Once you've invested in your system,
+            your power generation cost remains largely stable for 20+
+            years—immunizing you from utility rate hikes.
+          </li>
+          <li>
+            <strong>Leverage Incentives & Net Metering:</strong> Government
+            incentives and{" "}
+            <a
+              href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              net metering programs
+            </a>{" "}
+            allow you to sell excess power back to the grid, further reducing
+            your net electricity costs or even earning credits.
+          </li>
+          <li>
+            <strong>Reduce Operational Costs for Businesses:</strong> For SMEs
+            and larger enterprises, solar adoption can turn energy from a cost
+            center to a competitive advantage.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          {" "}
+          Environmental & Long-Term Community Benefits
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
           <li>
-            <strong>Cost Savings:</strong> Reduce electricity bills
-            significantly over time.
+            Reduce grid demand during peak hours, lowering the need for
+            expensive fossil fuel peaking plants.
           </li>
+          <li>Cut carbon emissions and improve air quality in urban areas.</li>
           <li>
-            <strong>Clean Energy:</strong> Solar reduces greenhouse gas
-            emissions and your carbon footprint.
-          </li>
-          <li>
-            <strong>Energy Independence:</strong> Generate your own power and
-            rely less on traditional utilities.
+            Foster local energy resilience—solar + storage systems can keep
+            critical services running during outages.
           </li>
         </ul>
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Conclusion
+          {" "}
+          Challenges & Considerations
         </h3>
-        <p className="text-secondary-700">
-          Transitioning to solar energy is more affordable and easier than ever.
-          If you're ready to make a positive change, there's no better time to
-          go solar!
+        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+          <li>
+            <strong>Initial Investment:</strong> While prices have dropped, the
+            upfront cost of installation can be a hurdle. However,{" "}
+            <a
+              href="https://sunphilsolar.com/blog/solar-financing-philippines-2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              flexible financing options
+            </a>{" "}
+            (zero-down loans, lease-to-own) are increasingly available, and
+            long-term savings far outweigh initial expenses.
+          </li>
+          <li>
+            <strong>Space & Suitability:</strong> Not all rooftops or properties
+            are ideal for solar. Shading, structural integrity, and orientation
+            affect system performance—but creative solutions like
+            carport-mounted panels can help.
+          </li>
+          <li>
+            <strong>Policy & Grid Limitations:</strong> In some regions,
+            outdated grid infrastructure or slow-moving policy frameworks can
+            limit net metering participation or delay installations. Advocacy
+            for supportive solar policies is critical.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          {" "}
+          Conclusion: The Bright Road Ahead
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          As electricity prices continue to rise, and environmental concerns
+          mount, solar energy offers a practical, proven way to take control of
+          your energy future.
         </p>
+        <p className="text-secondary-700 mb-6">
+          By installing solar, you not only save money but contribute to a
+          cleaner, more sustainable world—turning your home or business into
+          part of the solution.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          There's never been a better time to go solar.{" "}
+          <a
+            href="https://sunphilsolar.com/solarcalculator"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline"
+          >
+            Try our Solar Calculator
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://sunphilsolar.com/#contact"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline"
+          >
+            contact us today
+          </a>{" "}
+          to get started.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          Frequently Asked Questions
+        </h3>
+        <ul className="list-none text-secondary-700 mb-6 space-y-4">
+          <li>
+            <strong>Q: How much can I really save with solar energy?</strong>
+            <br />
+            A: Savings depend on your system size, electricity usage, and local
+            rates. On average, homeowners save 50-70% on their monthly
+            electricity bills after going solar.
+          </li>
+          <li>
+            <strong>Q: Is my home suitable for solar panels?</strong>
+            <br />
+            A: Most homes with sufficient roof space and sun exposure can
+            benefit from solar panels.{" "}
+            <a
+              href="https://sunphilsolar.com/#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              Contact us
+            </a>{" "}
+            and we'll evaluate your property for free.
+          </li>
+          <li>
+            <strong>
+              Q: How long does it take to recover the investment in solar?
+            </strong>
+            <br />
+            A: Payback periods typically range from 5 to 7 years, depending on
+            system cost, incentives, and energy savings. After that, solar power
+            provides nearly free electricity for 20+ years.
+          </li>
+        </ul>
       </>
     ),
-    readingTime: 4,
+    readingTime: 6,
   },
   {
     id: 2,
@@ -211,58 +425,216 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    id: 3,
-    title: "Top 5 Reasons to Install Solar Panels on Your Home",
+    id: 2,
+    title:
+      "Top 5 Reasons to Install Solar Panels on Your Home: Save Money, Increase Value, and Go Green",
     author: "Admin Jayar",
-    date: "2025-04-25", // Updated to ISO format
-    slug: "top-5-reasons-to-install-solar-panels",
-    tags: ["home solar", "investment", "benefits"],
+    date: "2025-04-25",
+    slug: "top-5-reasons-to-install-solar-panels-on-your-home",
+    tags: [
+      "home solar",
+      "solar panels Philippines",
+      "solar installation",
+      "solar benefits",
+      "reduce electricity bills",
+      "solar incentives",
+      "solar calculator",
+      "solar energy",
+      "energy independence",
+      "green living",
+      "increase home value",
+    ],
     excerpt:
-      "Thinking about making the switch to solar energy? Here are five compelling reasons why installing solar panels is one of the best decisions you can make for your home and future.",
+      "Discover the top 5 reasons to install solar panels on your home in the Philippines. Learn about energy savings, increased property value, eco-friendly benefits, energy security, and solar incentives.",
     metaDescription:
-      "Discover the top 5 benefits of residential solar panel installation including cost savings, increased home value, and environmental impact.",
+      "Discover the top 5 reasons to install solar panels on your home in the Philippines. Learn about energy savings, increased property value, eco-friendly benefits, energy security, and solar incentives.",
     featuredImage: {
-      url: "/images/home-solar.jpg",
-      alt: "Modern home with solar panels on the roof",
+      url: "/images/solar-panels.jpg",
+      alt: "Home solar panel installation helping reduce electricity bills and increase property value in the Philippines",
       width: 1200,
       height: 630,
     },
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          Thinking about making the switch to solar energy? Here are five
-          compelling reasons why installing solar panels is one of the best
-          decisions you can make for your home and future.
+          Thinking about making the switch to solar energy? You're not alone.
+          Across the Philippines and around the world, more homeowners are
+          choosing to install solar panels—and for good reason.
         </p>
-        <ol className="list-decimal list-inside text-secondary-700 mb-6 space-y-2">
+        <p className="text-secondary-700 mb-6">
+          Whether you want to reduce your energy bills, live more sustainably,
+          or future-proof your home, here are five compelling reasons why
+          installing solar panels is one of the smartest decisions you can make
+          today.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          1. Lower Your Energy Bills
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Electricity costs are climbing year after year, with the Philippines
+          among the highest in Southeast Asia. Solar panels allow you to
+          generate your own clean electricity—cutting your dependence on the
+          grid and slashing your monthly electric bills.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>Lower Energy Bills:</strong> Solar panels can drastically
-            reduce monthly utility costs.
+            Many Filipino homeowners report saving ₱3,000 to ₱7,000 per month
+            after going solar.
           </li>
           <li>
-            <strong>Increase Home Value:</strong> Homes equipped with solar
-            energy systems often sell faster and at higher prices.
+            With{" "}
+            <a
+              href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              net metering
+            </a>
+            , you can even sell your excess energy back to the grid and further
+            offset costs.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          2. Increase Your Home's Value
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Investing in solar energy is not just about saving money—it's about
+          increasing your property value.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Homes equipped with solar systems often sell faster and at premium
+            prices.
           </li>
           <li>
-            <strong>Eco-Friendly Living:</strong> Reduce your dependence on
-            fossil fuels and shrink your carbon footprint.
+            Buyers are attracted to the long-term savings and eco-friendly
+            benefits of solar-powered homes.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          In fact, studies show that solar-equipped homes can see a{" "}
+          <strong>4% to 10% increase</strong> in resale value compared to
+          non-solar homes.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          3. Live a More Eco-Friendly Lifestyle
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Going solar is one of the most impactful ways to reduce your carbon
+          footprint.
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Every kilowatt-hour of solar power you generate means fewer
+            greenhouse gas emissions.
           </li>
           <li>
-            <strong>Energy Security:</strong> Protect yourself from rising
-            electricity rates and blackouts.
+            You help reduce the demand for fossil fuels and support a cleaner,
+            greener energy future.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          Over the lifetime of your system, you can offset{" "}
+          <strong>tens of thousands of kilograms of CO2 emissions</strong>—the
+          equivalent of planting hundreds of trees!
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          4. Achieve Energy Security & Independence
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Rising electricity rates and grid instability are a growing concern
+          for many households. Solar energy helps you take control of your
+          power:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Lock in stable, predictable energy costs for the next 20+ years.
           </li>
           <li>
-            <strong>Incentives and Tax Credits:</strong> Take advantage of
-            government programs that make going solar even more affordable.
+            Reduce your reliance on aging grid infrastructure prone to outages
+            and brownouts.
           </li>
-        </ol>
+          <li>
+            Add battery storage (optional) for true energy independence—keeping
+            your lights on even during power interruptions.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          For a free assessment, try our{" "}
+          <a
+            href="https://sunphilsolar.com/solarcalculator"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline"
+          >
+            Solar Calculator
+          </a>{" "}
+          today.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+          5. Take Advantage of Government Incentives & Tax Benefits
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Now is the perfect time to go solar thanks to various government
+          programs and incentives:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            The <strong>net metering law</strong> allows you to earn credits for
+            surplus power exported to the grid.
+          </li>
+          <li>
+            Flexible{" "}
+            <a
+              href="https://sunphilsolar.com/blog/solar-financing-philippines-2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 underline"
+            >
+              solar financing options
+            </a>{" "}
+            make it affordable to go solar with zero downpayment or low-interest
+            loans.
+          </li>
+          <li>
+            Some LGUs and banks offer special promotions and green financing
+            packages.
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          These incentives help reduce upfront costs and improve your return on
+          investment.
+        </p>
+
         <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
           Final Thoughts
         </h3>
-        <p className="text-secondary-700">
-          Solar energy isn't just good for the environment — it's a smart
-          investment in your financial future. Ready to get started? Contact us
-          today to explore your solar options!
+        <p className="text-secondary-700 mb-6">
+          Solar energy isn't just good for the environment—it's a smart
+          investment in your financial future and your home's value.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          By installing solar panels, you can enjoy significant savings, greater
+          energy independence, and the peace of mind that comes with living
+          sustainably.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          There's no better time to go solar.{" "}
+          <a
+            href="https://sunphilsolar.com/#contact"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 underline"
+          >
+            Contact us today
+          </a>{" "}
+          to explore your solar options and get a free consultation.
         </p>
       </>
     ),
@@ -3229,7 +3601,7 @@ export const blogPosts: BlogPost[] = [
         </h3>
         <div className="flex justify-center my-6">
           <img
-            src="/images/solar-energy-system.jpg"
+            src="/images/solarenergy-vs-windenergy.jpg"
             alt="Diagram showing how solar energy works in a home"
             className="rounded-lg shadow-md max-w-full h-auto"
             style={{ maxWidth: 600 }}
@@ -3246,15 +3618,15 @@ export const blogPosts: BlogPost[] = [
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            🌍 <strong>Good for the planet</strong> – Solar is clean, renewable
+             <strong>Good for the planet</strong> – Solar is clean, renewable
             energy that helps fight climate change.
           </li>
           <li>
-            💰 <strong>Good for your wallet</strong> – Save money on your energy
+             <strong>Good for your wallet</strong> – Save money on your energy
             bills and enjoy long-term financial benefits.
           </li>
           <li>
-            ⚡ <strong>Energy independence</strong> – Gain more control over
+             <strong>Energy independence</strong> – Gain more control over
             your power, especially with battery storage.
           </li>
         </ul>
@@ -3310,7 +3682,7 @@ export const blogPosts: BlogPost[] = [
         </p>
 
         <p className="text-secondary-700">
-          👉 Ready to power your future with the sun?{" "}
+           Ready to power your future with the sun?{" "}
           <strong>
             <a
               href="https://sunphilsolar.com/#contact"
@@ -3339,38 +3711,6 @@ export const blogPosts: BlogPost[] = [
             Smart energy starts with smart choices—choose Sunphil Solar.
           </strong>
         </p>
-        <div className="mt-8">
-          <strong>Related Articles:</strong>
-          <br />
-          <a
-            href="https://sunphilsolar.com/blog/solar-panels-in-rainy-weather-philippines"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary-600 underline"
-          >
-            Can Solar Panels Work During Rainy Weather? Insights for the
-            Philippines
-          </a>
-          <br />
-          <a
-            href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary-600 underline"
-          >
-            Net Metering vs. Battery Storage in the Philippines: Which One Saves
-            More?
-          </a>
-          <br />
-          <a
-            href="https://sunphilsolar.com/blog/hybrid-vs-grid-tie-inverter"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary-600 underline"
-          >
-            Hybrid Inverter vs Grid Tie Inverter: Which One Should You Choose?
-          </a>
-        </div>
       </>
     ),
     readingTime: 6,
