@@ -231,6 +231,30 @@ const projects = [
       "2 × 51.2V 314Ah LiFePO₄ Batteries",
     ],
   },
+  {
+    id: "taytay-rizal",
+    image: "/images/project19.jpg",
+    location: "Taytay, Rizal, PH",
+    system: "12kW Hybrid Solar",
+    date: "2025-06-09",
+    specification: [
+      "12kW Deye Hybrid Inverter",
+      "18 × 620W AE Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "batasan-qc",
+    image: "/images/project20.jpg",
+    location: "Batasan, Quezon City, Metro Manila, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-06-10",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "13 × 620W AE Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
   // Add more projects as needed
 ];
 

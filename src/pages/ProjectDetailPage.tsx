@@ -390,6 +390,46 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar installed a modern 8kW hybrid solar system for a home in Upper Bicutan, Taguig. This system offers clean, renewable energy with battery storage—perfect for homeowners in Metro Manila looking to reduce electricity costs and stay protected during grid outages. Sunphil Solar is dedicated to providing reliable hybrid solar systems in Taguig and across Metro Manila, helping families and businesses gain energy independence and cost control in a fast-growing urban setting.",
   },
+  "taytay-rizal": {
+    image: "/images/project19.jpg",
+    location: "Taytay, Rizal, PH",
+    system: "12kW Hybrid Solar",
+    date: "2025-06-09",
+    clientType: "Residential",
+    specification: [
+      "12kW Deye Hybrid Inverter – Smart inverter system balancing solar input, battery storage, and grid usage for optimal efficiency.",
+      "18 × 620W AE Bifacial Solar Panels – Bifacial panels designed to capture sunlight from both sides, enhancing output and maximizing rooftop potential.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium battery that stores surplus solar energy for night-time use and backup during power outages.",
+    ],
+    benefits: [
+      "Energy Savings: Offsets up to 80% of the household's monthly electricity bill",
+      "Backup Capability: Provides seamless backup power for essential appliances during grid interruptions",
+      "Environmental Contribution: Reduces carbon emissions by approximately 1,000–1,200 kg per month",
+      "Optimized for Urban Living: Ideal system for households in Rizal Province seeking both cost efficiency and energy resilience",
+    ],
+    description:
+      "Sunphil Solar completed a 12kW hybrid solar energy system installation in Taytay, Rizal, empowering the homeowner with reliable, renewable energy and substantial savings on electricity costs. This hybrid system is perfectly suited for urban and suburban households with high power demands and a desire for grid independence. Sunphil Solar proudly delivers advanced hybrid solar installations across Taytay, Antipolo, Cainta, Binangonan, and the entire Rizal area. We help homeowners and businesses gain energy freedom and contribute to a more sustainable Philippines.",
+  },
+  "batasan-qc": {
+    image: "/images/project20.jpg",
+    location: "Batasan, Quezon City, Metro Manila, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-06-10",
+    clientType: "Residential",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart inverter technology that seamlessly manages solar energy, battery storage, and grid supply.",
+      "13 × 620W AE Bifacial Solar Panels – Advanced bifacial panels that maximize solar power generation by capturing light from both sides, increasing efficiency.",
+      "51.2V 314Ah LiFePO₄ Battery – High-performance battery enabling energy independence and providing reliable backup power during blackouts.",
+    ],
+    benefits: [
+      "Energy Savings: Offsets up to 75% of monthly household electricity consumption",
+      "Backup Power: Keeps essential devices and appliances running during grid outages",
+      "Carbon Reduction: Helps reduce carbon footprint by an estimated 600–800 kg per month",
+      "Urban Suitability: Tailored for homes in Metro Manila, where hybrid systems offer the best balance of savings and energy resilience",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar system for a residential property in Batasan, Quezon City. Designed to provide energy savings and backup power, this system is ideal for Metro Manila households facing high electricity costs and frequent grid interruptions. Sunphil Solar is committed to helping residents in Quezon City and throughout Metro Manila enjoy the benefits of hybrid solar power—from reducing electricity bills to ensuring reliable energy access during outages. We proudly serve Batasan Hills, Fairview, Diliman, Commonwealth, and surrounding communities.",
+  },
   // Add more projects as needed
 };
 
