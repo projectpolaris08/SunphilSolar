@@ -5129,15 +5129,6 @@ export const blogPosts: BlogPost[] = [
             policy guidelines and implementation standards
           </li>
           <li>
-            <strong>Interviews with School Officials</strong> - Direct
-            testimonials from participating schools
-          </li>
-          <li>
-            <strong>Site Visits and Observations</strong> - Firsthand
-            documentation of solar installations at Commonwealth High School and
-            other participating institutions
-          </li>
-          <li>
             <strong>Local News Coverage</strong> - Community impact stories and
             program updates from Manila-based publications
           </li>
