@@ -5149,6 +5149,18 @@ export const blogPosts: BlogPost[] = [
           and participation opportunities, contact the Quezon City Government or
           visit their official website.
         </p>
+        <p className="text-sm text-gray-600 mt-2">
+          <strong>Image Credit:</strong> Featured image courtesy of Metro News
+          Central. Original article:{" "}
+          <a
+            href="https://metronewscentral.net/quezon-city/metro-cities/qc-public-schools-utilizes-solar-energy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 hover:underline"
+          >
+            QC Public Schools Utilizes Solar Energy
+          </a>
+        </p>
       </>
     ),
     readingTime: 8,
