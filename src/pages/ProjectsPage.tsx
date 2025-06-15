@@ -13,6 +13,7 @@ import {
   Home,
 } from "lucide-react";
 import { Helmet } from "react-helmet";
+import BeamsBackground from "@/components/BeamsBackground";
 
 const projects = [
   {
@@ -255,6 +256,30 @@ const projects = [
       "51.2V 314Ah LiFePO₄ Battery",
     ],
   },
+  {
+    id: "san-mateo-rizal",
+    image: "/images/project21.jpg",
+    location: "San Mateo, Rizal, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-13",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "san-mateo-rizal-2",
+    image: "/images/project22.jpg",
+    location: "San Mateo, Rizal, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-12",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 620W AE Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
   // Add more projects as needed
 ];
 
@@ -338,66 +363,66 @@ const ProjectsPage: React.FC = () => {
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-secondary-50 min-h-screen">
-      <Helmet>
-        <title>
-          Solar Projects Portfolio | SunPhil Solar - Hybrid Solar Installations
-          in Philippines
-        </title>
-        <meta
-          name="description"
-          content="Explore SunPhil Solar's portfolio of hybrid solar installations across the Philippines. From residential rooftops to commercial buildings, discover our high-performance solar solutions."
-        />
-        <meta
-          name="keywords"
-          content="solar projects, hybrid solar, solar installation, Philippines, SunPhil Solar, solar energy, renewable energy"
-        />
-        <meta
-          property="og:title"
-          content="Solar Projects Portfolio | SunPhil Solar"
-        />
-        <meta
-          property="og:description"
-          content="Explore our portfolio of hybrid solar installations across the Philippines, featuring residential and commercial projects."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Solar Projects Portfolio | SunPhil Solar"
-        />
-        <meta
-          name="twitter:description"
-          content="Explore our portfolio of hybrid solar installations across the Philippines."
-        />
-        <link rel="canonical" href={window.location.href} />
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      </Helmet>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <BeamsBackground intensity="medium">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+        <Helmet>
+          <title>
+            Solar Projects Portfolio | SunPhil Solar - Hybrid Solar
+            Installations in Philippines
+          </title>
+          <meta
+            name="description"
+            content="Explore SunPhil Solar's portfolio of hybrid solar installations across the Philippines. From residential rooftops to commercial buildings, discover our high-performance solar solutions."
+          />
+          <meta
+            name="keywords"
+            content="solar projects, hybrid solar, solar installation, Philippines, SunPhil Solar, solar energy, renewable energy"
+          />
+          <meta
+            property="og:title"
+            content="Solar Projects Portfolio | SunPhil Solar"
+          />
+          <meta
+            property="og:description"
+            content="Explore our portfolio of hybrid solar installations across the Philippines, featuring residential and commercial projects."
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Solar Projects Portfolio | SunPhil Solar"
+          />
+          <meta
+            name="twitter:description"
+            content="Explore our portfolio of hybrid solar installations across the Philippines."
+          />
+          <link rel="canonical" href={window.location.href} />
+          <script type="application/ld+json">
+            {JSON.stringify(structuredData)}
+          </script>
+        </Helmet>
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6">
-          <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600">
+          <ol className="flex items-center space-x-2 text-xs sm:text-sm text-white/80">
             <li>
-              <Link to="/" className="flex items-center hover:text-primary-500">
+              <Link to="/" className="flex items-center hover:text-blue-400">
                 <Home size={14} className="mr-1 sm:mr-2" />
                 <span className="hidden sm:inline">Home</span>
               </Link>
             </li>
             <li className="flex items-center">
               <ChevronRight size={14} className="mx-1" />
-              <span className="text-primary-500">Projects</span>
+              <span className="text-blue-400">Projects</span>
             </li>
           </ol>
         </nav>
 
         <header className="mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-center">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-center text-white">
             Our Hybrid Solar Installations Across the Philippines
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg text-center max-w-2xl mx-auto text-secondary-700 px-2 sm:px-4">
+          <p className="text-sm sm:text-base lg:text-lg text-center max-w-2xl mx-auto text-white/80 px-2 sm:px-4">
             At Sunphil Solar, we specialize in high-performance hybrid solar
             installations for homes and businesses across the Philippines. As a
             leading solar company in the Philippines, we provide turnkey solar
@@ -422,13 +447,13 @@ const ProjectsPage: React.FC = () => {
             {paginated.map((proj, idx) => (
               <article
                 key={idx}
-                className="flex flex-col bg-white rounded-lg p-3 sm:p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-gray-200 hover:border-primary-500 cursor-pointer min-h-[480px] sm:min-h-[540px]"
+                className="flex flex-col bg-white/10 backdrop-blur-lg rounded-lg p-3 sm:p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-white/20 hover:border-blue-400 cursor-pointer min-h-[480px] sm:min-h-[540px]"
               >
                 <Link
                   to={`/solarprojects/${proj.id}`}
                   className="flex flex-col h-full"
                 >
-                  <div className="relative w-full h-40 sm:h-48 mb-2 bg-gray-100 rounded overflow-hidden">
+                  <div className="relative w-full h-40 sm:h-48 mb-2 bg-gray-900/50 rounded overflow-hidden">
                     <img
                       src={proj.image}
                       alt={`${proj.system} installation in ${proj.location}`}
@@ -442,20 +467,20 @@ const ProjectsPage: React.FC = () => {
                       }}
                     />
                   </div>
-                  <div className="flex items-center justify-center gap-1 sm:gap-2 font-bold text-black mb-1 text-sm sm:text-base">
-                    <MapPin className="text-primary-500" size={16} />
+                  <div className="flex items-center justify-center gap-1 sm:gap-2 font-bold text-white mb-1 text-sm sm:text-base">
+                    <MapPin className="text-blue-400" size={16} />
                     <span className="truncate">{proj.location}</span>
                   </div>
-                  <div className="flex items-center justify-center gap-1 sm:gap-2 text-black mb-1 text-sm sm:text-base">
-                    <Sun className="text-yellow-500" size={16} />
+                  <div className="flex items-center justify-center gap-1 sm:gap-2 text-white mb-1 text-sm sm:text-base">
+                    <Sun className="text-yellow-400" size={16} />
                     <span>{proj.system}</span>
                   </div>
-                  <div className="flex items-center justify-center gap-1 sm:gap-2 text-black text-sm sm:text-base">
-                    <Calendar className="text-primary-500" size={16} />
+                  <div className="flex items-center justify-center gap-1 sm:gap-2 text-white text-sm sm:text-base">
+                    <Calendar className="text-blue-400" size={16} />
                     <span>{proj.date}</span>
                   </div>
-                  <div className="bg-gray-50 rounded p-2 sm:p-3 mt-2 sm:mt-3 text-left flex flex-col flex-grow">
-                    <ul className="pl-4 sm:pl-5 text-black font-semibold space-y-1 sm:space-y-2 text-sm sm:text-base">
+                  <div className="bg-white/5 rounded p-2 sm:p-3 mt-2 sm:mt-3 text-left flex flex-col flex-grow">
+                    <ul className="pl-4 sm:pl-5 text-white font-semibold space-y-1 sm:space-y-2 text-sm sm:text-base">
                       {proj.specification.map((spec, i) => {
                         let Icon = CheckCircle;
                         if (/inverter/i.test(spec)) Icon = Settings;
@@ -464,10 +489,10 @@ const ProjectsPage: React.FC = () => {
                         return (
                           <li
                             key={i}
-                            className="flex items-start gap-1 sm:gap-2 text-black font-semibold"
+                            className="flex items-start gap-1 sm:gap-2 text-white font-semibold"
                           >
                             <Icon
-                              className="text-primary-500 mt-1 flex-shrink-0"
+                              className="text-blue-400 mt-1 flex-shrink-0"
                               size={18}
                             />
                             <span className="line-clamp-2">{spec}</span>
@@ -477,10 +502,10 @@ const ProjectsPage: React.FC = () => {
                     </ul>
                     <div className="flex items-center gap-1 sm:gap-2 mt-auto pt-2 sm:pt-4">
                       <CheckCircle
-                        className="text-green-500 flex-shrink-0"
+                        className="text-green-400 flex-shrink-0"
                         size={18}
                       />
-                      <span className="font-semibold text-black text-sm sm:text-base">
+                      <span className="font-semibold text-white text-sm sm:text-base">
                         Client Review:
                       </span>
                       <div className="flex gap-0.5">
@@ -493,7 +518,7 @@ const ProjectsPage: React.FC = () => {
                         ))}
                       </div>
                     </div>
-                    <span className="inline-block text-primary-600 hover:underline font-medium mt-2 text-sm sm:text-base transition-colors">
+                    <span className="inline-block text-blue-400 hover:text-blue-300 font-medium mt-2 text-sm sm:text-base transition-colors">
                       Read more &rarr;
                     </span>
                   </div>
@@ -509,13 +534,13 @@ const ProjectsPage: React.FC = () => {
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded bg-primary-500 text-white disabled:bg-gray-300 text-sm sm:text-base"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded bg-blue-500 text-white disabled:bg-gray-600 text-sm sm:text-base hover:bg-blue-600 transition-colors"
             aria-label="Previous page"
           >
             Prev
           </button>
           <span
-            className="px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base text-white"
             aria-current="page"
           >
             {page} / {totalPages}
@@ -523,14 +548,14 @@ const ProjectsPage: React.FC = () => {
           <button
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded bg-primary-500 text-white disabled:bg-gray-300 text-sm sm:text-base"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded bg-blue-500 text-white disabled:bg-gray-600 text-sm sm:text-base hover:bg-blue-600 transition-colors"
             aria-label="Next page"
           >
             Next
           </button>
         </nav>
       </div>
-    </section>
+    </BeamsBackground>
   );
 };
 

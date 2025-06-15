@@ -13,6 +13,7 @@ import {
   HomeIcon,
 } from "../components/icons";
 import { motion, AnimatePresence } from "framer-motion";
+import BeamsBackground from "@/components/BeamsBackground";
 
 export const BlogPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -60,8 +61,8 @@ export const BlogPage = () => {
   }, [pageParam]);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary-900 to-secondary-800 min-h-screen">
-      <div className="container mx-auto px-4">
+    <BeamsBackground intensity="medium">
+      <div className="container mx-auto px-4 py-20">
         <Helmet>
           <title>Blog | SunPhil Solar</title>
           <meta name="description" content={seoData.description} />
@@ -74,7 +75,7 @@ export const BlogPage = () => {
 
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Blog</h1>
-          <p className="text-secondary-100 text-lg">
+          <p className="text-white/80 text-lg">
             Stay informed with the latest updates, insights, and trends in solar
             technology. Our blog covers everything from advanced panel systems
             and policy changes to practical tips for maximizing your solar
@@ -88,7 +89,7 @@ export const BlogPage = () => {
               className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
                 sortBy === "newest"
                   ? "bg-blue-600 text-white"
-                  : "bg-white text-secondary-800 hover:bg-blue-100 hover:text-blue-600"
+                  : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
               }`}
             >
               Newest Posts
@@ -98,7 +99,7 @@ export const BlogPage = () => {
               className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
                 sortBy === "oldest"
                   ? "bg-blue-600 text-white"
-                  : "bg-white text-secondary-800 hover:bg-blue-100 hover:text-blue-600"
+                  : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
               }`}
             >
               Oldest Posts
@@ -120,7 +121,7 @@ export const BlogPage = () => {
               <Link
                 to={`/blog/${post.slug}`}
                 key={post.id}
-                className="group bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:ring-2 hover:ring-blue-400"
+                className="group bg-white/10 backdrop-blur-lg rounded-xl shadow-md overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:ring-2 hover:ring-blue-400"
               >
                 {post.featuredImage && (
                   <div className="relative overflow-hidden h-48">
@@ -133,7 +134,7 @@ export const BlogPage = () => {
                   </div>
                 )}
                 <div className="p-6">
-                  <div className="text-blue-500 mb-4 transition-transform duration-300 group-hover:scale-110">
+                  <div className="text-blue-400 mb-4 transition-transform duration-300 group-hover:scale-110">
                     {post.id === 1 && <SunIcon />}
                     {post.id === 2 && <LightbulbIcon />}
                     {post.id === 3 && <ListIcon />}
@@ -142,15 +143,15 @@ export const BlogPage = () => {
                     {post.id === 6 && <LabIcon />}
                     {post.id === 7 && <HomeIcon />}
                   </div>
-                  <h2 className="text-xl font-semibold text-secondary-900 mb-2 transition-colors duration-300 group-hover:text-blue-600">
+                  <h2 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 group-hover:text-blue-400">
                     {post.title}
                   </h2>
                   {post.date && (
-                    <p className="text-secondary-500 text-xs mb-2">
+                    <p className="text-white/60 text-xs mb-2">
                       <time dateTime={post.date}>{post.date}</time>
                     </p>
                   )}
-                  <p className="text-secondary-700 text-sm mb-4 line-clamp-3">
+                  <p className="text-white/80 text-sm mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   {post.tags && post.tags.length > 0 && (
@@ -158,19 +159,19 @@ export const BlogPage = () => {
                       {post.tags.slice(0, 2).map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-secondary-100 px-2 py-1 text-xs font-medium text-secondary-700"
+                          className="rounded-full bg-white/10 px-2 py-1 text-xs font-medium text-white/80"
                         >
                           #{tag}
                         </span>
                       ))}
                       {post.tags.length > 2 && (
-                        <span className="text-xs text-secondary-500">
+                        <span className="text-xs text-white/60">
                           +{post.tags.length - 2} more
                         </span>
                       )}
                     </div>
                   )}
-                  <span className="text-blue-500 font-medium inline-flex items-center transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="text-blue-400 font-medium inline-flex items-center transition-transform duration-300 group-hover:translate-x-1">
                     Read more →
                   </span>
                 </div>
@@ -186,8 +187,8 @@ export const BlogPage = () => {
             disabled={currentPage === 1}
             className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
               currentPage === 1
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-white text-secondary-800 hover:bg-blue-100 hover:text-blue-600"
+                ? "bg-white/10 text-white/40 cursor-not-allowed"
+                : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
             }`}
           >
             Prev
@@ -200,7 +201,7 @@ export const BlogPage = () => {
               className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
                 currentPage === i + 1
                   ? "bg-blue-600 text-white"
-                  : "bg-white text-secondary-800 hover:bg-blue-100 hover:text-blue-600"
+                  : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
               }`}
             >
               {i + 1}
@@ -212,15 +213,15 @@ export const BlogPage = () => {
             disabled={currentPage === totalPages}
             className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
               currentPage === totalPages
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-white text-secondary-800 hover:bg-blue-100 hover:text-blue-600"
+                ? "bg-white/10 text-white/40 cursor-not-allowed"
+                : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
             }`}
           >
             Next
           </button>
         </div>
       </div>
-    </section>
+    </BeamsBackground>
   );
 };
 

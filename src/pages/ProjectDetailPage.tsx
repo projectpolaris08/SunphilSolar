@@ -1,14 +1,18 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
-import {
-  MdArrowBack,
-  MdCalendarToday,
-  MdLocationOn,
-  MdHome,
-  MdSolarPower,
-} from "react-icons/md";
-import { CheckCircle, Star } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import {
+  MapPin,
+  Sun,
+  Calendar,
+  Settings,
+  PanelTop,
+  Battery,
+  ChevronRight,
+  Home,
+  CheckCircle,
+} from "lucide-react";
+import BeamsBackground from "@/components/BeamsBackground";
 
 interface Project {
   image: string;
@@ -430,153 +434,217 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar installed a 6kW hybrid solar system for a residential property in Batasan, Quezon City. Designed to provide energy savings and backup power, this system is ideal for Metro Manila households facing high electricity costs and frequent grid interruptions. Sunphil Solar is committed to helping residents in Quezon City and throughout Metro Manila enjoy the benefits of hybrid solar power—from reducing electricity bills to ensuring reliable energy access during outages. We proudly serve Batasan Hills, Fairview, Diliman, Commonwealth, and surrounding communities.",
   },
+  "san-mateo-rizal": {
+    image: "/images/project21.jpg",
+    location: "San Mateo, Rizal, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-13",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart energy controller that balances solar, battery, and grid power to ensure continuous and optimized performance.",
+      "16 × 615W Canadian Bifacial Solar Panels – High-efficiency panels that absorb sunlight from both front and rear sides, maximizing energy yield throughout the day.",
+      "51.2V 314Ah LiFePO₄ Lithium Battery – Long-lasting lithium battery for storing excess solar power and supplying energy at night or during brownouts.",
+    ],
+    benefits: [
+      "Reduced Power Bills: Cuts electricity consumption by up to 75–85%",
+      "Energy Security: Keeps essential loads running during grid failures",
+      "Eco-Friendly Impact: Helps reduce over 900–1,100 kg of CO₂ emissions monthly",
+      "Adapted for Rizal Homes: Excellent choice for residential homes in elevated and flood-prone areas like San Mateo, ensuring reliable power even during storm seasons",
+    ],
+    description:
+      "Sunphil Solar completed a custom-designed 8kW hybrid solar energy system for a home in San Mateo, Rizal. This hybrid solution provides sustainable energy, efficient battery storage, and strong protection against power outages—ideal for Rizal households that want to lower electricity bills and boost energy independence. Sunphil Solar proudly serves San Mateo, Rodriguez (Montalban), Antipolo, and the entire Rizal Province, offering expert solutions in hybrid solar installations for homeowners who want cost-effective, green, and dependable power.",
+  },
+  "san-mateo-rizal-2": {
+    image: "/images/project22.jpg",
+    location: "San Mateo, Rizal, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-12",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Automatically manages solar, battery, and grid input for smart, uninterrupted power flow.",
+      "16 × 620W AE Bifacial Solar Panels – Advanced bifacial technology captures sunlight from both sides, boosting daily power generation by up to 15%.",
+      "51.2V 314Ah LiFePO₄ Lithium Battery – High-capacity battery bank ensures backup power during brownouts or peak usage hours.",
+    ],
+    benefits: [
+      "Save Up to 80% on monthly electricity bills",
+      "Automatic Power Backup for key appliances (lights, fridge, fans, Wi-Fi, etc.)",
+      "Lower Carbon Emissions by an estimated 900–1,100 kg of CO₂ monthly",
+      "Built for Metro Suburbs – Ideal for homes in elevated zones like San Mateo, where blackouts and grid instability are common",
+    ],
+    description:
+      "Sunphil Solar recently completed an 8kW hybrid solar system for a residential property in San Mateo, Rizal. This setup provides reliable, clean energy during the day and seamless battery backup at night or during outages—perfect for households looking to cut electricity costs and increase energy security. Sunphil Solar is proud to bring modern hybrid solar energy solutions to families in San Mateo, Antipolo, Rodriguez (Montalban), Taytay, and nearby Rizal towns—delivering dependable systems tailored for both everyday and emergency power needs.",
+  },
   // Add more projects as needed
 };
 
 const ProjectDetailPage: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
-  const project = projectId ? projects[projectId] : null;
+  const project = projects[projectId as keyof typeof projects];
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-secondary-50 py-20">
-        <div className="container mx-auto px-4">
+      <BeamsBackground intensity="medium">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Project Not Found</h2>
+            <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
+              Project Not Found
+            </h1>
+            <p className="text-white/80 mb-8">
+              The project you're looking for doesn't exist or has been removed.
+            </p>
             <Link
               to="/solarprojects"
-              className="text-primary-600 hover:underline"
+              className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors"
             >
-              ← Back to Projects
+              Back to Projects
             </Link>
           </div>
         </div>
-      </div>
+      </BeamsBackground>
     );
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-20">
-      <Helmet>
-        <title>
-          {project
-            ? `${project.system} in ${project.location} | SunPhil Solar`
-            : "Project Details | SunPhil Solar"}
-        </title>
-      </Helmet>
-      <div className="container mx-auto px-4">
-        <Link
-          to="/solarprojects"
-          className="inline-flex items-center text-primary-600 hover:underline mb-6"
-        >
-          <MdArrowBack className="mr-2" /> Back to Projects
-        </Link>
+    <BeamsBackground intensity="medium">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <Helmet>
+          <title>{`${project.system} Installation in ${project.location} | SunPhil Solar`}</title>
+          <meta
+            name="description"
+            content={`Explore our ${project.system} installation in ${project.location}. ${project.description}`}
+          />
+          <meta
+            name="keywords"
+            content={`solar installation, ${project.system}, ${project.location}, SunPhil Solar, solar energy`}
+          />
+          <meta
+            property="og:title"
+            content={`${project.system} Installation in ${project.location} | SunPhil Solar`}
+          />
+          <meta
+            property="og:description"
+            content={`Explore our ${project.system} installation in ${project.location}. ${project.description}`}
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content={`${project.system} Installation in ${project.location} | SunPhil Solar`}
+          />
+          <meta
+            name="twitter:description"
+            content={`Explore our ${project.system} installation in ${project.location}. ${project.description}`}
+          />
+          <link rel="canonical" href={window.location.href} />
+        </Helmet>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="relative w-full aspect-[4/3] flex items-center justify-center overflow-hidden">
+        {/* Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6">
+          <ol className="flex items-center space-x-2 text-xs sm:text-sm text-white/80">
+            <li>
+              <Link to="/" className="flex items-center hover:text-blue-400">
+                <Home size={14} className="mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">Home</span>
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <ChevronRight size={14} className="mx-1" />
+              <Link to="/solarprojects" className="hover:text-blue-400">
+                Projects
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <ChevronRight size={14} className="mx-1" />
+              <span className="text-blue-400">{project.system}</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+          {/* Project Image */}
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-gray-900/50 flex items-center justify-center">
             <img
               src={project.image}
-              alt={project.location}
-              className="absolute inset-0 w-full h-full object-cover filter blur-lg scale-110"
-              aria-hidden="true"
-            />
-            <img
-              src={project.image}
-              alt={project.location}
-              className="relative z-10 max-h-full max-w-full object-contain"
+              alt={`${project.system} installation in ${project.location}`}
+              className="w-full h-full object-contain"
+              loading="lazy"
             />
           </div>
 
-          <div className="p-8">
-            <h1 className="text-3xl font-bold mb-4">
-              {project.system} Installation in {project.location}
+          {/* Project Details */}
+          <div className="flex flex-col">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
+              {project.system} Installation
             </h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="flex items-center">
-                <MdCalendarToday className="text-primary-500 mr-2" />
-                <span>Completed: {project.date}</span>
-              </div>
-              <div className="flex items-center">
-                <MdLocationOn className="text-primary-500 mr-2" />
-                <span>{project.location}</span>
-              </div>
-              <div className="flex items-center">
-                <MdHome className="text-primary-500 mr-2" />
-                <span>{project.clientType}</span>
-              </div>
+            <div className="flex items-center gap-2 text-white/80 mb-2">
+              <MapPin className="text-blue-400" size={18} />
+              <span>{project.location}</span>
             </div>
-            <div className="flex items-center gap-2 mb-8">
-              <CheckCircle className="text-green-500" size={20} />
-              <span className="font-semibold text-black">Client Review:</span>
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="text-yellow-400 fill-yellow-400"
-                  size={20}
-                />
-              ))}
+            <div className="flex items-center gap-2 text-white/80 mb-2">
+              <Calendar className="text-blue-400" size={18} />
+              <span>Completed: {project.date}</span>
+            </div>
+            <div className="flex items-center gap-2 text-white/80 mb-6">
+              <Sun className="text-yellow-400" size={18} />
+              <span>{project.clientType}</span>
             </div>
 
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">
-                🔋 Project Overview
+            <div className="bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6 mb-6">
+              <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                System Specifications
               </h2>
-              <p className="text-secondary-700">{project.description}</p>
-              <a
-                href="/contact"
-                className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors mt-4"
-              >
-                Book a Free Solar Consultation Now
-              </a>
-            </div>
-
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">
-                ⚙️ System Specifications
-              </h2>
-              <div className="bg-secondary-50 rounded-lg p-6">
-                <ul className="space-y-4">
-                  {project.specification.map((spec, index) => (
-                    <li key={index} className="flex items-start">
-                      <MdSolarPower className="text-primary-500 mt-1 mr-2" />
+              <ul className="space-y-2">
+                {project.specification.map((spec, i) => {
+                  let Icon = CheckCircle;
+                  if (/inverter/i.test(spec)) Icon = Settings;
+                  else if (/solar panel/i.test(spec)) Icon = PanelTop;
+                  else if (/battery/i.test(spec)) Icon = Battery;
+                  return (
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-white/90"
+                    >
+                      <Icon
+                        className="text-blue-400 mt-1 flex-shrink-0"
+                        size={18}
+                      />
                       <span>{spec}</span>
                     </li>
-                  ))}
-                </ul>
-              </div>
+                  );
+                })}
+              </ul>
             </div>
 
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">🌞 Key Benefits</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.benefits?.map((benefit, index) => (
-                  <div key={index} className="bg-secondary-50 rounded-lg p-4">
-                    <p>{benefit}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-primary-50 rounded-lg p-6 mt-8">
-              <h2 className="text-2xl font-semibold mb-4">
-                📞 Start Your Solar Journey Today!
+            <div className="bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6 mb-6">
+              <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                Key Benefits
               </h2>
-              <p className="mb-4">
-                Looking to install a solar power system in {project.location} or
-                anywhere in the Philippines?
+              <ul className="space-y-2">
+                {project.benefits?.map((benefit, i) => (
+                  <li key={i} className="flex items-start gap-2 text-white/90">
+                    <CheckCircle
+                      className="text-green-400 mt-1 flex-shrink-0"
+                      size={18}
+                    />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6">
+              <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                Project Overview
+              </h2>
+              <p className="text-white/80 leading-relaxed">
+                {project.description}
               </p>
-              <Link
-                to="/contact"
-                className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors"
-              >
-                Contact Us for a Free Assessment
-              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </BeamsBackground>
   );
 };
 

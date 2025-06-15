@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import BeamsBackground from "@/components/BeamsBackground";
 
 const faqs = [
   {
@@ -91,7 +92,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-20">
+    <BeamsBackground intensity="medium">
       <Helmet>
         <title>FAQ | SunPhil Solar</title>
         <meta
@@ -99,15 +100,18 @@ export default function FAQ() {
           content="Frequently asked questions about solar installation, savings, and Sunphil Solar services."
         />
       </Helmet>
-      <div className="container mx-auto px-4 max-w-2xl">
-        <h1 className="text-4xl font-bold text-center mb-8 text-secondary-900">
+      <div className="container mx-auto px-4 max-w-2xl py-20">
+        <h1 className="text-4xl font-bold text-center mb-8 text-white">
           Frequently Asked Questions
         </h1>
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-white rounded-lg shadow-elevation-1">
+            <div
+              key={idx}
+              className="bg-white/10 backdrop-blur-lg rounded-lg shadow-elevation-1"
+            >
               <button
-                className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-semibold text-primary-700 focus:outline-none"
+                className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-semibold text-white focus:outline-none"
                 onClick={() => toggle(idx)}
                 aria-expanded={openIndex === idx}
                 aria-controls={`faq-panel-${idx}`}
@@ -122,7 +126,7 @@ export default function FAQ() {
               {openIndex === idx && (
                 <div
                   id={`faq-panel-${idx}`}
-                  className="px-6 pb-4 text-secondary-700 border-t border-secondary-100 animate-fadeIn"
+                  className="px-6 pb-4 text-white/80 border-t border-white/10 animate-fadeIn"
                 >
                   {faq.answer}
                 </div>
@@ -131,6 +135,6 @@ export default function FAQ() {
           ))}
         </div>
       </div>
-    </div>
+    </BeamsBackground>
   );
 }
