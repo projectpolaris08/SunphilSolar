@@ -6,7 +6,6 @@ import {
   Sun,
   Calendar,
   Settings,
-  PanelTop,
   Battery,
   ChevronRight,
   Home,
@@ -34,7 +33,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "2 x 16kW Deye Hybrid Inverter",
-      "54 pcs 615W Canadian Bifacial Solar Panel",
+      "54 x 615W Canadian Bifacial Solar Panels",
       "4 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
     benefits: [
@@ -55,7 +54,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential / Small Commercial",
     specification: [
       "2 x 12kW Deye Hybrid Inverter",
-      "48 pcs 610W Canadian Bifacial Solar Panel",
+      "48 x 610W Canadian Bifacial Solar Panels",
       "4 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
     benefits: [
@@ -76,7 +75,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "12kW Deye Hybrid Inverter",
-      "24 pcs 615W Canadian Bifacial Solar Panel",
+      "24 x 615W Canadian Bifacial Solar Panels",
       "2 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
     benefits: [
@@ -97,7 +96,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter",
-      "18 pcs 615W Canadian Bifacial Solar Panel",
+      "18 x 615W Canadian Bifacial Solar Panels",
       "51.2v 280Ah LiFePO₄ Battery",
     ],
     benefits: [
@@ -118,7 +117,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "12kW Deye Hybrid Inverter",
-      "24 pcs 615W Canadian Bifacial Solar Panel",
+      "24 x 615W Canadian Bifacial Solar Panels",
       "3 x 51.2v 280Ah LiFePO₄ Batteries",
     ],
     benefits: [
@@ -139,7 +138,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "6kW Deye Hybrid Inverter",
-      "13 pcs 615W Canadian Bifacial Solar Panel",
+      "13 x 615W Canadian Bifacial Solar Panels",
       "51.2v 314Ah LiFePO₄ Battery",
     ],
     benefits: [
@@ -160,7 +159,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter",
-      "18 pcs 615W Canadian Bifacial Solar Panel",
+      "18 x 615W Canadian Bifacial Solar Panels",
       "2 x 51.2v 314Ah LiFePO₄ Batteries",
     ],
     benefits: [
@@ -181,7 +180,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter",
-      "16 pcs 615W Canadian Bifacial Solar Panel",
+      "16 x 615W Canadian Bifacial Solar Panels",
       "51.2v 314Ah LiFePO₄ Battery",
     ],
     benefits: [
@@ -202,7 +201,7 @@ const projects: { [key: string]: Project } = {
     clientType: "Residential",
     specification: [
       "12kW Deye Hybrid Inverter",
-      "14 615W Canadian Solar Bifacial Panels",
+      "14 x 615W Canadian Solar Bifacial Panels",
       "2 x 51.2V 314Ah LiFePO₄ Batteries",
     ],
     benefits: [
@@ -463,7 +462,7 @@ const projects: { [key: string]: Project } = {
     specification: [
       "8kW Deye Hybrid Inverter – Automatically manages solar, battery, and grid input for smart, uninterrupted power flow.",
       "16 × 620W AE Bifacial Solar Panels – Advanced bifacial technology captures sunlight from both sides, boosting daily power generation by up to 15%.",
-      "51.2V 314Ah LiFePO₄ Lithium Battery – High-capacity battery bank ensures backup power during brownouts or peak usage hours.",
+      "51.2V 314Ah LiFePO₄ Battery – High-capacity battery bank ensures backup power during brownouts or peak usage hours.",
     ],
     benefits: [
       "Save Up to 80% on monthly electricity bills",
@@ -473,6 +472,26 @@ const projects: { [key: string]: Project } = {
     ],
     description:
       "Sunphil Solar recently completed an 8kW hybrid solar system for a residential property in San Mateo, Rizal. This setup provides reliable, clean energy during the day and seamless battery backup at night or during outages—perfect for households looking to cut electricity costs and increase energy security. Sunphil Solar is proud to bring modern hybrid solar energy solutions to families in San Mateo, Antipolo, Rodriguez (Montalban), Taytay, and nearby Rizal towns—delivering dependable systems tailored for both everyday and emergency power needs.",
+  },
+  "lemery-batangas-2": {
+    image: "/images/project23.jpg",
+    location: "Lemery, Batangas, PH",
+    system: "12kW Hybrid Solar",
+    date: "2025-06-15",
+    clientType: "Residential (Off-grid-ready)",
+    specification: [
+      "12kW Deye Hybrid Inverter – A smart hybrid inverter that efficiently distributes solar power, manages battery charging, and syncs with the grid when needed.",
+      "20 × 615W Canadian Bifacial Solar Panels – These high-efficiency panels collect sunlight from both sides, generating more energy even during cloudy weather or reflected light conditions.",
+      "51.2V 314Ah LiFePO₄ Battery – A reliable and durable battery system that stores excess solar energy for nighttime use and backup during outages.",
+    ],
+    benefits: [
+      "Significant Savings: Offsets up to 85% of monthly electricity consumption",
+      "Reliable Backup: Keeps lights, fridge, and other essentials running during power outages",
+      "Eco-Friendly: Helps reduce over 1,200 kg of CO₂ emissions per month",
+      "Local Adaptation: Engineered for Batangas' coastal climate, including heat resistance and enhanced panel durability",
+    ],
+    description:
+      "Sunphil Solar successfully completed a 12kW hybrid solar installation for a private residence in Lemery, Batangas. Designed for both power savings and energy resilience, this setup ensures the homeowner enjoys clean, reliable electricity—especially during grid interruptions, which are common in semi-rural and coastal areas like Lemery. Sunphil Solar is proud to support homeowners in Lemery, Taal, Calaca, and nearby areas with reliable hybrid solar solutions. Our systems are built for rural and semi-urban settings that require both cost-efficiency and dependable backup power.",
   },
   // Add more projects as needed
 };
@@ -586,7 +605,7 @@ const ProjectDetailPage: React.FC = () => {
               <span>Completed: {project.date}</span>
             </div>
             <div className="flex items-center gap-2 text-white/80 mb-6">
-              <Sun className="text-yellow-400" size={18} />
+              <Home className="text-yellow-400" size={18} />
               <span>{project.clientType}</span>
             </div>
 
@@ -598,17 +617,24 @@ const ProjectDetailPage: React.FC = () => {
                 {project.specification.map((spec, i) => {
                   let Icon = CheckCircle;
                   if (/inverter/i.test(spec)) Icon = Settings;
-                  else if (/solar panel/i.test(spec)) Icon = PanelTop;
-                  else if (/battery/i.test(spec)) Icon = Battery;
+                  else if (/solar.*panel/i.test(spec)) Icon = Sun;
+                  else if (/batter/i.test(spec)) Icon = Battery;
                   return (
                     <li
                       key={i}
                       className="flex items-start gap-2 text-white/90"
                     >
-                      <Icon
-                        className="text-blue-400 mt-1 flex-shrink-0"
-                        size={18}
-                      />
+                      {Icon === Sun ? (
+                        <Sun
+                          className="text-yellow-400 mt-1 flex-shrink-0"
+                          size={18}
+                        />
+                      ) : (
+                        <Icon
+                          className="text-blue-400 mt-1 flex-shrink-0"
+                          size={18}
+                        />
+                      )}
                       <span>{spec}</span>
                     </li>
                   );
