@@ -6,7 +6,6 @@ import {
   Sun,
   Calendar,
   Settings,
-  PanelTop,
   Battery,
   Star,
   ChevronRight,
@@ -488,17 +487,24 @@ const ProjectsPage: React.FC = () => {
                       {proj.specification.map((spec, i) => {
                         let Icon = CheckCircle;
                         if (/inverter/i.test(spec)) Icon = Settings;
-                        else if (/solar panel/i.test(spec)) Icon = PanelTop;
+                        else if (/solar.*panel/i.test(spec)) Icon = Sun;
                         else if (/batter/i.test(spec)) Icon = Battery;
                         return (
                           <li
                             key={i}
                             className="flex items-start gap-1 sm:gap-2 text-white font-semibold"
                           >
-                            <Icon
-                              className="text-blue-400 mt-1 flex-shrink-0"
-                              size={18}
-                            />
+                            {Icon === Sun ? (
+                              <Sun
+                                className="text-yellow-400 mt-1 flex-shrink-0"
+                                size={18}
+                              />
+                            ) : (
+                              <Icon
+                                className="text-blue-400 mt-1 flex-shrink-0"
+                                size={18}
+                              />
+                            )}
                             <span className="line-clamp-2">{spec}</span>
                           </li>
                         );

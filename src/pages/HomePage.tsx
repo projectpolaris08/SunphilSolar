@@ -140,14 +140,20 @@ export const HomePage = () => {
             {proj.specification.map((spec: string, i: number) => {
               let Icon = Settings;
               if (/inverter/i.test(spec)) Icon = Settings;
-              else if (/solar panel/i.test(spec)) Icon = PanelTop;
-              else if (/battery/i.test(spec)) Icon = Battery;
+              else if (/solar.*panel/i.test(spec)) Icon = Sun;
+              else if (/batter/i.test(spec)) Icon = Battery;
               return (
                 <li
                   key={i}
                   className="flex items-start gap-2 text-black font-semibold mb-2 last:mb-0"
                 >
-                  <Icon className="text-primary-500 mt-1" size={20} />
+                  {Icon === Sun ? (
+                    <Sun className="text-yellow-400 mt-1" size={20} />
+                  ) : Icon === Battery ? (
+                    <Battery className="text-blue-500 mt-1" size={20} />
+                  ) : (
+                    <Icon className="text-primary-500 mt-1" size={20} />
+                  )}
                   <span>{spec}</span>
                 </li>
               );
