@@ -493,6 +493,26 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar successfully completed a 12kW hybrid solar installation for a private residence in Lemery, Batangas. Designed for both power savings and energy resilience, this setup ensures the homeowner enjoys clean, reliable electricity—especially during grid interruptions, which are common in semi-rural and coastal areas like Lemery. Sunphil Solar is proud to support homeowners in Lemery, Taal, Calaca, and nearby areas with reliable hybrid solar solutions. Our systems are built for rural and semi-urban settings that require both cost-efficiency and dependable backup power.",
   },
+  "san-fernando-pampanga": {
+    image: "/images/project24.jpg",
+    location: "San Fernando, Pampanga, PH",
+    system: "18kW Hybrid Solar",
+    date: "2025-06-16",
+    clientType: "Residential / Light Commercial",
+    specification: [
+      "18kW Deye Hybrid Inverter – Versatile and powerful, this hybrid inverter intelligently manages solar production, grid interaction, and battery storage for optimal performance.",
+      "30 × 615W Canadian Bifacial Solar Panels – Top-tier bifacial technology allows these panels to generate more electricity by absorbing sunlight from both sides—maximizing output even in diffused light conditions.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – High-capacity lithium batteries ensure critical appliances stay powered during blackouts and nighttime hours, with long lifecycle and safe energy storage.",
+    ],
+    benefits: [
+      "Massive Energy Savings: Offset up to 90% of monthly electricity usage",
+      "24/7 Reliability: Provides uninterrupted power for key household or business systems",
+      "Carbon Reduction: Reduces over 1,800 kg of CO₂ emissions per month",
+      "Built for Pampanga: Tailored for the area's hot climate and regular power fluctuations",
+    ],
+    description:
+      "This project in San Fernando, Pampanga features one of the latest additions to Sunphil Solar’s hybrid lineup—the new 18kW Deye Hybrid Inverter. Engineered for homes or small businesses with higher power demands, this system delivers exceptional energy performance, smart backup, and maximum solar savings.",
+  },
   // Add more projects as needed
 };
 

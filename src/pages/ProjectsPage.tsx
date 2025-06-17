@@ -288,7 +288,19 @@ const projects = [
     specification: [
       "12kW Deye Hybrid Inverter",
       "20 × 615W Canadian Bifacial Solar Panels",
-      "51.2V 314Ah LiFePO₄ Lithium Battery",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "san-fernando-pampanga",
+    image: "/images/project24.jpg",
+    location: "San Fernando, Pampanga, PH",
+    system: "18kW Hybrid Solar",
+    date: "2025-06-16",
+    specification: [
+      "18kW Deye Hybrid Inverter",
+      "30 × 615W Canadian Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
     ],
   },
   // Add more projects as needed
