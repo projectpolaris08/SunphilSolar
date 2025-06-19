@@ -245,7 +245,7 @@ const AboutPage: React.FC = () => {
           </h3>
           <p className="text-secondary-600 mb-6">
             Sunphil Solar, also known in the community as Fairview Solarista,
-            was founded in 2018 from a simple dream—to bring affordable and
+            was founded in 2021 from a simple dream—to bring affordable and
             reliable solar energy to Filipino homes and businesses. What started
             as a local initiative powered by passion and grit has grown into one
             of Metro Manila's trusted names in solar power solutions. Our

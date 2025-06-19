@@ -7,7 +7,6 @@ import {
   Sun,
   Calendar,
   Settings,
-  PanelTop,
   Battery,
   CheckCircle,
   Star,

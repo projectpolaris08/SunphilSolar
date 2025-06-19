@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight, Sun, Zap, DollarSign } from "lucide-react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { WeatherWidget } from "../weather";
@@ -7,9 +7,40 @@ import { useSound } from "react-sounds";
 export const Hero: React.FC = () => {
   const [monthlyBill, setMonthlyBill] = useState("");
   const [estimatedSavings, setEstimatedSavings] = useState<number | null>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { play: playSubmit } = useSound("ui/submit", { volume: 0.5 });
   const { play: playButton } = useSound("ui/button_hard", { volume: 0.4 });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => {
+      setIsVideoLoaded(true);
+      video.play().catch(console.error);
+    };
+
+    const handleEnded = () => {
+      // Ensure smooth loop transition
+      if (video.currentTime >= video.duration) {
+        video.currentTime = 0;
+        video.play().catch(console.error);
+      }
+    };
+
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("ended", handleEnded);
+
+    // Start loading the video
+    video.load();
+
+    return () => {
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
 
   const calculateSavings = () => {
     if (!monthlyBill) return;
@@ -30,16 +61,30 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px]">
-      {/* Background with subtle animation */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat animate-[slowZoom_30s_ease-in-out_infinite]"
-        style={{
-          backgroundImage:
-            "url(https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg)",
-        }}
-      >
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            isVideoLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          onError={(e) => console.error("Video error:", e)}
+        >
+          <source src="/videos/earth-space.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/60 to-secondary-800/30"></div>
       </div>
+
+      {/* Loading state */}
+      {!isVideoLoaded && (
+        <div className="absolute inset-0 z-0 bg-secondary-900"></div>
+      )}
 
       {/* Main content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 md:pt-20 pb-16 md:pb-24 h-full">
@@ -195,7 +240,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Weather Widget - always top left on mobile, top right on desktop */}
+      {/* Weather Widget */}
       <div className="hidden lg:block absolute top-2 right-12 z-30">
         <div className="text-white">
           <WeatherWidget />
