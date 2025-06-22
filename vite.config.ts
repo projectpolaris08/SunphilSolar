@@ -11,6 +11,7 @@ const blogPostSlugs: string[] = JSON.parse(
 
 // Add all project routes
 const projectRoutes = [
+  "dasmariñas-cavite",
   "vista-verde-north-caloocan",
   "sariaya-quezon",
   "goa-camarines-sur",

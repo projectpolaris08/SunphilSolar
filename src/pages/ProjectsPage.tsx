@@ -16,6 +16,18 @@ import BeamsBackground from "@/components/BeamsBackground";
 
 const projects = [
   {
+    id: "dasmariñas-cavite",
+    image: "/images/project26.jpg",
+    location: "Dasmariñas, Cavite, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-22",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
     id: "vista-verde-north-caloocan",
     image: "/images/project25.jpg",
     location: "Vista Verde, North Caloocan, Metro Manila, PH",

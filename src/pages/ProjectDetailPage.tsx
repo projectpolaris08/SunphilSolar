@@ -533,6 +533,26 @@ const projects: { [key: string]: Project } = {
     description:
       "This project in San Fernando, Pampanga features one of the latest additions to Sunphil Solar's hybrid lineup—the new 18kW Deye Hybrid Inverter. Engineered for homes or small businesses with higher power demands, this system delivers exceptional energy performance, smart backup, and maximum solar savings.",
   },
+  "dasmariñas-cavite": {
+    image: "/images/project26.jpg",
+    location: "Dasmariñas, Cavite, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-22",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – A smart hybrid inverter that manages solar energy generation, battery charging, and grid power seamlessly.",
+      "16 × 615W Canadian Bifacial Solar Panels – Bifacial technology increases energy production by capturing sunlight from both sides, maximizing output even in low-light or reflective rooftop environments.",
+      "51.2V 314Ah LiFePO₄ Battery – High-capacity lithium battery provides energy storage for night-time use or during brownouts, with long life and high safety standards.",
+    ],
+    benefits: [
+      "Up to 80% monthly savings on electricity",
+      "Uninterrupted power for appliances during blackouts",
+      "Estimated 1,100–1,300 kg CO₂ reduction per month",
+      "Perfect for suburban homes in Cavite dealing with high utility rates and inconsistent power",
+    ],
+    description:
+      "Sunphil Solar completed an 8kW hybrid solar installation for a residence in Dasmariñas, Cavite—a growing suburban area where reliable and cost-effective energy is in high demand. This system combines high-efficiency bifacial panels, smart energy management, and battery backup, ensuring the client experiences lower electricity bills and 24/7 energy reliability. Sunphil Solar proudly delivers modern solar energy systems across Dasmariñas, Imus, General Trias, and nearby towns—designed for long-term savings and energy security. Our hybrid systems are optimized for both on-grid use and emergency backup, giving Cavite homeowners peace of mind.",
+  },
   // Add more projects as needed
 };
 
