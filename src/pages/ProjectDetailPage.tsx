@@ -25,6 +25,26 @@ interface Project {
 }
 
 const projects: { [key: string]: Project } = {
+  "vista-verde-north-caloocan": {
+    image: "/images/project25.jpg",
+    location: "Vista Verde, North Caloocan, Metro Manila, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-21",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – A versatile and intelligent inverter that balances solar power, battery storage, and grid connection for optimal performance.",
+      "18 × 620W AE Bifacial Solar Panels – Bifacial panels capture sunlight from both sides, increasing power production especially in rooftops with reflective surfaces or open surroundings.",
+      "2 × 51.2V 314Ah LiFePO₄ Lithium Batteries – Reliable and long-lasting battery setup that stores solar power for nighttime use and acts as backup during power interruptions.",
+    ],
+    benefits: [
+      "Up to 80–85% reduction in electricity bills",
+      "Battery-powered backup keeps essential appliances running during brownouts",
+      "Reduces an estimated 1,100–1,300 kg of CO₂ emissions monthly",
+      "Ideal for Metro Manila homes with frequent grid fluctuations or peak demand periods",
+    ],
+    description:
+      "Sunphil Solar completed an 8kW hybrid solar installation in Vista Verde, North Caloocan, providing the homeowner with clean energy generation, seamless battery backup, and significant monthly savings. Designed for energy-conscious urban families, this system is ideal for homes looking to cut costs and secure reliable power during outages. Sunphil Solar continues to bring high-quality hybrid solar systems to urban communities in North Caloocan, Bagumbong, Novaliches, and nearby areas. This project highlights our ability to deliver energy freedom in tightly packed residential villages without compromising system performance.",
+  },
   "sariaya-quezon": {
     image: "/images/project1.jpg",
     location: "Sariaya, Quezon, PH",
@@ -511,7 +531,7 @@ const projects: { [key: string]: Project } = {
       "Built for Pampanga: Tailored for the area's hot climate and regular power fluctuations",
     ],
     description:
-      "This project in San Fernando, Pampanga features one of the latest additions to Sunphil Solar’s hybrid lineup—the new 18kW Deye Hybrid Inverter. Engineered for homes or small businesses with higher power demands, this system delivers exceptional energy performance, smart backup, and maximum solar savings.",
+      "This project in San Fernando, Pampanga features one of the latest additions to Sunphil Solar's hybrid lineup—the new 18kW Deye Hybrid Inverter. Engineered for homes or small businesses with higher power demands, this system delivers exceptional energy performance, smart backup, and maximum solar savings.",
   },
   // Add more projects as needed
 };

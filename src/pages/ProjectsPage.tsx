@@ -16,6 +16,18 @@ import BeamsBackground from "@/components/BeamsBackground";
 
 const projects = [
   {
+    id: "vista-verde-north-caloocan",
+    image: "/images/project25.jpg",
+    location: "Vista Verde, North Caloocan, Metro Manila, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-21",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "18 × 620W AE Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
     id: "siruma-camarines-sur",
     image: "/images/project16.jpg",
     location: "Siruma, Camarines Sur, PH",

@@ -6,6 +6,7 @@ import PostContent from "./PostContent";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import RelatedArticles from "@/components/RelatedArticles";
+import { calculateWordCount, estimateReadingTime } from "@/utils/contentUtils";
 
 type PostProps = Pick<
   BlogPost,
@@ -37,6 +38,10 @@ const Post = ({
   isFeatured,
   children,
 }: PostProps) => {
+  // Calculate word count and reading time using utilities
+  const wordCount = calculateWordCount(children);
+  const estimatedReadingTime = readingTime || estimateReadingTime(wordCount);
+
   // Prepare SEO data
   const postUrl = slug ? `https://sunphilsolar.com/blog/${slug}` : "";
   const siteTitle = "SunPhil Solar";
@@ -50,7 +55,7 @@ const Post = ({
       : `https://sunphilsolar.com${featuredImage.url}`
     : "";
 
-  // Enhanced structured data with ID
+  // Enhanced structured data with word count and reading time
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -61,6 +66,8 @@ const Post = ({
     image: imageUrl,
     url: postUrl,
     description: description,
+    wordCount: wordCount,
+    timeRequired: `PT${estimatedReadingTime}M`, // ISO 8601 duration format
     ...(author && {
       author: {
         "@type": "Person",
@@ -72,7 +79,7 @@ const Post = ({
       name: "SunPhil Solar",
       logo: {
         "@type": "ImageObject",
-        url: "https://sunphilsolar.com/logo.png",
+        url: "https://sunphilsolar.com/sunphil.svg",
       },
     },
     ...(tags &&
@@ -82,6 +89,10 @@ const Post = ({
     ...(isFeatured && {
       isFeatured: true,
     }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
   };
 
   return (
@@ -90,6 +101,8 @@ const Post = ({
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
+        <meta name="wordcount" content={wordCount.toString()} />
+        <meta name="reading-time" content={`${estimatedReadingTime} minutes`} />
 
         {/* Open Graph tags */}
         <meta property="og:title" content={title} />
@@ -97,6 +110,13 @@ const Post = ({
         <meta property="og:type" content="article" />
         {slug && <meta property="og:url" content={postUrl} />}
         {featuredImage?.url && <meta property="og:image" content={imageUrl} />}
+        <meta property="article:published_time" content={date} />
+        <meta property="article:modified_time" content={date} />
+        {author && <meta property="article:author" content={author} />}
+        {tags &&
+          tags.map((tag) => (
+            <meta key={tag} property="article:tag" content={tag} />
+          ))}
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -116,6 +136,8 @@ const Post = ({
       <article
         className="mx-auto my-12 max-w-4xl px-4"
         id={`post-${id}`} // Added ID to the article element
+        itemScope
+        itemType="https://schema.org/BlogPosting"
       >
         {featuredImage?.url && (
           <img
@@ -125,17 +147,22 @@ const Post = ({
             loading="lazy"
             {...(featuredImage.width && { width: featuredImage.width })}
             {...(featuredImage.height && { height: featuredImage.height })}
+            itemProp="image"
           />
         )}
 
-        <PostTitle>{title}</PostTitle>
+        <PostTitle itemProp="headline">{title}</PostTitle>
 
         <PostMeta>
-          <time dateTime={date}>{date}</time>
+          <time dateTime={date} itemProp="datePublished">
+            {date}
+          </time>
           {author && <span className="mx-2">•</span>}
-          {author && <span>{author}</span>}
-          {readingTime && <span className="mx-2">•</span>}
-          {readingTime && <span>{readingTime} min read</span>}
+          {author && <span itemProp="author">{author}</span>}
+          {estimatedReadingTime && <span className="mx-2">•</span>}
+          {estimatedReadingTime && <span>{estimatedReadingTime} min read</span>}
+          {wordCount > 0 && <span className="mx-2">•</span>}
+          {wordCount > 0 && <span>{wordCount.toLocaleString()} words</span>}
           {isFeatured && <span className="mx-2">•</span>}
           {isFeatured && <span className="text-primary-500">Featured</span>}
         </PostMeta>
@@ -146,6 +173,7 @@ const Post = ({
               <span
                 key={`${id}-${tag}`} // Enhanced key with post ID
                 className="rounded-full bg-secondary-100 px-3 py-1 text-xs font-medium text-secondary-700 dark:bg-secondary-800 dark:text-secondary-100"
+                itemProp="keywords"
               >
                 #{tag}
               </span>
@@ -157,7 +185,7 @@ const Post = ({
         <div className="flex flex-col md:flex-row gap-8">
           {/* Main Content */}
           <div className="w-full md:w-2/3 lg:w-3/4">
-            <PostContent>{children}</PostContent>
+            <PostContent itemProp="articleBody">{children}</PostContent>
             <RelatedArticles currentPostId={id} />
             <div className="mt-12 flex items-center gap-4 text-gray-500 dark:text-gray-400">
               <span>Share:</span>
