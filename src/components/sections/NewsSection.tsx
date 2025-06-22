@@ -9,7 +9,7 @@ interface NewsArticle {
   image?: string;
 }
 
-const backendUrl = "https://sunphil-solar.vercel.app/api/news";
+const backendUrl = "/api/news";
 
 export const NewsSection = () => {
   const [articles, setArticles] = useState<NewsArticle[]>([]);

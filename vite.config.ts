@@ -55,6 +55,15 @@ const dynamicRoutes = [
 const allRoutes = ["/", ...staticRoutes, ...dynamicRoutes];
 
 export default defineConfig({
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://sunphil-solar.vercel.app",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
   plugins: [
     react(),
     sitemap({
