@@ -411,7 +411,7 @@ const ProjectsPage: React.FC = () => {
           />
           <meta
             name="keywords"
-            content="solar projects, hybrid solar, solar installation, Philippines, Sunphil Solar, solar energy, renewable energy"
+            content="solar projects, hybrid solar, solar installation, Philippines, SunPhil Solar, solar energy, renewable energy"
           />
           <meta
             property="og:title"
@@ -426,7 +426,7 @@ const ProjectsPage: React.FC = () => {
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content="Solar Projects Portfolio | Sunphil Solar"
+            content="Solar Projects Portfolio | SunPhil Solar"
           />
           <meta
             name="twitter:description"

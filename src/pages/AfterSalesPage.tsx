@@ -81,7 +81,7 @@ const AfterSalesPage: React.FC = () => {
           </p>
           <div className="w-full aspect-video rounded overflow-hidden mb-2">
             <iframe
-              title="SunPhil Solar Office Location"
+              title="Sunphil Solar Office Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.986725399463!2d121.05456827587568!3d14.713342574304843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1a837ab86cd%3A0x12fa7ee4ac4b47b!2sSunphil%20Solar%20Installation%20Services!5e0!3m2!1sen!2sph!4v1749208687301!5m2!1sen!2sph"
               className="w-full h-full min-h-[200px]"
               style={{ border: 0 }}

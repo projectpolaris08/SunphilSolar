@@ -29,7 +29,7 @@ export const BlogPage = () => {
   );
 
   const seoData = {
-    title: "Blog | SunPhil Solar",
+    title: "Blog | Sunphil Solar",
     description:
       "Explore the latest articles about solar energy, sustainable power solutions, and renewable energy trends from SunPhil Solar.",
     url: "https://sunphilsolar.com/blog",
