@@ -189,7 +189,7 @@ export const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Home | SunPhil Solar</title>
+        <title>Home | Sunphil Solar</title>
       </Helmet>
       <Hero />
       <NewsSection />

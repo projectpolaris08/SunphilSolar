@@ -94,7 +94,7 @@ export default function FAQ() {
   return (
     <BeamsBackground intensity="medium">
       <Helmet>
-        <title>FAQ | SunPhil Solar</title>
+        <title>FAQ | Sunphil Solar</title>
         <meta
           name="description"
           content="Frequently asked questions about solar installation, savings, and Sunphil Solar services."

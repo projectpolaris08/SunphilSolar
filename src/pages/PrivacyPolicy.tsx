@@ -5,7 +5,7 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <Helmet>
-        <title>Privacy Policy | SunPhil Solar</title>
+        <title>Privacy Policy | Sunphil Solar</title>
       </Helmet>
       <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
       <div className="prose prose-lg max-w-none">

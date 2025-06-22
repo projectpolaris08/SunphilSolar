@@ -64,7 +64,7 @@ export const BlogPage = () => {
     <BeamsBackground intensity="medium">
       <div className="container mx-auto px-4 py-20">
         <Helmet>
-          <title>Blog | SunPhil Solar</title>
+          <title>Blog | Sunphil Solar</title>
           <meta name="description" content={seoData.description} />
           <meta property="og:title" content={seoData.title} />
           <meta property="og:description" content={seoData.description} />

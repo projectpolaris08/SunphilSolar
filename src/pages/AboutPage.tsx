@@ -268,7 +268,7 @@ const AboutPage: React.FC = () => {
 
       <section id="about" className="py-20 bg-secondary-50">
         <Helmet>
-          <title>About Us | SunPhil Solar</title>
+          <title>About Us | Sunphil Solar</title>
         </Helmet>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Company Info */}

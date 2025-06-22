@@ -567,18 +567,18 @@ const ProjectDetailPage: React.FC = () => {
     <BeamsBackground intensity="medium">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <Helmet>
-          <title>{`${project.system} Installation in ${project.location} | SunPhil Solar`}</title>
+          <title>{`${project.system} Installation in ${project.location} | Sunphil Solar`}</title>
           <meta
             name="description"
             content={`Explore our ${project.system} installation in ${project.location}. ${project.description}`}
           />
           <meta
             name="keywords"
-            content={`solar installation, ${project.system}, ${project.location}, SunPhil Solar, solar energy`}
+            content={`solar installation, ${project.system}, ${project.location}, Sunphil Solar, solar energy`}
           />
           <meta
             property="og:title"
-            content={`${project.system} Installation in ${project.location} | SunPhil Solar`}
+            content={`${project.system} Installation in ${project.location} | Sunphil Solar`}
           />
           <meta
             property="og:description"
@@ -589,7 +589,7 @@ const ProjectDetailPage: React.FC = () => {
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content={`${project.system} Installation in ${project.location} | SunPhil Solar`}
+            content={`${project.system} Installation in ${project.location} | Sunphil Solar`}
           />
           <meta
             name="twitter:description"

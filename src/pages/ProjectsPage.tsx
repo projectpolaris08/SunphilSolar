@@ -343,7 +343,7 @@ const ProjectsPage: React.FC = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "SunPhil Solar Projects Portfolio",
+    name: "Sunphil Solar Projects Portfolio",
     description:
       "Explore our portfolio of hybrid solar installations across the Philippines, featuring residential and commercial projects with premium components from trusted brands.",
     url: window.location.href,
@@ -402,20 +402,20 @@ const ProjectsPage: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
         <Helmet>
           <title>
-            Solar Projects Portfolio | SunPhil Solar - Hybrid Solar
+            Solar Projects Portfolio | Sunphil Solar - Hybrid Solar
             Installations in Philippines
           </title>
           <meta
             name="description"
-            content="Explore SunPhil Solar's portfolio of hybrid solar installations across the Philippines. From residential rooftops to commercial buildings, discover our high-performance solar solutions."
+            content="Explore Sunphil Solar's portfolio of hybrid solar installations across the Philippines. From residential rooftops to commercial buildings, discover our high-performance solar solutions."
           />
           <meta
             name="keywords"
-            content="solar projects, hybrid solar, solar installation, Philippines, SunPhil Solar, solar energy, renewable energy"
+            content="solar projects, hybrid solar, solar installation, Philippines, Sunphil Solar, solar energy, renewable energy"
           />
           <meta
             property="og:title"
-            content="Solar Projects Portfolio | SunPhil Solar"
+            content="Solar Projects Portfolio | Sunphil Solar"
           />
           <meta
             property="og:description"
@@ -426,7 +426,7 @@ const ProjectsPage: React.FC = () => {
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content="Solar Projects Portfolio | SunPhil Solar"
+            content="Solar Projects Portfolio | Sunphil Solar"
           />
           <meta
             name="twitter:description"

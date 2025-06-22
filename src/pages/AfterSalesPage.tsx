@@ -8,7 +8,7 @@ const AfterSalesPage: React.FC = () => {
     <BeamsBackground intensity="medium">
       <div className="container mx-auto px-4 sm:px-6 max-w-2xl py-20">
         <Helmet>
-          <title>After Sales | SunPhil Solar</title>
+          <title>After Sales | Sunphil Solar</title>
         </Helmet>
         <h1 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-center text-white">
           After Sales Support
