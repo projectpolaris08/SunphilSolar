@@ -1,106 +1,445 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import {
   Search,
-  TrendingUp,
-  DollarSign,
-  Leaf,
   MapPin,
   ArrowRight,
   Home,
   ChevronRight,
   Heart,
+  CheckCircle,
+  ChevronDown,
 } from "lucide-react";
 import BeamsBackground from "@/components/BeamsBackground";
 import { caseStudies } from "@/data/caseStudies";
 
+const projects = [
+  {
+    id: "commonwealth-quezon-city",
+    image: "/images/project27.jpg",
+    location: "Brgy. Commonwealth, Quezon City, Metro Manila",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-04",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "10 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "dasmariñas-cavite",
+    image: "/images/project26.jpg",
+    location: "Dasmariñas, Cavite, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-22",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "vista-verde-north-caloocan",
+    image: "/images/project25.jpg",
+    location: "Vista Verde, North Caloocan, Metro Manila, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-21",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "18 × 620W AE Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "siruma-camarines-sur",
+    image: "/images/project16.jpg",
+    location: "Siruma, Camarines Sur, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-05-31",
+    specification: [
+      "2 × 16kW Deye Hybrid Inverters",
+      "56 × 620W Canadian Bifacial Solar Panels",
+      "4 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "sariaya-quezon",
+    image: "/images/project1.jpg",
+    location: "Sariaya, Quezon, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-04-30",
+    specification: [
+      "2 x 16kW Deye Hybrid Inverter",
+      "54 pcs 615W Canadian Bifacial Solar Panels",
+      "4 x 51.2v 280Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "goa-camarines-sur",
+    image: "/images/project2.jpg",
+    location: "Goa, Camarines Sur, PH",
+    system: "24kW Hybrid Solar",
+    date: "2025-03-18",
+    specification: [
+      "2 x 12kW Hybrid Inverter",
+      "48 pcs 610W Canadian Bifacial Solar Panels",
+      "4 x 51.2v 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "cabanatuan-nueva-ecija",
+    image: "/images/project3.jpg",
+    location: "Cabanatuan City, Nueva Ecija, PH",
+    system: "12kW Hybrid Solar",
+    date: "2025-04-12",
+    specification: [
+      "12kW Hybrid Inverter",
+      "24 x 615W Canadian Bifacial Solar Panels",
+      "2 x 51.2v 280Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "porac-pampanga",
+    image: "/images/project4.jpg",
+    location: "Porac, Pampanga, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-03-03",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "18 x 615W Canadian Bifacial Solar Panels",
+      "51.2v 280Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "birvillage-qc",
+    image: "/images/project5.jpg",
+    location: "BIR Village, Quezon City, Metro Manila, PH",
+    system: "12kW Hybrid Solar",
+    date: "2025-03-07",
+    specification: [
+      "12kW Deye Hybrid Inverter",
+      "24 x 615W Canadian Bifacial Solar Panels",
+      "3 x 51.2v 280Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "cabanatuan-nueva-ecija-6kw",
+    image: "/images/project6.jpg",
+    location: "Cabanatuan City, Nueva Ecija, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-03-15",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "13 x 615W Canadian Bifacial Solar Panels",
+      "51.2v 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "lubao-pampanga",
+    image: "/images/project7.jpg",
+    location: "Lubao, Pampanga, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-08",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "18 x 615W Canadian Bifacial Solar Panels",
+      "2 x 51.2v 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "umingan-pangasinan",
+    image: "/images/project8.jpg",
+    location: "Umingan, Pangasinan, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-13",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 x 615W Canadian Bifacial Solar Panels",
+      "51.2v 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "bacoor-cavite-rescue",
+    image: "/images/project9.jpg",
+    location: "Bacoor, Cavite, PH (Rescue)",
+    system: "12kW Hybrid Solar (Upgraded)",
+    date: "2025-05-19",
+    specification: [
+      "12kW Deye Hybrid Inverter (Upgraded)",
+      "14 x 615W Canadian Bifacial Solar Panels",
+      "2 x 51.2V 314Ah LiFePO₄ Batteries",
+      "Rooftop Truss Expansion",
+    ],
+  },
+  {
+    id: "bagumbong-caloocan",
+    image: "/images/project10.jpg",
+    location: "Bagumbong, Caloocan, Metro Manila, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-25",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "13 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "lemery-batangas",
+    image: "/images/project11.jpg",
+    location: "Lemery, Batangas, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-10",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "pandacan-manila",
+    image: "/images/project12.jpg",
+    location: "Pandacan, Manila, NCR, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-26",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "alisha-nueva-ecija",
+    image: "/images/project13.jpg",
+    location: "Alisha, Nueva Ecija, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-27",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "13 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "iba-zambales",
+    image: "/images/project14.jpg",
+    location: "Iba, Zambales, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-05-28",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "13 × 615W Canadian Solar Bifacial Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "binangonan-rizal",
+    image: "/images/project15.jpg",
+    location: "Binangonan, Rizal, PH",
+    system: "16kW Hybrid Solar",
+    date: "2025-05-29",
+    specification: [
+      "16kW Deye Hybrid Inverter",
+      "30 × 615W Canadian Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "san-antonio-quezon",
+    image: "/images/project17.jpg",
+    location: "San Antonio, Quezon, PH",
+    system: "32kW Hybrid Solar",
+    date: "2025-06-04",
+    specification: [
+      "2 × 16kW Deye Hybrid Inverters",
+      "56 × 615W Canadian Bifacial Solar Panels",
+      "5 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "upper-bicutan-taguig",
+    image: "/images/project18.jpg",
+    location: "Upper Bicutan, Taguig City, Metro Manila, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-06",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "18 × 620W AE Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+  {
+    id: "taytay-rizal",
+    image: "/images/project19.jpg",
+    location: "Taytay, Rizal, PH",
+    system: "12kW Hybrid Solar",
+    date: "2025-06-09",
+    specification: [
+      "12kW Deye Hybrid Inverter",
+      "18 × 620W AE Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "batasan-qc",
+    image: "/images/project20.jpg",
+    location: "Batasan, Quezon City, Metro Manila, PH",
+    system: "6kW Hybrid Solar",
+    date: "2025-06-10",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "13 × 620W AE Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "san-mateo-rizal",
+    image: "/images/project21.jpg",
+    location: "San Mateo, Rizal, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-13",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "san-mateo-rizal-2",
+    image: "/images/project22.jpg",
+    location: "San Mateo, Rizal, PH",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-12",
+    specification: [
+      "8kW Deye Hybrid Inverter",
+      "16 × 620W AE Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "lemery-batangas-2",
+    image: "/images/project23.jpg",
+    location: "Lemery, Batangas, PH",
+    system: "12kW Hybrid Solar",
+    date: "2025-06-15",
+    specification: [
+      "12kW Deye Hybrid Inverter",
+      "20 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
+    id: "san-fernando-pampanga",
+    image: "/images/project24.jpg",
+    location: "San Fernando, Pampanga, PH",
+    system: "18kW Hybrid Solar",
+    date: "2025-06-16",
+    specification: [
+      "18kW Deye Hybrid Inverter",
+      "30 × 615W Canadian Bifacial Solar Panels",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries",
+    ],
+  },
+];
+
 const CaseStudiesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("");
-  const [selectedSystemSize, setSelectedSystemSize] = useState("");
+  const [locationFilter, setLocationFilter] = useState("");
+  const [systemSizeFilter, setSystemSizeFilter] = useState("");
+  const [filteredCaseStudies, setFilteredCaseStudies] = useState(
+    Object.entries(caseStudies)
+  );
 
-  // Get unique locations and system sizes for filters
-  const locations = useMemo(() => {
-    const locs = Object.keys(caseStudies).map((key) => {
-      const projectId = key;
-      // Extract location from project ID (you might want to store this in the case study data)
-      const locationMap: { [key: string]: string } = {
-        "bacoor-cavite-rescue": "Bacoor, Cavite (Rescue)",
-        "vista-verde-north-caloocan": "Vista Verde, North Caloocan",
-        "sariaya-quezon": "Sariaya, Quezon",
-        "goa-camarines-sur": "Goa, Camarines Sur",
-        "cabanatuan-nueva-ecija": "Cabanatuan, Nueva Ecija",
-        "porac-pampanga": "Porac, Pampanga",
-      };
-      return locationMap[projectId] || projectId;
-    });
-    return Array.from(new Set(locs)).sort();
-  }, []);
+  const [currentPage, setCurrentPage] = useState(1);
+  const studiesPerPage = 4;
 
-  const systemSizes = useMemo(() => {
-    const sizes = Object.keys(caseStudies).map((key) => {
-      const projectId = key;
-      // Extract system size from project ID
-      const sizeMap: { [key: string]: string } = {
-        "bacoor-cavite-rescue": "12kW (Upgraded)",
-        "vista-verde-north-caloocan": "8kW",
-        "sariaya-quezon": "32kW",
-        "goa-camarines-sur": "24kW",
-        "cabanatuan-nueva-ecija": "12kW",
-        "porac-pampanga": "8kW",
-      };
-      return sizeMap[projectId] || "Unknown";
-    });
-    return Array.from(new Set(sizes)).sort((a, b) => {
-      const aNum = parseInt(a.replace("kW", "").replace(" (Upgraded)", ""));
-      const bNum = parseInt(b.replace("kW", "").replace(" (Upgraded)", ""));
-      return aNum - bNum;
-    });
-  }, []);
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, locationFilter, systemSizeFilter]);
 
-  // Filter case studies based on search and filters
-  const filteredCaseStudies = useMemo(() => {
-    return Object.entries(caseStudies).filter(([projectId, data]) => {
-      const locationMap: { [key: string]: string } = {
-        "bacoor-cavite-rescue": "Bacoor, Cavite (Rescue)",
-        "vista-verde-north-caloocan": "Vista Verde, North Caloocan",
-        "sariaya-quezon": "Sariaya, Quezon",
-        "goa-camarines-sur": "Goa, Camarines Sur",
-        "cabanatuan-nueva-ecija": "Cabanatuan, Nueva Ecija",
-        "porac-pampanga": "Porac, Pampanga",
-      };
+  // Scroll to top when page changes
+  useEffect(() => {
+    // Smooth scroll to the top of the case studies section
+    const element = document.getElementById("case-studies-list");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [currentPage]);
 
-      const sizeMap: { [key: string]: string } = {
-        "bacoor-cavite-rescue": "12kW (Upgraded)",
-        "vista-verde-north-caloocan": "8kW",
-        "sariaya-quezon": "32kW",
-        "goa-camarines-sur": "24kW",
-        "cabanatuan-nueva-ecija": "12kW",
-        "porac-pampanga": "8kW",
-      };
+  // Derive unique locations and system sizes for filters
+  const caseStudyProjects = projects.filter((p) =>
+    Object.keys(caseStudies).includes(p.id)
+  );
 
-      const location = locationMap[projectId] || projectId;
-      const systemSize = sizeMap[projectId] || "Unknown";
+  const uniqueLocations = [
+    ...new Set(
+      caseStudyProjects.map((p) => {
+        const parts = p.location.split(",").map((s) => s.trim());
+        if (parts.length > 1 && !parts[1].includes("PH")) {
+          return parts[1]; // e.g., "Quezon City"
+        }
+        return parts[0]; // e.g., "Sariaya"
+      })
+    ),
+  ].sort();
 
-      const matchesSearch =
-        location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        systemSize.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        data.projectOverview.challenge
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) ||
-        data.projectOverview.solution
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+  const uniqueSystemSizes = [
+    ...new Set(
+      caseStudyProjects
+        .map((p) => p.system.match(/(\d+(\.\d+)?kW)/)?.[0])
+        .filter(Boolean) as string[]
+    ),
+  ].sort((a, b) => parseInt(a) - parseInt(b));
 
-      const matchesLocation =
-        !selectedLocation || location === selectedLocation;
-      const matchesSystemSize =
-        !selectedSystemSize || systemSize === selectedSystemSize;
+  useEffect(() => {
+    let results = Object.entries(caseStudies);
 
-      return matchesSearch && matchesLocation && matchesSystemSize;
-    });
-  }, [searchTerm, selectedLocation, selectedSystemSize]);
+    // Filter by search term
+    if (searchTerm) {
+      results = results.filter(([projectId, data]) => {
+        const project = projects.find((p) => p.id === projectId);
+        const searchContent = `
+          ${project?.system || ""}
+          ${project?.location || ""}
+          ${data.projectOverview.challenge}
+          ${data.projectOverview.solution}
+          ${data.projectOverview.results}
+          ${data.challenges.join(" ")}
+          ${data.solutions.join(" ")}
+          ${data.testimonials?.quote || ""}
+        `.toLowerCase();
+        return searchContent.includes(searchTerm.toLowerCase());
+      });
+    }
+
+    // Filter by location
+    if (locationFilter) {
+      results = results.filter(([projectId]) => {
+        const project = projects.find((p) => p.id === projectId);
+        return project?.location.includes(locationFilter);
+      });
+    }
+
+    // Filter by system size
+    if (systemSizeFilter) {
+      results = results.filter(([projectId]) => {
+        const project = projects.find((p) => p.id === projectId);
+        return project?.system.includes(systemSizeFilter);
+      });
+    }
+
+    setFilteredCaseStudies(results);
+  }, [searchTerm, locationFilter, systemSizeFilter]);
+
+  // Calculate paginated results
+  const totalPages = Math.ceil(filteredCaseStudies.length / studiesPerPage);
+  const paginatedStudies = filteredCaseStudies.slice(
+    (currentPage - 1) * studiesPerPage,
+    currentPage * studiesPerPage
+  );
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat("en-PH", {
@@ -173,191 +512,237 @@ const CaseStudiesPage: React.FC = () => {
             </div>
 
             {/* Location Filter */}
-            <select
-              value={selectedLocation}
-              onChange={(e) => setSelectedLocation(e.target.value)}
-              className="px-4 py-3 bg-white/20 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              <option value="">All Locations</option>
-              {locations.map((location) => (
-                <option key={location} value={location}>
-                  {location}
+            <div className="relative">
+              <select
+                value={locationFilter}
+                onChange={(e) => setLocationFilter(e.target.value)}
+                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg py-3 px-4 text-white appearance-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" className="text-black">
+                  All Locations
                 </option>
-              ))}
-            </select>
+                {uniqueLocations.map((location) => (
+                  <option
+                    key={location}
+                    value={location}
+                    className="text-black"
+                  >
+                    {location}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50"
+                size={20}
+              />
+            </div>
 
             {/* System Size Filter */}
-            <select
-              value={selectedSystemSize}
-              onChange={(e) => setSelectedSystemSize(e.target.value)}
-              className="px-4 py-3 bg-white/20 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              <option value="">All System Sizes</option>
-              {systemSizes.map((size) => (
-                <option key={size} value={size}>
-                  {size}
+            <div className="relative">
+              <select
+                value={systemSizeFilter}
+                onChange={(e) => setSystemSizeFilter(e.target.value)}
+                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg py-3 px-4 text-white appearance-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" className="text-black">
+                  All System Sizes
                 </option>
-              ))}
-            </select>
+                {uniqueSystemSizes.map((size) => (
+                  <option key={size} value={size} className="text-black">
+                    {size}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50"
+                size={20}
+              />
+            </div>
           </div>
         </div>
 
         {/* Results Count */}
-        <div className="mb-6">
-          <p className="text-white/80">
-            Showing {filteredCaseStudies.length} case study
-            {filteredCaseStudies.length !== 1 ? "s" : ""}
-          </p>
+        <div className="mb-6 text-white/80">
+          Showing {filteredCaseStudies.length} case{" "}
+          {filteredCaseStudies.length === 1 ? "study" : "studies"}
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {filteredCaseStudies.map(([projectId, data]) => {
-            const locationMap: { [key: string]: string } = {
-              "bacoor-cavite-rescue": "Bacoor, Cavite (Rescue)",
-              "vista-verde-north-caloocan": "Vista Verde, North Caloocan",
-              "sariaya-quezon": "Sariaya, Quezon",
-              "goa-camarines-sur": "Goa, Camarines Sur",
-              "cabanatuan-nueva-ecija": "Cabanatuan, Nueva Ecija",
-              "porac-pampanga": "Porac, Pampanga",
-            };
+        <main id="case-studies-list">
+          {filteredCaseStudies.length > 0 ? (
+            <>
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                {paginatedStudies.map(([projectId, data]) => {
+                  const project = projects.find((p) => p.id === projectId);
+                  const location =
+                    project?.location || projectId.replace(/-/g, " ");
+                  const systemSize =
+                    project?.system || "Unknown Hybrid Solar System";
+                  const isRescueCase = projectId === "bacoor-cavite-rescue";
 
-            const sizeMap: { [key: string]: string } = {
-              "bacoor-cavite-rescue": "12kW (Upgraded)",
-              "vista-verde-north-caloocan": "8kW",
-              "sariaya-quezon": "32kW",
-              "goa-camarines-sur": "24kW",
-              "cabanatuan-nueva-ecija": "12kW",
-              "porac-pampanga": "8kW",
-            };
+                  return (
+                    <div
+                      key={projectId}
+                      className={`block p-6 sm:p-8 rounded-2xl transition-all duration-300 relative overflow-hidden bg-white/5 border border-white/10 hover:shadow-2xl ${
+                        isRescueCase
+                          ? "hover:border-red-400/50"
+                          : "hover:border-blue-400/50"
+                      }`}
+                    >
+                      <article>
+                        <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
+                          <div className="flex-grow">
+                            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                              {systemSize}
+                            </h3>
+                            <div className="flex items-center text-white/80 mb-2">
+                              <MapPin size={16} className="mr-2" />
+                              {location}
+                            </div>
+                          </div>
+                          <div className="text-left sm:text-right flex-shrink-0">
+                            <p className="text-xl sm:text-2xl font-bold text-green-400">
+                              {data.financialAnalysis.annualROI}%
+                            </p>
+                            <p className="text-sm sm:text-base text-white/60">
+                              Annual ROI
+                            </p>
+                          </div>
+                        </div>
 
-            const location = locationMap[projectId] || projectId;
-            const systemSize = sizeMap[projectId] || "Unknown";
-            const isRescueCase = projectId === "bacoor-cavite-rescue";
+                        {isRescueCase ? (
+                          <div className="mb-4 mt-4">
+                            <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
+                              <Heart className="h-3 w-3 mr-1.5" />
+                              Rescue Success Story
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="mb-4 mt-4">
+                            <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-green-500 to-blue-500 text-white text-xs font-bold rounded-full shadow-lg">
+                              <CheckCircle className="h-3 w-3 mr-1.5" />
+                              Success Story
+                            </div>
+                          </div>
+                        )}
 
-            return (
-              <div
-                key={projectId}
-                className={`backdrop-blur-lg rounded-lg p-6 hover:bg-white/15 transition-all duration-300 ${
-                  isRescueCase
-                    ? "bg-gradient-to-br from-red-500/10 to-orange-500/10 border-2 border-red-400/30"
-                    : "bg-white/10 border border-white/20"
-                }`}
-              >
-                {isRescueCase && (
-                  <div className="mb-4">
-                    <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold rounded-full">
-                      <Heart className="h-4 w-4 mr-1" />
-                      Rescue Success Story
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-4 text-center">
+                          <div>
+                            <p className="text-xl sm:text-2xl font-bold text-white">
+                              {formatCurrency(
+                                data.financialAnalysis.monthlySavings
+                              )}
+                            </p>
+                            <p className="text-xs sm:text-sm text-white/60">
+                              Monthly Savings
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-xl sm:text-2xl font-bold text-white">
+                              {data.environmentalImpact.co2Reduction.toLocaleString()}
+                            </p>
+                            <p className="text-xs sm:text-sm text-white/60">
+                              kg CO₂/year
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-xl sm:text-2xl font-bold text-white">
+                              {data.financialAnalysis.paybackPeriod}
+                            </p>
+                            <p className="text-xs sm:text-sm text-white/60">
+                              Years Payback
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="mt-6 border-t border-white/10 pt-6">
+                          <h4 className="font-semibold text-white mb-2">
+                            {isRescueCase ? "Failed System" : "Challenge"}
+                          </h4>
+                          <p className="text-white/80 text-sm line-clamp-3">
+                            {data.projectOverview.challenge}
+                          </p>
+                        </div>
+
+                        <div className="mt-4">
+                          <h4 className="font-semibold text-white mb-2">
+                            {isRescueCase ? "Rescue Solution" : "Solution"}
+                          </h4>
+                          <p className="text-white/80 text-sm line-clamp-3">
+                            {data.projectOverview.solution}
+                          </p>
+                        </div>
+
+                        <div className="mt-4">
+                          <h4 className="font-semibold text-white mb-2">
+                            Results
+                          </h4>
+                          <p className="text-white/80 text-sm line-clamp-3">
+                            {data.projectOverview.results}
+                          </p>
+                        </div>
+
+                        <div className="mt-6">
+                          <Link
+                            to={`/solarprojects/${projectId}`}
+                            className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors group"
+                          >
+                            <span>
+                              {isRescueCase
+                                ? "View Rescue Story"
+                                : "View Full Case Study"}
+                            </span>
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </Link>
+                        </div>
+                      </article>
                     </div>
-                  </div>
-                )}
-
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {systemSize} Hybrid Solar System
-                    </h3>
-                    <div className="flex items-center text-white/80 mb-2">
-                      <MapPin size={16} className="mr-2" />
-                      {location}
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-green-400">
-                      {data.financialAnalysis.annualROI}%
-                    </div>
-                    <div className="text-sm text-white/60">Annual ROI</div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <DollarSign className="text-green-400" size={20} />
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {formatCurrency(data.financialAnalysis.monthlySavings)}
-                    </div>
-                    <div className="text-xs text-white/60">Monthly Savings</div>
-                  </div>
-
-                  <div className="text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <Leaf className="text-green-400" size={20} />
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {data.environmentalImpact.co2Reduction.toLocaleString()}
-                    </div>
-                    <div className="text-xs text-white/60">kg CO₂/year</div>
-                  </div>
-
-                  <div className="text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <TrendingUp className="text-blue-400" size={20} />
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {data.financialAnalysis.paybackPeriod}
-                    </div>
-                    <div className="text-xs text-white/60">Years Payback</div>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-white mb-2">
-                    {isRescueCase ? "Failed System" : "Challenge"}
-                  </h4>
-                  <p className="text-white/80 text-sm line-clamp-3">
-                    {data.projectOverview.challenge}
-                  </p>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-white mb-2">
-                    {isRescueCase ? "Rescue Solution" : "Solution"}
-                  </h4>
-                  <p className="text-white/80 text-sm line-clamp-3">
-                    {data.projectOverview.solution}
-                  </p>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-white mb-2">Results</h4>
-                  <p className="text-white/80 text-sm line-clamp-3">
-                    {data.projectOverview.results}
-                  </p>
-                </div>
-
-                <Link
-                  to={`/solarprojects/${projectId}`}
-                  className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-                >
-                  {isRescueCase ? "View Rescue Story" : "View Full Case Study"}
-                  <ArrowRight size={16} className="ml-2" />
-                </Link>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
 
-        {/* No Results */}
-        {filteredCaseStudies.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-white/60 text-lg mb-4">
-              No case studies found matching your criteria.
+              {totalPages > 1 && (
+                <nav className="flex justify-center items-center space-x-2 sm:space-x-4 mt-12">
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
+                  >
+                    Previous
+                  </button>
+                  <span className="text-white font-medium">
+                    Page {currentPage} of {totalPages}
+                  </span>
+                  <button
+                    onClick={() =>
+                      setCurrentPage((p) => Math.min(totalPages, p + 1))
+                    }
+                    disabled={currentPage === totalPages}
+                    className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
+                  >
+                    Next
+                  </button>
+                </nav>
+              )}
+            </>
+          ) : (
+            <div className="text-center py-16">
+              <p className="text-xl text-white/80">
+                No case studies found matching your criteria.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchTerm("");
+                  setLocationFilter("");
+                  setSystemSizeFilter("");
+                }}
+                className="text-blue-400 hover:text-blue-300 transition-colors mt-4"
+              >
+                Clear all filters
+              </button>
             </div>
-            <button
-              onClick={() => {
-                setSearchTerm("");
-                setSelectedLocation("");
-                setSelectedSystemSize("");
-              }}
-              className="text-blue-400 hover:text-blue-300 transition-colors"
-            >
-              Clear all filters
-            </button>
-          </div>
-        )}
+          )}
+        </main>
       </div>
     </BeamsBackground>
   );

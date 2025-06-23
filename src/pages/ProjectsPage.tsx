@@ -12,9 +12,11 @@ import {
   Home,
   ArrowRight,
   Heart,
+  BookOpen,
 } from "lucide-react";
 import { Helmet } from "react-helmet";
 import BeamsBackground from "@/components/BeamsBackground";
+import { caseStudies } from "@/data/caseStudies";
 
 const projects = [
   {
@@ -500,6 +502,7 @@ const ProjectsPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {paginated.map((proj, idx) => {
               const isRescueCase = proj.id === "bacoor-cavite-rescue";
+              const hasCaseStudy = Object.keys(caseStudies).includes(proj.id);
 
               return (
                 <article
@@ -507,6 +510,8 @@ const ProjectsPage: React.FC = () => {
                   className={`flex flex-col backdrop-blur-lg rounded-lg p-3 sm:p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center cursor-pointer min-h-[480px] sm:min-h-[540px] ${
                     isRescueCase
                       ? "bg-gradient-to-br from-red-500/10 to-orange-500/10 border-2 border-red-400/30"
+                      : hasCaseStudy
+                      ? "bg-gradient-to-br from-blue-500/10 to-green-500/10 border-2 border-blue-400/30"
                       : "bg-white/10 border border-white/20 hover:border-blue-400"
                   }`}
                 >
@@ -527,12 +532,19 @@ const ProjectsPage: React.FC = () => {
                           target.src = "/images/placeholder.jpg";
                         }}
                       />
-                      {isRescueCase && (
+                      {hasCaseStudy && (
                         <div className="absolute top-2 right-2">
-                          <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
-                            <Heart className="h-3 w-3 mr-1" />
-                            Rescue
-                          </div>
+                          {isRescueCase ? (
+                            <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
+                              <Heart className="h-3 w-3 mr-1" />
+                              Rescue
+                            </div>
+                          ) : (
+                            <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-blue-500 to-green-500 text-white text-xs font-bold rounded-full shadow-lg">
+                              <BookOpen className="h-3 w-3 mr-1" />
+                              Case Study
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -595,7 +607,11 @@ const ProjectsPage: React.FC = () => {
                         </div>
                       </div>
                       <span className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 font-medium mt-2 text-sm sm:text-base transition-colors">
-                        {isRescueCase ? "View Rescue Story" : "Read more"}
+                        {isRescueCase
+                          ? "View Rescue Story"
+                          : hasCaseStudy
+                          ? "View Case Study"
+                          : "Read more"}
                         <ArrowRight size={16} />
                       </span>
                     </div>
