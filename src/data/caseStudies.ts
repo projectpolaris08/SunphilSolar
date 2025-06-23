@@ -123,6 +123,61 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       },
     ],
   },
+  "commonwealth-quezon-city": {
+    projectOverview: {
+      challenge:
+        "The client was experiencing high Meralco bills ranging from ₱4,000 to ₱6,000 due to a monthly consumption of 280-350 kWh. The rising costs were a constant financial stress for the household.",
+      solution:
+        "Sunphil Solar designed and installed a custom 6kW hybrid solar system. The setup includes a 6kW Deye inverter, 10 high-efficiency 615W Canadian Bifacial panels, and a 51.2V 314Ah LiFePO₄ battery for backup power and nighttime use.",
+      results:
+        "The client's Meralco bill plummeted to just ₱96.37 in the first month. Grid consumption was reduced by 98%, leading to monthly savings of over ₱5,000 and providing energy security during power outages.",
+    },
+    financialAnalysis: {
+      totalInvestment: 280000,
+      monthlySavings: 5000,
+      paybackPeriod: 4.7,
+      annualROI: 21.4,
+      lifetimeSavings: 1220000,
+    },
+    environmentalImpact: {
+      co2Reduction: 9600,
+      treesEquivalent: 457,
+      annualEnergyProduction: 9855,
+    },
+    performanceMetrics: {
+      systemEfficiency: 90,
+      uptime: 99.9,
+      peakOutput: 6,
+      averageDailyProduction: 27,
+    },
+    challenges: [
+      "Soaring Meralco bills in the ₱4,000–₱6,000 range.",
+      "High monthly energy consumption of 280–350 kWh.",
+      "Lack of energy stability and no protection from power outages.",
+      "Anticipated increase in electricity costs during summer.",
+    ],
+    solutions: [
+      "Installation of a 6kW Deye Hybrid Inverter for smart energy management.",
+      "Use of 10 high-efficiency 615W Canadian Bifacial Solar Panels to maximize generation.",
+      "Integration of a 51.2V 314Ah LiFePO₄ Battery for backup and nighttime power.",
+      "A custom-designed system tailored to the client's specific consumption patterns.",
+      "The system is designed to be future-ready for easy upgrades.",
+    ],
+    testimonials: {
+      quote:
+        "Hindi ako nagkamali sa investment ko, saka syempre, hindi ako nagkamali na kayo nag-install. Sulit ang battery ninyo—hindi tulad ng iba na mababa ang capacity pero mahal.",
+      author: "Gerry Pacammara",
+      role: "Homeowner, Brgy. Commonwealth, Quezon City",
+    },
+    gallery: [
+      {
+        src: "/images/gerry-pacammara.jpg",
+        alt: "Before and after Meralco bill for Gerry Pacammara",
+        caption:
+          "The client's bill dropped from over ₱5,000 to just ₱96.37 after the solar installation.",
+      },
+    ],
+  },
 };
 
 export default caseStudies;

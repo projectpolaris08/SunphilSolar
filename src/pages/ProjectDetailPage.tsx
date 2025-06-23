@@ -588,7 +588,7 @@ const projects: { [key: string]: Project } = {
       "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery provides essential backup for nighttime usage or brownouts, with long service life and safety certifications.",
     ],
     benefits: [
-      "Save up to 75% on monthly electric bills",
+      "Save up to 98% on monthly electric bills",
       "Backup power for essential appliances like lights, fans, routers, and refrigerators",
       "Reduces over 800–1,000 kg of CO₂ emissions monthly",
       "Ideal for urban homes with limited roof space and high energy costs",

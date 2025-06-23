@@ -398,11 +398,19 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ data, projectId }) => {
           <h3 className="text-2xl font-bold text-white mb-8 text-center">
             Project Gallery
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div
+            className={
+              data.gallery.length === 1
+                ? "flex justify-center"
+                : "grid grid-cols-1 sm:grid-cols-2 gap-8"
+            }
+          >
             {data.gallery.map((image, index) => (
               <div
                 key={index}
-                className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10"
+                className={`bg-white/5 p-4 rounded-xl shadow-lg border border-white/10 ${
+                  data.gallery?.length === 1 ? "w-full max-w-2xl" : ""
+                }`}
               >
                 <img
                   src={image.src}
@@ -492,17 +500,22 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ data, projectId }) => {
 // Simple Tree icon component since it's not in lucide-react
 const Tree: React.FC<{ className?: string }> = ({ className }) => (
   <svg
-    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    viewBox="0 0 24 24"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-    />
+    <path d="M8 19h8" />
+    <path d="M12 19V9" />
+    <path d="M4 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+    <path d="M19 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+    <path d="M14 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
   </svg>
 );
 
