@@ -11,6 +11,7 @@ import { NotFoundPage } from "../pages/NotFoundPage";
 import WeatherWidget from "../components/weather/WeatherWidget";
 import ProjectsPage from "../pages/ProjectsPage";
 import ProjectDetailPage from "../pages/ProjectDetailPage";
+import CaseStudiesPage from "../pages/CaseStudiesPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Cookies from "../pages/Cookies";
 import FAQ from "../pages/FAQ";
@@ -49,6 +50,7 @@ const AppRoutes = ({
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/aftersales" element={<AfterSalesPage />} />
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
 
           {/* Weather widget route */}
           <Route

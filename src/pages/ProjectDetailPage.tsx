@@ -12,6 +12,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import BeamsBackground from "@/components/BeamsBackground";
+import CaseStudy from "@/components/CaseStudy";
+import { caseStudies } from "@/data/caseStudies";
 
 interface Project {
   image: string;
@@ -233,6 +235,27 @@ const projects: { [key: string]: Project } = {
     ],
     description:
       "Sunphil Solar completed a 12kW hybrid solar system installation for a residential client in Bacoor, Cavite, designed to deliver substantial energy savings while providing backup power during outages. This setup is ideal for households with high electricity usage and a need for uninterrupted power supply.",
+  },
+  "bacoor-cavite-rescue": {
+    image: "/images/project9.jpg",
+    location: "Bacoor, Cavite, PH (Rescue)",
+    system: "12kW Hybrid Solar (Upgraded)",
+    date: "2025-05-19",
+    clientType: "Residential",
+    specification: [
+      "12kW Deye Hybrid Inverter (Upgraded)",
+      "14 x 615W Canadian Bifacial Solar Panels",
+      "2 x 51.2V 314Ah LiFePO4 Batteries",
+      "Rooftop Truss Expansion for additional panel support",
+    ],
+    benefits: [
+      "Over ₱16,000 in monthly savings",
+      "Complete energy independence from unreliable grid",
+      "Full system warranty and ongoing support",
+      "Redemption from a failed solar installation by another provider",
+    ],
+    description:
+      "This project is a testament to our commitment to rescuing homeowners from failed solar installations. The client was left with an underperforming 5kW system and rising bills. Sunphil Solar stepped in to redesign and upgrade the entire system, transforming a story of frustration into one of significant savings and energy independence.",
   },
   "bagumbong-caloocan": {
     image: "/images/project10.jpg",
@@ -559,6 +582,7 @@ const projects: { [key: string]: Project } = {
 const ProjectDetailPage: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projects[projectId as keyof typeof projects];
+  const caseStudyData = caseStudies[projectId as keyof typeof caseStudies];
 
   if (!project) {
     return (
@@ -729,6 +753,13 @@ const ProjectDetailPage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Case Study Section */}
+        {caseStudyData && (
+          <div className="mt-16">
+            <CaseStudy data={caseStudyData} projectId={projectId!} />
+          </div>
+        )}
       </div>
     </BeamsBackground>
   );

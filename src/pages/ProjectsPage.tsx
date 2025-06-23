@@ -10,6 +10,8 @@ import {
   Star,
   ChevronRight,
   Home,
+  ArrowRight,
+  Heart,
 } from "lucide-react";
 import { Helmet } from "react-helmet";
 import BeamsBackground from "@/components/BeamsBackground";
@@ -148,15 +150,16 @@ const projects = [
     ],
   },
   {
-    id: "bacoor-cavite",
+    id: "bacoor-cavite-rescue",
     image: "/images/project9.jpg",
-    location: "Bacoor, Cavite, PH",
-    system: "12kW Hybrid Solar",
+    location: "Bacoor, Cavite, PH (Rescue)",
+    system: "12kW Hybrid Solar (Upgraded)",
     date: "2025-05-19",
     specification: [
-      "12kW Deye Hybrid Inverter",
+      "12kW Deye Hybrid Inverter (Upgraded)",
       "14 x 615W Canadian Bifacial Solar Panels",
-      "2 x 51.2v 314Ah LiFePO₄ Batteries",
+      "2 x 51.2V 314Ah LiFePO₄ Batteries",
+      "Rooftop Truss Expansion",
     ],
   },
   {
@@ -483,94 +486,112 @@ const ProjectsPage: React.FC = () => {
         </header>
         <main>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {paginated.map((proj, idx) => (
-              <article
-                key={idx}
-                className="flex flex-col bg-white/10 backdrop-blur-lg rounded-lg p-3 sm:p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center border border-white/20 hover:border-blue-400 cursor-pointer min-h-[480px] sm:min-h-[540px]"
-              >
-                <Link
-                  to={`/solarprojects/${proj.id}`}
-                  className="flex flex-col h-full"
+            {paginated.map((proj, idx) => {
+              const isRescueCase = proj.id === "bacoor-cavite-rescue";
+
+              return (
+                <article
+                  key={idx}
+                  className={`flex flex-col backdrop-blur-lg rounded-lg p-3 sm:p-4 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center cursor-pointer min-h-[480px] sm:min-h-[540px] ${
+                    isRescueCase
+                      ? "bg-gradient-to-br from-red-500/10 to-orange-500/10 border-2 border-red-400/30"
+                      : "bg-white/10 border border-white/20 hover:border-blue-400"
+                  }`}
                 >
-                  <div className="relative w-full h-40 sm:h-48 mb-2 bg-gray-900/50 rounded overflow-hidden">
-                    <img
-                      src={proj.image}
-                      alt={`${proj.system} installation in ${proj.location}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      width="800"
-                      height="600"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/images/placeholder.jpg";
-                      }}
-                    />
-                  </div>
-                  <div className="flex items-center justify-center gap-1 sm:gap-2 font-bold text-white mb-1 text-sm sm:text-base">
-                    <MapPin className="text-blue-400" size={16} />
-                    <span className="truncate">{proj.location}</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-1 sm:gap-2 text-white mb-1 text-sm sm:text-base">
-                    <Sun className="text-yellow-400" size={16} />
-                    <span>{proj.system}</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-1 sm:gap-2 text-white text-sm sm:text-base">
-                    <Calendar className="text-blue-400" size={16} />
-                    <span>{proj.date}</span>
-                  </div>
-                  <div className="bg-white/5 rounded p-2 sm:p-3 mt-2 sm:mt-3 text-left flex flex-col flex-grow">
-                    <ul className="pl-4 sm:pl-5 text-white font-semibold space-y-1 sm:space-y-2 text-sm sm:text-base">
-                      {proj.specification.map((spec, i) => {
-                        let Icon = CheckCircle;
-                        if (/inverter/i.test(spec)) Icon = Settings;
-                        else if (/solar.*panel/i.test(spec)) Icon = Sun;
-                        else if (/batter/i.test(spec)) Icon = Battery;
-                        return (
-                          <li
-                            key={i}
-                            className="flex items-start gap-1 sm:gap-2 text-white font-semibold"
-                          >
-                            {Icon === Sun ? (
-                              <Sun
-                                className="text-yellow-400 mt-1 flex-shrink-0"
-                                size={18}
-                              />
-                            ) : (
-                              <Icon
-                                className="text-blue-400 mt-1 flex-shrink-0"
-                                size={18}
-                              />
-                            )}
-                            <span className="line-clamp-2">{spec}</span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    <div className="flex items-center gap-1 sm:gap-2 mt-auto pt-2 sm:pt-4">
-                      <CheckCircle
-                        className="text-green-400 flex-shrink-0"
-                        size={18}
+                  <Link
+                    to={`/solarprojects/${proj.id}`}
+                    className="flex flex-col h-full"
+                  >
+                    <div className="relative w-full h-40 sm:h-48 mb-2 bg-gray-900/50 rounded overflow-hidden">
+                      <img
+                        src={proj.image}
+                        alt={`${proj.system} installation in ${proj.location}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        width="800"
+                        height="600"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/images/placeholder.jpg";
+                        }}
                       />
-                      <span className="font-semibold text-white text-sm sm:text-base">
-                        Client Review:
-                      </span>
-                      <div className="flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="text-yellow-400 fill-yellow-400"
-                            size={16}
-                          />
-                        ))}
-                      </div>
+                      {isRescueCase && (
+                        <div className="absolute top-2 right-2">
+                          <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
+                            <Heart className="h-3 w-3 mr-1" />
+                            Rescue
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <span className="inline-block text-blue-400 hover:text-blue-300 font-medium mt-2 text-sm sm:text-base transition-colors">
-                      Read more &rarr;
-                    </span>
-                  </div>
-                </Link>
-              </article>
-            ))}
+                    <div className="flex items-center justify-center gap-1 sm:gap-2 font-bold text-white mb-1 text-sm sm:text-base">
+                      <MapPin className="text-blue-400" size={16} />
+                      <span className="truncate">{proj.location}</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-1 sm:gap-2 text-white mb-1 text-sm sm:text-base">
+                      <Sun className="text-yellow-400" size={16} />
+                      <span>{proj.system}</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-1 sm:gap-2 text-white text-sm sm:text-base">
+                      <Calendar className="text-blue-400" size={16} />
+                      <span>{proj.date}</span>
+                    </div>
+                    <div className="bg-white/5 rounded p-2 sm:p-3 mt-2 sm:mt-3 text-left flex flex-col flex-grow">
+                      <ul className="pl-4 sm:pl-5 text-white font-semibold space-y-1 sm:space-y-2 text-sm sm:text-base">
+                        {proj.specification.map((spec, i) => {
+                          let Icon = CheckCircle;
+                          if (/inverter/i.test(spec)) Icon = Settings;
+                          else if (/solar.*panel/i.test(spec)) Icon = Sun;
+                          else if (/batter/i.test(spec)) Icon = Battery;
+                          return (
+                            <li
+                              key={i}
+                              className="flex items-start gap-1 sm:gap-2 text-white font-semibold"
+                            >
+                              {Icon === Sun ? (
+                                <Sun
+                                  className="text-yellow-400 mt-1 flex-shrink-0"
+                                  size={18}
+                                />
+                              ) : (
+                                <Icon
+                                  className="text-blue-400 mt-1 flex-shrink-0"
+                                  size={18}
+                                />
+                              )}
+                              <span className="line-clamp-2">{spec}</span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                      <div className="flex items-center gap-1 sm:gap-2 mt-auto pt-2 sm:pt-4">
+                        <CheckCircle
+                          className="text-green-400 flex-shrink-0"
+                          size={18}
+                        />
+                        <span className="font-semibold text-white text-sm sm:text-base">
+                          Client Review:
+                        </span>
+                        <div className="flex gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="text-yellow-400 fill-yellow-400"
+                              size={16}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <span className="inline-block text-blue-400 hover:text-blue-300 font-medium mt-2 text-sm sm:text-base transition-colors">
+                        {isRescueCase
+                          ? "View Rescue Story &rarr;"
+                          : "Read more &rarr;"}
+                      </span>
+                    </div>
+                  </Link>
+                </article>
+              );
+            })}
           </div>
         </main>
         <nav
@@ -600,6 +621,28 @@ const ProjectsPage: React.FC = () => {
             Next
           </button>
         </nav>
+
+        {/* Case Studies CTA */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-lg rounded-xl p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+              Want to See Detailed Results?
+            </h2>
+            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+              Explore our comprehensive case studies with detailed financial
+              analysis, environmental impact metrics, and real customer
+              testimonials. See exactly how much our clients are saving and the
+              challenges we solved.
+            </p>
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+            >
+              View Case Studies
+              <ArrowRight className="ml-2" size={20} />
+            </Link>
+          </div>
+        </div>
       </div>
     </BeamsBackground>
   );
