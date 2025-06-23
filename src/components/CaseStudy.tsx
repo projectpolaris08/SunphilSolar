@@ -196,21 +196,21 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ data, projectId }) => {
               {data.financialAnalysis.annualROI}%
             </p>
           </div>
-        </div>
 
-        <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-green-200">
-          <div className="flex items-center mb-4">
-            <Shield className="h-6 w-6 text-green-600 mr-3" />
-            <h4 className="text-lg font-semibold text-green-900">
-              Lifetime Savings Projection
-            </h4>
+          <div className="md:col-span-2 lg:col-span-2 mt-8 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-green-200">
+            <div className="flex items-center mb-4">
+              <Shield className="h-6 w-6 text-green-600 mr-3" />
+              <h4 className="text-lg font-semibold text-green-900">
+                Lifetime Savings Projection
+              </h4>
+            </div>
+            <p className="text-3xl font-bold text-green-700">
+              {formatCurrency(data.financialAnalysis.lifetimeSavings)}
+            </p>
+            <p className="text-sm text-green-600 mt-2">
+              Over 25-year system lifetime
+            </p>
           </div>
-          <p className="text-3xl font-bold text-green-700">
-            {formatCurrency(data.financialAnalysis.lifetimeSavings)}
-          </p>
-          <p className="text-sm text-green-600 mt-2">
-            Over 25-year system lifetime
-          </p>
         </div>
       </div>
 
