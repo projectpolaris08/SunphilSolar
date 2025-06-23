@@ -12,6 +12,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "san-pascual-batangas",
+    image: "/images/project28.jpg",
+    location: "San Pascual, Batangas, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-23",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Intelligent energy manager that balances solar, battery, and grid power seamlessly.",
+      "18 × 615W Canadian Bifacial Panels – Dual-sided modules that capture sunlight from front and rear surfaces, boosting daily yield.",
+      "51.2V 314Ah LiFePO₄ – High-capacity lithium battery stores surplus solar for night use and powers essentials during outages.",
+    ],
+    benefits: [
+      "Up to 80% monthly bill reduction through solar self-consumption",
+      "Reliable backup power for lights, fridge, Wi-Fi, and other essentials during grid failures",
+      "~1,100–1,300 kg CO₂ saved every month, supporting Batangas' cleaner-energy goals",
+      "Built for coastal/provincial conditions—components specified for heat, humidity, and salt-air resilience",
+    ],
+    description:
+      "Sunphil Solar delivered a robust 8kW hybrid solar system for a home in San Pascual, Batangas. Engineered for big daytime savings and dependable nighttime backup, this setup helps the homeowner slash electricity costs while ensuring power security during brownouts—common in fast-growing provincial areas. From San Pascual to Lemery, Bauan, and Batangas City, Sunphil Solar equips homeowners with hybrid systems that deliver true energy independence, lower electric bills, and long-term peace of mind.",
+  },
+  {
     id: "commonwealth-quezon-city",
     image: "/images/project27.jpg",
     location: "Brgy. Commonwealth, Quezon City, Metro Manila",
