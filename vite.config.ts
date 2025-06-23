@@ -9,18 +9,15 @@ const blogPostSlugs: string[] = JSON.parse(
   fs.readFileSync("./src/data/blogPostSlugs.json", "utf-8")
 );
 
-// ✅ Dynamically read project IDs from caseStudies.ts
-function getProjectIdsFromCaseStudies(): string[] {
-  const caseStudiesContent = fs.readFileSync(
-    "./src/data/caseStudies.ts",
-    "utf-8"
-  );
-  const regex = /"([^"]+)":\s*{[\s\S]*?projectOverview/g;
-  const matches = [...caseStudiesContent.matchAll(regex)];
+// ✅ Dynamically read project IDs from projects.ts
+function getProjectIdsFromProjects(): string[] {
+  const projectsContent = fs.readFileSync("./src/data/projects.ts", "utf-8");
+  const regex = /id:\s*"([^"]+)"/g;
+  const matches = [...projectsContent.matchAll(regex)];
   return matches.map((match) => match[1]);
 }
 
-const projectRoutes = getProjectIdsFromCaseStudies();
+const projectRoutes = getProjectIdsFromProjects();
 
 const staticRoutes = [
   "/products",
