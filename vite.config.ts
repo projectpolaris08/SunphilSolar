@@ -9,35 +9,18 @@ const blogPostSlugs: string[] = JSON.parse(
   fs.readFileSync("./src/data/blogPostSlugs.json", "utf-8")
 );
 
-// Add all project routes
-const projectRoutes = [
-  "dasmariñas-cavite",
-  "vista-verde-north-caloocan",
-  "sariaya-quezon",
-  "goa-camarines-sur",
-  "cabanatuan-nueva-ecija",
-  "porac-pampanga",
-  "birvillage-qc",
-  "cabanatuan-nueva-ecija-6kw",
-  "lubao-pampanga",
-  "umingan-pangasinan",
-  "bacoor-cavite",
-  "bagumbong-caloocan",
-  "lemery-batangas",
-  "pandacan-manila",
-  "alisha-nueva-ecija",
-  "iba-zambales",
-  "binangonan-rizal",
-  "siruma-camarines-sur",
-  "san-antonio-quezon",
-  "upper-bicutan-taguig",
-  "taytay-rizal",
-  "batasan-qc",
-  "san-mateo-rizal",
-  "san-mateo-rizal-2",
-  "lemery-batangas-2",
-  "san-fernando-pampanga",
-];
+// ✅ Dynamically read project IDs from caseStudies.ts
+function getProjectIdsFromCaseStudies(): string[] {
+  const caseStudiesContent = fs.readFileSync(
+    "./src/data/caseStudies.ts",
+    "utf-8"
+  );
+  const regex = /"([^"]+)":\s*{[\s\S]*?projectOverview/g;
+  const matches = [...caseStudiesContent.matchAll(regex)];
+  return matches.map((match) => match[1]);
+}
+
+const projectRoutes = getProjectIdsFromCaseStudies();
 
 const staticRoutes = [
   "/products",
@@ -46,6 +29,7 @@ const staticRoutes = [
   "/contact",
   "/blog",
   "/solarprojects",
+  "/case-studies",
 ];
 
 const dynamicRoutes = [
