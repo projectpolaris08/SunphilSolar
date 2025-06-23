@@ -576,6 +576,26 @@ const projects: { [key: string]: Project } = {
     description:
       "Sunphil Solar completed an 8kW hybrid solar installation for a residence in Dasmariñas, Cavite—a growing suburban area where reliable and cost-effective energy is in high demand. This system combines high-efficiency bifacial panels, smart energy management, and battery backup, ensuring the client experiences lower electricity bills and 24/7 energy reliability. Sunphil Solar proudly delivers modern solar energy systems across Dasmariñas, Imus, General Trias, and nearby towns—designed for long-term savings and energy security. Our hybrid systems are optimized for both on-grid use and emergency backup, giving Cavite homeowners peace of mind.",
   },
+  "commonwealth-quezon-city": {
+    image: "/images/project27.jpg",
+    location: "Brgy. Commonwealth, Quezon City, Metro Manila",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-04",
+    clientType: "Residential",
+    specification: [
+      "6kW Deye Hybrid Inverter – A smart hybrid inverter that automatically switches between solar, battery, and grid power to ensure consistent and reliable energy flow.",
+      "10 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules that capture sunlight from both the front and rear sides, enhancing solar production even in compact Metro Manila rooftops.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery provides essential backup for nighttime usage or brownouts, with long service life and safety certifications.",
+    ],
+    benefits: [
+      "Save up to 75% on monthly electric bills",
+      "Backup power for essential appliances like lights, fans, routers, and refrigerators",
+      "Reduces over 800–1,000 kg of CO₂ emissions monthly",
+      "Ideal for urban homes with limited roof space and high energy costs",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar energy system for a homeowner in Barangay Commonwealth, Quezon City—a bustling residential area in Metro Manila. This system is designed to cut electricity costs while providing backup power during outages, making it ideal for families dealing with high Meralco bills and grid instability. This project highlights Sunphil Solar's commitment to powering Metro Manila with smart, reliable, and compact solar systems. We proudly serve Brgy. Commonwealth, Fairview, Novaliches, and other parts of Quezon City, helping homeowners reduce their dependency on grid electricity.",
+  },
   // Add more projects as needed
 };
 

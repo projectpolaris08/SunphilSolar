@@ -18,6 +18,18 @@ import BeamsBackground from "@/components/BeamsBackground";
 
 const projects = [
   {
+    id: "commonwealth-quezon-city",
+    image: "/images/project27.jpg",
+    location: "Brgy. Commonwealth, Quezon City, Metro Manila",
+    system: "6kW Hybrid Solar",
+    date: "2025-05-04",
+    specification: [
+      "6kW Deye Hybrid Inverter",
+      "10 × 615W Canadian Bifacial Solar Panels",
+      "51.2V 314Ah LiFePO₄ Battery",
+    ],
+  },
+  {
     id: "dasmariñas-cavite",
     image: "/images/project26.jpg",
     location: "Dasmariñas, Cavite, PH",
@@ -582,10 +594,9 @@ const ProjectsPage: React.FC = () => {
                           ))}
                         </div>
                       </div>
-                      <span className="inline-block text-blue-400 hover:text-blue-300 font-medium mt-2 text-sm sm:text-base transition-colors">
-                        {isRescueCase
-                          ? "View Rescue Story &rarr;"
-                          : "Read more &rarr;"}
+                      <span className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 font-medium mt-2 text-sm sm:text-base transition-colors">
+                        {isRescueCase ? "View Rescue Story" : "Read more"}
+                        <ArrowRight size={16} />
                       </span>
                     </div>
                   </Link>
@@ -624,7 +635,7 @@ const ProjectsPage: React.FC = () => {
 
         {/* Case Studies CTA */}
         <div className="mt-12 sm:mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-lg rounded-xl p-8 border border-white/20">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               Want to See Detailed Results?
             </h2>
@@ -636,7 +647,7 @@ const ProjectsPage: React.FC = () => {
             </p>
             <Link
               to="/case-studies"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center px-8 py-3 bg-white/20 text-white font-bold rounded-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-white/30"
             >
               View Case Studies
               <ArrowRight className="ml-2" size={20} />
