@@ -13,6 +13,10 @@ import {
   ArrowRight,
   Heart,
   BookOpen,
+  Gauge,
+  BatteryCharging,
+  Home as HomeIcon,
+  Leaf,
 } from "lucide-react";
 import { Helmet } from "react-helmet";
 import BeamsBackground from "@/components/BeamsBackground";
@@ -24,6 +28,96 @@ projects.sort(
 );
 
 const projectsPerPage = 6;
+
+// Utility functions to extract kW values
+function extractKW(str: string): number {
+  const match = str.match(/([0-9]+(?:\.[0-9]+)?)\s*kW/i);
+  return match ? parseFloat(match[1]) : 0;
+}
+function extractPanelKW(str: string): number {
+  // e.g., "18 × 615W Canadian Bifacial Panels"
+  const match = str.match(/([0-9]+)\s*[×x]\s*([0-9]+)W/i);
+  if (match) {
+    const count = parseInt(match[1], 10);
+    const watt = parseInt(match[2], 10);
+    return (count * watt) / 1000;
+  }
+  return extractKW(str); // fallback for kW in string
+}
+function extractBatteryKW(str: string): number {
+  // e.g., "51.2V 314Ah LiFePO₄" or "2 x 51.2V 314Ah LiFePO₄"
+  const match = str.match(
+    /([0-9]+)\s*[×x]\s*([0-9]+\.?[0-9]*)V\s*([0-9]+\.?[0-9]*)Ah/i
+  );
+  if (match) {
+    const count = parseInt(match[1], 10);
+    const voltage = parseFloat(match[2]);
+    const ah = parseFloat(match[3]);
+    return (count * voltage * ah) / 1000; // kWh
+  }
+  const match2 = str.match(/([0-9]+\.?[0-9]*)V\s*([0-9]+\.?[0-9]*)Ah/i);
+  if (match2) {
+    const voltage = parseFloat(match2[1]);
+    const ah = parseFloat(match2[2]);
+    return (voltage * ah) / 1000;
+  }
+  return 0;
+}
+
+// Utility to extract CO2 reduction from benefits
+function extractCO2(benefits: string[] = []): number {
+  for (const benefit of benefits) {
+    // Match e.g. "1,100–1,300 kg CO₂" or "1,100 kg CO₂" or "1,100–1,300 kg of CO₂"
+    const match = benefit.match(
+      /([0-9,.]+)(?:–|-)?([0-9,.]+)?\s*kg\s*(?:of)?\s*CO₂/i
+    );
+    if (match) {
+      // If a range, take the average
+      const low = parseFloat(match[1].replace(/,/g, ""));
+      const high = match[2] ? parseFloat(match[2].replace(/,/g, "")) : low;
+      return (low + high) / 2;
+    }
+    // Match e.g. "1.2 tons CO₂"
+    const matchTons = benefit.match(/([0-9,.]+)\s*tons?\s*CO₂/i);
+    if (matchTons) {
+      return parseFloat(matchTons[1].replace(/,/g, "")) * 1000;
+    }
+  }
+  return 0;
+}
+
+const totalInverterKW = projects.reduce(
+  (sum, proj) =>
+    sum +
+    proj.specification
+      .filter((s) => /inverter/i.test(s))
+      .reduce((s, spec) => s + extractKW(spec), 0),
+  0
+);
+const totalPanelKW = projects.reduce(
+  (sum, proj) =>
+    sum +
+    proj.specification
+      .filter((s) => /panel/i.test(s))
+      .reduce((s, spec) => s + extractPanelKW(spec), 0),
+  0
+);
+const totalBatteryKW = projects.reduce(
+  (sum, proj) =>
+    sum +
+    proj.specification
+      .filter((s) => /batter/i.test(s))
+      .reduce((s, spec) => s + extractBatteryKW(spec), 0),
+  0
+);
+
+const totalCO2Kg = projects.reduce(
+  (sum, proj) => sum + extractCO2(proj.benefits),
+  0
+);
+const totalCO2Tons = totalCO2Kg / 1000;
+
+const totalHomes = projects.length;
 
 const ProjectsPage: React.FC = () => {
   const [page, setPage] = useState(1);
@@ -159,18 +253,92 @@ const ProjectsPage: React.FC = () => {
             Our Hybrid Solar Installations Across the Philippines
           </h1>
           <p className="text-sm sm:text-base lg:text-lg text-center max-w-2xl mx-auto text-white/80 px-2 sm:px-4">
-            Sunphil Solar is a trusted solar company in the Philippines,
-            specializing in high-performance hybrid solar systems for homes and
-            businesses. From 6kW residential setups in Quezon City to 32kW
-            commercial installations in Quezon Province and off-grid projects in
-            Camarines Sur, we deliver customized, turnkey solar solutions. We
-            use premium brands like Deye, Canadian Solar, and LiFePO₄ batteries
-            to ensure efficiency, durability, and long-term savings. Ready to go
-            solar? Contact Sunphil Solar today and start your journey to clean,
-            affordable energy.
+            Sunphil Solar delivers high-performance hybrid solar systems for
+            homes and businesses across the Philippines. From city rooftops to
+            provincial estates, we provide turnkey solutions using premium
+            brands like Deye, Canadian Solar, and LiFePO₄ batteries. Experience
+            reliable savings and energy independence—start your solar journey
+            with Sunphil today!
           </p>
         </header>
         <main>
+          {/* Summary Cards */}
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 w-full">
+              {/* Total Homes */}
+              <div className="w-full bg-blue-100/80 border border-blue-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+                <div className="flex items-center w-full justify-between mb-2">
+                  <span className="text-gray-700 text-sm font-medium">
+                    Total Homes
+                  </span>
+                  <HomeIcon className="h-6 w-6 text-blue-400" />
+                </div>
+                <div className="text-2xl font-bold text-blue-600">
+                  {totalHomes.toLocaleString()}
+                </div>
+              </div>
+              {/* Total Inverter kW */}
+              <div className="w-full bg-yellow-100/80 border border-yellow-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+                <div className="flex items-center w-full justify-between mb-2">
+                  <span className="text-gray-700 text-sm font-medium">
+                    Total Inverter kW
+                  </span>
+                  <Gauge className="h-6 w-6 text-yellow-500" />
+                </div>
+                <div className="text-2xl font-extrabold text-yellow-600">
+                  {totalInverterKW.toLocaleString(undefined, {
+                    maximumFractionDigits: 0,
+                  })}{" "}
+                  <span className="font-bold">kW</span>
+                </div>
+              </div>
+              {/* Total Solar Panel kW */}
+              <div className="w-full bg-green-100/80 border border-green-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+                <div className="flex items-center w-full justify-between mb-2">
+                  <span className="text-gray-700 text-sm font-medium">
+                    Total Solar Panel kW
+                  </span>
+                  <Sun className="h-6 w-6 text-green-500" />
+                </div>
+                <div className="text-2xl font-extrabold text-green-600">
+                  {totalPanelKW.toLocaleString(undefined, {
+                    maximumFractionDigits: 0,
+                  })}{" "}
+                  <span className="font-bold">kW</span>
+                </div>
+              </div>
+              {/* Total Battery kWh */}
+              <div className="w-full bg-purple-100/80 border border-purple-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+                <div className="flex items-center w-full justify-between mb-2">
+                  <span className="text-gray-700 text-sm font-medium">
+                    Total Battery kWh
+                  </span>
+                  <BatteryCharging className="h-6 w-6 text-purple-500" />
+                </div>
+                <div className="text-2xl font-extrabold text-purple-600">
+                  {totalBatteryKW.toLocaleString(undefined, {
+                    maximumFractionDigits: 1,
+                  })}{" "}
+                  <span className="font-bold">kWh</span>
+                </div>
+              </div>
+              {/* Total CO₂ Reduction */}
+              <div className="w-full bg-green-100 border border-green-200 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+                <div className="flex items-center w-full justify-between mb-2">
+                  <span className="text-gray-700 text-sm font-medium">
+                    Total CO₂ Reduction
+                  </span>
+                  <Leaf className="h-6 w-6 text-green-700" />
+                </div>
+                <div className="text-2xl font-extrabold text-green-700">
+                  {totalCO2Tons.toLocaleString(undefined, {
+                    maximumFractionDigits: 1,
+                  })}{" "}
+                  <span className="font-bold">tons</span>
+                </div>
+              </div>
+            </section>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {paginated.map((proj, idx) => {
               const isRescueCase = proj.id === "bacoor-cavite-rescue";
@@ -236,7 +404,12 @@ const ProjectsPage: React.FC = () => {
                       <ul className="pl-4 sm:pl-5 text-white font-semibold space-y-1 sm:space-y-2 text-sm sm:text-base">
                         {proj.specification.map((spec, i) => {
                           let Icon = CheckCircle;
-                          if (/inverter/i.test(spec)) Icon = Settings;
+                          if (
+                            proj.id === "san-pascual-batangas" &&
+                            /panel/i.test(spec)
+                          )
+                            Icon = Sun;
+                          else if (/inverter/i.test(spec)) Icon = Settings;
                           else if (/solar.*panel/i.test(spec)) Icon = Sun;
                           else if (/batter/i.test(spec)) Icon = Battery;
                           return (

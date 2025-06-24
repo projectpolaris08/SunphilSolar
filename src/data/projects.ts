@@ -12,6 +12,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "sta-lucia-novaliches-qc",
+    image: "/images/project29.jpg",
+    location: "Sta. Lucia, Novaliches, Quezon City, Metro Manila, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-24",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smartly manages energy from solar panels, battery storage, and the grid to ensure efficient and seamless power use.",
+      "615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-life lithium battery stores excess power for night-time use and serves as backup during blackouts.",
+    ],
+    benefits: [
+      "Up to 80–85% savings on electricity bills",
+      "Reliable power backup for essential appliances during brownouts",
+      "~1,200 kg of CO₂ emissions reduced monthly",
+      "Ideal for urban homes in high-consumption areas like Novaliches and Commonwealth",
+    ],
+    description:
+      "Sunphil Solar installed a complete 8kW hybrid solar system in Sta. Lucia, Novaliches, giving the homeowner long-term savings, dependable backup power, and a cleaner energy footprint. This setup is optimized for households in Metro Manila where utility rates are high and power interruptions are common. Sunphil Solar continues to lead the way in providing hybrid solar systems across Quezon City, including Sta. Lucia, Fairview, Commonwealth, and Bagumbong—helping families gain energy independence and reduce their reliance on expensive grid power.",
+  },
+  {
     id: "san-pascual-batangas",
     image: "/images/project28.jpg",
     location: "San Pascual, Batangas, Philippines",
