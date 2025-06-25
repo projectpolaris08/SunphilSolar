@@ -145,9 +145,9 @@ export const projects: Project[] = [
     date: "2025-04-30",
     clientType: "Residential",
     specification: [
-      "2 x 16kW Deye Hybrid Inverter",
-      "54 x 615W Canadian Bifacial Solar Panels",
-      "4 x 51.2v 280Ah LiFePO₄ Batteries",
+      "2 x 16kW Deye Hybrid Inverter – Dual smart inverters that manage solar, battery, and grid power for efficient, seamless energy use in large homes.",
+      "54 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "4 x 51.2V 280Ah LiFePO₄ Batteries – Long-life lithium batteries store excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Energy Independence: This hybrid setup allows the homeowner to rely less on the grid and stay powered during outages.",
@@ -167,9 +167,9 @@ export const projects: Project[] = [
     date: "2025-03-18",
     clientType: "Residential / Small Commercial",
     specification: [
-      "2 x 12kW Deye Hybrid Inverter",
-      "48 x 610W Canadian Bifacial Solar Panels",
-      "4 x 51.2v 314Ah LiFePO₄ Batteries",
+      "2 x 12kW Deye Hybrid Inverter – Dual smart inverters that manage solar, battery, and grid power for efficient, seamless energy use in larger properties.",
+      "48 x 610W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "4 x 51.2V 314Ah LiFePO₄ Batteries – Long-life lithium batteries store excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Hybrid Power Reliability: Offers energy independence and backup power capability in areas with unstable grid supply.",
@@ -189,9 +189,9 @@ export const projects: Project[] = [
     date: "2025-04-12",
     clientType: "Residential",
     specification: [
-      "12kW Deye Hybrid Inverter",
-      "24 x 615W Canadian Bifacial Solar Panels",
-      "2 x 51.2v 280Ah LiFePO₄ Batteries",
+      "12kW Deye Hybrid Inverter – Smart inverter that manages solar, battery, and grid power for efficient, seamless energy use.",
+      "24 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "2 x 51.2V 280Ah LiFePO₄ Batteries – Long-life lithium batteries store excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Lower Electricity Bills: Significantly reduces monthly Meralco or local utility charges through solar self-consumption.",
@@ -211,9 +211,9 @@ export const projects: Project[] = [
     date: "2025-03-03",
     clientType: "Residential",
     specification: [
-      "8kW Deye Hybrid Inverter",
-      "18 x 615W Canadian Bifacial Solar Panels",
-      "51.2v 280Ah LiFePO₄ Battery",
+      "8kW Deye Hybrid Inverter – Smart inverter that manages solar, battery, and grid power for efficient, seamless energy use.",
+      "18 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "51.2V 280Ah LiFePO₄ Battery – Long-life lithium battery stores excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Lower Electric Bills: Reduces monthly energy costs through efficient solar generation and smart energy use.",
@@ -233,9 +233,9 @@ export const projects: Project[] = [
     date: "2025-03-07",
     clientType: "Residential",
     specification: [
-      "12kW Deye Hybrid Inverter",
-      "24 x 615W Canadian Bifacial Solar Panels",
-      "3 x 51.2v 280Ah LiFePO₄ Batteries",
+      "12kW Deye Hybrid Inverter – Smart inverter that manages solar, battery, and grid power for efficient, seamless energy use.",
+      "24 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "3 x 51.2V 280Ah LiFePO₄ Batteries – Long-life lithium batteries store excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Monthly Savings: Significant reduction in electricity bills through solar energy self-consumption.",
@@ -255,9 +255,9 @@ export const projects: Project[] = [
     date: "2025-03-15",
     clientType: "Residential",
     specification: [
-      "6kW Deye Hybrid Inverter",
-      "13 x 615W Canadian Bifacial Solar Panels",
-      "51.2v 314Ah LiFePO₄ Battery",
+      "6kW Deye Hybrid Inverter – Smart inverter that manages solar, battery, and grid power for efficient, seamless energy use.",
+      "13 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-life lithium battery stores excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Reduced Energy Bills: Homeowners enjoy monthly savings by relying on solar power for daily consumption.",
@@ -277,9 +277,9 @@ export const projects: Project[] = [
     date: "2025-05-08",
     clientType: "Residential",
     specification: [
-      "8kW Deye Hybrid Inverter",
-      "18 x 615W Canadian Bifacial Solar Panels",
-      "2 x 51.2v 314Ah LiFePO₄ Batteries",
+      "8kW Deye Hybrid Inverter – Smart inverter that manages solar, battery, and grid power for efficient, seamless energy use.",
+      "18 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "2 x 51.2V 314Ah LiFePO₄ Batteries – Long-life lithium batteries store excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Significant Monthly Savings: Reduces reliance on grid power and lowers electric bills.",
@@ -299,9 +299,9 @@ export const projects: Project[] = [
     date: "2025-05-13",
     clientType: "Residential",
     specification: [
-      "8kW Deye Hybrid Inverter",
-      "16 x 615W Canadian Bifacial Solar Panels",
-      "51.2v 314Ah LiFePO₄ Battery",
+      "8kW Deye Hybrid Inverter – Smart inverter that manages solar, battery, and grid power for efficient, seamless energy use.",
+      "16 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-life lithium battery stores excess solar power for night use and backup during outages.",
     ],
     benefits: [
       "Lower Power Bills: Reduces grid dependency and monthly expenses.",
@@ -338,7 +338,7 @@ export const projects: Project[] = [
   {
     id: "bagumbong-caloocan",
     image: "/images/project10.jpg",
-    location: "Bagumbong, Caloocan, Metro Manila, PH",
+    location: "Bagumbong, North Caloocan, Metro Manila, PH",
     system: "6kW Hybrid Solar",
     date: "2025-05-25",
     clientType: "Residential",

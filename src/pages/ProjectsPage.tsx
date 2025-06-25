@@ -17,6 +17,8 @@ import {
   BatteryCharging,
   Home as HomeIcon,
   Leaf,
+  Search,
+  ChevronDown,
 } from "lucide-react";
 import { Helmet } from "react-helmet";
 import BeamsBackground from "@/components/BeamsBackground";
@@ -121,11 +123,60 @@ const totalHomes = projects.length;
 
 const ProjectsPage: React.FC = () => {
   const [page, setPage] = useState(1);
-  const totalPages = Math.ceil(projects.length / projectsPerPage);
-  const paginated = projects.slice(
+  const [searchTerm, setSearchTerm] = useState("");
+  const [locationFilter, setLocationFilter] = useState("");
+  const [systemSizeFilter, setSystemSizeFilter] = useState("");
+
+  // Derive unique locations and system sizes for filters
+  const uniqueLocations = [
+    ...new Set(
+      projects.map((p) => {
+        const parts = p.location.split(",").map((s) => s.trim());
+        if (parts.length > 1 && !parts[1].includes("PH")) {
+          return parts[1];
+        }
+        return parts[0];
+      })
+    ),
+  ].sort();
+
+  const uniqueSystemSizes = [
+    ...new Set(
+      projects
+        .map((p) => p.system.match(/(\d+(\.\d+)?kW)/)?.[0])
+        .filter(Boolean) as string[]
+    ),
+  ].sort((a, b) => parseInt(a) - parseInt(b));
+
+  // Filter projects
+  const filteredProjects = projects.filter((proj) => {
+    const searchContent = `
+      ${proj.system}
+      ${proj.location}
+      ${proj.description || ""}
+      ${(proj.specification || []).join(" ")}
+    `.toLowerCase();
+    const matchesSearch = searchTerm
+      ? searchContent.includes(searchTerm.toLowerCase())
+      : true;
+    const matchesLocation = locationFilter
+      ? proj.location.includes(locationFilter)
+      : true;
+    const matchesSystem = systemSizeFilter
+      ? new RegExp(`(^|\\s)${systemSizeFilter}(\\s|$)`).test(proj.system)
+      : true;
+    return matchesSearch && matchesLocation && matchesSystem;
+  });
+
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+  const paginated = filteredProjects.slice(
     (page - 1) * projectsPerPage,
     page * projectsPerPage
   );
+
+  useEffect(() => {
+    setPage(1); // Reset to first page when filters/search change
+  }, [searchTerm, locationFilter, systemSizeFilter]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -261,84 +312,149 @@ const ProjectsPage: React.FC = () => {
             with Sunphil today!
           </p>
         </header>
-        <main>
-          {/* Summary Cards */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <section className="mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 w-full">
-              {/* Total Homes */}
-              <div className="w-full bg-blue-100/80 border border-blue-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
-                <div className="flex items-center w-full justify-between mb-2">
-                  <span className="text-gray-700 text-sm font-medium">
-                    Total Homes
-                  </span>
-                  <HomeIcon className="h-6 w-6 text-blue-400" />
-                </div>
-                <div className="text-2xl font-bold text-blue-600">
-                  {totalHomes.toLocaleString()}
-                </div>
+        {/* Summary Cards */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 w-full">
+            {/* Total Homes */}
+            <div className="w-full bg-blue-100/80 border border-blue-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+              <div className="flex items-center w-full justify-between mb-2">
+                <span className="text-gray-700 text-sm font-medium">
+                  Total Homes
+                </span>
+                <HomeIcon className="h-6 w-6 text-blue-400" />
               </div>
-              {/* Total Inverter kW */}
-              <div className="w-full bg-yellow-100/80 border border-yellow-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
-                <div className="flex items-center w-full justify-between mb-2">
-                  <span className="text-gray-700 text-sm font-medium">
-                    Total Inverter kW
-                  </span>
-                  <Gauge className="h-6 w-6 text-yellow-500" />
-                </div>
-                <div className="text-2xl font-extrabold text-yellow-600">
-                  {totalInverterKW.toLocaleString(undefined, {
-                    maximumFractionDigits: 0,
-                  })}{" "}
-                  <span className="font-bold">kW</span>
-                </div>
+              <div className="text-2xl font-bold text-blue-600">
+                {totalHomes.toLocaleString()}
               </div>
-              {/* Total Solar Panel kW */}
-              <div className="w-full bg-green-100/80 border border-green-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
-                <div className="flex items-center w-full justify-between mb-2">
-                  <span className="text-gray-700 text-sm font-medium">
-                    Total Solar Panel kW
-                  </span>
-                  <Sun className="h-6 w-6 text-green-500" />
-                </div>
-                <div className="text-2xl font-extrabold text-green-600">
-                  {totalPanelKW.toLocaleString(undefined, {
-                    maximumFractionDigits: 0,
-                  })}{" "}
-                  <span className="font-bold">kW</span>
-                </div>
+            </div>
+            {/* Total Inverter kW */}
+            <div className="w-full bg-yellow-100/80 border border-yellow-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+              <div className="flex items-center w-full justify-between mb-2">
+                <span className="text-gray-700 text-sm font-medium">
+                  Total Inverter kW
+                </span>
+                <Gauge className="h-6 w-6 text-yellow-500" />
               </div>
-              {/* Total Battery kWh */}
-              <div className="w-full bg-purple-100/80 border border-purple-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
-                <div className="flex items-center w-full justify-between mb-2">
-                  <span className="text-gray-700 text-sm font-medium">
-                    Total Battery kWh
-                  </span>
-                  <BatteryCharging className="h-6 w-6 text-purple-500" />
-                </div>
-                <div className="text-2xl font-extrabold text-purple-600">
-                  {totalBatteryKW.toLocaleString(undefined, {
-                    maximumFractionDigits: 1,
-                  })}{" "}
-                  <span className="font-bold">kWh</span>
-                </div>
+              <div className="text-2xl font-extrabold text-yellow-600">
+                {totalInverterKW.toLocaleString(undefined, {
+                  maximumFractionDigits: 0,
+                })}{" "}
+                <span className="font-bold">kW</span>
               </div>
-              {/* Total CO₂ Reduction */}
-              <div className="w-full bg-green-100 border border-green-200 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
-                <div className="flex items-center w-full justify-between mb-2">
-                  <span className="text-gray-700 text-sm font-medium">
-                    Total CO₂ Reduction
-                  </span>
-                  <Leaf className="h-6 w-6 text-green-700" />
-                </div>
-                <div className="text-2xl font-extrabold text-green-700">
-                  {totalCO2Tons.toLocaleString(undefined, {
-                    maximumFractionDigits: 1,
-                  })}{" "}
-                  <span className="font-bold">tons</span>
-                </div>
+            </div>
+            {/* Total Solar Panel kW */}
+            <div className="w-full bg-green-100/80 border border-green-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+              <div className="flex items-center w-full justify-between mb-2">
+                <span className="text-gray-700 text-sm font-medium">
+                  Total Solar Panel kW
+                </span>
+                <Sun className="h-6 w-6 text-green-500" />
               </div>
-            </section>
+              <div className="text-2xl font-extrabold text-green-600">
+                {totalPanelKW.toLocaleString(undefined, {
+                  maximumFractionDigits: 0,
+                })}{" "}
+                <span className="font-bold">kW</span>
+              </div>
+            </div>
+            {/* Total Battery kWh */}
+            <div className="w-full bg-purple-100/80 border border-purple-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+              <div className="flex items-center w-full justify-between mb-2">
+                <span className="text-gray-700 text-sm font-medium">
+                  Total Battery kWh
+                </span>
+                <BatteryCharging className="h-6 w-6 text-purple-500" />
+              </div>
+              <div className="text-2xl font-extrabold text-purple-600">
+                {totalBatteryKW.toLocaleString(undefined, {
+                  maximumFractionDigits: 1,
+                })}{" "}
+                <span className="font-bold">kWh</span>
+              </div>
+            </div>
+            {/* Total CO₂ Reduction */}
+            <div className="w-full bg-green-100 border border-green-200 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+              <div className="flex items-center w-full justify-between mb-2">
+                <span className="text-gray-700 text-sm font-medium">
+                  Total CO₂ Reduction
+                </span>
+                <Leaf className="h-6 w-6 text-green-700" />
+              </div>
+              <div className="text-2xl font-extrabold text-green-700">
+                {totalCO2Tons.toLocaleString(undefined, {
+                  maximumFractionDigits: 1,
+                })}{" "}
+                <span className="font-bold">tons</span>
+              </div>
+            </div>
+          </section>
+        </div>
+        {/* Search and Filters */}
+        <div className="bg-white/10 backdrop-blur-lg rounded-lg p-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Search */}
+            <div className="relative">
+              <Search
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                size={20}
+              />
+              <input
+                type="text"
+                placeholder="Search projects..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            {/* Location Filter */}
+            <div className="relative">
+              <select
+                value={locationFilter}
+                onChange={(e) => setLocationFilter(e.target.value)}
+                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg py-3 px-4 text-white appearance-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" className="text-black">
+                  All Locations
+                </option>
+                {uniqueLocations.map((location) => (
+                  <option
+                    key={location}
+                    value={location}
+                    className="text-black"
+                  >
+                    {location}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50"
+                size={20}
+              />
+            </div>
+            {/* System Size Filter */}
+            <div className="relative">
+              <select
+                value={systemSizeFilter}
+                onChange={(e) => setSystemSizeFilter(e.target.value)}
+                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg py-3 px-4 text-white appearance-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" className="text-black">
+                  All System Sizes
+                </option>
+                {uniqueSystemSizes.map((size) => (
+                  <option key={size} value={size} className="text-black">
+                    {size}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50"
+                size={20}
+              />
+            </div>
           </div>
+        </div>
+        <main>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {paginated.map((proj, idx) => {
               const isRescueCase = proj.id === "bacoor-cavite-rescue";
