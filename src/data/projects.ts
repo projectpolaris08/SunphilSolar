@@ -41,7 +41,7 @@ export const projects: Project[] = [
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter – Intelligent energy management system that switches seamlessly between solar, battery, and grid power for maximum efficiency.",
-      "615W Canadian Bifacial Solar Panels – High-performance bifacial modules that generate power from both sides, ideal for rooftops with partial shade or reflective surfaces.",
+      "18 x 615W Canadian Bifacial Solar Panels – High-performance bifacial modules that generate power from both sides, ideal for rooftops with partial shade or reflective surfaces.",
       "51.2V 314Ah LiFePO₄ Battery – A reliable lithium battery for storing solar energy and delivering backup power during outages or peak evening hours.",
     ],
     benefits: [
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter – Smartly manages energy from solar panels, battery storage, and the grid to ensure efficient and seamless power use.",
-      "615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
+      "18 x 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels capture sunlight from both sides, maximizing energy yield throughout the day.",
       "51.2V 314Ah LiFePO₄ Battery – Long-life lithium battery stores excess power for night-time use and serves as backup during blackouts.",
     ],
     benefits: [
