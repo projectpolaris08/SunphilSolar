@@ -17,6 +17,7 @@ import Cookies from "../pages/Cookies";
 import FAQ from "../pages/FAQ";
 import ServicesPage from "../pages/ServicesPage";
 import AfterSalesPage from "../pages/AfterSalesPage";
+import StatisticsPage from "../pages/StatisticsPage";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -51,6 +52,7 @@ const AppRoutes = ({
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/aftersales" element={<AfterSalesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/statistics" element={<StatisticsPage />} />
 
           {/* Weather widget route */}
           <Route

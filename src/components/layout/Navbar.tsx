@@ -14,6 +14,7 @@ import {
   Building2,
   FileText,
   LifeBuoy,
+  BarChart2,
 } from "lucide-react";
 import { Logo } from "../Logo";
 import { Link as RouterLink, useLocation } from "react-router-dom";
@@ -156,6 +157,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 >
                   <LifeBuoy className="w-5 h-5 text-red-500" />
                   After Sales
+                </RouterLink>
+                <RouterLink
+                  to="/statistics"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/statistics")}
+                >
+                  <BarChart2 className="w-5 h-5 text-cyan-600" />
+                  Statistics
                 </RouterLink>
               </div>
             </div>
@@ -303,6 +312,17 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             >
               <LifeBuoy className="w-5 h-5 text-red-500" />
               After Sales
+            </RouterLink>
+            <RouterLink
+              to="/statistics"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/statistics");
+                toggleMenu();
+              }}
+            >
+              <BarChart2 className="w-5 h-5 text-cyan-600" />
+              Statistics
             </RouterLink>
           </div>
           <div className="pt-2">
