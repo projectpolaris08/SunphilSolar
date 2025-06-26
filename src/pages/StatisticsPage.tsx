@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { projects } from "@/data/projects";
 import { Helmet } from "react-helmet";
 import {
@@ -8,6 +8,7 @@ import {
   BatteryCharging,
   Leaf,
   BarChart2,
+  Info,
 } from "lucide-react";
 import BeamsBackground from "@/components/BeamsBackground";
 import {
@@ -105,9 +106,25 @@ const years = Array.from(
   new Set(projects.map((p) => new Date(p.date).getFullYear()))
 ).sort();
 // Generate all 12 months for each year
+const monthNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 const allMonthYear = years.flatMap((year) =>
   Array.from({ length: 12 }, (_, i) => ({
     monthYear: `${String(i + 1).padStart(2, "0")}-${year}`,
+    monthLabel: monthNames[i],
+    year,
   }))
 );
 // Count projects for each month-year
@@ -119,8 +136,9 @@ const projectCounts = projects.reduce((acc, proj) => {
   acc[key] = (acc[key] || 0) + 1;
   return acc;
 }, {} as Record<string, number>);
-const projectsByMonthYear = allMonthYear.map(({ monthYear }) => ({
+const projectsByMonthYear = allMonthYear.map(({ monthYear, monthLabel }) => ({
   monthYear,
+  monthLabel,
   count: projectCounts[monthYear] || 0,
 }));
 
@@ -215,8 +233,9 @@ projects.forEach((proj) => {
   );
 });
 // Ensure all months for all years are present, and round panelKW and batteryKWh to 2 decimal places
-const allTotalsByMonthYear = allMonthYear.map(({ monthYear }) => ({
+const allTotalsByMonthYear = allMonthYear.map(({ monthYear, monthLabel }) => ({
   monthYear,
+  monthLabel,
   inverterKW: totalsByMonthYear[monthYear]?.inverterKW || 0,
   panelKW: totalsByMonthYear[monthYear]?.panelKW
     ? Number(totalsByMonthYear[monthYear].panelKW.toFixed(2))
@@ -253,8 +272,9 @@ projects.forEach((proj) => {
   co2ByMonthYear[monthYear] =
     (co2ByMonthYear[monthYear] || 0) + parseCO2Reduction(proj.benefits);
 });
-const allCO2ByMonthYear = allMonthYear.map(({ monthYear }) => ({
+const allCO2ByMonthYear = allMonthYear.map(({ monthYear, monthLabel }) => ({
   monthYear,
+  monthLabel,
   co2: co2ByMonthYear[monthYear] || 0,
 }));
 
@@ -277,18 +297,36 @@ projects.forEach((proj) => {
   const kWh = panelKW * SUN_HOURS_PER_DAY * days;
   energyByMonthYear[monthYear] = (energyByMonthYear[monthYear] || 0) + kWh;
 });
-const allEnergyByMonthYear = allMonthYear.map(({ monthYear }) => ({
+const allEnergyByMonthYear = allMonthYear.map(({ monthYear, monthLabel }) => ({
   monthYear,
+  monthLabel,
   kWh: Math.round(energyByMonthYear[monthYear] || 0),
 }));
 
 // --- Trees Planted Equivalent per Month-Year ---
-const treesByMonthYear = allCO2ByMonthYear.map(({ monthYear, co2 }) => ({
-  monthYear,
-  trees: co2 ? Number((co2 / 21).toFixed(2)) : 0,
-}));
+const treesByMonthYear = allCO2ByMonthYear.map(
+  ({ monthYear, monthLabel, co2 }) => ({
+    monthYear,
+    monthLabel,
+    trees: co2 ? Math.round(co2 / 21) : 0,
+  })
+);
+
+// Responsive hook for mobile detection
+function useIsMobile(breakpoint = 640) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < breakpoint);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpoint]);
+  return isMobile;
+}
 
 const StatisticsPage: React.FC = () => {
+  const isMobile = useIsMobile();
+
   return (
     <BeamsBackground intensity="medium">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
@@ -296,7 +334,7 @@ const StatisticsPage: React.FC = () => {
           <title>Statistics | Sunphil Solar</title>
         </Helmet>
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
-          Solar Project Statistics
+          Sunphil Project Statistics
         </h1>
         {/* Summary Cards */}
         <section className="mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 w-full">
@@ -393,11 +431,11 @@ const StatisticsPage: React.FC = () => {
                   </linearGradient>
                 </defs>
                 <XAxis
-                  dataKey="monthYear"
+                  dataKey="monthLabel"
                   stroke="#fff"
                   interval={0}
-                  angle={-45}
-                  textAnchor="end"
+                  angle={isMobile ? -45 : 0}
+                  textAnchor="middle"
                   height={60}
                 />
                 <YAxis
@@ -408,15 +446,17 @@ const StatisticsPage: React.FC = () => {
                   }
                 />
                 <Tooltip
-                  labelFormatter={(value) =>
-                    value.toLocaleString(undefined, {
-                      maximumFractionDigits: 2,
-                    })
-                  }
+                  labelFormatter={(label: string) => {
+                    const idx = monthNames.indexOf(label);
+                    return idx !== -1 ? `${monthNames[idx]} 2025` : label;
+                  }}
                 />
                 <Bar dataKey="count" fill="url(#projectsMonthGradient)" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
           {/* System Size Distribution */}
           <div className="bg-white/10 rounded-xl p-6">
@@ -465,6 +505,9 @@ const StatisticsPage: React.FC = () => {
                 <Bar dataKey="count" fill="url(#systemSizeGradient)" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
           {/* Total Inverter kW per Month */}
           <div className="bg-white/10 rounded-xl p-6">
@@ -477,11 +520,11 @@ const StatisticsPage: React.FC = () => {
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
               >
                 <XAxis
-                  dataKey="monthYear"
+                  dataKey="monthLabel"
                   stroke="#fff"
                   interval={0}
-                  angle={-45}
-                  textAnchor="end"
+                  angle={isMobile ? -45 : 0}
+                  textAnchor="middle"
                   height={60}
                 />
                 <YAxis
@@ -501,6 +544,9 @@ const StatisticsPage: React.FC = () => {
                 <Bar dataKey="inverterKW" fill="#facc15" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
           {/* Total Solar Panel kW per Month */}
           <div className="bg-white/10 rounded-xl p-6">
@@ -513,11 +559,11 @@ const StatisticsPage: React.FC = () => {
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
               >
                 <XAxis
-                  dataKey="monthYear"
+                  dataKey="monthLabel"
                   stroke="#fff"
                   interval={0}
-                  angle={-45}
-                  textAnchor="end"
+                  angle={isMobile ? -45 : 0}
+                  textAnchor="middle"
                   height={60}
                 />
                 <YAxis
@@ -537,6 +583,9 @@ const StatisticsPage: React.FC = () => {
                 <Bar dataKey="panelKW" fill="#38bdf8" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
           {/* Total Battery kWh per Month */}
           <div className="bg-white/10 rounded-xl p-6">
@@ -561,11 +610,11 @@ const StatisticsPage: React.FC = () => {
                   </linearGradient>
                 </defs>
                 <XAxis
-                  dataKey="monthYear"
+                  dataKey="monthLabel"
                   stroke="#fff"
                   interval={0}
-                  angle={-45}
-                  textAnchor="end"
+                  angle={isMobile ? -45 : 0}
+                  textAnchor="middle"
                   height={60}
                 />
                 <YAxis
@@ -585,6 +634,9 @@ const StatisticsPage: React.FC = () => {
                 <Bar dataKey="batteryKWh" fill="url(#purpleGradient)" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
           {/* Clean Energy Generated per Month */}
           <div className="bg-white/10 rounded-xl p-6">
@@ -609,11 +661,11 @@ const StatisticsPage: React.FC = () => {
                   </linearGradient>
                 </defs>
                 <XAxis
-                  dataKey="monthYear"
+                  dataKey="monthLabel"
                   stroke="#fff"
                   interval={0}
-                  angle={-45}
-                  textAnchor="end"
+                  angle={isMobile ? -45 : 0}
+                  textAnchor="middle"
                   height={60}
                 />
                 <YAxis
@@ -633,6 +685,9 @@ const StatisticsPage: React.FC = () => {
                 <Bar dataKey="kWh" fill="url(#energyMonthGradient)" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
           {/* Trees Planted Equivalent per Month */}
           <div className="bg-white/10 rounded-xl p-6">
@@ -645,11 +700,11 @@ const StatisticsPage: React.FC = () => {
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
               >
                 <XAxis
-                  dataKey="monthYear"
+                  dataKey="monthLabel"
                   stroke="#fff"
                   interval={0}
-                  angle={-45}
-                  textAnchor="end"
+                  angle={isMobile ? -45 : 0}
+                  textAnchor="middle"
                   height={60}
                 />
                 <YAxis
@@ -660,15 +715,20 @@ const StatisticsPage: React.FC = () => {
                   }
                 />
                 <Tooltip
-                  labelFormatter={(value) =>
-                    value.toLocaleString(undefined, {
-                      maximumFractionDigits: 2,
-                    })
-                  }
+                  labelFormatter={(value) => value}
+                  formatter={(value, name) => {
+                    if (name === "trees") {
+                      return [Math.round(value as number), "trees"];
+                    }
+                    return [value, name];
+                  }}
                 />
                 <Bar dataKey="trees" fill="#228B22" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
           {/* CO₂ Reduction by Month */}
           <div className="bg-white/10 rounded-xl p-6">
@@ -693,11 +753,11 @@ const StatisticsPage: React.FC = () => {
                   </linearGradient>
                 </defs>
                 <XAxis
-                  dataKey="monthYear"
+                  dataKey="monthLabel"
                   stroke="#fff"
                   interval={0}
-                  angle={-45}
-                  textAnchor="end"
+                  angle={isMobile ? -45 : 0}
+                  textAnchor="middle"
                   height={60}
                 />
                 <YAxis
@@ -717,8 +777,120 @@ const StatisticsPage: React.FC = () => {
                 <Bar dataKey="co2" fill="url(#co2MonthGradient)" />
               </BarChart>
             </ResponsiveContainer>
+            <div className="w-full text-center text-white text-base font-semibold mt-2">
+              2025
+            </div>
           </div>
         </div>
+        {/* Project Analysis Section */}
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/80 to-gray-900/90 rounded-2xl shadow-2xl p-8 mt-8 flex overflow-hidden">
+            <div className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-blue-400 via-green-400 to-yellow-400 rounded-l-2xl" />
+            <div className="relative z-10 w-full">
+              <h2 className="text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
+                <span className="inline-block bg-blue-500/80 rounded-full p-2 align-middle">
+                  <Info className="h-6 w-6 text-white" />
+                </span>
+                Project Analysis
+              </h2>
+              <div className="text-white text-lg leading-relaxed space-y-0 divide-y divide-white/10">
+                <div className="flex items-start gap-3 py-4">
+                  <span className="text-blue-400 text-2xl mt-1">📈</span>
+                  <div>
+                    <span className="font-bold text-blue-200 text-lg">
+                      Project Growth:
+                    </span>{" "}
+                    The data shows a significant increase in the number of solar
+                    projects from{" "}
+                    <span className="text-blue-300 font-semibold">
+                      March to June 2025
+                    </span>
+                    , with the highest number of installations occurring in{" "}
+                    <span className="text-blue-300 font-semibold">June</span>.
+                    This trend suggests growing awareness and adoption of solar
+                    energy solutions, possibly driven by rising electricity
+                    costs and increased marketing efforts.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 py-4">
+                  <span className="text-green-400 text-2xl mt-1">🔢</span>
+                  <div>
+                    <span className="font-bold text-green-200 text-lg">
+                      System Size Trends:
+                    </span>{" "}
+                    The most common system sizes are{" "}
+                    <span className="text-green-300 font-semibold">
+                      6kW, 8kW, and 12kW
+                    </span>
+                    , indicating that residential and small commercial clients
+                    are the primary market. The distribution also shows a few
+                    larger installations, reflecting Sunphil Solar's capability
+                    to handle both small and large-scale projects.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 py-4">
+                  <span className="text-lime-400 text-2xl mt-1">🌱</span>
+                  <div>
+                    <span className="font-bold text-lime-200 text-lg">
+                      Environmental Impact:
+                    </span>{" "}
+                    The cumulative{" "}
+                    <span className="text-lime-300 font-semibold">
+                      CO₂ reduction
+                    </span>{" "}
+                    and{" "}
+                    <span className="text-lime-300 font-semibold">
+                      trees planted equivalent
+                    </span>{" "}
+                    highlight the substantial positive effect of these projects
+                    on the environment. Each month, hundreds to thousands of
+                    kilograms of CO₂ emissions are offset, contributing to
+                    cleaner air and a greener community.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 py-4">
+                  <span className="text-yellow-300 text-2xl mt-1">🔋</span>
+                  <div>
+                    <span className="font-bold text-yellow-200 text-lg">
+                      Energy Independence:
+                    </span>{" "}
+                    The steady increase in total inverter kW, solar panel kW,
+                    and battery kWh per month demonstrates that more households
+                    and businesses are investing in energy independence and
+                    backup power, reducing their reliance on the grid and
+                    protecting themselves from outages.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 py-4">
+                  <span className="text-orange-300 text-2xl mt-1">☀️</span>
+                  <div>
+                    <span className="font-bold text-orange-200 text-lg">
+                      Seasonal Patterns:
+                    </span>{" "}
+                    The peak in installations during the summer months may be
+                    influenced by higher solar irradiance and increased demand
+                    for cooling, making solar energy solutions more attractive
+                    during this period.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 py-4">
+                  <span className="text-pink-300 text-2xl mt-1">🏆</span>
+                  <div>
+                    <span className="font-bold text-pink-200 text-lg">
+                      Conclusion:
+                    </span>{" "}
+                    Sunphil Solar's 2025 project data reflects a strong and
+                    growing demand for solar energy in the Philippines, with
+                    clear benefits for both customers and the environment. The
+                    company is well-positioned to continue leading the
+                    transition to clean, reliable, and cost-effective energy
+                    solutions.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </BeamsBackground>
   );

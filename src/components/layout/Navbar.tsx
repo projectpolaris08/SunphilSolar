@@ -9,7 +9,6 @@ import {
   HelpCircle,
   Briefcase,
   Layers,
-  List,
   Package,
   Building2,
   FileText,
@@ -44,8 +43,13 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       color: "text-green-500",
     },
     { name: "Blog", path: "/blog", icon: BookOpen, color: "text-yellow-500" },
+    {
+      name: "Projects",
+      path: "/solarprojects",
+      icon: Building2,
+      color: "text-purple-500",
+    },
     { name: "About Us", path: "/about", icon: Info, color: "text-purple-500" },
-    { name: "FAQ", path: "/faq", icon: HelpCircle, color: "text-pink-500" },
   ];
 
   const isOnHomePage = location.pathname === "/";
@@ -80,7 +84,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-6 xl:space-x-10">
             {navItems.map((item) =>
-              item.name === "Services" ? null : item.path.startsWith("#") ? (
+              item.name === "Services" ||
+              item.name === "Projects" ? null : item.path.startsWith("#") ? (
                 <HashLink
                   key={item.name}
                   smooth
@@ -103,7 +108,40 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 </RouterLink>
               )
             )}
-            {/* Services Dropdown */}
+            {/* Projects Dropdown */}
+            <div className="relative group">
+              <span className="flex items-center gap-2 text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2 whitespace-nowrap cursor-pointer">
+                <Building2 className="w-5 h-5 text-purple-500" />
+                Projects
+              </span>
+              <div className="absolute left-0 mt-2 w-56 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+                <RouterLink
+                  to="/solarprojects"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/solarprojects")}
+                >
+                  <Building2 className="w-5 h-5 text-purple-500" />
+                  All Projects
+                </RouterLink>
+                <RouterLink
+                  to="/statistics"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/statistics")}
+                >
+                  <BarChart2 className="w-5 h-5 text-cyan-600" />
+                  Statistics
+                </RouterLink>
+                <RouterLink
+                  to="/case-studies"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/case-studies")}
+                >
+                  <FileText className="w-5 h-5 text-pink-500" />
+                  Case Studies
+                </RouterLink>
+              </div>
+            </div>
+            {/* Services Dropdown (remove Statistics and Case Studies) */}
             <div className="relative group">
               <span className="flex items-center gap-2 text-base font-medium transition-all duration-300 hover:text-primary-600 hover:underline hover:underline-offset-4 hover:decoration-2 whitespace-nowrap cursor-pointer">
                 <Briefcase className="w-5 h-5 text-orange-500" />
@@ -119,36 +157,12 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   All Services
                 </RouterLink>
                 <RouterLink
-                  to="/services#services"
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
-                  onClick={() => handleNavClick("/services#services")}
-                >
-                  <List className="w-5 h-5 text-green-500" />
-                  Service List
-                </RouterLink>
-                <RouterLink
                   to="/products"
                   className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
                   onClick={() => handleNavClick("/products")}
                 >
                   <Package className="w-5 h-5 text-yellow-500" />
                   Products
-                </RouterLink>
-                <RouterLink
-                  to="/solarprojects"
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
-                  onClick={() => handleNavClick("/solarprojects")}
-                >
-                  <Building2 className="w-5 h-5 text-purple-500" />
-                  Projects
-                </RouterLink>
-                <RouterLink
-                  to="/case-studies"
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
-                  onClick={() => handleNavClick("/case-studies")}
-                >
-                  <FileText className="w-5 h-5 text-pink-500" />
-                  Case Studies
                 </RouterLink>
                 <RouterLink
                   to="/aftersales"
@@ -159,12 +173,12 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   After Sales
                 </RouterLink>
                 <RouterLink
-                  to="/statistics"
+                  to="/faq"
                   className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
-                  onClick={() => handleNavClick("/statistics")}
+                  onClick={() => handleNavClick("/faq")}
                 >
-                  <BarChart2 className="w-5 h-5 text-cyan-600" />
-                  Statistics
+                  <HelpCircle className="w-5 h-5 text-pink-500" />
+                  FAQ
                 </RouterLink>
               </div>
             </div>
@@ -212,7 +226,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       >
         <div className="px-4 pt-2 pb-6 space-y-3">
           {navItems.map((item) =>
-            item.name === "Services" ? null : item.path.startsWith("#") ? (
+            item.name === "Services" ||
+            item.name === "Projects" ? null : item.path.startsWith("#") ? (
               <HashLink
                 key={item.name}
                 smooth
@@ -241,7 +256,47 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               </RouterLink>
             )
           )}
-          {/* Services Dropdown */}
+          {/* Projects Dropdown (mobile) */}
+          <div className="flex items-center gap-2 px-4 py-3 text-base font-medium text-gray-900">
+            <Building2 className="w-5 h-5 text-purple-500" />
+            Projects
+          </div>
+          <div className="pl-6 space-y-1">
+            <RouterLink
+              to="/solarprojects"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/solarprojects");
+                toggleMenu();
+              }}
+            >
+              <Building2 className="w-5 h-5 text-purple-500" />
+              All Projects
+            </RouterLink>
+            <RouterLink
+              to="/statistics"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/statistics");
+                toggleMenu();
+              }}
+            >
+              <BarChart2 className="w-5 h-5 text-cyan-600" />
+              Statistics
+            </RouterLink>
+            <RouterLink
+              to="/case-studies"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/case-studies");
+                toggleMenu();
+              }}
+            >
+              <FileText className="w-5 h-5 text-pink-500" />
+              Case Studies
+            </RouterLink>
+          </div>
+          {/* Services Dropdown (mobile, remove Statistics and Case Studies) */}
           <div className="flex items-center gap-2 px-4 py-3 text-base font-medium text-gray-900">
             <Briefcase className="w-5 h-5 text-orange-500" />
             Services
@@ -259,17 +314,6 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               All Services
             </RouterLink>
             <RouterLink
-              to="/services#services"
-              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
-              onClick={() => {
-                handleNavClick("/services#services");
-                toggleMenu();
-              }}
-            >
-              <List className="w-5 h-5 text-green-500" />
-              Service List
-            </RouterLink>
-            <RouterLink
               to="/products"
               className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
               onClick={() => {
@@ -279,28 +323,6 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             >
               <Package className="w-5 h-5 text-yellow-500" />
               Products
-            </RouterLink>
-            <RouterLink
-              to="/solarprojects"
-              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
-              onClick={() => {
-                handleNavClick("/solarprojects");
-                toggleMenu();
-              }}
-            >
-              <Building2 className="w-5 h-5 text-purple-500" />
-              Projects
-            </RouterLink>
-            <RouterLink
-              to="/case-studies"
-              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
-              onClick={() => {
-                handleNavClick("/case-studies");
-                toggleMenu();
-              }}
-            >
-              <FileText className="w-5 h-5 text-pink-500" />
-              Case Studies
             </RouterLink>
             <RouterLink
               to="/aftersales"
@@ -314,15 +336,15 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               After Sales
             </RouterLink>
             <RouterLink
-              to="/statistics"
+              to="/faq"
               className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
               onClick={() => {
-                handleNavClick("/statistics");
+                handleNavClick("/faq");
                 toggleMenu();
               }}
             >
-              <BarChart2 className="w-5 h-5 text-cyan-600" />
-              Statistics
+              <HelpCircle className="w-5 h-5 text-pink-500" />
+              FAQ
             </RouterLink>
           </div>
           <div className="pt-2">
@@ -332,7 +354,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               className="transition-all duration-200 inline-flex items-center justify-center w-full px-6 py-3 border border-transparent rounded-full text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
               onClick={toggleMenu}
             >
-              Get Started
+              Get a Quote
               <span className="ml-2">→</span>
             </HashLink>
           </div>
