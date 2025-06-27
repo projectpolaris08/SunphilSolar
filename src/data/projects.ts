@@ -12,6 +12,69 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "bagong-ilog-pasig",
+    image: "/images/project36.jpg",
+    location: "Bagong Ilog, Pasig City, Metro Manila, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-04-21",
+    clientType: "Residential",
+    specification: [
+      "6kW Deye Hybrid Inverter – A smart inverter that automatically switches between solar, battery, and grid power for seamless energy flow.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules that harness solar energy from both sides, maximizing energy yield even in tight urban spaces.",
+      "51.2V 314Ah LiFePO₄ Battery – A powerful lithium iron phosphate battery for storing excess solar power and ensuring 24/7 energy availability.",
+    ],
+    benefits: [
+      "Reduce electricity bills by up to 80%",
+      "Reliable backup power during brownouts or grid instability",
+      "Cut 1,000–1,200 kg of CO₂ emissions per month",
+      "Engineered for urban rooftops with limited space and high power usage",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar system for a homeowner in Bagong Ilog, Pasig City, offering an efficient energy solution that significantly lowers monthly electricity bills while providing dependable backup during outages. This system is ideal for dense residential areas where energy demand is high and power interruptions are common. Sunphil Solar continues to energize Metro Manila—especially Pasig City, Ortigas, Caniogan, and San Miguel—with reliable hybrid solar systems built for both savings and sustainability.",
+  },
+  {
+    id: "sun-valley-paranaque",
+    image: "/images/project35.jpg",
+    location: "Sun Valley, Parañaque City, Metro Manila, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-06-27",
+    clientType: "Residential (Urban Subdivision)",
+    specification: [
+      "6kW Deye Hybrid Inverter – Manages solar power generation, battery storage, and grid connection with real-time smart switching.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules generate more energy by capturing sunlight from both the front and rear surfaces.",
+      "51.2V 280Ah LiFePO₄ Battery – Safe and durable lithium battery stores excess solar power for evening use and emergency backup.",
+    ],
+    benefits: [
+      "Save up to 75% on monthly electricity costs",
+      "Maintain power for essentials like lights, fans, refrigerator, and internet during brownouts",
+      "Offsets around 900–1,100 kg of CO₂ emissions per month",
+      "Designed for urban households with limited roof space but high energy demand",
+    ],
+    description:
+      "Sunphil Solar completed a 6kW hybrid solar energy system for a homeowner in Sun Valley, Parañaque City—a suburban area where utility costs are high and power stability is essential. This system helps reduce electricity bills significantly while ensuring uninterrupted power during outages. This installation is part of Sunphil Solar's ongoing mission to bring affordable, high-performance hybrid solar systems to residential areas like Sun Valley, BF Homes, Sucat, and Multinational Village in Parañaque and nearby cities.",
+  },
+  {
+    id: "sangandaan-south-caloocan",
+    image: "/images/project34.jpg",
+    location: "Sangandaan, South Caloocan, Metro Manila, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-27",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart hybrid inverter that automatically manages energy from solar panels, the battery, and grid input.",
+      "13 × 615W Canadian Bifacial Solar Panels – Bifacial design enables increased power generation by capturing sunlight from both sides—ideal for reflective urban rooftops.",
+      "51.2V 314Ah LiFePO₄ Battery – High-efficiency lithium battery stores surplus solar energy and provides reliable backup during brownouts or peak usage hours.",
+    ],
+    benefits: [
+      "Up to 80% monthly savings on electricity bills",
+      "Powers essential appliances during outages: lights, fans, internet, and refrigerator",
+      "Estimated 1,200 kg of CO₂ emissions offset per month",
+      "Optimized for urban homes in Caloocan with limited roof space",
+    ],
+    description:
+      "Sunphil Solar installed a reliable 8kW hybrid solar system in Sangandaan, South Caloocan, providing the homeowner with reduced electricity bills and dependable backup power. Designed for Metro Manila homes facing rising utility costs and frequent grid interruptions, this hybrid setup delivers both energy savings and peace of mind. Sunphil Solar continues to power Metro Manila's households with hybrid solar systems built for dense, high-consumption neighborhoods like Sangandaan, Bagumbong, Monumento, and Camarin. We specialize in solar solutions that maximize limited roof areas while delivering long-term savings.",
+  },
+  {
     id: "sampaloc-manila",
     image: "/images/project32.jpg",
     location: "Sampaloc, Manila, Philippines",

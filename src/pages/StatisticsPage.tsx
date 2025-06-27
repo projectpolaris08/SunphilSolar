@@ -338,70 +338,70 @@ const StatisticsPage: React.FC = () => {
         </h1>
         {/* Summary Cards */}
         <section className="mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 w-full">
-          <div className="w-full bg-blue-100/80 border border-blue-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+          <div className="w-full bg-blue-100/80 border border-blue-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all relative">
             <div className="flex items-center w-full justify-between mb-2">
               <span className="text-gray-700 text-sm font-medium">
                 Total Homes
               </span>
               <HomeIcon className="h-6 w-6 text-blue-400" />
             </div>
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-2xl font-bold text-blue-600 flex items-center gap-2">
               {totalHomes.toLocaleString()}
             </div>
           </div>
-          <div className="w-full bg-yellow-100/80 border border-yellow-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+          <div className="w-full bg-yellow-100/80 border border-yellow-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all relative">
             <div className="flex items-center w-full justify-between mb-2">
               <span className="text-gray-700 text-sm font-medium">
-                Total Inverter kW
+                Total Inverter Installed kW
               </span>
               <Gauge className="h-6 w-6 text-yellow-500" />
             </div>
-            <div className="text-2xl font-extrabold text-yellow-600">
+            <div className="text-2xl font-extrabold text-yellow-600 flex items-center gap-2">
               {totalInverterKW.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
-              })}{" "}
+              })}
               <span className="font-bold">kW</span>
             </div>
           </div>
-          <div className="w-full bg-green-100/80 border border-green-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+          <div className="w-full bg-green-100/80 border border-green-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all relative">
             <div className="flex items-center w-full justify-between mb-2">
               <span className="text-gray-700 text-sm font-medium">
-                Total Solar Panel kW
+                Total Solar Panel Installed kW
               </span>
               <Sun className="h-6 w-6 text-green-500" />
             </div>
-            <div className="text-2xl font-extrabold text-green-600">
+            <div className="text-2xl font-extrabold text-green-600 flex items-center gap-2">
               {totalPanelKW.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
-              })}{" "}
+              })}
               <span className="font-bold">kW</span>
             </div>
           </div>
-          <div className="w-full bg-purple-100/80 border border-purple-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+          <div className="w-full bg-purple-100/80 border border-purple-100 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all relative">
             <div className="flex items-center w-full justify-between mb-2">
               <span className="text-gray-700 text-sm font-medium">
-                Total Battery kWh
+                Total Batteries Installed kWh
               </span>
               <BatteryCharging className="h-6 w-6 text-purple-500" />
             </div>
-            <div className="text-2xl font-extrabold text-purple-600">
+            <div className="text-2xl font-extrabold text-purple-600 flex items-center gap-2">
               {totalBatteryKW.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
-              })}{" "}
+              })}
               <span className="font-bold">kWh</span>
             </div>
           </div>
-          <div className="w-full bg-green-100 border border-green-200 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all">
+          <div className="w-full bg-green-100 border border-green-200 rounded-xl p-4 flex flex-col items-start shadow min-w-[120px] min-h-[80px] transition-all relative">
             <div className="flex items-center w-full justify-between mb-2">
               <span className="text-gray-700 text-sm font-medium">
                 Total CO₂ Reduction
               </span>
               <Leaf className="h-6 w-6 text-green-700" />
             </div>
-            <div className="text-2xl font-extrabold text-green-700">
+            <div className="text-2xl font-extrabold text-green-700 flex items-center gap-2">
               {totalCO2Tons.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
-              })}{" "}
+              })}
               <span className="font-bold">tons</span>
             </div>
           </div>
@@ -409,7 +409,7 @@ const StatisticsPage: React.FC = () => {
         {/* Charts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Projects by Month-Year */}
-          <div className="bg-white/10 rounded-xl p-6">
+          <div className="bg-white/10 rounded-xl p-6 relative">
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <BarChart2 /> Projects by Month-Year
             </h2>
@@ -461,7 +461,7 @@ const StatisticsPage: React.FC = () => {
           {/* System Size Distribution */}
           <div className="bg-white/10 rounded-xl p-6">
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              System Size Distribution
+              Hybrid Inverter System Size Distribution
             </h2>
             <ResponsiveContainer width="100%" height={250}>
               <BarChart
@@ -477,8 +477,8 @@ const StatisticsPage: React.FC = () => {
                     x2="1"
                     y2="0"
                   >
-                    <stop offset="0%" stopColor="#FC466B" />
-                    <stop offset="100%" stopColor="#3F5EFB" />
+                    <stop offset="0%" stopColor="#00C9FF" />
+                    <stop offset="100%" stopColor="#92FE9D" />
                   </linearGradient>
                 </defs>
                 <XAxis
@@ -509,10 +509,10 @@ const StatisticsPage: React.FC = () => {
               2025
             </div>
           </div>
-          {/* Total Inverter kW per Month */}
+          {/* Total Inverter Installed kW per Month */}
           <div className="bg-white/10 rounded-xl p-6">
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              Total Inverter kW per Month
+              Total Inverter Installed kW per Month
             </h2>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart
@@ -548,10 +548,10 @@ const StatisticsPage: React.FC = () => {
               2025
             </div>
           </div>
-          {/* Total Solar Panel kW per Month */}
+          {/* Total Solar Panel Installed kW per Month */}
           <div className="bg-white/10 rounded-xl p-6">
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              Total Solar Panel kW per Month
+              Total Solar Panel Installed kW per Month
             </h2>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart
@@ -587,10 +587,10 @@ const StatisticsPage: React.FC = () => {
               2025
             </div>
           </div>
-          {/* Total Battery kWh per Month */}
+          {/* Total Batteries Installed kWh per Month */}
           <div className="bg-white/10 rounded-xl p-6">
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              Total Battery kWh per Month
+              Total Batteries Installed kWh per Month
             </h2>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart
@@ -808,8 +808,8 @@ const StatisticsPage: React.FC = () => {
                     , with the highest number of installations occurring in{" "}
                     <span className="text-blue-300 font-semibold">June</span>.
                     This trend suggests growing awareness and adoption of solar
-                    energy solutions, possibly driven by rising electricity
-                    costs and increased marketing efforts.
+                    energy solutions, driven by rising electricity
+                    costs.
                   </div>
                 </div>
                 <div className="flex items-start gap-3 py-4">
@@ -823,7 +823,7 @@ const StatisticsPage: React.FC = () => {
                       6kW, 8kW, and 12kW
                     </span>
                     , indicating that residential and small commercial clients
-                    are the primary market. The distribution also shows a few
+                    are the primary market. The distribution shows a few
                     larger installations, reflecting Sunphil Solar's capability
                     to handle both small and large-scale projects.
                   </div>
@@ -867,7 +867,7 @@ const StatisticsPage: React.FC = () => {
                     <span className="font-bold text-orange-200 text-lg">
                       Seasonal Patterns:
                     </span>{" "}
-                    The peak in installations during the summer months may be
+                    The peak in installations during the summer months
                     influenced by higher solar irradiance and increased demand
                     for cooling, making solar energy solutions more attractive
                     during this period.

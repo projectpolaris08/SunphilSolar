@@ -43,6 +43,68 @@ export interface CaseStudyData {
 }
 
 export const caseStudies: { [key: string]: CaseStudyData } = {
+  "bagong-ilog-pasig": {
+    projectOverview: {
+      challenge:
+        "Arjay Nepomuceno was facing his April 2025 Meralco bill hitting ₱6,695.57 and a disconnection threat after May 13 if left unpaid. Power-hungry appliances, unpredictable rate hikes, and full dependence on the grid had pushed his expenses to the breaking point, creating daily anxiety about energy costs.",
+      solution:
+        "Sunphil Solar designed and installed a custom 6kW hybrid solar system on April 21, 2025, featuring a 6kW Deye Hybrid Inverter for smart energy management, 12 x 615W Canadian Bifacial Solar Panels for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery for reliable backup power and nighttime energy storage.",
+      results:
+        "In just two months, Sir Arjay's energy consumption from the grid dropped to 0 kWh, with his Meralco bill plummeting from ₱6,695.57 to just ₱24.07—a 99.6% reduction in electricity costs. The system eliminated the disconnection threat and provided complete energy independence.",
+    },
+    financialAnalysis: {
+      totalInvestment: 295000,
+      monthlySavings: 6671,
+      paybackPeriod: 3.5,
+      annualROI: 28.6,
+      lifetimeSavings: 1601040,
+    },
+    environmentalImpact: {
+      co2Reduction: 9600,
+      treesEquivalent: 457,
+      annualEnergyProduction: 9855,
+    },
+    performanceMetrics: {
+      systemEfficiency: 95,
+      uptime: 99.9,
+      peakOutput: 6,
+      averageDailyProduction: 27,
+    },
+    challenges: [
+      "Crippling Meralco bill of ₱6,695.57 with disconnection threat",
+      "Complete dependence on grid power with no backup system",
+      "High energy consumption from power-hungry household appliances",
+      "Unpredictable electricity rate hikes causing financial stress",
+      "Daily anxiety about energy costs and potential disconnection",
+    ],
+    solutions: [
+      "Custom-designed 6kW hybrid solar system tailored to household needs",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency bifacial panels capturing maximum sunlight",
+      "LiFePO₄ battery storage for nighttime use and backup power",
+      "Complete energy independence eliminating grid dependency",
+    ],
+    testimonials: {
+      quote:
+        "Loko tong si Meralco, saan kay kinuha yan ₱24 pesos? Irereklamo ko pa ba yan kay Meralco? 😀😃",
+      author: "Arjay Nepomuceno",
+      role: "Homeowner, Bagong Ilog, Pasig City",
+    },
+    gallery: [
+      {
+        src: "/images/arjaybill.jpg",
+        alt: "Meralco electric bill before solar installation - ₱6,695.57",
+        caption:
+          "April 2025: Meralco bill at ₱6,695.57 with disconnection threat.",
+      },
+      {
+        src: "/images/arjaybill2.jpg",
+        alt: "Meralco electric bill after solar installation - ₱24.07",
+        caption:
+          "June 2025: Bill reduced to just ₱24.07 after solar installation.",
+      },
+    ],
+  },
   "bacoor-cavite-rescue": {
     projectOverview: {
       challenge:
