@@ -18,6 +18,13 @@ import FAQ from "../pages/FAQ";
 import ServicesPage from "../pages/ServicesPage";
 import AfterSalesPage from "../pages/AfterSalesPage";
 import StatisticsPage from "../pages/StatisticsPage";
+import AdminDashboard from "../pages/AdminDashboard";
+import ClientRecordsPage from "../pages/ClientRecordsPage";
+import InventoryPage from "../pages/InventoryPage";
+import CalendarPage from "../pages/CalendarPage";
+import BuildersInverterPage from "../pages/BuildersInverterPage";
+import BuildersBatteryPage from "../pages/BuildersBatteryPage";
+import BuildersPage from "../pages/BuildersPage";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -31,6 +38,21 @@ const AppRoutes = ({
   return (
     <div className="flex flex-col min-h-screen">
       <Routes>
+        {/* Admin routes - outside main layout */}
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/clients" element={<ClientRecordsPage />} />
+        <Route path="/admin/inventory" element={<InventoryPage />} />
+        <Route path="/admin/calendar" element={<CalendarPage />} />
+        <Route
+          path="/admin/builders/inverter"
+          element={<BuildersInverterPage />}
+        />
+        <Route
+          path="/admin/builders/battery"
+          element={<BuildersBatteryPage />}
+        />
+        <Route path="/admin/builders" element={<BuildersPage />} />
+
         {/* Main layout wrapper */}
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
