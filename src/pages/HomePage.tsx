@@ -105,84 +105,57 @@ const featuredProjects: Project[] = [
 ];
 
 // Utility functions for summary data
-function extractKW(str: string): number {
-  const match = str.match(/([0-9]+(?:\.[0-9]+)?)\s*kW/i);
-  return match ? parseFloat(match[1]) : 0;
-}
-function extractPanelKW(str: string): number {
-  const match = str.match(/([0-9]+)\s*[×x]\s*([0-9]+)W/i);
-  if (match) {
-    const count = parseInt(match[1], 10);
-    const watt = parseInt(match[2], 10);
-    return (count * watt) / 1000;
-  }
-  return extractKW(str);
-}
-function extractBatteryKW(str: string): number {
-  const match = str.match(
-    /([0-9]+)\s*[×x]\s*([0-9]+\.?[0-9]*)V\s*([0-9]+\.?[0-9]*)Ah/i
-  );
-  if (match) {
-    const count = parseInt(match[1], 10);
-    const voltage = parseFloat(match[2]);
-    const ah = parseFloat(match[3]);
-    return (count * voltage * ah) / 1000;
-  }
-  const match2 = str.match(/([0-9]+\.?[0-9]*)V\s*([0-9]+\.?[0-9]*)Ah/i);
-  if (match2) {
-    const voltage = parseFloat(match2[1]);
-    const ah = parseFloat(match2[2]);
-    return (voltage * ah) / 1000;
-  }
-  return 0;
-}
-function extractCO2(benefits: string[] = []): number {
-  for (const benefit of benefits) {
-    const match = benefit.match(
-      /([0-9,.]+)(?:–|-)?([0-9,.]+)?\s*kg\s*(?:of)?\s*CO₂/i
-    );
-    if (match) {
-      const low = parseFloat(match[1].replace(/,/g, ""));
-      const high = match[2] ? parseFloat(match[2].replace(/,/g, "")) : low;
-      return (low + high) / 2;
-    }
-    const matchTons = benefit.match(/([0-9,.]+)\s*tons?\s*CO₂/i);
-    if (matchTons) {
-      return parseFloat(matchTons[1].replace(/,/g, "")) * 1000;
-    }
-  }
-  return 0;
-}
 const totalHomes = projects.length;
-const totalInverterKW = projects.reduce(
-  (sum, proj) =>
-    sum +
-    proj.specification
-      .filter((s) => /inverter/i.test(s))
-      .reduce((s, spec) => s + extractKW(spec), 0),
-  0
-);
-const totalPanelKW = projects.reduce(
-  (sum, proj) =>
-    sum +
-    proj.specification
-      .filter((s) => /panel/i.test(s))
-      .reduce((s, spec) => s + extractPanelKW(spec), 0),
-  0
-);
-const totalBatteryKW = projects.reduce(
-  (sum, proj) =>
-    sum +
-    proj.specification
-      .filter((s) => /batter/i.test(s))
-      .reduce((s, spec) => s + extractBatteryKW(spec), 0),
-  0
-);
-const totalCO2Kg = projects.reduce(
-  (sum, proj) => sum + extractCO2(proj.benefits),
-  0
-);
-const totalCO2Tons = totalCO2Kg / 1000;
+const totalInverterKW = projects.reduce((sum, p) => {
+  const match = p.system.match(/(\d+)(kW)/i);
+  return sum + (match ? parseInt(match[1], 10) : 0);
+}, 0);
+const totalPanelKW = projects.reduce((sum, proj) => {
+  // Find all specs that mention "panel" (case-insensitive)
+  const panelSpecs = proj.specification.filter((s) => /panel/i.test(s));
+  let projectTotal = 0;
+  for (const spec of panelSpecs) {
+    // Match patterns like "13 × 615W" or "18 x 615W" or "18 x 615 watt"
+    let match = spec.match(/(\d+)\s*[×x]\s*(\d+(?:\.\d+)?)\s*(W|watt)/i);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      const watt = parseFloat(match[2]);
+      projectTotal += (count * watt) / 1000;
+      continue;
+    }
+    // Fallback: match single panel, e.g., "615W Panel" or "615 watt panel"
+    match = spec.match(/(\d+(?:\.\d+)?)\s*(W|watt)/i);
+    if (match) {
+      const watt = parseFloat(match[1]);
+      projectTotal += watt / 1000;
+    }
+  }
+  return sum + projectTotal;
+}, 0);
+const totalBatteryKW = projects.reduce((sum, p) => {
+  const batterySpecs = p.specification.filter((s) => /batter/i.test(s));
+  let projectTotal = 0;
+  for (const spec of batterySpecs) {
+    // Try to match multiplier pattern first
+    let match = spec.match(/(\d+)\s*[×x]\s*(\d+\.?\d*)V.*?(\d+\.?\d*)Ah/i);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      const voltage = parseFloat(match[2]);
+      const ah = parseFloat(match[3]);
+      projectTotal += (count * voltage * ah) / 1000;
+      continue;
+    }
+    // Fallback: match single battery
+    match = spec.match(/(\d+\.?\d*)V.*?(\d+\.?\d*)Ah/i);
+    if (match) {
+      const voltage = parseFloat(match[1]);
+      const ah = parseFloat(match[2]);
+      projectTotal += (voltage * ah) / 1000;
+    }
+  }
+  return sum + projectTotal;
+}, 0);
+const totalCO2Tons = (projects.length * 700) / 1000;
 
 export const HomePage = () => {
   const projectCard = (proj: Project, idx: number) => (

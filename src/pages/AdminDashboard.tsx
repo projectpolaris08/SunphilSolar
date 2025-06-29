@@ -30,6 +30,7 @@ import { useAdminAuth } from "../contexts/AdminAuthContext";
 import { useCalendarEvents } from "../contexts/CalendarEventsContext";
 import { supabase } from "../lib/supabaseClient";
 import useAdminDarkMode from "../hooks/useAdminDarkMode";
+import { projects } from "../data/projects";
 
 interface AdminStats {
   totalProjects: number;
@@ -104,7 +105,7 @@ const AdminDashboard: React.FC = () => {
   useEffect(() => {
     setStats((prev) => ({
       ...prev,
-      totalProjects: 36,
+      totalProjects: projects.length,
     }));
   }, []);
 

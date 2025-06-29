@@ -9,6 +9,7 @@ import {
   Leaf,
   BarChart2,
   Info,
+  ChevronRight,
 } from "lucide-react";
 import BeamsBackground from "@/components/BeamsBackground";
 import {
@@ -20,86 +21,58 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Utility functions (reuse from ProjectsPage)
-function extractKW(str: string): number {
-  const match = str.match(/([0-9]+(?:\.[0-9]+)?)\s*kW/i);
-  return match ? parseFloat(match[1]) : 0;
-}
-function extractPanelKW(str: string): number {
-  const match = str.match(/([0-9]+)\s*[×x]\s*([0-9]+)W/i);
-  if (match) {
-    const count = parseInt(match[1], 10);
-    const watt = parseInt(match[2], 10);
-    return (count * watt) / 1000;
-  }
-  return extractKW(str);
-}
-function extractBatteryKW(str: string): number {
-  const match = str.match(
-    /([0-9]+)\s*[×x]\s*([0-9]+\.?[0-9]*)V\s*([0-9]+\.?[0-9]*)Ah/i
-  );
-  if (match) {
-    const count = parseInt(match[1], 10);
-    const voltage = parseFloat(match[2]);
-    const ah = parseFloat(match[3]);
-    return (count * voltage * ah) / 1000;
-  }
-  const match2 = str.match(/([0-9]+\.?[0-9]*)V\s*([0-9]+\.?[0-9]*)Ah/i);
-  if (match2) {
-    const voltage = parseFloat(match2[1]);
-    const ah = parseFloat(match2[2]);
-    return (voltage * ah) / 1000;
-  }
-  return 0;
-}
-function extractCO2(benefits: string[] = []): number {
-  for (const benefit of benefits) {
-    const match = benefit.match(
-      /([0-9,.]+)(?:–|-)?([0-9,.]+)?\s*kg\s*(?:of)?\s*CO₂/i
-    );
-    if (match) {
-      const low = parseFloat(match[1].replace(/,/g, ""));
-      const high = match[2] ? parseFloat(match[2].replace(/,/g, "")) : low;
-      return (low + high) / 2;
-    }
-    const matchTons = benefit.match(/([0-9,.]+)\s*tons?\s*CO₂/i);
-    if (matchTons) {
-      return parseFloat(matchTons[1].replace(/,/g, "")) * 1000;
-    }
-  }
-  return 0;
-}
-
-const totalInverterKW = projects.reduce(
-  (sum, proj) =>
-    sum +
-    proj.specification
-      .filter((s) => /inverter/i.test(s))
-      .reduce((s, spec) => s + extractKW(spec), 0),
-  0
-);
-const totalPanelKW = projects.reduce(
-  (sum, proj) =>
-    sum +
-    proj.specification
-      .filter((s) => /panel/i.test(s))
-      .reduce((s, spec) => s + extractPanelKW(spec), 0),
-  0
-);
-const totalBatteryKW = projects.reduce(
-  (sum, proj) =>
-    sum +
-    proj.specification
-      .filter((s) => /batter/i.test(s))
-      .reduce((s, spec) => s + extractBatteryKW(spec), 0),
-  0
-);
-const totalCO2Kg = projects.reduce(
-  (sum, proj) => sum + extractCO2(proj.benefits),
-  0
-);
-const totalCO2Tons = totalCO2Kg / 1000;
+// --- Updated summary stats logic to match ProjectsPage ---
 const totalHomes = projects.length;
+const totalInverterKW = projects.reduce((sum, p) => {
+  const match = p.system.match(/(\d+)(kW)/i);
+  return sum + (match ? parseInt(match[1], 10) : 0);
+}, 0);
+const totalPanelKW = projects.reduce((sum, p) => {
+  // Find all specs that mention "panel" (case-insensitive)
+  const panelSpecs = p.specification.filter((s) => /panel/i.test(s));
+  let projectTotal = 0;
+  for (const spec of panelSpecs) {
+    // Match patterns like "13 × 615W" or "18 x 615W" or "18 x 615 watt"
+    let match = spec.match(/(\d+)\s*[×x]\s*(\d+(?:\.\d+)?)\s*(W|watt)/i);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      const watt = parseFloat(match[2]);
+      projectTotal += (count * watt) / 1000;
+      continue;
+    }
+    // Fallback: match single panel, e.g., "615W Panel" or "615 watt panel"
+    match = spec.match(/(\d+(?:\.\d+)?)\s*(W|watt)/i);
+    if (match) {
+      const watt = parseFloat(match[1]);
+      projectTotal += watt / 1000;
+    }
+  }
+  return sum + projectTotal;
+}, 0);
+const totalBatteryKW = projects.reduce((sum, p) => {
+  const batterySpecs = p.specification.filter((s) => /batter/i.test(s));
+  let projectTotal = 0;
+  for (const spec of batterySpecs) {
+    // Try to match multiplier pattern first
+    let match = spec.match(/(\d+)\s*[×x]\s*(\d+\.?\d*)V.*?(\d+\.?\d*)Ah/i);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      const voltage = parseFloat(match[2]);
+      const ah = parseFloat(match[3]);
+      projectTotal += (count * voltage * ah) / 1000;
+      continue;
+    }
+    // Fallback: match single battery
+    match = spec.match(/(\d+\.?\d*)V.*?(\d+\.?\d*)Ah/i);
+    if (match) {
+      const voltage = parseFloat(match[1]);
+      const ah = parseFloat(match[2]);
+      projectTotal += (voltage * ah) / 1000;
+    }
+  }
+  return sum + projectTotal;
+}, 0);
+const totalCO2Tons = (projects.length * 700) / 1000;
 
 // Get all years present in the data
 const years = Array.from(
@@ -172,14 +145,24 @@ function parseInverterKW(specs: string[]): number {
   return 0;
 }
 function parsePanelKW(specs: string[]): number {
-  // e.g., "24 × 615W Canadian Bifacial Solar Panels"
-  const panelSpec = specs.find((s) => /panel/i.test(s));
-  if (!panelSpec) return 0;
-  const match = panelSpec.match(/(\d+)\s*[x×]\s*(\d+(?:\.\d+)?)W/i);
-  if (match) {
-    return (parseInt(match[1]) * parseFloat(match[2])) / 1000;
+  // Sum all panel specs per project, robustly
+  const panelSpecs = specs.filter((s) => /panel/i.test(s));
+  let total = 0;
+  for (const spec of panelSpecs) {
+    let match = spec.match(/(\d+)\s*[×x]\s*(\d+(?:\.\d+)?)\s*(W|watt)/i);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      const watt = parseFloat(match[2]);
+      total += (count * watt) / 1000;
+      continue;
+    }
+    match = spec.match(/(\d+(?:\.\d+)?)\s*(W|watt)/i);
+    if (match) {
+      const watt = parseFloat(match[1]);
+      total += watt / 1000;
+    }
   }
-  return 0;
+  return total;
 }
 function parseBatteryKWh(specs: string[]): number {
   // Sum all matches of (count) × (voltage)V (ah)Ah in any battery spec line
@@ -333,6 +316,21 @@ const StatisticsPage: React.FC = () => {
         <Helmet>
           <title>Statistics | Sunphil Solar</title>
         </Helmet>
+        {/* Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center space-x-2 text-sm text-white/80">
+            <li>
+              <a href="/" className="flex items-center hover:text-blue-400">
+                <HomeIcon className="mr-2" size={16} />
+                Home
+              </a>
+            </li>
+            <li className="flex items-center">
+              <ChevronRight size={16} className="mx-1" />
+              <span className="text-blue-400">Statistics</span>
+            </li>
+          </ol>
+        </nav>
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
           Sunphil Project Statistics
         </h1>
@@ -808,8 +806,7 @@ const StatisticsPage: React.FC = () => {
                     , with the highest number of installations occurring in{" "}
                     <span className="text-blue-300 font-semibold">June</span>.
                     This trend suggests growing awareness and adoption of solar
-                    energy solutions, driven by rising electricity
-                    costs.
+                    energy solutions, driven by rising electricity costs.
                   </div>
                 </div>
                 <div className="flex items-start gap-3 py-4">
@@ -823,9 +820,9 @@ const StatisticsPage: React.FC = () => {
                       6kW, 8kW, and 12kW
                     </span>
                     , indicating that residential and small commercial clients
-                    are the primary market. The distribution shows a few
-                    larger installations, reflecting Sunphil Solar's capability
-                    to handle both small and large-scale projects.
+                    are the primary market. The distribution shows a few larger
+                    installations, reflecting Sunphil Solar's capability to
+                    handle both small and large-scale projects.
                   </div>
                 </div>
                 <div className="flex items-start gap-3 py-4">

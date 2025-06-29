@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Battery, Zap } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
 const ProductsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"battery" | "inverter">("battery");
@@ -132,6 +133,35 @@ const ProductsPage: React.FC = () => {
   return (
     <section id="products" ref={sectionRef} className="py-20 bg-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center space-x-2 text-sm text-secondary-600">
+            <li>
+              <Link to="/" className="flex items-center hover:text-blue-600">
+                <svg
+                  className="mr-2"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M3 9.75L12 4l9 5.75V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.75Z" />
+                  <path d="M9 22V12h6v10" />
+                </svg>
+                Home
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <ChevronRight size={16} className="mx-1" />
+              <span className="text-blue-600">Products</span>
+            </li>
+          </ol>
+        </nav>
+
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
             Our Products

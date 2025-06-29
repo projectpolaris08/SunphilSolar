@@ -10,10 +10,11 @@ import {
   CarIcon,
   TrendingUpIcon,
   LabIcon,
-  HomeIcon,
 } from "../components/icons";
 import { motion, AnimatePresence } from "framer-motion";
 import BeamsBackground from "@/components/BeamsBackground";
+import { ChevronRight } from "lucide-react";
+import { Home } from "lucide-react";
 
 export const BlogPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -72,6 +73,22 @@ export const BlogPage = () => {
           <meta property="og:url" content={seoData.url} />
           <link rel="canonical" href={seoData.url} />
         </Helmet>
+
+        {/* Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center space-x-2 text-sm text-white/80">
+            <li>
+              <Link to="/" className="flex items-center hover:text-blue-400">
+                <Home className="mr-2" size={16} />
+                Home
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <ChevronRight size={16} className="mx-1" />
+              <span className="text-blue-400">Blog</span>
+            </li>
+          </ol>
+        </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Blog</h1>
@@ -141,7 +158,6 @@ export const BlogPage = () => {
                     {post.id === 4 && <CarIcon />}
                     {post.id === 5 && <TrendingUpIcon />}
                     {post.id === 6 && <LabIcon />}
-                    {post.id === 7 && <HomeIcon />}
                   </div>
                   <h2 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 group-hover:text-blue-400">
                     {post.title}

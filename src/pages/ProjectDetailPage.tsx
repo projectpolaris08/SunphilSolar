@@ -151,62 +151,71 @@ const ProjectDetailPage: React.FC = () => {
             </div>
 
             <div className="bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6 mb-6">
-              <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
-                System Specifications
-              </h2>
-              <ul className="space-y-2">
-                {project.specification.map((spec, i) => {
-                  let Icon = CheckCircle;
-                  if (/inverter/i.test(spec)) Icon = Settings;
-                  else if (/solar.*panel/i.test(spec)) Icon = Sun;
-                  else if (/batter/i.test(spec)) Icon = Battery;
-                  return (
+              <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg p-4 sm:p-6 mb-6">
+                <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                  System Specifications
+                </h2>
+                <ul className="space-y-2">
+                  {project.specification.map((spec, i) => {
+                    let Icon = CheckCircle;
+                    if (/inverter/i.test(spec)) Icon = Settings;
+                    else if (/solar.*panel/i.test(spec)) Icon = Sun;
+                    else if (/batter/i.test(spec)) Icon = Battery;
+                    return (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-white/90"
+                      >
+                        {Icon === Sun ? (
+                          <Sun
+                            className="text-yellow-400 mt-1 flex-shrink-0"
+                            size={18}
+                          />
+                        ) : (
+                          <Icon
+                            className="text-blue-400 mt-1 flex-shrink-0"
+                            size={18}
+                          />
+                        )}
+                        <span>{spec}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6 mb-6">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg p-4 sm:p-6 mb-6">
+                <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                  Key Benefits
+                </h2>
+                <ul className="space-y-2">
+                  {project.benefits?.map((benefit, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-2 text-white/90"
                     >
-                      {Icon === Sun ? (
-                        <Sun
-                          className="text-yellow-400 mt-1 flex-shrink-0"
-                          size={18}
-                        />
-                      ) : (
-                        <Icon
-                          className="text-blue-400 mt-1 flex-shrink-0"
-                          size={18}
-                        />
-                      )}
-                      <span>{spec}</span>
+                      <CheckCircle
+                        className="text-green-400 mt-1 flex-shrink-0"
+                        size={18}
+                      />
+                      <span>{benefit}</span>
                     </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6 mb-6">
-              <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
-                Key Benefits
-              </h2>
-              <ul className="space-y-2">
-                {project.benefits?.map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-2 text-white/90">
-                    <CheckCircle
-                      className="text-green-400 mt-1 flex-shrink-0"
-                      size={18}
-                    />
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div className="bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6">
-              <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
-                Project Overview
-              </h2>
-              <p className="text-white/80 leading-relaxed">
-                {project.description}
-              </p>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg p-4 sm:p-6">
+                <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                  Project Overview
+                </h2>
+                <p className="text-white/80 leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
             </div>
           </div>
         </div>

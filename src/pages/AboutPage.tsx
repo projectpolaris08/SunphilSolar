@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MdCheckCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { ChevronRight } from "lucide-react";
 
 const AboutPage: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -236,255 +237,292 @@ const AboutPage: React.FC = () => {
       : builders;
 
   return (
-    <>
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            onLoadedData={handleVideoLoad}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              isVideoLoaded ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <source src="/videos/earth-space.mp4" type="video/mp4" />
-          </video>
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <Helmet>
+        <title>About Us | Sunphil Solar</title>
+        <meta
+          name="description"
+          content="Meet the Sunphil Solar team and learn about our mission, values, and expertise in solar power installation across the Philippines."
+        />
+      </Helmet>
+      <div className="container mx-auto px-4 py-20">
+        {/* Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center space-x-2 text-sm text-white/80">
+            <li>
+              <Link to="/" className="flex items-center hover:text-blue-400">
+                <svg
+                  className="mr-2"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M3 9.75L12 4l9 5.75V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.75Z" />
+                  <path d="M9 22V12h6v10" />
+                </svg>
+                Home
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <ChevronRight size={16} className="mx-1" />
+              <span className="text-blue-400">About Us</span>
+            </li>
+          </ol>
+        </nav>
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          {/* Video Background */}
+          <div className="absolute inset-0 w-full h-full">
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              onLoadedData={handleVideoLoad}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                isVideoLoaded ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <source src="/videos/earth-space.mp4" type="video/mp4" />
+            </video>
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/60"></div>
+          </div>
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">About Us</h1>
-          <p className="text-xl sm:text-2xl max-w-3xl mx-auto">
-            Empowering the Philippines with Clean, Affordable Solar Energy
-          </p>
-        </div>
-      </section>
-
-      <section id="about" className="py-20 bg-secondary-50">
-        <Helmet>
-          <title>About Us | Sunphil Solar</title>
-        </Helmet>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Company Info */}
-          <div className="bg-white rounded-lg p-10 shadow-elevation-1 hover:shadow-elevation-3 transition-all duration-300 transform hover:-translate-y-2">
-            <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
-              Our Story
-            </h3>
-            <p className="text-secondary-600 mb-6">
-              Sunphil Solar, also known in the community as Fairview Solarista,
-              was founded in 2021 from a simple dream—to bring affordable and
-              reliable solar energy to Filipino homes and businesses. What
-              started as a local initiative powered by passion and grit has
-              grown into one of Metro Manila's trusted names in solar power
-              solutions. Our journey began with a small team of electricians who
-              believed that clean energy should not be a luxury. With hard work,
-              dedication, and community trust, we've installed hundreds of solar
-              systems across Luzon and Visayas helping our clients reduce
-              electricity bills and transition toward sustainable living. Today,
-              Sunphil Solar specializes in solar panel installations, hybrid
-              inverters, battery storage systems, and custom solar solutions for
-              residential and commercial.
+          {/* Content */}
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6">About Us</h1>
+            <p className="text-xl sm:text-2xl max-w-3xl mx-auto">
+              Empowering the Philippines with Clean, Affordable Solar Energy
             </p>
+          </div>
+        </section>
 
-            <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
-              Our Vision
-            </h3>
-            <p className="text-secondary-600 mb-6">
-              To be the leading force in making solar energy a standard in every
-              Filipino home and business—empowering communities to achieve
-              energy freedom, sustainability, and resilience through innovation,
-              integrity, and care.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
-              Our Mission
-            </h3>
-            <p className="text-secondary-600 mb-6">
-              To deliver high-quality, affordable, and reliable solar energy
-              solutions that empower our customers to take control of their
-              energy needs — reducing costs while protecting the environment for
-              generations to come.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
-              Why Choose Us?
-            </h3>
-            <ul className="space-y-5 text-secondary-600">
-              <li className="flex items-start gap-3">
-                <MdCheckCircle className="text-green-500 mt-1" size={24} />
-                <div>
-                  <span className="font-bold text-secondary-900">
-                    Local Expertise with a National Reach
-                  </span>
-                  <br />
-                  We understand the Filipino climate, energy consumption habits,
-                  and building structures—allowing us to offer tailored solar
-                  solutions that work for you.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <MdCheckCircle className="text-green-500 mt-1" size={24} />
-                <div>
-                  <span className="font-bold text-secondary-900">
-                    High-Quality Products
-                  </span>
-                  <br />
-                  We use only top-tier solar panels, inverters, and batteries
-                  backed by trusted international brands and solid manufacturer
-                  warranties.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <MdCheckCircle className="text-green-500 mt-1" size={24} />
-                <div>
-                  <span className="font-bold text-secondary-900">
-                    Professional, Certified Installation Team
-                  </span>
-                  <br />
-                  Our team is composed of trained and accredited installers
-                  committed to safe, efficient, and standards-compliant system
-                  design.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <MdCheckCircle className="text-green-500 mt-1" size={24} />
-                <div>
-                  <span className="font-bold text-secondary-900">
-                    Transparent Pricing, No Hidden Costs
-                  </span>
-                  <br />
-                  We provide detailed system proposals and clear pricing,
-                  helping clients make informed decisions without pressure.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <MdCheckCircle className="text-green-500 mt-1" size={24} />
-                <div>
-                  <span className="font-bold text-secondary-900">
-                    Exceptional After-Sales Support
-                  </span>
-                  <br />
-                  From monitoring to maintenance, our team is always one call
-                  away. We treat your solar system as our long-term commitment.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <MdCheckCircle className="text-green-500 mt-1" size={24} />
-                <div>
-                  <span className="font-bold text-secondary-900">
-                    Customized Solutions
-                  </span>
-                  <br />
-                  No two homes or businesses are the same. We assess your power
-                  needs and recommend the best system for maximum savings and
-                  performance.
-                </div>
-              </li>
-            </ul>
-
-            {/* Our Promise Section */}
-            <div className="mt-10">
-              <h3 className="text-xl font-bold mb-2 text-secondary-900">
-                Our Promise
+        <section id="about" className="py-20 bg-secondary-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Company Info */}
+            <div className="bg-white rounded-lg p-10 shadow-elevation-1 hover:shadow-elevation-3 transition-all duration-300 transform hover:-translate-y-2">
+              <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
+                Our Story
               </h3>
-              <p className="text-secondary-700 mb-6">
-                At Sunphil Solar, we're not just installing solar panels—we're{" "}
-                <span className="font-bold">powering a movement</span>. A
-                movement for cleaner air, lower electricity bills, and empowered
-                Filipino households. Whether you're a homeowner looking to
-                reduce your Meralco bill or a business owner seeking energy
-                resilience, we're here to guide you every step of the way.
+              <p className="text-secondary-600 mb-6">
+                Sunphil Solar, also known in the community as Fairview
+                Solarista, was founded in 2021 from a simple dream—to bring
+                affordable and reliable solar energy to Filipino homes and
+                businesses. What started as a local initiative powered by
+                passion and grit has grown into one of Metro Manila's trusted
+                names in solar power solutions. Our journey began with a small
+                team of electricians who believed that clean energy should not
+                be a luxury. With hard work, dedication, and community trust,
+                we've installed hundreds of solar systems across Luzon and
+                Visayas helping our clients reduce electricity bills and
+                transition toward sustainable living. Today, Sunphil Solar
+                specializes in solar panel installations, hybrid inverters,
+                battery storage systems, and custom solar solutions for
+                residential and commercial.
               </p>
-              <hr className="my-6" />
-              <div className="flex items-start gap-3 mt-6">
-                <span className="text-2xl mt-1 text-yellow-500">
-                  <MdCheckCircle />
-                </span>
-                <div>
-                  <span className="text-lg font-bold text-secondary-900">
-                    Ready to Go Solar?
+
+              <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
+                Our Vision
+              </h3>
+              <p className="text-secondary-600 mb-6">
+                To be the leading force in making solar energy a standard in
+                every Filipino home and business—empowering communities to
+                achieve energy freedom, sustainability, and resilience through
+                innovation, integrity, and care.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
+                Our Mission
+              </h3>
+              <p className="text-secondary-600 mb-6">
+                To deliver high-quality, affordable, and reliable solar energy
+                solutions that empower our customers to take control of their
+                energy needs — reducing costs while protecting the environment
+                for generations to come.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
+                Why Choose Us?
+              </h3>
+              <ul className="space-y-5 text-secondary-600">
+                <li className="flex items-start gap-3">
+                  <MdCheckCircle className="text-green-500 mt-1" size={24} />
+                  <div>
+                    <span className="font-bold text-secondary-900">
+                      Local Expertise with a National Reach
+                    </span>
+                    <br />
+                    We understand the Filipino climate, energy consumption
+                    habits, and building structures—allowing us to offer
+                    tailored solar solutions that work for you.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MdCheckCircle className="text-green-500 mt-1" size={24} />
+                  <div>
+                    <span className="font-bold text-secondary-900">
+                      High-Quality Products
+                    </span>
+                    <br />
+                    We use only top-tier solar panels, inverters, and batteries
+                    backed by trusted international brands and solid
+                    manufacturer warranties.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MdCheckCircle className="text-green-500 mt-1" size={24} />
+                  <div>
+                    <span className="font-bold text-secondary-900">
+                      Professional, Certified Installation Team
+                    </span>
+                    <br />
+                    Our team is composed of trained and accredited installers
+                    committed to safe, efficient, and standards-compliant system
+                    design.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MdCheckCircle className="text-green-500 mt-1" size={24} />
+                  <div>
+                    <span className="font-bold text-secondary-900">
+                      Transparent Pricing, No Hidden Costs
+                    </span>
+                    <br />
+                    We provide detailed system proposals and clear pricing,
+                    helping clients make informed decisions without pressure.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MdCheckCircle className="text-green-500 mt-1" size={24} />
+                  <div>
+                    <span className="font-bold text-secondary-900">
+                      Exceptional After-Sales Support
+                    </span>
+                    <br />
+                    From monitoring to maintenance, our team is always one call
+                    away. We treat your solar system as our long-term
+                    commitment.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MdCheckCircle className="text-green-500 mt-1" size={24} />
+                  <div>
+                    <span className="font-bold text-secondary-900">
+                      Customized Solutions
+                    </span>
+                    <br />
+                    No two homes or businesses are the same. We assess your
+                    power needs and recommend the best system for maximum
+                    savings and performance.
+                  </div>
+                </li>
+              </ul>
+
+              {/* Our Promise Section */}
+              <div className="mt-10">
+                <h3 className="text-xl font-bold mb-2 text-secondary-900">
+                  Our Promise
+                </h3>
+                <p className="text-secondary-700 mb-6">
+                  At Sunphil Solar, we're not just installing solar panels—we're{" "}
+                  <span className="font-bold">powering a movement</span>. A
+                  movement for cleaner air, lower electricity bills, and
+                  empowered Filipino households. Whether you're a homeowner
+                  looking to reduce your Meralco bill or a business owner
+                  seeking energy resilience, we're here to guide you every step
+                  of the way.
+                </p>
+                <hr className="my-6" />
+                <div className="flex items-start gap-3 mt-6">
+                  <span className="text-2xl mt-1 text-yellow-500">
+                    <MdCheckCircle />
                   </span>
-                  <p className="mt-1">
-                    <span className="font-bold">
-                      <Link
-                        to="/contact"
-                        className="text-primary-600 hover:underline"
-                      >
-                        Get in touch with us
-                      </Link>
-                    </span>{" "}
-                    for a free consultation and discover how solar energy can
-                    work for you.
-                  </p>
+                  <div>
+                    <span className="text-lg font-bold text-secondary-900">
+                      Ready to Go Solar?
+                    </span>
+                    <p className="mt-1">
+                      <span className="font-bold">
+                        <Link
+                          to="/contact"
+                          className="text-primary-600 hover:underline"
+                        >
+                          Get in touch with us
+                        </Link>
+                      </span>{" "}
+                      for a free consultation and discover how solar energy can
+                      work for you.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Meet Our Team */}
+            <h3 className="text-2xl font-semibold text-secondary-900 mt-16 mb-10 text-center">
+              Meet Our Team
+            </h3>
+
+            {/* Tabs */}
+            <div className="flex flex-wrap justify-center mb-8 gap-4">
+              <TabButton
+                label="Core Team"
+                active={activeTab === "core"}
+                onClick={() => setActiveTab("core")}
+              />
+              <TabButton
+                label="Admins"
+                active={activeTab === "admins"}
+                onClick={() => setActiveTab("admins")}
+              />
+              <TabButton
+                label="Installers"
+                active={activeTab === "installers"}
+                onClick={() => setActiveTab("installers")}
+              />
+              <TabButton
+                label="Builders"
+                active={activeTab === "builders"}
+                onClick={() => setActiveTab("builders")}
+              />
+            </div>
+
+            {/* Animated Team Cards */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4 }}
+                className={`grid gap-8 ${
+                  activeTab === "core"
+                    ? "grid-cols-1 sm:grid-cols-2 justify-center"
+                    : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+                }`}
+              >
+                {teamData.map((member, index) => (
+                  <TeamMember
+                    key={index}
+                    initial={member.initial}
+                    name={member.name}
+                    title={member.title}
+                    description={member.description}
+                    image={member.image}
+                  />
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
-
-          {/* Meet Our Team */}
-          <h3 className="text-2xl font-semibold text-secondary-900 mt-16 mb-10 text-center">
-            Meet Our Team
-          </h3>
-
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center mb-8 gap-4">
-            <TabButton
-              label="Core Team"
-              active={activeTab === "core"}
-              onClick={() => setActiveTab("core")}
-            />
-            <TabButton
-              label="Admins"
-              active={activeTab === "admins"}
-              onClick={() => setActiveTab("admins")}
-            />
-            <TabButton
-              label="Installers"
-              active={activeTab === "installers"}
-              onClick={() => setActiveTab("installers")}
-            />
-            <TabButton
-              label="Builders"
-              active={activeTab === "builders"}
-              onClick={() => setActiveTab("builders")}
-            />
-          </div>
-
-          {/* Animated Team Cards */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.4 }}
-              className={`grid gap-8 ${
-                activeTab === "core"
-                  ? "grid-cols-1 sm:grid-cols-2 justify-center"
-                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-              }`}
-            >
-              {teamData.map((member, index) => (
-                <TeamMember
-                  key={index}
-                  initial={member.initial}
-                  name={member.name}
-                  title={member.title}
-                  description={member.description}
-                  image={member.image}
-                />
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
-    </>
+        </section>
+      </div>
+    </div>
   );
 };
 
