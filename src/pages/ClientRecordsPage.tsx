@@ -294,7 +294,7 @@ const ClientRecordsPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8">
+    <div className="w-full p-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center">
           <button
@@ -348,87 +348,90 @@ const ClientRecordsPage: React.FC = () => {
         className="mb-4 px-3 py-2 border rounded w-full"
       />
       {loading ? <div>Loading...</div> : null}
-      <div className="overflow-x-auto">
-        <table className="w-full bg-white rounded-xl shadow-md">
+      <div className="bg-white dark:bg-gray-800 rounded shadow p-4">
+        <table className="w-full">
           <thead>
-            <tr className="bg-gray-100 border-b">
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
+            <tr className="bg-gray-100 dark:bg-gray-900 border-b dark:border-gray-700">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Date
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
-                Client Name
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                Client
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle whitespace-normal break-words">
-                Client Address
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                Location
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle whitespace-normal break-words">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Inverter
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle whitespace-normal break-words">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Solar Panels
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle whitespace-normal break-words">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Battery
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Contact Number
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Facebook Name
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Visitation Date
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Notes
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Amount
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-[15px] align-middle">
+              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
             {paginated.map((r) => (
-              <tr key={r.id} className="border-b hover:bg-gray-50 align-middle">
-                <td className="px-6 py-3 align-middle whitespace-nowrap text-[15px]">
+              <tr
+                key={r.id}
+                className="border-b hover:bg-gray-50 dark:hover:bg-gray-700 align-middle"
+              >
+                <td className="px-4 py-2 align-middle whitespace-nowrap text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.date}
                 </td>
-                <td className="px-6 py-3 align-middle whitespace-normal break-words text-[15px]">
+                <td className="px-4 py-2 align-middle whitespace-normal break-words text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.name}
                 </td>
-                <td className="px-6 py-3 align-middle whitespace-normal break-words text-[15px]">
+                <td className="px-4 py-2 align-middle whitespace-normal break-words text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.address}
                 </td>
-                <td className="px-6 py-3 align-middle whitespace-normal break-words text-[15px]">
+                <td className="px-4 py-2 align-middle whitespace-normal break-words text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.inverter}
                 </td>
-                <td className="px-6 py-3 align-middle whitespace-normal break-words text-[15px]">
+                <td className="px-4 py-2 align-middle whitespace-normal break-words text-gray-900 dark:text-gray-100 text-[15px]">
                   {`${r.solar_panel_pcs} pcs, ${r.solar_panel_wattage}W`.replace(
                     /W{2,}/g,
                     "W"
                   )}
                 </td>
-                <td className="px-6 py-3 align-middle whitespace-normal break-words text-[15px]">
+                <td className="px-4 py-2 align-middle whitespace-normal break-words text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.battery_qty && parseInt(r.battery_qty) > 1
                     ? `${r.battery_qty} x ${r.battery_type}`
                     : r.battery_type}
                 </td>
-                <td className="px-6 py-3 align-middle text-[15px]">
+                <td className="px-4 py-2 align-middle text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.contact}
                 </td>
-                <td className="px-6 py-3 align-middle text-[15px]">
+                <td className="px-4 py-2 align-middle text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.facebook}
                 </td>
-                <td className="px-6 py-3 align-middle text-[15px]">
+                <td className="px-4 py-2 align-middle text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.visitation}
                 </td>
-                <td className="px-6 py-3 align-middle text-[15px]">
+                <td className="px-4 py-2 align-middle text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.notes}
                 </td>
-                <td className="px-6 py-3 align-middle text-[15px]">
+                <td className="px-4 py-2 align-middle text-gray-900 dark:text-gray-100 text-[15px]">
                   {r.amount
                     ? Number(r.amount).toLocaleString(undefined, {
                         minimumFractionDigits: 2,
@@ -436,7 +439,7 @@ const ClientRecordsPage: React.FC = () => {
                       })
                     : ""}
                 </td>
-                <td className="px-6 py-3 align-middle text-[15px]">
+                <td className="px-4 py-2 align-middle text-gray-900 dark:text-gray-100 text-[15px]">
                   <button
                     onClick={() => handleEdit(r)}
                     className="text-blue-600 mr-2"
@@ -499,7 +502,7 @@ const ClientRecordsPage: React.FC = () => {
       )}
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-lg shadow-lg relative">
+          <div className="bg-white dark:bg-gray-900 rounded-lg p-6 w-full max-w-lg shadow-lg relative">
             <button
               onClick={() => {
                 setShowForm(false);
@@ -517,27 +520,31 @@ const ClientRecordsPage: React.FC = () => {
               className="grid grid-cols-1 md:grid-cols-2 gap-4"
             >
               <div>
-                <label className="block text-sm font-medium">Date</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Date
+                </label>
                 <input
                   type="date"
                   value={form.date}
                   onChange={(e) => setForm({ ...form, date: e.target.value })}
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">Client Name</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Client Name
+                </label>
                 <input
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                   Client Address
                 </label>
                 <input
@@ -546,17 +553,19 @@ const ClientRecordsPage: React.FC = () => {
                   onChange={(e) =>
                     setForm({ ...form, address: e.target.value })
                   }
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">Inverter</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Inverter
+                </label>
                 <select
                   value={form.inverter}
                   onChange={(e) =>
                     setForm({ ...form, inverter: e.target.value })
                   }
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   required
                 >
                   <option value="">Select Inverter</option>
@@ -571,7 +580,7 @@ const ClientRecordsPage: React.FC = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                   Solar Panels
                 </label>
                 <div className="flex gap-2">
@@ -582,7 +591,7 @@ const ClientRecordsPage: React.FC = () => {
                     onChange={(e) =>
                       setForm({ ...form, solar_panel_pcs: e.target.value })
                     }
-                    className="block border rounded px-3 py-2 w-1/2"
+                    className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/2"
                     placeholder="pcs"
                     required
                   />
@@ -591,7 +600,7 @@ const ClientRecordsPage: React.FC = () => {
                     onChange={(e) =>
                       setForm({ ...form, solar_panel_wattage: e.target.value })
                     }
-                    className="block border rounded px-3 py-2 w-1/2"
+                    className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/2"
                     required
                   >
                     <option value="">Wattage</option>
@@ -603,7 +612,9 @@ const ClientRecordsPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium">Battery</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Battery
+                </label>
                 <div className="flex gap-2">
                   <select
                     value={form.battery_type}
@@ -615,7 +626,7 @@ const ClientRecordsPage: React.FC = () => {
                         battery_qty: value === "None" ? "0" : prev.battery_qty,
                       }));
                     }}
-                    className="block border rounded px-3 py-2 w-2/3"
+                    className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-2/3"
                     required
                   >
                     <option value="">Select Battery</option>
@@ -634,7 +645,7 @@ const ClientRecordsPage: React.FC = () => {
                     onChange={(e) =>
                       setForm({ ...form, battery_qty: e.target.value })
                     }
-                    className="block border rounded px-3 py-2 w-1/3"
+                    className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/3"
                     placeholder="Qty"
                     required={form.battery_type !== "None"}
                     disabled={form.battery_type === "None"}
@@ -642,7 +653,7 @@ const ClientRecordsPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                   Contact Number
                 </label>
                 <input
@@ -651,11 +662,11 @@ const ClientRecordsPage: React.FC = () => {
                   onChange={(e) =>
                     setForm({ ...form, contact: e.target.value })
                   }
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                   Facebook Name
                 </label>
                 <input
@@ -664,11 +675,11 @@ const ClientRecordsPage: React.FC = () => {
                   onChange={(e) =>
                     setForm({ ...form, facebook: e.target.value })
                   }
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                   Visitation Date
                 </label>
                 <input
@@ -677,25 +688,29 @@ const ClientRecordsPage: React.FC = () => {
                   onChange={(e) =>
                     setForm({ ...form, visitation: e.target.value })
                   }
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                 />
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium">Notes</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Notes
+                </label>
                 <textarea
                   value={form.notes}
                   onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   rows={2}
                 />
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium">Amount</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Amount
+                </label>
                 <input
                   type="number"
                   value={form.amount}
                   onChange={(e) => setForm({ ...form, amount: e.target.value })}
-                  className="mt-1 block w-full border rounded px-3 py-2"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   required
                 />
               </div>

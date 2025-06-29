@@ -1,0 +1,40 @@
+/* Dark mode overrides for react-big-calendar */
+.dark .rbc-calendar,
+.dark .rbc-month-view,
+.dark .rbc-header,
+.dark .rbc-date-cell,
+.dark .rbc-day-bg,
+.dark .rbc-time-content,
+.dark .rbc-timeslot-group,
+.dark .rbc-time-header,
+.dark .rbc-time-gutter,
+.dark .rbc-event,
+.dark .rbc-toolbar {
+  background-color: #181f2a !important;
+  color: #e5e7eb !important;
+  border-color: #374151 !important;
+}
+
+.dark .rbc-off-range-bg {
+  background-color: #232b3a !important;
+}
+
+.dark .rbc-today {
+  background-color: #334155 !important;
+}
+
+.dark .rbc-event {
+  background-color: #6366f1 !important;
+  color: #fff !important;
+}
+
+.dark .rbc-toolbar button {
+  background: transparent !important;
+  color: #e5e7eb !important;
+  border: 1px solid #374151 !important;
+}
+
+.dark .rbc-toolbar button.rbc-active {
+  background: #334155 !important;
+  color: #fff !important;
+}

@@ -25,6 +25,10 @@ import CalendarPage from "../pages/CalendarPage";
 import BuildersInverterPage from "../pages/BuildersInverterPage";
 import BuildersBatteryPage from "../pages/BuildersBatteryPage";
 import BuildersPage from "../pages/BuildersPage";
+import AnalyticsPage from "../pages/AnalyticsPage";
+import SettingsPage from "../pages/SettingsPage";
+import PayrollPage from "../pages/PayrollPage";
+import SalesInvoicePage from "../pages/SalesInvoicePage";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -38,21 +42,21 @@ const AppRoutes = ({
   return (
     <div className="flex flex-col min-h-screen">
       <Routes>
-        {/* Admin routes - outside main layout */}
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/admin/clients" element={<ClientRecordsPage />} />
-        <Route path="/admin/inventory" element={<InventoryPage />} />
-        <Route path="/admin/calendar" element={<CalendarPage />} />
-        <Route
-          path="/admin/builders/inverter"
-          element={<BuildersInverterPage />}
-        />
-        <Route
-          path="/admin/builders/battery"
-          element={<BuildersBatteryPage />}
-        />
-        <Route path="/admin/builders" element={<BuildersPage />} />
-
+        {/* Admin routes - nested under AdminDashboard */}
+        <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="clients" element={<ClientRecordsPage />} />
+          <Route path="inventory" element={<InventoryPage />} />
+          <Route path="calendar" element={<CalendarPage />} />
+          <Route path="builders/inverter" element={<BuildersInverterPage />} />
+          <Route path="builders/battery" element={<BuildersBatteryPage />} />
+          <Route path="builders" element={<BuildersPage />} />
+          <Route path="analytics" element={<AnalyticsPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="payroll" element={<PayrollPage />} />
+          <Route path="sales-invoice" element={<SalesInvoicePage />} />
+          <Route path="settings" element={<SettingsPage />} />
+          {/* Add more admin subpages here */}
+        </Route>
         {/* Main layout wrapper */}
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />

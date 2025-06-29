@@ -321,17 +321,19 @@ const InventoryPage: React.FC = () => {
   );
 
   return (
-    <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8">
+    <div className="w-full p-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
         <div className="flex items-center">
           <button
             onClick={() => navigate("/admin")}
-            className="mr-3 p-2 rounded hover:bg-gray-200"
+            className="mr-3 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800"
             aria-label="Back to dashboard"
           >
-            <ArrowLeft className="h-6 w-6" />
+            <ArrowLeft className="h-6 w-6 text-black dark:text-gray-100" />
           </button>
-          <h1 className="text-2xl font-bold">Inventory Management</h1>
+          <h1 className="text-2xl font-bold text-black dark:text-gray-100">
+            Inventory Management
+          </h1>
         </div>
         <div className="flex gap-2 mb-2">
           <button
@@ -354,53 +356,65 @@ const InventoryPage: React.FC = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search..."
-        className="mb-4 px-3 py-2 border rounded w-full"
+        className="mb-4 px-3 py-2 border rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
       />
       {lowStockItems.length > 0 && (
-        <div className="bg-yellow-100 text-yellow-800 p-2 rounded mb-2 font-semibold">
+        <div className="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 p-2 rounded mb-2 font-semibold">
           {lowStockItems.length} item(s) are low on stock!
         </div>
       )}
       {outOfStockItems.length > 0 && (
-        <div className="bg-red-100 text-red-700 p-2 rounded mb-4 font-semibold">
+        <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 p-2 rounded mb-4 font-semibold">
           {outOfStockItems.length} item(s) are out of stock!
         </div>
       )}
       <div className="overflow-x-auto">
-        <table className="w-full bg-white rounded shadow">
+        <table className="w-full bg-white dark:bg-gray-800 rounded shadow">
           <thead>
-            <tr className="bg-gray-100 border-b">
-              <th className="px-6 py-3 text-left font-semibold">
+            <tr className="bg-gray-100 dark:bg-gray-900 border-b dark:border-gray-700">
+              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
                 Item Description
               </th>
-              <th className="px-6 py-3 text-center font-semibold">Qty</th>
-              <th className="px-6 py-3 text-left font-semibold">Uom</th>
-              <th className="px-6 py-3 text-left font-semibold">
+              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
+                Qty
+              </th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+                Uom
+              </th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
                 Delivery Date
               </th>
-              <th className="px-6 py-3 text-center font-semibold">
+              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
                 Qty Delivered
               </th>
-              <th className="px-6 py-3 text-left font-semibold">
+              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
                 Release Date
               </th>
-              <th className="px-6 py-3 text-center font-semibold">
+              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
                 Qty Released
               </th>
-              <th className="px-6 py-3 text-center font-semibold">
+              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
                 Total Qty On Hand
               </th>
-              <th className="px-6 py-3 text-center font-semibold">Threshold</th>
-              <th className="px-6 py-3 text-left font-semibold">Category</th>
-              <th className="px-6 py-3 text-left font-semibold">Notes</th>
-              <th className="px-6 py-3 text-left font-semibold">Actions</th>
+              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
+                Threshold
+              </th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+                Category
+              </th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+                Notes
+              </th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+                Actions
+              </th>
             </tr>
             <tr>
-              <th className="px-4 py-2 bg-white">
+              <th className="px-4 py-2 bg-white dark:bg-gray-800">
                 <select
                   value={categoryFilter}
                   onChange={(e) => setCategoryFilter(e.target.value)}
-                  className="border px-2 py-1 rounded w-full"
+                  className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-400 dark:disabled:text-gray-500"
                 >
                   <option value="">All</option>
                   <option value="Solar Accessories">Solar Accessories</option>
@@ -411,57 +425,69 @@ const InventoryPage: React.FC = () => {
               <th colSpan={9}></th>
             </tr>
           </thead>
-          <tbody>
-            {paginatedItems.map((i) => (
-              <tr
-                key={i.id}
-                className={`border-b hover:bg-gray-50 align-middle ${
-                  Number(i.totalQtyOnHand) === 0
-                    ? "bg-red-100 text-red-700 font-bold"
-                    : Number(i.totalQtyOnHand) > 0 &&
-                      Number(i.totalQtyOnHand) <=
-                        (i.threshold ?? GLOBAL_THRESHOLD)
-                    ? "bg-yellow-100 text-yellow-900 font-bold"
-                    : ""
-                }`}
-              >
-                <td className="px-6 py-2 align-middle">{i.itemDescription}</td>
-                <td className="px-6 py-2 align-middle text-center">{i.qty}</td>
-                <td className="px-6 py-2 align-middle">
-                  {i.uom ? i.uom.toLowerCase() : ""}
-                </td>
-                <td className="px-6 py-2 align-middle">{i.deliveryDate}</td>
-                <td className="px-6 py-2 align-middle text-center">
-                  {i.qty_delivered}
-                </td>
-                <td className="px-6 py-2 align-middle">{i.releaseDate}</td>
-                <td className="px-6 py-2 align-middle text-center">
-                  {i.qty_released}
-                </td>
-                <td className="px-6 py-2 align-middle text-center">
-                  {i.totalQtyOnHand}
-                </td>
-                <td className="px-6 py-2 align-middle text-center">
-                  {i.threshold ?? GLOBAL_THRESHOLD}
-                </td>
-                <td className="px-6 py-2 align-middle">{i.category}</td>
-                <td className="px-6 py-2 align-middle">{i.notes}</td>
-                <td className="px-6 py-2 align-middle whitespace-nowrap">
-                  <button
-                    onClick={() => handleEdit(i)}
-                    className="text-blue-600 mr-2"
-                  >
-                    <Edit className="h-4 w-4" />
-                  </button>
-                  <button
-                    onClick={() => handleDelete(i.id)}
-                    className="text-red-600"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
-                </td>
-              </tr>
-            ))}
+          <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+            {paginatedItems.map((i) => {
+              const isOutOfStock = Number(i.totalQtyOnHand) === 0;
+              const isLowStock =
+                Number(i.totalQtyOnHand) > 0 &&
+                Number(i.totalQtyOnHand) <= (i.threshold ?? GLOBAL_THRESHOLD);
+              const isDisabled =
+                i.qty === undefined || i.qty === null || i.qty === "";
+              return (
+                <tr
+                  key={i.id}
+                  className={
+                    isOutOfStock
+                      ? "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 font-bold"
+                      : isLowStock
+                      ? "bg-yellow-100 dark:bg-yellow-900 text-yellow-900 dark:text-yellow-200 font-bold"
+                      : isDisabled
+                      ? "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-800"
+                      : "bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700"
+                  }
+                >
+                  <td className="px-6 py-2 align-middle">
+                    {i.itemDescription}
+                  </td>
+                  <td className="px-6 py-2 align-middle text-center">
+                    {i.qty}
+                  </td>
+                  <td className="px-6 py-2 align-middle">
+                    {i.uom ? i.uom.toLowerCase() : ""}
+                  </td>
+                  <td className="px-6 py-2 align-middle">{i.deliveryDate}</td>
+                  <td className="px-6 py-2 align-middle text-center">
+                    {i.qty_delivered}
+                  </td>
+                  <td className="px-6 py-2 align-middle">{i.releaseDate}</td>
+                  <td className="px-6 py-2 align-middle text-center">
+                    {i.qty_released}
+                  </td>
+                  <td className="px-6 py-2 align-middle text-center">
+                    {i.totalQtyOnHand}
+                  </td>
+                  <td className="px-6 py-2 align-middle text-center">
+                    {i.threshold ?? GLOBAL_THRESHOLD}
+                  </td>
+                  <td className="px-6 py-2 align-middle">{i.category}</td>
+                  <td className="px-6 py-2 align-middle">{i.notes}</td>
+                  <td className="px-6 py-2 align-middle whitespace-nowrap">
+                    <button
+                      onClick={() => handleEdit(i)}
+                      className="text-blue-600 mr-2"
+                    >
+                      <Edit className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(i.id)}
+                      className="text-red-600"
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
             {paginatedItems.length === 0 && (
               <tr>
                 <td
@@ -519,7 +545,7 @@ const InventoryPage: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-6 rounded shadow-lg w-full max-w-lg space-y-4 relative"
+            className="bg-white dark:bg-gray-900 p-6 rounded shadow-lg w-full max-w-lg space-y-4 relative"
           >
             <button
               type="button"
@@ -537,7 +563,7 @@ const InventoryPage: React.FC = () => {
             </h2>
             <div className="grid grid-cols-1 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                   Category *
                 </label>
                 <select
@@ -560,7 +586,7 @@ const InventoryPage: React.FC = () => {
                       };
                     });
                   }}
-                  className="border px-3 py-2 rounded w-full"
+                  className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                 >
                   <option value="" disabled>
                     Select Category
@@ -572,7 +598,7 @@ const InventoryPage: React.FC = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                   Item Description *
                 </label>
                 {!showManualDescription &&
@@ -588,7 +614,7 @@ const InventoryPage: React.FC = () => {
                             itemDescription: e.target.value,
                           }))
                         }
-                        className="border px-3 py-2 rounded w-full"
+                        className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                       >
                         <option value="" disabled>
                           Select Item Description
@@ -621,7 +647,7 @@ const InventoryPage: React.FC = () => {
                           }))
                         }
                         placeholder="Item Description"
-                        className="border px-3 py-2 rounded w-full"
+                        className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                       />
                       {filteredItemDescriptions.length > 0 && (
                         <button
@@ -638,7 +664,7 @@ const InventoryPage: React.FC = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Quantity *
                   </label>
                   <input
@@ -650,11 +676,11 @@ const InventoryPage: React.FC = () => {
                     type="number"
                     min="0"
                     placeholder="Quantity"
-                    className="border px-3 py-2 rounded w-full"
+                    className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     UOM *
                   </label>
                   <select
@@ -663,7 +689,7 @@ const InventoryPage: React.FC = () => {
                     onChange={(e) =>
                       setForm((f) => ({ ...f, uom: e.target.value }))
                     }
-                    className="border px-3 py-2 rounded w-full"
+                    className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   >
                     <option value="" disabled>
                       Select UOM
@@ -678,7 +704,7 @@ const InventoryPage: React.FC = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Delivery Date *
                   </label>
                   <input
@@ -689,11 +715,11 @@ const InventoryPage: React.FC = () => {
                     }
                     type="date"
                     placeholder="Delivery Date"
-                    className="border px-3 py-2 rounded w-full"
+                    className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Qty Delivered
                   </label>
                   <input
@@ -704,13 +730,13 @@ const InventoryPage: React.FC = () => {
                     type="number"
                     min="0"
                     placeholder="Qty Delivered"
-                    className="border px-3 py-2 rounded w-full"
+                    className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Release Date
                   </label>
                   <input
@@ -720,11 +746,11 @@ const InventoryPage: React.FC = () => {
                     }
                     type="date"
                     placeholder="Release Date"
-                    className="border px-3 py-2 rounded w-full"
+                    className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Qty Released
                   </label>
                   <input
@@ -735,12 +761,12 @@ const InventoryPage: React.FC = () => {
                     type="number"
                     min="0"
                     placeholder="Qty Released"
-                    className="border px-3 py-2 rounded w-full"
+                    className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                   Total Qty On Hand *
                 </label>
                 <input
@@ -752,11 +778,11 @@ const InventoryPage: React.FC = () => {
                   type="number"
                   min="0"
                   placeholder="Total Qty On Hand"
-                  className="border px-3 py-2 rounded w-full"
+                  className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                   Notes
                 </label>
                 <textarea
@@ -764,14 +790,14 @@ const InventoryPage: React.FC = () => {
                   onChange={(e) =>
                     setForm((f) => ({ ...f, notes: e.target.value }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   rows={2}
                   placeholder="Enter notes (optional)"
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Threshold
                   </label>
                   <input
@@ -784,9 +810,9 @@ const InventoryPage: React.FC = () => {
                         threshold: Number(e.target.value),
                       }))
                     }
-                    className="border px-3 py-2 rounded w-full"
+                    className="border border-gray-300 dark:border-gray-700 px-3 py-2 rounded w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   />
-                  <span className="text-xs text-gray-400">
+                  <span className="text-xs text-gray-400 dark:text-gray-400">
                     (Default: {GLOBAL_THRESHOLD})
                   </span>
                 </div>
@@ -799,7 +825,7 @@ const InventoryPage: React.FC = () => {
                   setShowForm(false);
                   setEditing(null);
                 }}
-                className="px-4 py-2 bg-gray-200 rounded"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded"
               >
                 Cancel
               </button>

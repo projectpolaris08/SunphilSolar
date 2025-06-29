@@ -52,48 +52,6 @@ const BuildersBatteryPage = () => {
     fetchBuilds();
   }, []);
 
-  const handleAddBuild = async () => {
-    if (!newBuild.description) return;
-    const now = new Date().toISOString();
-    const { data, error } = await supabase
-      .from("battery_builds")
-      .insert([
-        {
-          type: newBuild.type,
-          description: newBuild.description,
-          builder: newBuild.builder,
-          status: newBuild.status,
-          date_started: now,
-          date_completed: newBuild.status === "Done" ? now : null,
-        },
-      ])
-      .select()
-      .single();
-    if (!error && data) {
-      setBuilds((prev) => [data, ...prev]);
-      setNewBuild({
-        type: batteryTypes[0],
-        description: "",
-        builder: builderNames[0],
-        status: "In Progress",
-        date_started: null,
-        date_completed: null,
-      });
-      setFilterType("");
-      // Log activity
-      await supabase.from("admin_activity").insert([
-        {
-          module: "builder",
-          record_id: data.id,
-          action: "created",
-          description: `Created battery build (${data.type}) for ${data.builder}`,
-          actor: null,
-          timestamp: now,
-        },
-      ]);
-    }
-  };
-
   const handleStatusChange = async (id: number, status: string) => {
     const now = new Date().toISOString();
     const update: { status: string; date_completed?: string | null } = {
@@ -172,7 +130,7 @@ const BuildersBatteryPage = () => {
   }));
 
   return (
-    <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8">
+    <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
       <div className="flex items-center gap-3 mb-6">
         <button
           onClick={() => navigate("/admin")}
@@ -180,7 +138,7 @@ const BuildersBatteryPage = () => {
           aria-label="Back to Dashboard"
         >
           <svg
-            className="h-6 w-6 text-black"
+            className="h-6 w-6 text-black dark:text-gray-100"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -193,66 +151,69 @@ const BuildersBatteryPage = () => {
             />
           </svg>
         </button>
-        <h1 className="text-2xl font-bold text-black">Battery Builders</h1>
+        <h1 className="text-2xl font-bold text-black dark:text-gray-100">
+          Battery Builders
+        </h1>
       </div>
       {/* Summary Section */}
-      <div className="mb-6 bg-gray-50 rounded p-6 flex flex-col gap-4 shadow-sm">
-        <div className="text-2xl font-bold mb-2">
-          Total Builds: <span className="text-black">{totalBuilds}</span>
+      <div className="text-2xl font-bold mb-2 dark:text-gray-100">
+        Total Builds:{" "}
+        <span className="text-black dark:text-gray-100">{totalBuilds}</span>
+      </div>
+      <div>
+        <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">
+          By Builder
         </div>
-        <div>
-          <div className="text-sm font-semibold text-gray-600 mb-1">
-            By Builder
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {builderCounts.map((bc) => (
-              <span
-                key={bc.name}
-                className="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-base font-bold shadow-sm"
-              >
-                {bc.name}: {bc.count}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div>
-          <div className="text-sm font-semibold text-gray-600 mb-1">
-            By Status
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-base font-bold shadow-sm">
-              In Progress: {inProgressCount}
+        <div className="flex flex-wrap gap-3">
+          {builderCounts.map((bc) => (
+            <span
+              key={bc.name}
+              className="inline-block bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-base font-bold shadow-sm"
+            >
+              {bc.name}: {bc.count}
             </span>
-            <span className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-base font-bold shadow-sm">
-              Done: {doneCount}
-            </span>
-          </div>
+          ))}
         </div>
-        <div>
-          <div className="text-sm font-semibold text-gray-600 mb-1">
-            By Battery Type
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {batteryTypeCounts.map((btc) => (
-              <span
-                key={btc.type}
-                className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-base font-bold shadow-sm text-center"
-              >
-                {btc.type}: {btc.count}
-              </span>
-            ))}
-          </div>
+      </div>
+      <div>
+        <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">
+          By Status
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <span className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-4 py-2 rounded-full text-base font-bold shadow-sm">
+            In Progress: {inProgressCount}
+          </span>
+          <span className="inline-block bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-4 py-2 rounded-full text-base font-bold shadow-sm">
+            Done: {doneCount}
+          </span>
+        </div>
+      </div>
+      <div>
+        <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">
+          By Battery Type
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
+          {batteryTypeCounts.map((itc) => (
+            <span
+              key={itc.type}
+              className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-base font-bold shadow-sm text-center"
+            >
+              {itc.type}: {itc.count}
+            </span>
+          ))}
         </div>
       </div>
       <div className="flex flex-col md:flex-row md:items-end gap-4 mb-6">
         <div>
-          <label className="block text-sm font-medium mb-1">Battery Type</label>
+          <label className="block text-sm font-medium mb-1 dark:text-gray-200">
+            Battery Type
+          </label>
           <select
             value={newBuild.type}
             onChange={(e) =>
               setNewBuild((prev) => ({ ...prev, type: e.target.value }))
             }
-            className="border rounded px-3 py-2 w-full"
+            className="border rounded px-3 py-2 w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           >
             {batteryTypes.map((type) => (
               <option key={type} value={type}>
@@ -262,7 +223,9 @@ const BuildersBatteryPage = () => {
           </select>
         </div>
         <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">Description</label>
+          <label className="block text-sm font-medium mb-1 dark:text-gray-200">
+            Description
+          </label>
           <input
             type="text"
             value={newBuild.description}
@@ -270,17 +233,19 @@ const BuildersBatteryPage = () => {
               setNewBuild((prev) => ({ ...prev, description: e.target.value }))
             }
             placeholder="Add new build description"
-            className="border rounded px-3 py-2 w-full"
+            className="border rounded px-3 py-2 w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Builder Name</label>
+          <label className="block text-sm font-medium mb-1 dark:text-gray-200">
+            Builder Name
+          </label>
           <select
             value={newBuild.builder}
             onChange={(e) =>
               setNewBuild((prev) => ({ ...prev, builder: e.target.value }))
             }
-            className="border rounded px-3 py-2 w-full"
+            className="border rounded px-3 py-2 w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           >
             {builderNames.map((name) => (
               <option key={name} value={name}>
@@ -290,40 +255,35 @@ const BuildersBatteryPage = () => {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Status</label>
+          <label className="block text-sm font-medium mb-1 dark:text-gray-200">
+            Status
+          </label>
           <select
             value={newBuild.status}
             onChange={(e) =>
               setNewBuild((prev) => ({ ...prev, status: e.target.value }))
             }
-            className="border rounded px-3 py-2 w-full"
+            className="border rounded px-3 py-2 w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           >
-            {statusOptions.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
+            {statusOptions.map((status) => (
+              <option key={status} value={status}>
+                {status}
               </option>
             ))}
           </select>
         </div>
-        <div className="self-end">
-          <button
-            type="button"
-            onClick={handleAddBuild}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-            disabled={!newBuild.description.trim()}
-          >
-            Add
-          </button>
-        </div>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded font-semibold hover:bg-blue-700 transition mt-4 md:mt-0">
+          Add
+        </button>
       </div>
-      <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">
+      <div className="mb-6">
+        <label className="block text-sm font-medium mb-1 dark:text-gray-200">
           Filter by Battery Type
         </label>
         <select
           value={filterType}
           onChange={(e) => setFilterType(e.target.value)}
-          className="border rounded px-3 py-2 w-full max-w-xs"
+          className="border rounded px-3 py-2 w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
         >
           <option value="">All Types</option>
           {batteryTypes.map((type) => (
@@ -333,28 +293,42 @@ const BuildersBatteryPage = () => {
           ))}
         </select>
       </div>
-      <div className="bg-white rounded shadow p-4">
+      <div className="bg-white dark:bg-gray-800 rounded shadow p-4">
         {loading ? (
-          <div>Loading...</div>
+          <div className="text-gray-700 dark:text-gray-200">Loading...</div>
         ) : (
           <table className="w-full">
             <thead>
-              <tr className="bg-gray-100 border-b">
-                <th className="px-4 py-2 text-left">Battery Type</th>
-                <th className="px-4 py-2 text-left">Description</th>
-                <th className="px-4 py-2 text-left">Builder Name</th>
-                <th className="px-4 py-2 text-left">Status</th>
-                <th className="px-4 py-2 text-left">Date Started</th>
-                <th className="px-4 py-2 text-left">Date Completed</th>
-                <th className="px-4 py-2 text-left">Actions</th>
+              <tr className="bg-gray-100 dark:bg-gray-900 border-b dark:border-gray-700">
+                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                  Battery Type
+                </th>
+                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                  Description
+                </th>
+                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                  Builder Name
+                </th>
+                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                  Status
+                </th>
+                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                  Date Started
+                </th>
+                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                  Date Completed
+                </th>
+                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                  Actions
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               {filteredBuilds.length === 0 && (
                 <tr>
                   <td
                     colSpan={7}
-                    className="text-gray-400 px-4 py-2 text-center"
+                    className="text-gray-400 dark:text-gray-500 px-4 py-2 text-center"
                   >
                     No builds yet.
                   </td>
@@ -369,7 +343,7 @@ const BuildersBatteryPage = () => {
                     <select
                       value={b.status}
                       onChange={(e) => handleStatusChange(b.id, e.target.value)}
-                      className="border rounded px-2 py-1"
+                      className="border rounded px-2 py-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-400 dark:disabled:text-gray-500"
                     >
                       {statusOptions.map((opt) => (
                         <option key={opt} value={opt}>

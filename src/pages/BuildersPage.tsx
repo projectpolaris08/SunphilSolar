@@ -182,18 +182,20 @@ const BuildersPage = () => {
   });
 
   return (
-    <div className="w-full p-2 sm:p-4">
+    <div className="w-full p-2 sm:p-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
       {/* Header - Mobile Responsive */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
         <div className="flex items-center">
           <button
             onClick={() => navigate("/admin")}
-            className="mr-3 p-2 rounded hover:bg-gray-200 focus:outline-none"
+            className="mr-3 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none"
             aria-label="Back to Dashboard"
           >
-            <ArrowLeft className="h-5 w-5 text-gray-700" />
+            <ArrowLeft className="h-5 w-5 text-gray-700 dark:text-gray-200" />
           </button>
-          <h1 className="text-xl sm:text-2xl font-bold">Builders Summary</h1>
+          <h1 className="text-xl sm:text-2xl font-bold dark:text-gray-100">
+            Builders Summary
+          </h1>
         </div>
         {/* Action Buttons - Stack on mobile */}
         <div className="flex flex-wrap gap-2">
@@ -229,12 +231,14 @@ const BuildersPage = () => {
         {/* Progress Bar */}
         <div className="lg:col-span-2">
           <div className="flex flex-col sm:flex-row sm:justify-between gap-1 mb-1">
-            <span className="text-sm font-medium">Overall Progress</span>
-            <span className="text-sm font-medium">
+            <span className="text-sm font-medium dark:text-gray-200">
+              Overall Progress
+            </span>
+            <span className="text-sm font-medium dark:text-gray-200">
               {progressPercent}% Done ({totalDone}/{totalBuilds})
             </span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-3">
+          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
             <div
               className="bg-green-500 h-3 rounded-full transition-all"
               style={{ width: `${progressPercent}%` }}
@@ -244,7 +248,7 @@ const BuildersPage = () => {
         {/* Alerts */}
         <div>
           {overdueBuilds.length > 0 && (
-            <div className="bg-yellow-100 text-yellow-800 p-3 rounded flex items-center gap-2 text-sm">
+            <div className="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 p-3 rounded flex items-center gap-2 text-sm">
               <AlertTriangle className="h-4 w-4 flex-shrink-0" />
               <span>{overdueBuilds.length} overdue</span>
             </div>
@@ -258,18 +262,18 @@ const BuildersPage = () => {
         <div className="lg:col-span-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
             {/* Inverter Summary */}
-            <div className="bg-white rounded-lg shadow p-3 sm:p-4 border border-gray-100">
-              <h2 className="text-base sm:text-lg font-semibold mb-2">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4 border border-gray-100 dark:border-gray-700">
+              <h2 className="text-base sm:text-lg font-semibold mb-2 dark:text-gray-100">
                 Inverter Builds
               </h2>
-              <div className="text-3xl sm:text-4xl font-bold mb-2 text-blue-700">
+              <div className="text-3xl sm:text-4xl font-bold mb-2 text-blue-700 dark:text-blue-300">
                 {inverterSummary.total}
               </div>
               <div className="flex flex-wrap gap-2 mb-3">
-                <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-2 py-1 rounded text-xs font-semibold">
                   In Progress: {inverterSummary.inProgress}
                 </span>
-                <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">
+                <span className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-2 py-1 rounded text-xs font-semibold">
                   Done: {inverterSummary.done}
                 </span>
               </div>
@@ -281,18 +285,18 @@ const BuildersPage = () => {
               </button>
             </div>
             {/* Battery Summary */}
-            <div className="bg-white rounded-lg shadow p-3 sm:p-4 border border-gray-100">
-              <h2 className="text-base sm:text-lg font-semibold mb-2">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4 border border-gray-100 dark:border-gray-700">
+              <h2 className="text-base sm:text-lg font-semibold mb-2 dark:text-gray-100">
                 Battery Builds
               </h2>
-              <div className="text-3xl sm:text-4xl font-bold mb-2 text-blue-700">
+              <div className="text-3xl sm:text-4xl font-bold mb-2 text-blue-700 dark:text-blue-300">
                 {batterySummary.total}
               </div>
               <div className="flex flex-wrap gap-2 mb-3">
-                <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-2 py-1 rounded text-xs font-semibold">
                   In Progress: {batterySummary.inProgress}
                 </span>
-                <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">
+                <span className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-2 py-1 rounded text-xs font-semibold">
                   Done: {batterySummary.done}
                 </span>
               </div>
@@ -306,8 +310,10 @@ const BuildersPage = () => {
           </div>
 
           {/* Next Completion */}
-          <div className="bg-white rounded-lg shadow p-3 sm:p-4 border border-gray-100 mt-3 sm:mt-4">
-            <h3 className="text-sm font-semibold mb-2">Next Completion</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4 border border-gray-100 dark:border-gray-700 mt-3 sm:mt-4">
+            <h3 className="text-sm font-semibold mb-2 dark:text-gray-100">
+              Next Completion
+            </h3>
             {nextCompletion ? (
               <div className="bg-green-50 text-green-800 p-3 rounded text-sm">
                 <div>
@@ -328,23 +334,28 @@ const BuildersPage = () => {
         {/* Center Column - Breakdowns */}
         <div className="lg:col-span-1">
           {/* Builder Breakdown */}
-          <div className="bg-white rounded-lg shadow p-3 sm:p-4 border border-gray-100 mb-3 sm:mb-4">
-            <h3 className="text-sm font-semibold mb-3">Builder Breakdown</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4 border border-gray-100 dark:border-gray-700 mb-3 sm:mb-4">
+            <h3 className="text-sm font-semibold mb-3 dark:text-gray-100">
+              Builder Breakdown
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {builderBreakdown.map((b) => (
-                <div key={b.name} className="bg-gray-50 rounded p-3">
-                  <div className="font-semibold text-blue-700 text-sm">
+                <div
+                  key={b.name}
+                  className="bg-gray-50 dark:bg-gray-900 rounded p-3"
+                >
+                  <div className="font-semibold text-blue-700 dark:text-blue-200 text-sm">
                     {b.name}
                   </div>
                   <div className="flex flex-wrap gap-2 mt-1">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-2 py-1 rounded text-xs">
                       Inv: {b.inverter.length}
                     </span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+                    <span className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-2 py-1 rounded text-xs">
                       Bat: {b.battery.length}
                     </span>
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-gray-500 dark:text-gray-300 mt-1">
                     Done:{" "}
                     {b.inverter.filter((x) => x.status === "Done").length +
                       b.battery.filter((x) => x.status === "Done").length}
@@ -355,37 +366,39 @@ const BuildersPage = () => {
           </div>
 
           {/* Type Breakdown */}
-          <div className="bg-white rounded-lg shadow p-3 sm:p-4 border border-gray-100">
-            <h3 className="text-sm font-semibold mb-3">Type Breakdown</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4 border border-gray-100 dark:border-gray-700">
+            <h3 className="text-sm font-semibold mb-3 dark:text-gray-100">
+              Type Breakdown
+            </h3>
             <div className="space-y-3">
               <div>
-                <div className="font-semibold text-sm mb-2">Inverter Types</div>
-                <div className="flex flex-wrap gap-1">
-                  {inverterTypeBreakdown
-                    .filter((t) => t.count > 0)
-                    .map((t) => (
-                      <span
-                        key={t.type}
-                        className="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
-                      >
-                        {t.type}: {t.count}
-                      </span>
-                    ))}
+                <div className="font-semibold dark:text-gray-200">
+                  Inverter Types
+                </div>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {inverterTypeBreakdown.map((t) => (
+                    <span
+                      key={t.type}
+                      className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200 px-2 py-1 rounded text-xs"
+                    >
+                      {t.type}: {t.count}
+                    </span>
+                  ))}
                 </div>
               </div>
               <div>
-                <div className="font-semibold text-sm mb-2">Battery Types</div>
-                <div className="flex flex-wrap gap-1">
-                  {batteryTypeBreakdown
-                    .filter((t) => t.count > 0)
-                    .map((t) => (
-                      <span
-                        key={t.type}
-                        className="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
-                      >
-                        {t.type}: {t.count}
-                      </span>
-                    ))}
+                <div className="font-semibold dark:text-gray-200">
+                  Battery Types
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {batteryTypeBreakdown.map((t) => (
+                    <span
+                      key={t.type}
+                      className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200 px-2 py-1 rounded text-xs"
+                    >
+                      {t.type}: {t.count}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -394,21 +407,25 @@ const BuildersPage = () => {
 
         {/* Right Column - Activity */}
         <div className="lg:col-span-2 xl:col-span-1">
-          <div className="bg-white rounded-lg shadow p-3 sm:p-4 border border-gray-100">
-            <h3 className="text-sm font-semibold mb-3">Recent Activity</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4 border border-gray-100 dark:border-gray-700">
+            <h3 className="text-sm font-semibold mb-3 dark:text-gray-100">
+              Recent Activity
+            </h3>
             <div className="space-y-2 max-h-64 sm:max-h-96 overflow-y-auto">
               {activity.length === 0 && (
-                <div className="text-gray-400 text-sm">No recent activity.</div>
+                <div className="text-gray-400 dark:text-gray-400 text-sm">
+                  No recent activity.
+                </div>
               )}
               {activity.map((a) => (
                 <div
                   key={a.id}
                   className="border-l-2 border-blue-500 pl-3 py-2"
                 >
-                  <div className="text-gray-800 text-sm break-words">
+                  <div className="text-gray-800 dark:text-gray-200 text-sm break-words">
                     {a.description}
                   </div>
-                  <div className="text-xs text-gray-500">
+                  <div className="text-xs text-gray-500 dark:text-gray-400">
                     {new Date(a.timestamp).toLocaleString()}
                   </div>
                 </div>
@@ -419,7 +436,7 @@ const BuildersPage = () => {
       </div>
 
       {/* Footer */}
-      <div className="mt-4 text-center sm:text-right text-xs text-gray-500">
+      <div className="mt-4 text-center sm:text-right text-xs text-gray-500 dark:text-gray-300">
         Last updated: {lastUpdated}
       </div>
     </div>

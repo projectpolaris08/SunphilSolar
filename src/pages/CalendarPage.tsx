@@ -3,6 +3,7 @@ import { Calendar, dateFnsLocalizer, Event } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay } from "date-fns";
 import { enUS } from "date-fns/locale";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import "../calendar-dark.css";
 import { ArrowLeft, Trash2 } from "lucide-react";
 import { useCalendarEvents } from "../contexts/CalendarEventsContext";
 import { supabase } from "../lib/supabaseClient";
@@ -333,10 +334,10 @@ const CalendarPage: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-6 rounded shadow-lg w-full max-w-lg space-y-4 max-h-[90vh] overflow-y-auto"
+            className="bg-white dark:bg-gray-900 p-6 rounded shadow-lg w-full max-w-lg space-y-4 max-h-[90vh] overflow-y-auto text-gray-900 dark:text-gray-100"
           >
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-lg font-bold">
+              <h2 className="text-lg font-bold dark:text-gray-100">
                 {selected ? "Edit" : "Add"} Project Schedule
               </h2>
               {selected && (
@@ -357,7 +358,7 @@ const CalendarPage: React.FC = () => {
                 setForm((f) => ({ ...f, clientName: e.target.value }))
               }
               placeholder="Client's Name"
-              className="border px-3 py-2 rounded w-full"
+              className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
             />
             <input
               required
@@ -366,10 +367,12 @@ const CalendarPage: React.FC = () => {
                 setForm((f) => ({ ...f, location: e.target.value }))
               }
               placeholder="Project Location"
-              className="border px-3 py-2 rounded w-full mt-2"
+              className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
             />
             <div className="mt-2">
-              <label className="block text-xs mb-1">Admin Client</label>
+              <label className="block text-xs mb-1 dark:text-gray-200">
+                Admin Client
+              </label>
               <select
                 value={form.adminClient || ""}
                 onChange={(e) =>
@@ -379,7 +382,7 @@ const CalendarPage: React.FC = () => {
                     adminClientOther: "",
                   }))
                 }
-                className="border px-3 py-2 rounded w-full"
+                className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                 required
               >
                 <option value="" disabled>
@@ -411,20 +414,22 @@ const CalendarPage: React.FC = () => {
                     setForm((f) => ({ ...f, adminClientOther: e.target.value }))
                   }
                   placeholder="Enter admin client name"
-                  className="border px-3 py-2 rounded w-full mt-2"
+                  className="border px-3 py-2 rounded w-full mt-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   required
                 />
               )}
             </div>
             <div className="flex gap-4">
               <div className="flex-1">
-                <label className="block text-xs mb-1">Project Type</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  Project Type
+                </label>
                 <select
                   value={form.projectType || ""}
                   onChange={(e) =>
                     setForm((f) => ({ ...f, projectType: e.target.value }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   required
                 >
                   <option value="" disabled>
@@ -437,16 +442,19 @@ const CalendarPage: React.FC = () => {
                     Commercial Solar Installation
                   </option>
                   <option value="Delivery">Delivery</option>
+                  <option value="For Pick-up">For Pick-up</option>
                 </select>
               </div>
               <div className="flex-1">
-                <label className="block text-xs mb-1">System Capacity</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  System Capacity
+                </label>
                 <select
                   value={form.systemCapacity || ""}
                   onChange={(e) =>
                     setForm((f) => ({ ...f, systemCapacity: e.target.value }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   required
                 >
                   <option value="" disabled>
@@ -464,7 +472,7 @@ const CalendarPage: React.FC = () => {
             </div>
             <div className="flex gap-4 mt-2">
               <div className="flex-1">
-                <label className="block text-xs mb-1">
+                <label className="block text-xs mb-1 dark:text-gray-200">
                   Solar Panels Quantity
                 </label>
                 <input
@@ -474,18 +482,20 @@ const CalendarPage: React.FC = () => {
                   onChange={(e) =>
                     setForm((f) => ({ ...f, solarPanels: e.target.value }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   placeholder="Number of panels"
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-xs mb-1">Battery</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  Battery
+                </label>
                 <select
                   value={form.battery || ""}
                   onChange={(e) =>
                     setForm((f) => ({ ...f, battery: e.target.value }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                 >
                   <option value="">None</option>
                   <option value="24v 280Ah">24v 280Ah</option>
@@ -499,7 +509,9 @@ const CalendarPage: React.FC = () => {
             </div>
             {form.battery && (
               <div className="mt-2">
-                <label className="block text-xs mb-1">Battery Multiplier</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  Battery Multiplier
+                </label>
                 <input
                   type="number"
                   min="1"
@@ -510,14 +522,16 @@ const CalendarPage: React.FC = () => {
                       batteryMultiplier: Number(e.target.value),
                     }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   placeholder="1"
                 />
               </div>
             )}
             <div className="flex gap-4 mt-2">
               <div className="flex-1">
-                <label className="block text-xs mb-1">Start Date</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  Start Date
+                </label>
                 <input
                   type="date"
                   value={form.start ? format(form.start, "yyyy-MM-dd") : ""}
@@ -528,19 +542,20 @@ const CalendarPage: React.FC = () => {
                     setForm((f) => ({
                       ...f,
                       start: newDate,
-                      // Only auto-set end if not editing or if end is before new start
                       end:
                         !selected || (f.end && f.end < newDate)
                           ? newDate
                           : f.end,
                     }));
                   }}
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   required
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-xs mb-1">End Date</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  End Date
+                </label>
                 <input
                   type="date"
                   value={form.end ? format(form.end, "yyyy-MM-dd") : ""}
@@ -550,45 +565,51 @@ const CalendarPage: React.FC = () => {
                     );
                     setForm((f) => ({ ...f, end: newDate }));
                   }}
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   required
                 />
               </div>
             </div>
             <div className="flex gap-4 mt-2">
               <div className="flex-1">
-                <label className="block text-xs mb-1">Start Time</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  Start Time
+                </label>
                 <input
                   type="time"
                   value={form.startTime || ""}
                   onChange={(e) =>
                     setForm((f) => ({ ...f, startTime: e.target.value }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   required
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-xs mb-1">End Time</label>
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  End Time
+                </label>
                 <input
                   type="time"
                   value={form.endTime || ""}
                   onChange={(e) =>
                     setForm((f) => ({ ...f, endTime: e.target.value }))
                   }
-                  className="border px-3 py-2 rounded w-full"
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                   required
                 />
               </div>
             </div>
             <div className="mt-2">
-              <label className="block text-xs mb-1">Notes</label>
+              <label className="block text-xs mb-1 dark:text-gray-200">
+                Notes
+              </label>
               <textarea
                 value={form.notes || ""}
                 onChange={(e) =>
                   setForm((f) => ({ ...f, notes: e.target.value }))
                 }
-                className="border px-3 py-2 rounded w-full"
+                className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                 rows={2}
                 placeholder="Enter notes (optional)"
               />
@@ -600,13 +621,13 @@ const CalendarPage: React.FC = () => {
                   setShowForm(false);
                   setSelected(null);
                 }}
-                className="px-4 py-2 bg-gray-200 rounded"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
               >
                 Save
               </button>
