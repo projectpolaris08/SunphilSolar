@@ -6,6 +6,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { ArrowLeft, Trash2 } from "lucide-react";
 import { useCalendarEvents } from "../contexts/CalendarEventsContext";
 import { supabase } from "../lib/supabaseClient";
+import DayEventsModal from "../components/DayEventsModal";
 
 const locales = {
   "en-US": enUS,
@@ -68,6 +69,8 @@ const CalendarPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteEventId, setDeleteEventId] = useState<string | null>(null);
+  const [showDayModal, setShowDayModal] = useState(false);
+  const [modalEvents, setModalEvents] = useState<any[]>([]);
 
   // Fetch events from Supabase on mount
   useEffect(() => {
@@ -303,6 +306,22 @@ const CalendarPage: React.FC = () => {
           onSelectSlot={handleSelectSlot}
           onSelectEvent={handleSelectEvent}
           popup
+          onShowMore={(events, date) => {
+            // Filter events that actually occur on the clicked date
+            const filteredEvents = events.filter((event) => {
+              const eventStart = new Date(event.start);
+              const eventEnd = new Date(event.end);
+              // Normalize times for all-day comparison
+              const clicked = new Date(date);
+              clicked.setHours(0, 0, 0, 0);
+              eventStart.setHours(0, 0, 0, 0);
+              eventEnd.setHours(0, 0, 0, 0);
+              // Check if the clicked date is within the event's start and end (inclusive)
+              return eventStart <= clicked && eventEnd >= clicked;
+            });
+            setModalEvents(filteredEvents);
+            setShowDayModal(true);
+          }}
           messages={{
             showMore: (total) => `+${total} more events`,
           }}
@@ -417,6 +436,7 @@ const CalendarPage: React.FC = () => {
                   <option value="Commercial Solar Installation">
                     Commercial Solar Installation
                   </option>
+                  <option value="Delivery">Delivery</option>
                 </select>
               </div>
               <div className="flex-1">
@@ -497,6 +517,46 @@ const CalendarPage: React.FC = () => {
             )}
             <div className="flex gap-4 mt-2">
               <div className="flex-1">
+                <label className="block text-xs mb-1">Start Date</label>
+                <input
+                  type="date"
+                  value={form.start ? format(form.start, "yyyy-MM-dd") : ""}
+                  onChange={(e) => {
+                    const newDate = new Date(
+                      e.target.value + "T" + (form.startTime || "00:00")
+                    );
+                    setForm((f) => ({
+                      ...f,
+                      start: newDate,
+                      // Only auto-set end if not editing or if end is before new start
+                      end:
+                        !selected || (f.end && f.end < newDate)
+                          ? newDate
+                          : f.end,
+                    }));
+                  }}
+                  className="border px-3 py-2 rounded w-full"
+                  required
+                />
+              </div>
+              <div className="flex-1">
+                <label className="block text-xs mb-1">End Date</label>
+                <input
+                  type="date"
+                  value={form.end ? format(form.end, "yyyy-MM-dd") : ""}
+                  onChange={(e) => {
+                    const newDate = new Date(
+                      e.target.value + "T" + (form.endTime || "00:00")
+                    );
+                    setForm((f) => ({ ...f, end: newDate }));
+                  }}
+                  className="border px-3 py-2 rounded w-full"
+                  required
+                />
+              </div>
+            </div>
+            <div className="flex gap-4 mt-2">
+              <div className="flex-1">
                 <label className="block text-xs mb-1">Start Time</label>
                 <input
                   type="time"
@@ -553,6 +613,13 @@ const CalendarPage: React.FC = () => {
             </div>
           </form>
         </div>
+      )}
+
+      {showDayModal && (
+        <DayEventsModal
+          events={modalEvents}
+          onClose={() => setShowDayModal(false)}
+        />
       )}
 
       {showDeleteModal && (
