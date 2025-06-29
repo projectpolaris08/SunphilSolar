@@ -466,7 +466,7 @@ const AdminDashboard: React.FC = () => {
   }
 
   const renderDashboardContent = () => (
-    <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 py-4 space-y-4 sm:space-y-6">
+    <div className="w-full px-2 sm:px-4 py-4 space-y-4 sm:space-y-6">
       {/* Header with hamburger and centered title */}
       <div className="relative flex items-center justify-center min-h-[56px] mb-4">
         {/* Hamburger icon (only visible on mobile) */}
@@ -479,195 +479,211 @@ const AdminDashboard: React.FC = () => {
         </button>
         <h1 className="text-xl font-bold w-full text-center">Dashboard</h1>
       </div>
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 w-full min-w-0 min-h-[100px] hover:shadow-lg hover:-translate-y-1 transition-all">
-          <div className="flex items-center">
-            <div className="p-2 bg-blue-100 rounded-lg">
-              <BarChart3 className="h-6 w-6 text-blue-600" />
+      {/* Stats Cards + Chart Row */}
+      <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 sm:gap-6">
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-1 gap-4 sm:gap-6 xl:col-span-1">
+          <div className="bg-blue-50 rounded-lg shadow-md p-4 sm:p-6 w-full min-w-0 min-h-[100px] hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div className="flex items-center">
+              <div className="p-2 bg-blue-500 rounded-lg">
+                <BarChart3 className="h-6 w-6 text-white" />
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-blue-700">
+                  Total Projects
+                </p>
+                <p className="text-2xl font-bold text-blue-900">
+                  {stats.totalProjects}
+                </p>
+              </div>
             </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">
-                Total Projects
-              </p>
-              <p className="text-2xl font-bold text-gray-900">
-                {stats.totalProjects}
-              </p>
+          </div>
+          <div className="bg-green-50 rounded-lg shadow-md p-4 sm:p-6 w-full min-w-0 min-h-[100px] hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div className="flex items-center">
+              <div className="p-2 bg-green-500 rounded-lg">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-green-700">
+                  Total Clients
+                </p>
+                <p className="text-2xl font-bold text-green-900">
+                  {stats.totalClients}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-purple-50 rounded-lg shadow-md p-4 sm:p-6 w-full min-w-0 min-h-[100px] hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div className="flex items-center">
+              <div className="p-2 bg-purple-500 rounded-lg">
+                <TrendingUp className="h-6 w-6 text-white" />
+              </div>
+              <div className="ml-4 flex flex-col flex-grow min-w-0">
+                <p className="text-sm font-medium text-purple-700">
+                  Total Sales
+                </p>
+                <p className="text-2xl font-bold text-purple-900 break-words whitespace-normal">
+                  ₱{stats.totalSales.toLocaleString()}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 w-full min-w-0 min-h-[100px] hover:shadow-lg hover:-translate-y-1 transition-all">
-          <div className="flex items-center">
-            <div className="p-2 bg-green-100 rounded-lg">
-              <Users className="h-6 w-6 text-green-600" />
-            </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">Total Clients</p>
-              <p className="text-2xl font-bold text-gray-900">
-                {stats.totalClients}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 w-full min-w-0 min-h-[100px] hover:shadow-lg hover:-translate-y-1 transition-all">
-          <div className="flex items-center">
-            <div className="p-2 bg-purple-100 rounded-lg">
-              <TrendingUp className="h-6 w-6 text-purple-600" />
-            </div>
-            <div className="ml-4 flex flex-col flex-grow min-w-0">
-              <p className="text-sm font-medium text-gray-600">Total Sales</p>
-              <p className="text-2xl font-bold text-gray-900 break-words whitespace-normal">
-                ₱{stats.totalSales.toLocaleString()}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Monthly Sales Chart */}
-      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 overflow-x-auto">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">
-          Monthly Sales Performance
-        </h3>
-        <div className="h-80 min-w-[320px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={monthlySalesData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" height={40} tick={{ fontSize: 12 }} />
-              <YAxis
-                tickFormatter={(value) =>
-                  value >= 1_000_000
-                    ? `₱${(value / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`
-                    : `₱${(value / 1000).toFixed(0)}k`
-                }
-                tick={{ fontSize: 12 }}
-              />
-              <Tooltip
-                formatter={(value: number) => [
-                  `₱${value.toLocaleString()}`,
-                  "Sales",
-                ]}
-                labelFormatter={(label) => `Month: ${label}`}
-              />
-              <Bar dataKey="sales" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-md p-6 mt-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">
-            Upcoming Installations
+        {/* Monthly Sales Chart */}
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 overflow-x-auto xl:col-span-3 flex flex-col">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Monthly Sales Performance
           </h3>
-          <button
-            onClick={refetchEvents}
-            disabled={calendarLoading}
-            className="text-sm text-blue-600 hover:text-blue-800 disabled:text-gray-400 disabled:cursor-not-allowed"
-          >
-            {calendarLoading ? "Loading..." : "Refresh"}
-          </button>
-        </div>
-
-        {calendarLoading ? (
-          <div className="flex items-center justify-center py-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-            <span className="ml-2 text-gray-600">Loading installations...</span>
+          <div className="h-80 min-w-[320px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={monthlySalesData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="month" height={40} tick={{ fontSize: 12 }} />
+                <YAxis
+                  tickFormatter={(value) =>
+                    value >= 1_000_000
+                      ? `₱${(value / 1_000_000)
+                          .toFixed(1)
+                          .replace(/\.0$/, "")}M`
+                      : `₱${(value / 1000).toFixed(0)}k`
+                  }
+                  tick={{ fontSize: 12 }}
+                />
+                <Tooltip
+                  formatter={(value: number) => [
+                    `₱${value.toLocaleString()}`,
+                    "Sales",
+                  ]}
+                  labelFormatter={(label) => `Month: ${label}`}
+                />
+                <Bar dataKey="sales" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
-        ) : calendarError ? (
-          <div className="text-center py-8">
-            <p className="text-red-600 mb-2">Failed to load installations</p>
-            <p className="text-sm text-gray-500 mb-4">{calendarError}</p>
+        </div>
+      </div>
+      {/* Upcoming Installations & Recent Activity Row */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mt-4">
+        {/* Upcoming Installations */}
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-gray-900">
+              Upcoming Installations
+            </h3>
             <button
               onClick={refetchEvents}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm"
+              disabled={calendarLoading}
+              className="text-sm text-blue-600 hover:text-blue-800 disabled:text-gray-400 disabled:cursor-not-allowed"
             >
-              Try Again
+              {calendarLoading ? "Loading..." : "Refresh"}
             </button>
           </div>
-        ) : upcomingInstallations.length === 0 ? (
-          <p className="text-gray-500">No upcoming installations scheduled.</p>
-        ) : (
-          <ul className="divide-y divide-gray-200">
-            {upcomingInstallations.map((item, idx) => (
-              <li
-                key={idx}
-                className="py-3 flex flex-col md:flex-row md:items-center md:justify-between"
+          {calendarLoading ? (
+            <div className="flex items-center justify-center py-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+              <span className="ml-2 text-gray-600">
+                Loading installations...
+              </span>
+            </div>
+          ) : calendarError ? (
+            <div className="text-center py-8">
+              <p className="text-red-600 mb-2">Failed to load installations</p>
+              <p className="text-sm text-gray-500 mb-4">{calendarError}</p>
+              <button
+                onClick={refetchEvents}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm"
               >
-                <div>
-                  <span className="font-medium text-gray-900">
-                    {item.title || item.clientName || "Installation"}
-                  </span>{" "}
-                  —
-                  <span className="ml-1 text-gray-700">
-                    {item.location || item.projectType || ""}
-                  </span>
-                </div>
-                <div className="text-sm text-blue-700 font-semibold mt-1 md:mt-0">
-                  {typeof item.start === "string"
-                    ? new Date(item.start).toLocaleDateString()
-                    : item.start.toLocaleString()}
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      {/* Recent Activity */}
-      <div className="bg-white rounded-lg shadow-md p-6 mt-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">
-            Recent Activity
-          </h3>
-          <button
-            onClick={() => {
-              // Refetch activity
-              supabase
-                .from("admin_activity")
-                .select("*")
-                .order("timestamp", { ascending: false })
-                .limit(10)
-                .then(({ data }) => {
-                  if (data) setRecentActivity(data);
-                });
-            }}
-            className="text-sm text-blue-600 hover:text-blue-800"
-          >
-            Refresh
-          </button>
-        </div>
-        {recentActivity.length === 0 ? (
-          <p className="text-gray-500">No recent activity.</p>
-        ) : (
-          <ul className="divide-y divide-gray-200">
-            {recentActivity.map((activity) => {
-              let dotColor = "bg-gray-400";
-              if (activity.module === "builder") dotColor = "bg-green-500";
-              else if (activity.module === "calendar") dotColor = "bg-blue-500";
-              else if (activity.module === "inventory")
-                dotColor = "bg-yellow-500";
-              else if (activity.module === "client") dotColor = "bg-purple-500";
-              else if (activity.module === "project")
-                dotColor = "bg-orange-500";
-              return (
-                <li key={activity.id} className="py-3 flex items-center gap-4">
-                  <div className={`w-2 h-2 rounded-full ${dotColor}`}></div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-900">
-                      {activity.description}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      {formatRelativeTime(activity.timestamp)}
-                    </p>
+                Try Again
+              </button>
+            </div>
+          ) : upcomingInstallations.length === 0 ? (
+            <p className="text-gray-500">
+              No upcoming installations scheduled.
+            </p>
+          ) : (
+            <ul className="divide-y divide-gray-200">
+              {upcomingInstallations.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="py-3 flex flex-col md:flex-row md:items-center md:justify-between"
+                >
+                  <div>
+                    <span className="font-medium text-gray-900">
+                      {item.title || item.clientName || "Installation"}
+                    </span>{" "}
+                    —
+                    <span className="ml-1 text-gray-700">
+                      {item.location || item.projectType || ""}
+                    </span>
+                  </div>
+                  <div className="text-sm text-blue-700 font-semibold mt-1 md:mt-0">
+                    {typeof item.start === "string"
+                      ? new Date(item.start).toLocaleDateString()
+                      : item.start.toLocaleString()}
                   </div>
                 </li>
-              );
-            })}
-          </ul>
-        )}
+              ))}
+            </ul>
+          )}
+        </div>
+        {/* Recent Activity */}
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-gray-900">
+              Recent Activity
+            </h3>
+            <button
+              onClick={() => {
+                // Refetch activity
+                supabase
+                  .from("admin_activity")
+                  .select("*")
+                  .order("timestamp", { ascending: false })
+                  .limit(10)
+                  .then(({ data }) => {
+                    if (data) setRecentActivity(data);
+                  });
+              }}
+              className="text-sm text-blue-600 hover:text-blue-800"
+            >
+              Refresh
+            </button>
+          </div>
+          {recentActivity.length === 0 ? (
+            <p className="text-gray-500">No recent activity.</p>
+          ) : (
+            <ul className="divide-y divide-gray-200">
+              {recentActivity.map((activity) => {
+                let dotColor = "bg-gray-400";
+                if (activity.module === "builder") dotColor = "bg-green-500";
+                else if (activity.module === "calendar")
+                  dotColor = "bg-blue-500";
+                else if (activity.module === "inventory")
+                  dotColor = "bg-yellow-500";
+                else if (activity.module === "client")
+                  dotColor = "bg-purple-500";
+                else if (activity.module === "project")
+                  dotColor = "bg-orange-500";
+                return (
+                  <li
+                    key={activity.id}
+                    className="py-3 flex items-center gap-4"
+                  >
+                    <div className={`w-2 h-2 rounded-full ${dotColor}`}></div>
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-900">
+                        {activity.description}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {formatRelativeTime(activity.timestamp)}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

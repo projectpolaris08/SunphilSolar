@@ -15,7 +15,10 @@ interface InventoryItem {
   totalQtyOnHand: string;
   category: string;
   notes?: string;
+  threshold?: number;
 }
+
+const GLOBAL_THRESHOLD = 3;
 
 const InventoryPage: React.FC = () => {
   const navigate = useNavigate();
@@ -34,11 +37,13 @@ const InventoryPage: React.FC = () => {
     totalQtyOnHand: "",
     category: "",
     notes: "",
+    threshold: GLOBAL_THRESHOLD,
   });
   const [categoryFilter, setCategoryFilter] = useState("");
   const [itemDescriptions, setItemDescriptions] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
+  const [showManualDescription, setShowManualDescription] = useState(false);
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -62,6 +67,10 @@ const InventoryPage: React.FC = () => {
             totalQtyOnHand: item.total_qty_on_hand,
             category: item.category,
             notes: item.notes || "",
+            threshold:
+              item.threshold !== undefined && item.threshold !== null
+                ? Number(item.threshold)
+                : GLOBAL_THRESHOLD,
           }))
         );
         // Fetch unique item descriptions
@@ -168,6 +177,7 @@ const InventoryPage: React.FC = () => {
           total_qty_on_hand: form.totalQtyOnHand,
           category: form.category,
           notes: form.notes,
+          threshold: form.threshold,
         })
         .eq("id", editing.id);
       if (error) alert("Error updating item");
@@ -197,6 +207,7 @@ const InventoryPage: React.FC = () => {
           total_qty_on_hand: form.totalQtyOnHand,
           category: form.category,
           notes: form.notes,
+          threshold: form.threshold,
         },
       ]);
       if (error) alert("Error adding item");
@@ -236,13 +247,17 @@ const InventoryPage: React.FC = () => {
         totalQtyOnHand: item.total_qty_on_hand,
         category: item.category,
         notes: item.notes || "",
+        threshold:
+          item.threshold !== undefined && item.threshold !== null
+            ? Number(item.threshold)
+            : GLOBAL_THRESHOLD,
       }))
     );
   };
 
   const handleEdit = (item: InventoryItem) => {
     setEditing(item);
-    setForm({ ...item });
+    setForm({ ...item, threshold: item.threshold ?? GLOBAL_THRESHOLD });
     setShowForm(true);
   };
 
@@ -281,6 +296,10 @@ const InventoryPage: React.FC = () => {
           totalQtyOnHand: item.total_qty_on_hand,
           category: item.category,
           notes: item.notes || "",
+          threshold:
+            item.threshold !== undefined && item.threshold !== null
+              ? Number(item.threshold)
+              : GLOBAL_THRESHOLD,
         }))
       );
     }
@@ -293,8 +312,13 @@ const InventoryPage: React.FC = () => {
         .map((i) => i.itemDescription)
     : itemDescriptions;
 
-  // 1. Update out-of-stock banner logic
+  // Out of stock and low stock logic
   const outOfStockItems = items.filter((i) => Number(i.totalQtyOnHand) === 0);
+  const lowStockItems = items.filter(
+    (i) =>
+      Number(i.totalQtyOnHand) > 0 &&
+      Number(i.totalQtyOnHand) <= (i.threshold ?? GLOBAL_THRESHOLD)
+  );
 
   return (
     <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8">
@@ -332,6 +356,11 @@ const InventoryPage: React.FC = () => {
         placeholder="Search..."
         className="mb-4 px-3 py-2 border rounded w-full"
       />
+      {lowStockItems.length > 0 && (
+        <div className="bg-yellow-100 text-yellow-800 p-2 rounded mb-2 font-semibold">
+          {lowStockItems.length} item(s) are low on stock!
+        </div>
+      )}
       {outOfStockItems.length > 0 && (
         <div className="bg-red-100 text-red-700 p-2 rounded mb-4 font-semibold">
           {outOfStockItems.length} item(s) are out of stock!
@@ -361,6 +390,7 @@ const InventoryPage: React.FC = () => {
               <th className="px-6 py-3 text-center font-semibold">
                 Total Qty On Hand
               </th>
+              <th className="px-6 py-3 text-center font-semibold">Threshold</th>
               <th className="px-6 py-3 text-left font-semibold">Category</th>
               <th className="px-6 py-3 text-left font-semibold">Notes</th>
               <th className="px-6 py-3 text-left font-semibold">Actions</th>
@@ -388,6 +418,10 @@ const InventoryPage: React.FC = () => {
                 className={`border-b hover:bg-gray-50 align-middle ${
                   Number(i.totalQtyOnHand) === 0
                     ? "bg-red-100 text-red-700 font-bold"
+                    : Number(i.totalQtyOnHand) > 0 &&
+                      Number(i.totalQtyOnHand) <=
+                        (i.threshold ?? GLOBAL_THRESHOLD)
+                    ? "bg-yellow-100 text-yellow-900 font-bold"
                     : ""
                 }`}
               >
@@ -406,6 +440,9 @@ const InventoryPage: React.FC = () => {
                 </td>
                 <td className="px-6 py-2 align-middle text-center">
                   {i.totalQtyOnHand}
+                </td>
+                <td className="px-6 py-2 align-middle text-center">
+                  {i.threshold ?? GLOBAL_THRESHOLD}
                 </td>
                 <td className="px-6 py-2 align-middle">{i.category}</td>
                 <td className="px-6 py-2 align-middle">{i.notes}</td>
@@ -530,6 +567,7 @@ const InventoryPage: React.FC = () => {
                   </option>
                   <option value="Solar Accessories">Solar Accessories</option>
                   <option value="Inverters">Inverters</option>
+                  <option value="Solar Panels">Solar Panels</option>
                   <option value="Other Materials">Other Materials</option>
                 </select>
               </div>
@@ -537,40 +575,65 @@ const InventoryPage: React.FC = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Item Description *
                 </label>
-                {filteredItemDescriptions.length > 0 ? (
-                  <select
-                    required
-                    value={form.itemDescription}
-                    onChange={(e) =>
-                      setForm((f) => ({
-                        ...f,
-                        itemDescription: e.target.value,
-                      }))
-                    }
-                    className="border px-3 py-2 rounded w-full"
-                  >
-                    <option value="" disabled>
-                      Select Item Description
-                    </option>
-                    {filteredItemDescriptions.map((desc) => (
-                      <option key={desc} value={desc}>
-                        {desc}
-                      </option>
-                    ))}
-                  </select>
+                {!showManualDescription &&
+                filteredItemDescriptions.length > 0 ? (
+                  <>
+                    <div className="flex gap-2">
+                      <select
+                        required
+                        value={form.itemDescription}
+                        onChange={(e) =>
+                          setForm((f) => ({
+                            ...f,
+                            itemDescription: e.target.value,
+                          }))
+                        }
+                        className="border px-3 py-2 rounded w-full"
+                      >
+                        <option value="" disabled>
+                          Select Item Description
+                        </option>
+                        {filteredItemDescriptions.map((desc) => (
+                          <option key={desc} value={desc}>
+                            {desc}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        type="button"
+                        className="text-blue-600 underline text-xs px-2"
+                        onClick={() => setShowManualDescription(true)}
+                      >
+                        Add new description
+                      </button>
+                    </div>
+                  </>
                 ) : (
-                  <input
-                    required
-                    value={form.itemDescription}
-                    onChange={(e) =>
-                      setForm((f) => ({
-                        ...f,
-                        itemDescription: e.target.value,
-                      }))
-                    }
-                    placeholder="Item Description"
-                    className="border px-3 py-2 rounded w-full"
-                  />
+                  <>
+                    <div className="flex gap-2">
+                      <input
+                        required
+                        value={form.itemDescription}
+                        onChange={(e) =>
+                          setForm((f) => ({
+                            ...f,
+                            itemDescription: e.target.value,
+                          }))
+                        }
+                        placeholder="Item Description"
+                        className="border px-3 py-2 rounded w-full"
+                      />
+                      {filteredItemDescriptions.length > 0 && (
+                        <button
+                          type="button"
+                          className="text-blue-600 underline text-xs px-2"
+                          onClick={() => setShowManualDescription(false)}
+                        >
+                          Select from list
+                        </button>
+                      )}
+                    </div>
+                  </>
                 )}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -705,6 +768,28 @@ const InventoryPage: React.FC = () => {
                   rows={2}
                   placeholder="Enter notes (optional)"
                 />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Threshold
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    value={form.threshold ?? GLOBAL_THRESHOLD}
+                    onChange={(e) =>
+                      setForm((f) => ({
+                        ...f,
+                        threshold: Number(e.target.value),
+                      }))
+                    }
+                    className="border px-3 py-2 rounded w-full"
+                  />
+                  <span className="text-xs text-gray-400">
+                    (Default: {GLOBAL_THRESHOLD})
+                  </span>
+                </div>
               </div>
             </div>
             <div className="flex justify-end gap-2">

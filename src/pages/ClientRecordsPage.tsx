@@ -595,6 +595,8 @@ const ClientRecordsPage: React.FC = () => {
                     required
                   >
                     <option value="">Wattage</option>
+                    <option value="580W">580W</option>
+                    <option value="600W">600W</option>
                     <option value="615W">615W</option>
                     <option value="620W">620W</option>
                   </select>
@@ -605,13 +607,19 @@ const ClientRecordsPage: React.FC = () => {
                 <div className="flex gap-2">
                   <select
                     value={form.battery_type}
-                    onChange={(e) =>
-                      setForm({ ...form, battery_type: e.target.value })
-                    }
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setForm((prev) => ({
+                        ...prev,
+                        battery_type: value,
+                        battery_qty: value === "None" ? "0" : prev.battery_qty,
+                      }));
+                    }}
                     className="block border rounded px-3 py-2 w-2/3"
                     required
                   >
                     <option value="">Select Battery</option>
+                    <option value="None">None</option>
                     <option value="24v 280Ah">24v 280Ah</option>
                     <option value="24v 314Ah">24v 314Ah</option>
                     <option value="48v 280Ah">48v 280Ah</option>
@@ -621,14 +629,15 @@ const ClientRecordsPage: React.FC = () => {
                   </select>
                   <input
                     type="number"
-                    min="1"
+                    min={form.battery_type === "None" ? "0" : "1"}
                     value={form.battery_qty}
                     onChange={(e) =>
                       setForm({ ...form, battery_qty: e.target.value })
                     }
                     className="block border rounded px-3 py-2 w-1/3"
                     placeholder="Qty"
-                    required
+                    required={form.battery_type !== "None"}
+                    disabled={form.battery_type === "None"}
                   />
                 </div>
               </div>
