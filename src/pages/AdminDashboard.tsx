@@ -380,14 +380,47 @@ const AdminDashboard: React.FC = () => {
       <div className="relative flex items-center justify-center min-h-[56px] mb-4">
         {/* Hamburger icon (only visible on mobile) */}
         <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 md:hidden bg-white p-2 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-200"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 md:hidden bg-white dark:bg-gray-800 p-2 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-gray-600"
           onClick={() => setSidebarOpen(true)}
           aria-label="Open sidebar"
         >
-          <Menu size={26} />
+          <Menu size={26} className="text-gray-800 dark:text-gray-100" />
         </button>
-        <h1 className="text-xl font-bold w-full text-center">Dashboard</h1>
+        <h1 className="text-xl font-bold w-full text-center">
+          Admin Dashboard
+        </h1>
       </div>
+      {/* Mobile Sidebar Drawer */}
+      <div
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+          sidebarOpen ? "block" : "pointer-events-none"
+        }`}
+        style={{
+          background: sidebarOpen ? "rgba(0,0,0,0.3)" : "transparent",
+        }}
+        onClick={() => setSidebarOpen(false)}
+        aria-hidden={!sidebarOpen}
+      />
+      {/* Mobile Sidebar Content */}
+      <aside
+        className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg z-50 transform transition-transform duration-300 md:hidden ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+        style={{ willChange: "transform" }}
+        aria-hidden={!sidebarOpen}
+      >
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+          <span className="font-bold text-xl dark:text-gray-100">Admin</span>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors"
+            title="Logout"
+          >
+            <LogOut size={20} />
+          </button>
+        </div>
+        {renderSidebar()}
+      </aside>
       {/* Stats Cards + Chart Row */}
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 sm:gap-6">
         {/* Stats Cards */}
@@ -471,6 +504,31 @@ const AdminDashboard: React.FC = () => {
                   tick={{ fontSize: 12 }}
                 />
                 <Tooltip
+                  contentStyle={{
+                    background: theme === "dark" ? "#000" : "#fff",
+                    color: theme === "dark" ? "#fff" : "#111",
+                    border:
+                      theme === "dark" ? "1px solid #fff" : "1px solid #e5e7eb",
+                    borderRadius: 8,
+                    fontSize: 16,
+                    fontWeight: 700,
+                    boxShadow:
+                      theme === "dark"
+                        ? "0 2px 12px rgba(0,0,0,0.9)"
+                        : "0 2px 8px rgba(0,0,0,0.1)",
+                    opacity: 1,
+                    padding: 16,
+                  }}
+                  labelStyle={{
+                    color: theme === "dark" ? "#fff" : "#111",
+                    fontWeight: 900,
+                    fontSize: 16,
+                  }}
+                  itemStyle={{
+                    color: theme === "dark" ? "#fff" : "#111",
+                    fontWeight: 700,
+                    fontSize: 15,
+                  }}
                   formatter={(value: number) => [
                     `₱${value.toLocaleString()}`,
                     "Sales",
@@ -679,17 +737,6 @@ const AdminDashboard: React.FC = () => {
   return (
     <div id="admin-dashboard-root" className={theme === "dark" ? "dark" : ""}>
       <div className={"min-h-screen flex bg-gray-50 dark:bg-gray-900"}>
-        {/* Mobile Sidebar Drawer */}
-        <div
-          className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
-            sidebarOpen ? "block" : "pointer-events-none"
-          }`}
-          style={{
-            background: sidebarOpen ? "rgba(0,0,0,0.3)" : "transparent",
-          }}
-          onClick={() => setSidebarOpen(false)}
-          aria-hidden={!sidebarOpen}
-        />
         <aside className="hidden md:flex md:flex-col md:w-64 md:h-screen md:bg-white md:dark:bg-gray-800 md:shadow-lg md:sticky md:top-0">
           <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
             <span className="font-bold text-xl dark:text-gray-100">Admin</span>

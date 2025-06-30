@@ -132,6 +132,49 @@ const BuildersInverterPage = () => {
     count: builds.filter((b) => b.type === type).length,
   }));
 
+  // Add build handler
+  const handleAddBuild = async () => {
+    if (!newBuild.description.trim()) {
+      alert("Description is required.");
+      return;
+    }
+    const now = new Date().toISOString().slice(0, 10);
+    const buildToInsert = {
+      ...newBuild,
+      date_started: now,
+      date_completed: newBuild.status === "Done" ? now : null,
+    };
+    const { data, error } = await supabase
+      .from("inverter_builds")
+      .insert([buildToInsert])
+      .select()
+      .single();
+    if (!error && data) {
+      setBuilds((prev) => [data, ...prev]);
+      setNewBuild({
+        type: inverterTypes[0],
+        description: "",
+        builder: builderNames[0],
+        status: "In Progress",
+        date_started: null,
+        date_completed: null,
+      });
+      // Log activity
+      await supabase.from("admin_activity").insert([
+        {
+          module: "builder",
+          record_id: data.id,
+          action: "created",
+          description: `Added inverter build (${data.type}) for ${data.builder}`,
+          actor: null,
+          timestamp: new Date().toISOString(),
+        },
+      ]);
+    } else {
+      alert("Failed to add build.");
+    }
+  };
+
   return (
     <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
       <div className="flex items-center gap-3 mb-6">
@@ -275,7 +318,10 @@ const BuildersInverterPage = () => {
             ))}
           </select>
         </div>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded font-semibold hover:bg-blue-700 transition mt-4 md:mt-0">
+        <button
+          className="bg-blue-600 text-white px-4 py-2 rounded font-semibold hover:bg-blue-700 transition mt-4 md:mt-0"
+          onClick={handleAddBuild}
+        >
           Add
         </button>
       </div>
