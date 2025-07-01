@@ -817,4 +817,25 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar installed a reliable 8kW hybrid solar system for a homeowner in Balagtas, Bulacan, aiming to reduce their electricity expenses and provide backup power during frequent grid outages. This system was tailored for residential needs, ensuring stable energy use for day and night, rain or shine. From Balagtas to Malolos, Guiguinto, and Plaridel, Sunphil Solar is powering Central Luzon one home at a time—delivering hybrid solar systems that are efficient, durable, and built for the Philippine climate. We offer site assessment and load evaluation, turnkey installation services, and warranty-backed equipment.",
   },
+  {
+    id: "congressional-qc",
+    image: "/images/project40.jpg",
+    location: "Congressional, Quezon City, Metro Manila, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-06-30",
+    clientType: "Residential (Mid-to-High Usage)",
+    specification: [
+      "12kW Deye Hybrid Inverter – Smart inverter that intelligently manages power from solar panels, batteries, and the grid to optimize energy usage.",
+      "20 × 615W Canadian Bifacial Solar Panels – Bifacial design increases energy yield by collecting light from both front and rear surfaces—perfect for rooftops with concrete reflection.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable and efficient lithium battery stores solar energy for night use and acts as a backup power source during brownouts.",
+    ],
+    benefits: [
+      "Cut electricity bills by up to 85%",
+      "Maintain 24/7 power for lights, cooling systems, refrigerator, and essential electronics",
+      "Reduce carbon footprint by around 1,600–1,800 kg of CO₂ monthly",
+      "Ideal for urban homes with moderate roof space but high power demand",
+    ],
+    description:
+      "Sunphil Solar delivered a custom-engineered 12kW hybrid solar system in Congressional, Quezon City, designed to meet the needs of a household with high energy consumption and a desire for reliable backup during power outages. The client sought energy independence and long-term savings—exactly what this setup provides. From Congressional Avenue to Tandang Sora, Project 8, and Muñoz, Sunphil Solar is powering Metro Manila's homes with smart, scalable hybrid solar systems that provide freedom from rising power costs and unreliable grid supply.",
+  },
 ];

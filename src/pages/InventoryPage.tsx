@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import { Plus, Edit, Trash2, Download, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
@@ -44,6 +44,8 @@ const InventoryPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
   const [showManualDescription, setShowManualDescription] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteItemId, setDeleteItemId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -262,47 +264,61 @@ const InventoryPage: React.FC = () => {
   };
 
   const handleDelete = async (id: string) => {
-    if (window.confirm("Delete this item?")) {
-      // Find the item for description
-      const item = items.find((i) => i.id === id);
-      const { error } = await supabase.from("inventory").delete().eq("id", id);
-      if (error) alert("Error deleting item");
-      else {
-        // Log activity
-        await supabase.from("admin_activity").insert([
-          {
-            module: "inventory",
-            record_id: id,
-            action: "deleted",
-            description: item
-              ? `Deleted inventory item: ${item.itemDescription}`
-              : `Deleted inventory item (${id})`,
-            actor: null,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-      }
-      const { data } = await supabase.from("inventory").select("*");
-      setItems(
-        (data || []).map((item) => ({
-          id: item.id,
-          itemDescription: item.item_description,
-          qty: item.qty,
-          uom: item.uom,
-          deliveryDate: item.delivery_date,
-          qty_delivered: item.qty_delivered,
-          releaseDate: item.release_date,
-          qty_released: item.qty_released,
-          totalQtyOnHand: item.total_qty_on_hand,
-          category: item.category,
-          notes: item.notes || "",
-          threshold:
-            item.threshold !== undefined && item.threshold !== null
-              ? Number(item.threshold)
-              : GLOBAL_THRESHOLD,
-        }))
-      );
+    setDeleteItemId(id);
+    setShowDeleteModal(true);
+  };
+
+  const confirmDeleteItem = async () => {
+    if (!deleteItemId) return;
+    // Find the item for description
+    const item = items.find((i) => i.id === deleteItemId);
+    const { error } = await supabase
+      .from("inventory")
+      .delete()
+      .eq("id", deleteItemId);
+    if (error) alert("Error deleting item");
+    else {
+      // Log activity
+      await supabase.from("admin_activity").insert([
+        {
+          module: "inventory",
+          record_id: deleteItemId,
+          action: "deleted",
+          description: item
+            ? `Deleted inventory item: ${item.itemDescription}`
+            : `Deleted inventory item (${deleteItemId})`,
+          actor: null,
+          timestamp: new Date().toISOString(),
+        },
+      ]);
     }
+    const { data } = await supabase.from("inventory").select("*");
+    setItems(
+      (data || []).map((item) => ({
+        id: item.id,
+        itemDescription: item.item_description,
+        qty: item.qty,
+        uom: item.uom,
+        deliveryDate: item.delivery_date,
+        qty_delivered: item.qty_delivered,
+        releaseDate: item.release_date,
+        qty_released: item.qty_released,
+        totalQtyOnHand: item.total_qty_on_hand,
+        category: item.category,
+        notes: item.notes || "",
+        threshold:
+          item.threshold !== undefined && item.threshold !== null
+            ? Number(item.threshold)
+            : GLOBAL_THRESHOLD,
+      }))
+    );
+    setShowDeleteModal(false);
+    setDeleteItemId(null);
+  };
+
+  const cancelDeleteItem = () => {
+    setShowDeleteModal(false);
+    setDeleteItemId(null);
   };
 
   // Compute filtered item descriptions based on selected category
@@ -471,16 +487,18 @@ const InventoryPage: React.FC = () => {
                   </td>
                   <td className="px-6 py-2 align-middle">{i.category}</td>
                   <td className="px-6 py-2 align-middle">{i.notes}</td>
-                  <td className="px-6 py-2 align-middle whitespace-nowrap">
+                  <td className="px-6 py-2 align-middle text-center">
                     <button
                       onClick={() => handleEdit(i)}
-                      className="text-blue-600 mr-2"
+                      className="text-blue-600 hover:text-blue-800 mr-2"
+                      title="Edit"
                     >
                       <Edit className="h-4 w-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(i.id)}
-                      className="text-red-600"
+                      className="text-red-600 hover:text-red-800"
+                      title="Delete"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>
@@ -837,6 +855,34 @@ const InventoryPage: React.FC = () => {
               </button>
             </div>
           </form>
+        </div>
+      )}
+      {/* Custom Delete Modal */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-sm">
+            <h3 className="text-lg font-bold mb-2 text-center text-gray-900 dark:text-gray-100">
+              Delete Item?
+            </h3>
+            <p className="mb-4 text-center text-gray-700 dark:text-gray-300">
+              Are you sure you want to delete this inventory item? This action
+              cannot be undone.
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={cancelDeleteItem}
+                className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDeleteItem}
+                className="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

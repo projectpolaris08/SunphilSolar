@@ -47,6 +47,8 @@ const ClientRecordsPage: React.FC = () => {
   const pageSize = 10;
   const totalPages = Math.ceil(records.length / pageSize);
   const paginated = records.slice((page - 1) * pageSize, page * pageSize);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteRecordId, setDeleteRecordId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchRecords = async () => {
@@ -257,32 +259,43 @@ const ClientRecordsPage: React.FC = () => {
   };
 
   const handleDelete = async (id: string) => {
-    if (window.confirm("Delete this record?")) {
-      // Find the record for description
-      const record = records.find((r) => r.id === id);
-      const { error } = await supabase
-        .from("client_records")
-        .delete()
-        .eq("id", id);
-      if (!error) {
-        setRecords(records.filter((r) => r.id !== id));
-        // Log activity
-        await supabase.from("admin_activity").insert([
-          {
-            module: "client_record",
-            record_id: id,
-            action: "deleted",
-            description: record
-              ? `Deleted client record for ${record.name}`
-              : `Deleted client record (${id})`,
-            actor: null,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-      } else {
-        alert("Failed to delete record.");
-      }
+    setDeleteRecordId(id);
+    setShowDeleteModal(true);
+  };
+
+  const confirmDeleteRecord = async () => {
+    if (!deleteRecordId) return;
+    // Find the record for description
+    const record = records.find((r) => r.id === deleteRecordId);
+    const { error } = await supabase
+      .from("client_records")
+      .delete()
+      .eq("id", deleteRecordId);
+    if (!error) {
+      setRecords(records.filter((r) => r.id !== deleteRecordId));
+      // Log activity
+      await supabase.from("admin_activity").insert([
+        {
+          module: "client_record",
+          record_id: deleteRecordId,
+          action: "deleted",
+          description: record
+            ? `Deleted client record for ${record.name}`
+            : `Deleted client record (${deleteRecordId})`,
+          actor: null,
+          timestamp: new Date().toISOString(),
+        },
+      ]);
+    } else {
+      alert("Failed to delete record.");
     }
+    setShowDeleteModal(false);
+    setDeleteRecordId(null);
+  };
+
+  const cancelDeleteRecord = () => {
+    setShowDeleteModal(false);
+    setDeleteRecordId(null);
   };
 
   const scrollToTable = () => {
@@ -439,16 +452,18 @@ const ClientRecordsPage: React.FC = () => {
                       })
                     : ""}
                 </td>
-                <td className="px-4 py-2 align-middle text-gray-900 dark:text-gray-100 text-[15px]">
+                <td className="px-4 py-2 align-middle text-center">
                   <button
                     onClick={() => handleEdit(r)}
-                    className="text-blue-600 mr-2"
+                    className="text-blue-600 hover:text-blue-800 mr-2"
+                    title="Edit"
                   >
                     <Edit className="h-4 w-4" />
                   </button>
                   <button
                     onClick={() => handleDelete(r.id)}
-                    className="text-red-600"
+                    className="text-red-600 hover:text-red-800"
+                    title="Delete"
                   >
                     <Trash2 className="h-4 w-4" />
                   </button>
@@ -733,6 +748,34 @@ const ClientRecordsPage: React.FC = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+      {/* Custom Delete Modal */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-sm">
+            <h3 className="text-lg font-bold mb-2 text-center text-gray-900 dark:text-gray-100">
+              Delete Record?
+            </h3>
+            <p className="mb-4 text-center text-gray-700 dark:text-gray-300">
+              Are you sure you want to delete this client record? This action
+              cannot be undone.
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={cancelDeleteRecord}
+                className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDeleteRecord}
+                className="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       )}

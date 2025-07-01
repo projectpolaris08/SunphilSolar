@@ -343,9 +343,11 @@ const ProjectsPage = () => {
         {currentProjects.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
             {currentProjects.map((project) => (
-              <div
+              <a
                 key={project.id}
-                className="group bg-white/10 backdrop-blur-lg rounded-xl shadow-md overflow-hidden border border-white/20 transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:ring-2 hover:ring-blue-400"
+                href={`/solarprojects/${project.id}`}
+                className="group block bg-white/10 backdrop-blur-lg rounded-xl shadow-md overflow-hidden border border-white/20 transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:ring-2 hover:ring-blue-400 cursor-pointer"
+                style={{ textDecoration: "none" }}
               >
                 <div className="relative overflow-hidden h-48">
                   <img
@@ -397,14 +399,11 @@ const ProjectsPage = () => {
                       </div>
                     </div>
                   )}
-                  <a
-                    href={`/solarprojects/${project.id}`}
-                    className="text-blue-400 font-medium inline-flex items-center transition-transform duration-300 group-hover:translate-x-1"
-                  >
+                  <div className="text-blue-400 font-medium inline-flex items-center transition-transform duration-300 group-hover:translate-x-1 mt-2">
                     Read more →
-                  </a>
+                  </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         ) : (
