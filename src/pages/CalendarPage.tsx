@@ -37,23 +37,51 @@ interface ProjectEvent extends Event {
   adminClientOther?: string;
 }
 
-// Custom event component for calendar
-const CalendarEvent: React.FC<{ event: ProjectEvent }> = ({ event }) => (
-  <div className="bg-white border border-blue-300 rounded p-0.5 shadow text-[11px] min-h-[28px] leading-tight">
-    <div className="font-semibold text-gray-900 truncate">
-      {event.clientName || event.title}
-    </div>
-    {event.projectType && (
-      <div className="text-gray-800 truncate">{event.projectType}</div>
-    )}
-    {event.location && (
-      <div className="text-gray-700 truncate">{event.location}</div>
-    )}
-    {event.systemCapacity && (
-      <div className="text-gray-700 truncate">{event.systemCapacity}</div>
-    )}
-  </div>
-);
+// Color palettes for admin clients
+const adminBorderColors = [
+  "border-blue-500",
+  "border-green-500",
+  "border-yellow-500",
+  "border-purple-500",
+  "border-pink-500",
+  "border-red-500",
+  "border-indigo-500",
+  "border-teal-500",
+  "border-orange-500",
+  "border-cyan-500",
+  "border-blue-700",
+  "border-green-700",
+  "border-yellow-700",
+  "border-purple-700",
+  "border-pink-700",
+  "border-red-700",
+  "border-indigo-700",
+  "border-teal-700",
+  "border-orange-700",
+  "border-cyan-700",
+];
+const adminBgColors = [
+  "bg-blue-500",
+  "bg-green-500",
+  "bg-yellow-500",
+  "bg-purple-500",
+  "bg-pink-500",
+  "bg-red-500",
+  "bg-indigo-500",
+  "bg-teal-500",
+  "bg-orange-500",
+  "bg-cyan-500",
+  "bg-blue-700",
+  "bg-green-700",
+  "bg-yellow-700",
+  "bg-purple-700",
+  "bg-pink-700",
+  "bg-red-700",
+  "bg-indigo-700",
+  "bg-teal-700",
+  "bg-orange-700",
+  "bg-cyan-700",
+];
 
 const CalendarPage: React.FC = () => {
   const { events, setEvents } = useCalendarEvents();
@@ -72,6 +100,34 @@ const CalendarPage: React.FC = () => {
   const [deleteEventId, setDeleteEventId] = useState<string | null>(null);
   const [showDayModal, setShowDayModal] = useState(false);
   const [modalEvents, setModalEvents] = useState<any[]>([]);
+
+  // Get unique admin clients and assign colors
+  const uniqueAdminClients = Array.from(
+    new Set(events.map((ev) => ev.adminClient).filter(Boolean))
+  );
+  // Count events per admin client
+  const adminClientEventCount: Record<string, number> = events.reduce(
+    (acc, ev) => {
+      if (ev.adminClient) {
+        acc[ev.adminClient] = (acc[ev.adminClient] || 0) + 1;
+      }
+      return acc;
+    },
+    {} as Record<string, number>
+  );
+  const adminClientColorMap = uniqueAdminClients.reduce((acc, client, idx) => {
+    if (client === "Boss Gar") {
+      acc[client] = { border: "border-orange-600", bg: "bg-orange-400" };
+    } else if (client === "Madam Kat") {
+      acc[client] = { border: "border-fuchsia-600", bg: "bg-fuchsia-400" };
+    } else {
+      acc[client!] = {
+        border: adminBorderColors[idx % adminBorderColors.length],
+        bg: adminBgColors[idx % adminBgColors.length],
+      };
+    }
+    return acc;
+  }, {} as Record<string, { border: string; bg: string }>);
 
   // Fetch events from Supabase on mount
   useEffect(() => {
@@ -278,13 +334,47 @@ const CalendarPage: React.FC = () => {
     setSelected(null);
   };
 
+  // Custom event component for calendar (now inside CalendarPage)
+  const CalendarEvent: React.FC<{ event: ProjectEvent }> = ({ event }) => {
+    const colorClass =
+      event.adminClient &&
+      typeof event.adminClient === "string" &&
+      adminClientColorMap[event.adminClient]
+        ? adminClientColorMap[event.adminClient].border
+        : "border-blue-300";
+    return (
+      <div
+        className={`border-2 ${colorClass} border-opacity-80 rounded p-0.5 shadow text-[11px] min-h-[28px] leading-tight bg-white dark:bg-gray-900`}
+      >
+        <div className="font-semibold text-gray-900 dark:text-gray-100 truncate">
+          {event.clientName || event.title}
+        </div>
+        {event.projectType && (
+          <div className="text-gray-800 dark:text-gray-200 truncate">
+            {event.projectType}
+          </div>
+        )}
+        {event.location && (
+          <div className="text-gray-700 dark:text-gray-300 truncate">
+            {event.location}
+          </div>
+        )}
+        {event.systemCapacity && (
+          <div className="text-gray-700 dark:text-gray-300 truncate">
+            {event.systemCapacity}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8">
       <div className="flex items-center gap-3 mb-6">
         <button
           type="button"
           onClick={() => window.history.back()}
-          className="focus:outline-none hover:bg-gray-100 rounded-full p-1"
+          className="focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full p-1"
           aria-label="Back"
         >
           <ArrowLeft className="h-6 w-6" />
@@ -329,6 +419,29 @@ const CalendarPage: React.FC = () => {
           components={{ event: CalendarEvent }}
         />
       )}
+
+      {/* Admin Client Legend */}
+      <div className="mt-8 flex flex-wrap gap-4 items-center justify-center">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 shadow text-gray-900 dark:text-gray-100">
+          <span className="font-semibold mr-2">Legend: Admin Clients</span>
+          {uniqueAdminClients.map((client) =>
+            typeof client === "string" ? (
+              <span
+                key={client}
+                className="inline-flex items-center mr-3 mb-1 px-2 py-1 rounded text-xs font-medium"
+              >
+                <span
+                  className={`w-3 h-3 rounded-full mr-2 inline-block ${adminClientColorMap[client].bg}`}
+                ></span>
+                {client}{" "}
+                <span className="ml-1 text-gray-500 dark:text-gray-400">
+                  ({adminClientEventCount[client] || 0})
+                </span>
+              </span>
+            ) : null
+          )}
+        </div>
+      </div>
 
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
@@ -404,6 +517,8 @@ const CalendarPage: React.FC = () => {
                 <option value="Admin Smile">Admin Smile</option>
                 <option value="Admin Arni">Admin Arni</option>
                 <option value="Admin Emz">Admin Emz</option>
+                <option value="Boss Gar">Boss Gar</option>
+                <option value="Madam Kat">Madam Kat</option>
                 <option value="Others">Others</option>
               </select>
               {form.adminClient === "Others" && (

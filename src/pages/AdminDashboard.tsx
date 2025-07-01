@@ -74,6 +74,9 @@ const AdminDashboard: React.FC = () => {
     refetch: refetchEvents,
   } = useCalendarEvents();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [collapsed] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Compute upcoming installations from calendar events (not projects)
   const now = new Date();
@@ -292,6 +295,13 @@ const AdminDashboard: React.FC = () => {
     if (diff < 604800) return `${Math.floor(diff / 86400)}d ago`;
     return date.toLocaleDateString();
   }
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   if (loading) return <div>Loading...</div>;
 
@@ -677,72 +687,99 @@ const AdminDashboard: React.FC = () => {
 
   // Sidebar rendering
   const renderSidebar = () => (
-    <nav className="h-full flex flex-col gap-1 p-2">
-      {menuItems.map((item) => {
-        const isActive =
-          activeTab === item.id ||
-          (item.subItems && location.pathname.startsWith("/admin/builders"));
-        return (
-          <div key={item.id}>
-            <button
-              onClick={() => {
-                setActiveTab(item.id);
-                if (item.link) navigate(item.link);
-                setSidebarOpen(false);
-              }}
-              className={`flex items-center gap-3 px-3 py-2 rounded-lg w-full text-left transition-colors duration-150
-                ${
-                  isActive
-                    ? "bg-blue-50 text-blue-600 dark:bg-gray-800 dark:text-blue-400"
-                    : "text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-gray-700"
-                }
-                focus:outline-none focus:ring-2 focus:ring-blue-200
-              `}
-              style={{ WebkitTapHighlightColor: "transparent" }}
-            >
-              <span>
-                {item.icon &&
-                  React.createElement(item.icon, {
-                    size: 22,
-                    className: "mr-1",
-                  })}
-              </span>
-              <span className="text-base font-medium">{item.label}</span>
-            </button>
-            {/* Render submenu if present and active */}
-            {item.subItems && isActive && (
-              <div className="ml-8 flex flex-col gap-1 mt-1">
-                {item.subItems.map((sub) => (
-                  <button
-                    key={sub.id}
-                    onClick={() => navigate(sub.link)}
-                    className={`text-left px-2 py-1 rounded-lg w-full transition-colors duration-150 ${
-                      location.pathname === sub.link
-                        ? "bg-blue-100 text-blue-700 font-semibold dark:bg-gray-700 dark:text-blue-300"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"
-                    }`}
-                  >
-                    {sub.label}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        );
-      })}
-    </nav>
+    <div className="relative h-full flex flex-col gap-1 p-2">
+      <nav className="flex-1 flex flex-col gap-1">
+        {menuItems.map((item) => {
+          const isActive =
+            activeTab === item.id ||
+            (item.subItems && location.pathname.startsWith("/admin/builders"));
+          const showLabels = isMobile || !collapsed || hovered;
+          return (
+            <div key={item.id}>
+              <button
+                onClick={() => {
+                  setActiveTab(item.id);
+                  if (item.link) navigate(item.link);
+                  setSidebarOpen(false);
+                }}
+                className={`flex items-center ${
+                  showLabels ? "gap-3" : "justify-center"
+                } px-3 py-2 rounded-lg w-full text-left transition-colors duration-150
+                  ${
+                    isActive
+                      ? "bg-blue-50 text-blue-600 dark:bg-gray-800 dark:text-blue-400"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-gray-700"
+                  }
+                  focus:outline-none focus:ring-2 focus:ring-blue-200
+                `}
+                style={{ WebkitTapHighlightColor: "transparent" }}
+              >
+                <span>
+                  {item.icon &&
+                    React.createElement(item.icon, {
+                      size: 22,
+                      className: showLabels ? "mr-1" : "",
+                    })}
+                </span>
+                {showLabels && (
+                  <span className="text-base font-medium">{item.label}</span>
+                )}
+              </button>
+              {/* Render submenu if present and active, and not collapsed or hovered */}
+              {item.subItems && isActive && showLabels && (
+                <div className="ml-8 flex flex-col gap-1 mt-1">
+                  {item.subItems.map((sub) => (
+                    <button
+                      key={sub.id}
+                      onClick={() => navigate(sub.link)}
+                      className={`text-left px-2 py-1 rounded-lg w-full transition-colors duration-150 ${
+                        location.pathname === sub.link
+                          ? "bg-blue-100 text-blue-700 font-semibold dark:bg-gray-700 dark:text-blue-300"
+                          : "text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      }`}
+                    >
+                      {sub.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </nav>
+    </div>
   );
 
   // Main render
   return (
     <div id="admin-dashboard-root" className={theme === "dark" ? "dark" : ""}>
       <div className={"min-h-screen flex bg-gray-50 dark:bg-gray-900"}>
-        <aside className="hidden md:flex md:flex-col md:w-64 md:h-screen md:bg-white md:dark:bg-gray-800 md:shadow-lg md:sticky md:top-0">
-          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-            <span className="font-bold text-xl dark:text-gray-100">Admin</span>
+        <aside
+          className={`hidden md:flex md:flex-col ${
+            !collapsed || hovered ? "md:w-64" : "md:w-16"
+          } md:h-screen md:bg-white md:dark:bg-gray-800 md:shadow-lg md:sticky md:top-0 transition-all duration-300`}
+          onMouseEnter={() => {
+            if (collapsed) setHovered(true);
+          }}
+          onMouseLeave={() => {
+            if (collapsed) setHovered(false);
+          }}
+        >
+          <div
+            className={`flex items-center ${
+              !collapsed || hovered ? "justify-between" : "justify-center"
+            } p-4 border-b border-gray-200 dark:border-gray-700`}
+          >
+            {(!collapsed || hovered) && (
+              <span className="font-bold text-xl dark:text-gray-100">
+                Admin
+              </span>
+            )}
             <button
               onClick={handleLogout}
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors"
+              className={`flex items-center ${
+                collapsed ? "justify-center" : "gap-2"
+              } text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors`}
               title="Logout"
             >
               <LogOut size={20} />

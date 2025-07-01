@@ -44,7 +44,7 @@ const ClientRecordsPage: React.FC = () => {
     amount: "",
   });
   const [page, setPage] = useState(1);
-  const pageSize = 10;
+  const pageSize = 15;
   const totalPages = Math.ceil(records.length / pageSize);
   const paginated = records.slice((page - 1) * pageSize, page * pageSize);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
