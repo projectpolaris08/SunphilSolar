@@ -838,4 +838,25 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar delivered a custom-engineered 12kW hybrid solar system in Congressional, Quezon City, designed to meet the needs of a household with high energy consumption and a desire for reliable backup during power outages. The client sought energy independence and long-term savings—exactly what this setup provides. From Congressional Avenue to Tandang Sora, Project 8, and Muñoz, Sunphil Solar is powering Metro Manila's homes with smart, scalable hybrid solar systems that provide freedom from rising power costs and unreliable grid supply.",
   },
+  {
+    id: "marikina-city-2025",
+    image: "/images/project41.jpg",
+    location: "Marikina City, Metro Manila, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-02",
+    clientType: "Residential (Urban Homeowner)",
+    specification: [
+      "6kW Deye Hybrid Inverter – High-efficiency hybrid inverter that automatically balances solar production, grid usage, and battery backup.",
+      "12 × 615W Canadian Bifacial Solar Panels – Bifacial design captures sunlight from both sides, increasing energy output in compact rooftop settings.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-lasting lithium battery ensures energy is stored for evening use and provides backup during outages.",
+    ],
+    benefits: [
+      "Save up to 75–80% on electricity bills",
+      "Reliable backup power for essentials: lighting, internet, fans, and refrigerator",
+      "Offsets approximately 1,000–1,200 kg of CO₂ emissions monthly",
+      "Ideal for Marikina homes with medium energy consumption and limited rooftop space",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar energy system for a client in Marikina City, providing consistent energy savings and dependable backup power. With frequent brownouts and rising utility costs in Metro Manila, this system was designed to give the homeowner long-term peace of mind, reduced electric bills, and increased energy independence. Marikina is known for its environmental challenges, but this installation proves that solar energy is both safe and sustainable when properly installed. With elevated components and weatherproof design, this system is built to last—even in flood-prone areas. Sunphil Solar offers free site evaluation, fast & professional installation, after-sales support, and energy monitoring for Marikina residents who want to go solar with confidence.",
+  },
 ];
