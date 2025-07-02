@@ -35,6 +35,23 @@ const DayEventsModal: React.FC<DayEventsModalProps> = ({ events, onClose }) => (
                 {event.systemCapacity}
               </div>
             )}
+            {event.solarPanels && (
+              <div className="text-xs text-blue-500 dark:text-blue-300">
+                <span className="font-semibold">Solar Panels:</span>{" "}
+                {event.solarPanels}
+              </div>
+            )}
+            {event.battery && (
+              <div className="text-xs text-purple-500 dark:text-purple-300">
+                <span className="font-semibold">Battery:</span> {event.battery}
+              </div>
+            )}
+            {(event.adminClient || event.adminClientOther) && (
+              <div className="text-xs text-green-600 dark:text-green-300">
+                <span className="font-semibold">Admin:</span>{" "}
+                {event.adminClientOther || event.adminClient}
+              </div>
+            )}
             {event.notes && (
               <div className="text-xs text-gray-400 dark:text-gray-500 mt-1">
                 {event.notes}

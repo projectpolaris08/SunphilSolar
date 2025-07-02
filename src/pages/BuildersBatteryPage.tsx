@@ -11,7 +11,7 @@ const batteryTypes = [
   "51.2v 314Ah",
 ];
 
-const builderNames = ["Joshua", "David", "Mark", "Dong"];
+const builderNames = ["Joshua", "David", "Mark", "Dong", "Eron", "Sam"];
 const statusOptions = ["In Progress", "Done"];
 
 type BatteryBuild = {

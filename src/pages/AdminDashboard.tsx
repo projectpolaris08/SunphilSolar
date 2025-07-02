@@ -689,64 +689,64 @@ const AdminDashboard: React.FC = () => {
   const renderSidebar = () => (
     <div className="relative h-full flex flex-col gap-1 p-2">
       <nav className="flex-1 flex flex-col gap-1">
-        {menuItems.map((item) => {
-          const isActive =
-            activeTab === item.id ||
-            (item.subItems && location.pathname.startsWith("/admin/builders"));
+      {menuItems.map((item) => {
+        const isActive =
+          activeTab === item.id ||
+          (item.subItems && location.pathname.startsWith("/admin/builders"));
           const showLabels = isMobile || !collapsed || hovered;
-          return (
-            <div key={item.id}>
-              <button
-                onClick={() => {
-                  setActiveTab(item.id);
-                  if (item.link) navigate(item.link);
-                  setSidebarOpen(false);
-                }}
+        return (
+          <div key={item.id}>
+            <button
+              onClick={() => {
+                setActiveTab(item.id);
+                if (item.link) navigate(item.link);
+                setSidebarOpen(false);
+              }}
                 className={`flex items-center ${
                   showLabels ? "gap-3" : "justify-center"
                 } px-3 py-2 rounded-lg w-full text-left transition-colors duration-150
-                  ${
-                    isActive
-                      ? "bg-blue-50 text-blue-600 dark:bg-gray-800 dark:text-blue-400"
-                      : "text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-gray-700"
-                  }
-                  focus:outline-none focus:ring-2 focus:ring-blue-200
-                `}
-                style={{ WebkitTapHighlightColor: "transparent" }}
-              >
-                <span>
-                  {item.icon &&
-                    React.createElement(item.icon, {
-                      size: 22,
+                ${
+                  isActive
+                    ? "bg-blue-50 text-blue-600 dark:bg-gray-800 dark:text-blue-400"
+                    : "text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-gray-700"
+                }
+                focus:outline-none focus:ring-2 focus:ring-blue-200
+              `}
+              style={{ WebkitTapHighlightColor: "transparent" }}
+            >
+              <span>
+                {item.icon &&
+                  React.createElement(item.icon, {
+                    size: 22,
                       className: showLabels ? "mr-1" : "",
-                    })}
-                </span>
+                  })}
+              </span>
                 {showLabels && (
-                  <span className="text-base font-medium">{item.label}</span>
+              <span className="text-base font-medium">{item.label}</span>
                 )}
-              </button>
+            </button>
               {/* Render submenu if present and active, and not collapsed or hovered */}
               {item.subItems && isActive && showLabels && (
-                <div className="ml-8 flex flex-col gap-1 mt-1">
-                  {item.subItems.map((sub) => (
-                    <button
-                      key={sub.id}
-                      onClick={() => navigate(sub.link)}
-                      className={`text-left px-2 py-1 rounded-lg w-full transition-colors duration-150 ${
-                        location.pathname === sub.link
-                          ? "bg-blue-100 text-blue-700 font-semibold dark:bg-gray-700 dark:text-blue-300"
-                          : "text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"
-                      }`}
-                    >
-                      {sub.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </nav>
+              <div className="ml-8 flex flex-col gap-1 mt-1">
+                {item.subItems.map((sub) => (
+                  <button
+                    key={sub.id}
+                    onClick={() => navigate(sub.link)}
+                    className={`text-left px-2 py-1 rounded-lg w-full transition-colors duration-150 ${
+                      location.pathname === sub.link
+                        ? "bg-blue-100 text-blue-700 font-semibold dark:bg-gray-700 dark:text-blue-300"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"
+                    }`}
+                  >
+                    {sub.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </nav>
     </div>
   );
 

@@ -165,10 +165,22 @@ const CalendarPage: React.FC = () => {
     fetchEvents();
   }, [setEvents]);
 
-  const handleSelectSlot = ({ start, end }: { start: Date; end: Date }) => {
-    setForm({ start, end });
-    setSelected(null);
-    setShowForm(true);
+  const handleSelectSlot = ({ start }: { start: Date }) => {
+    // Normalize the clicked day to midnight
+    const clickedDay = new Date(start);
+    clickedDay.setHours(0, 0, 0, 0);
+
+    // Find all events for the clicked day
+    const eventsForDay = events.filter((event) => {
+      const eventStart = new Date(event.start);
+      const eventEnd = new Date(event.end);
+      eventStart.setHours(0, 0, 0, 0);
+      eventEnd.setHours(0, 0, 0, 0);
+      return eventStart <= clickedDay && eventEnd >= clickedDay;
+    });
+
+    setModalEvents(eventsForDay);
+    setShowDayModal(true);
   };
 
   const handleSelectEvent = (event: ProjectEvent) => {

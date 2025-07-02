@@ -38,3 +38,84 @@
   background: #334155 !important;
   color: #fff !important;
 }
+
+/* Ensure month cells stretch to fit all events */
+.rbc-month-row,
+.rbc-date-cell,
+.rbc-day-bg {
+  height: auto !important;
+  min-height: 80px !important;
+  overflow: visible !important;
+  vertical-align: top !important;
+  padding-top: 0 !important;
+}
+
+.rbc-event {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Style the '+ more events' link for both light and dark mode */
+.rbc-show-more {
+  color: #2563eb !important; /* blue-600 for light mode */
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.rbc-show-more:hover {
+  background: #dbeafe !important; /* blue-100 for light mode */
+  color: #1e40af !important; /* blue-800 for light mode */
+}
+.dark .rbc-show-more {
+  color: #60a5fa !important; /* blue-400 for dark mode */
+  background: transparent;
+}
+.dark .rbc-show-more:hover {
+  background: #1e293b !important; /* slate-800 for dark mode */
+  color: #fff !important;
+}
+
+.rbc-month-view {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px; /* optional: for rounded corners */
+  overflow: hidden; /* ensures border-radius works */
+}
+
+.dark .rbc-month-view {
+  background-color: #181f2a !important;
+  color: #e5e7eb !important;
+  border: 1px solid #374151 !important;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.rbc-month-row {
+  vertical-align: top !important;
+}
+
+.rbc-row-segment {
+  vertical-align: top !important;
+  display: block !important;
+}
+
+.rbc-date-cell {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  vertical-align: top !important;
+}
+
+.rbc-event {
+  height: 100%;
+  min-height: 60px;
+  max-height: 100%;
+  overflow: auto;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  display: block;
+}
