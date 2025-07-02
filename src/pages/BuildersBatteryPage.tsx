@@ -24,6 +24,43 @@ type BatteryBuild = {
   date_completed: string | null;
 };
 
+// Assign a unique color to each builder
+const builderColorMap: Record<
+  string,
+  { text: string; invBg: string; batBg: string }
+> = {
+  Joshua: {
+    text: "text-blue-700 dark:text-blue-200",
+    invBg: "bg-blue-600",
+    batBg: "bg-green-600",
+  },
+  David: {
+    text: "text-green-700 dark:text-green-200",
+    invBg: "bg-green-600",
+    batBg: "bg-green-600",
+  },
+  Mark: {
+    text: "text-purple-700 dark:text-purple-200",
+    invBg: "bg-purple-600",
+    batBg: "bg-green-600",
+  },
+  Dong: {
+    text: "text-pink-700 dark:text-pink-200",
+    invBg: "bg-pink-600",
+    batBg: "bg-green-600",
+  },
+  Sam: {
+    text: "text-orange-700 dark:text-orange-200",
+    invBg: "bg-orange-600",
+    batBg: "bg-green-600",
+  },
+  Eron: {
+    text: "text-cyan-700 dark:text-cyan-200",
+    invBg: "bg-cyan-600",
+    batBg: "bg-green-600",
+  },
+};
+
 const BuildersBatteryPage = () => {
   const navigate = useNavigate();
   const [builds, setBuilds] = useState<BatteryBuild[]>([]);
@@ -203,50 +240,46 @@ const BuildersBatteryPage = () => {
         Total Builds:{" "}
         <span className="text-black dark:text-gray-100">{totalBuilds}</span>
       </div>
-      <div>
-        <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">
-          By Builder
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {builderCounts.map((bc) => (
-            <span
-              key={bc.name}
-              className="inline-block bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-base font-bold shadow-sm"
-            >
-              {bc.name}: {bc.count}
-            </span>
-          ))}
-        </div>
+      <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2 mt-4">
+        By Builder
       </div>
-      <div>
-        <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">
-          By Status
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <span className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-4 py-2 rounded-full text-base font-bold shadow-sm">
-            In Progress: {inProgressCount}
+      <div className="flex flex-wrap gap-4 mb-4">
+        {builderCounts.map((bc) => (
+          <span
+            key={bc.name}
+            className={`inline-block px-4 py-2 rounded-full text-base font-bold shadow-sm text-white ${
+              builderColorMap[bc.name]?.invBg || "bg-blue-600"
+            }`}
+          >
+            {bc.name}: {bc.count}
           </span>
-          <span className="inline-block bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-4 py-2 rounded-full text-base font-bold shadow-sm">
-            Done: {doneCount}
+        ))}
+      </div>
+      <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2 mt-4">
+        By Status
+      </div>
+      <div className="flex flex-wrap gap-4 mb-4">
+        <span className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-4 py-2 rounded-full text-base font-bold shadow-sm">
+          In Progress: {inProgressCount}
+        </span>
+        <span className="inline-block bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-4 py-2 rounded-full text-base font-bold shadow-sm">
+          Done: {doneCount}
+        </span>
+      </div>
+      <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2 mt-4">
+        By Battery Type
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
+        {batteryTypeCounts.map((itc) => (
+          <span
+            key={itc.type}
+            className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-base font-bold shadow-sm text-center"
+          >
+            {itc.type}: {itc.count}
           </span>
-        </div>
+        ))}
       </div>
-      <div>
-        <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">
-          By Battery Type
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
-          {batteryTypeCounts.map((itc) => (
-            <span
-              key={itc.type}
-              className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-base font-bold shadow-sm text-center"
-            >
-              {itc.type}: {itc.count}
-            </span>
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col md:flex-row md:items-end gap-4 mb-6">
+      <div className="flex flex-col md:flex-row md:items-end gap-4 mb-6 mt-4">
         <div>
           <label className="block text-sm font-medium mb-1 dark:text-gray-200">
             Battery Type

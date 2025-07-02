@@ -358,47 +358,47 @@ const ClientRecordsPage: React.FC = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search..."
-        className="mb-4 px-3 py-2 border rounded w-full"
+        className="mb-4 px-3 py-2 border rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       {loading ? <div>Loading...</div> : null}
       <div className="bg-white dark:bg-gray-800 rounded shadow p-4">
         <table className="w-full">
           <thead>
             <tr className="bg-gray-100 dark:bg-gray-900 border-b dark:border-gray-700">
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-blue-500">
                 Date
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-green-500">
                 Client
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-purple-500">
                 Location
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-pink-500">
                 Inverter
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-yellow-500">
                 Solar Panels
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-cyan-500">
                 Battery
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-orange-500">
                 Contact Number
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-indigo-500">
                 Facebook Name
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-teal-500">
                 Visitation Date
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-red-500">
                 Notes
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-gray-400">
                 Amount
               </th>
-              <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+              <th className="px-4 py-2 text-left font-bold text-black dark:text-white">
                 Actions
               </th>
             </tr>

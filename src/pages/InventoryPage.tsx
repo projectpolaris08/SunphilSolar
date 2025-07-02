@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect } from "react";
 import { Plus, Edit, Trash2, Download, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
@@ -388,40 +388,40 @@ const InventoryPage: React.FC = () => {
         <table className="w-full bg-white dark:bg-gray-800 rounded shadow">
           <thead>
             <tr className="bg-gray-100 dark:bg-gray-900 border-b dark:border-gray-700">
-              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-left font-bold text-blue-500">
                 Item Description
               </th>
-              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-center font-bold text-green-500">
                 Qty
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-left font-bold text-purple-500">
                 Uom
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-left font-bold text-pink-500">
                 Delivery Date
               </th>
-              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-center font-bold text-yellow-500">
                 Qty Delivered
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-left font-bold text-cyan-500">
                 Release Date
               </th>
-              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-center font-bold text-orange-500">
                 Qty Released
               </th>
-              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-center font-bold text-indigo-500">
                 Total Qty On Hand
               </th>
-              <th className="px-6 py-3 text-center font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-center font-bold text-teal-500">
                 Threshold
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-left font-bold text-red-500">
                 Category
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-left font-bold text-gray-400">
                 Notes
               </th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-900 dark:text-gray-100">
+              <th className="px-6 py-3 text-left font-bold text-black dark:text-white">
                 Actions
               </th>
             </tr>

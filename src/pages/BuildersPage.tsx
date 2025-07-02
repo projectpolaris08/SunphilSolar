@@ -46,7 +46,44 @@ const batteryTypes = [
   "51.2v 280Ah",
   "51.2v 314Ah",
 ];
-const builderNames = ["Joshua", "David", "Mark", "Dong"];
+const builderNames = ["Joshua", "David", "Mark", "Dong", "Sam", "Eron"];
+
+// Assign a unique color to each builder
+const builderColorMap: Record<
+  string,
+  { text: string; invBg: string; batBg: string }
+> = {
+  Joshua: {
+    text: "text-blue-700 dark:text-blue-200",
+    invBg: "bg-blue-600",
+    batBg: "bg-green-600",
+  },
+  David: {
+    text: "text-green-700 dark:text-green-200",
+    invBg: "bg-green-600",
+    batBg: "bg-green-600",
+  },
+  Mark: {
+    text: "text-purple-700 dark:text-purple-200",
+    invBg: "bg-purple-600",
+    batBg: "bg-green-600",
+  },
+  Dong: {
+    text: "text-pink-700 dark:text-pink-200",
+    invBg: "bg-pink-600",
+    batBg: "bg-green-600",
+  },
+  Sam: {
+    text: "text-orange-700 dark:text-orange-200",
+    invBg: "bg-orange-600",
+    batBg: "bg-green-600",
+  },
+  Eron: {
+    text: "text-cyan-700 dark:text-cyan-200",
+    invBg: "bg-cyan-600",
+    batBg: "bg-green-600",
+  },
+};
 
 const BuildersPage = () => {
   const navigate = useNavigate();
@@ -344,14 +381,27 @@ const BuildersPage = () => {
                   key={b.name}
                   className="bg-gray-50 dark:bg-gray-900 rounded p-3"
                 >
-                  <div className="font-semibold text-blue-700 dark:text-blue-200 text-sm">
+                  <div
+                    className={`font-semibold text-sm ${
+                      builderColorMap[b.name]?.text ||
+                      "text-blue-700 dark:text-blue-200"
+                    }`}
+                  >
                     {b.name}
                   </div>
                   <div className="flex flex-wrap gap-2 mt-1">
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-2 py-1 rounded text-xs">
+                    <span
+                      className={`px-4 py-2 rounded-full font-semibold text-white mr-2 ${
+                        builderColorMap[b.name]?.invBg || "bg-blue-600"
+                      }`}
+                    >
                       Inv: {b.inverter.length}
                     </span>
-                    <span className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-2 py-1 rounded text-xs">
+                    <span
+                      className={`px-4 py-2 rounded-full font-semibold text-white mr-2 ${
+                        builderColorMap[b.name]?.batBg || "bg-blue-600"
+                      }`}
+                    >
                       Bat: {b.battery.length}
                     </span>
                   </div>
@@ -379,7 +429,7 @@ const BuildersPage = () => {
                   {inverterTypeBreakdown.map((t) => (
                     <span
                       key={t.type}
-                      className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200 px-2 py-1 rounded text-xs"
+                      className="inline-block bg-blue-600/90 text-white px-4 py-2 rounded-full text-base font-bold shadow hover:scale-105 hover:bg-blue-700 transition-all border border-blue-300"
                     >
                       {t.type}: {t.count}
                     </span>
@@ -394,7 +444,7 @@ const BuildersPage = () => {
                   {batteryTypeBreakdown.map((t) => (
                     <span
                       key={t.type}
-                      className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200 px-2 py-1 rounded text-xs"
+                      className="inline-block bg-green-600/90 text-white px-4 py-2 rounded-full text-base font-bold shadow hover:scale-105 hover:bg-green-700 transition-all border border-green-300"
                     >
                       {t.type}: {t.count}
                     </span>

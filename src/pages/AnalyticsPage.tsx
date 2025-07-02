@@ -19,15 +19,6 @@ const stats = {
   totalClients: 73,
   totalSales: 29023000,
 };
-const newClients = 12;
-const monthlySalesData = [
-  { month: "Feb-2025", sales: 1000000 },
-  { month: "Mar-2025", sales: 4000000 },
-  { month: "Apr-2025", sales: 8000000 },
-  { month: "May-2025", sales: 8500000 },
-  { month: "Jun-2025", sales: 5000000 },
-];
-const avgProjectDuration = 20;
 const inProgressProjects = 0;
 const pendingProjects = 0;
 
@@ -44,6 +35,19 @@ interface AdminActivity {
 const AnalyticsPage = () => {
   const [recentActivity, setRecentActivity] = useState<AdminActivity[]>([]);
   const [theme] = useAdminDarkMode();
+  const [monthlySalesData, setMonthlySalesData] = useState<
+    { month: string; sales: number }[]
+  >([]);
+  const [totalRevenue, setTotalRevenue] = useState(0);
+  const [revenueChange, setRevenueChange] = useState<number | null>(null);
+  const [newClients, setNewClients] = useState(0);
+  const [totalProjects, setTotalProjects] = useState(0);
+  const [avgProjectDuration, setAvgProjectDuration] = useState<number | null>(
+    null
+  );
+  const [projectDurationTarget, setProjectDurationTarget] = useState<
+    number | null
+  >(null);
 
   useEffect(() => {
     const fetchActivity = async () => {
@@ -55,6 +59,146 @@ const AnalyticsPage = () => {
       if (data) setRecentActivity(data);
     };
     fetchActivity();
+  }, []);
+
+  useEffect(() => {
+    const fetchSales = async () => {
+      const { data } = await supabase
+        .from("client_records")
+        .select("date, amount");
+
+      if (data) {
+        // Aggregate sales by month
+        const salesByMonth: Record<string, number> = {};
+        let total = 0;
+        data.forEach(({ date, amount }) => {
+          if (!date || !amount) return;
+          const month = new Date(date).toLocaleString("default", {
+            month: "short",
+            year: "numeric",
+          });
+          const amt = parseFloat(amount.toString().replace(/,/g, ""));
+          if (!isNaN(amt)) {
+            salesByMonth[month] = (salesByMonth[month] || 0) + amt;
+            total += amt;
+          }
+        });
+        // Sort months chronologically
+        const sortedMonths = Object.keys(salesByMonth).sort(
+          (a, b) => new Date("1 " + a).getTime() - new Date("1 " + b).getTime()
+        );
+        const len = sortedMonths.length;
+        if (len >= 2) {
+          const lastMonth = salesByMonth[sortedMonths[len - 2]];
+          const thisMonth = salesByMonth[sortedMonths[len - 1]];
+          if (lastMonth > 0) {
+            setRevenueChange(((thisMonth - lastMonth) / lastMonth) * 100);
+          } else {
+            setRevenueChange(null);
+          }
+        } else {
+          setRevenueChange(null);
+        }
+        // Convert to array for recharts and sort by date
+        const chartData = Object.entries(salesByMonth)
+          .map(([month, sales]) => ({ month, sales }))
+          .sort(
+            (a, b) =>
+              new Date("1 " + a.month).getTime() -
+              new Date("1 " + b.month).getTime()
+          );
+        setMonthlySalesData(chartData);
+        setTotalRevenue(total);
+        setTotalProjects(data.length);
+      }
+    };
+    fetchSales();
+  }, []);
+
+  useEffect(() => {
+    const fetchCalendarData = async () => {
+      const { data } = await supabase
+        .from("calendar_events")
+        .select("client_name, start_date");
+
+      if (data) {
+        // Calculate new clients for the current month
+        const now = new Date();
+        const currentMonth = now.getMonth();
+        const currentYear = now.getFullYear();
+        const clientsThisMonth = new Set();
+        data.forEach(({ client_name, start_date }) => {
+          if (!client_name || !start_date) return;
+          const d = new Date(start_date);
+          if (
+            d.getMonth() === currentMonth &&
+            d.getFullYear() === currentYear
+          ) {
+            clientsThisMonth.add(client_name.trim().toLowerCase());
+          }
+        });
+        setNewClients(clientsThisMonth.size);
+      }
+    };
+    fetchCalendarData();
+  }, []);
+
+  useEffect(() => {
+    const fetchProjectDurations = async () => {
+      const { data } = await supabase
+        .from("calendar_events")
+        .select("start_date, end_date");
+
+      if (data) {
+        const durations: number[] = [];
+        data.forEach(({ start_date, end_date }) => {
+          if (!start_date || !end_date) return;
+          const start = new Date(start_date);
+          const end = new Date(end_date);
+          const diff =
+            (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24); // days
+          if (diff >= 0) durations.push(diff);
+        });
+        if (durations.length > 0) {
+          const avg = durations.reduce((a, b) => a + b, 0) / durations.length;
+          setAvgProjectDuration(Math.round(avg));
+        } else {
+          setAvgProjectDuration(null);
+        }
+      }
+    };
+    fetchProjectDurations();
+  }, []);
+
+  useEffect(() => {
+    const fetchProjectDurationTarget = async () => {
+      const { data } = await supabase
+        .from("calendar_events")
+        .select("start_date, end_date");
+
+      if (data) {
+        const now = new Date();
+        const lastYear = now.getFullYear() - 1;
+        const durations: number[] = [];
+        data.forEach(({ start_date, end_date }) => {
+          if (!start_date || !end_date) return;
+          const start = new Date(start_date);
+          const end = new Date(end_date);
+          if (start.getFullYear() === lastYear) {
+            const diff =
+              (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24);
+            if (diff >= 0) durations.push(diff);
+          }
+        });
+        if (durations.length > 0) {
+          const avg = durations.reduce((a, b) => a + b, 0) / durations.length;
+          setProjectDurationTarget(Math.round(avg));
+        } else {
+          setProjectDurationTarget(null);
+        }
+      }
+    };
+    fetchProjectDurationTarget();
   }, []);
 
   return (
@@ -71,9 +215,15 @@ const AnalyticsPage = () => {
             <div>
               <p className="text-sm opacity-90">Total Revenue</p>
               <p className="text-2xl font-bold">
-                ₱{stats.totalSales.toLocaleString()}
+                ₱{totalRevenue.toLocaleString()}
               </p>
-              <p className="text-xs opacity-75">+12.5% from last month</p>
+              <p className="text-xs opacity-75">
+                {revenueChange !== null
+                  ? `${revenueChange > 0 ? "+" : ""}${revenueChange.toFixed(
+                      1
+                    )}% from last month`
+                  : "No data for previous month"}
+              </p>
             </div>
             <div className="p-2 bg-white bg-opacity-20 rounded-lg">
               <TrendingUp className="h-6 w-6" />
@@ -110,9 +260,11 @@ const AnalyticsPage = () => {
               <p className="text-sm opacity-90">Avg. Project Value</p>
               <p className="text-2xl font-bold">
                 ₱
-                {(stats.totalSales / stats.totalProjects)
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                {totalProjects > 0
+                  ? (totalRevenue / totalProjects)
+                      .toFixed(2)
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                  : "0.00"}
               </p>
               <p className="text-xs opacity-75">Per project</p>
             </div>
@@ -261,7 +413,7 @@ const AnalyticsPage = () => {
             Average Project Duration
           </h4>
           <div className="text-3xl font-bold text-blue-600 mb-2">
-            {avgProjectDuration} days
+            {avgProjectDuration !== null ? `${avgProjectDuration} days` : "N/A"}
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             From start to completion
@@ -269,7 +421,10 @@ const AnalyticsPage = () => {
           <div className="mt-3">
             <div className="flex justify-between text-sm">
               <span className="text-gray-500 dark:text-gray-400">
-                Target: 20 days
+                Target:{" "}
+                {projectDurationTarget !== null
+                  ? `${projectDurationTarget} days`
+                  : "N/A"}
               </span>
               <span className="text-green-600 font-medium">-10%</span>
             </div>
