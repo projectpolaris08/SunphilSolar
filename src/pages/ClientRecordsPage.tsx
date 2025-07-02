@@ -581,7 +581,6 @@ const ClientRecordsPage: React.FC = () => {
                     setForm({ ...form, inverter: e.target.value })
                   }
                   className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-                  required
                 >
                   <option value="">Select Inverter</option>
                   <option value="3kW">3kW</option>
@@ -608,7 +607,6 @@ const ClientRecordsPage: React.FC = () => {
                     }
                     className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/2"
                     placeholder="pcs"
-                    required
                   />
                   <select
                     value={form.solar_panel_wattage}
@@ -616,7 +614,6 @@ const ClientRecordsPage: React.FC = () => {
                       setForm({ ...form, solar_panel_wattage: e.target.value })
                     }
                     className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/2"
-                    required
                   >
                     <option value="">Wattage</option>
                     <option value="580W">580W</option>
@@ -642,7 +639,6 @@ const ClientRecordsPage: React.FC = () => {
                       }));
                     }}
                     className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-2/3"
-                    required
                   >
                     <option value="">Select Battery</option>
                     <option value="None">None</option>
@@ -662,7 +658,6 @@ const ClientRecordsPage: React.FC = () => {
                     }
                     className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/3"
                     placeholder="Qty"
-                    required={form.battery_type !== "None"}
                     disabled={form.battery_type === "None"}
                   />
                 </div>
@@ -726,7 +721,6 @@ const ClientRecordsPage: React.FC = () => {
                   value={form.amount}
                   onChange={(e) => setForm({ ...form, amount: e.target.value })}
                   className="mt-1 block w-full border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-                  required
                 />
               </div>
               <div className="md:col-span-2 flex justify-end gap-2">
@@ -736,7 +730,7 @@ const ClientRecordsPage: React.FC = () => {
                     setShowForm(false);
                     setEditing(null);
                   }}
-                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
+                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100"
                 >
                   Cancel
                 </button>
