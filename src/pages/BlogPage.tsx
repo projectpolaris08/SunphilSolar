@@ -12,7 +12,6 @@ import {
   LabIcon,
 } from "../components/icons";
 import { motion, AnimatePresence } from "framer-motion";
-import BeamsBackground from "@/components/BeamsBackground";
 import { ChevronRight } from "lucide-react";
 import { Home } from "lucide-react";
 
@@ -62,7 +61,7 @@ export const BlogPage = () => {
   }, [pageParam]);
 
   return (
-    <BeamsBackground intensity="medium">
+    <div className="min-h-screen w-full bg-neutral-950">
       <div className="container mx-auto px-4 py-20">
         <Helmet>
           <title>Blog | Sunphil Solar</title>
@@ -237,7 +236,7 @@ export const BlogPage = () => {
           </button>
         </div>
       </div>
-    </BeamsBackground>
+    </div>
   );
 };
 

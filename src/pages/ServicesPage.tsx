@@ -1,4 +1,3 @@
-import BeamsBackground from "@/components/BeamsBackground";
 import { Features } from "../components/sections/Features";
 import { Services } from "../components/sections/Services";
 import { Link } from "react-router-dom";
@@ -6,8 +5,8 @@ import { ChevronRight } from "lucide-react";
 
 const ServicesPage = () => {
   return (
-    <BeamsBackground intensity="medium">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen w-full bg-neutral-950">
+      <div className="container mx-auto px-4 py-20">
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex items-center space-x-2 text-sm text-white/80">
@@ -46,7 +45,7 @@ const ServicesPage = () => {
           <Services />
         </section>
       </div>
-    </BeamsBackground>
+    </div>
   );
 };
 

@@ -11,7 +11,6 @@ import {
   Info,
   ChevronRight,
 } from "lucide-react";
-import BeamsBackground from "@/components/BeamsBackground";
 import {
   BarChart,
   Bar,
@@ -311,8 +310,8 @@ const StatisticsPage: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <BeamsBackground intensity="medium">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+    <div className="min-h-screen w-full bg-neutral-950">
+      <div className="container mx-auto px-4 py-20">
         <Helmet>
           <title>Statistics | Sunphil Solar</title>
         </Helmet>
@@ -889,7 +888,7 @@ const StatisticsPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </BeamsBackground>
+    </div>
   );
 };
 

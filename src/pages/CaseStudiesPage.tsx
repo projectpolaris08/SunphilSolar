@@ -11,7 +11,6 @@ import {
   CheckCircle,
   ChevronDown,
 } from "lucide-react";
-import BeamsBackground from "@/components/BeamsBackground";
 import { caseStudies } from "@/data/caseStudies";
 import { projects } from "@/data/projects";
 
@@ -124,8 +123,8 @@ const CaseStudiesPage: React.FC = () => {
   };
 
   return (
-    <BeamsBackground intensity="medium">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="min-h-screen w-full bg-neutral-950">
+      <div className="container mx-auto px-4 py-20">
         <Helmet>
           <title>Solar Case Studies | Sunphil Solar</title>
           <meta
@@ -417,7 +416,7 @@ const CaseStudiesPage: React.FC = () => {
           )}
         </main>
       </div>
-    </BeamsBackground>
+    </div>
   );
 };
 

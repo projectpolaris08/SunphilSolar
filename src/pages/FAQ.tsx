@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
-import BeamsBackground from "@/components/BeamsBackground";
 import { Link } from "react-router-dom";
 
 const faqs = [
@@ -93,15 +92,15 @@ export default function FAQ() {
   };
 
   return (
-    <BeamsBackground intensity="medium">
-      <Helmet>
-        <title>FAQ | Sunphil Solar</title>
-        <meta
-          name="description"
-          content="Frequently asked questions about solar installation, savings, and Sunphil Solar services."
-        />
-      </Helmet>
-      <div className="container mx-auto px-4 max-w-2xl py-20">
+    <div className="min-h-screen w-full bg-neutral-950">
+      <div className="container mx-auto px-4 py-20">
+        <Helmet>
+          <title>FAQ | Sunphil Solar</title>
+          <meta
+            name="description"
+            content="Frequently asked questions about solar installation, savings, and Sunphil Solar services."
+          />
+        </Helmet>
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex items-center space-x-2 text-sm text-white/80">
@@ -164,6 +163,6 @@ export default function FAQ() {
           ))}
         </div>
       </div>
-    </BeamsBackground>
+    </div>
   );
 }

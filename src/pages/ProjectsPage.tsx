@@ -10,7 +10,6 @@ import {
   Search,
   ChevronRight,
 } from "lucide-react";
-import BeamsBackground from "../components/BeamsBackground";
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 
@@ -170,7 +169,7 @@ const ProjectsPage = () => {
   };
 
   return (
-    <BeamsBackground intensity="medium">
+    <div className="min-h-screen w-full bg-neutral-950">
       <div className="container mx-auto px-4 py-20">
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-6">
@@ -469,7 +468,7 @@ const ProjectsPage = () => {
           </div>
         )}
       </div>
-    </BeamsBackground>
+    </div>
   );
 };
 

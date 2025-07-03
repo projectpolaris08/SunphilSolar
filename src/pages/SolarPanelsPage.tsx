@@ -1,12 +1,11 @@
 import React from "react";
-import BeamsBackground from "@/components/BeamsBackground";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 const SolarPanelsPage: React.FC = () => {
   return (
-    <BeamsBackground intensity="medium">
-      <div className="container mx-auto px-4 py-12 min-h-screen text-white">
+    <div className="min-h-screen w-full bg-neutral-950 text-white">
+      <div className="container mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex items-center space-x-2 text-sm text-white/80">
@@ -202,7 +201,7 @@ const SolarPanelsPage: React.FC = () => {
           </a>
         </section>
       </div>
-    </BeamsBackground>
+    </div>
   );
 };
 

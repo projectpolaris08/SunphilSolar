@@ -1,14 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
-import BeamsBackground from "@/components/BeamsBackground";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 const AfterSalesPage: React.FC = () => {
   return (
-    <BeamsBackground intensity="medium">
-      <div className="container mx-auto px-4 sm:px-6 max-w-2xl py-20">
+    <div className="min-h-screen w-full bg-neutral-950">
+      <div className="container mx-auto px-4 py-20">
         <Helmet>
           <title>After Sales | Sunphil Solar</title>
         </Helmet>
@@ -129,7 +128,7 @@ const AfterSalesPage: React.FC = () => {
           </p>
         </div>
       </div>
-    </BeamsBackground>
+    </div>
   );
 };
 
