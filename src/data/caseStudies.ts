@@ -240,6 +240,74 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       },
     ],
   },
+  "naic-cavite": {
+    projectOverview: {
+      challenge:
+        "Marvin Lucero was struggling with consistently high Meralco bills averaging ₱5,381.80 monthly, consuming 407 kWh per month. The financial burden of nearly ₱180 daily electricity costs was taking a toll on his household budget, despite efforts to conserve energy.",
+      solution:
+        "Sunphil Solar installed a custom 6kW hybrid solar system on February 28, 2025, featuring a 6kW Deye Hybrid Inverter for intelligent energy management, 13 x 600W Canadian Bifacial Solar Panels for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery for reliable backup power and nighttime energy storage.",
+      results:
+        "Marvin's Meralco consumption dropped from 407 kWh to just 10 kWh, reducing his bill from ₱5,381.80 to ₱144.47—a 97.3% reduction. The system now generates nearly all his household energy needs, providing complete energy independence and significant monthly savings.",
+    },
+    financialAnalysis: {
+      totalInvestment: 280000,
+      monthlySavings: 5237,
+      paybackPeriod: 4.5,
+      annualROI: 22.4,
+      lifetimeSavings: 1256880,
+    },
+    environmentalImpact: {
+      co2Reduction: 9600,
+      treesEquivalent: 457,
+      annualEnergyProduction: 9855,
+    },
+    performanceMetrics: {
+      systemEfficiency: 95,
+      uptime: 99.9,
+      peakOutput: 6,
+      averageDailyProduction: 27,
+    },
+    challenges: [
+      "Consistently high Meralco bills averaging ₱5,381.80 monthly",
+      "High energy consumption of 407 kWh per month",
+      "Daily electricity costs of nearly ₱180 putting strain on household budget",
+      "Limited energy conservation options despite efforts to save",
+      "No backup power system for outages or emergencies",
+    ],
+    solutions: [
+      "Custom-designed 6kW hybrid solar system tailored to household energy needs",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency bifacial panels capturing maximum sunlight even in variable weather",
+      "LiFePO₄ battery storage for nighttime use and backup power during outages",
+      "Complete energy independence reducing grid consumption by 97.3%",
+    ],
+    testimonials: {
+      quote:
+        "Very satisfied Sir. Nag bi-bills na lang ako ng ₱100 to ₱200 per month. Hindi na ako nangangamba tuwing dumarating ang bill. Alam ko na kaya ko na.",
+      author: "Marvin Lucero",
+      role: "Homeowner, Naic, Cavite",
+    },
+    gallery: [
+      {
+        src: "/images/marvin-cabuhat.jpg",
+        alt: "Marvin Lucero's Meralco bill before solar installation",
+        caption:
+          "February 2025: Meralco bill at ₱5,381.80 with 407 kWh consumption.",
+      },
+      {
+        src: "/images/marvin-cabuhat2.jpg",
+        alt: "Marvin Lucero's Meralco bill after solar installation",
+        caption:
+          "June 2025: Bill reduced to just ₱144.47 with only 10 kWh consumption.",
+      },
+      {
+        src: "/images/marvin-cabuhat3.jpg",
+        alt: "Marvin Lucero's energy consumption chart showing dramatic reduction",
+        caption:
+          "Energy consumption chart showing the dramatic drop from 407 kWh to 10 kWh.",
+      },
+    ],
+  },
 };
 
 export default caseStudies;

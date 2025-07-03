@@ -59,6 +59,13 @@ const AboutPage: React.FC = () => {
       image: "/images/Aira.jpeg",
     },
     {
+      initial: "E",
+      name: "Emz",
+      title: "Admin Assistant",
+      description: "Building strong client relationships daily.",
+      image: "/images/emz.jpg",
+    },
+    {
       initial: "T",
       name: "Thea",
       title: "Admin Assistant",
@@ -103,13 +110,6 @@ const AboutPage: React.FC = () => {
     {
       initial: "A",
       name: "Arni",
-      title: "Admin Assistant",
-      description: "Building strong client relationships daily.",
-      image: "/images/Sunphil.jpg",
-    },
-    {
-      initial: "E",
-      name: "Emz",
       title: "Admin Assistant",
       description: "Building strong client relationships daily.",
       image: "/images/Sunphil.jpg",

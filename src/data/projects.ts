@@ -12,6 +12,48 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "samal-bataan",
+    image: "/images/project43.jpg",
+    location: "Samal, Bataan, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-03",
+    clientType: "Residential",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart energy controller that seamlessly integrates solar, battery, and grid power for maximum efficiency.",
+      "18 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase daily output by capturing reflected sunlight—ideal for maximizing energy generation on open rooftops.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery stores surplus energy for evening use and provides dependable backup during grid outages.",
+    ],
+    benefits: [
+      "Slash electric bills by up to 80%",
+      "Maintain uninterrupted power for essential appliances",
+      "Offset approximately 1,300–1,500 kg of CO₂ emissions per month",
+      "Optimized for rural and semi-urban households in Bataan",
+    ],
+    description:
+      "Sunphil Solar installed a robust 8kW hybrid solar system in Samal, Bataan, designed to provide reliable, cost-effective energy for a household experiencing frequent power interruptions and high electricity bills. With a hybrid setup, the homeowner now enjoys 24/7 access to clean energy—even during outages. Sunphil Solar is helping homes across Samal, Orion, Abucay, and Balanga City shift to sustainable energy solutions. Whether for savings, security, or sustainability, our hybrid solar systems are tailored to perform in real Filipino homes.",
+  },
+  {
+    id: "naic-cavite",
+    image: "/images/project42.jpg",
+    location: "Naic, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-02-28",
+    clientType: "Residential (Single-family Home)",
+    specification: [
+      "6kW Deye Hybrid Inverter – Intelligent hybrid inverter that seamlessly manages energy from solar, battery, and the grid.",
+      "13 × 600W Canadian Bifacial Solar Panels – Efficient bifacial panels generate energy from both sides, maximizing output even in residential setups with limited space.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium battery provides energy storage for nighttime use and backup during brownouts.",
+    ],
+    benefits: [
+      "Save up to 75–80% on monthly power bills",
+      "Maintain power for critical devices during blackouts",
+      "Reduce carbon emissions by up to 1,100 kg per month",
+      "Custom-fit for residential homes in Cavite's suburban areas",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar system in Naic, Cavite for a homeowner looking to reduce monthly electricity expenses and ensure power availability during outages. With increasing utility costs and unreliable grid supply in parts of Cavite, this hybrid system offers a smart, long-term energy solution. This installation in Naic is part of Sunphil Solar's effort to bring sustainable and resilient energy solutions to Cavite households, including those in Tanza, Maragondon, Trece Martires, and beyond. Whether it's for savings, backup power, or both—our hybrid systems are built to perform.",
+  },
+  {
     id: "bagong-ilog-pasig",
     image: "/images/project36.jpg",
     location: "Bagong Ilog, Pasig City, Metro Manila, Philippines",
