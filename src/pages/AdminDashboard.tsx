@@ -49,6 +49,12 @@ interface AdminActivity {
   timestamp: string;
 }
 
+// Types for build summaries
+type BuildStatusSummary = {
+  inProgress: number;
+  done: number;
+};
+
 const AdminDashboard: React.FC = () => {
   const { login, logout, isAuthenticated, loading } = useAdminAuth();
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -80,6 +86,11 @@ const AdminDashboard: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [recentActivityLoading, setRecentActivityLoading] = useState(false);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
+  // State for build summaries
+  const [inverterBuildSummary, setInverterBuildSummary] =
+    useState<BuildStatusSummary>({ inProgress: 0, done: 0 });
+  const [batteryBuildSummary, setBatteryBuildSummary] =
+    useState<BuildStatusSummary>({ inProgress: 0, done: 0 });
 
   // Compute upcoming installations from calendar events (not projects)
   const now = new Date();
@@ -127,6 +138,36 @@ const AdminDashboard: React.FC = () => {
       ...prev,
       totalProjects: projects.length,
     }));
+  }, []);
+
+  // Fetch inverter and battery build summaries
+  useEffect(() => {
+    const fetchBuildSummaries = async () => {
+      // Inverter Builds
+      const { data: inverterData } = await supabase
+        .from("inverter_builds")
+        .select("status");
+      if (inverterData) {
+        setInverterBuildSummary({
+          inProgress: inverterData.filter(
+            (b: any) => b.status === "In Progress"
+          ).length,
+          done: inverterData.filter((b: any) => b.status === "Done").length,
+        });
+      }
+      // Battery Builds
+      const { data: batteryData } = await supabase
+        .from("battery_builds")
+        .select("status");
+      if (batteryData) {
+        setBatteryBuildSummary({
+          inProgress: batteryData.filter((b: any) => b.status === "In Progress")
+            .length,
+          done: batteryData.filter((b: any) => b.status === "Done").length,
+        });
+      }
+    };
+    fetchBuildSummaries();
   }, []);
 
   // Compute monthly sales data
@@ -598,6 +639,47 @@ const AdminDashboard: React.FC = () => {
                 />
               </BarChart>
             </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+      {/* Builders Summary Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-4">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 sm:p-6">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            Inverter Builds Status
+          </h3>
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <span className="font-medium">In Progress:</span>
+              <span className="text-blue-600 font-bold">
+                {inverterBuildSummary.inProgress}
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-medium">Done:</span>
+              <span className="text-green-600 font-bold">
+                {inverterBuildSummary.done}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 sm:p-6">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            Battery Builds Status
+          </h3>
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <span className="font-medium">In Progress:</span>
+              <span className="text-blue-600 font-bold">
+                {batteryBuildSummary.inProgress}
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-medium">Done:</span>
+              <span className="text-green-600 font-bold">
+                {batteryBuildSummary.done}
+              </span>
+            </div>
           </div>
         </div>
       </div>
