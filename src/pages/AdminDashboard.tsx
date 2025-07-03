@@ -78,6 +78,8 @@ const AdminDashboard: React.FC = () => {
   const [collapsed] = useState(true);
   const [hovered, setHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [recentActivityLoading, setRecentActivityLoading] = useState(false);
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
   // Compute upcoming installations from calendar events (not projects)
   const now = new Date();
@@ -85,6 +87,20 @@ const AdminDashboard: React.FC = () => {
     .filter((ev) => new Date(ev.start) >= now)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
     .slice(0, 5);
+
+  // Get greeting based on time of day
+  const getGreeting = () => {
+    return "Hello, Diane!";
+  };
+
+  // Update date and time every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const fetchClientRecords = async () => {
@@ -403,9 +419,32 @@ const AdminDashboard: React.FC = () => {
         >
           <Menu size={26} className="text-gray-800 dark:text-gray-100" />
         </button>
-        <h1 className="text-xl font-bold w-full text-center">
-          Admin Dashboard
-        </h1>
+        <div className="text-center">
+          <h1 className="text-xl font-bold w-full text-center">
+            Admin Dashboard
+          </h1>
+        </div>
+      </div>
+      {/* Greeting */}
+      <div className="mb-4 flex justify-between items-center">
+        <p className="text-2xl font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
+          {getGreeting()}
+        </p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          {currentDateTime.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}{" "}
+          •{" "}
+          {currentDateTime.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true,
+          })}
+        </p>
       </div>
       {/* Mobile Sidebar Drawer */}
       <div
@@ -637,19 +676,30 @@ const AdminDashboard: React.FC = () => {
               Recent Activity
             </h3>
             <button
-              onClick={() => {
-                // Refetch activity
-                supabase
-                  .from("admin_activity")
-                  .select("*")
-                  .order("timestamp", { ascending: false })
-                  .limit(10)
-                  .then(({ data }) => {
-                    if (data) setRecentActivity(data);
-                  });
+              onClick={async () => {
+                setRecentActivityLoading(true);
+                try {
+                  const { data, error } = await supabase
+                    .from("admin_activity")
+                    .select("*")
+                    .order("timestamp", { ascending: false })
+                    .limit(10);
+                  if (error) {
+                    alert("Failed to refresh activity: " + error.message);
+                  } else if (data) {
+                    setRecentActivity(data);
+                  }
+                } catch (err) {
+                  alert("Unexpected error refreshing activity.");
+                }
+                setRecentActivityLoading(false);
               }}
-              className="text-sm text-blue-600 hover:text-blue-800"
+              className="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-2"
+              disabled={recentActivityLoading}
             >
+              {recentActivityLoading && (
+                <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 inline-block"></span>
+              )}
               Refresh
             </button>
           </div>

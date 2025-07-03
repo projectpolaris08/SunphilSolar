@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Edit, Trash2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   BarChart,
   Bar,
@@ -177,6 +178,17 @@ const ExpensesPage: React.FC = () => {
           e.id === editId ? { ...e, ...form, amount: Number(form.amount) } : e
         )
       );
+      // Log admin activity for update
+      await supabase.from("admin_activity").insert([
+        {
+          module: "expenses",
+          record_id: editId,
+          action: "updated",
+          description: `Updated expense: ₱${form.amount} (${form.category}) on ${form.date}`,
+          actor: null,
+          timestamp: new Date().toISOString(),
+        },
+      ]);
     } else {
       // Insert
       const { data, error } = await supabase
@@ -196,6 +208,17 @@ const ExpensesPage: React.FC = () => {
       }
       if (data && data[0]) {
         setExpenses([data[0], ...expenses]);
+        // Log admin activity for create
+        await supabase.from("admin_activity").insert([
+          {
+            module: "expenses",
+            record_id: data[0].id,
+            action: "created",
+            description: `Added expense: ₱${form.amount} (${form.category}) on ${form.date}`,
+            actor: null,
+            timestamp: new Date().toISOString(),
+          },
+        ]);
       }
     }
     closeModal();
@@ -210,10 +233,34 @@ const ExpensesPage: React.FC = () => {
       return;
     }
     setExpenses(expenses.filter((e) => e.id !== id));
+    // Log admin activity for delete
+    await supabase.from("admin_activity").insert([
+      {
+        module: "expenses",
+        record_id: id,
+        action: "deleted",
+        description: `Deleted expense record (${id})`,
+        actor: null,
+        timestamp: new Date().toISOString(),
+      },
+    ]);
   };
 
   return (
     <div className="p-2 sm:p-4 w-full">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-6">
+        <button
+          type="button"
+          onClick={() => window.history.back()}
+          className="focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full p-1"
+          aria-label="Back"
+        >
+          <ArrowLeft className="h-6 w-6" />
+        </button>
+        <h1 className="text-2xl font-bold">Expenses Management</h1>
+      </div>
+
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-blue-50 dark:bg-gray-800 rounded-lg shadow-md p-4 flex items-center">
@@ -256,6 +303,18 @@ const ExpensesPage: React.FC = () => {
         <div className="h-72 min-w-[320px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={monthlyExpensesData}>
+              <defs>
+                <linearGradient
+                  id="expensesBarGradient"
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="0"
+                >
+                  <stop offset="0%" stopColor="#d53369" />
+                  <stop offset="100%" stopColor="#daae51" />
+                </linearGradient>
+              </defs>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" height={40} tick={{ fontSize: 12 }} />
               <YAxis
@@ -294,7 +353,11 @@ const ExpensesPage: React.FC = () => {
                 ]}
                 labelFormatter={(label) => `Month: ${label}`}
               />
-              <Bar dataKey="total" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+              <Bar
+                dataKey="total"
+                fill="url(#expensesBarGradient)"
+                radius={[4, 4, 0, 0]}
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>

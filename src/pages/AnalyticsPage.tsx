@@ -213,7 +213,7 @@ const AnalyticsPage = () => {
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-4 text-white">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm opacity-90">Total Revenue</p>
+              <p className="text-sm opacity-90">Total Sales</p>
               <p className="text-2xl font-bold">
                 ₱{totalRevenue.toLocaleString()}
               </p>
@@ -279,7 +279,7 @@ const AnalyticsPage = () => {
         {/* Monthly Revenue Trend */}
         <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
-            Monthly Revenue Trend
+            Monthly Sales Trend
           </h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
