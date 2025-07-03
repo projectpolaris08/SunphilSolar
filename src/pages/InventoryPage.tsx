@@ -728,6 +728,7 @@ const InventoryPage: React.FC = () => {
                     <option value="UNITS">UNITS</option>
                     <option value="KWH">KWH</option>
                     <option value="KW">KW</option>
+                    <option value="BOXES">BOXES</option>
                   </select>
                 </div>
               </div>
