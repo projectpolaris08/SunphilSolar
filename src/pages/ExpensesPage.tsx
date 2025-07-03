@@ -39,6 +39,8 @@ const ExpensesPage: React.FC = () => {
     description: "",
   });
   const [editId, setEditId] = useState<number | null>(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteExpenseId, setDeleteExpenseId] = useState<number | null>(null);
 
   // Fetch expenses from Supabase
   useEffect(() => {
@@ -224,26 +226,41 @@ const ExpensesPage: React.FC = () => {
     closeModal();
   };
 
-  const handleDelete = async (id: number) => {
-    if (!window.confirm("Delete this expense?")) return;
+  const handleDelete = (id: number) => {
+    setDeleteExpenseId(id);
+    setShowDeleteModal(true);
+  };
+
+  const confirmDeleteExpense = async () => {
+    if (!deleteExpenseId) return;
     setError("");
-    const { error } = await supabase.from("expenses").delete().eq("id", id);
+    const { error } = await supabase
+      .from("expenses")
+      .delete()
+      .eq("id", deleteExpenseId);
     if (error) {
       setError("Failed to delete expense: " + error.message);
       return;
     }
-    setExpenses(expenses.filter((e) => e.id !== id));
+    setExpenses(expenses.filter((e) => e.id !== deleteExpenseId));
     // Log admin activity for delete
     await supabase.from("admin_activity").insert([
       {
         module: "expenses",
-        record_id: id,
+        record_id: deleteExpenseId,
         action: "deleted",
-        description: `Deleted expense record (${id})`,
+        description: `Deleted expense record (${deleteExpenseId})`,
         actor: null,
         timestamp: new Date().toISOString(),
       },
     ]);
+    setShowDeleteModal(false);
+    setDeleteExpenseId(null);
+  };
+
+  const cancelDeleteExpense = () => {
+    setShowDeleteModal(false);
+    setDeleteExpenseId(null);
   };
 
   return (
@@ -530,6 +547,35 @@ const ExpensesPage: React.FC = () => {
                 {editId ? "Update Expense" : "Add Expense"}
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Expense Modal */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-sm">
+            <h3 className="text-lg font-bold mb-2 text-center text-gray-900 dark:text-gray-100">
+              Delete Expense?
+            </h3>
+            <p className="mb-4 text-center text-gray-700 dark:text-gray-300">
+              Are you sure you want to delete this expense? This action cannot
+              be undone.
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={cancelDeleteExpense}
+                className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDeleteExpense}
+                className="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       )}
