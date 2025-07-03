@@ -9,7 +9,7 @@ export const Features: React.FC = () => {
       title: "Solar Panels",
       description:
         "Premium quality solar panels professionally installed to maximize energy production and efficiency.",
-      link: "/solar-panel-installation",
+      link: "/solar-panels",
     },
     {
       icon: <Battery className="h-10 w-10 text-primary-500" />,

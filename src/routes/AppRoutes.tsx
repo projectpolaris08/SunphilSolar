@@ -79,10 +79,7 @@ const AppRoutes = ({
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route
-            path="/solar-panel-installation"
-            element={<SolarPanelsPage />}
-          />
+          <Route path="/solar-panels" element={<SolarPanelsPage />} />
           <Route path="/aftersales" element={<AfterSalesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/statistics" element={<StatisticsPage />} />
