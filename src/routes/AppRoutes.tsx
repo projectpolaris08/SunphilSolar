@@ -30,6 +30,7 @@ import SettingsPage from "../pages/SettingsPage";
 import PayrollPage from "../pages/PayrollPage";
 import SalesInvoicePage from "../pages/SalesInvoicePage";
 import ExpensesPage from "../pages/ExpensesPage";
+import SolarPanelsPage from "../pages/SolarPanelsPage";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -78,6 +79,10 @@ const AppRoutes = ({
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route
+            path="/solar-panel-installation"
+            element={<SolarPanelsPage />}
+          />
           <Route path="/aftersales" element={<AfterSalesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/statistics" element={<StatisticsPage />} />

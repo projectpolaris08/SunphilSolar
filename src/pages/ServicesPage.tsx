@@ -38,7 +38,7 @@ const ServicesPage = () => {
         </nav>
         <section
           id="features"
-          className="bg-gray-900 text-white py-12 rounded-xl mb-10 shadow-lg"
+          className="text-white py-12 rounded-xl mb-10 shadow-lg"
         >
           <Features />
         </section>

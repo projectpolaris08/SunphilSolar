@@ -68,11 +68,11 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-lg rounded-lg p-8 hover:bg-white/20 transition-all duration-300 border border-white/10 hover:border-primary-500 transform hover:-translate-y-1 hover:shadow-lg"
+              className="bg-white/10 backdrop-blur-lg rounded-lg p-8 hover:bg-white/20 transition-all duration-300 border border-white/10 hover:border-primary-500 transform hover:-translate-y-1 hover:shadow-lg h-full flex flex-col"
             >
               <div className="mb-5">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-white/80">{service.description}</p>
+              <p className="text-white/80 flex-grow">{service.description}</p>
             </div>
           ))}
         </div>

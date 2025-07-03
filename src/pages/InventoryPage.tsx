@@ -166,21 +166,32 @@ const InventoryPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (editing) {
+      const payload = {
+        item_description: form.itemDescription,
+        qty: String(form.qty) !== "" ? Number(form.qty) : null,
+        uom: form.uom,
+        delivery_date: form.deliveryDate,
+        qty_delivered:
+          String(form.qty_delivered) !== "" ? Number(form.qty_delivered) : null,
+        release_date: form.releaseDate,
+        qty_released:
+          String(form.qty_released) !== "" ? Number(form.qty_released) : null,
+        total_qty_on_hand:
+          String(form.totalQtyOnHand) !== ""
+            ? Number(form.totalQtyOnHand)
+            : null,
+        category: form.category,
+        notes: form.notes || null,
+        threshold:
+          String(form.threshold) !== "" &&
+          form.threshold !== undefined &&
+          form.threshold !== null
+            ? Number(form.threshold)
+            : null,
+      };
       const { error } = await supabase
         .from("inventory")
-        .update({
-          item_description: form.itemDescription,
-          qty: form.qty,
-          uom: form.uom,
-          delivery_date: form.deliveryDate,
-          qty_delivered: form.qty_delivered,
-          release_date: form.releaseDate,
-          qty_released: form.qty_released,
-          total_qty_on_hand: form.totalQtyOnHand,
-          category: form.category,
-          notes: form.notes,
-          threshold: form.threshold,
-        })
+        .update(payload)
         .eq("id", editing.id);
       if (error) alert("Error updating item");
       else {
