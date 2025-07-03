@@ -29,6 +29,7 @@ import AnalyticsPage from "../pages/AnalyticsPage";
 import SettingsPage from "../pages/SettingsPage";
 import PayrollPage from "../pages/PayrollPage";
 import SalesInvoicePage from "../pages/SalesInvoicePage";
+import ExpensesPage from "../pages/ExpensesPage";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -54,6 +55,7 @@ const AppRoutes = ({
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="payroll" element={<PayrollPage />} />
           <Route path="sales-invoice" element={<SalesInvoicePage />} />
+          <Route path="expenses" element={<ExpensesPage />} />
           <Route path="settings" element={<SettingsPage />} />
           {/* Add more admin subpages here */}
         </Route>

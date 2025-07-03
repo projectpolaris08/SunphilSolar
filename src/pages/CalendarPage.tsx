@@ -382,16 +382,33 @@ const CalendarPage: React.FC = () => {
 
   return (
     <div className="max-w-full w-full mx-auto py-8 px-4 md:px-8">
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => window.history.back()}
+            className="focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full p-1"
+            aria-label="Back"
+          >
+            <ArrowLeft className="h-6 w-6" />
+          </button>
+          <h1 className="text-2xl font-bold">Project Calendar</h1>
+        </div>
         <button
-          type="button"
-          onClick={() => window.history.back()}
-          className="focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full p-1"
-          aria-label="Back"
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition shadow flex items-center gap-2"
+          onClick={() => {
+            setForm({
+              start: new Date(),
+              end: new Date(),
+              startTime: format(new Date(), "HH:mm"),
+              endTime: format(new Date(), "HH:mm"),
+            });
+            setSelected(null);
+            setShowForm(true);
+          }}
         >
-          <ArrowLeft className="h-6 w-6" />
+          + Add Schedule
         </button>
-        <h1 className="text-2xl font-bold">Project Calendar</h1>
       </div>
 
       {loading ? (
