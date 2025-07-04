@@ -49,12 +49,6 @@ interface AdminActivity {
   timestamp: string;
 }
 
-// Types for build summaries
-type BuildStatusSummary = {
-  inProgress: number;
-  done: number;
-};
-
 const AdminDashboard: React.FC = () => {
   const { login, logout, isAuthenticated, loading } = useAdminAuth();
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -87,10 +81,8 @@ const AdminDashboard: React.FC = () => {
   const [recentActivityLoading, setRecentActivityLoading] = useState(false);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   // State for build summaries
-  const [inverterBuildSummary, setInverterBuildSummary] =
-    useState<BuildStatusSummary>({ inProgress: 0, done: 0 });
-  const [batteryBuildSummary, setBatteryBuildSummary] =
-    useState<BuildStatusSummary>({ inProgress: 0, done: 0 });
+  const [inverterBuilds, setInverterBuilds] = useState<any[]>([]);
+  const [batteryBuilds, setBatteryBuilds] = useState<any[]>([]);
 
   // Compute upcoming installations from calendar events (not projects)
   const now = new Date();
@@ -148,26 +140,30 @@ const AdminDashboard: React.FC = () => {
         .from("inverter_builds")
         .select("status");
       if (inverterData) {
-        setInverterBuildSummary({
-          inProgress: inverterData.filter(
-            (b: any) => b.status === "In Progress"
-          ).length,
-          done: inverterData.filter((b: any) => b.status === "Done").length,
-        });
       }
       // Battery Builds
       const { data: batteryData } = await supabase
         .from("battery_builds")
         .select("status");
       if (batteryData) {
-        setBatteryBuildSummary({
-          inProgress: batteryData.filter((b: any) => b.status === "In Progress")
-            .length,
-          done: batteryData.filter((b: any) => b.status === "Done").length,
-        });
       }
     };
     fetchBuildSummaries();
+  }, []);
+
+  // Fetch all builds for shortage comparison
+  useEffect(() => {
+    const fetchAllBuilds = async () => {
+      const { data: inverterData } = await supabase
+        .from("inverter_builds")
+        .select("*");
+      if (inverterData) setInverterBuilds(inverterData);
+      const { data: batteryData } = await supabase
+        .from("battery_builds")
+        .select("*");
+      if (batteryData) setBatteryBuilds(batteryData);
+    };
+    fetchAllBuilds();
   }, []);
 
   // Compute monthly sales data
@@ -366,6 +362,51 @@ const AdminDashboard: React.FC = () => {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  // --- System Capacity and Battery Summary Calculation ---
+  console.log("Calendar events for dashboard:", events);
+  const capacitySummary = events.reduce(
+    (acc, event) => {
+      if (event.systemCapacity) {
+        const capacity = event.systemCapacity.replace("kW", "");
+        const capacityNum = parseFloat(capacity);
+        if (!isNaN(capacityNum)) {
+          const multiplier = (event as any).systemCapacityMultiplier || 1;
+          acc.totalSystemCapacity += capacityNum * multiplier;
+          acc.capacityBreakdown[capacity] =
+            (acc.capacityBreakdown[capacity] || 0) + multiplier;
+        }
+      }
+      if (event.battery && event.battery !== "None") {
+        const batteryKey = event.battery;
+        acc.batteryBreakdown[batteryKey] =
+          (acc.batteryBreakdown[batteryKey] || 0) +
+          (event.batteryMultiplier || 1);
+        acc.totalBatteries += event.batteryMultiplier || 1;
+      }
+      return acc;
+    },
+    {
+      totalSystemCapacity: 0,
+      capacityBreakdown: {} as Record<string, number>,
+      batteryBreakdown: {} as Record<string, number>,
+      totalBatteries: 0,
+    }
+  );
+  // --- End Summary Calculation ---
+
+  // --- System Capacity and Battery Shortage Comparison ---
+  const inverterTypeBuilt: Record<string, number> = {};
+  inverterBuilds.forEach((b) => {
+    if (b.type && b.status === "Done")
+      inverterTypeBuilt[b.type.replace("kW", "")] =
+        (inverterTypeBuilt[b.type.replace("kW", "")] || 0) + 1;
+  });
+  const batteryTypeBuilt: Record<string, number> = {};
+  batteryBuilds.forEach((b) => {
+    if (b.type && b.status === "Done")
+      batteryTypeBuilt[b.type] = (batteryTypeBuilt[b.type] || 0) + 1;
+  });
 
   if (loading) return <div>Loading...</div>;
 
@@ -642,47 +683,192 @@ const AdminDashboard: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* Builders Summary Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-4">
-        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
-            Inverter Builds Status
-          </h3>
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <span className="font-medium">In Progress:</span>
-              <span className="text-blue-600 font-bold">
-                {inverterBuildSummary.inProgress}
-              </span>
+      {/* System Capacity and Battery Summary */}
+      {calendarLoading ? (
+        <div className="flex justify-center items-center h-32 text-lg text-gray-500 dark:text-gray-300">
+          Loading system capacity and battery requirements...
+        </div>
+      ) : events.length === 0 ? (
+        <div className="flex justify-center items-center h-32 text-lg text-gray-500 dark:text-gray-300">
+          No scheduled events.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-4">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 sm:p-6">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+              System Capacity Summary
+            </h3>
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  Total Capacity:
+                </span>
+                <span className="font-bold text-blue-600">
+                  {capacitySummary.totalSystemCapacity} kW
+                </span>
+              </div>
+              <div className="border-t pt-2">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                  Breakdown:
+                </span>
+                {Object.entries(capacitySummary.capacityBreakdown).length ===
+                0 ? (
+                  <div className="text-xs text-gray-400">
+                    No scheduled system capacities.
+                  </div>
+                ) : (
+                  Object.entries(capacitySummary.capacityBreakdown).map(
+                    ([capacity, required]) => {
+                      const built = inverterTypeBuilt[capacity] || 0;
+                      const inProgress = inverterBuilds.filter(
+                        (b) =>
+                          b.type &&
+                          b.type.replace("kW", "") === capacity &&
+                          b.status === "In Progress"
+                      ).length;
+                      const isShort = required > built;
+                      return (
+                        <div
+                          key={capacity}
+                          className={
+                            "flex justify-between items-center text-sm py-1 px-2 rounded-lg mb-1 border border-red-300 dark:border-red-700"
+                          }
+                          style={
+                            isShort
+                              ? { background: "#DA2C43" }
+                              : {
+                                  background:
+                                    "linear-gradient(90deg, #9ebd13 0%, #008552 100%)",
+                                }
+                          }
+                        >
+                          <span className="font-bold text-base">
+                            {capacity}kW:
+                          </span>
+                          <span className="flex gap-2 items-center flex-wrap">
+                            <span className="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded-full font-semibold text-gray-800 dark:text-gray-200">
+                              Required: {required}
+                            </span>
+                            <span className="bg-green-200 dark:bg-green-700 px-2 py-0.5 rounded-full font-semibold text-green-800 dark:text-green-200 flex items-center gap-1">
+                              Built: {built} <span>✅</span>
+                            </span>
+                            <span className="bg-blue-200 dark:bg-blue-700 px-2 py-0.5 rounded-full font-semibold text-blue-800 dark:text-blue-200 flex items-center gap-1">
+                              In-progress: {inProgress} <span>🔨</span>
+                            </span>
+                            {isShort && (
+                              <span className="bg-red-500 text-white px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                                Short: {required - built} <span>⚠️</span>
+                              </span>
+                            )}
+                            <span
+                              className="px-2 py-0.5 rounded-full font-semibold text-white"
+                              style={{
+                                background: "#008B8B",
+                                display: "inline-block",
+                              }}
+                            >
+                              Progress:{" "}
+                              {required > 0
+                                ? Math.round((built / required) * 100)
+                                : 100}
+                              %
+                            </span>
+                          </span>
+                        </div>
+                      );
+                    }
+                  )
+                )}
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="font-medium">Done:</span>
-              <span className="text-green-600 font-bold">
-                {inverterBuildSummary.done}
-              </span>
+          </div>
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 sm:p-6">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+              Battery Requirements
+            </h3>
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  Total Batteries:
+                </span>
+                <span className="font-bold text-green-600">
+                  {capacitySummary.totalBatteries} units
+                </span>
+              </div>
+              <div className="border-t pt-2">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                  Breakdown:
+                </span>
+                {Object.entries(capacitySummary.batteryBreakdown).length ===
+                0 ? (
+                  <div className="text-xs text-gray-400">
+                    No scheduled batteries.
+                  </div>
+                ) : (
+                  Object.entries(capacitySummary.batteryBreakdown).map(
+                    ([battery, required]) => {
+                      const built = batteryTypeBuilt[battery] || 0;
+                      const inProgress = batteryBuilds.filter(
+                        (b) => b.type === battery && b.status === "In Progress"
+                      ).length;
+                      const isShort = required > built;
+                      return (
+                        <div
+                          key={battery}
+                          className={
+                            "flex justify-between items-center text-sm py-1 px-2 rounded-lg mb-1 border border-red-300 dark:border-red-700"
+                          }
+                          style={
+                            isShort
+                              ? { background: "#DA2C43" }
+                              : {
+                                  background:
+                                    "linear-gradient(90deg, #9ebd13 0%, #008552 100%)",
+                                }
+                          }
+                        >
+                          <span className="font-bold text-base">
+                            {battery}:
+                          </span>
+                          <span className="flex gap-2 items-center flex-wrap">
+                            <span className="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded-full font-semibold text-gray-800 dark:text-gray-200">
+                              Required: {required}
+                            </span>
+                            <span className="bg-green-200 dark:bg-green-700 px-2 py-0.5 rounded-full font-semibold text-green-800 dark:text-green-200 flex items-center gap-1">
+                              Built: {built} <span>✅</span>
+                            </span>
+                            <span className="bg-blue-200 dark:bg-blue-700 px-2 py-0.5 rounded-full font-semibold text-blue-800 dark:text-blue-200 flex items-center gap-1">
+                              In-progress: {inProgress} <span>🔨</span>
+                            </span>
+                            {isShort && (
+                              <span className="bg-red-500 text-white px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                                Short: {required - built} <span>⚠️</span>
+                              </span>
+                            )}
+                            <span
+                              className="px-2 py-0.5 rounded-full font-semibold text-white"
+                              style={{
+                                background: "#008B8B",
+                                display: "inline-block",
+                              }}
+                            >
+                              Progress:{" "}
+                              {required > 0
+                                ? Math.round((built / required) * 100)
+                                : 100}
+                              %
+                            </span>
+                          </span>
+                        </div>
+                      );
+                    }
+                  )
+                )}
+              </div>
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
-            Battery Builds Status
-          </h3>
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <span className="font-medium">In Progress:</span>
-              <span className="text-blue-600 font-bold">
-                {batteryBuildSummary.inProgress}
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-medium">Done:</span>
-              <span className="text-green-600 font-bold">
-                {batteryBuildSummary.done}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
       {/* Upcoming Installations & Recent Activity Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mt-4">
         {/* Upcoming Installations */}

@@ -64,6 +64,11 @@ export const CalendarEventsProvider: React.FC<{
           ...ev,
           start: new Date(ev.start_date),
           end: new Date(ev.end_date),
+          systemCapacity: ev.system_capacity,
+          solarPanels: ev.solar_panels,
+          batteryMultiplier: ev.battery_multiplier,
+          projectType: ev.project_type,
+          // Add more mappings as needed
         }));
         setEvents(mappedEvents);
       }

@@ -33,6 +33,10 @@ const DayEventsModal: React.FC<DayEventsModalProps> = ({ events, onClose }) => (
             {event.systemCapacity && (
               <div className="text-xs text-gray-500 dark:text-gray-400">
                 {event.systemCapacity}
+                {event.systemCapacityMultiplier &&
+                event.systemCapacityMultiplier > 1
+                  ? ` x ${event.systemCapacityMultiplier}`
+                  : ""}
               </div>
             )}
             {event.solarPanels && (
@@ -44,6 +48,9 @@ const DayEventsModal: React.FC<DayEventsModalProps> = ({ events, onClose }) => (
             {event.battery && (
               <div className="text-xs text-purple-500 dark:text-purple-300">
                 <span className="font-semibold">Battery:</span> {event.battery}
+                {event.batteryMultiplier && event.batteryMultiplier > 1
+                  ? ` x ${event.batteryMultiplier}`
+                  : ""}
               </div>
             )}
             {(event.adminClient || event.adminClientOther) && (

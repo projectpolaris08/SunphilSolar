@@ -29,6 +29,7 @@ interface ProjectEvent extends Event {
   notes?: string;
   projectType?: string;
   systemCapacity?: string;
+  systemCapacityMultiplier?: number;
   solarPanels?: string;
   battery?: string;
   batteryMultiplier?: number;
@@ -84,7 +85,8 @@ const adminBgColors = [
 ];
 
 const CalendarPage: React.FC = () => {
-  const { events, setEvents } = useCalendarEvents();
+  const { setEvents } = useCalendarEvents();
+  const [events, setLocalEvents] = useState<ProjectEvent[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState<
     Partial<ProjectEvent> & { startTime?: string; endTime?: string }
@@ -93,6 +95,7 @@ const CalendarPage: React.FC = () => {
     end: new Date(),
     startTime: format(new Date(), "HH:mm"),
     endTime: format(new Date(), "HH:mm"),
+    systemCapacityMultiplier: 1,
   });
   const [selected, setSelected] = useState<ProjectEvent | null>(null);
   const [loading, setLoading] = useState(false);
@@ -114,6 +117,38 @@ const CalendarPage: React.FC = () => {
       return acc;
     },
     {} as Record<string, number>
+  );
+
+  // Calculate total system capacity and battery requirements
+  const capacitySummary = events.reduce(
+    (acc, event) => {
+      if (event.systemCapacity) {
+        const capacity = event.systemCapacity.replace("kW", "");
+        const capacityNum = parseFloat(capacity);
+        if (!isNaN(capacityNum)) {
+          const multiplier = event.systemCapacityMultiplier || 1;
+          acc.totalSystemCapacity += capacityNum * multiplier;
+          acc.capacityBreakdown[capacity] =
+            (acc.capacityBreakdown[capacity] || 0) + multiplier;
+        }
+      }
+
+      if (event.battery && event.battery !== "None") {
+        const batteryKey = event.battery;
+        acc.batteryBreakdown[batteryKey] =
+          (acc.batteryBreakdown[batteryKey] || 0) +
+          (event.batteryMultiplier || 1);
+        acc.totalBatteries += event.batteryMultiplier || 1;
+      }
+
+      return acc;
+    },
+    {
+      totalSystemCapacity: 0,
+      capacityBreakdown: {} as Record<string, number>,
+      batteryBreakdown: {} as Record<string, number>,
+      totalBatteries: 0,
+    }
   );
   const adminClientColorMap = uniqueAdminClients.reduce((acc, client, idx) => {
     if (client === "Boss Gar") {
@@ -150,6 +185,7 @@ const CalendarPage: React.FC = () => {
           notes: event.notes,
           projectType: event.project_type,
           systemCapacity: event.system_capacity,
+          systemCapacityMultiplier: event.system_capacity_multiplier,
           solarPanels: event.solar_panels,
           battery: event.battery,
           batteryMultiplier: event.battery_multiplier,
@@ -157,6 +193,7 @@ const CalendarPage: React.FC = () => {
           adminClient: event.admin_client,
           adminClientOther: event.admin_client_other,
         }));
+        setLocalEvents(mappedEvents);
         setEvents(mappedEvents);
       }
       setLoading(false);
@@ -204,6 +241,7 @@ const CalendarPage: React.FC = () => {
       console.error("Error deleting event:", error);
       alert("Failed to delete event");
     } else {
+      setLocalEvents(events.filter((ev) => ev.id !== deleteEventId));
       setEvents(events.filter((ev) => ev.id !== deleteEventId));
       setShowForm(false);
       setSelected(null);
@@ -254,6 +292,7 @@ const CalendarPage: React.FC = () => {
       notes: form.notes,
       project_type: form.projectType,
       system_capacity: form.systemCapacity,
+      system_capacity_multiplier: form.systemCapacityMultiplier,
       solar_panels: form.solarPanels,
       battery: form.battery,
       battery_multiplier: form.batteryMultiplier,
@@ -285,13 +324,18 @@ const CalendarPage: React.FC = () => {
         },
       ]);
 
-      setEvents(
-        events.map((ev) =>
-          ev.id === selected.id
-            ? ({ ...form, id: selected.id, title: eventTitle } as ProjectEvent)
-            : ev
-        )
+      const updatedEvents = events.map((ev) =>
+        ev.id === selected.id
+          ? ({
+              ...form,
+              id: selected.id,
+              title: eventTitle,
+              systemCapacityMultiplier: form.systemCapacityMultiplier,
+            } as ProjectEvent)
+          : ev
       );
+      setLocalEvents(updatedEvents);
+      setEvents(updatedEvents);
     } else {
       // Create new event
       const { data, error } = await supabase
@@ -325,6 +369,7 @@ const CalendarPage: React.FC = () => {
         notes: form.notes,
         projectType: form.projectType,
         systemCapacity: form.systemCapacity,
+        systemCapacityMultiplier: form.systemCapacityMultiplier,
         solarPanels: form.solarPanels,
         battery: form.battery,
         batteryMultiplier: form.batteryMultiplier,
@@ -333,6 +378,7 @@ const CalendarPage: React.FC = () => {
         adminClientOther: form.adminClientOther,
       };
 
+      setLocalEvents([...events, newEvent]);
       setEvents([...events, newEvent]);
     }
 
@@ -342,6 +388,7 @@ const CalendarPage: React.FC = () => {
       end: new Date(),
       startTime: format(new Date(), "HH:mm"),
       endTime: format(new Date(), "HH:mm"),
+      systemCapacityMultiplier: 1,
     });
     setSelected(null);
   };
@@ -448,6 +495,67 @@ const CalendarPage: React.FC = () => {
           components={{ event: CalendarEvent }}
         />
       )}
+
+      {/* Capacity and Battery Summary */}
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow">
+          <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-gray-100">
+            System Capacity Summary
+          </h3>
+          <div className="space-y-2">
+            <div className="flex justify-between">
+              <span className="font-medium text-gray-700 dark:text-gray-300">
+                Total Capacity:
+              </span>
+              <span className="font-bold text-blue-600">
+                {capacitySummary.totalSystemCapacity} kW
+              </span>
+            </div>
+            <div className="border-t pt-2">
+              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                Breakdown:
+              </span>
+              {Object.entries(capacitySummary.capacityBreakdown).map(
+                ([capacity, count]) => (
+                  <div key={capacity} className="flex justify-between text-sm">
+                    <span>{capacity}kW:</span>
+                    <span className="font-medium">{count} units</span>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow">
+          <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-gray-100">
+            Battery Requirements
+          </h3>
+          <div className="space-y-2">
+            <div className="flex justify-between">
+              <span className="font-medium text-gray-700 dark:text-gray-300">
+                Total Batteries:
+              </span>
+              <span className="font-bold text-green-600">
+                {capacitySummary.totalBatteries} units
+              </span>
+            </div>
+            <div className="border-t pt-2">
+              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                Breakdown:
+              </span>
+              {Object.entries(capacitySummary.batteryBreakdown).map(
+                ([battery, count]) => (
+                  <div key={battery} className="flex justify-between text-sm">
+                    <span>{battery}:</span>
+                    <span className="font-medium">{count} units</span>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Admin Client Legend */}
       <div className="mt-8 flex flex-wrap gap-4 items-center justify-center">
@@ -614,6 +722,26 @@ const CalendarPage: React.FC = () => {
                 </select>
               </div>
             </div>
+            {form.systemCapacity && (
+              <div className="mt-2">
+                <label className="block text-xs mb-1 dark:text-gray-200">
+                  System Capacity Multiplier
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  value={form.systemCapacityMultiplier || 1}
+                  onChange={(e) =>
+                    setForm((f) => ({
+                      ...f,
+                      systemCapacityMultiplier: Number(e.target.value),
+                    }))
+                  }
+                  className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
+                  placeholder="1"
+                />
+              </div>
+            )}
             <div className="flex gap-4 mt-2">
               <div className="flex-1">
                 <label className="block text-xs mb-1 dark:text-gray-200">
