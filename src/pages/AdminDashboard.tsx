@@ -735,7 +735,15 @@ const AdminDashboard: React.FC = () => {
                           }
                           style={
                             isShort
-                              ? { background: "#DA2C43" }
+                              ? {
+                                  background:
+                                    window.matchMedia &&
+                                    window.matchMedia(
+                                      "(prefers-color-scheme: dark)"
+                                    ).matches
+                                      ? "#DA2C43"
+                                      : "#F08080",
+                                }
                               : {
                                   background:
                                     "linear-gradient(90deg, #9ebd13 0%, #008552 100%)",
@@ -820,7 +828,15 @@ const AdminDashboard: React.FC = () => {
                           }
                           style={
                             isShort
-                              ? { background: "#DA2C43" }
+                              ? {
+                                  background:
+                                    window.matchMedia &&
+                                    window.matchMedia(
+                                      "(prefers-color-scheme: dark)"
+                                    ).matches
+                                      ? "#DA2C43"
+                                      : "#F08080",
+                                }
                               : {
                                   background:
                                     "linear-gradient(90deg, #9ebd13 0%, #008552 100%)",
