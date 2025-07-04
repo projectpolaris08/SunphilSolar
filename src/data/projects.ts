@@ -12,6 +12,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "batas-silang-cavite",
+    image: "/images/project44.jpg",
+    location: "Batas Silang, Cavite, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-04",
+    clientType: "Residential Homeowner",
+    specification: [
+      "8kW Deye Hybrid Inverter – Efficient hybrid inverter that switches seamlessly between solar, battery, and grid input.",
+      "16 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules capture sunlight from both sides for increased power production, ideal for rooftops with ambient reflection.",
+      "51.2V 314Ah LiFePO₄ Battery – Safe and durable lithium battery stores excess energy for use at night and during brownouts.",
+    ],
+    benefits: [
+      "Save up to 80% on monthly energy bills",
+      "Enjoy reliable backup power for key household appliances and lighting",
+      "Reduce carbon emissions by approximately 1,300 kg per month",
+      "Ideal for suburban homes in Cavite with moderate to high electricity usage",
+    ],
+    description:
+      "Sunphil Solar completed an 8kW hybrid solar energy system for a residential property in Batas Silang, Cavite. The homeowner sought a sustainable solution to reduce rising electricity costs and avoid power disruptions. This hybrid setup ensures round-the-clock energy availability while maximizing savings. Sunphil Solar continues to serve households in Silang, Dasmariñas, General Trias, and neighboring Cavite communities with smart hybrid solar solutions that improve energy security and deliver real savings.",
+  },
+  {
     id: "samal-bataan",
     image: "/images/project43.jpg",
     location: "Samal, Bataan, Philippines",
@@ -20,7 +41,7 @@ export const projects: Project[] = [
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter – Smart energy controller that seamlessly integrates solar, battery, and grid power for maximum efficiency.",
-      "18 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase daily output by capturing reflected sunlight—ideal for maximizing energy generation on open rooftops.",
+      "18 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase daily output by capturing reflected sunlight ideal for maximizing energy generation on open rooftops.",
       "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery stores surplus energy for evening use and provides dependable backup during grid outages.",
     ],
     benefits: [

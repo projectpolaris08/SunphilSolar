@@ -446,6 +446,8 @@ const InventoryPage: React.FC = () => {
                   <option value="">All</option>
                   <option value="Solar Accessories">Solar Accessories</option>
                   <option value="Inverters">Inverters</option>
+                  <option value="Solar Panels">Solar Panels</option>
+                  <option value="Battery">Battery</option>
                   <option value="Other Materials">Other Materials</option>
                 </select>
               </th>
@@ -623,6 +625,7 @@ const InventoryPage: React.FC = () => {
                   <option value="Solar Accessories">Solar Accessories</option>
                   <option value="Inverters">Inverters</option>
                   <option value="Solar Panels">Solar Panels</option>
+                  <option value="Battery">Battery</option>
                   <option value="Other Materials">Other Materials</option>
                 </select>
               </div>

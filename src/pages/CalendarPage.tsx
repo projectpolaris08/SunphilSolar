@@ -585,13 +585,16 @@ const CalendarPage: React.FC = () => {
                   <option value="Commercial Solar Installation">
                     Commercial Solar Installation
                   </option>
+                  <option value="Battery Only">Battery Only</option>
+                  <option value="Inverter Only">Inverter Only</option>
+                  <option value="Solar Panels Only">Solar Panels Only</option>
                   <option value="Delivery">Delivery</option>
                   <option value="For Pick-up">For Pick-up</option>
                 </select>
               </div>
               <div className="flex-1">
                 <label className="block text-xs mb-1 dark:text-gray-200">
-                  System Capacity
+                  System Capacity (Optional)
                 </label>
                 <select
                   value={form.systemCapacity || ""}
@@ -599,11 +602,8 @@ const CalendarPage: React.FC = () => {
                     setForm((f) => ({ ...f, systemCapacity: e.target.value }))
                   }
                   className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
-                  required
                 >
-                  <option value="" disabled>
-                    Select Capacity
-                  </option>
+                  <option value="">Select Capacity (Optional)</option>
                   <option value="6kW">6kW</option>
                   <option value="8kW">8kW</option>
                   <option value="12kW">12kW</option>
@@ -617,7 +617,7 @@ const CalendarPage: React.FC = () => {
             <div className="flex gap-4 mt-2">
               <div className="flex-1">
                 <label className="block text-xs mb-1 dark:text-gray-200">
-                  Solar Panels Quantity
+                  Solar Panels Quantity (Optional)
                 </label>
                 <input
                   type="number"
@@ -627,12 +627,12 @@ const CalendarPage: React.FC = () => {
                     setForm((f) => ({ ...f, solarPanels: e.target.value }))
                   }
                   className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
-                  placeholder="Number of panels"
+                  placeholder="Number of panels (optional)"
                 />
               </div>
               <div className="flex-1">
                 <label className="block text-xs mb-1 dark:text-gray-200">
-                  Battery
+                  Battery (Optional)
                 </label>
                 <select
                   value={form.battery || ""}
