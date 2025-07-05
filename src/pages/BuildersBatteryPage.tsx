@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 
 const batteryTypes = [
+  "12v 280Ah",
+  "12v 314Ah",
   "24v 280Ah",
   "24v 314Ah",
   "48v 280Ah",

@@ -770,6 +770,8 @@ const CalendarPage: React.FC = () => {
                   className="border px-3 py-2 rounded w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                 >
                   <option value="">None</option>
+                  <option value="12v 280Ah">12v 280Ah</option>
+                  <option value="12v 314Ah">12v 314Ah</option>
                   <option value="24v 280Ah">24v 280Ah</option>
                   <option value="24v 314Ah">24v 314Ah</option>
                   <option value="48v 280Ah">48v 280Ah</option>

@@ -132,14 +132,14 @@ export default function FAQ() {
         <h1 className="text-4xl font-bold text-center mb-8 text-white">
           Frequently Asked Questions
         </h1>
-        <div className="space-y-4">
+        <div className="space-y-6">
           {faqs.map((faq, idx) => (
             <div
               key={idx}
               className="bg-white/10 backdrop-blur-lg rounded-lg shadow-elevation-1"
             >
               <button
-                className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-semibold text-white focus:outline-none"
+                className="w-full flex justify-between items-center px-6 py-6 text-left text-lg font-semibold text-white focus:outline-none"
                 onClick={() => toggle(idx)}
                 aria-expanded={openIndex === idx}
                 aria-controls={`faq-panel-${idx}`}
@@ -154,7 +154,7 @@ export default function FAQ() {
               {openIndex === idx && (
                 <div
                   id={`faq-panel-${idx}`}
-                  className="px-6 pb-4 text-white/80 border-t border-white/10 animate-fadeIn"
+                  className="px-6 py-4 text-white/80 border-t border-white/10 animate-fadeIn"
                 >
                   {faq.answer}
                 </div>
