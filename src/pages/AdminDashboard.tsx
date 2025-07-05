@@ -15,7 +15,7 @@ import {
   EyeOff,
   Moon,
   Sun,
-  Receipt,
+  FileText,
   Database,
 } from "lucide-react";
 import {
@@ -301,10 +301,10 @@ const AdminDashboard: React.FC = () => {
       link: "/admin/payroll",
     },
     {
-      id: "sales-invoice",
-      label: "Sales Invoice",
-      icon: Receipt,
-      link: "/admin/sales-invoice",
+      id: "solar-quotation",
+      label: "Forms",
+      icon: FileText,
+      link: "/admin/solar-quotation",
     },
     {
       id: "expenses",

@@ -27,10 +27,10 @@ import BuildersBatteryPage from "../pages/BuildersBatteryPage";
 import BuildersPage from "../pages/BuildersPage";
 import AnalyticsPage from "../pages/AnalyticsPage";
 import SettingsPage from "../pages/SettingsPage";
-import PayrollPage from "../pages/PayrollPage";
-import SalesInvoicePage from "../pages/SalesInvoicePage";
+import Form from "../pages/Form";
 import ExpensesPage from "../pages/ExpensesPage";
 import SolarPanelsPage from "../pages/SolarPanelsPage";
+import PayrollPage from "../pages/PayrollPage";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -55,7 +55,7 @@ const AppRoutes = ({
           <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="payroll" element={<PayrollPage />} />
-          <Route path="sales-invoice" element={<SalesInvoicePage />} />
+          <Route path="solar-quotation" element={<Form />} />
           <Route path="expenses" element={<ExpensesPage />} />
           <Route path="settings" element={<SettingsPage />} />
           {/* Add more admin subpages here */}

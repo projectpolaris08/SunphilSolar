@@ -922,4 +922,25 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar installed a 6kW hybrid solar energy system for a client in Marikina City, providing consistent energy savings and dependable backup power. With frequent brownouts and rising utility costs in Metro Manila, this system was designed to give the homeowner long-term peace of mind, reduced electric bills, and increased energy independence. Marikina is known for its environmental challenges, but this installation proves that solar energy is both safe and sustainable when properly installed. With elevated components and weatherproof design, this system is built to last—even in flood-prone areas. Sunphil Solar offers free site evaluation, fast & professional installation, after-sales support, and energy monitoring for Marikina residents who want to go solar with confidence.",
   },
+  {
+    id: "las-pinas-metro-manila",
+    image: "/images/project45.jpg",
+    location: "Las Piñas, Metro Manila, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-07-05",
+    clientType: "Residential (High-Consumption Home)",
+    specification: [
+      "12kW Deye Hybrid Inverter – Advanced hybrid inverter that prioritizes solar power, manages battery charge/discharge, and pulls from the grid only when needed.",
+      "24 × 615W Canadian Bifacial Solar Panels – Bifacial modules enhance daily output by harvesting sunlight from both front and rear sides, ideal for Metro Manila rooftops.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – High-capacity lithium battery storage ensures energy availability during evening hours and brownouts.",
+    ],
+    benefits: [
+      "Up to 90% savings on electricity bills",
+      "Reliable backup power for air conditioning, lighting, security systems, and kitchen appliances",
+      "Offsets approx. 2,000–2,200 kg of CO₂ emissions per month",
+      "Perfect for Metro Manila homes with high energy usage and a desire for long-term independence",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 12kW hybrid solar power system in Las Piñas, designed to support a household with heavy energy demands and the need for stable backup power. The homeowner wanted energy savings, self-reliance, and security during outages—this system delivers all three.\n\nThis project in Las Piñas is part of our continuing commitment to energize homes in BF Resort, Talon Dos, Pilar Village, and neighboring communities. With Sunphil Solar, clean power is within reach—whether for savings, backup, or peace of mind.\n\nSunphil Solar provides: Expert Solar Design & Installation, After-Sales Support, Premium Equipment with Warranty. Get a Free Solar Consultation Now.",
+  },
 ];
