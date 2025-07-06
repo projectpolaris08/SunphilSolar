@@ -12,6 +12,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "north-fairview-qc-12kw",
+    image: "/images/project46.jpg",
+    location: "North Fairview, Quezon City, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-07-06",
+    clientType: "Residential (High-Consumption Urban Household)",
+    specification: [
+      "12kW Deye Hybrid Inverter – Manages energy flow between solar production, battery storage, and grid input, ensuring seamless transitions and optimal efficiency.",
+      "24 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels increase daily yield by absorbing sunlight from both the front and back—ideal for rooftops with concrete or reflective surfaces.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Durable lithium batteries store excess solar power for night-time use and serve as backup during brownouts.",
+    ],
+    benefits: [
+      "Save up to 85–90% on electric bills",
+      "Dependable backup for appliances, lighting, internet, and air conditioning",
+      "Offsets approximately 2,000+ kg of CO₂ emissions monthly",
+      "Ideal for urban homes in Quezon City with large energy loads",
+    ],
+    description:
+      "Sunphil Solar completed a 12kW hybrid solar installation in North Fairview, Quezon City, tailored for a homeowner seeking long-term electricity savings and uninterrupted power supply. With Metro Manila experiencing rising utility costs and power fluctuations, this hybrid system is built to deliver energy security and efficiency. As part of our growing solar network in Quezon City, this North Fairview project showcases Sunphil Solar's commitment to helping homeowners in areas like Commonwealth, Fairview Terraces, and Regalado Highway achieve true energy independence. Sunphil Solar provides: Free Assessment & Energy Load Check, Fast & Professional Installation, High-Performance Equipment with Warranty. Get a Free Solar Quote Now.",
+  },
+  {
     id: "batas-silang-cavite",
     image: "/images/project44.jpg",
     location: "Batas Silang, Cavite, Philippines",

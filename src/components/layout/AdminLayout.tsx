@@ -377,7 +377,7 @@ const AdminLayout: React.FC = () => {
                 } px-3 py-2 rounded-lg w-full text-left transition-colors duration-150
                 ${
                   isActive
-                    ? "bg-blue-50 text-blue-600 dark:bg-gray-800 dark:text-blue-400"
+                    ? "border border-blue-300 bg-blue-50 text-blue-600 dark:bg-gray-800 dark:text-blue-400"
                     : "text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-gray-700"
                 }
                 focus:outline-none focus:ring-2 focus:ring-blue-200
