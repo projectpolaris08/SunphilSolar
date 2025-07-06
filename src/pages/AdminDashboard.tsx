@@ -439,7 +439,7 @@ const AdminDashboard: React.FC = () => {
 
   // Helper: Mark admin online in Supabase
   const markAdminOnline = async (admin: AdminUser) => {
-    await supabase.from("admin_online_status").upsert(
+    const { error } = await supabase.from("admin_online_status").upsert(
       {
         admin_id: admin.id,
         name: admin.name,
@@ -449,6 +449,12 @@ const AdminDashboard: React.FC = () => {
       },
       { onConflict: "admin_id" }
     );
+
+    if (error) {
+      console.error("Error marking admin online:", error);
+    } else {
+      console.log(`Marked ${admin.name} as online`);
+    }
   };
 
   // Helper: Mark admin offline in Supabase
@@ -467,10 +473,17 @@ const AdminDashboard: React.FC = () => {
 
   // Fetch online admins
   const fetchOnlineAdmins = async () => {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("admin_online_status")
       .select("admin_id, name, image")
       .eq("is_online", true);
+
+    if (error) {
+      console.error("Error fetching online admins:", error);
+      return;
+    }
+
+    console.log("Fetched online admins:", data);
     setOnlineAdmins((data as OnlineAdmin[]) || []);
   };
 
@@ -491,6 +504,18 @@ const AdminDashboard: React.FC = () => {
       };
     }
   }, [selectedAdmin]);
+
+  // Also fetch online admins immediately when component mounts (even without selectedAdmin)
+  useEffect(() => {
+    fetchOnlineAdmins();
+    // Start polling for online admins even before admin selection
+    if (pollingRef.current) clearInterval(pollingRef.current);
+    pollingRef.current = setInterval(fetchOnlineAdmins, 10000);
+
+    return () => {
+      if (pollingRef.current) clearInterval(pollingRef.current);
+    };
+  }, []);
 
   // Fetch messages between current admin and selected chat admin
   const fetchChatMessages = async (otherAdminId: number) => {
@@ -1331,6 +1356,14 @@ const AdminDashboard: React.FC = () => {
                 )}
               </div>
             ))}
+        </div>
+      )}
+      {/* Debug info - remove this after testing */}
+      {process.env.NODE_ENV === "development" && (
+        <div className="mt-auto p-2 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+          <div>Selected: {selectedAdmin?.name || "None"}</div>
+          <div>Online: {onlineAdmins.length}</div>
+          <div>Polling: {pollingRef.current ? "Yes" : "No"}</div>
         </div>
       )}
       {/* Navigation menu */}
