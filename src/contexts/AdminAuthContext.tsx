@@ -37,21 +37,13 @@ export const AdminAuthProvider: React.FC<AdminAuthProviderProps> = ({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for existing admin session
-    const adminToken = localStorage.getItem("adminToken");
-    const adminUser = localStorage.getItem("adminUser");
-
-    if (adminToken && adminUser) {
+    // Restore user from localStorage if present
+    const saved = localStorage.getItem("adminUser");
+    if (saved) {
       try {
-        const userData = JSON.parse(adminUser);
-        setUser(userData);
-      } catch (error) {
-        console.error("Error parsing admin user data:", error);
-        localStorage.removeItem("adminToken");
-        localStorage.removeItem("adminUser");
-      }
+        setUser(JSON.parse(saved));
+      } catch {}
     }
-
     setLoading(false);
   }, []);
 
@@ -77,7 +69,6 @@ export const AdminAuthProvider: React.FC<AdminAuthProviderProps> = ({
         role: "admin",
       };
       setUser(adminUser);
-      localStorage.setItem("adminToken", "demo-token-" + Date.now());
       localStorage.setItem("adminUser", JSON.stringify(adminUser));
       return true;
     }
@@ -86,7 +77,6 @@ export const AdminAuthProvider: React.FC<AdminAuthProviderProps> = ({
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("adminToken");
     localStorage.removeItem("adminUser");
   };
 

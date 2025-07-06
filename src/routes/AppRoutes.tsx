@@ -32,6 +32,9 @@ import ExpensesPage from "../pages/ExpensesPage";
 import SolarPanelsPage from "../pages/SolarPanelsPage";
 import PayrollPage from "../pages/PayrollPage";
 import AdminLayout from "../components/layout/AdminLayout";
+import AdminLoginPage from "../pages/AdminLoginPage";
+import { useAdminAuth } from "../contexts/AdminAuthContext";
+import { useLocation } from "react-router-dom";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -45,8 +48,24 @@ const AppRoutes = ({
   return (
     <div className="flex flex-col min-h-screen">
       <Routes>
-        {/* Admin routes - nested under AdminLayout */}
-        <Route path="/admin" element={<AdminLayout />}>
+        {/* Admin login route */}
+        <Route
+          path="/admin/login"
+          element={
+            <RedirectIfAuthenticated>
+              <AdminLoginPage />
+            </RedirectIfAuthenticated>
+          }
+        />
+        {/* Admin routes - protected */}
+        <Route
+          path="/admin"
+          element={
+            <RequireAdminAuth>
+              <AdminLayout />
+            </RequireAdminAuth>
+          }
+        >
           <Route index element={<AdminDashboard />} />
           <Route path="clients" element={<ClientRecordsPage />} />
           <Route path="inventory" element={<InventoryPage />} />
@@ -120,5 +139,23 @@ const AppRoutes = ({
     </div>
   );
 };
+
+function RequireAdminAuth({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated, loading } = useAdminAuth();
+  const location = useLocation();
+  if (loading) return null;
+  if (!isAuthenticated)
+    return <Navigate to="/admin/login" state={{ from: location }} replace />;
+  return <>{children}</>;
+}
+
+function RedirectIfAuthenticated({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated, loading } = useAdminAuth();
+  const location = useLocation();
+  if (loading) return null;
+  if (isAuthenticated)
+    return <Navigate to="/admin" state={{ from: location }} replace />;
+  return <>{children}</>;
+}
 
 export default AppRoutes;

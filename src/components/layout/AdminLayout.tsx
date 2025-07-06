@@ -5,6 +5,22 @@ import ChatWindow from "../ChatWindow";
 import { LogOut } from "lucide-react";
 import useAdminDarkMode from "../../hooks/useAdminDarkMode";
 import notificationSound from "../../../public/sounds/popup.mp3";
+import { useAdminAuth } from "../../contexts/AdminAuthContext";
+import AdminSelectModal from "../AdminSelectModal";
+import {
+  Home,
+  BarChart3,
+  Wrench,
+  Users,
+  MessageSquare,
+  FileText,
+  Database,
+  TrendingUp,
+  Settings,
+  Calendar,
+  Sun,
+  Moon,
+} from "lucide-react";
 
 // Types (copy from AdminDashboard)
 type AdminUser = { id: number; name: string; image: string };
@@ -20,27 +36,62 @@ type ChatMessage = {
 };
 
 const menuItems = [
-  { id: "dashboard", label: "Dashboard", icon: null, link: "/admin" },
-  { id: "projects", label: "Projects", icon: null, link: "/admin/projects" },
-  { id: "builders", label: "Builders", icon: null, link: "/admin/builders" },
+  { id: "dashboard", label: "Dashboard", icon: Home, link: "/admin" },
+  {
+    id: "projects",
+    label: "Projects",
+    icon: BarChart3,
+    link: "/admin/projects",
+  },
+  { id: "builders", label: "Builders", icon: Wrench, link: "/admin/builders" },
   {
     id: "clients",
     label: "Client Records",
-    icon: null,
+    icon: Users,
     link: "/admin/clients",
   },
-  { id: "inventory", label: "Inventory", icon: null, link: "/admin/inventory" },
-  { id: "payroll", label: "Payroll", icon: null, link: "/admin/payroll" },
+  {
+    id: "inventory",
+    label: "Inventory",
+    icon: BarChart3,
+    link: "/admin/inventory",
+  },
+  {
+    id: "payroll",
+    label: "Payroll",
+    icon: MessageSquare,
+    link: "/admin/payroll",
+  },
   {
     id: "solar-quotation",
     label: "Forms",
-    icon: null,
+    icon: FileText,
     link: "/admin/solar-quotation",
   },
-  { id: "expenses", label: "Expenses", icon: null, link: "/admin/expenses" },
-  { id: "analytics", label: "Analytics", icon: null, link: "/admin/analytics" },
-  { id: "settings", label: "Settings", icon: null, link: "/admin/settings" },
-  { id: "calendar", label: "Calendar", icon: null, link: "/admin/calendar" },
+  {
+    id: "expenses",
+    label: "Expenses",
+    icon: Database,
+    link: "/admin/expenses",
+  },
+  {
+    id: "analytics",
+    label: "Analytics",
+    icon: TrendingUp,
+    link: "/admin/analytics",
+  },
+  {
+    id: "settings",
+    label: "Settings",
+    icon: Settings,
+    link: "/admin/settings",
+  },
+  {
+    id: "calendar",
+    label: "Calendar",
+    icon: Calendar,
+    link: "/admin/calendar",
+  },
 ];
 
 const AdminLayout: React.FC = () => {
@@ -62,10 +113,12 @@ const AdminLayout: React.FC = () => {
   );
   const pollingRef = useRef<NodeJS.Timeout | null>(null);
   const chatPollingRef = useRef<NodeJS.Timeout | null>(null);
-  const [theme] = useAdminDarkMode();
+  const [theme, setTheme] = useAdminDarkMode();
   const location = useLocation();
   const navigate = useNavigate();
   const audioRef = useRef<HTMLAudioElement>(null);
+  const { isAuthenticated, loading } = useAdminAuth();
+  const [showAdminSelectModal, setShowAdminSelectModal] = useState(false);
 
   // Responsive
   useEffect(() => {
@@ -206,6 +259,7 @@ const AdminLayout: React.FC = () => {
   useEffect(() => {
     const saved = localStorage.getItem("selectedAdmin");
     if (saved) setSelectedAdmin(JSON.parse(saved));
+    else setShowAdminSelectModal(true);
   }, []);
 
   // Online admin polling
@@ -322,7 +376,13 @@ const AdminLayout: React.FC = () => {
               `}
                 style={{ WebkitTapHighlightColor: "transparent" }}
               >
-                <span>{/* Add icons if needed */}</span>
+                <span>
+                  {item.icon &&
+                    React.createElement(item.icon, {
+                      size: 22,
+                      className: showLabels ? "mr-1" : "",
+                    })}
+                </span>
                 {showLabels && (
                   <span className="text-base font-medium">{item.label}</span>
                 )}
@@ -376,6 +436,19 @@ const AdminLayout: React.FC = () => {
     </div>
   );
 
+  // When an admin is selected, save to localStorage
+  const handleAdminSelect = (user: AdminUser) => {
+    setSelectedAdmin(user);
+    setShowAdminSelectModal(false);
+    localStorage.setItem("selectedAdmin", JSON.stringify(user));
+  };
+
+  if (loading) return null;
+  if (!isAuthenticated) return null;
+  if (showAdminSelectModal || !selectedAdmin) {
+    return <AdminSelectModal onSelect={handleAdminSelect} />;
+  }
+
   return (
     <div id="admin-dashboard-root" className={theme === "dark" ? "dark" : ""}>
       <audio ref={audioRef} src={notificationSound} preload="auto" />
@@ -387,7 +460,7 @@ const AdminLayout: React.FC = () => {
       )}
       <div className={"min-h-screen flex bg-gray-50 dark:bg-gray-900"}>
         <aside
-          className={`hidden md:flex md:flex-col ${
+          className={`md:flex md:flex-col ${
             !collapsed || hovered ? "md:w-64" : "md:w-16"
           } md:h-screen md:bg-white md:dark:bg-gray-800 md:shadow-lg md:sticky md:top-0 transition-all duration-300`}
           onMouseEnter={() => {
@@ -430,6 +503,20 @@ const AdminLayout: React.FC = () => {
           </div>
           {renderSidebar()}
         </aside>
+        {/* Add dark mode toggle button at the top right of the admin area */}
+        <div className="absolute top-4 right-8 z-40">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+            aria-label="Toggle dark mode"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
+          </button>
+        </div>
         {/* Main Content */}
         <main className="flex-1 w-0 min-w-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
           <Outlet />
