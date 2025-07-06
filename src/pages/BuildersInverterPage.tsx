@@ -62,6 +62,11 @@ const builderColorMap: Record<
     invBg: "bg-cyan-600",
     batBg: "bg-green-600",
   },
+  Jaxel: {
+    text: "text-yellow-700 dark:text-yellow-200",
+    invBg: "bg-yellow-500",
+    batBg: "bg-green-600",
+  },
 };
 
 const BuildersInverterPage = () => {
