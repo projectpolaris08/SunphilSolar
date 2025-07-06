@@ -48,19 +48,45 @@ const ClientRecordsPage: React.FC = () => {
   const filteredRecords = records.filter((r) => {
     const searchTerm = search.toLowerCase();
     return (
-      r.name.toLowerCase().includes(searchTerm) ||
-      r.address.toLowerCase().includes(searchTerm) ||
-      r.inverter.toLowerCase().includes(searchTerm) ||
-      r.solar_panel_pcs.toLowerCase().includes(searchTerm) ||
-      r.solar_panel_wattage.toLowerCase().includes(searchTerm) ||
-      r.battery_type.toLowerCase().includes(searchTerm) ||
-      r.battery_qty.toLowerCase().includes(searchTerm) ||
-      r.contact.toLowerCase().includes(searchTerm) ||
-      r.facebook.toLowerCase().includes(searchTerm) ||
-      r.visitation.toLowerCase().includes(searchTerm) ||
-      r.notes.toLowerCase().includes(searchTerm) ||
-      r.amount.toLowerCase().includes(searchTerm) ||
-      r.date.toLowerCase().includes(searchTerm)
+      String(r.name || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.address || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.inverter || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.solar_panel_pcs || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.solar_panel_wattage || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.battery_type || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.battery_qty || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.contact || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.facebook || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.visitation || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.notes || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.amount || "")
+        .toLowerCase()
+        .includes(searchTerm) ||
+      String(r.date || "")
+        .toLowerCase()
+        .includes(searchTerm)
     );
   });
   const totalPages = Math.ceil(filteredRecords.length / pageSize);
