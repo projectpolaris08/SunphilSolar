@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useLocation } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes"; // Correct path to your AppRoutes
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
@@ -12,18 +12,29 @@ function App() {
   const WEATHER_API_KEY =
     import.meta.env.VITE_WEATHER_API_KEY || "YOUR_OPENWEATHERMAP_API_KEY";
 
+  // Add this inner component to access useLocation
+  function AppWithChatBot() {
+    const location = useLocation();
+    const isAdminRoute = location.pathname.startsWith("/admin");
+    return (
+      <>
+        <CookieBanner />
+        <ScrollToTop />
+        <AppRoutes
+          googleMapsApiKey={GOOGLE_MAPS_API_KEY}
+          weatherApiKey={WEATHER_API_KEY}
+        />
+        {/* Only show ChatBot if not on /admin routes */}
+        {!isAdminRoute && <ChatBot />}
+      </>
+    );
+  }
+
   return (
     <CalendarEventsProvider>
       <AdminAuthProvider>
         <BrowserRouter>
-          <CookieBanner />
-          <ScrollToTop />
-          {/* You can pass your API keys as props to AppRoutes if needed */}
-          <AppRoutes
-            googleMapsApiKey={GOOGLE_MAPS_API_KEY}
-            weatherApiKey={WEATHER_API_KEY}
-          />
-          <ChatBot />
+          <AppWithChatBot />
         </BrowserRouter>
       </AdminAuthProvider>
     </CalendarEventsProvider>

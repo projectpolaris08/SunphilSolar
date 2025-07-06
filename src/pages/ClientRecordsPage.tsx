@@ -45,8 +45,29 @@ const ClientRecordsPage: React.FC = () => {
   });
   const [page, setPage] = useState(1);
   const pageSize = 15;
-  const totalPages = Math.ceil(records.length / pageSize);
-  const paginated = records.slice((page - 1) * pageSize, page * pageSize);
+  const filteredRecords = records.filter((r) => {
+    const searchTerm = search.toLowerCase();
+    return (
+      r.name.toLowerCase().includes(searchTerm) ||
+      r.address.toLowerCase().includes(searchTerm) ||
+      r.inverter.toLowerCase().includes(searchTerm) ||
+      r.solar_panel_pcs.toLowerCase().includes(searchTerm) ||
+      r.solar_panel_wattage.toLowerCase().includes(searchTerm) ||
+      r.battery_type.toLowerCase().includes(searchTerm) ||
+      r.battery_qty.toLowerCase().includes(searchTerm) ||
+      r.contact.toLowerCase().includes(searchTerm) ||
+      r.facebook.toLowerCase().includes(searchTerm) ||
+      r.visitation.toLowerCase().includes(searchTerm) ||
+      r.notes.toLowerCase().includes(searchTerm) ||
+      r.amount.toLowerCase().includes(searchTerm) ||
+      r.date.toLowerCase().includes(searchTerm)
+    );
+  });
+  const totalPages = Math.ceil(filteredRecords.length / pageSize);
+  const paginated = filteredRecords.slice(
+    (page - 1) * pageSize,
+    page * pageSize
+  );
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteRecordId, setDeleteRecordId] = useState<string | null>(null);
 

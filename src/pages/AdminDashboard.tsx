@@ -543,12 +543,19 @@ const AdminDashboard: React.FC = () => {
     if (imageFile) {
       image_url = await uploadChatImage(imageFile);
     }
-    await supabase.from("messages").insert({
+    const { error } = await supabase.from("messages").insert({
       sender_id: selectedAdmin.id,
       receiver_id: chatAdmin.admin_id,
       content,
       image_url,
+      timestamp: new Date().toISOString(),
+      read: false,
     });
+    if (error) {
+      console.error("Failed to send message:", error.message);
+      alert("Failed to send message: " + error.message);
+      return;
+    }
     fetchChatMessages(chatAdmin.admin_id);
     fetchUnreadCounts();
   };
@@ -1282,7 +1289,7 @@ const AdminDashboard: React.FC = () => {
 
   // Sidebar rendering
   const renderSidebar = () => (
-    <div className="relative h-full flex flex-col gap-1 p-2">
+    <div className="relative h-full flex flex-col p-2">
       {/* Current admin at the top, below header */}
       {selectedAdmin && (
         <div
@@ -1305,57 +1312,7 @@ const AdminDashboard: React.FC = () => {
           )}
         </div>
       )}
-      {/* Other online admins at the bottom, Messenger style */}
-      {onlineAdmins.filter(
-        (a) => !selectedAdmin || a.admin_id !== selectedAdmin.id
-      ).length > 0 && (
-        <div className="flex flex-col gap-2 pb-2 mt-auto">
-          {onlineAdmins
-            .filter((a) => !selectedAdmin || a.admin_id !== selectedAdmin.id)
-            .map((admin) => (
-              <div
-                key={admin.admin_id}
-                className={`flex items-center ${
-                  collapsed && !hovered ? "justify-center" : "gap-2"
-                } cursor-pointer`}
-                onClick={() => handleOpenChat(admin)}
-              >
-                <span className="relative inline-block group">
-                  <img
-                    src={admin.image}
-                    alt={admin.name}
-                    className="w-10 h-10 rounded-full border object-cover"
-                  />
-                  <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
-                  {/* Unread indicator */}
-                  {unreadCounts[admin.admin_id] > 0 && (
-                    <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></span>
-                  )}
-                  {/* Tooltip for name in collapsed mode */}
-                  {collapsed && !hovered && (
-                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-                      {admin.name}
-                    </span>
-                  )}
-                </span>
-                {(!collapsed || hovered) && (
-                  <span className="font-medium text-gray-900 dark:text-gray-100">
-                    {admin.name}
-                  </span>
-                )}
-              </div>
-            ))}
-        </div>
-      )}
-      {/* Debug info - remove this after testing */}
-      {process.env.NODE_ENV === "development" && (
-        <div className="mt-auto p-2 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
-          <div>Selected: {selectedAdmin?.name || "None"}</div>
-          <div>Online: {onlineAdmins.length}</div>
-          <div>Polling: {pollingRef.current ? "Yes" : "No"}</div>
-        </div>
-      )}
-      {/* Navigation menu */}
+      {/* Navigation menu - fills available space */}
       <nav className="flex-1 flex flex-col gap-1">
         {menuItems.map((item) => {
           const isActive =
@@ -1415,6 +1372,56 @@ const AdminDashboard: React.FC = () => {
           );
         })}
       </nav>
+      {/* Other online admins at the bottom, Messenger style */}
+      {onlineAdmins.filter(
+        (a) => !selectedAdmin || a.admin_id !== selectedAdmin.id
+      ).length > 0 && (
+        <div className="flex flex-col gap-2 pb-2 mt-auto">
+          {onlineAdmins
+            .filter((a) => !selectedAdmin || a.admin_id !== selectedAdmin.id)
+            .map((admin) => (
+              <div
+                key={admin.admin_id}
+                className={`flex items-center ${
+                  collapsed && !hovered ? "justify-center" : "gap-2"
+                } cursor-pointer`}
+                onClick={() => handleOpenChat(admin)}
+              >
+                <span className="relative inline-block group">
+                  <img
+                    src={admin.image}
+                    alt={admin.name}
+                    className="w-10 h-10 rounded-full border object-cover"
+                  />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                  {/* Unread indicator */}
+                  {unreadCounts[admin.admin_id] > 0 && (
+                    <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></span>
+                  )}
+                  {/* Tooltip for name in collapsed mode */}
+                  {collapsed && !hovered && (
+                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                      {admin.name}
+                    </span>
+                  )}
+                </span>
+                {(!collapsed || hovered) && (
+                  <span className="font-medium text-gray-900 dark:text-gray-100">
+                    {admin.name}
+                  </span>
+                )}
+              </div>
+            ))}
+        </div>
+      )}
+      {/* Debug info - remove this after testing */}
+      {process.env.NODE_ENV === "development" && (
+        <div className="mt-2 p-2 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+          <div>Selected: {selectedAdmin?.name || "None"}</div>
+          <div>Online: {onlineAdmins.length}</div>
+          <div>Polling: {pollingRef.current ? "Yes" : "No"}</div>
+        </div>
+      )}
     </div>
   );
 
