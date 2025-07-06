@@ -4,6 +4,7 @@ import { supabase } from "../../lib/supabaseClient";
 import ChatWindow from "../ChatWindow";
 import { LogOut } from "lucide-react";
 import useAdminDarkMode from "../../hooks/useAdminDarkMode";
+import notificationSound from "../../../public/sounds/popup.mp3";
 
 // Types (copy from AdminDashboard)
 type AdminUser = { id: number; name: string; image: string };
@@ -53,11 +54,18 @@ const AdminLayout: React.FC = () => {
   const [chatAdmin, setChatAdmin] = useState<OnlineAdmin | null>(null);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [unreadCounts, setUnreadCounts] = useState<Record<number, number>>({});
+  const [lastUnreadCounts, setLastUnreadCounts] = useState<
+    Record<number, number>
+  >({});
+  const [toast, setToast] = useState<{ name: string; preview: string } | null>(
+    null
+  );
   const pollingRef = useRef<NodeJS.Timeout | null>(null);
   const chatPollingRef = useRef<NodeJS.Timeout | null>(null);
   const [theme] = useAdminDarkMode();
   const location = useLocation();
   const navigate = useNavigate();
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   // Responsive
   useEffect(() => {
@@ -227,6 +235,42 @@ const AdminLayout: React.FC = () => {
     }
   }, [selectedAdmin]);
 
+  // Play sound and show toast when new unread message arrives
+  useEffect(() => {
+    if (!selectedAdmin) return;
+    Object.entries(unreadCounts).forEach(([adminId, count]) => {
+      const prev = lastUnreadCounts[+adminId] || 0;
+      if (count > prev) {
+        // Find sender admin info
+        const sender = onlineAdmins.find((a) => a.admin_id === +adminId);
+        if (sender) {
+          // Find latest unread message from this sender
+          const latestMsg = chatMessages
+            .filter((m) => m.sender_id === +adminId && !m.read)
+            .slice(-1)[0];
+          setToast({
+            name: sender.name,
+            preview: latestMsg?.content || "New message",
+          });
+        }
+        // Play sound
+        if (audioRef.current) {
+          audioRef.current.currentTime = 0;
+          audioRef.current.play();
+        }
+      }
+    });
+    setLastUnreadCounts(unreadCounts);
+  }, [unreadCounts, onlineAdmins, chatMessages, selectedAdmin]);
+
+  // Auto-hide toast after 3 seconds
+  useEffect(() => {
+    if (toast) {
+      const t = setTimeout(() => setToast(null), 3000);
+      return () => clearTimeout(t);
+    }
+  }, [toast]);
+
   // Sidebar rendering (copy from AdminDashboard, but use handleOpenChat, etc.)
   const renderSidebar = () => (
     <div className="relative h-full flex flex-col p-2">
@@ -333,7 +377,14 @@ const AdminLayout: React.FC = () => {
   );
 
   return (
-    <div className={theme === "dark" ? "dark" : ""}>
+    <div id="admin-dashboard-root" className={theme === "dark" ? "dark" : ""}>
+      <audio ref={audioRef} src={notificationSound} preload="auto" />
+      {toast && (
+        <div className="fixed bottom-24 right-4 z-50 bg-blue-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 animate-fade-in">
+          <span className="font-bold">{toast.name}:</span>
+          <span className="truncate max-w-[180px]">{toast.preview}</span>
+        </div>
+      )}
       <div className={"min-h-screen flex bg-gray-50 dark:bg-gray-900"}>
         <aside
           className={`hidden md:flex md:flex-col ${
