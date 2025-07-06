@@ -13,7 +13,7 @@ const inverterTypes = [
   "32kW",
 ];
 
-const builderNames = ["Joshua", "David", "Mark", "Dong", "Eron", "Sam"];
+const builderNames = ["Joshua", "David", "Mark", "Dong", "Eron", "Sam", "Jaxel"];
 
 const statusOptions = ["In Progress", "Done"];
 
