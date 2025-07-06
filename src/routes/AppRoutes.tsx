@@ -31,6 +31,7 @@ import Form from "../pages/Form";
 import ExpensesPage from "../pages/ExpensesPage";
 import SolarPanelsPage from "../pages/SolarPanelsPage";
 import PayrollPage from "../pages/PayrollPage";
+import AdminLayout from "../components/layout/AdminLayout";
 
 interface AppRoutesProps {
   googleMapsApiKey?: string;
@@ -44,8 +45,9 @@ const AppRoutes = ({
   return (
     <div className="flex flex-col min-h-screen">
       <Routes>
-        {/* Admin routes - nested under AdminDashboard */}
-        <Route path="/admin" element={<AdminDashboard />}>
+        {/* Admin routes - nested under AdminLayout */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
           <Route path="clients" element={<ClientRecordsPage />} />
           <Route path="inventory" element={<InventoryPage />} />
           <Route path="calendar" element={<CalendarPage />} />
