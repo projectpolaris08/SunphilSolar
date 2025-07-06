@@ -119,8 +119,7 @@ const AdminLayout: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const audioRef = useRef<HTMLAudioElement>(null);
-  const { isAuthenticated, loading } = useAdminAuth();
-  const [showAdminSelectModal, setShowAdminSelectModal] = useState(false);
+  const { isAuthenticated, loading, logout } = useAdminAuth();
 
   // Responsive
   useEffect(() => {
@@ -261,7 +260,6 @@ const AdminLayout: React.FC = () => {
   useEffect(() => {
     const saved = localStorage.getItem("selectedAdmin");
     if (saved) setSelectedAdmin(JSON.parse(saved));
-    else setShowAdminSelectModal(true);
   }, []);
 
   // Online admin polling
@@ -431,6 +429,11 @@ const AdminLayout: React.FC = () => {
                 {onlineAdmins.some((a) => a.admin_id === admin.id) && (
                   <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
                 )}
+                {unreadCounts[admin.id] > 0 && (
+                  <span className="absolute -top-1 -right-1 min-w-[18px] h-4 bg-red-600 text-white text-xs flex items-center justify-center rounded-full px-1 border-2 border-white">
+                    {unreadCounts[admin.id]}
+                  </span>
+                )}
               </span>
               {(!collapsed || hovered || (isMobile && mobileSidebarOpen)) && (
                 <span className="font-medium text-gray-900 dark:text-gray-100 ml-3">
@@ -446,13 +449,13 @@ const AdminLayout: React.FC = () => {
   // When an admin is selected, save to localStorage
   const handleAdminSelect = (user: AdminUser) => {
     setSelectedAdmin(user);
-    setShowAdminSelectModal(false);
     localStorage.setItem("selectedAdmin", JSON.stringify(user));
   };
 
   if (loading) return null;
   if (!isAuthenticated) return null;
-  if (showAdminSelectModal || !selectedAdmin) {
+  // Only show admin selection modal if authenticated but no selected admin
+  if (!selectedAdmin) {
     return <AdminSelectModal onSelect={handleAdminSelect} />;
   }
 
@@ -516,6 +519,7 @@ const AdminLayout: React.FC = () => {
               onClick={() => {
                 if (selectedAdmin) markAdminOffline(selectedAdmin);
                 localStorage.removeItem("selectedAdmin");
+                logout();
                 navigate("/");
                 if (isMobile) setMobileSidebarOpen(false);
               }}
