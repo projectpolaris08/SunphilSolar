@@ -13,7 +13,16 @@ const batteryTypes = [
   "51.2v 314Ah",
 ];
 
-const builderNames = ["Joshua", "David", "Mark", "Dong", "Eron", "Sam"];
+const builderNames = [
+  "Joshua",
+  "David",
+  "Mark",
+  "Dong",
+  "Eron",
+  "Sam",
+  "Buboy",
+  "Jaxel",
+];
 const statusOptions = ["In Progress", "Done"];
 
 type BatteryBuild = {
@@ -59,6 +68,16 @@ const builderColorMap: Record<
   Eron: {
     text: "text-cyan-700 dark:text-cyan-200",
     invBg: "bg-cyan-600",
+    batBg: "bg-green-600",
+  },
+  Buboy: {
+    text: "text-indigo-700 dark:text-indigo-200",
+    invBg: "bg-indigo-600",
+    batBg: "bg-green-600",
+  },
+  Jaxel: {
+    text: "text-yellow-700 dark:text-yellow-200",
+    invBg: "bg-yellow-500",
     batBg: "bg-green-600",
   },
 };
