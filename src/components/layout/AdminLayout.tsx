@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "../../lib/supabaseClient";
 import ChatWindow from "../ChatWindow";
-import { LogOut } from "lucide-react";
+import { LogOut, Menu } from "lucide-react";
 import useAdminDarkMode from "../../hooks/useAdminDarkMode";
 import notificationSound from "../../../public/sounds/popup.mp3";
 import { useAdminAuth } from "../../contexts/AdminAuthContext";
@@ -98,6 +98,7 @@ const menuItems = [
 const AdminLayout: React.FC = () => {
   // Sidebar/chat state (move from AdminDashboard)
   const [collapsed] = useState(true);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [selectedAdmin, setSelectedAdmin] = useState<AdminUser | null>(null);
@@ -328,12 +329,17 @@ const AdminLayout: React.FC = () => {
 
   // Sidebar rendering (copy from AdminDashboard, but use handleOpenChat, etc.)
   const renderSidebar = () => (
-    <div className="relative h-full flex flex-col p-2">
+    <div
+      className="relative h-full flex flex-col p-2 min-h-0"
+      style={{ height: "100vh" }}
+    >
       {/* Current admin at the top, below header */}
       {selectedAdmin && (
         <div
           className={`flex items-center gap-2 p-2 mb-2 border-b border-gray-200 dark:border-gray-700 ${
-            collapsed && !hovered ? "justify-center" : ""
+            collapsed && !hovered && !(isMobile && mobileSidebarOpen)
+              ? "justify-center"
+              : "justify-start"
           }`}
         >
           <span className="relative inline-block">
@@ -344,15 +350,15 @@ const AdminLayout: React.FC = () => {
             />
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
           </span>
-          {(!collapsed || hovered) && (
-            <span className="font-semibold text-base text-gray-900 dark:text-gray-100">
+          {(!collapsed || hovered || (isMobile && mobileSidebarOpen)) && (
+            <span className="font-semibold text-base text-gray-900 dark:text-gray-100 ml-3">
               {selectedAdmin.name}
             </span>
           )}
         </div>
       )}
-      {/* Navigation menu - fills available space */}
-      <nav className="flex-1 flex flex-col gap-1">
+      {/* Navigation menu - fills available space, scrollable if needed */}
+      <nav className="flex-1 flex flex-col gap-1 overflow-y-auto min-h-0">
         {menuItems.map((item) => {
           const isActive =
             location.pathname === item.link ||
@@ -363,7 +369,10 @@ const AdminLayout: React.FC = () => {
             <div key={item.id}>
               <button
                 onClick={() => {
-                  if (item.link) navigate(item.link);
+                  if (item.link) {
+                    if (isMobile) setMobileSidebarOpen(false);
+                    navigate(item.link);
+                  }
                 }}
                 className={`flex items-center ${
                   showLabels ? "gap-3" : "justify-center"
@@ -392,23 +401,26 @@ const AdminLayout: React.FC = () => {
           );
         })}
       </nav>
-      {/* Other online admins at the bottom, Messenger style */}
-      <div className="flex flex-col gap-4 pb-2 mt-auto mb-4">
+      {/* Other online admins at the bottom, Messenger style, always visible but not hugging the very bottom */}
+      <div className="flex flex-col gap-4 pb-2 mt-16 mb-16 md:mt-auto md:mb-8 bg-inherit z-10">
         {adminUsers
           .filter((a) => !selectedAdmin || a.id !== selectedAdmin.id)
           .map((admin) => (
             <div
               key={admin.id}
               className={`flex items-center ${
-                collapsed && !hovered ? "justify-center" : "gap-2"
+                collapsed && !hovered && !(isMobile && mobileSidebarOpen)
+                  ? "justify-center"
+                  : "gap-2 justify-start"
               } cursor-pointer`}
-              onClick={() =>
+              onClick={() => {
+                if (isMobile) setMobileSidebarOpen(false);
                 handleOpenChat({
                   admin_id: admin.id,
                   name: admin.name,
                   image: admin.image,
-                })
-              }
+                });
+              }}
             >
               <span className="relative inline-block group">
                 <img
@@ -420,8 +432,8 @@ const AdminLayout: React.FC = () => {
                   <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
                 )}
               </span>
-              {(!collapsed || hovered) && (
-                <span className="font-medium text-gray-900 dark:text-gray-100">
+              {(!collapsed || hovered || (isMobile && mobileSidebarOpen)) && (
+                <span className="font-medium text-gray-900 dark:text-gray-100 ml-3">
                   {admin.name}
                 </span>
               )}
@@ -454,15 +466,33 @@ const AdminLayout: React.FC = () => {
         </div>
       )}
       <div className={"min-h-screen flex bg-gray-50 dark:bg-gray-900"}>
+        {/* Mobile Overlay for Sidebar */}
+        {isMobile && mobileSidebarOpen && (
+          <div
+            className="fixed inset-0 z-40 bg-black bg-opacity-40 md:hidden"
+            onClick={() => setMobileSidebarOpen(false)}
+          />
+        )}
         <aside
           className={`md:flex md:flex-col ${
             !collapsed || hovered ? "md:w-64" : "md:w-16"
-          } md:h-screen md:bg-white md:dark:bg-gray-800 md:shadow-lg md:sticky md:top-0 transition-all duration-300`}
+          } md:h-screen md:bg-white md:dark:bg-gray-800 md:shadow-lg md:sticky md:top-0 transition-transform duration-300
+            fixed top-0 left-0 z-50 w-64 bg-white dark:bg-gray-800 shadow-lg transform
+            ${
+              isMobile
+                ? mobileSidebarOpen
+                  ? "translate-x-0"
+                  : "-translate-x-full"
+                : "md:translate-x-0"
+            }
+            md:static md:translate-x-0
+          `}
+          style={{ zIndex: 50 }}
           onMouseEnter={() => {
-            if (collapsed) setHovered(true);
+            if (collapsed && !isMobile) setHovered(true);
           }}
           onMouseLeave={() => {
-            if (collapsed) setHovered(false);
+            if (collapsed && !isMobile) setHovered(false);
           }}
         >
           <div
@@ -487,6 +517,7 @@ const AdminLayout: React.FC = () => {
                 if (selectedAdmin) markAdminOffline(selectedAdmin);
                 localStorage.removeItem("selectedAdmin");
                 navigate("/");
+                if (isMobile) setMobileSidebarOpen(false);
               }}
               className={`flex items-center ${
                 collapsed ? "justify-center" : "gap-2"
@@ -514,26 +545,56 @@ const AdminLayout: React.FC = () => {
         </div>
         {/* Main Content */}
         <main className="flex-1 w-0 min-w-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-          <Outlet />
+          {/* Header row for all admin pages: hamburger, back, title, etc. */}
+          <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-30 bg-white dark:bg-gray-900">
+            {isMobile && (
+              <button
+                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 shadow-md md:hidden"
+                onClick={() => setMobileSidebarOpen(true)}
+                aria-label="Open sidebar"
+              >
+                <Menu className="w-7 h-7 text-gray-800 dark:text-gray-100" />
+              </button>
+            )}
+            {/* Slot for back button or page title, with left margin if hamburger is present */}
+            <div className={isMobile ? "ml-2 flex-1" : "flex-1"}>
+              {/* The actual page content (Outlet) should render its own title/back if needed */}
+            </div>
+          </div>
+          <div className="px-2 sm:px-4 pb-4 pt-2">
+            <Outlet />
+          </div>
         </main>
         {/* ChatWindow integration */}
         {chatOpen && chatAdmin && selectedAdmin && (
-          <ChatWindow
-            open={chatOpen}
-            onClose={handleCloseChat}
-            admin={{
-              id: chatAdmin.admin_id,
-              name: chatAdmin.name,
-              image: chatAdmin.image,
-            }}
-            currentAdmin={{
-              id: selectedAdmin.id,
-              name: selectedAdmin.name,
-              image: selectedAdmin.image,
-            }}
-            messages={chatMessages}
-            onSend={handleSendMessage}
-          />
+          <div
+            className={`fixed inset-0 z-50 flex items-center justify-center md:static md:inset-auto md:z-auto ${
+              isMobile ? "bg-black bg-opacity-40" : ""
+            }`}
+          >
+            <div
+              className={`w-full h-full md:w-auto md:h-auto flex items-center justify-center ${
+                isMobile ? "max-w-full max-h-full" : ""
+              }`}
+            >
+              <ChatWindow
+                open={chatOpen}
+                onClose={handleCloseChat}
+                admin={{
+                  id: chatAdmin.admin_id,
+                  name: chatAdmin.name,
+                  image: chatAdmin.image,
+                }}
+                currentAdmin={{
+                  id: selectedAdmin.id,
+                  name: selectedAdmin.name,
+                  image: selectedAdmin.image,
+                }}
+                messages={chatMessages}
+                onSend={handleSendMessage}
+              />
+            </div>
+          </div>
         )}
       </div>
     </div>
