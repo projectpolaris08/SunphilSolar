@@ -1,11 +1,19 @@
 import React from "react";
+import { Edit, Trash2 } from "lucide-react";
 
 interface DayEventsModalProps {
   events: any[];
   onClose: () => void;
+  onEdit: (event: any) => void;
+  onDelete: (event: any) => void;
 }
 
-const DayEventsModal: React.FC<DayEventsModalProps> = ({ events, onClose }) => (
+const DayEventsModal: React.FC<DayEventsModalProps> = ({
+  events,
+  onClose,
+  onEdit,
+  onDelete,
+}) => (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
     <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
       <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">
@@ -15,8 +23,24 @@ const DayEventsModal: React.FC<DayEventsModalProps> = ({ events, onClose }) => (
         {events.map((event, idx) => (
           <div
             key={idx}
-            className="border border-gray-200 dark:border-gray-700 rounded p-3 shadow bg-white dark:bg-gray-800"
+            className="border border-gray-200 dark:border-gray-700 rounded p-3 shadow bg-white dark:bg-gray-800 relative"
           >
+            <div className="absolute top-2 right-2 flex gap-2">
+              <button
+                title="Edit"
+                onClick={() => onEdit(event)}
+                className="text-blue-600 hover:text-blue-800 mr-2"
+              >
+                <Edit className="h-4 w-4" />
+              </button>
+              <button
+                title="Delete"
+                onClick={() => onDelete(event)}
+                className="text-red-600 hover:text-red-800 p-1"
+              >
+                <Trash2 className="h-4 w-4" />
+              </button>
+            </div>
             <div className="font-semibold text-gray-900 dark:text-gray-100">
               {event.clientName || event.title}
             </div>

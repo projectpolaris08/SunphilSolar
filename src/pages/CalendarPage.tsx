@@ -914,6 +914,21 @@ const CalendarPage: React.FC = () => {
         <DayEventsModal
           events={modalEvents}
           onClose={() => setShowDayModal(false)}
+          onEdit={(event) => {
+            setForm({
+              ...event,
+              startTime: format(new Date(event.start), "HH:mm"),
+              endTime: format(new Date(event.end), "HH:mm"),
+            });
+            setSelected(event);
+            setShowForm(true);
+            setShowDayModal(false);
+          }}
+          onDelete={(event) => {
+            setDeleteEventId(event.id);
+            setShowDeleteModal(true);
+            setShowDayModal(false);
+          }}
         />
       )}
 
