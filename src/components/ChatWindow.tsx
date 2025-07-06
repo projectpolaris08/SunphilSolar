@@ -9,6 +9,7 @@ interface Message {
   content: string;
   timestamp: string;
   image_url?: string;
+  read: boolean;
 }
 
 interface ChatWindowProps {
@@ -103,11 +104,18 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 />
               )}
               {msg.content}
-              <div className="text-[10px] text-right mt-1 opacity-60">
+              <div className="text-[10px] text-right mt-1 opacity-60 flex items-center gap-1">
                 {new Date(msg.timestamp).toLocaleTimeString([], {
                   hour: "2-digit",
                   minute: "2-digit",
                 })}
+                {/* Seen indicator for sent messages */}
+                {msg.sender_id === currentAdmin.id &&
+                  (msg.read ? (
+                    <span title="Seen">✓✓</span>
+                  ) : (
+                    <span title="Sent">✓</span>
+                  ))}
               </div>
             </div>
           </div>

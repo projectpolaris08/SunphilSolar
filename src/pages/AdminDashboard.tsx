@@ -60,6 +60,7 @@ type ChatMessage = {
   content: string;
   timestamp: string;
   image_url?: string;
+  read: boolean;
 };
 
 const AdminDashboard: React.FC = () => {
