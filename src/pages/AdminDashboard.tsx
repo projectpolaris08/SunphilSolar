@@ -15,6 +15,7 @@ import { supabase } from "../lib/supabaseClient";
 import { projects } from "../data/projects";
 import AdminSelectModal from "../components/AdminSelectModal";
 import ChatWindow from "../components/ChatWindow";
+import { adminUsers } from "../data/adminUsers";
 
 interface AdminStats {
   totalProjects: number;
@@ -315,7 +316,46 @@ const AdminDashboard: React.FC = () => {
       batteryTypeBuilt[b.type] = (batteryTypeBuilt[b.type] || 0) + 1;
   });
 
-  // Fetch messages between current admin and selected chat admin
+  // Fetch all conversations (last message and unread count)
+  const fetchConversations = async () => {
+    if (!selectedAdmin) return;
+    const { data } = await supabase
+      .from("messages")
+      .select("*")
+      .or(`sender_id.eq.${selectedAdmin.id},receiver_id.eq.${selectedAdmin.id}`)
+      .order("timestamp", { ascending: false });
+    if (!data) return;
+    const convMap: Record<number, { lastMessage: string; unread: number }> = {};
+    adminUsers.forEach((admin) => {
+      if (admin.id === selectedAdmin.id) return;
+      const convMsgs = data.filter(
+        (msg) =>
+          (msg.sender_id === selectedAdmin.id &&
+            msg.receiver_id === admin.id) ||
+          (msg.sender_id === admin.id && msg.receiver_id === selectedAdmin.id)
+      );
+      if (convMsgs.length > 0) {
+        const lastMsg = convMsgs[0];
+        const unread = convMsgs.filter(
+          (msg) =>
+            msg.receiver_id === selectedAdmin.id &&
+            msg.sender_id === admin.id &&
+            !msg.read
+        ).length;
+        convMap[admin.id] = {
+          lastMessage: lastMsg.content || "[Image]",
+          unread,
+        };
+      } else {
+        convMap[admin.id] = { lastMessage: "", unread: 0 };
+      }
+    });
+  };
+  useEffect(() => {
+    fetchConversations();
+  }, [selectedAdmin, chatMessages]);
+
+  // Update fetchChatMessages to mark messages as read
   const fetchChatMessages = async (otherAdminId: number) => {
     if (!selectedAdmin) return;
     const { data } = await supabase
@@ -326,6 +366,13 @@ const AdminDashboard: React.FC = () => {
       )
       .order("timestamp", { ascending: true });
     setChatMessages((data as ChatMessage[]) || []);
+    // Mark all messages from otherAdminId to current as read
+    await supabase
+      .from("messages")
+      .update({ read: true })
+      .eq("sender_id", otherAdminId)
+      .eq("receiver_id", selectedAdmin.id)
+      .eq("read", false);
   };
 
   // Helper to upload image to Supabase Storage and return public URL
@@ -347,7 +394,8 @@ const AdminDashboard: React.FC = () => {
   // Send a message (with optional image)
   const handleSendMessage = async (
     content: string,
-    imageFile: File | null = null
+    imageFile: File | null = null,
+    receiverId: number
   ) => {
     if (!selectedAdmin) return;
     let image_url = null;
@@ -356,7 +404,7 @@ const AdminDashboard: React.FC = () => {
     }
     const { error } = await supabase.from("messages").insert({
       sender_id: selectedAdmin.id,
-      receiver_id: selectedAdmin.id,
+      receiver_id: receiverId,
       content,
       image_url,
       timestamp: new Date().toISOString(),
@@ -367,7 +415,7 @@ const AdminDashboard: React.FC = () => {
       alert("Failed to send message: " + error.message);
       return;
     }
-    fetchChatMessages(selectedAdmin.id);
+    fetchChatMessages(receiverId);
   };
 
   // When an admin is selected, save to localStorage
@@ -953,31 +1001,26 @@ const AdminDashboard: React.FC = () => {
           )}
         </div>
       </div>
-      {/* ChatWindow integration */}
-      {chatOpen && selectedAdmin && (
-        <ChatWindow
-          open={chatOpen}
-          onClose={() => setChatOpen(false)}
-          admin={{
-            id: selectedAdmin.id,
-            name: selectedAdmin.name,
-            image: selectedAdmin.image,
-          }}
-          currentAdmin={{
-            id: selectedAdmin.id,
-            name: selectedAdmin.name,
-            image: selectedAdmin.image,
-          }}
-          messages={chatMessages}
-          onSend={handleSendMessage}
-        />
-      )}
     </div>
   );
 
   return (
-    <div className="w-full px-2 sm:px-4 py-4 space-y-4 sm:space-y-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
-      {renderDashboardContent()}
+    <div className="flex w-full min-h-screen">
+      <div className="flex-1">
+        {renderDashboardContent()}
+        {chatOpen && selectedAdmin && (
+          <ChatWindow
+            open={chatOpen}
+            onClose={() => setChatOpen(false)}
+            admin={selectedAdmin}
+            currentAdmin={selectedAdmin}
+            messages={chatMessages}
+            onSend={(content, imageFile) =>
+              handleSendMessage(content, imageFile, selectedAdmin.id)
+            }
+          />
+        )}
+      </div>
     </div>
   );
 };

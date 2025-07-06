@@ -21,6 +21,7 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
+import { adminUsers } from "../../data/adminUsers";
 
 // Types (copy from AdminDashboard)
 type AdminUser = { id: number; name: string; image: string };
@@ -392,47 +393,41 @@ const AdminLayout: React.FC = () => {
         })}
       </nav>
       {/* Other online admins at the bottom, Messenger style */}
-      {onlineAdmins.filter(
-        (a) => !selectedAdmin || a.admin_id !== selectedAdmin.id
-      ).length > 0 && (
-        <div className="flex flex-col gap-2 pb-2 mt-auto">
-          {onlineAdmins
-            .filter((a) => !selectedAdmin || a.admin_id !== selectedAdmin.id)
-            .map((admin) => (
-              <div
-                key={admin.admin_id}
-                className={`flex items-center ${
-                  collapsed && !hovered ? "justify-center" : "gap-2"
-                } cursor-pointer`}
-                onClick={() => handleOpenChat(admin)}
-              >
-                <span className="relative inline-block group">
-                  <img
-                    src={admin.image}
-                    alt={admin.name}
-                    className="w-10 h-10 rounded-full border object-cover"
-                  />
+      <div className="flex flex-col gap-4 pb-2 mt-auto mb-4">
+        {adminUsers
+          .filter((a) => !selectedAdmin || a.id !== selectedAdmin.id)
+          .map((admin) => (
+            <div
+              key={admin.id}
+              className={`flex items-center ${
+                collapsed && !hovered ? "justify-center" : "gap-2"
+              } cursor-pointer`}
+              onClick={() =>
+                handleOpenChat({
+                  admin_id: admin.id,
+                  name: admin.name,
+                  image: admin.image,
+                })
+              }
+            >
+              <span className="relative inline-block group">
+                <img
+                  src={admin.image}
+                  alt={admin.name}
+                  className="w-10 h-10 rounded-full border object-cover"
+                />
+                {onlineAdmins.some((a) => a.admin_id === admin.id) && (
                   <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
-                  {/* Unread indicator */}
-                  {unreadCounts[admin.admin_id] > 0 && (
-                    <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></span>
-                  )}
-                  {/* Tooltip for name in collapsed mode */}
-                  {collapsed && !hovered && (
-                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-                      {admin.name}
-                    </span>
-                  )}
-                </span>
-                {(!collapsed || hovered) && (
-                  <span className="font-medium text-gray-900 dark:text-gray-100">
-                    {admin.name}
-                  </span>
                 )}
-              </div>
-            ))}
-        </div>
-      )}
+              </span>
+              {(!collapsed || hovered) && (
+                <span className="font-medium text-gray-900 dark:text-gray-100">
+                  {admin.name}
+                </span>
+              )}
+            </div>
+          ))}
+      </div>
     </div>
   );
 

@@ -18,7 +18,7 @@ interface ChatWindowProps {
   admin: { id: number; name: string; image: string };
   currentAdmin: { id: number; name: string; image: string };
   messages: Message[];
-  onSend: (content: string, imageFile?: File | null) => void;
+  onSend: (content: string, imageFile: File | null, receiverId: number) => void;
 }
 
 const ChatWindow: React.FC<ChatWindowProps> = ({
@@ -128,7 +128,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
         onSubmit={(e) => {
           e.preventDefault();
           if (input.trim() || imageFile) {
-            onSend(input, imageFile);
+            onSend(input, imageFile, admin.id);
             setInput("");
             setImageFile(null);
             setImagePreview(null);
