@@ -437,9 +437,18 @@ const AdminDashboard: React.FC = () => {
       batteryTypeBuilt[b.type] = (batteryTypeBuilt[b.type] || 0) + 1;
   });
 
+  // Fetch online admins
+  const fetchOnlineAdmins = async () => {
+    const { data } = await supabase
+      .from("admin_online_status")
+      .select("admin_id, name, image")
+      .eq("is_online", true);
+    setOnlineAdmins((data as OnlineAdmin[]) || []);
+  };
+
   // Helper: Mark admin online in Supabase
   const markAdminOnline = async (admin: AdminUser) => {
-    const { error } = await supabase.from("admin_online_status").upsert(
+    await supabase.from("admin_online_status").upsert(
       {
         admin_id: admin.id,
         name: admin.name,
@@ -449,12 +458,6 @@ const AdminDashboard: React.FC = () => {
       },
       { onConflict: "admin_id" }
     );
-
-    if (error) {
-      console.error("Error marking admin online:", error);
-    } else {
-      console.log(`Marked ${admin.name} as online`);
-    }
   };
 
   // Helper: Mark admin offline in Supabase
@@ -469,22 +472,6 @@ const AdminDashboard: React.FC = () => {
       },
       { onConflict: "admin_id" }
     );
-  };
-
-  // Fetch online admins
-  const fetchOnlineAdmins = async () => {
-    const { data, error } = await supabase
-      .from("admin_online_status")
-      .select("admin_id, name, image")
-      .eq("is_online", true);
-
-    if (error) {
-      console.error("Error fetching online admins:", error);
-      return;
-    }
-
-    console.log("Fetched online admins:", data);
-    setOnlineAdmins((data as OnlineAdmin[]) || []);
   };
 
   // After admin selection, mark as online and start polling for online admins
@@ -571,13 +558,15 @@ const AdminDashboard: React.FC = () => {
     if (!selectedAdmin) return;
     const { data } = await supabase
       .from("messages")
-      .select("sender_id, count:count(*)")
+      .select("sender_id")
       .eq("receiver_id", selectedAdmin.id)
       .eq("read", false);
-    // data: [{ sender_id: 2, count: 3 }, ...]
+
+    // Count unread messages per sender
     const counts: Record<number, number> = {};
-    ((data as any[]) || []).forEach((row) => {
-      counts[row.sender_id as number] = row.count as number;
+    (data || []).forEach((row: { sender_id: number }) => {
+      const senderId = row.sender_id;
+      counts[senderId] = (counts[senderId] || 0) + 1;
     });
     setUnreadCounts(counts);
   };
