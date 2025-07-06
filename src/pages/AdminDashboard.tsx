@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import {
   BarChart3,
@@ -32,6 +32,8 @@ import { useCalendarEvents } from "../contexts/CalendarEventsContext";
 import { supabase } from "../lib/supabaseClient";
 import useAdminDarkMode from "../hooks/useAdminDarkMode";
 import { projects } from "../data/projects";
+import AdminSelectModal from "../components/AdminSelectModal";
+import ChatWindow from "../components/ChatWindow";
 
 interface AdminStats {
   totalProjects: number;
@@ -48,6 +50,17 @@ interface AdminActivity {
   actor: string | null;
   timestamp: string;
 }
+
+type AdminUser = { id: number; name: string; image: string };
+type OnlineAdmin = { admin_id: number; name: string; image: string };
+type ChatMessage = {
+  id: string;
+  sender_id: number;
+  receiver_id: number;
+  content: string;
+  timestamp: string;
+  image_url?: string;
+};
 
 const AdminDashboard: React.FC = () => {
   const { login, logout, isAuthenticated, loading } = useAdminAuth();
@@ -83,6 +96,15 @@ const AdminDashboard: React.FC = () => {
   // State for build summaries
   const [inverterBuilds, setInverterBuilds] = useState<any[]>([]);
   const [batteryBuilds, setBatteryBuilds] = useState<any[]>([]);
+  const [showAdminSelectModal, setShowAdminSelectModal] = useState(false);
+  const [selectedAdmin, setSelectedAdmin] = useState<AdminUser | null>(null);
+  const [onlineAdmins, setOnlineAdmins] = useState<OnlineAdmin[]>([]);
+  const pollingRef = useRef<NodeJS.Timeout | null>(null);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chatAdmin, setChatAdmin] = useState<OnlineAdmin | null>(null);
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
+  const chatPollingRef = useRef<NodeJS.Timeout | null>(null);
+  const [unreadCounts, setUnreadCounts] = useState<Record<number, number>>({});
 
   // Compute upcoming installations from calendar events (not projects)
   const now = new Date();
@@ -93,6 +115,9 @@ const AdminDashboard: React.FC = () => {
 
   // Get greeting based on time of day
   const getGreeting = () => {
+    if (selectedAdmin && selectedAdmin.name) {
+      return `Hello, ${selectedAdmin.name}!`;
+    }
     return "Hello, Diane!";
   };
 
@@ -243,6 +268,8 @@ const AdminDashboard: React.FC = () => {
       const success = await login(loginForm.email, loginForm.password);
       if (!success) {
         setLoginError("Invalid email or password");
+      } else {
+        setShowAdminSelectModal(true);
       }
     } catch {
       setLoginError("Login failed. Please try again.");
@@ -252,6 +279,8 @@ const AdminDashboard: React.FC = () => {
   };
 
   const handleLogout = () => {
+    if (selectedAdmin) markAdminOffline(selectedAdmin);
+    localStorage.removeItem("selectedAdmin");
     logout();
     navigate("/");
   };
@@ -408,6 +437,177 @@ const AdminDashboard: React.FC = () => {
       batteryTypeBuilt[b.type] = (batteryTypeBuilt[b.type] || 0) + 1;
   });
 
+  // Helper: Mark admin online in Supabase
+  const markAdminOnline = async (admin: AdminUser) => {
+    await supabase.from("admin_online_status").upsert(
+      {
+        admin_id: admin.id,
+        name: admin.name,
+        image: admin.image,
+        is_online: true,
+        last_active: new Date().toISOString(),
+      },
+      { onConflict: "admin_id" }
+    );
+  };
+
+  // Helper: Mark admin offline in Supabase
+  const markAdminOffline = async (admin: AdminUser) => {
+    await supabase.from("admin_online_status").upsert(
+      {
+        admin_id: admin.id,
+        name: admin.name,
+        image: admin.image,
+        is_online: false,
+        last_active: new Date().toISOString(),
+      },
+      { onConflict: "admin_id" }
+    );
+  };
+
+  // Fetch online admins
+  const fetchOnlineAdmins = async () => {
+    const { data } = await supabase
+      .from("admin_online_status")
+      .select("admin_id, name, image")
+      .eq("is_online", true);
+    setOnlineAdmins((data as OnlineAdmin[]) || []);
+  };
+
+  // After admin selection, mark as online and start polling for online admins
+  useEffect(() => {
+    if (selectedAdmin) {
+      markAdminOnline(selectedAdmin);
+      fetchOnlineAdmins();
+      if (pollingRef.current) clearInterval(pollingRef.current);
+      pollingRef.current = setInterval(fetchOnlineAdmins, 10000); // every 10s
+      // Mark offline on tab close
+      const handleUnload = () => markAdminOffline(selectedAdmin);
+      window.addEventListener("beforeunload", handleUnload);
+      return () => {
+        window.removeEventListener("beforeunload", handleUnload);
+        markAdminOffline(selectedAdmin);
+        if (pollingRef.current) clearInterval(pollingRef.current);
+      };
+    }
+  }, [selectedAdmin]);
+
+  // Fetch messages between current admin and selected chat admin
+  const fetchChatMessages = async (otherAdminId: number) => {
+    if (!selectedAdmin) return;
+    const { data } = await supabase
+      .from("messages")
+      .select("*")
+      .or(
+        `and(sender_id.eq.${selectedAdmin.id},receiver_id.eq.${otherAdminId}),and(sender_id.eq.${otherAdminId},receiver_id.eq.${selectedAdmin.id})`
+      )
+      .order("timestamp", { ascending: true });
+    setChatMessages((data as ChatMessage[]) || []);
+  };
+
+  // Helper to upload image to Supabase Storage and return public URL
+  const uploadChatImage = async (file: File) => {
+    const fileExt = file.name.split(".").pop();
+    const fileName = `${Date.now()}-${Math.random()
+      .toString(36)
+      .substr(2, 9)}.${fileExt}`;
+    const { error } = await supabase.storage
+      .from("chat-images")
+      .upload(fileName, file);
+    if (error) return null;
+    const { publicUrl } = supabase.storage
+      .from("chat-images")
+      .getPublicUrl(fileName).data;
+    return publicUrl;
+  };
+
+  // Send a message (with optional image)
+  const handleSendMessage = async (
+    content: string,
+    imageFile: File | null = null
+  ) => {
+    if (!selectedAdmin || !chatAdmin) return;
+    let image_url = null;
+    if (imageFile) {
+      image_url = await uploadChatImage(imageFile);
+    }
+    await supabase.from("messages").insert({
+      sender_id: selectedAdmin.id,
+      receiver_id: chatAdmin.admin_id,
+      content,
+      image_url,
+    });
+    fetchChatMessages(chatAdmin.admin_id);
+    fetchUnreadCounts();
+  };
+
+  // Fetch unread counts for each admin
+  const fetchUnreadCounts = async () => {
+    if (!selectedAdmin) return;
+    const { data } = await supabase
+      .from("messages")
+      .select("sender_id, count:count(*)")
+      .eq("receiver_id", selectedAdmin.id)
+      .eq("read", false);
+    // data: [{ sender_id: 2, count: 3 }, ...]
+    const counts: Record<number, number> = {};
+    ((data as any[]) || []).forEach((row) => {
+      counts[row.sender_id as number] = row.count as number;
+    });
+    setUnreadCounts(counts);
+  };
+
+  // Mark all messages from chatAdmin as read
+  const markMessagesAsRead = async (otherAdminId: number) => {
+    if (!selectedAdmin) return;
+    await supabase
+      .from("messages")
+      .update({ read: true })
+      .eq("sender_id", otherAdminId)
+      .eq("receiver_id", selectedAdmin.id)
+      .eq("read", false);
+    fetchUnreadCounts();
+  };
+
+  // Update polling and chat open logic
+  const handleOpenChat = (admin: OnlineAdmin) => {
+    setChatAdmin(admin);
+    setChatOpen(true);
+    fetchChatMessages(admin.admin_id);
+    markMessagesAsRead(admin.admin_id);
+    if (chatPollingRef.current) clearInterval(chatPollingRef.current);
+    chatPollingRef.current = setInterval(() => {
+      fetchChatMessages(admin.admin_id);
+      markMessagesAsRead(admin.admin_id);
+    }, 5000);
+  };
+
+  // Close chat window
+  const handleCloseChat = () => {
+    setChatOpen(false);
+    setChatAdmin(null);
+    setChatMessages([]);
+    if (chatPollingRef.current) clearInterval(chatPollingRef.current);
+  };
+
+  // Fetch unread counts on login and when messages change
+  useEffect(() => {
+    fetchUnreadCounts();
+  }, [selectedAdmin, chatMessages]);
+
+  // Restore selectedAdmin from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("selectedAdmin");
+    if (saved) setSelectedAdmin(JSON.parse(saved));
+  }, []);
+
+  // When an admin is selected, save to localStorage
+  const handleAdminSelect = (user: AdminUser) => {
+    setSelectedAdmin(user);
+    setShowAdminSelectModal(false);
+    localStorage.setItem("selectedAdmin", JSON.stringify(user));
+  };
+
   if (loading) return <div>Loading...</div>;
 
   if (!isAuthenticated) {
@@ -489,6 +689,10 @@ const AdminDashboard: React.FC = () => {
     );
   }
 
+  if (showAdminSelectModal) {
+    return <AdminSelectModal onSelect={handleAdminSelect} />;
+  }
+
   const renderDashboardContent = () => (
     <div className="w-full px-2 sm:px-4 py-4 space-y-4 sm:space-y-6">
       {/* Header with hamburger and centered title */}
@@ -547,11 +751,28 @@ const AdminDashboard: React.FC = () => {
         style={{ willChange: "transform" }}
         aria-hidden={!sidebarOpen}
       >
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-          <span className="font-bold text-xl dark:text-gray-100">Admin</span>
+        <div
+          className={`flex items-center ${
+            !collapsed || hovered ? "justify-between" : "justify-center"
+          } p-4 border-b border-gray-200 dark:border-gray-700`}
+        >
+          {(!collapsed || hovered) && (
+            <span className="flex items-center gap-2">
+              <img
+                src="/images/Sunphil.jpg"
+                alt="Sunphil Solar"
+                className="w-8 h-8 rounded-full border bg-white ring-2 ring-gray-200 dark:ring-gray-700 object-cover"
+              />
+              <span className="font-bold text-xl text-gray-900 dark:text-gray-100">
+                Sunphil Solar
+              </span>
+            </span>
+          )}
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors"
+            className={`flex items-center ${
+              collapsed ? "justify-center" : "gap-2"
+            } text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors`}
             title="Logout"
           >
             <LogOut size={20} />
@@ -1023,12 +1244,96 @@ const AdminDashboard: React.FC = () => {
           )}
         </div>
       </div>
+      {/* ChatWindow integration */}
+      {chatOpen && chatAdmin && selectedAdmin && (
+        <ChatWindow
+          open={chatOpen}
+          onClose={handleCloseChat}
+          admin={{
+            id: chatAdmin.admin_id,
+            name: chatAdmin.name,
+            image: chatAdmin.image,
+          }}
+          currentAdmin={{
+            id: selectedAdmin.id,
+            name: selectedAdmin.name,
+            image: selectedAdmin.image,
+          }}
+          messages={chatMessages}
+          onSend={handleSendMessage}
+        />
+      )}
     </div>
   );
 
   // Sidebar rendering
   const renderSidebar = () => (
     <div className="relative h-full flex flex-col gap-1 p-2">
+      {/* Current admin at the top, below header */}
+      {selectedAdmin && (
+        <div
+          className={`flex items-center gap-2 p-2 mb-2 border-b border-gray-200 dark:border-gray-700 ${
+            collapsed && !hovered ? "justify-center" : ""
+          }`}
+        >
+          <span className="relative inline-block">
+            <img
+              src={selectedAdmin.image}
+              alt={selectedAdmin.name}
+              className="w-10 h-10 border object-cover rounded-full"
+            />
+            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+          </span>
+          {(!collapsed || hovered) && (
+            <span className="font-semibold text-base text-gray-900 dark:text-gray-100">
+              {selectedAdmin.name}
+            </span>
+          )}
+        </div>
+      )}
+      {/* Other online admins at the bottom, Messenger style */}
+      {onlineAdmins.filter(
+        (a) => !selectedAdmin || a.admin_id !== selectedAdmin.id
+      ).length > 0 && (
+        <div className="flex flex-col gap-2 pb-2 mt-auto">
+          {onlineAdmins
+            .filter((a) => !selectedAdmin || a.admin_id !== selectedAdmin.id)
+            .map((admin) => (
+              <div
+                key={admin.admin_id}
+                className={`flex items-center ${
+                  collapsed && !hovered ? "justify-center" : "gap-2"
+                } cursor-pointer`}
+                onClick={() => handleOpenChat(admin)}
+              >
+                <span className="relative inline-block group">
+                  <img
+                    src={admin.image}
+                    alt={admin.name}
+                    className="w-10 h-10 rounded-full border object-cover"
+                  />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                  {/* Unread indicator */}
+                  {unreadCounts[admin.admin_id] > 0 && (
+                    <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></span>
+                  )}
+                  {/* Tooltip for name in collapsed mode */}
+                  {collapsed && !hovered && (
+                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                      {admin.name}
+                    </span>
+                  )}
+                </span>
+                {(!collapsed || hovered) && (
+                  <span className="font-medium text-gray-900 dark:text-gray-100">
+                    {admin.name}
+                  </span>
+                )}
+              </div>
+            ))}
+        </div>
+      )}
+      {/* Navigation menu */}
       <nav className="flex-1 flex flex-col gap-1">
         {menuItems.map((item) => {
           const isActive =
@@ -1112,8 +1417,15 @@ const AdminDashboard: React.FC = () => {
             } p-4 border-b border-gray-200 dark:border-gray-700`}
           >
             {(!collapsed || hovered) && (
-              <span className="font-bold text-xl dark:text-gray-100">
-                Admin
+              <span className="flex items-center gap-2">
+                <img
+                  src="/images/Sunphil.jpg"
+                  alt="Sunphil Solar"
+                  className="w-8 h-8 rounded-full border bg-white ring-2 ring-gray-200 dark:ring-gray-700 object-cover"
+                />
+                <span className="font-bold text-xl text-gray-900 dark:text-gray-100">
+                  Sunphil Solar
+                </span>
               </span>
             )}
             <button
