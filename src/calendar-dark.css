@@ -98,7 +98,7 @@
 
 .rbc-row-segment {
   vertical-align: top !important;
-  display: block !important;
+  /* display: block !important; */
 }
 
 .rbc-date-cell {
@@ -108,7 +108,6 @@
   padding-right: 2px !important;
   vertical-align: top !important;
 }
-
 .rbc-event {
   height: 100%;
   min-height: 60px;

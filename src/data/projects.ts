@@ -12,6 +12,111 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "paranaque-city-6kw",
+    image: "/images/project51.jpg",
+    location: "Parañaque City, Metro Manila, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-09",
+    clientType: "Residential (Urban Homeowner)",
+    specification: [
+      "6kW Deye Hybrid Inverter – Intelligent energy controller that balances solar input, battery storage, and grid power for consistent energy availability.",
+      "13 × 615W Canadian Bifacial Solar Panels – Premium bifacial design increases power generation by capturing reflected sunlight, making it ideal for urban rooftops.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery that stores solar power for evening use and emergency backup during outages.",
+    ],
+    benefits: [
+      "Save up to 80% on monthly electricity bills",
+      "Enjoy uninterrupted power for lights, WiFi, fans, refrigerators, and electronics",
+      "Reduce carbon emissions by approximately 1,100–1,300 kg/month",
+      "Tailored for Metro Manila homes with limited space and medium energy needs",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar system in Parañaque City to support a homeowner seeking reduced power bills and reliable energy during Metro Manila's frequent brownouts. Designed for efficiency and durability, this system delivers real value and 24/7 peace of mind. Parañaque households—especially in communities like BF Homes, Don Bosco, and Multinational Village—are switching to smart hybrid systems. With solar power, homeowners gain control over rising utility costs while contributing to a cleaner future.",
+  },
+  {
+    id: "batangas-8kw-hybrid",
+    image: "/images/project47.jpg",
+    location: "Batangas Province, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-07",
+    clientType: "Residential Estate / Small Commercial Property",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
+      "16 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "2 × 51.2V 280Ah LiFePO₄ Batteries – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
+    ],
+    benefits: [
+      "Save up to 90% or more on monthly electricity expenses",
+      "Full coverage for air conditioning, refrigeration, lighting, computers, CCTV, and more",
+      "Offset approx. 4,500–5,000 kg of CO₂ emissions monthly (combined estate)",
+      "Suitable for large residential estates, farms, resorts, or family compounds in provincial areas",
+    ],
+    description:
+      "Part of a high-capacity hybrid solar installation in Batangas, designed for a large household or small business with substantial daily energy consumption. This 8kW system is one of four inverters installed for maximum self-sufficiency, long-term savings, and uninterrupted power during grid outages.",
+  },
+  {
+    id: "batangas-6kw-hybrid-1",
+    image: "/images/project48.jpg",
+    location: "Batangas Province, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-07",
+    clientType: "Residential Estate / Small Commercial Property",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
+      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "51.2V 280Ah LiFePO₄ Battery – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
+    ],
+    benefits: [
+      "Save up to 90% or more on monthly electricity expenses (estate total)",
+      "Full coverage for air conditioning, refrigeration, lighting, computers, CCTV, and more",
+      "Offset approx. 4,500–5,000 kg of CO₂ emissions monthly (combined estate)",
+      "Suitable for large residential estates, farms, resorts, or family compounds in provincial areas",
+    ],
+    description:
+      "Part of a high-capacity hybrid solar installation in Batangas, designed for a large household or small business with substantial daily energy consumption. This 6kW system is one of four inverters installed for maximum self-sufficiency, long-term savings, and uninterrupted power during grid outages.",
+  },
+  {
+    id: "batangas-6kw-hybrid-2",
+    image: "/images/project49.jpg",
+    location: "Batangas Province, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-07",
+    clientType: "Residential Estate / Small Commercial Property",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
+      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "51.2V 280Ah LiFePO₄ Battery – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
+    ],
+    benefits: [
+      "Save up to 90% or more on monthly electricity expenses (estate total)",
+      "Full coverage for air conditioning, refrigeration, lighting, computers, CCTV, and more",
+      "Offset approx. 4,500–5,000 kg of CO₂ emissions monthly (combined estate)",
+      "Suitable for large residential estates, farms, resorts, or family compounds in provincial areas",
+    ],
+    description:
+      "Part of a high-capacity hybrid solar installation in Batangas, designed for a large household or small business with substantial daily energy consumption. This 6kW system is one of four inverters installed for maximum self-sufficiency, long-term savings, and uninterrupted power during grid outages.",
+  },
+  {
+    id: "batangas-6kw-hybrid-3",
+    image: "/images/project50.jpg",
+    location: "Batangas Province, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-07",
+    clientType: "Residential Estate / Small Commercial Property",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
+      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "51.2V 280Ah LiFePO₄ Battery – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
+    ],
+    benefits: [
+      "Save up to 90% or more on monthly electricity expenses (estate total)",
+      "Full coverage for air conditioning, refrigeration, lighting, computers, CCTV, and more",
+      "Offset approx. 4,500–5,000 kg of CO₂ emissions monthly (combined estate)",
+      "Suitable for large residential estates, farms, resorts, or family compounds in provincial areas",
+    ],
+    description:
+      "Part of a high-capacity hybrid solar installation in Batangas, designed for a large household or small business with substantial daily energy consumption. This 6kW system is one of four inverters installed for maximum self-sufficiency, long-term savings, and uninterrupted power during grid outages.",
+  },
+  {
     id: "north-fairview-qc-12kw",
     image: "/images/project46.jpg",
     location: "North Fairview, Quezon City, Philippines",
