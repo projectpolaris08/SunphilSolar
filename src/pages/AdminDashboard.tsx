@@ -541,7 +541,7 @@ const AdminDashboard: React.FC = () => {
         <p className="text-2xl font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
           {getGreeting()}
         </p>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
           {currentDateTime.toLocaleDateString("en-US", {
             weekday: "long",
             year: "numeric",
@@ -694,20 +694,20 @@ const AdminDashboard: React.FC = () => {
             </h3>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Total Capacity:
                 </span>
-                <span className="font-bold text-blue-600">
+                <span className="font-bold text-blue-600 dark:text-blue-400">
                   {capacitySummary.totalSystemCapacity} kW
                 </span>
               </div>
-              <div className="border-t pt-2">
-                <span className="text-sm font-medium text-gray-600">
+              <div className="border-t border-gray-200 dark:border-gray-600 pt-2">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   Breakdown:
                 </span>
                 {Object.entries(capacitySummary.capacityBreakdown).length ===
                 0 ? (
-                  <div className="text-xs text-gray-400">
+                  <div className="text-xs text-gray-400 dark:text-gray-300">
                     No scheduled system capacities.
                   </div>
                 ) : (
@@ -725,30 +725,32 @@ const AdminDashboard: React.FC = () => {
                         <div
                           key={capacity}
                           className={
-                            "flex justify-between items-center text-sm py-1 px-2 rounded-lg mb-1 border border-red-300"
+                            "flex justify-between items-center text-sm py-1 px-2 rounded-lg mb-1 border"
                           }
                           style={
                             isShort
                               ? {
                                   background: "#F08080",
+                                  borderColor: "#EF4444",
                                 }
                               : {
                                   background:
                                     "linear-gradient(90deg, #9ebd13 0%, #008552 100%)",
+                                  borderColor: "#10B981",
                                 }
                           }
                         >
-                          <span className="font-bold text-base">
+                          <span className="font-bold text-base text-gray-900 dark:text-white">
                             {capacity}kW:
                           </span>
                           <span className="flex gap-2 items-center flex-wrap">
-                            <span className="bg-gray-200 px-2 py-0.5 rounded-full font-semibold text-gray-800">
+                            <span className="bg-gray-200 dark:bg-gray-600 px-2 py-0.5 rounded-full font-semibold text-gray-800 dark:text-gray-200">
                               Required: {required}
                             </span>
-                            <span className="bg-green-200 px-2 py-0.5 rounded-full font-semibold text-green-800 flex items-center gap-1">
+                            <span className="bg-green-200 dark:bg-green-700 px-2 py-0.5 rounded-full font-semibold text-green-800 dark:text-green-200 flex items-center gap-1">
                               Built: {built} <span>✅</span>
                             </span>
-                            <span className="bg-blue-200 px-2 py-0.5 rounded-full font-semibold text-blue-800 flex items-center gap-1">
+                            <span className="bg-blue-200 dark:bg-blue-700 px-2 py-0.5 rounded-full font-semibold text-blue-800 dark:text-blue-200 flex items-center gap-1">
                               In-progress: {inProgress} <span>🔨</span>
                             </span>
                             {isShort && (
@@ -784,20 +786,20 @@ const AdminDashboard: React.FC = () => {
             </h3>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Total Batteries:
                 </span>
-                <span className="font-bold text-green-600">
+                <span className="font-bold text-green-600 dark:text-green-400">
                   {capacitySummary.totalBatteries} units
                 </span>
               </div>
-              <div className="border-t pt-2">
-                <span className="text-sm font-medium text-gray-600">
+              <div className="border-t border-gray-200 dark:border-gray-600 pt-2">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                   Breakdown:
                 </span>
                 {Object.entries(capacitySummary.batteryBreakdown).length ===
                 0 ? (
-                  <div className="text-xs text-gray-400">
+                  <div className="text-xs text-gray-400 dark:text-gray-500">
                     No scheduled batteries.
                   </div>
                 ) : (
@@ -812,30 +814,32 @@ const AdminDashboard: React.FC = () => {
                         <div
                           key={battery}
                           className={
-                            "flex justify-between items-center text-sm py-1 px-2 rounded-lg mb-1 border border-red-300"
+                            "flex justify-between items-center text-sm py-1 px-2 rounded-lg mb-1 border"
                           }
                           style={
                             isShort
                               ? {
                                   background: "#F08080",
+                                  borderColor: "#EF4444",
                                 }
                               : {
                                   background:
                                     "linear-gradient(90deg, #9ebd13 0%, #008552 100%)",
+                                  borderColor: "#10B981",
                                 }
                           }
                         >
-                          <span className="font-bold text-base">
+                          <span className="font-bold text-base text-gray-900 dark:text-white">
                             {battery}:
                           </span>
                           <span className="flex gap-2 items-center flex-wrap">
-                            <span className="bg-gray-200 px-2 py-0.5 rounded-full font-semibold text-gray-800">
+                            <span className="bg-gray-200 dark:bg-gray-600 px-2 py-0.5 rounded-full font-semibold text-gray-800 dark:text-gray-200">
                               Required: {required}
                             </span>
-                            <span className="bg-green-200 px-2 py-0.5 rounded-full font-semibold text-green-800 flex items-center gap-1">
+                            <span className="bg-green-200 dark:bg-green-700 px-2 py-0.5 rounded-full font-semibold text-green-800 dark:text-green-200 flex items-center gap-1">
                               Built: {built} <span>✅</span>
                             </span>
-                            <span className="bg-blue-200 px-2 py-0.5 rounded-full font-semibold text-blue-800 flex items-center gap-1">
+                            <span className="bg-blue-200 dark:bg-blue-700 px-2 py-0.5 rounded-full font-semibold text-blue-800 dark:text-blue-200 flex items-center gap-1">
                               In-progress: {inProgress} <span>🔨</span>
                             </span>
                             {isShort && (
