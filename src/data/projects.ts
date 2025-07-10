@@ -20,7 +20,7 @@ export const projects: Project[] = [
     clientType: "Residential Homeowner",
     specification: [
       "6kW Deye Hybrid Inverter – Smart hybrid inverter that automatically balances power between solar, battery, and grid sources.",
-      "10 × 615W Canadian Bifacial Solar Panels – Efficient bifacial design boosts power output by utilizing both direct and reflected sunlight—perfect for Metro Manila rooftops.",
+      "10 × 615W Canadian Bifacial Solar Panels – Efficient bifacial design boosts power output by utilizing both direct and reflected sunlight perfect for Metro Manila rooftops.",
       "51.2V 280Ah LiFePO₄ Battery – High-performance lithium battery ensures nighttime power use and backup during brownouts.",
     ],
     benefits: [
@@ -29,7 +29,7 @@ export const projects: Project[] = [
       "Reduces up to 1,000 kg of CO₂ emissions monthly",
       "Ideal for urban homes with limited space in Metro Manila",
     ],
-    description: "Sunphil Solar successfully installed a 6kW hybrid solar power system in Grace Park, Caloocan City, designed to help a city-based homeowner reduce their electricity bills and maintain power during frequent outages. This compact yet powerful setup is ideal for households with essential energy needs. Grace Park is one of many communities in North Caloocan embracing solar energy to fight rising electricity rates and inconsistent power supply. Sunphil Solar delivers smart energy solutions tailored for Filipino households—big or small.",
+    description: "Sunphil Solar successfully installed a 6kW hybrid solar power system in Grace Park, Caloocan City, designed to help a city-based homeowner reduce their electricity bills and maintain power during frequent outages. This compact yet powerful setup is ideal for households with essential energy needs. Grace Park is one of many communities in South Caloocan embracing solar energy to fight rising electricity rates and inconsistent power supply. Sunphil Solar delivers smart energy solutions tailored for Filipino households big or small.",
   },
   {
     id: "paranaque-city-6kw",
