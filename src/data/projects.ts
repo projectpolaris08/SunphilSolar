@@ -29,7 +29,8 @@ export const projects: Project[] = [
       "Reduces up to 1,000 kg of CO₂ emissions monthly",
       "Ideal for urban homes with limited space in Metro Manila",
     ],
-    description: "Sunphil Solar successfully installed a 6kW hybrid solar power system in Grace Park, Caloocan City, designed to help a city-based homeowner reduce their electricity bills and maintain power during frequent outages. This compact yet powerful setup is ideal for households with essential energy needs. Grace Park is one of many communities in South Caloocan embracing solar energy to fight rising electricity rates and inconsistent power supply. Sunphil Solar delivers smart energy solutions tailored for Filipino households big or small.",
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system in Grace Park, Caloocan City, designed to help a city-based homeowner reduce their electricity bills and maintain power during frequent outages. This compact yet powerful setup is ideal for households with essential energy needs. Grace Park is one of many communities in South Caloocan embracing solar energy to fight rising electricity rates and inconsistent power supply. Sunphil Solar delivers smart energy solutions tailored for Filipino households big or small.",
   },
   {
     id: "paranaque-city-6kw",
@@ -1088,5 +1089,26 @@ export const projects: Project[] = [
     ],
     description:
       "Sunphil Solar successfully installed a 12kW hybrid solar power system in Las Piñas, designed to support a household with heavy energy demands and the need for stable backup power. The homeowner wanted energy savings, self-reliance, and security during outages—this system delivers all three.\n\nThis project in Las Piñas is part of our continuing commitment to energize homes in BF Resort, Talon Dos, Pilar Village, and neighboring communities. With Sunphil Solar, clean power is within reach—whether for savings, backup, or peace of mind.\n\nSunphil Solar provides: Expert Solar Design & Installation, After-Sales Support, Premium Equipment with Warranty. Get a Free Solar Consultation Now.",
+  },
+  {
+    id: "porac-pampanga-2",
+    image: "/images/project53.jpg",
+    location: "Porac, Pampanga, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-11",
+    clientType: "Residential (Mid- to High-Consumption Household)",
+    specification: [
+      "8kW Deye Hybrid Inverter – Intelligent hybrid inverter with real-time switching between solar, battery, and grid.",
+      "18 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules capture sunlight from both sides, maximizing output on open rooftops.",
+      "51.2V 280Ah LiFePO₄ Battery – Lithium iron phosphate battery ensures power availability during peak evening hours and outages.",
+    ],
+    benefits: [
+      "Save up to 80% on electricity bills",
+      "Reliable backup power for essential appliances during brownouts",
+      "Offset up to 1,400 kg of CO₂ emissions monthly",
+      "Ideal for semi-rural homes and estates in Pampanga with moderate to high energy needs",
+    ],
+    description:
+      "Sunphil Solar completed the installation of an 8kW hybrid solar system in Porac, Pampanga, for a homeowner seeking reliable, renewable power. The hybrid setup addresses the area's frequent brownouts and rising energy costs providing clean energy during the day and battery backup at night. Sunphil Solar is proud to support the energy independence of households in Porac, as well as nearby towns like Angeles, Lubao, and Floridablanca. Our hybrid systems are engineered for performance, even in off-grid or weak-grid areas.",
   },
 ];
