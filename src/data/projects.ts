@@ -1111,4 +1111,25 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar completed the installation of an 8kW hybrid solar system in Porac, Pampanga, for a homeowner seeking reliable, renewable power. The hybrid setup addresses the area's frequent brownouts and rising energy costs providing clean energy during the day and battery backup at night. Sunphil Solar is proud to support the energy independence of households in Porac, as well as nearby towns like Angeles, Lubao, and Floridablanca. Our hybrid systems are engineered for performance, even in off-grid or weak-grid areas.",
   },
+  {
+    id: "taytay-rizal-6kw",
+    image: "/images/project54.jpg",
+    location: "Taytay, Rizal, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-13",
+    clientType: "Residential (Urban/Suburban Household)",
+    specification: [
+      "6kW Deye Hybrid Inverter – Advanced inverter that integrates solar, battery, and grid sources to ensure seamless energy availability.",
+      "13 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels that absorb sunlight from both sides, boosting generation even in tight urban spaces.",
+      "51.2V 314Ah LiFePO₄ Battery – Powerful lithium battery provides backup energy storage for nighttime usage and power interruptions.",
+    ],
+    benefits: [
+      "Save up to 75–80% on monthly electric bills",
+      "Maintain power for essential loads like lights, fans, refrigerators, internet, and home security",
+      "Offset approx. 1,200–1,400 kg of CO₂ emissions per month",
+      "Best suited for urban and hillside homes in Rizal with medium energy needs",
+    ],
+    description:
+      "Sunphil Solar delivered a reliable 6kW hybrid solar system for a homeowner in Taytay, Rizal, seeking energy independence and consistent backup power during frequent outages. Designed for efficiency and resilience, this hybrid system provides clean solar energy during the day and uninterrupted power at night. With rapidly rising energy costs and occasional service interruptions, households in Taytay, Antipolo, and Angono are making the switch to hybrid solar. This system shows how solar can work effectively in tightly packed residential zones while delivering major savings and resilience.",
+  },
 ];
