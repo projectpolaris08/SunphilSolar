@@ -1132,4 +1132,25 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar delivered a reliable 6kW hybrid solar system for a homeowner in Taytay, Rizal, seeking energy independence and consistent backup power during frequent outages. Designed for efficiency and resilience, this hybrid system provides clean solar energy during the day and uninterrupted power at night. With rapidly rising energy costs and occasional service interruptions, households in Taytay, Antipolo, and Angono are making the switch to hybrid solar. This system shows how solar can work effectively in tightly packed residential zones while delivering major savings and resilience.",
   },
+  {
+    id: "bulacan-bulacan-8kw",
+    image: "/images/project55.jpg",
+    location: "Bulacan, Bulacan, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-14",
+    clientType: "Residential (Mid- to High-Energy Household)",
+    specification: [
+      "8kW Deye Hybrid Inverter – Efficient hybrid inverter manages solar, battery, and grid input for uninterrupted energy flow.",
+      "16 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules maximize energy output by capturing light from both sides ideal for open rooftops.",
+      "2 × 51.2V 280Ah LiFePO₄ Batteries – Powerful lithium battery provides backup energy storage for nighttime usage and power interruptions.",
+    ],
+    benefits: [
+      "Save up to 80–85% on monthly electric bills",
+      "Maintain consistent power for lighting, appliances, entertainment, and home offices",
+      "Offset approximately 1,500–1,700 kg of CO₂ emissions per month",
+      "Optimized for Bulacan households looking for resilience and savings",
+    ],
+    description:
+      "Sunphil Solar successfully installed an 8kW hybrid solar system for a homeowner in Bulacan, Bulacan, focused on reducing power costs and ensuring 24/7 energy reliability. With frequent brownouts and rising utility rates in the region, this system gives the household energy freedom and long-term savings. As Bulacan continues to expand, more families in areas like Guiguinto, Baliuag, and Malolos are switching to hybrid solar for stable and sustainable power. Sunphil Solar is proud to serve as a trusted installer in Central Luzon, providing free energy evaluation, fast and clean installation, and equipment with full warranty and local support.",
+  },
 ];
