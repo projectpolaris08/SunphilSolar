@@ -1153,4 +1153,46 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar successfully installed an 8kW hybrid solar system for a homeowner in Bulacan, Bulacan, focused on reducing power costs and ensuring 24/7 energy reliability. With frequent brownouts and rising utility rates in the region, this system gives the household energy freedom and long-term savings. As Bulacan continues to expand, more families in areas like Guiguinto, Baliuag, and Malolos are switching to hybrid solar for stable and sustainable power. Sunphil Solar is proud to serve as a trusted installer in Central Luzon, providing free energy evaluation, fast and clean installation, and equipment with full warranty and local support.",
   },
+  {
+    id: "sta-rosa-laguna-12kw-2025",
+    image: "/images/project56.jpg",
+    location: "Sta. Rosa, Laguna, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-07-15",
+    clientType: "Residential (High-Energy Household)",
+    specification: [
+      "12kW Deye Hybrid Inverter – High-capacity hybrid inverter manages solar, battery, and grid input for uninterrupted energy flow.",
+      "20 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules maximize energy output by capturing light from both sides ideal for open rooftops.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Substantial lithium storage allows reliable nighttime usage and strong backup capacity during outages.",
+    ],
+    benefits: [
+      "Save up to 80–85% on monthly electric bills",
+      "Maintain consistent power for lighting, appliances, entertainment, and home offices",
+      "Offset approximately 2,200–2,400 kg of CO₂ emissions per month",
+      "Optimized for Laguna households looking for resilience and savings",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 12kW hybrid solar system for a homeowner in Sta. Rosa, Laguna, focused on reducing power costs and ensuring 24/7 energy reliability. With frequent brownouts and rising utility rates in the CALABARZON region, this system gives the household energy freedom and long-term savings.\n\nAs Laguna continues to develop as a key industrial and residential hub, more families in areas like Biñan, Calamba, and San Pedro are switching to hybrid solar for stable and sustainable power. Sunphil Solar is proud to serve as a trusted installer in the CALABARZON region.\n\nGo Solar Today with Sunphil:\n- Free Energy Evaluation\n- Fast and Clean Installation\n- Equipment with Full Warranty and Local Support\nRequest a Free Quote Now.",
+  },
+  {
+    id: "taytay-rizal-6kw-2025",
+    image: "/images/project57.jpg",
+    location: "Taytay, Rizal, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-15",
+    clientType: "Residential (Mid-Energy Household)",
+    specification: [
+      "6kW Deye Hybrid Inverter – Efficient hybrid inverter manages solar, battery, and grid input for uninterrupted energy flow.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules maximize energy output by capturing light from both sides ideal for open rooftops.",
+      "51.2V 314Ah LiFePO₄ Battery – Substantial lithium storage allows reliable nighttime usage and strong backup capacity during outages.",
+    ],
+    benefits: [
+      "Save up to 80–85% on monthly electric bills",
+      "Maintain consistent power for lighting, appliances, entertainment, and home offices",
+      "Offset approximately 1,100–1,300 kg of CO₂ emissions per month",
+      "Optimized for Rizal households looking for resilience and savings",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar system for a homeowner in Taytay, Rizal, focused on reducing power costs and ensuring 24/7 energy reliability. With frequent brownouts and rising utility rates in the CALABARZON region, this system gives the household energy freedom and long-term savings.\n\nAs Rizal continues to grow as a vibrant residential area in Metro Manila's periphery, more families in areas like Antipolo, Cainta, and Pasig are switching to hybrid solar for stable and sustainable power. Sunphil Solar is proud to serve as a trusted installer in the CALABARZON region.\n\nGo Solar Today with Sunphil:\n- Free Energy Evaluation\n- Fast and Clean Installation\n- Equipment with Full Warranty and Local Support\nRequest a Free Quote Now.",
+  },
 ];
