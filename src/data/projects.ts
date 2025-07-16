@@ -1195,4 +1195,25 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar successfully installed a 6kW hybrid solar system for a homeowner in Taytay, Rizal, focused on reducing power costs and ensuring 24/7 energy reliability. With frequent brownouts and rising utility rates in the CALABARZON region, this system gives the household energy freedom and long-term savings.\n\nAs Rizal continues to grow as a vibrant residential area in Metro Manila's periphery, more families in areas like Antipolo, Cainta, and Pasig are switching to hybrid solar for stable and sustainable power. Sunphil Solar is proud to serve as a trusted installer in the CALABARZON region.\n\nGo Solar Today with Sunphil:\n- Free Energy Evaluation\n- Fast and Clean Installation\n- Equipment with Full Warranty and Local Support\nRequest a Free Quote Now.",
   },
+  {
+    id: "greater-lagro-qc-12kw",
+    image: "/images/project58.jpg",
+    location: "Barangay Greater Lagro, Quezon City, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-07-16",
+    clientType: "Residential (High-Energy Urban Home)",
+    specification: [
+      "12kW Deye Hybrid Inverter – A smart hybrid inverter that efficiently manages solar input, grid interaction, and battery charging/discharging.",
+      "24 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels that harness light from both sides, boosting energy production on urban rooftops.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Safe and long-lasting lithium batteries designed to provide backup power at night and during brownouts."
+    ],
+    benefits: [
+      "Save up to 85–90% on monthly electricity bills",
+      "Provides reliable backup power for aircon, kitchen appliances, internet, and home security",
+      "Reduces approx. 2,100 kg of CO₂ emissions monthly",
+      "Ideal for high-consumption homes in Metro Manila"
+    ],
+    description:
+      "Sunphil Solar successfully installed a 12kW hybrid solar energy system in Greater Lagro, Quezon City, for a family of doctors aiming to reduce energy costs and enjoy uninterrupted power. This robust setup is designed to support homes with multiple appliances and air conditioning systems, ensuring energy security and long-term savings.\n\nAs Quezon City continues to grow, families in Greater Lagro, Fairview, and North Caloocan are investing in hybrid solar systems to beat power interruptions and control energy costs. Sunphil Solar is proud to be the installer of choice for future ready homes in the metro.\n\nSunphil Solar offers:\n- Free Site Visit & Load Assessment\n- Expert Installation by In-House Teams\n- Premium Equipment with Full Warranty\n\nGet a Free Solar Quote Today.",
+  },
 ];
