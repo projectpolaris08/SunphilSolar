@@ -6676,7 +6676,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 29,
     title: "The Bataan Nuclear Power Plant: A $2.3 Billion Monument to Missed Energy Opportunities",
-    author: "Energy Policy Philippines",
+    author: "Sunphil Solar",
     date: "2025-07-17",
     slug: "bataan-nuclear-power-plant-missed-opportunities",
     tags: [
