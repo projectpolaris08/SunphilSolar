@@ -12,6 +12,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "buenavista-general-trias-cavite",
+    image: "/images/project59.jpg",
+    location: "Buenavista I, General Trias, Cavite, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-19",
+    clientType: "Modern Family Home with High Energy Demands",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart energy management, capable of syncing with solar, grid, and battery.",
+      "16 × 615W Canadian Solar Bifacial Panels – Premium bifacial panels designed to increase solar output, even in shaded or urban rooftops.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery providing overnight storage and emergency backup power.",
+    ],
+    benefits: [
+      "Save up to ₱9,000/month on electric bills",
+      "Uninterrupted power for aircon, refrigerators, and computers",
+      "Reduce your carbon footprint by over 1.5 tons of CO₂/month",
+      "Optimized for urban Cavite households with erratic grid reliability",
+    ],
+    description:
+      "Sunphil Solar proudly completed a grid-tied hybrid solar installation for a forward-thinking homeowner in Buenavista I, General Trias. This system was designed to handle the family's daily electricity needs complete with cooling systems, kitchen appliances, lighting, and entertainment devices while ensuring backup power during brownouts. As Gen. Trias experiences rapid urbanization, many households are turning to hybrid solar power to combat rising electricity costs and prepare for brownouts. The hybrid setup allows this homeowner to store power during the day and use it at night maximizing savings and independence. Sunphil Solar is trusted across Cavite for professional system design and installation, long-lasting battery storage solutions, and excellent after-sales service and monitoring.",
+  },
+  {
     id: "grace-park-caloocan",
     image: "/images/project52.jpg",
     location: "Grace Park, Caloocan City, Metro Manila, Philippines",
@@ -1205,13 +1226,13 @@ export const projects: Project[] = [
     specification: [
       "12kW Deye Hybrid Inverter – A smart hybrid inverter that efficiently manages solar input, grid interaction, and battery charging/discharging.",
       "24 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels that harness light from both sides, boosting energy production on urban rooftops.",
-      "2 × 51.2V 314Ah LiFePO₄ Batteries – Safe and long-lasting lithium batteries designed to provide backup power at night and during brownouts."
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Safe and long-lasting lithium batteries designed to provide backup power at night and during brownouts.",
     ],
     benefits: [
       "Save up to 85–90% on monthly electricity bills",
       "Provides reliable backup power for aircon, kitchen appliances, internet, and home security",
       "Reduces approx. 2,100 kg of CO₂ emissions monthly",
-      "Ideal for high-consumption homes in Metro Manila"
+      "Ideal for high-consumption homes in Metro Manila",
     ],
     description:
       "Sunphil Solar successfully installed a 12kW hybrid solar energy system in Greater Lagro, Quezon City, for a family of doctors aiming to reduce energy costs and enjoy uninterrupted power. This robust setup is designed to support homes with multiple appliances and air conditioning systems, ensuring energy security and long-term savings.\n\nAs Quezon City continues to grow, families in Greater Lagro, Fairview, and North Caloocan are investing in hybrid solar systems to beat power interruptions and control energy costs. Sunphil Solar is proud to be the installer of choice for future ready homes in the metro.\n\nSunphil Solar offers:\n- Free Site Visit & Load Assessment\n- Expert Installation by In-House Teams\n- Premium Equipment with Full Warranty\n\nGet a Free Solar Quote Today.",
