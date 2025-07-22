@@ -12,6 +12,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "urbiztondo-pangasinan-8kw",
+    image: "/images/project60.jpg",
+    location: "Urbiztondo, Pangasinan, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-20",
+    clientType: "Residential Family Compound with High Day & Night Energy Demand",
+    specification: [
+      "8kW Deye Hybrid Inverter – Seamlessly switches between solar, battery, and grid power. Reliable for areas with frequent brownouts.",
+      "18 × 615W Canadian Bifacial Solar Panels – High-efficiency panels with rear-side power gain, ideal for the open rooftop layout in rural Pangasinan.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Provides extended backup capacity for air conditioning, refrigeration, and lighting during outages.",
+    ],
+    benefits: [
+      "Drastically lower electric bills",
+      "Protection from brownouts and rising rates",
+      "Clean, renewable energy for a healthier future",
+      "Estimated savings: Up to ₱10,000/month on electricity",
+      "Backup runtime: 8–12 hours, depending on load",
+      "Optimized solar yield for all-day sun exposure typical in Urbiztondo's rural setting",
+    ],
+    description:
+      "Sunphil Solar completed an 8kW hybrid solar installation for a family compound in Urbiztondo, Pangasinan. This system features an 8kW Deye Hybrid Inverter, 18 high-efficiency Canadian Bifacial Solar Panels, and 2 large-capacity LiFePO₄ batteries, providing reliable backup and significant savings. In rural Pangasinan, where power interruptions are frequent, this hybrid setup allows the homeowner to store excess solar energy for nighttime use or emergencies, minimizing dependence on the local grid and diesel generators. All installations include real-time system monitoring via mobile app and full warranty support. Book your free site inspection now at sunphilsolar.com or send us a message!",
+  },
+  {
     id: "buenavista-general-trias-cavite",
     image: "/images/project59.jpg",
     location: "Buenavista I, General Trias, Cavite, Philippines",
