@@ -140,15 +140,37 @@ const Post = ({
         itemType="https://schema.org/BlogPosting"
       >
         {featuredImage?.url && (
-          <img
-            src={featuredImage.url}
-            alt={featuredImage.alt || `${title} - Featured Image`}
-            className="mb-6 h-64 w-full rounded-2xl object-cover shadow-md"
-            loading="lazy"
-            {...(featuredImage.width && { width: featuredImage.width })}
-            {...(featuredImage.height && { height: featuredImage.height })}
-            itemProp="image"
-          />
+          <>
+            <img
+              src={featuredImage.url}
+              alt={featuredImage.alt || `${title} - Featured Image`}
+              className="mb-2 h-64 w-full rounded-2xl object-cover shadow-md"
+              loading="lazy"
+              {...(featuredImage.width && { width: featuredImage.width })}
+              {...(featuredImage.height && { height: featuredImage.height })}
+              itemProp="image"
+            />
+            {featuredImage.credits && (
+              <div className="mb-6 text-xs text-gray-500">
+                Image credit:{" "}
+                {featuredImage.credits.link ? (
+                  <a
+                    href={featuredImage.credits.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-primary-500"
+                  >
+                    {featuredImage.credits.author || "Source"}
+                  </a>
+                ) : (
+                  featuredImage.credits.author || "Source"
+                )}
+                {featuredImage.credits.source
+                  ? ` (${featuredImage.credits.source})`
+                  : ""}
+              </div>
+            )}
+          </>
         )}
 
         <PostTitle itemProp="headline">{title}</PostTitle>

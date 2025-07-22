@@ -6675,7 +6675,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 29,
-    title: "The Bataan Nuclear Power Plant: A $2.3 Billion Monument to Missed Energy Opportunities",
+    title:
+      "The Bataan Nuclear Power Plant: A $2.3 Billion Monument to Missed Energy Opportunities",
     author: "Sunphil Solar",
     date: "2025-07-17",
     slug: "bataan-nuclear-power-plant-missed-opportunities",
@@ -6689,7 +6690,7 @@ export const blogPosts: BlogPost[] = [
       "nuclear power",
       "electricity costs",
       "climate change",
-      "energy transition"
+      "energy transition",
     ],
     excerpt:
       "For over four decades, the Bataan Nuclear Power Plant has stood as Southeast Asia's most expensive ghost—a fully constructed nuclear facility that has never generated a single watt of electricity. As the Philippines grapples with soaring energy costs and climate commitments, it's time to finally address this $2.3 billion monument to missed opportunities.",
@@ -6704,57 +6705,112 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          For over four decades, the Bataan Nuclear Power Plant has stood as Southeast Asia's most expensive ghost, a fully constructed nuclear facility that has never generated a single watt of electricity. As the Philippines grapples with soaring energy costs and climate commitments, the question isn't whether the country needs nuclear power, but whether it can finally overcome the political paralysis that has kept this $2.3 billion asset gathering dust since 1984.
+          For over four decades, the Bataan Nuclear Power Plant has stood as
+          Southeast Asia's most expensive ghost, a fully constructed nuclear
+          facility that has never generated a single watt of electricity. As the
+          Philippines grapples with soaring energy costs and climate
+          commitments, the question isn't whether the country needs nuclear
+          power, but whether it can finally overcome the political paralysis
+          that has kept this $2.3 billion asset gathering dust since 1984.
         </p>
         <p className="text-secondary-700 mb-6">
-          The story of the Bataan Nuclear Power Plant reads like a cautionary tale about the intersection of politics, economics, and energy policy. Built during the Marcos era with financing from the Export-Import Bank of America, this 621-megawatt Westinghouse reactor was completed just as the political winds shifted. Safety concerns about its proximity to seismic fault lines, combined with the political upheaval following the fall of the Marcos regime, left the plant in permanent limbo.
+          The story of the Bataan Nuclear Power Plant reads like a cautionary
+          tale about the intersection of politics, economics, and energy policy.
+          Built during the Marcos era with financing from the Export-Import Bank
+          of America, this 621-megawatt Westinghouse reactor was completed just
+          as the political winds shifted. Safety concerns about its proximity to
+          seismic fault lines, combined with the political upheaval following
+          the fall of the Marcos regime, left the plant in permanent limbo.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           The Weight of Unfinished Business
         </h2>
         <p className="text-secondary-700 mb-4">
-          What makes this particularly tragic is the opportunity cost. The Philippines has been paying for this nuclear plant longer than most countries have been operating theirs. The government finally paid off its obligations in 2007 more than 30 years after construction began and 23 years after the plant was mothballed. Filipino taxpayers essentially bought the most expensive monument in Southeast Asia.
+          What makes this particularly tragic is the opportunity cost. The
+          Philippines has been paying for this nuclear plant longer than most
+          countries have been operating theirs. The government finally paid off
+          its obligations in 2007 more than 30 years after construction began
+          and 23 years after the plant was mothballed. Filipino taxpayers
+          essentially bought the most expensive monument in Southeast Asia.
         </p>
         <p className="text-secondary-700 mb-6">
-          The plant's dormancy becomes even more painful when considering today's energy landscape. The Philippines remains heavily dependent on imported fossil fuels, with coal accounting for roughly 60% of its electricity generation. Power costs in the archipelago are among the highest in Asia, hampering industrial competitiveness and burdening consumers.
+          The plant's dormancy becomes even more painful when considering
+          today's energy landscape. The Philippines remains heavily dependent on
+          imported fossil fuels, with coal accounting for roughly 60% of its
+          electricity generation. Power costs in the archipelago are among the
+          highest in Asia, hampering industrial competitiveness and burdening
+          consumers.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Current Status: A Glimmer of Hope
         </h2>
         <p className="text-secondary-700 mb-4">
-          The recent memorandum of understanding between the Philippines and South Korea to conduct a feasibility study represents the most serious attempt to revive the plant in decades. Korea Hydro & Nuclear Power (KHNP), which will lead the study beginning in January 2025, brings credible expertise. South Korea operates 24 nuclear reactors and has successfully exported nuclear technology to the UAE.
+          The recent memorandum of understanding between the Philippines and
+          South Korea to conduct a feasibility study represents the most serious
+          attempt to revive the plant in decades. Korea Hydro & Nuclear Power
+          (KHNP), which will lead the study beginning in January 2025, brings
+          credible expertise. South Korea operates 24 nuclear reactors and has
+          successfully exported nuclear technology to the UAE.
         </p>
         <p className="text-secondary-700 mb-6">
-          The Philippines Nuclear Research Institute suggests the plant could be operational within 4-5 years if approved, but "if approved" carries enormous political weight in a country where nuclear power remains controversial after four decades of inaction.
+          The Philippines Nuclear Research Institute suggests the plant could be
+          operational within 4-5 years if approved, but "if approved" carries
+          enormous political weight in a country where nuclear power remains
+          controversial after four decades of inaction.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Revenue Generation: How the Government Would Profit
         </h2>
         <p className="text-secondary-700 mb-4">
-          If the Bataan Nuclear Power Plant becomes operational, the government would generate revenue through the Philippines' restructured electricity market framework established under the Electric Power Industry Reform Act (EPIRA) of 2001. The revenue model would likely follow several approaches:
+          If the Bataan Nuclear Power Plant becomes operational, the government
+          would generate revenue through the Philippines' restructured
+          electricity market framework established under the Electric Power
+          Industry Reform Act (EPIRA) of 2001. The revenue model would likely
+          follow several approaches:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           1. Power Purchase Agreements (PPAs)
         </h3>
         <p className="text-secondary-700 mb-4">
-          The most probable scenario involves the government or a state-owned corporation operating the plant and selling electricity to distribution utilities through long-term power purchase agreements. These contracts would guarantee steady revenue streams over 15-25 year periods, with pricing structures that include:
+          The most probable scenario involves the government or a state-owned
+          corporation operating the plant and selling electricity to
+          distribution utilities through long-term power purchase agreements.
+          These contracts would guarantee steady revenue streams over 15-25 year
+          periods, with pricing structures that include:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li><strong>Capacity payments:</strong> Fixed costs for maintaining the plant's availability</li>
-          <li><strong>Energy payments:</strong> Variable costs based on actual electricity generation</li>
-          <li><strong>Ancillary services:</strong> Additional revenue from grid stability services</li>
+          <li>
+            <strong>Capacity payments:</strong> Fixed costs for maintaining the
+            plant's availability
+          </li>
+          <li>
+            <strong>Energy payments:</strong> Variable costs based on actual
+            electricity generation
+          </li>
+          <li>
+            <strong>Ancillary services:</strong> Additional revenue from grid
+            stability services
+          </li>
         </ul>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           2. Wholesale Electricity Spot Market (WESM)
         </h3>
         <p className="text-secondary-700 mb-4">
-          The plant could also sell electricity through the competitive wholesale market, where prices fluctuate based on supply and demand. Given nuclear power's low marginal costs and baseload characteristics, the plant would likely operate continuously, capturing revenue from both peak and off-peak periods.
+          The plant could also sell electricity through the competitive
+          wholesale market, where prices fluctuate based on supply and demand.
+          Given nuclear power's low marginal costs and baseload characteristics,
+          the plant would likely operate continuously, capturing revenue from
+          both peak and off-peak periods.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           3. Direct Sales to Large Industrial Users
         </h3>
         <p className="text-secondary-700 mb-6">
-          Under the Philippines' retail competition framework, large industrial consumers can directly purchase electricity from generation companies, potentially providing the nuclear plant with high-volume, long-term customers willing to pay premium prices for reliable, carbon-free power.
+          Under the Philippines' retail competition framework, large industrial
+          consumers can directly purchase electricity from generation companies,
+          potentially providing the nuclear plant with high-volume, long-term
+          customers willing to pay premium prices for reliable, carbon-free
+          power.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Financial Projections: The Numbers Game
@@ -6763,51 +6819,97 @@ export const blogPosts: BlogPost[] = [
           <table className="w-full text-left border-collapse border border-gray-300">
             <thead>
               <tr className="bg-gray-100">
-                <th className="border border-gray-300 px-4 py-2 font-semibold">Metric</th>
-                <th className="border border-gray-300 px-4 py-2 font-semibold">Value</th>
-                <th className="border border-gray-300 px-4 py-2 font-semibold">Notes</th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Metric
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Value
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Notes
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Plant Capacity</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Plant Capacity
+                </td>
                 <td className="border border-gray-300 px-4 py-2">621 MW</td>
-                <td className="border border-gray-300 px-4 py-2">Westinghouse reactor design</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Westinghouse reactor design
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Capacity Factor</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Capacity Factor
+                </td>
                 <td className="border border-gray-300 px-4 py-2">85-90%</td>
-                <td className="border border-gray-300 px-4 py-2">Typical for nuclear plants</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Typical for nuclear plants
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Annual Generation</td>
-                <td className="border border-gray-300 px-4 py-2">4.6-4.9 billion kWh</td>
-                <td className="border border-gray-300 px-4 py-2">Based on capacity factor</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Annual Generation
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  4.6-4.9 billion kWh
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Based on capacity factor
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Nuclear Generation Cost</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Nuclear Generation Cost
+                </td>
                 <td className="border border-gray-300 px-4 py-2">₱2 per kWh</td>
-                <td className="border border-gray-300 px-4 py-2">Compared to ₱6/kWh for coal</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Compared to ₱6/kWh for coal
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Wholesale Price Range</td>
-                <td className="border border-gray-300 px-4 py-2">₱3-4 per kWh</td>
-                <td className="border border-gray-300 px-4 py-2">Conservative estimate</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Wholesale Price Range
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  ₱3-4 per kWh
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Conservative estimate
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Annual Revenue</td>
-                <td className="border border-gray-300 px-4 py-2">₱14-20 billion</td>
-                <td className="border border-gray-300 px-4 py-2">$250-350 million USD</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Annual Revenue
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  ₱14-20 billion
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  $250-350 million USD
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Rehabilitation Cost</td>
-                <td className="border border-gray-300 px-4 py-2">$1-2.3 billion</td>
-                <td className="border border-gray-300 px-4 py-2">Estimated range</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Rehabilitation Cost
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  $1-2.3 billion
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Estimated range
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 px-4 py-2">Payback Period</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Payback Period
+                </td>
                 <td className="border border-gray-300 px-4 py-2">7-10 years</td>
-                <td className="border border-gray-300 px-4 py-2">Based on net revenue</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Based on net revenue
+                </td>
               </tr>
             </tbody>
           </table>
@@ -6816,92 +6918,172 @@ export const blogPosts: BlogPost[] = [
           The Technical and Political Challenges
         </h2>
         <p className="text-secondary-700 mb-4">
-          The feasibility study faces several critical questions that will determine the plant's viability:
+          The feasibility study faces several critical questions that will
+          determine the plant's viability:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           1. Technical Rehabilitation Requirements
         </h3>
         <p className="text-secondary-700 mb-4">
-          Can a 40-year-old reactor that was never commissioned be safely brought online? While the plant has been maintained and its components remain intact, nuclear technology has evolved significantly since the 1980s. Modern safety standards, cybersecurity requirements, and operational protocols may necessitate extensive upgrades that could rival the cost of building a new facility.
+          Can a 40-year-old reactor that was never commissioned be safely
+          brought online? While the plant has been maintained and its components
+          remain intact, nuclear technology has evolved significantly since the
+          1980s. Modern safety standards, cybersecurity requirements, and
+          operational protocols may necessitate extensive upgrades that could
+          rival the cost of building a new facility.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           2. Seismic Safety Concerns
         </h3>
         <p className="text-secondary-700 mb-4">
-          The seismic concerns that originally contributed to the plant's mothballing haven't disappeared. The Philippines sits on the Pacific Ring of Fire, and the 2011 Fukushima disaster has only heightened global awareness of nuclear plants' vulnerability to natural disasters. Any revival plan must address these geological realities with modern engineering solutions.
+          The seismic concerns that originally contributed to the plant's
+          mothballing haven't disappeared. The Philippines sits on the Pacific
+          Ring of Fire, and the 2011 Fukushima disaster has only heightened
+          global awareness of nuclear plants' vulnerability to natural
+          disasters. Any revival plan must address these geological realities
+          with modern engineering solutions.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           3. Public Acceptance Challenge
         </h3>
         <p className="text-secondary-700 mb-6">
-          Perhaps most importantly, the project faces the political challenge of public acceptance. Decades of inaction have bred skepticism about the government's ability to safely operate nuclear facilities. Nuclear power remains controversial in a country where the plant has been synonymous with waste and corruption for four decades.
+          Perhaps most importantly, the project faces the political challenge of
+          public acceptance. Decades of inaction have bred skepticism about the
+          government's ability to safely operate nuclear facilities. Nuclear
+          power remains controversial in a country where the plant has been
+          synonymous with waste and corruption for four decades.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Competitive Advantages of Nuclear Power
         </h2>
         <p className="text-secondary-700 mb-4">
-          Despite the challenges, nuclear power offers several unique advantages for the Philippines:
+          Despite the challenges, nuclear power offers several unique advantages
+          for the Philippines:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li><strong>Baseload Power:</strong> Unlike solar and wind, nuclear provides 24/7 reliable electricity generation</li>
-          <li><strong>Cost Stability:</strong> Nuclear fuel costs are relatively stable and represent only a small fraction of total generating costs</li>
-          <li><strong>Carbon-Free Generation:</strong> Nuclear power produces no greenhouse gas emissions during operation</li>
-          <li><strong>Energy Security:</strong> Reduces dependence on imported fossil fuels and price volatility</li>
-          <li><strong>Industrial Competitiveness:</strong> Lower electricity costs would benefit energy-intensive industries</li>
+          <li>
+            <strong>Baseload Power:</strong> Unlike solar and wind, nuclear
+            provides 24/7 reliable electricity generation
+          </li>
+          <li>
+            <strong>Cost Stability:</strong> Nuclear fuel costs are relatively
+            stable and represent only a small fraction of total generating costs
+          </li>
+          <li>
+            <strong>Carbon-Free Generation:</strong> Nuclear power produces no
+            greenhouse gas emissions during operation
+          </li>
+          <li>
+            <strong>Energy Security:</strong> Reduces dependence on imported
+            fossil fuels and price volatility
+          </li>
+          <li>
+            <strong>Industrial Competitiveness:</strong> Lower electricity costs
+            would benefit energy-intensive industries
+          </li>
         </ul>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Regional Context: Southeast Asia's Nuclear Future
         </h2>
         <p className="text-secondary-700 mb-4">
-          The broader regional context strengthens the argument for nuclear power. Southeast Asian countries are increasingly looking to nuclear energy to meet their energy transition goals:
+          The broader regional context strengthens the argument for nuclear
+          power. Southeast Asian countries are increasingly looking to nuclear
+          energy to meet their energy transition goals:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
-          <li><strong>Indonesia:</strong> Exploring nuclear options for its growing energy needs</li>
-          <li><strong>Thailand:</strong> Considering nuclear power for long-term energy security</li>
-          <li><strong>Vietnam:</strong> Previously planned nuclear plants before policy changes</li>
-          <li><strong>Singapore:</strong> Conducting feasibility studies for small modular reactors</li>
+          <li>
+            <strong>Indonesia:</strong> Exploring nuclear options for its
+            growing energy needs
+          </li>
+          <li>
+            <strong>Thailand:</strong> Considering nuclear power for long-term
+            energy security
+          </li>
+          <li>
+            <strong>Vietnam:</strong> Previously planned nuclear plants before
+            policy changes
+          </li>
+          <li>
+            <strong>Singapore:</strong> Conducting feasibility studies for small
+            modular reactors
+          </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          The Philippines risks being left behind in the regional energy transition if it continues to delay nuclear development while neighboring countries advance their nuclear programs.
+          The Philippines risks being left behind in the regional energy
+          transition if it continues to delay nuclear development while
+          neighboring countries advance their nuclear programs.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           A Path Forward: Realistic Recommendations
         </h2>
         <p className="text-secondary-700 mb-4">
-          The revival of the Bataan Nuclear Power Plant should be pursued, but with realistic expectations and robust safeguards:
+          The revival of the Bataan Nuclear Power Plant should be pursued, but
+          with realistic expectations and robust safeguards:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           1. Comprehensive Feasibility Assessment
         </h3>
         <p className="text-secondary-700 mb-4">
-          The ongoing feasibility study must honestly assess whether rehabilitation is economically viable compared to new construction. If the existing plant cannot meet modern safety standards cost-effectively, the government should consider the site for new nuclear technology, including small modular reactors that offer enhanced safety features.
+          The ongoing feasibility study must honestly assess whether
+          rehabilitation is economically viable compared to new construction. If
+          the existing plant cannot meet modern safety standards
+          cost-effectively, the government should consider the site for new
+          nuclear technology, including small modular reactors that offer
+          enhanced safety features.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           2. International Oversight and Partnerships
         </h3>
         <p className="text-secondary-700 mb-4">
-          Building public confidence requires transparency and international oversight. The Philippines should invite the International Atomic Energy Agency to participate in safety assessments and consider joint ventures with established nuclear operators to ensure proper knowledge transfer and operational expertise.
+          Building public confidence requires transparency and international
+          oversight. The Philippines should invite the International Atomic
+          Energy Agency to participate in safety assessments and consider joint
+          ventures with established nuclear operators to ensure proper knowledge
+          transfer and operational expertise.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           3. Regulatory Framework Development
         </h3>
         <p className="text-secondary-700 mb-6">
-          The country must develop comprehensive nuclear waste management plans and regulatory frameworks before any plant becomes operational. Nuclear power is not just about generating electricity it's about managing the entire fuel cycle responsibly.
+          The country must develop comprehensive nuclear waste management plans
+          and regulatory frameworks before any plant becomes operational.
+          Nuclear power is not just about generating electricity it's about
+          managing the entire fuel cycle responsibly.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Conclusion: Time to Make a Decision
         </h2>
         <p className="text-secondary-700 mb-4">
-          The Bataan Nuclear Power Plant represents more than just a stranded asset; it symbolizes the Philippines' broader struggle with long-term energy planning. The country cannot afford another 40 years of indecision. Whether through rehabilitation of the existing plant or development of new nuclear capacity, the Philippines must finally embrace nuclear power as part of its energy future.
+          The Bataan Nuclear Power Plant represents more than just a stranded
+          asset; it symbolizes the Philippines' broader struggle with long-term
+          energy planning. The country cannot afford another 40 years of
+          indecision. Whether through rehabilitation of the existing plant or
+          development of new nuclear capacity, the Philippines must finally
+          embrace nuclear power as part of its energy future.
         </p>
         <p className="text-secondary-700 mb-4">
-          The financial projections are compelling: with potential annual revenues of ₱14-20 billion, the plant could recover its rehabilitation costs within 7-10 years while providing decades of reliable, carbon-free electricity. The cost of continued inaction expensive imported fossil fuels, high electricity costs, and missed climate targets far exceeds the investment required for nuclear power.
+          The financial projections are compelling: with potential annual
+          revenues of ₱14-20 billion, the plant could recover its rehabilitation
+          costs within 7-10 years while providing decades of reliable,
+          carbon-free electricity. The cost of continued inaction expensive
+          imported fossil fuels, high electricity costs, and missed climate
+          targets far exceeds the investment required for nuclear power.
         </p>
         <p className="text-secondary-700 mb-6">
-          The current feasibility study offers a chance to turn a $2.3 billion mistake into a foundation for energy security. But success will require the political will to make tough decisions, the technical expertise to ensure safety, and the public engagement to build lasting support. The alternative continued dependence on expensive fossil fuel imports while climate commitments remain unmet is simply unsustainable.
+          The current feasibility study offers a chance to turn a $2.3 billion
+          mistake into a foundation for energy security. But success will
+          require the political will to make tough decisions, the technical
+          expertise to ensure safety, and the public engagement to build lasting
+          support. The alternative continued dependence on expensive fossil fuel
+          imports while climate commitments remain unmet is simply
+          unsustainable.
         </p>
         <p className="text-secondary-700 mb-6">
-          The ghost of Bataan has haunted Philippine energy policy for too long. It's time to either bring it to life or lay it to rest and build something better in its place. The choice is clear: act now or continue paying for the world's most expensive monument to missed opportunities.
+          The ghost of Bataan has haunted Philippine energy policy for too long.
+          It's time to either bring it to life or lay it to rest and build
+          something better in its place. The choice is clear: act now or
+          continue paying for the world's most expensive monument to missed
+          opportunities.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Frequently Asked Questions
@@ -6911,7 +7093,9 @@ export const blogPosts: BlogPost[] = [
             Q: How much would it cost to revive the Bataan Nuclear Power Plant?
           </h4>
           <p className="text-secondary-700">
-            A: Estimates range from $1-2.3 billion for rehabilitation, depending on the extent of modernization required to meet current safety standards and operational requirements.
+            A: Estimates range from $1-2.3 billion for rehabilitation, depending
+            on the extent of modernization required to meet current safety
+            standards and operational requirements.
           </p>
         </div>
         <div className="mb-6">
@@ -6919,7 +7103,10 @@ export const blogPosts: BlogPost[] = [
             Q: How would the government make money from the nuclear plant?
           </h4>
           <p className="text-secondary-700">
-            A: The government would generate revenue through power purchase agreements with utilities, wholesale electricity market sales, and direct sales to large industrial customers, with projected annual revenues of ₱14-20 billion.
+            A: The government would generate revenue through power purchase
+            agreements with utilities, wholesale electricity market sales, and
+            direct sales to large industrial customers, with projected annual
+            revenues of ₱14-20 billion.
           </p>
         </div>
         <div className="mb-6">
@@ -6927,7 +7114,10 @@ export const blogPosts: BlogPost[] = [
             Q: Is nuclear power safe in the Philippines given earthquake risks?
           </h4>
           <p className="text-secondary-700">
-            A: Modern nuclear plants are designed to withstand significant seismic events. The feasibility study will assess whether the existing plant can be upgraded to meet current earthquake safety standards or if new technology is needed.
+            A: Modern nuclear plants are designed to withstand significant
+            seismic events. The feasibility study will assess whether the
+            existing plant can be upgraded to meet current earthquake safety
+            standards or if new technology is needed.
           </p>
         </div>
         <div className="mb-6">
@@ -6935,7 +7125,9 @@ export const blogPosts: BlogPost[] = [
             Q: How long would it take to make the plant operational?
           </h4>
           <p className="text-secondary-700">
-            A: The Philippines Nuclear Research Institute estimates 4-5 years if the rehabilitation is approved, though this depends on the scope of work required and regulatory approvals.
+            A: The Philippines Nuclear Research Institute estimates 4-5 years if
+            the rehabilitation is approved, though this depends on the scope of
+            work required and regulatory approvals.
           </p>
         </div>
         <div className="mb-6">
@@ -6943,23 +7135,550 @@ export const blogPosts: BlogPost[] = [
             Q: What would happen to nuclear waste from the plant?
           </h4>
           <p className="text-secondary-700">
-            A: The Philippines would need to develop a comprehensive nuclear waste management plan, including interim storage facilities and long-term disposal solutions, before plant operations begin.
+            A: The Philippines would need to develop a comprehensive nuclear
+            waste management plan, including interim storage facilities and
+            long-term disposal solutions, before plant operations begin.
           </p>
         </div>
         <div className="mb-6">
           <h4 className="text-lg font-semibold text-secondary-900 mb-2">
-            Q: How would nuclear power affect electricity prices in the Philippines?
+            Q: How would nuclear power affect electricity prices in the
+            Philippines?
           </h4>
           <p className="text-secondary-700">
-            A: Nuclear power could significantly reduce electricity costs, with generation costs around ₱2 per kWh compared to ₱6 per kWh for coal plants, potentially lowering overall electricity prices for consumers.
+            A: Nuclear power could significantly reduce electricity costs, with
+            generation costs around ₱2 per kWh compared to ₱6 per kWh for coal
+            plants, potentially lowering overall electricity prices for
+            consumers.
           </p>
         </div>
         <p className="text-secondary-700 font-semibold">
-          The Bataan Nuclear Power Plant represents a critical decision point for Philippine energy policy. After 40 years of inaction, the time has come to either revive this asset or move forward with alternative nuclear solutions. The cost of continued delay far exceeds the investment required for action.
+          The Bataan Nuclear Power Plant represents a critical decision point
+          for Philippine energy policy. After 40 years of inaction, the time has
+          come to either revive this asset or move forward with alternative
+          nuclear solutions. The cost of continued delay far exceeds the
+          investment required for action.
         </p>
       </>
     ),
     readingTime: 15,
+  },
+  {
+    id: 30,
+    title:
+      "The Philippines' Solar Gambit: How Terra Solar Could Reshape Southeast Asia's Energy Future",
+    author: "Sunphil Solar",
+    date: "2025-07-22",
+    slug: "philippines-terra-solar-energy-future",
+    tags: [
+      "Terra Solar Philippines",
+      "solar energy Southeast Asia",
+      "renewable energy transition",
+      "energy security Philippines",
+      "climate change",
+      "solar power plant",
+      "battery storage",
+      "green energy investment",
+      "sustainable development",
+      "energy independence",
+    ],
+    excerpt:
+      "The Terra Solar project isn't just another renewable energy installation,it's a potential game-changer that could establish the Philippines as Southeast Asia's solar energy leader. With 3.5 GW of capacity and revolutionary battery storage, this $3.25 billion investment represents more than clean energy; it's a blueprint for developing nations to leapfrog traditional energy infrastructure.",
+    metaDescription:
+      "Explore how the Terra Solar project could transform Philippines' energy landscape and serve as a model for developing nations' renewable energy transition. Analysis of the $3.25 billion solar investment and its regional implications.",
+    featuredImage: {
+      url: "/images/terra-solar-philippines-overview.jpg",
+      alt: "Terra Solar project site in Nueva Ecija showing solar panels installation with Philippine landscape in background",
+      width: 1200,
+      height: 630,
+      credits: {
+        author: "Terra Solar",
+        source: "website",
+        link: "https://www.terra-solar.com.ph/mterra-solar-becomes-largest-solar-pv-installation-in-ph",
+      },
+    },
+    fullContent: (
+      <>
+        <p className="text-secondary-700 mb-6">
+          The Philippines is making an audacious bet on renewable energy that
+          deserves global attention. The Terra Solar project, slated for
+          completion by 2027, represents more than just another solar
+          installation,it's a potential template for how developing nations can
+          leapfrog traditional energy infrastructure while addressing both
+          economic and environmental imperatives. With 3.5 gigawatts of solar
+          capacity paired with 4.5 gigawatt-hours of battery storage, this $3.25
+          billion investment could reshape not only the Philippines' energy
+          landscape but establish a new paradigm for renewable energy
+          development across Southeast Asia.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The numbers are staggering: sprawling across 3,500 hectares in Nueva
+          Ecija and Bulacan provinces, Terra Solar will generate more solar
+          power than many entire countries currently produce from all renewable
+          sources combined. But what makes this project particularly significant
+          isn't just its size, it's the integration of massive battery storage
+          capacity that addresses the fundamental challenge limiting solar
+          adoption: intermittency.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          A Project of Unprecedented Scale and Ambition
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          To put Terra Solar's scale in perspective, this single project will
+          produce approximately 5 billion kWh annually,enough to power millions
+          of Filipino homes reliably, even after sunset. The 4.5 GWh of battery
+          storage represents one of the largest energy storage installations
+          globally, solving the critical intermittency challenge that has
+          historically limited large-scale solar deployment in developing
+          markets.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The project's financing model also breaks new ground. At PHP 185.28
+          billion ($3.25 billion), Terra Solar demonstrates that massive
+          renewable energy projects can attract significant private investment
+          in emerging markets. This financing success could unlock similar
+          investments across Southeast Asia, where energy demand is projected to
+          grow by 60% over the next decade.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Strategic Timing in a Critical Region
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The Philippines' commitment comes at a pivotal moment for Southeast
+          Asia's energy transition. The region has long grappled with energy
+          security challenges, heavy reliance on fossil fuel imports, and
+          growing electricity demand from rapid economic development. The
+          Philippines, an archipelagic nation with limited domestic fossil fuel
+          resources, has historically been vulnerable to energy price volatility
+          and supply disruptions.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          This solar mega-project represents a strategic pivot toward energy
+          independence. By developing domestic renewable capacity at scale, the
+          Philippines reduces its exposure to volatile international energy
+          markets while creating long-term price stability for consumers. The
+          timing is particularly astute given the global push for
+          decarbonization and the increasing availability of financing for green
+          energy projects.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Economic Implications Beyond Energy Generation
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Terra Solar catalyzes broader economic benefits that extend far beyond
+          electricity generation:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          1. Industrial Development Catalyst
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Reliable and affordable electricity serves as a foundation for
+          industrial development, potentially attracting energy-intensive
+          manufacturing to areas that previously lacked adequate power
+          infrastructure. The project could transform Nueva Ecija and Bulacan
+          into industrial hubs, diversifying their economies beyond traditional
+          agriculture.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          2. Job Creation and Skills Development
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          The construction phase alone will create thousands of jobs in regions
+          that have traditionally relied on agriculture. More importantly, the
+          project includes technology transfer components that could establish
+          the Philippines as a regional center for solar energy expertise and
+          manufacturing.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          3. Regional Energy Hub Potential
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Success with Terra Solar could position the Philippines as a serious
+          player in the regional renewable energy market, potentially attracting
+          additional green energy investments and establishing the country as a
+          hub for renewable energy technology exports.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Financial Projections: The Revenue Model
+        </h2>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-left border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Metric
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Value
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Notes
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Project Capacity
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  3.5 GW Solar
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Plus 4.5 GWh battery storage
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Total Investment
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  $3.25 billion
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  PHP 185.28 billion
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Annual Generation
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  5 billion kWh
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Conservative estimate
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Solar Generation Cost
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  ₱2.5 per kWh
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Competitive with coal
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Wholesale Price Range
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  ₱3.5-4.5 per kWh
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Market-based estimate
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Annual Revenue
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  ₱17.5-22.5 billion
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  $315-405 million USD
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">Land Area</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  3,500 hectares
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Nueva Ecija and Bulacan
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Payback Period
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  10-12 years
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Based on project economics
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Critical Challenges That Demand Solutions
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Despite its promise, Terra Solar faces several significant challenges
+          that could impact its success:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          1. Grid Integration Complexities
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Adding 3.5 GW of capacity to the Philippines' electrical grid requires
+          substantial infrastructure upgrades and sophisticated management
+          systems. The intermittent nature of solar power, even with battery
+          storage, demands advanced grid management technologies and potential
+          transmission line upgrades to handle power flows from Nueva Ecija to
+          major demand centers.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          2. Environmental and Social Considerations
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Converting 3,500 hectares of land raises important questions about
+          biodiversity impact and agricultural displacement. While solar energy
+          is inherently cleaner than fossil fuels, the project developers must
+          ensure rigorous environmental safeguards and fair compensation for
+          affected communities. The transition from agricultural to industrial
+          land use requires careful planning to minimize social disruption.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          3. Geopolitical and Technology Dependencies
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          The involvement of Chinese contractors and technology suppliers adds
+          geopolitical complexity to the project. While Chinese firms bring
+          proven expertise and competitive pricing, this arrangement raises
+          questions about technology transfer, local workforce development, and
+          long-term strategic dependencies that policymakers must carefully
+          navigate.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          A Replicable Model for Developing Nations
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          If executed successfully, Terra Solar could provide a blueprint for
+          other developing nations facing similar energy challenges:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Integrated Approach:</strong> Combining solar generation
+            with substantial storage addresses the primary technical barrier
+            limiting renewable adoption in developing markets
+          </li>
+          <li>
+            <strong>Private Investment Mobilization:</strong> Demonstrates that
+            large-scale renewable projects can attract significant private
+            capital in emerging economies
+          </li>
+          <li>
+            <strong>Technology Transfer:</strong> Shows how developing nations
+            can access cutting-edge renewable energy technology through
+            strategic partnerships
+          </li>
+          <li>
+            <strong>Economic Development Catalyst:</strong> Proves that
+            renewable energy projects can drive broader economic development
+            beyond electricity generation
+          </li>
+        </ul>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Regional Context: Southeast Asia's Renewable Race
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Terra Solar's development occurs within a broader regional context of
+          accelerating renewable energy deployment:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Vietnam:</strong> Rapidly expanding solar capacity with
+            feed-in tariff programs
+          </li>
+          <li>
+            <strong>Thailand:</strong> Implementing hybrid renewable energy
+            systems combining solar, wind, and storage
+          </li>
+          <li>
+            <strong>Indonesia:</strong> Launching ambitious renewable energy
+            targets despite coal dependence
+          </li>
+          <li>
+            <strong>Malaysia:</strong> Developing large-scale solar projects
+            with international partnerships
+          </li>
+        </ul>
+        <p className="text-secondary-700 mb-6">
+          In this competitive landscape, Terra Solar could establish the
+          Philippines as a regional leader in integrated renewable energy
+          systems, potentially attracting additional investments and expertise
+          to the country.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          The Path Forward: Essential Success Factors
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          For Terra Solar to achieve its transformative potential, several
+          conditions must be met:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          1. Regulatory Support and Grid Preparation
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          The Philippine government must continue providing regulatory support
+          while ensuring grid infrastructure investments keep pace with
+          generation capacity. This includes modernizing transmission systems
+          and implementing smart grid technologies to manage variable renewable
+          energy sources effectively.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          2. Community Engagement and Environmental Stewardship
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Success requires genuine community engagement and robust environmental
+          protection measures. Project developers must ensure that local
+          communities benefit from the development through job creation, skills
+          training, and revenue sharing arrangements.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          3. Knowledge Transfer and Capacity Building
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Local workforce development programs should be implemented to maximize
+          the project's contribution to domestic technical expertise. This
+          includes training programs for solar installation, maintenance, and
+          grid integration technologies.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          International Implications and Climate Leadership
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Terra Solar's success extends beyond national energy security to
+          climate leadership on the global stage. The project demonstrates that
+          developing nations can lead in renewable energy deployment rather than
+          simply following developed countries' examples. This leadership
+          position could attract climate finance and green development
+          partnerships that benefit the broader economy.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The international community should take notice. Development finance
+          institutions and climate funds should study this project as a
+          potential template for supporting similar initiatives elsewhere.
+          Success in the Philippines could accelerate renewable energy
+          deployment across developing nations, contributing significantly to
+          global climate goals.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Conclusion: More Than Solar Panels
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Terra Solar represents more than an energy project, it's a statement of
+          intent about the Philippines' energy future and a preview of how
+          developing nations can accelerate their transition to sustainable
+          energy systems. The project's success will be measured not just in
+          gigawatt-hours generated, but in its ability to catalyze broader
+          economic development while demonstrating that ambitious climate goals
+          and economic growth can be mutually reinforcing.
+        </p>
+        <p className="text-secondary-700 mb-4">
+          The financial projections are compelling: with potential annual
+          revenues of ₱17.5-22.5 billion, Terra Solar could establish the
+          Philippines as a regional renewable energy leader while providing
+          decades of clean, affordable electricity. The multiplier
+          effects industrial development, job creation, technology transfer, and
+          energy security,far exceed the direct benefits of electricity
+          generation.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The world will be watching as construction progresses toward the 2027
+          completion target. If Terra Solar delivers on its promises, it won't
+          just be the world's largest solar installation with integrated
+          storage,it could be the prototype for 21st-century energy
+          infrastructure in the developing world. The Philippines has the
+          opportunity to transform from an energy importer dependent on volatile
+          fossil fuel markets to a renewable energy leader with the largest
+          solar project on the planet.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The stakes couldn't be higher. Success means energy security, economic
+          development, and climate leadership. Failure means continued
+          dependence on expensive fossil fuel imports while neighboring
+          countries advance their renewable energy capabilities. The choice is
+          clear: Terra Solar must succeed not just for the Philippines, but as
+          proof that developing nations can lead the global energy transition.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How will Terra Solar compare to other major solar projects
+            globally?
+          </h4>
+          <p className="text-secondary-700">
+            A: With 3.5 GW capacity and 4.5 GWh storage, Terra Solar will be
+            among the world's largest integrated solar-plus-storage projects,
+            surpassing most existing installations in both generation capacity
+            and storage capability.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: What impact will Terra Solar have on Philippine electricity
+            prices?
+          </h4>
+          <p className="text-secondary-700">
+            A: The project could help stabilize and potentially reduce
+            electricity costs by providing competitively-priced renewable energy
+            at around ₱2.5 per kWh, compared to higher fossil fuel generation
+            costs.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How will the battery storage system work with the solar panels?
+          </h4>
+          <p className="text-secondary-700">
+            A: The 4.5 GWh battery system will store excess solar energy during
+            peak sunlight hours and dispatch it during evening peak demand
+            periods, providing 24/7 reliable power delivery and grid stability
+            services.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: What happens to the agricultural land being used for the project?
+          </h4>
+          <p className="text-secondary-700">
+            A: The 3,500-hectare project site will transition from agricultural
+            use to renewable energy infrastructure, with developers required to
+            provide fair compensation to affected farmers and communities.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Could Terra Solar be replicated in other Southeast Asian
+            countries?
+          </h4>
+          <p className="text-secondary-700">
+            A: Yes, the integrated solar-plus-storage model demonstrated by
+            Terra Solar could serve as a blueprint for similar large-scale
+            renewable energy projects across developing nations with abundant
+            solar resources.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: When will Terra Solar begin commercial operations?
+          </h4>
+          <p className="text-secondary-700">
+            A: The project is scheduled for completion by 2027, with phased
+            construction allowing portions of the facility to begin generating
+            electricity before the entire project is finished.
+          </p>
+        </div>
+        <p className="text-secondary-700 font-semibold">
+          Terra Solar represents the Philippines' boldest bet on renewable
+          energy and its potential to reshape Southeast Asia's energy landscape.
+          Success here could establish a new paradigm for how developing nations
+          approach large-scale renewable energy deployment, making it one of the
+          most significant energy projects of the decade.
+        </p>
+      </>
+    ),
+    readingTime: 18,
   },
 ];
 
