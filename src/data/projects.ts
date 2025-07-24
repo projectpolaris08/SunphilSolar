@@ -17,7 +17,8 @@ export const projects: Project[] = [
     location: "Urbiztondo, Pangasinan, Philippines",
     system: "8kW Hybrid Solar",
     date: "2025-07-20",
-    clientType: "Residential Family Compound with High Day & Night Energy Demand",
+    clientType:
+      "Residential Family Compound with High Day & Night Energy Demand",
     specification: [
       "8kW Deye Hybrid Inverter – Seamlessly switches between solar, battery, and grid power. Reliable for areas with frequent brownouts.",
       "18 × 615W Canadian Bifacial Solar Panels – High-efficiency panels with rear-side power gain, ideal for the open rooftop layout in rural Pangasinan.",
@@ -1259,5 +1260,31 @@ export const projects: Project[] = [
     ],
     description:
       "Sunphil Solar successfully installed a 12kW hybrid solar energy system in Greater Lagro, Quezon City, for a family of doctors aiming to reduce energy costs and enjoy uninterrupted power. This robust setup is designed to support homes with multiple appliances and air conditioning systems, ensuring energy security and long-term savings.\n\nAs Quezon City continues to grow, families in Greater Lagro, Fairview, and North Caloocan are investing in hybrid solar systems to beat power interruptions and control energy costs. Sunphil Solar is proud to be the installer of choice for future ready homes in the metro.\n\nSunphil Solar offers:\n- Free Site Visit & Load Assessment\n- Expert Installation by In-House Teams\n- Premium Equipment with Full Warranty\n\nGet a Free Solar Quote Today.",
+  },
+  {
+    id: "malolos-bulacan-8kw",
+    image: "/images/project61.jpg",
+    location: "Malolos, Bulacan, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-07-24",
+    clientType: "Mid-size Residential Home with Day & Night Usage",
+    specification: [
+      "8kW Deye Hybrid Inverter - Smart inverter with automatic power switching between solar, battery, and grid, ideal for load shifting and backup.",
+      "14 × 615W Canadian Bifacial Solar Panels - Durable, high-performance bifacial modules capturing energy from both sides. Perfect for open-roof applications in Bulacan.",
+      "51.2V 314Ah LiFePO₄ Battery - 8000 Deep-cycle lithium battery with JK smart BMS offering stable backup power during brownouts.",
+    ],
+    benefits: [
+      "Reliable solar power with night-time storage",
+      "Emergency-ready with uninterrupted power supply",
+      "ROI in as fast as 5–6 years",
+      "Environmentally friendly and future-proof",
+      "Mobile App Monitoring",
+      "Automatic Switching",
+      "Scalable System",
+      "10-Year Battery Life",
+      "12-Year Panel Warranty",
+    ],
+    description:
+      "Sunphil Solar installed an 8kW grid-tied hybrid solar system with battery backup for a mid-size residential home in Malolos, Bulacan. This system features a smart Deye inverter, 14 high-performance Canadian Bifacial Solar Panels, and a 8000 deep-cycle LiFePO₄ battery with JK smart BMS. The setup is designed to provide reliable power day and night, with an estimated daily production of 30–40 kWh and monthly savings of ₱8,000–₱10,000. Backup duration is 6–10 hours depending on usage. With frequent summer brownouts and rising electric bills in Central Luzon, this hybrid system ensures the homeowner has power day and night while dramatically reducing their monthly bill. The system is emergency-ready, offers mobile app monitoring, and is designed for long-term performance with a 10-year battery life and 12-year panel warranty. Ready to install your own solar system in Bulacan? Visit sunphilsolar.com or send us a message for a free site assessment.",
   },
 ];
