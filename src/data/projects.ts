@@ -1287,4 +1287,26 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar installed an 8kW grid-tied hybrid solar system with battery backup for a mid-size residential home in Malolos, Bulacan. This system features a smart Deye inverter, 14 high-performance Canadian Bifacial Solar Panels, and a 8000 deep-cycle LiFePO₄ battery with JK smart BMS. The setup is designed to provide reliable power day and night, with an estimated daily production of 30–40 kWh and monthly savings of ₱8,000–₱10,000. Backup duration is 6–10 hours depending on usage. With frequent summer brownouts and rising electric bills in Central Luzon, this hybrid system ensures the homeowner has power day and night while dramatically reducing their monthly bill. The system is emergency-ready, offers mobile app monitoring, and is designed for long-term performance with a 10-year battery life and 12-year panel warranty. Ready to install your own solar system in Bulacan? Visit sunphilsolar.com or send us a message for a free site assessment.",
   },
+  {
+    id: "bacoor-cavite-16kw",
+    image: "/images/project62.jpg",
+    location: "Bacoor, Cavite, Philippines",
+    system: "16kW Hybrid Solar",
+    date: "2025-07-25",
+    clientType: "Residential / Home-Based Business",
+    specification: [
+      "16kW Deye Hybrid Inverter – All-in-one hybrid system managing solar input, grid connection, and battery storage with intelligent load priority control.",
+      "30 × 615W Canadian Bifacial Solar Panels – Dual-sided modules increase total output by capturing reflected sunlight, ideal for Cavite's urban roofs.",
+      "3 × 51.2V 314Ah LiFePO₄ Batteries – High-capacity lithium iron phosphate batteries for extended night use, load shifting, and backup during brownouts.",
+    ],
+    benefits: [
+      "Slash electricity bills by up to 80–90% monthly",
+      "Continuous use of aircon, refrigerators, desktop PCs, routers, CCTV, and more",
+      "Offset approx. 2,700–3,200 kg of CO₂ emissions per month",
+      "Ideal for urban homes, duplexes, or residential units with high usage patterns",
+      "Delivers energy independence and protection from Cavite's frequent grid interruptions",
+    ],
+    description:
+      "Sunphil Solar successfully completed a 16kW hybrid solar installation in Bacoor, Cavite, tailored for a modern household with high energy demands or a home-based business setup. With a single high-capacity inverter, advanced bifacial panels, and a reliable battery backup, this system ensures power stability, savings, and long-term resilience.\n\nThis hybrid system proves that homeowners in dense areas like Bacoor can still go big on solar. Whether it's for uninterrupted family comfort or ensuring productivity in a home office or online business, Sunphil Solar delivers reliability and efficiency without compromise.\n\nSunphil Solar provides:\n- Free Site Assessment & Energy Consultation\n- Expert System Design for Your Home's Unique Needs\n- Professional Installation & Lifetime Technical Support\n\nRequest Your Free Quote Today – Let's build your energy-secure future.",
+  },
 ];
