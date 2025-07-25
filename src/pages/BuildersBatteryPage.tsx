@@ -87,6 +87,8 @@ const BuildersBatteryPage = () => {
   const [builds, setBuilds] = useState<BatteryBuild[]>([]);
   const [loading, setLoading] = useState(false);
   const [filterType, setFilterType] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [newBuild, setNewBuild] = useState({
     type: batteryTypes[0],
     description: "",
@@ -172,6 +174,17 @@ const BuildersBatteryPage = () => {
     ? builds.filter((b) => b.type === filterType)
     : builds;
 
+  // Pagination calculations
+  const totalPages = Math.ceil(filteredBuilds.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentBuilds = filteredBuilds.slice(startIndex, endIndex);
+
+  // Reset to first page when filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filterType]);
+
   // Summary calculations
   const totalBuilds = builds.length;
   const inProgressCount = builds.filter(
@@ -228,6 +241,19 @@ const BuildersBatteryPage = () => {
     } else {
       alert("Failed to add build.");
     }
+  };
+
+  // Pagination controls
+  const goToPage = (page: number) => {
+    setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+  };
+
+  const goToPreviousPage = () => {
+    goToPage(currentPage - 1);
+  };
+
+  const goToNextPage = () => {
+    goToPage(currentPage + 1);
   };
 
   return (
@@ -397,121 +423,198 @@ const BuildersBatteryPage = () => {
         {loading ? (
           <div className="text-gray-700 dark:text-gray-200">Loading...</div>
         ) : (
-          <table className="w-full">
-            <thead>
-              <tr className="bg-gray-100 dark:bg-gray-900 border-b dark:border-gray-700">
-                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
-                  Battery Type
-                </th>
-                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
-                  Description
-                </th>
-                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
-                  Builder Name
-                </th>
-                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
-                  Status
-                </th>
-                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
-                  Date Started
-                </th>
-                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
-                  Date Completed
-                </th>
-                <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-              {filteredBuilds.length === 0 && (
-                <tr>
-                  <td
-                    colSpan={7}
-                    className="text-gray-400 dark:text-gray-500 px-4 py-2 text-center"
-                  >
-                    No builds yet.
-                  </td>
+          <>
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gray-100 dark:bg-gray-900 border-b dark:border-gray-700">
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Battery Type
+                  </th>
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Description
+                  </th>
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Builder Name
+                  </th>
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Status
+                  </th>
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Date Started
+                  </th>
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Date Completed
+                  </th>
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Actions
+                  </th>
                 </tr>
-              )}
-              {filteredBuilds.map((b) => (
-                <tr key={b.id} className="border-b">
-                  <td className="px-4 py-2">{b.type}</td>
-                  <td className="px-4 py-2">{b.description}</td>
-                  <td className="px-4 py-2">{b.builder}</td>
-                  <td className="px-4 py-2 flex items-center gap-2">
-                    <select
-                      value={b.status}
-                      onChange={(e) => handleStatusChange(b.id, e.target.value)}
-                      className="border rounded px-2 py-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-400 dark:disabled:text-gray-500"
+              </thead>
+              <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                {currentBuilds.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan={7}
+                      className="text-gray-400 dark:text-gray-500 px-4 py-2 text-center"
                     >
-                      {statusOptions.map((opt) => (
-                        <option key={opt} value={opt}>
-                          {opt}
-                        </option>
-                      ))}
-                    </select>
-                    {b.status === "In Progress" && (
-                      <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold">
-                        <svg
-                          className="animate-spin h-3 w-3 mr-1 text-blue-500"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
+                      No builds found.
+                    </td>
+                  </tr>
+                )}
+                {currentBuilds.map((b) => (
+                  <tr key={b.id} className="border-b">
+                    <td className="px-4 py-2">{b.type}</td>
+                    <td className="px-4 py-2">{b.description}</td>
+                    <td className="px-4 py-2">{b.builder}</td>
+                    <td className="px-4 py-2 flex items-center gap-2">
+                      <select
+                        value={b.status}
+                        onChange={(e) =>
+                          handleStatusChange(b.id, e.target.value)
+                        }
+                        className="border rounded px-2 py-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-400 dark:disabled:text-gray-500"
+                      >
+                        {statusOptions.map((opt) => (
+                          <option key={opt} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
+                      </select>
+                      {b.status === "In Progress" && (
+                        <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold">
+                          <svg
+                            className="animate-spin h-3 w-3 mr-1 text-blue-500"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                              fill="none"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                            />
+                          </svg>
+                          Building
+                        </span>
+                      )}
+                      {b.status === "Done" && (
+                        <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold">
+                          <svg
+                            className="h-3 w-3 mr-1 text-green-500"
                             fill="none"
-                          />
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                          />
-                        </svg>
-                        Building
-                      </span>
-                    )}
-                    {b.status === "Done" && (
-                      <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold">
-                        <svg
-                          className="h-3 w-3 mr-1 text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                          Done
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-4 py-2">
+                      {b.date_started ? b.date_started.slice(0, 10) : ""}
+                    </td>
+                    <td className="px-4 py-2">
+                      {b.date_completed ? b.date_completed.slice(0, 10) : ""}
+                    </td>
+                    <td className="px-4 py-2">
+                      <button
+                        onClick={() => handleDelete(b.id)}
+                        className="text-red-600 hover:text-red-800 px-2"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <span>
+                    Showing {startIndex + 1} to{" "}
+                    {Math.min(endIndex, filteredBuilds.length)} of{" "}
+                    {filteredBuilds.length} builds
+                  </span>
+                  <select
+                    value={itemsPerPage}
+                    onChange={(e) => {
+                      setItemsPerPage(Number(e.target.value));
+                      setCurrentPage(1);
+                    }}
+                    className="border rounded px-2 py-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm"
+                  >
+                    <option value={5}>5 per page</option>
+                    <option value={10}>10 per page</option>
+                    <option value={20}>20 per page</option>
+                    <option value={50}>50 per page</option>
+                  </select>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={goToPreviousPage}
+                    disabled={currentPage === 1}
+                    className="px-3 py-1 text-sm border rounded bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Previous
+                  </button>
+
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                      let pageNum;
+                      if (totalPages <= 5) {
+                        pageNum = i + 1;
+                      } else if (currentPage <= 3) {
+                        pageNum = i + 1;
+                      } else if (currentPage >= totalPages - 2) {
+                        pageNum = totalPages - 4 + i;
+                      } else {
+                        pageNum = currentPage - 2 + i;
+                      }
+
+                      return (
+                        <button
+                          key={pageNum}
+                          onClick={() => goToPage(pageNum)}
+                          className={`px-3 py-1 text-sm border rounded ${
+                            currentPage === pageNum
+                              ? "bg-blue-600 text-white border-blue-600"
+                              : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
+                          }`}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        Done
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-2">
-                    {b.date_started ? b.date_started.slice(0, 10) : ""}
-                  </td>
-                  <td className="px-4 py-2">
-                    {b.date_completed ? b.date_completed.slice(0, 10) : ""}
-                  </td>
-                  <td className="px-4 py-2">
-                    <button
-                      onClick={() => handleDelete(b.id)}
-                      className="text-red-600 hover:text-red-800 px-2"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                          {pageNum}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <button
+                    onClick={goToNextPage}
+                    disabled={currentPage === totalPages}
+                    className="px-3 py-1 text-sm border rounded bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

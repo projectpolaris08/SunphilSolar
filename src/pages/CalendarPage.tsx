@@ -640,8 +640,6 @@ const CalendarPage: React.FC = () => {
                 </option>
                 <option value="Admin Thea">Admin Thea</option>
                 <option value="Admin Ely">Admin Ely</option>
-                <option value="Jhoy Bengzon">Jhoy Bengzon</option>
-                <option value="Retchel Grace Tillo">Retchel Grace Tillo</option>
                 <option value="Admin Nat">Admin Nat</option>
                 <option value="Admin Diana">Admin Diana</option>
                 <option value="Admin Jen">Admin Jen</option>
