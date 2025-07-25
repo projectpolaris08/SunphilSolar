@@ -1953,177 +1953,855 @@ export const blogPosts: BlogPost[] = [
   {
     id: 12,
     title:
-      "Can Solar Panels Work During Rainy Weather? Insights for the Philippines' Unusual Summer Rain Pattern",
-    author: "Admin Jayar",
+      "Can Solar Panels Work During Rainy Weather? Insights for the Philippines",
+    author: "Sunphil Solar",
     date: "2025-05-09",
-    slug: "solar-panels-in-rainy-weather-philippines",
+    slug: "solar-panels-rainy-weather-philippines-insights",
     tags: [
-      "solar panels in the Philippines",
-      "solar energy in rainy weather",
-      "renewable energy",
-      "Philippines weather",
-      "net metering",
+      "Solar Panels Philippines",
+      "renewable energy Southeast Asia",
+      "tropical solar systems",
+      "energy security Philippines",
+      "climate resilience",
+      "solar energy projects",
+      "monsoon energy solutions",
+      "green energy investment",
+      "sustainable development",
+      "energy independence",
     ],
     excerpt:
-      "Is solar energy still effective in rainy weather? Learn how solar panels perform in the Philippines' current rainy-but-summer weather system and why they remain a smart investment.",
+      "Despite the Philippines' prolonged rainy seasons and frequent typhoons, solar panels continue to generate power even during overcast and rainy conditions. With proper system design, energy storage solutions, and grid integration, solar energy remains a viable and essential renewable energy solution for the archipelago's 7,641 islands seeking energy independence and climate resilience.",
     metaDescription:
-      "Can solar panels work during rainy days in the Philippines? Discover how modern systems still generate power during overcast weather and why solar remains a reliable investment.",
+      "Discover how solar panels perform during the Philippines' rainy season. Expert analysis of solar efficiency in tropical climates, energy storage solutions, and strategies to maximize solar potential despite monsoons and typhoons.",
     featuredImage: {
       url: "/images/solar-panels-rain.jpg",
-      alt: "Rain falling on solar panels installed on a rooftop in the Philippines",
+      alt: "Solar panels on Philippine rooftop during monsoon season with rain clouds, demonstrating renewable energy resilience in tropical climate",
       width: 1200,
       height: 630,
     },
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          The Philippines is currently experiencing a unique weather
-          pattern—though it's still technically summer, most afternoons bring
-          rainfall. PAGASA has not declared the start of the rainy season, but
-          this shift in weather has many people wondering:{" "}
-          <strong>Can solar panels still produce energy in the rain?</strong>
+          The global push towards renewable energy sources has brought solar
+          power to the forefront of sustainable development. With its abundant
+          sunshine, the Philippines stands as a prime candidate for widespread
+          solar adoption. However, a common concern, particularly in a country
+          known for its prolonged rainy seasons and frequent typhoons, is the
+          efficacy of solar panels during inclement weather. This analysis
+          delves into the technical realities of solar panel performance in
+          rainy and cloudy conditions, examines the specific climatic context of
+          the Philippines, and proposes comprehensive solutions to maximize
+          solar energy potential even amidst challenging weather patterns.
         </p>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Do Solar Panels Work in Cloudy or Rainy Conditions?
+        <p className="text-secondary-700 mb-6">
+          The question isn't whether solar panels can work during rainy weather
+          in the Philippines—they absolutely can. The real question is how
+          effectively they perform and what strategies can optimize their output
+          during the country's wet season. With proper planning, technology
+          integration, and system design, solar energy remains not just viable
+          but essential for the Philippines' energy independence and climate
+          resilience goals.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Debunking the Sunshine Myth: How Solar Panels Really Work
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          A prevalent misconception is that solar panels cease to function
+          entirely when the sun is obscured by clouds or during rainfall. This
+          fundamental misunderstanding has led many potential adopters in the
+          Philippines to dismiss solar energy as unsuitable for their tropical
+          climate. The reality is far more encouraging: solar photovoltaic (PV)
+          panels are designed to convert light into electricity, not just direct
+          sunlight.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Solar panels are capable of absorbing both direct and diffuse
+          sunlight, meaning that even on overcast days, they continue to
+          generate power. On average, solar panels typically produce between 10%
+          and 25% of their normal power output on cloudy days, with the exact
+          percentage depending on the density of the cloud cover. Light,
+          high-altitude clouds may have minimal impact, while thick, dark storm
+          clouds will significantly diminish energy production. Despite this
+          reduction, the continuous, albeit lower, energy generation during
+          these periods contributes meaningfully to the overall energy yield of
+          a solar system.
+        </p>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-left border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Weather Condition
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Solar Panel Output
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Philippine Context
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Direct sunlight
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  100% rated capacity
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Dry season (Dec-May): Peak performance
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Light clouds
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  70-80% of normal output
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Common during transition periods
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Heavy overcast
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  10-25% of normal output
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Monsoon season conditions
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">Rain</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  5-15% + cleaning benefit
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Wet season (Jun-Nov): Natural panel cleaning
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          The Hidden Benefits of Rain: Nature's Solar Panel Maintenance
         </h3>
         <p className="text-secondary-700 mb-6">
-          Absolutely. Solar panels do not need direct sunlight to generate
-          electricity—they rely on light (photons), which can still penetrate
-          cloud cover. In fact, panels can still generate{" "}
-          <strong>10% to 25% of their rated output</strong> during overcast
-          days, according to the U.S. Department of Energy.
+          One often overlooked benefit of rain, particularly in tropical
+          climates like the Philippines, is its natural cleaning effect. Dust,
+          dirt, pollen, and other debris can accumulate on the surface of solar
+          panels over time, creating a film that obstructs sunlight and reduces
+          efficiency by up to 15-20% in dusty environments. Rainfall acts as a
+          natural washing agent, rinsing away these impediments and helping to
+          maintain optimal panel performance. In some cases, a good rain shower
+          can lead to a temporary increase in efficiency immediately after the
+          downpour, as the panels are cleaner and can absorb more light.
         </p>
-
-        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
-          <li>
-            <strong>Diffused Light Capture:</strong> Even when the sky is
-            overcast, sunlight scatters and reaches the solar panels.
-          </li>
-          <li>
-            <strong>Natural Cleaning:</strong> Rain washes away dust and dirt
-            from panels, improving their performance when the sun returns.
-          </li>
-          <li>
-            <strong>Weather-Resilient Panels:</strong> Modern panels are built
-            to perform in low-light conditions and withstand storms.
-          </li>
-        </ul>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Solar Energy Performance in the Philippines
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Temperature Advantages During Rainy Weather
         </h3>
         <p className="text-secondary-700 mb-6">
-          The Philippines receives an average of{" "}
-          <strong>4.5 to 5.5 peak sun hours</strong> daily—even during rainy
-          months. According to the Department of Energy, solar radiation
-          potential in the country remains strong year-round.
+          The ambient temperature plays a crucial role in solar panel efficiency
+          that many people don't realize. While direct sunlight is essential,
+          excessively high temperatures can actually decrease a panel's
+          efficiency. Solar panels perform optimally in cooler conditions, with
+          efficiency dropping by approximately 0.4% for every degree Celsius
+          above 25°C. This means that a moderately cloudy or rainy day with
+          lower temperatures can sometimes be more conducive to efficient energy
+          production than a scorching hot, cloudless day where panels might
+          overheat and experience significant performance drops.
         </p>
-
-        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          The Philippine Climate Reality: Opportunities and Challenges
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The Philippines, an archipelago nation situated in Southeast Asia, is
+          characterized by a tropical maritime climate with two distinct
+          seasons: the dry season and the rainy season. The rainy season,
+          locally known as the wet season, typically spans from June to
+          November, though its onset and duration can vary across different
+          regions. This period is heavily influenced by the Southwest Monsoon
+          (Habagat), which brings significant rainfall and coincides with
+          typhoon season from July to October.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The average annual rainfall ranges from approximately 965 millimeters
+          to over 4,000 millimeters, depending on location. Areas such as Baguio
+          City and the eastern coastal regions receive particularly high
+          precipitation. This substantial rainfall and prolonged cloudy periods
+          during the wet season present both challenges and opportunities for
+          solar energy adoption that require strategic planning and system
+          design.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Regional Variations in Solar Potential
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            Locations like <strong>Metro Manila, Palawan, and Mindoro</strong>{" "}
-            continue to see reliable solar output even with over 100 rainy days
-            per year.
+            <strong>Luzon (Northern Philippines):</strong> Distinct wet and dry
+            seasons, with excellent solar potential during dry months and
+            moderate generation during monsoons
           </li>
           <li>
-            Rain is intermittent and often occurs in the afternoon, meaning
-            panels can still produce in the morning.
+            <strong>Visayas (Central Philippines):</strong> More balanced
+            rainfall distribution, offering consistent year-round solar
+            generation with seasonal variations
+          </li>
+          <li>
+            <strong>Mindanao (Southern Philippines):</strong> Less affected by
+            typhoons, providing more stable solar conditions throughout the year
+          </li>
+          <li>
+            <strong>Eastern Seaboard:</strong> Higher rainfall but also higher
+            solar irradiance during clear periods, requiring robust energy
+            storage solutions
           </li>
         </ul>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          How to Maximize Solar Efficiency During Rainy Weather
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Engineering Solutions for Monsoon-Ready Solar Systems
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          To effectively harness solar energy in the Philippines despite its
+          challenging rainy season, a comprehensive, multi-faceted approach is
+          essential. Success requires moving beyond simple panel installation to
+          creating integrated energy systems designed for tropical resilience.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          1. Advanced Energy Storage Solutions
         </h3>
-        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
+        <p className="text-secondary-700 mb-4">
+          Battery storage systems are absolutely critical for solar success in
+          the Philippines. Modern lithium-ion battery systems can store excess
+          energy generated during sunny periods for use during cloudy days,
+          rainy spells, or nighttime hours. This ensures consistent power supply
+          regardless of weather conditions and reduces reliance on the grid
+          during periods of low solar output.
+        </p>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-left border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Storage Technology
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Capacity Range
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Backup Duration
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Best Application
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Residential Lithium-ion
+                </td>
+                <td className="border border-gray-300 px-4 py-2">5-20 kWh</td>
+                <td className="border border-gray-300 px-4 py-2">1-3 days</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Homes, small businesses
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Commercial Systems
+                </td>
+                <td className="border border-gray-300 px-4 py-2">50-500 kWh</td>
+                <td className="border border-gray-300 px-4 py-2">3-7 days</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Offices, manufacturing
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Grid-scale Storage
+                </td>
+                <td className="border border-gray-300 px-4 py-2">1-100 MWh</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Days to weeks
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Utility integration
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          2. Smart Grid Integration and Net Metering
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Grid-tied solar systems with net metering offer a complementary
+          solution to battery storage. Even without local energy storage, excess
+          solar energy can be fed back into the national grid, earning credits
+          that offset electricity consumed during periods of insufficient solar
+          production. This effectively uses the grid as a large, communal
+          battery while providing financial incentives for solar adoption.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The Philippines' Renewable Energy Act supports net metering, allowing
+          solar system owners to sell excess power back to distribution
+          utilities. This policy framework makes solar economically attractive
+          even during the rainy season, as annual energy production often
+          exceeds consumption despite seasonal variations.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          3. Optimized System Design for Tropical Conditions
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Panel orientation and tilt optimization can significantly impact
+          performance in the Philippine climate. While the ideal tilt is often
+          considered equal to the site's latitude, adjustments can favor energy
+          production during specific seasons or weather conditions:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>Install high-efficiency panels</strong> like monocrystalline
-            types that work better in low light.
+            <strong>Tilt Optimization:</strong> Slightly reducing tilt angles
+            can improve diffuse light capture during overcast conditions
           </li>
           <li>
-            <strong>Add battery storage</strong> to save energy generated during
-            sunny periods.
+            <strong>Orientation Strategy:</strong> East-west orientation systems
+            can capture more morning and afternoon light during partly cloudy
+            days
           </li>
           <li>
-            <strong>Use net metering</strong> to earn credits for surplus
-            electricity sent to the grid.
+            <strong>Spacing Considerations:</strong> Adequate spacing between
+            panel rows prevents shading during low-angle sun conditions common
+            in monsoon months
           </li>
           <li>
-            <strong>Schedule regular maintenance</strong> to keep panels clean
-            and systems running efficiently.
+            <strong>Drainage Design:</strong> Proper mounting systems ensure
+            water drainage and prevent panel damage during heavy rainfall
           </li>
         </ul>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Myth vs. Reality
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Advanced Technologies for Low-Light Performance
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Modern solar technology continues to improve performance in
+          challenging conditions. Several technological advances particularly
+          benefit solar installations in tropical, monsoon-affected regions:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          High-Efficiency Panel Technologies
         </h3>
-        <div className="text-secondary-700 mb-6">
-          <p>
-            <strong>Myth:</strong> Solar panels don't work when it rains.
-          </p>
-          <p>
-            <strong>Reality:</strong> They still produce electricity—just at
-            reduced capacity.
-          </p>
-          <p>
-            <strong>Myth:</strong> Panels are prone to damage in wet weather.
-          </p>
-          <p>
-            <strong>Reality:</strong> High-quality panels are built to handle
-            rain, wind, and heat.
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Monocrystalline Silicon:</strong> Superior low-light
+            performance with efficiency rates exceeding 20%
+          </li>
+          <li>
+            <strong>PERC Technology:</strong> Passivated Emitter and Rear Cell
+            design improves light absorption and reduces electron recombination
+          </li>
+          <li>
+            <strong>Bifacial Panels:</strong> Capture reflected light from
+            surfaces below, increasing total energy generation by 10-30%
+          </li>
+          <li>
+            <strong>Half-Cell Design:</strong> Reduces internal resistance and
+            improves performance under partial shading conditions
+          </li>
+        </ul>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Smart Inverter and Monitoring Systems
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Modern power electronics and monitoring systems optimize energy
+          harvest even during variable weather conditions. Smart inverters with
+          maximum power point tracking (MPPT) continuously adjust to extract
+          optimal power from panels under changing light conditions. Real-time
+          monitoring systems allow operators to track performance and identify
+          maintenance needs before they impact system output.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Economic Benefits Beyond Weather Resilience
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The economic case for solar energy in the Philippines extends far
+          beyond weather performance. Even accounting for reduced output during
+          the rainy season, solar installations provide substantial financial
+          benefits:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Long-term Cost Stability
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Solar panels provide 20-25 years of predictable energy generation with
+          minimal operating costs. This long-term price stability contrasts
+          sharply with volatile fossil fuel prices that have historically
+          burdened Philippine consumers with some of Southeast Asia's highest
+          electricity costs.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Energy Security and Independence
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Solar energy reduces dependence on imported fossil fuels, improving
+          national energy security. For individual consumers, solar plus storage
+          provides resilience against power outages that are common during
+          typhoon season, ensuring critical systems remain operational when grid
+          power fails.
+        </p>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-left border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Economic Benefit
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Dry Season Impact
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Rainy Season Impact
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Annual Result
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Grid electricity savings
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  High (80-100% offset)
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Moderate (30-60% offset)
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  65-80% annual savings
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Net metering credits
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Maximum generation
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Credit utilization
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Year-round benefits
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Backup power value
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Lower demand
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Critical during outages
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Enhanced resilience
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Case Studies: Solar Success Stories in Monsoon Climates
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Real-world examples demonstrate solar energy's viability in tropical,
+          monsoon-affected regions similar to the Philippines:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Kerala, India: Monsoon Solar Pioneer
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Kerala state in India experiences intense monsoon seasons similar to
+          the Philippines but has successfully deployed over 400 MW of solar
+          capacity. Key success factors include robust energy storage
+          integration, community-scale installations that share resources across
+          multiple buildings, and government policies supporting distributed
+          solar deployment.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Singapore: Urban Tropical Solar
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Singapore's tropical climate with frequent rainfall hasn't prevented
+          aggressive solar deployment. The city-state targets 2 GW of solar
+          capacity by 2030 through innovative approaches including floating
+          solar installations and vertical building-integrated systems that
+          maximize space utilization while maintaining performance during rainy
+          periods.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Philippine Success Stories
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Within the Philippines, several successful solar installations
+          demonstrate the technology's effectiveness during monsoon conditions.
+          The Calatagan Solar Farm in Batangas (63.3 MW) and the San Carlos
+          Solar Energy facility in Negros Occidental (22 MW) both operate
+          successfully through annual wet seasons, maintaining grid stability
+          and economic returns even during challenging weather periods.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Maintenance and System Longevity in Tropical Conditions
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Proper maintenance becomes especially critical for solar systems
+          operating in the Philippines' challenging tropical environment.
+          However, many maintenance requirements actually become easier during
+          the rainy season:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Natural Cleaning Benefits
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Regular rainfall provides natural panel cleaning, reducing the need
+          for manual washing that would otherwise be required monthly in dusty
+          environments. This natural cleaning can improve panel efficiency by
+          5-15% compared to dirty panels, partially offsetting reduced
+          irradiance during cloudy conditions.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Preventive Maintenance Strategies
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Drainage Inspection:</strong> Ensure proper water runoff to
+            prevent standing water and potential electrical issues
+          </li>
+          <li>
+            <strong>Corrosion Prevention:</strong> Regular inspection of
+            mounting hardware and electrical connections in high-humidity
+            conditions
+          </li>
+          <li>
+            <strong>Vegetation Management:</strong> Rapid plant growth during
+            wet season requires proactive vegetation control to prevent shading
+          </li>
+          <li>
+            <strong>Performance Monitoring:</strong> Continuous monitoring helps
+            identify weather-related performance issues before they become
+            serious problems
+          </li>
+        </ul>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Policy Framework and Market Development
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The Philippine government has created supportive policies for solar
+          energy development that acknowledge the country's unique climatic
+          challenges:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Renewable Energy Act Benefits
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>Net metering allows credit banking across seasons</li>
+          <li>Feed-in tariff guarantees for solar installations</li>
+          <li>Tax incentives and duty exemptions for solar equipment</li>
+          <li>Simplified permitting processes for distributed solar</li>
+        </ul>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Future Policy Considerations
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Continued policy development should focus on energy storage
+          integration, grid modernization to handle variable renewable sources,
+          and community solar programs that allow shared resources during
+          challenging weather periods. Time-of-use pricing could also better
+          value solar generation during peak demand periods that often coincide
+          with afternoon sun breaks during the rainy season.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Looking Forward: Climate Change and Solar Resilience
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Climate change adds urgency to renewable energy adoption in the
+          Philippines while also creating new challenges and opportunities for
+          solar deployment:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Evolving Weather Patterns
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Climate change may intensify both dry and wet seasons, potentially
+          creating more extreme contrasts but also clearer periods of high solar
+          generation. Advanced weather forecasting and energy management systems
+          will become increasingly important for optimizing solar system
+          performance.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Resilience Planning
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Solar plus storage systems provide critical resilience infrastructure
+          for climate adaptation. As extreme weather events become more
+          frequent, distributed solar systems with battery backup offer
+          community-level energy security that centralized fossil fuel plants
+          cannot match during disasters and grid disruptions.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Implementation Roadmap for Philippine Solar Success
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Successful solar deployment in the Philippines requires a systematic
+          approach that accounts for seasonal variations and climatic
+          challenges:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Phase 1: Foundation Building (2024-2026)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>Establish robust net metering and energy storage incentives</li>
+          <li>
+            Develop local technical expertise for tropical solar installations
+          </li>
+          <li>
+            Create financing mechanisms that account for seasonal generation
+            patterns
+          </li>
+          <li>
+            Build demonstration projects showcasing monsoon-resilient solar
+            systems
+          </li>
+        </ul>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Phase 2: Scaling and Integration (2026-2030)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>
+            Deploy community solar programs that share resources across weather
+            variations
+          </li>
+          <li>
+            Integrate advanced weather forecasting with solar system management
+          </li>
+          <li>
+            Develop regional energy trading to balance seasonal variations
+            across islands
+          </li>
+          <li>
+            Establish manufacturing capabilities for tropical-optimized solar
+            equipment
+          </li>
+        </ul>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Phase 3: Leadership and Export (2030-2040)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            Achieve 50% renewable energy mix with solar as primary contributor
+          </li>
+          <li>
+            Export solar technology and expertise to other tropical nations
+          </li>
+          <li>
+            Develop next-generation storage and grid management technologies
+          </li>
+          <li>Create regional renewable energy trading networks</li>
+        </ul>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How much power do solar panels generate during Philippine rainy
+            season?
+          </h4>
+          <p className="text-secondary-700">
+            A: Solar panels typically generate 10-25% of their rated capacity
+            during overcast conditions and 5-15% during rainfall. However, this
+            reduced generation is offset by natural panel cleaning and cooler
+            operating temperatures that improve efficiency when sun breaks
+            through clouds.
           </p>
         </div>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Internal Resources and Further Reading
-        </h3>
-        <ul className="list-disc list-inside text-secondary-700 mb-6 space-y-2">
-          <li>
-            <a href="/products" className="text-primary-600 underline">
-              Explore our Hybrid Inverters and LiFeP04 Battery Storage
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
-              className="text-primary-600 underline"
-            >
-              How Net Metering Works in the Philippines
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://sunphilsolar.com/blog/net-metering-vs-battery-storage-philippines"
-              className="text-primary-600 underline"
-            >
-              Why Add Solar Battery Storage?
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="text-primary-600 underline">
-              Request a Free Solar Consultation
-            </a>
-          </li>
-        </ul>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Conclusion
-        </h3>
-        <p className="text-secondary-700 mb-6">
-          Solar energy remains a reliable and cost-effective choice in the
-          Philippines—even during this unusual wet summer. With proper planning
-          and modern systems, you can enjoy sustainable power,{" "}
-          <strong>rain or shine</strong>. Ready to future-proof your energy
-          source? Talk to our experts at{" "}
-          <a href="/contact" className="text-primary-600 underline">
-            Sunphil Solar
-          </a>{" "}
-          today.
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: What size battery storage system is needed for Philippine monsoon
+            conditions?
+          </h4>
+          <p className="text-secondary-700">
+            A: For residential applications, 1-3 days of backup capacity
+            (typically 10-30 kWh) provides adequate resilience during extended
+            cloudy periods. Commercial systems may require 3-7 days of storage
+            depending on critical load requirements and grid reliability.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Can solar panels withstand Philippine typhoons?
+          </h4>
+          <p className="text-secondary-700">
+            A: Modern solar panels and mounting systems are engineered to
+            withstand wind loads exceeding 200 km/h when properly installed.
+            Many Philippine installations have successfully operated through
+            multiple typhoon seasons with minimal damage.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Is solar economically viable in the Philippines despite the rainy
+            season?
+          </h4>
+          <p className="text-secondary-700">
+            A: Yes, annual solar generation in the Philippines typically
+            provides 65-80% electricity bill reduction even accounting for
+            monsoon season reductions. The economic benefits compound over 20-25
+            year system lifespans with minimal operating costs.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How does net metering work during the rainy season?
+          </h4>
+          <p className="text-secondary-700">
+            A: Net metering allows credits earned during high-generation periods
+            (dry season) to offset consumption during low-generation periods
+            (wet season). This seasonal balancing makes solar economically
+            attractive year-round despite weather variations.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: What maintenance is required for solar panels during monsoon
+            season?
+          </h4>
+          <p className="text-secondary-700">
+            A: Monsoon season actually reduces maintenance requirements as rain
+            naturally cleans panels. Primary maintenance involves drainage
+            inspection, vegetation control, and monitoring system performance to
+            identify any weather-related issues.
+          </p>
+        </div>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Conclusion: Embracing Solar Energy in All Weather
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The question of whether solar panels can work during rainy weather in
+          the Philippines is definitively answered: yes, they absolutely can and
+          do. While efficiency is reduced during overcast and rainy conditions,
+          solar panels continue generating valuable electricity throughout the
+          monsoon season. More importantly, the combination of modern
+          technology, energy storage solutions, grid integration, and supportive
+          policies creates a comprehensive framework for solar success
+          regardless of weather patterns.
         </p>
+        <p className="text-secondary-700 mb-4">
+          The Philippines' tropical climate, characterized by distinct wet and
+          dry seasons, presents unique considerations for solar energy adoption.
+          However, these challenges are entirely manageable through thoughtful
+          system design, appropriate technology selection, and integrated energy
+          management strategies. The natural cleaning effect of rain, cooler
+          operating temperatures during overcast conditions, and seasonal energy
+          credit banking through net metering all contribute to making solar
+          energy economically attractive year-round.
+        </p>
+        <p className="text-secondary-700 mb-4">
+          The economic case for solar in the Philippines extends far beyond
+          weather performance. With some of Southeast Asia's highest electricity
+          costs, abundant solar resources during the dry season, and increasing
+          energy security concerns, solar energy offers a pathway to greater
+          energy independence and economic competitiveness. The technology's
+          20-25 year lifespan provides decades of price stability that contrasts
+          sharply with volatile fossil fuel markets.
+        </p>
+        <p className="text-secondary-700 mb-4">
+          Success stories from similar tropical climates, combined with growing
+          numbers of successful Philippine installations, demonstrate that solar
+          energy is not just viable but essential for the country's sustainable
+          development goals. Modern solar technologies continue improving
+          low-light performance, while energy storage costs decline and grid
+          integration capabilities advance.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          As the world moves toward a sustainable energy future, the Philippines
+          stands ready to harness the power of the sun in all weather
+          conditions. The archipelago's 7,641 islands can be powered by
+          renewable energy that works during sunshine and rain alike. The
+          challenges posed by the monsoon season are not obstacles to overcome
+          but design parameters to optimize around. With proper planning,
+          technology integration, and policy support, the Philippines can
+          illuminate its path to energy independence and climate resilience,
+          proving that solar energy shines bright even when the skies are grey.
+        </p>
+        <p className="text-secondary-700 font-semibold mb-6">
+          The future of Philippine energy lies not in questioning whether solar
+          works during rainy weather, but in optimizing systems to capture every
+          ray of available sunlight, store energy efficiently, and create
+          resilient power infrastructure that serves the nation's development
+          goals regardless of weather conditions. The time for solar energy in
+          the Philippines is now, in sunshine and in rain.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          References
+        </h2>
+        <div className="text-secondary-700 mb-4">
+          <p className="mb-2">
+            [1] SolarReviews: "Do Solar Panels Work On Cloudy Days Or At Night?"
+            <a
+              href="https://www.solarreviews.com/blog/do-solar-panels-work-on-cloudy-days-or-at-night"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              https://www.solarreviews.com/blog/do-solar-panels-work-on-cloudy-days-or-at-night
+            </a>
+          </p>
+          <p className="mb-2">
+            [2] SEIA: "What happens to solar panels when it's cloudy or
+            raining?"
+            <a
+              href="https://seia.org/what-happens-to-solar-panels-when-its-cloudy-or-raining/"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              https://seia.org/what-happens-to-solar-panels-when-its-cloudy-or-raining/
+            </a>
+          </p>
+          <p className="mb-2">
+            [3] PAGASA: "Climate of the Philippines"
+            <a
+              href="https://www.pagasa.dost.gov.ph/information/climate-philippines"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              https://www.pagasa.dost.gov.ph/information/climate-philippines
+            </a>
+          </p>
+          <p className="mb-2">
+            [4] Climatestotravel.com: "Philippines climate: average weather,
+            temperature, rain, when to go"
+            <a
+              href="https://www.climatestotravel.com/climate/philippines"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              https://www.climatestotravel.com/climate/philippines
+            </a>
+          </p>
+          <p className="mb-2">
+            [5] Infranergy: "MAKE YOUR SOLAR PANELS WORK BETTER DURING RAINY
+            SEASON"
+            <a
+              href="https://infranergy.us/make-solar-panels-work-better-during-rainy-season/"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              https://infranergy.us/make-solar-panels-work-better-during-rainy-season/
+            </a>
+          </p>
+        </div>
       </>
     ),
-    readingTime: 6,
-    isFeatured: true,
+    readingTime: 18,
   },
   {
     id: 13,
@@ -7564,8 +8242,8 @@ export const blogPosts: BlogPost[] = [
           Conclusion: More Than Solar Panels
         </h2>
         <p className="text-secondary-700 mb-4">
-          Terra Solar represents more than an energy project, it's a statement of
-          intent about the Philippines' energy future and a preview of how
+          Terra Solar represents more than an energy project, it's a statement
+          of intent about the Philippines' energy future and a preview of how
           developing nations can accelerate their transition to sustainable
           energy systems. The project's success will be measured not just in
           gigawatt-hours generated, but in its ability to catalyze broader
@@ -7576,10 +8254,9 @@ export const blogPosts: BlogPost[] = [
           The financial projections are compelling: with potential annual
           revenues of ₱17.5-22.5 billion, Terra Solar could establish the
           Philippines as a regional renewable energy leader while providing
-          decades of clean, affordable electricity. The multiplier
-          effects industrial development, job creation, technology transfer, and
-          energy security,far exceed the direct benefits of electricity
-          generation.
+          decades of clean, affordable electricity. The multiplier effects
+          industrial development, job creation, technology transfer, and energy
+          security,far exceed the direct benefits of electricity generation.
         </p>
         <p className="text-secondary-700 mb-6">
           The world will be watching as construction progresses toward the 2027
@@ -7717,19 +8394,51 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          The Philippines stands at a pivotal moment in its energy journey. While the archipelago nation has long been dependent on imported fossil fuels and coal-fired power plants, a remarkable transformation is underway that could fundamentally reshape how Filipinos power their homes, businesses, and industries. At the heart of this transformation lies wind power. A resource as abundant as the tropical storms that regularly sweep across the nation's 7,641 islands. With 178 GW of offshore wind potential according to the World Bank, the Philippines possesses enough renewable energy capacity to power not just its own needs, but potentially export clean energy to neighboring nations and establish itself as Southeast Asia's wind energy leader.
+          The Philippines stands at a pivotal moment in its energy journey.
+          While the archipelago nation has long been dependent on imported
+          fossil fuels and coal-fired power plants, a remarkable transformation
+          is underway that could fundamentally reshape how Filipinos power their
+          homes, businesses, and industries. At the heart of this transformation
+          lies wind power. A resource as abundant as the tropical storms that
+          regularly sweep across the nation's 7,641 islands. With 178 GW of
+          offshore wind potential according to the World Bank, the Philippines
+          possesses enough renewable energy capacity to power not just its own
+          needs, but potentially export clean energy to neighboring nations and
+          establish itself as Southeast Asia's wind energy leader.
         </p>
         <p className="text-secondary-700 mb-6">
-          This isn't merely about meeting energy needs, it's about economic transformation, energy security, and climate resilience. The same meteorological conditions that make the Philippines vulnerable to climate change also provide some of the world's most consistent and powerful wind resources. The question isn't whether the Philippines should pursue wind power, but whether it can overcome the structural challenges that stand between potential and reality.
+          This isn't merely about meeting energy needs, it's about economic
+          transformation, energy security, and climate resilience. The same
+          meteorological conditions that make the Philippines vulnerable to
+          climate change also provide some of the world's most consistent and
+          powerful wind resources. The question isn't whether the Philippines
+          should pursue wind power, but whether it can overcome the structural
+          challenges that stand between potential and reality.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           The Numbers Tell a Compelling Story
         </h2>
         <p className="text-secondary-700 mb-4">
-          The scale of the Philippines' wind power potential is nothing short of extraordinary. With a total offshore wind potential of 178 GW according to the World Bank, the country possesses enough renewable energy capacity to power not just its own needs, but potentially export clean energy to neighboring nations. To put this in perspective, the entire installed power generation capacity of the Philippines today is approximately 26 GW. The offshore wind potential alone represents nearly seven times the country's current total capacity.
+          The scale of the Philippines' wind power potential is nothing short of
+          extraordinary. With a total offshore wind potential of 178 GW
+          according to the World Bank, the country possesses enough renewable
+          energy capacity to power not just its own needs, but potentially
+          export clean energy to neighboring nations. To put this in
+          perspective, the entire installed power generation capacity of the
+          Philippines today is approximately 26 GW. The offshore wind potential
+          alone represents nearly seven times the country's current total
+          capacity.
         </p>
         <p className="text-secondary-700 mb-6">
-          What makes this potential even more remarkable is the ambitious timeline for development. The World Bank estimates that the Philippines could expand its total offshore wind capacity to 21 GW by 2040, while the national renewable energy program plans to expand current wind capacity by 2,345 MW by 2027. These aren't distant dreams they're concrete targets backed by government policy and private investment. The numbers become even more impressive when considering that the Philippines aims to achieve 15.3 GW of renewable energy capacity by 2030 and reduce emissions by 75% by the same year.
+          What makes this potential even more remarkable is the ambitious
+          timeline for development. The World Bank estimates that the
+          Philippines could expand its total offshore wind capacity to 21 GW by
+          2040, while the national renewable energy program plans to expand
+          current wind capacity by 2,345 MW by 2027. These aren't distant dreams
+          they're concrete targets backed by government policy and private
+          investment. The numbers become even more impressive when considering
+          that the Philippines aims to achieve 15.3 GW of renewable energy
+          capacity by 2030 and reduce emissions by 75% by the same year.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           The Economic Imperative: Breaking Free from Energy Poverty
@@ -7798,131 +8507,248 @@ export const blogPosts: BlogPost[] = [
           </table>
         </div>
         <p className="text-secondary-700 mb-6">
-          The urgency of developing wind power extends far beyond environmental considerations. The Philippines currently suffers from some of the highest electricity costs in Southeast Asia, a burden that disproportionately affects low-income families and constrains industrial competitiveness. High energy costs create a vicious cycle: they limit economic growth, which in turn constrains the government's ability to invest in the very infrastructure needed to bring costs down. Wind power offers a path out of this trap, delivering electricity at increasingly competitive rates over their 20-25 year lifespans once constructed.
+          The urgency of developing wind power extends far beyond environmental
+          considerations. The Philippines currently suffers from some of the
+          highest electricity costs in Southeast Asia, a burden that
+          disproportionately affects low-income families and constrains
+          industrial competitiveness. High energy costs create a vicious cycle:
+          they limit economic growth, which in turn constrains the government's
+          ability to invest in the very infrastructure needed to bring costs
+          down. Wind power offers a path out of this trap, delivering
+          electricity at increasingly competitive rates over their 20-25 year
+          lifespans once constructed.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Building on Solid Foundations: Learning from Success Stories
         </h2>
         <p className="text-secondary-700 mb-4">
-          The Philippines is not starting from zero. The country currently operates eight large-scale wind farms, with the Burgos Wind Farm leading at 150 MW capacity since 2014. The recently completed Pagudpud Wind Farm has surpassed it with 160 MW capacity, demonstrating the steady progress in wind energy development. While these facilities pale in comparison to global giants,the world's largest wind farms range from 659 MW to 20 GW they represent crucial proof-of-concept projects that have demonstrated wind power's viability in the Philippine context.
+          The Philippines is not starting from zero. The country currently
+          operates eight large-scale wind farms, with the Burgos Wind Farm
+          leading at 150 MW capacity since 2014. The recently completed Pagudpud
+          Wind Farm has surpassed it with 160 MW capacity, demonstrating the
+          steady progress in wind energy development. While these facilities
+          pale in comparison to global giants,the world's largest wind farms
+          range from 659 MW to 20 GW they represent crucial proof-of-concept
+          projects that have demonstrated wind power's viability in the
+          Philippine context.
         </p>
         <p className="text-secondary-700 mb-6">
-          More importantly, these existing wind farms have provided valuable lessons about operating wind turbines in the Philippines' unique meteorological and geographical conditions. The success of these projects has helped build local expertise and confidence among both policymakers and investors about the technology's reliability. The Burgos Wind Farm, for instance, has operated successfully through multiple typhoon seasons, proving that properly designed wind infrastructure can withstand the Philippines' challenging weather patterns.
+          More importantly, these existing wind farms have provided valuable
+          lessons about operating wind turbines in the Philippines' unique
+          meteorological and geographical conditions. The success of these
+          projects has helped build local expertise and confidence among both
+          policymakers and investors about the technology's reliability. The
+          Burgos Wind Farm, for instance, has operated successfully through
+          multiple typhoon seasons, proving that properly designed wind
+          infrastructure can withstand the Philippines' challenging weather
+          patterns.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Current Wind Farm Performance Analysis
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>Burgos Wind Farm (150 MW):</strong> Largest operational wind farm, connected to Luzon Grid via 43-kilometer transmission line, demonstrating grid integration feasibility
+            <strong>Burgos Wind Farm (150 MW):</strong> Largest operational wind
+            farm, connected to Luzon Grid via 43-kilometer transmission line,
+            demonstrating grid integration feasibility
           </li>
           <li>
-            <strong>Pagudpud Wind Farm (160 MW):</strong> Most recent major installation, showcasing improved turbine technology and efficiency gains
+            <strong>Pagudpud Wind Farm (160 MW):</strong> Most recent major
+            installation, showcasing improved turbine technology and efficiency
+            gains
           </li>
           <li>
-            <strong>Combined Operations:</strong> Eight wind farms providing real-world data on performance, maintenance, and grid stability in tropical conditions
+            <strong>Combined Operations:</strong> Eight wind farms providing
+            real-world data on performance, maintenance, and grid stability in
+            tropical conditions
           </li>
           <li>
-            <strong>Technology Validation:</strong> Proven that modern wind turbines can operate effectively in typhoon-prone environments with proper design and maintenance
+            <strong>Technology Validation:</strong> Proven that modern wind
+            turbines can operate effectively in typhoon-prone environments with
+            proper design and maintenance
           </li>
         </ul>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Political Will Meets Market Reality
         </h2>
         <p className="text-secondary-700 mb-4">
-          The Philippine government has demonstrated remarkable ambition in its renewable energy targets. The country aims to achieve 15.3 GW of renewable energy capacity by 2030 and reduce emissions by 75% by the same year targets that are among the most aggressive in Southeast Asia. This political commitment has translated into concrete policy actions, including opening renewable energy projects to full foreign ownership and streamlining regulatory frameworks.
+          The Philippine government has demonstrated remarkable ambition in its
+          renewable energy targets. The country aims to achieve 15.3 GW of
+          renewable energy capacity by 2030 and reduce emissions by 75% by the
+          same year targets that are among the most aggressive in Southeast
+          Asia. This political commitment has translated into concrete policy
+          actions, including opening renewable energy projects to full foreign
+          ownership and streamlining regulatory frameworks.
         </p>
         <p className="text-secondary-700 mb-6">
-          The market has responded enthusiastically. As of April 2024, the DOE had approved 92 offshore wind energy service contracts (WESCs) with a combined potential capacity of more than 65GW. This represents an unprecedented level of private sector interest, with both domestic and international developers recognizing the Philippines' potential. More encouragingly, progress is moving from planning to implementation, with three offshore wind projects totaling 1,650 MW recently receiving certificates of confirmation of commerciality from the DOE.
+          The market has responded enthusiastically. As of April 2024, the DOE
+          had approved 92 offshore wind energy service contracts (WESCs) with a
+          combined potential capacity of more than 65GW. This represents an
+          unprecedented level of private sector interest, with both domestic and
+          international developers recognizing the Philippines' potential. More
+          encouragingly, progress is moving from planning to implementation,
+          with three offshore wind projects totaling 1,650 MW recently receiving
+          certificates of confirmation of commerciality from the DOE.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           The Structural Challenge That Demands Attention
         </h2>
         <p className="text-secondary-700 mb-4">
-          Beyond infrastructure and regulatory hurdles, the Philippines faces a fundamental market structure problem that threatens to undermine wind power development. The energy market is dominated by a single utility Meralco which controls a staggering 80% of the market. This concentration of power raises serious questions about whether there will be sufficient appetite for the higher initial investments typically associated with renewable energy projects.
+          Beyond infrastructure and regulatory hurdles, the Philippines faces a
+          fundamental market structure problem that threatens to undermine wind
+          power development. The energy market is dominated by a single utility
+          Meralco which controls a staggering 80% of the market. This
+          concentration of power raises serious questions about whether there
+          will be sufficient appetite for the higher initial investments
+          typically associated with renewable energy projects.
         </p>
         <p className="text-secondary-700 mb-6">
-          This monopolistic structure creates a potential bottleneck that could slow wind power adoption regardless of technological feasibility or policy support. Unlike competitive markets where multiple utilities might pursue different strategies, the Philippines' concentrated market means that one entity's reluctance could significantly impact the entire sector's growth trajectory. This challenge requires careful policy attention to ensure that market concentration doesn't become a barrier to renewable energy deployment.
+          This monopolistic structure creates a potential bottleneck that could
+          slow wind power adoption regardless of technological feasibility or
+          policy support. Unlike competitive markets where multiple utilities
+          might pursue different strategies, the Philippines' concentrated
+          market means that one entity's reluctance could significantly impact
+          the entire sector's growth trajectory. This challenge requires careful
+          policy attention to ensure that market concentration doesn't become a
+          barrier to renewable energy deployment.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Critical Infrastructure and Grid Integration Challenges
         </h2>
         <p className="text-secondary-700 mb-4">
-          Despite promising policy support and market interest, significant obstacles remain that could derail the Philippines' wind power ambitions:
+          Despite promising policy support and market interest, significant
+          obstacles remain that could derail the Philippines' wind power
+          ambitions:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           1. Grid Modernization Requirements
         </h3>
         <p className="text-secondary-700 mb-4">
-          The Philippines' transmission system was designed for centralized, fossil fuel-based generation, not for distributed renewable sources that may be located far from demand centers. The aging grid requires costly modernization and heavy investments in new infrastructure to accommodate variable renewable energy sources like wind power. This includes upgrading transmission lines, installing smart grid technologies, and developing sophisticated energy management systems.
+          The Philippines' transmission system was designed for centralized,
+          fossil fuel-based generation, not for distributed renewable sources
+          that may be located far from demand centers. The aging grid requires
+          costly modernization and heavy investments in new infrastructure to
+          accommodate variable renewable energy sources like wind power. This
+          includes upgrading transmission lines, installing smart grid
+          technologies, and developing sophisticated energy management systems.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           2. Geographical Complexity
         </h3>
         <p className="text-secondary-700 mb-4">
-          The Philippines' geographical advantages thousands of islands with abundant wind resources also present logistical nightmares. Each island essentially requires its own energy infrastructure, and connecting wind farms to population centers often means spanning significant bodies of water with submarine cables. The cost and complexity of these interconnections can dramatically impact project economics.
+          The Philippines' geographical advantages thousands of islands with
+          abundant wind resources also present logistical nightmares. Each
+          island essentially requires its own energy infrastructure, and
+          connecting wind farms to population centers often means spanning
+          significant bodies of water with submarine cables. The cost and
+          complexity of these interconnections can dramatically impact project
+          economics.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           3. Urgent Energy Security Crisis
         </h3>
         <p className="text-secondary-700 mb-6">
-          The situation is made more urgent by the Philippines' current energy crisis. With gas reserves supplying 30% of energy to Luzon rapidly declining, the country faces potential energy shortages that could undermine economic growth and development goals. This creates pressure for quick solutions, but wind power development requires years of planning and construction, highlighting the need for immediate action on long-term projects.
+          The situation is made more urgent by the Philippines' current energy
+          crisis. With gas reserves supplying 30% of energy to Luzon rapidly
+          declining, the country faces potential energy shortages that could
+          undermine economic growth and development goals. This creates pressure
+          for quick solutions, but wind power development requires years of
+          planning and construction, highlighting the need for immediate action
+          on long-term projects.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Learning from Global Wind Power Leaders
         </h2>
         <p className="text-secondary-700 mb-4">
-          The Philippines can learn valuable lessons from other nations that have successfully scaled wind power:
+          The Philippines can learn valuable lessons from other nations that
+          have successfully scaled wind power:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>Denmark's Coordination Model:</strong> Centralized maritime spatial planning could serve as a template for the Philippines' complex archipelagic geography
+            <strong>Denmark's Coordination Model:</strong> Centralized maritime
+            spatial planning could serve as a template for the Philippines'
+            complex archipelagic geography
           </li>
           <li>
-            <strong>Taiwan's Typhoon Experience:</strong> Direct lessons from developing floating wind projects in typhoon-prone waters with similar meteorological challenges
+            <strong>Taiwan's Typhoon Experience:</strong> Direct lessons from
+            developing floating wind projects in typhoon-prone waters with
+            similar meteorological challenges
           </li>
           <li>
-            <strong>UK's Offshore Success:</strong> Policy frameworks for large-scale offshore development and grid integration strategies
+            <strong>UK's Offshore Success:</strong> Policy frameworks for
+            large-scale offshore development and grid integration strategies
           </li>
           <li>
-            <strong>China's Manufacturing Scale:</strong> Lessons in developing domestic wind energy supply chains and reducing technology costs
+            <strong>China's Manufacturing Scale:</strong> Lessons in developing
+            domestic wind energy supply chains and reducing technology costs
           </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          The key insight from these success stories is that wind power development requires more than just good wind resources it demands coordinated infrastructure planning, streamlined regulatory processes, and long-term policy stability. The Philippine government should consider establishing a dedicated renewable energy authority with the power to coordinate across agencies and accelerate project approvals.
+          The key insight from these success stories is that wind power
+          development requires more than just good wind resources it demands
+          coordinated infrastructure planning, streamlined regulatory processes,
+          and long-term policy stability. The Philippine government should
+          consider establishing a dedicated renewable energy authority with the
+          power to coordinate across agencies and accelerate project approvals.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           The Climate Imperative: Turning Vulnerability into Strength
         </h2>
         <p className="text-secondary-700 mb-4">
-          Beyond economics and energy security, wind power development is crucial for the Philippines' climate resilience. The Philippines is one of the world's most vulnerable countries to climate change, owing to its geographic location and archipelagic structure, making the transition away from fossil fuels not just an environmental goal but an existential necessity.
+          Beyond economics and energy security, wind power development is
+          crucial for the Philippines' climate resilience. The Philippines is
+          one of the world's most vulnerable countries to climate change, owing
+          to its geographic location and archipelagic structure, making the
+          transition away from fossil fuels not just an environmental goal but
+          an existential necessity.
         </p>
         <p className="text-secondary-700 mb-6">
-          The irony is profound: the same meteorological conditions that make the Philippines vulnerable to climate change its position in the Pacific typhoon belt and exposure to seasonal monsoons also provide some of the world's most consistent and powerful wind resources. Properly designed wind turbines can not only withstand these conditions but harness them for productive use. This represents a fundamental shift from viewing the Philippines' weather patterns as obstacles to recognizing them as assets for renewable energy development.
+          The irony is profound: the same meteorological conditions that make
+          the Philippines vulnerable to climate change its position in the
+          Pacific typhoon belt and exposure to seasonal monsoons also provide
+          some of the world's most consistent and powerful wind resources.
+          Properly designed wind turbines can not only withstand these
+          conditions but harness them for productive use. This represents a
+          fundamental shift from viewing the Philippines' weather patterns as
+          obstacles to recognizing them as assets for renewable energy
+          development.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Economic Development Beyond Electricity Generation
         </h2>
         <p className="text-secondary-700 mb-4">
-          Wind power development offers economic benefits that extend far beyond electricity generation:
+          Wind power development offers economic benefits that extend far beyond
+          electricity generation:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Job Creation and Skills Development
         </h3>
         <p className="text-secondary-700 mb-4">
-          The wind energy sector could create thousands of jobs across the value chain, from manufacturing and installation to maintenance and grid operations. More importantly, these are high-skilled, well-paying jobs that could help retain Filipino talent and attract international expertise to the country.
+          The wind energy sector could create thousands of jobs across the value
+          chain, from manufacturing and installation to maintenance and grid
+          operations. More importantly, these are high-skilled, well-paying jobs
+          that could help retain Filipino talent and attract international
+          expertise to the country.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Industrial Competitiveness
         </h3>
         <p className="text-secondary-700 mb-4">
-          Reliable and affordable electricity serves as a foundation for industrial development, potentially attracting energy-intensive manufacturing to the Philippines. Lower electricity costs could make Filipino manufacturers more competitive in global markets while supporting domestic industrial growth.
+          Reliable and affordable electricity serves as a foundation for
+          industrial development, potentially attracting energy-intensive
+          manufacturing to the Philippines. Lower electricity costs could make
+          Filipino manufacturers more competitive in global markets while
+          supporting domestic industrial growth.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Regional Energy Hub Potential
         </h3>
         <p className="text-secondary-700 mb-6">
-          Success in wind power could position the Philippines as a regional renewable energy hub, potentially exporting clean energy to neighboring countries and attracting additional green energy investments. The country's strategic location in Southeast Asia makes it an ideal platform for serving regional energy markets.
+          Success in wind power could position the Philippines as a regional
+          renewable energy hub, potentially exporting clean energy to
+          neighboring countries and attracting additional green energy
+          investments. The country's strategic location in Southeast Asia makes
+          it an ideal platform for serving regional energy markets.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           The Technology Evolution: From Onshore to Offshore
@@ -7950,9 +8776,7 @@ export const blogPosts: BlogPost[] = [
                 <td className="border border-gray-300 px-4 py-2">
                   Onshore Wind
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  Limited
-                </td>
+                <td className="border border-gray-300 px-4 py-2">Limited</td>
                 <td className="border border-gray-300 px-4 py-2">
                   Lower cost, proven technology
                 </td>
@@ -7964,9 +8788,7 @@ export const blogPosts: BlogPost[] = [
                 <td className="border border-gray-300 px-4 py-2">
                   Fixed Offshore
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  23 GW
-                </td>
+                <td className="border border-gray-300 px-4 py-2">23 GW</td>
                 <td className="border border-gray-300 px-4 py-2">
                   Higher wind speeds, less visual impact
                 </td>
@@ -7978,9 +8800,7 @@ export const blogPosts: BlogPost[] = [
                 <td className="border border-gray-300 px-4 py-2">
                   Floating Offshore
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  155 GW
-                </td>
+                <td className="border border-gray-300 px-4 py-2">155 GW</td>
                 <td className="border border-gray-300 px-4 py-2">
                   Access to deeper waters, higher winds
                 </td>
@@ -7992,37 +8812,57 @@ export const blogPosts: BlogPost[] = [
           </table>
         </div>
         <p className="text-secondary-700 mb-6">
-          The evolution from onshore to offshore wind represents a technological leap that could unlock the Philippines' vast renewable energy potential. While onshore wind faces land constraints in the densely populated Philippines, offshore wind particularly floating wind technology offers access to the country's abundant marine wind resources. This technological progression positions the Philippines at the forefront of next-generation renewable energy development.
+          The evolution from onshore to offshore wind represents a technological
+          leap that could unlock the Philippines' vast renewable energy
+          potential. While onshore wind faces land constraints in the densely
+          populated Philippines, offshore wind particularly floating wind
+          technology offers access to the country's abundant marine wind
+          resources. This technological progression positions the Philippines at
+          the forefront of next-generation renewable energy development.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Financial Pathways: Making Wind Power Investment Attractive
         </h2>
         <p className="text-secondary-700 mb-4">
-          Successful wind power development requires innovative financing mechanisms that address the unique challenges of developing renewable energy in an archipelagic nation:
+          Successful wind power development requires innovative financing
+          mechanisms that address the unique challenges of developing renewable
+          energy in an archipelagic nation:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           1. Blended Finance Solutions
         </h3>
         <p className="text-secondary-700 mb-4">
-          Combining development finance with private investment can reduce project risks and make wind power projects more attractive to commercial investors. International climate funds and development banks should play a crucial role in de-risking early offshore wind projects.
+          Combining development finance with private investment can reduce
+          project risks and make wind power projects more attractive to
+          commercial investors. International climate funds and development
+          banks should play a crucial role in de-risking early offshore wind
+          projects.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           2. Green Bonds and Climate Finance
         </h3>
         <p className="text-secondary-700 mb-4">
-          The Philippines can tap into the growing green bond market to finance wind power infrastructure. The country's ambitious climate targets make it an attractive destination for climate finance seeking measurable environmental impact.
+          The Philippines can tap into the growing green bond market to finance
+          wind power infrastructure. The country's ambitious climate targets
+          make it an attractive destination for climate finance seeking
+          measurable environmental impact.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           3. Public-Private Partnerships
         </h3>
         <p className="text-secondary-700 mb-6">
-          Strategic partnerships between government and private sector can leverage public sector planning capabilities with private sector efficiency and innovation. These partnerships can also help address grid integration challenges that require coordination across multiple agencies.
+          Strategic partnerships between government and private sector can
+          leverage public sector planning capabilities with private sector
+          efficiency and innovation. These partnerships can also help address
+          grid integration challenges that require coordination across multiple
+          agencies.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           A Roadmap for Success: Essential Action Items
         </h2>
         <p className="text-secondary-700 mb-4">
-          For the Philippines to realize its wind power potential, several critical actions must be taken:
+          For the Philippines to realize its wind power potential, several
+          critical actions must be taken:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Immediate Priorities (2024-2025)
@@ -8037,7 +8877,9 @@ export const blogPosts: BlogPost[] = [
           Medium-term Goals (2025-2030)
         </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-4">
-          <li>Complete first phase offshore wind projects (1,650 MW confirmed)</li>
+          <li>
+            Complete first phase offshore wind projects (1,650 MW confirmed)
+          </li>
           <li>Establish domestic wind energy supply chain capabilities</li>
           <li>Implement smart grid technologies for renewable integration</li>
           <li>Create regional cooperation frameworks for energy trade</li>
@@ -8055,86 +8897,138 @@ export const blogPosts: BlogPost[] = [
           Regional Competition and Cooperation Opportunities
         </h2>
         <p className="text-secondary-700 mb-4">
-          The Philippines' wind power development occurs within a competitive regional context where other Southeast Asian nations are also pursuing aggressive renewable energy targets:
+          The Philippines' wind power development occurs within a competitive
+          regional context where other Southeast Asian nations are also pursuing
+          aggressive renewable energy targets:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>Vietnam:</strong> Rapidly expanding wind capacity with ambitious offshore development plans
+            <strong>Vietnam:</strong> Rapidly expanding wind capacity with
+            ambitious offshore development plans
           </li>
           <li>
-            <strong>Thailand:</strong> Implementing hybrid renewable systems and regional energy integration projects
+            <strong>Thailand:</strong> Implementing hybrid renewable systems and
+            regional energy integration projects
           </li>
           <li>
-            <strong>Indonesia:</strong> Leveraging archipelagic advantages for distributed renewable development
+            <strong>Indonesia:</strong> Leveraging archipelagic advantages for
+            distributed renewable development
           </li>
           <li>
-            <strong>Malaysia:</strong> Developing offshore wind capabilities with international partnerships
+            <strong>Malaysia:</strong> Developing offshore wind capabilities
+            with international partnerships
           </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          Rather than viewing this as pure competition, the Philippines should seek opportunities for regional cooperation, technology sharing, and joint procurement that can reduce costs and accelerate deployment across the region. The ASEAN Power Grid initiative provides a framework for such cooperation, potentially allowing wind-rich countries to export clean energy to their neighbors.
+          Rather than viewing this as pure competition, the Philippines should
+          seek opportunities for regional cooperation, technology sharing, and
+          joint procurement that can reduce costs and accelerate deployment
+          across the region. The ASEAN Power Grid initiative provides a
+          framework for such cooperation, potentially allowing wind-rich
+          countries to export clean energy to their neighbors.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Environmental Stewardship and Community Engagement
         </h2>
         <p className="text-secondary-700 mb-4">
-          Successful wind power development must prioritize environmental protection and community engagement:
+          Successful wind power development must prioritize environmental
+          protection and community engagement:
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Marine Ecosystem Protection
         </h3>
         <p className="text-secondary-700 mb-4">
-          Offshore wind development must include rigorous environmental impact assessments and ongoing monitoring to protect marine biodiversity. The Philippines' rich marine ecosystems require careful consideration in project siting and design to minimize ecological disruption.
+          Offshore wind development must include rigorous environmental impact
+          assessments and ongoing monitoring to protect marine biodiversity. The
+          Philippines' rich marine ecosystems require careful consideration in
+          project siting and design to minimize ecological disruption.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Fishing Community Integration
         </h3>
         <p className="text-secondary-700 mb-4">
-          Wind farm development should create opportunities for existing fishing communities through job creation, skills training, and revenue sharing arrangements. Properly designed offshore wind farms can even serve as artificial reefs that enhance marine productivity.
+          Wind farm development should create opportunities for existing fishing
+          communities through job creation, skills training, and revenue sharing
+          arrangements. Properly designed offshore wind farms can even serve as
+          artificial reefs that enhance marine productivity.
         </p>
         <h3 className="text-2xl font-bold text-secondary-900 mb-4">
           Cultural Heritage Preservation
         </h3>
         <p className="text-secondary-700 mb-6">
-          The Philippines' coastal and marine areas have deep cultural significance for many communities. Wind power development must respect these cultural values and ensure that traditional practices can coexist with renewable energy infrastructure.
+          The Philippines' coastal and marine areas have deep cultural
+          significance for many communities. Wind power development must respect
+          these cultural values and ensure that traditional practices can
+          coexist with renewable energy infrastructure.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Seizing the Moment: A Historic Opportunity
         </h2>
         <p className="text-secondary-700 mb-4">
-          The convergence of technological advancement, policy support, and market interest creates an unprecedented opportunity for the Philippines to leapfrog fossil fuel dependence and establish itself as a regional renewable energy hub. With offshore wind auctions planned for Q3 2025, the next 18 months will be crucial in determining whether this potential translates into reality.
+          The convergence of technological advancement, policy support, and
+          market interest creates an unprecedented opportunity for the
+          Philippines to leapfrog fossil fuel dependence and establish itself as
+          a regional renewable energy hub. With offshore wind auctions planned
+          for Q3 2025, the next 18 months will be crucial in determining whether
+          this potential translates into reality.
         </p>
         <p className="text-secondary-700 mb-4">
-          Success will require sustained political commitment beyond electoral cycles, continued regulatory reform, strategic infrastructure investment, and international cooperation on technology transfer and financing. The stakes could not be higher: done right, wind power could provide the Philippines with energy security, economic competitiveness, and climate resilience for generations to come.
+          Success will require sustained political commitment beyond electoral
+          cycles, continued regulatory reform, strategic infrastructure
+          investment, and international cooperation on technology transfer and
+          financing. The stakes could not be higher: done right, wind power
+          could provide the Philippines with energy security, economic
+          competitiveness, and climate resilience for generations to come.
         </p>
         <p className="text-secondary-700 mb-6">
-          The trade winds that have connected the Philippine islands for millennia may soon power them as well. Whether this vision becomes reality depends on choices made today by policymakers, investors, and citizens who recognize that the future of Philippine energy lies not in the ground, but in the air above its beautiful, wind-swept seas. The Philippines has the opportunity to transform from an energy importer dependent on volatile fossil fuel markets to a renewable energy leader with some of the world's most abundant wind resources. The moment for action is now.
+          The trade winds that have connected the Philippine islands for
+          millennia may soon power them as well. Whether this vision becomes
+          reality depends on choices made today by policymakers, investors, and
+          citizens who recognize that the future of Philippine energy lies not
+          in the ground, but in the air above its beautiful, wind-swept seas.
+          The Philippines has the opportunity to transform from an energy
+          importer dependent on volatile fossil fuel markets to a renewable
+          energy leader with some of the world's most abundant wind resources.
+          The moment for action is now.
         </p>
         <h2 className="text-3xl font-bold text-secondary-900 mb-4">
           Frequently Asked Questions
         </h2>
         <div className="mb-6">
           <h4 className="text-lg font-semibold text-secondary-900 mb-2">
-            Q: How much offshore wind potential does the Philippines actually have?
+            Q: How much offshore wind potential does the Philippines actually
+            have?
           </h4>
           <p className="text-secondary-700">
-            A: According to the World Bank, the Philippines has 178 GW of total offshore wind potential, with the majority (155 GW) coming from floating offshore wind technology that can access deeper waters with stronger, more consistent winds.
+            A: According to the World Bank, the Philippines has 178 GW of total
+            offshore wind potential, with the majority (155 GW) coming from
+            floating offshore wind technology that can access deeper waters with
+            stronger, more consistent winds.
           </p>
         </div>
         <div className="mb-6">
           <h4 className="text-lg font-semibold text-secondary-900 mb-2">
-            Q: What are the main obstacles to wind power development in the Philippines?
+            Q: What are the main obstacles to wind power development in the
+            Philippines?
           </h4>
           <p className="text-secondary-700">
-            A: Key challenges include grid modernization requirements, the archipelagic geography requiring complex interconnections, regulatory coordination across multiple agencies, and market concentration with Meralco controlling 80% of the energy market.
+            A: Key challenges include grid modernization requirements, the
+            archipelagic geography requiring complex interconnections,
+            regulatory coordination across multiple agencies, and market
+            concentration with Meralco controlling 80% of the energy market.
           </p>
         </div>
         <div className="mb-6">
           <h4 className="text-lg font-semibold text-secondary-900 mb-2">
-            Q: How do existing wind farms in the Philippines perform during typhoons?
+            Q: How do existing wind farms in the Philippines perform during
+            typhoons?
           </h4>
           <p className="text-secondary-700">
-            A: Current wind farms like Burgos (150 MW) and Pagudpud (160 MW) have successfully operated through multiple typhoon seasons, proving that properly designed wind turbines can withstand the Philippines' challenging weather conditions with appropriate engineering and maintenance protocols.
+            A: Current wind farms like Burgos (150 MW) and Pagudpud (160 MW)
+            have successfully operated through multiple typhoon seasons, proving
+            that properly designed wind turbines can withstand the Philippines'
+            challenging weather conditions with appropriate engineering and
+            maintenance protocols.
           </p>
         </div>
         <div className="mb-6">
@@ -8142,7 +9036,10 @@ export const blogPosts: BlogPost[] = [
             Q: When will the Philippines begin major offshore wind development?
           </h4>
           <p className="text-secondary-700">
-            A: The Philippine government plans to launch offshore wind auctions in Q3 2025, with three projects totaling 1,650 MW already receiving certificates of confirmation of commerciality from the Department of Energy.
+            A: The Philippine government plans to launch offshore wind auctions
+            in Q3 2025, with three projects totaling 1,650 MW already receiving
+            certificates of confirmation of commerciality from the Department of
+            Energy.
           </p>
         </div>
         <div className="mb-6">
@@ -8150,7 +9047,11 @@ export const blogPosts: BlogPost[] = [
             Q: How could wind power impact Philippine electricity prices?
           </h4>
           <p className="text-secondary-700">
-            A: Wind power could help reduce the Philippines' status as having some of Southeast Asia's highest electricity costs by providing competitively-priced renewable energy with minimal operating costs over 20-25 year lifespans, reducing dependence on volatile fossil fuel imports.
+            A: Wind power could help reduce the Philippines' status as having
+            some of Southeast Asia's highest electricity costs by providing
+            competitively-priced renewable energy with minimal operating costs
+            over 20-25 year lifespans, reducing dependence on volatile fossil
+            fuel imports.
           </p>
         </div>
         <div className="mb-6">
@@ -8158,11 +9059,19 @@ export const blogPosts: BlogPost[] = [
             Q: Can the Philippines become a regional renewable energy exporter?
           </h4>
           <p className="text-secondary-700">
-            A: With 178 GW of offshore wind potential nearly seven times current total generation capacity, the Philippines could potentially export clean energy to neighboring Southeast Asian countries through regional grid connections and the ASEAN Power Grid initiative.
+            A: With 178 GW of offshore wind potential nearly seven times current
+            total generation capacity, the Philippines could potentially export
+            clean energy to neighboring Southeast Asian countries through
+            regional grid connections and the ASEAN Power Grid initiative.
           </p>
         </div>
         <p className="text-secondary-700 font-semibold">
-          The Philippines stands at a historic crossroads where abundant wind resources, advancing technology, and urgent energy needs converge to create an unprecedented opportunity for transformation. Success in harnessing these trade winds could establish the archipelago as Southeast Asia's renewable energy leader and provide a blueprint for other developing nations facing similar energy challenges.
+          The Philippines stands at a historic crossroads where abundant wind
+          resources, advancing technology, and urgent energy needs converge to
+          create an unprecedented opportunity for transformation. Success in
+          harnessing these trade winds could establish the archipelago as
+          Southeast Asia's renewable energy leader and provide a blueprint for
+          other developing nations facing similar energy challenges.
         </p>
       </>
     ),
