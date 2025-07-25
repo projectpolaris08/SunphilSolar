@@ -28,12 +28,12 @@ const featuredBlogs = [
   {
     id: 12,
     title:
-      "Can Solar Panels Work During Rainy Weather? Insights for the Philippines' Unusual Summer Rain Pattern",
+      "Can Solar Panels Work During Rainy Weather? Insights for the Philippines",
     excerpt:
-      "Is solar energy still effective in rainy weather? Learn how solar panels perform in the Philippines' current rainy-but-summer weather system and why they remain a smart investment.",
-    slug: "solar-panels-in-rainy-weather-philippines",
+      "Despite the Philippines' prolonged rainy seasons and frequent typhoons, solar panels continue to generate power even during overcast and rainy conditions. With proper system design, energy storage solutions, and grid integration, solar energy remains a viable and essential renewable energy solution for the archipelago's 7,641 islands seeking energy independence and climate resilience.",
+    slug: "solar-panels-rainy-weather-philippines-insights",
     featuredImage: "/images/solar-panels-rain.jpg",
-    readingTime: 6,
+    readingTime: 18,
     date: "2025-05-09",
   },
   {
