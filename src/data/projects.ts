@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "tanza-cavite-6kw-2025",
+    image: "/images/project63.jpg",
+    location: "Tanza, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-26",
+    clientType: "Single-Family Residential",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart hybrid management for solar production, battery charging, and automatic switchover during power loss.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules enhance performance by capturing both direct and reflected sunlight.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium iron phosphate battery ensures reliable energy storage for nighttime use and emergency backup.",
+    ],
+    benefits: [
+      "Reduce electric bills by up to 60–70%",
+      "Keep essential appliances running during power interruptions (lights, refrigerator, Wi-Fi, CCTV, electric fans)",
+      "Offset approx. 1,200–1,500 kg of CO₂ emissions per month",
+      "Ideal for residential homes in suburban Cavite with average daily consumption",
+      "Provides peace of mind and energy independence in power-unstable areas",
+    ],
+    description:
+      "Sunphil Solar completed a compact yet powerful 6kW hybrid solar installation in Tanza, Cavite. Tailored for a modern household with moderate energy needs, this system provides consistent daytime energy supply and essential backup power during grid outages, ideal for areas with frequent brownouts. Whether for work-from-home needs, day-to-day comfort, or protection during outages, this 6kW hybrid system delivers real value to Cavite homeowners. Built with trusted Deye inverter technology and Canadian bifacial panels, it's a smart investment in long-term energy savings.\n\nSunphil Solar offers free on-site energy evaluation, custom load calculation & engineering, professional installation, and lifetime support. Get your free quote today and start your journey to lower bills and reliable power!",
+  },
+  {
     id: "urbiztondo-pangasinan-8kw",
     image: "/images/project60.jpg",
     location: "Urbiztondo, Pangasinan, Philippines",

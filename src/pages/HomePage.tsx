@@ -20,7 +20,6 @@ import { Testimonials } from "../components/sections/Testimonials";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NewsSection } from "../components/sections/NewsSection";
 import { projects } from "../data/projects";
 
 // Mock data array for 3 featured blogs
@@ -250,7 +249,6 @@ export const HomePage = () => {
         <title>Home | Sunphil Solar</title>
       </Helmet>
       <Hero />
-      <NewsSection />
       {/* Featured Projects Section - Carousel on mobile, grid on desktop */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
