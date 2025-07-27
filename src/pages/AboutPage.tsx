@@ -38,7 +38,7 @@ const AboutPage: React.FC = () => {
       name: 'Jhayar "Gar" Bacolod',
       title: "Owner/Head of Operations",
       description:
-        "Jhayar is the Head of Operations and Chief Technical Officer at Sunphil Solar. He oversees daily operations and drives the company's technical direction—from system design to installation. Known for his hands-on expertise and strong leadership, Jhayar works closely with teams to ensure every project is completed efficiently, safely, and on time.",
+        "Jhayar is the Head of Operations and Chief Technical Officer at Sunphil Solar. He oversees daily operations and drives the company's technical direction - from system design to installation. Known for his hands-on expertise and strong leadership, Jhayar works closely with teams to ensure every project is completed efficiently, safely, and on time.",
       image: "/images/Sunphil.jpg",
     },
   ];
@@ -208,6 +208,20 @@ const AboutPage: React.FC = () => {
       description: "Helping build solar systems safely and securely.",
       image: "/images/Rogelio.jpg",
     },
+    {
+      initial: "A",
+      name: "Anthony",
+      title: "Installer",
+      description: "Helping build solar systems safely and securely.",
+      image: "/images/Anthony.jpg",
+    },
+    {
+      initial: "JP",
+      name: "John Paul",
+      title: "Installer",
+      description: "Helping build solar systems safely and securely.",
+      image: "/images/John-Paul.jpg",
+    },
   ];
 
   const builders = [
@@ -238,20 +252,6 @@ const AboutPage: React.FC = () => {
       title: "Builder",
       description: "Expert in hybrid inverter setups and connections.",
       image: "/images/Jaxel.jpg",
-    },
-    {
-      initial: "A",
-      name: "Anthony",
-      title: "Builder",
-      description: "Expert in hybrid inverter setups and connections.",
-      image: "/images/Anthony.jpg",
-    },
-    {
-      initial: "JP",
-      name: "John Paul",
-      title: "Builder",
-      description: "Expert in hybrid inverter setups and connections.",
-      image: "/images/John-Paul.jpg",
     },
     {
       initial: "E",
@@ -347,7 +347,7 @@ const AboutPage: React.FC = () => {
               </h3>
               <p className="text-secondary-600 mb-6">
                 Sunphil Solar, also known in the community as Fairview
-                Solarista, was founded in 2021 from a simple dream—to bring
+                Solarista, was founded in 2021 from a simple dream - to bring
                 affordable and reliable solar energy to Filipino homes and
                 businesses. What started as a local initiative powered by
                 passion and grit has grown into one of Metro Manila's trusted
@@ -367,7 +367,7 @@ const AboutPage: React.FC = () => {
               </h3>
               <p className="text-secondary-600 mb-6">
                 To be the leading force in making solar energy a standard in
-                every Filipino home and business—empowering communities to
+                every Filipino home and business - empowering communities to
                 achieve energy freedom, sustainability, and resilience through
                 innovation, integrity, and care.
               </p>
@@ -378,7 +378,7 @@ const AboutPage: React.FC = () => {
               <p className="text-secondary-600 mb-6">
                 To deliver high-quality, affordable, and reliable solar energy
                 solutions that empower our customers to take control of their
-                energy needs — reducing costs while protecting the environment
+                energy needs - reducing costs while protecting the environment
                 for generations to come.
               </p>
 
@@ -394,7 +394,7 @@ const AboutPage: React.FC = () => {
                     </span>
                     <br />
                     We understand the Filipino climate, energy consumption
-                    habits, and building structures—allowing us to offer
+                    habits, and building structures - allowing us to offer
                     tailored solar solutions that work for you.
                   </div>
                 </li>
@@ -512,7 +512,7 @@ const AboutPage: React.FC = () => {
                     <div className="flex items-center gap-3 mb-3">
                       <MdCheckCircle className="text-green-500" size={24} />
                       <h4 className="text-lg font-semibold text-secondary-900">
-                        Barangay Permit
+                        Barangay's Permit
                       </h4>
                     </div>
                     <p className="text-secondary-600 text-sm">
@@ -542,9 +542,9 @@ const AboutPage: React.FC = () => {
                   Our Promise
                 </h3>
                 <p className="text-secondary-700 mb-6">
-                  At Sunphil Solar, we're not just installing solar panels—we're{" "}
-                  <span className="font-bold">powering a movement</span>. A
-                  movement for cleaner air, lower electricity bills, and
+                  At Sunphil Solar, we're not just installing solar panels -
+                  we're <span className="font-bold">powering a movement</span>.
+                  A movement for cleaner air, lower electricity bills, and
                   empowered Filipino households. Whether you're a homeowner
                   looking to reduce your Meralco bill or a business owner
                   seeking energy resilience, we're here to guide you every step
