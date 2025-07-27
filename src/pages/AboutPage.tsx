@@ -201,6 +201,13 @@ const AboutPage: React.FC = () => {
       description: "Helping build solar systems safely and securely.",
       image: "/images/Joel.jpg",
     },
+    {
+      initial: "R",
+      name: "Rogelio",
+      title: "Installer",
+      description: "Helping build solar systems safely and securely.",
+      image: "/images/Rogelio.jpg",
+    },
   ];
 
   const builders = [
@@ -217,13 +224,6 @@ const AboutPage: React.FC = () => {
       title: "Builder",
       description: "Inverter Technical Specialist.",
       image: "/images/David.jpg",
-    },
-    {
-      initial: "D",
-      name: "Dong",
-      title: "Installer",
-      description: "Battery Technician.",
-      image: "/images/Dong.jpeg",
     },
     {
       initial: "M",
