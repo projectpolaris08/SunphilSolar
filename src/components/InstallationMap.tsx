@@ -268,14 +268,17 @@ export const InstallationMap: React.FC<InstallationMapProps> = ({
 
   // Removed getMarkerIcon function to avoid Google Maps API conflicts
 
-  // Validate API key - be more lenient for testing
+  // Validate API key for production
   const isValidApiKey =
-    apiKey && apiKey !== "YOUR_GOOGLE_MAPS_API_KEY" && apiKey.length > 5;
+    apiKey &&
+    apiKey !== "YOUR_GOOGLE_MAPS_API_KEY" &&
+    apiKey.length > 20 &&
+    apiKey.startsWith("AIza");
 
   // Handle map load error
   const handleMapError = useCallback(() => {
     setMapError(
-      "Failed to load Google Maps. Please check your API key and internet connection."
+      "Google Maps failed to load. This could be due to an invalid API key, domain restrictions, or API quota limits."
     );
     setIsLoading(false);
   }, []);
@@ -315,29 +318,28 @@ export const InstallationMap: React.FC<InstallationMapProps> = ({
         <div className="text-center p-6">
           <div className="text-red-500 text-6xl mb-4">🗺️</div>
           <h3 className="text-xl font-semibold text-gray-800 mb-2">
-            Google Maps API Key Required
+            Google Maps Configuration Required
           </h3>
           <p className="text-gray-600 mb-4">
-            Please configure your Google Maps API key in the environment
-            variables.
+            The map requires a valid Google Maps API key to function properly.
           </p>
           <div className="bg-gray-200 p-3 rounded text-sm font-mono text-left">
-            <p>Add to your .env file:</p>
-            <p className="text-blue-600">
-              VITE_GOOGLE_MAPS_API_KEY=your_api_key_here
+            <p>
+              <strong>For Production:</strong>
             </p>
+            <p>1. Set environment variable: VITE_GOOGLE_MAPS_API_KEY</p>
+            <p>2. Enable Google Maps JavaScript API in Google Cloud Console</p>
+            <p>3. Add your domain to API key restrictions</p>
           </div>
           <div className="mt-4 p-3 bg-yellow-100 rounded text-sm">
-            <strong>Debug Info:</strong>
+            <strong>Current Status:</strong>
             <br />
-            API Key exists: {!!apiKey}
+            API Key provided: {!!apiKey ? "Yes" : "No"}
             <br />
-            API Key valid: {isValidApiKey}
+            API Key format:{" "}
+            {apiKey && apiKey.startsWith("AIza") ? "Valid" : "Invalid"}
             <br />
-            Current URL: {window.location.href}
-            <br />
-            API Key preview:{" "}
-            {apiKey ? `${apiKey.substring(0, 10)}...` : "Not set"}
+            Environment: {import.meta.env.MODE}
           </div>
         </div>
       </div>
@@ -447,12 +449,6 @@ export const InstallationMap: React.FC<InstallationMapProps> = ({
             fullscreenControl: true,
           }}
         >
-          {/* Test marker to verify Google Maps is working */}
-          <Marker
-            position={{ lat: 14.5995, lng: 121.0 }}
-            title="Test Marker - Manila"
-          />
-
           {/* Regular markers - Show filtered installations based on showMarkers prop */}
           {showMarkers &&
             googleLoaded &&

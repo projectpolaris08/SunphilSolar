@@ -8,7 +8,6 @@ import {
   BatteryCharging,
   Leaf,
   BarChart2,
-  Info,
   ChevronRight,
 } from "lucide-react";
 import {
@@ -779,114 +778,6 @@ const StatisticsPage: React.FC = () => {
             </div>
           </div>
         </div>
-        {/* Project Analysis Section */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/80 to-gray-900/90 rounded-2xl shadow-2xl p-8 mt-8 flex overflow-hidden">
-            <div className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-blue-400 via-green-400 to-yellow-400 rounded-l-2xl" />
-            <div className="relative z-10 w-full">
-              <h2 className="text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
-                <span className="inline-block bg-blue-500/80 rounded-full p-2 align-middle">
-                  <Info className="h-6 w-6 text-white" />
-                </span>
-                Project Analysis
-              </h2>
-              <div className="text-white text-lg leading-relaxed space-y-0 divide-y divide-white/10">
-                <div className="flex items-start gap-3 py-4">
-                  <span className="text-blue-400 text-2xl mt-1">📈</span>
-                  <div>
-                    <span className="font-bold text-blue-200 text-lg">
-                      Project Growth:
-                    </span>{" "}
-                    The data shows a significant increase in the number of solar
-                    projects from{" "}
-                    <span className="text-blue-300 font-semibold">
-                      March to June 2025
-                    </span>
-                    , with the highest number of installations occurring in{" "}
-                    <span className="text-blue-300 font-semibold">June</span>.
-                    This trend suggests growing awareness and adoption of solar
-                    energy solutions, driven by rising electricity costs.
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 py-4">
-                  <span className="text-green-400 text-2xl mt-1">🔢</span>
-                  <div>
-                    <span className="font-bold text-green-200 text-lg">
-                      System Size Trends:
-                    </span>{" "}
-                    The most common system sizes are{" "}
-                    <span className="text-green-300 font-semibold">
-                      6kW, 8kW, and 12kW
-                    </span>
-                    , indicating that residential and small commercial clients
-                    are the primary market. The distribution shows a few larger
-                    installations, reflecting Sunphil Solar's capability to
-                    handle both small and large-scale projects.
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 py-4">
-                  <span className="text-lime-400 text-2xl mt-1">🌱</span>
-                  <div>
-                    <span className="font-bold text-lime-200 text-lg">
-                      Environmental Impact:
-                    </span>{" "}
-                    The cumulative{" "}
-                    <span className="text-lime-300 font-semibold">
-                      CO₂ reduction
-                    </span>{" "}
-                    and{" "}
-                    <span className="text-lime-300 font-semibold">
-                      trees planted equivalent
-                    </span>{" "}
-                    highlight the substantial positive effect of these projects
-                    on the environment. Each month, hundreds to thousands of
-                    kilograms of CO₂ emissions are offset, contributing to
-                    cleaner air and a greener community.
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 py-4">
-                  <span className="text-yellow-300 text-2xl mt-1">🔋</span>
-                  <div>
-                    <span className="font-bold text-yellow-200 text-lg">
-                      Energy Independence:
-                    </span>{" "}
-                    The steady increase in total inverter kW, solar panel kW,
-                    and battery kWh per month demonstrates that more households
-                    and businesses are investing in energy independence and
-                    backup power, reducing their reliance on the grid and
-                    protecting themselves from outages.
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 py-4">
-                  <span className="text-orange-300 text-2xl mt-1">☀️</span>
-                  <div>
-                    <span className="font-bold text-orange-200 text-lg">
-                      Seasonal Patterns:
-                    </span>{" "}
-                    The peak in installations during the summer months
-                    influenced by higher solar irradiance and increased demand
-                    for cooling, making solar energy solutions more attractive
-                    during this period.
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 py-4">
-                  <span className="text-pink-300 text-2xl mt-1">🏆</span>
-                  <div>
-                    <span className="font-bold text-pink-200 text-lg">
-                      Conclusion:
-                    </span>{" "}
-                    Sunphil Solar's 2025 project data reflects a strong and
-                    growing demand for solar energy in the Philippines, with
-                    clear benefits for both customers and the environment. The
-                    company is well-positioned to continue leading the
-                    transition to clean, reliable, and cost-effective energy
-                    solutions.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );

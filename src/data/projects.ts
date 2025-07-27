@@ -1331,4 +1331,26 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar successfully completed a 16kW hybrid solar installation in Bacoor, Cavite, tailored for a modern household with high energy demands or a home-based business setup. With a single high-capacity inverter, advanced bifacial panels, and a reliable battery backup, this system ensures power stability, savings, and long-term resilience.\n\nThis hybrid system proves that homeowners in dense areas like Bacoor can still go big on solar. Whether it's for uninterrupted family comfort or ensuring productivity in a home office or online business, Sunphil Solar delivers reliability and efficiency without compromise.\n\nSunphil Solar provides:\n- Free Site Assessment & Energy Consultation\n- Expert System Design for Your Home's Unique Needs\n- Professional Installation & Lifetime Technical Support\n\nRequest Your Free Quote Today – Let's build your energy-secure future.",
   },
+  {
+    id: "pilar-bataan-6kw",
+    image: "/images/project64.jpg",
+    location: "Pilar, Bataan, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-27",
+    clientType: "Residential",
+    specification: [
+      "6kW Deye Hybrid Inverter – Intelligent hybrid system for seamless solar, battery, and grid management. Automatically switches to battery during outages.",
+      "13 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules that harvest extra energy from reflected sunlight, perfect for maximizing daily output.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-lasting lithium iron phosphate battery for dependable night-time use and emergency backup.",
+    ],
+    benefits: [
+      "Cut electric bills by up to 70%",
+      "Continuous power for computers, lights, refrigerators, fans, routers, and CCTV",
+      "Reduce carbon footprint by approx. 1,300–1,600 kg of CO₂ monthly",
+      "Ideal for homeowners, online workers, and small home-based businesses",
+      "Excellent solution for areas with frequent power interruptions",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar system in Pilar, Bataan, customized to meet the energy demands of a household with work-from-home or small business operations. Designed to reduce dependency on the grid and provide continuous power during brownouts, this hybrid setup delivers efficiency, comfort, and savings.\n\nThis Pilar-based hybrid installation is a testament to how homeowners can take control of their electricity costs and enjoy uninterrupted power. Whether you're working remotely or simply want reliable energy for your family, this setup offers a future-ready solution backed by top-tier components.\n\nSunphil Solar provides:\n- Free Energy Assessment & Load Sizing\n- Custom Engineering for Your Property\n- Expert Installation & After-Sales Support\n\nRequest Your Free Quote Today and experience energy independence in Bataan!",
+  },
 ];

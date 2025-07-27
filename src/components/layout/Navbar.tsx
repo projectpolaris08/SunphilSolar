@@ -125,6 +125,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   All Projects
                 </RouterLink>
                 <RouterLink
+                  to="/installation-analysis"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/installation-analysis")}
+                >
+                  <BarChart2 className="w-5 h-5 text-green-500" />
+                  Installation Analysis
+                </RouterLink>
+                <RouterLink
                   to="/statistics"
                   className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
                   onClick={() => handleNavClick("/statistics")}
@@ -281,6 +289,17 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             >
               <Building2 className="w-5 h-5 text-purple-500" />
               All Projects
+            </RouterLink>
+            <RouterLink
+              to="/installation-analysis"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/installation-analysis");
+                toggleMenu();
+              }}
+            >
+              <BarChart2 className="w-5 h-5 text-green-500" />
+              Installation Analysis
             </RouterLink>
             <RouterLink
               to="/statistics"
