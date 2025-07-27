@@ -21,6 +21,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { projects } from "../data/projects";
+import { InstallationMap } from "../components/InstallationMap";
+import { MapDebug } from "../components/MapDebug";
 
 // Mock data array for 3 featured blogs
 const featuredBlogs = [
@@ -349,6 +351,62 @@ export const HomePage = () => {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Installation Map Preview Section */}
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Our Solar Installations Across the Philippines
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore our growing network of solar installations. From Luzon to
+              Mindanao, we're helping Filipino families and businesses achieve
+              energy independence.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="h-96">
+              <InstallationMap
+                apiKey={
+                  import.meta.env.VITE_GOOGLE_MAPS_API_KEY ||
+                  "YOUR_GOOGLE_MAPS_API_KEY"
+                }
+                showMarkers={true}
+                height="384px"
+              />
+            </div>
+            <div className="p-6 bg-gradient-to-r from-blue-600 to-blue-700">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-white">
+                  <h3 className="text-xl font-semibold mb-2">
+                    Interactive Installation Map
+                  </h3>
+                  <p className="text-blue-100">
+                    Click on markers to view detailed project information and
+                    system specifications.
+                  </p>
+                </div>
+                <Link
+                  to="/installation-map"
+                  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 whitespace-nowrap"
+                >
+                  View Full Map
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Debug component - only shows in development */}
+        <MapDebug
+          apiKey={
+            import.meta.env.VITE_GOOGLE_MAPS_API_KEY ||
+            "YOUR_GOOGLE_MAPS_API_KEY"
+          }
+        />
       </section>
       {/* Featured Blogs Section - 3-column grid */}
       <section className="py-16 bg-gray-50">

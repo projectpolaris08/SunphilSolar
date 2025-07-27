@@ -23,7 +23,7 @@ export const NewsSection = () => {
       try {
         const res = await fetch(backendUrl);
         const data = await res.json();
-        console.log("Fetched news data:", data);
+
         if (data.articles && data.articles.results) {
           setArticles(
             data.articles.results.map((a: any) => ({

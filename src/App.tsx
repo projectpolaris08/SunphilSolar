@@ -7,10 +7,8 @@ import { AdminAuthProvider } from "./contexts/AdminAuthContext";
 import { CalendarEventsProvider } from "./contexts/CalendarEventsContext";
 
 function App() {
-  const GOOGLE_MAPS_API_KEY =
-    import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "YOUR_GOOGLE_MAPS_API_KEY";
-  const WEATHER_API_KEY =
-    import.meta.env.VITE_WEATHER_API_KEY || "YOUR_OPENWEATHERMAP_API_KEY";
+  const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const WEATHER_API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   // Add this inner component to access useLocation
   function AppWithChatBot() {

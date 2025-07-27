@@ -18,6 +18,7 @@ import FAQ from "../pages/FAQ";
 import ServicesPage from "../pages/ServicesPage";
 import AfterSalesPage from "../pages/AfterSalesPage";
 import StatisticsPage from "../pages/StatisticsPage";
+import InstallationMapPage from "../pages/InstallationMapPage";
 import AdminDashboard from "../pages/AdminDashboard";
 import ClientRecordsPage from "../pages/ClientRecordsPage";
 import InventoryPage from "../pages/InventoryPage";
@@ -104,6 +105,12 @@ const AppRoutes = ({
           <Route path="/aftersales" element={<AfterSalesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/statistics" element={<StatisticsPage />} />
+          <Route
+            path="/installation-map"
+            element={
+              <InstallationMapPage googleMapsApiKey={googleMapsApiKey} />
+            }
+          />
 
           {/* Weather widget route */}
           <Route

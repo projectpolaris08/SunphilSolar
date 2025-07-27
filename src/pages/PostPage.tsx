@@ -14,10 +14,6 @@ export const PostPage = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Debugging: Log the current slug and path
-    console.log(`Current slug: ${slug}`);
-    console.log(`Current path: ${location.pathname}`);
-
     const fetchPost = async () => {
       try {
         setIsLoading(true);
@@ -26,17 +22,10 @@ export const PostPage = () => {
           throw new Error("Missing slug parameter");
         }
 
-        // Debugging: Log all available slugs
-        console.log(
-          "Available slugs:",
-          blogPosts.map((post) => post.slug)
-        );
-
         // Simulate API delay (remove in production)
         await new Promise((resolve) => setTimeout(resolve, 200));
 
         const foundPost = getPostBySlug(slug);
-        console.log("Found post:", foundPost);
 
         if (!foundPost) {
           throw new Error(`Post with slug \"${slug}\" not found`);
@@ -45,7 +34,6 @@ export const PostPage = () => {
         setPost(foundPost);
         setError(null);
       } catch (err) {
-        console.error("Error fetching post:", err);
         setError(err instanceof Error ? err.message : "Failed to load post");
       } finally {
         setIsLoading(false);
@@ -72,7 +60,6 @@ export const PostPage = () => {
 
   // Error state - redirect to not-found page if slug doesn't exist
   if (error || !post) {
-    console.error(`Redirecting to not-found. Error: ${error}`);
     return (
       <Navigate
         to="/not-found"
@@ -86,9 +73,6 @@ export const PostPage = () => {
       />
     );
   }
-
-  // Debugging: Log successful post load
-  console.log("Rendering post:", post.title);
 
   // Success state - Layout with ToC sidebar (desktop) and main content
   return (

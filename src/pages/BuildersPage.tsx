@@ -143,12 +143,8 @@ const BuildersPage = () => {
     }
 
     if (activityData && activityData.length > 0) {
-      console.log("Fetched builder activities:", activityData);
       setActivity(activityData);
     } else {
-      console.log(
-        "No builder activities found, fetching all activities for debugging"
-      );
       // Fallback: fetch all activities to see what's available
       const { data: allActivityData } = await supabase
         .from("admin_activity")
@@ -157,7 +153,6 @@ const BuildersPage = () => {
         .limit(10);
 
       if (allActivityData) {
-        console.log("All available activities:", allActivityData);
         // Show all activities for debugging, but mark them
         setActivity(
           allActivityData.map((a) => ({

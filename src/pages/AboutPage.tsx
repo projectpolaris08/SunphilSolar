@@ -63,7 +63,7 @@ const AboutPage: React.FC = () => {
       name: "Emz",
       title: "Admin Assistant",
       description: "Building strong client relationships daily.",
-      image: "/images/emz.jpg",
+      image: "/images/Emz.jpg",
     },
     {
       initial: "T",
@@ -112,7 +112,7 @@ const AboutPage: React.FC = () => {
       name: "Arni",
       title: "Admin Assistant",
       description: "Building strong client relationships daily.",
-      image: "/images/Sunphil.jpg",
+      image: "/images/Arni.jpg",
     },
   ];
 
@@ -180,6 +180,27 @@ const AboutPage: React.FC = () => {
       description: "Helping build solar systems safely and securely.",
       image: "/images/Allan.jpeg",
     },
+    {
+      initial: "A",
+      name: "Alvin",
+      title: "Installer",
+      description: "Helping build solar systems safely and securely.",
+      image: "/images/Alvin.jpg",
+    },
+    {
+      initial: "J",
+      name: "Jun-Jun",
+      title: "Installer",
+      description: "Helping build solar systems safely and securely.",
+      image: "/images/Jun-Jun.jpg",
+    },
+    {
+      initial: "J",
+      name: "Joel",
+      title: "Installer",
+      description: "Helping build solar systems safely and securely.",
+      image: "/images/Joel.jpg",
+    },
   ];
 
   const builders = [
@@ -188,14 +209,14 @@ const AboutPage: React.FC = () => {
       name: "Joshua",
       title: "Builder",
       description: "Inverter Technical Specialist.",
-      image: "/images/Sunphil.jpg",
+      image: "/images/Joshua.jpg",
     },
     {
       initial: "D",
       name: "David",
       title: "Builder",
       description: "Inverter Technical Specialist.",
-      image: "/images/Sunphil.jpg",
+      image: "/images/David.jpg",
     },
     {
       initial: "D",
@@ -210,6 +231,34 @@ const AboutPage: React.FC = () => {
       title: "Builder",
       description: "Expert in hybrid inverter setups and connections.",
       image: "/images/Mark.jpeg",
+    },
+    {
+      initial: "J",
+      name: "Jaxel",
+      title: "Builder",
+      description: "Expert in hybrid inverter setups and connections.",
+      image: "/images/Jaxel.jpg",
+    },
+    {
+      initial: "A",
+      name: "Anthony",
+      title: "Builder",
+      description: "Expert in hybrid inverter setups and connections.",
+      image: "/images/Anthony.jpg",
+    },
+    {
+      initial: "JP",
+      name: "John Paul",
+      title: "Builder",
+      description: "Expert in hybrid inverter setups and connections.",
+      image: "/images/John-Paul.jpg",
+    },
+    {
+      initial: "E",
+      name: "Eron",
+      title: "Builder",
+      description: "Expert in hybrid inverter setups and connections.",
+      image: "/images/Eron.jpg",
     },
   ];
 
@@ -409,6 +458,83 @@ const AboutPage: React.FC = () => {
                   </div>
                 </li>
               </ul>
+
+              {/* Certificates and Registration Section */}
+              <div className="mt-10">
+                <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
+                  Certificates and Registration
+                </h3>
+                <p className="text-secondary-600 mb-6">
+                  Sunphil Solar operates with full compliance and proper
+                  registration under Philippine law. We maintain all necessary
+                  permits and certifications to ensure our operations meet the
+                  highest standards of safety, quality, and legal compliance.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-secondary-50 rounded-lg p-6 border border-secondary-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <MdCheckCircle className="text-green-500" size={24} />
+                      <h4 className="text-lg font-semibold text-secondary-900">
+                        Department of Trade and Industry (DTI)
+                      </h4>
+                    </div>
+                    <p className="text-secondary-600 text-sm">
+                      Registered business entity with DTI, ensuring compliance
+                      with Philippine business regulations and consumer
+                      protection standards.
+                    </p>
+                  </div>
+                  <div className="bg-secondary-50 rounded-lg p-6 border border-secondary-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <MdCheckCircle className="text-green-500" size={24} />
+                      <h4 className="text-lg font-semibold text-secondary-900">
+                        Bureau of Internal Revenue (BIR)
+                      </h4>
+                    </div>
+                    <p className="text-secondary-600 text-sm">
+                      Fully compliant with tax regulations, properly registered
+                      and authorized to issue official receipts and invoices.
+                    </p>
+                  </div>
+                  <div className="bg-secondary-50 rounded-lg p-6 border border-secondary-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <MdCheckCircle className="text-green-500" size={24} />
+                      <h4 className="text-lg font-semibold text-secondary-900">
+                        Mayor's Permit
+                      </h4>
+                    </div>
+                    <p className="text-secondary-600 text-sm">
+                      Licensed to operate within the city with proper business
+                      permits and local government compliance.
+                    </p>
+                  </div>
+                  <div className="bg-secondary-50 rounded-lg p-6 border border-secondary-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <MdCheckCircle className="text-green-500" size={24} />
+                      <h4 className="text-lg font-semibold text-secondary-900">
+                        Barangay Permit
+                      </h4>
+                    </div>
+                    <p className="text-secondary-600 text-sm">
+                      Registered at the barangay level, ensuring community
+                      compliance and local business authorization.
+                    </p>
+                  </div>
+                  <div className="bg-secondary-50 rounded-lg p-6 border border-secondary-200 md:col-span-2">
+                    <div className="flex items-center gap-3 mb-3">
+                      <MdCheckCircle className="text-green-500" size={24} />
+                      <h4 className="text-lg font-semibold text-secondary-900">
+                        Bureau of Fire Protection (BFP) Fire and Safety
+                      </h4>
+                    </div>
+                    <p className="text-secondary-600 text-sm">
+                      Certified for fire safety compliance, ensuring our
+                      installations and business operations meet all fire safety
+                      standards and regulations.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
               {/* Our Promise Section */}
               <div className="mt-10">

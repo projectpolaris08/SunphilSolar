@@ -272,7 +272,7 @@ const AdminDashboard: React.FC = () => {
   }
 
   // --- System Capacity and Battery Summary Calculation ---
-  console.log("Calendar events for dashboard:", events);
+
   const capacitySummary = events.reduce(
     (acc, event) => {
       if (event.systemCapacity) {

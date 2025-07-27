@@ -190,7 +190,7 @@ const ProjectsPage = () => {
           <h1 className="text-4xl font-bold text-white mb-4">
             Our Hybrid Solar Installations Across the Philippines
           </h1>
-          <p className="text-white/80 text-lg">
+          <p className="text-white/80 text-lg mb-6">
             Sunphil Solar delivers high-performance hybrid solar systems for
             homes and businesses across the Philippines. From city rooftops to
             provincial estates, we provide turnkey solutions using premium
@@ -198,6 +198,13 @@ const ProjectsPage = () => {
             reliable savings and energy independence—start your solar journey
             with Sunphil today!
           </p>
+          <Link
+            to="/installation-map"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+          >
+            <MapPin className="w-5 h-5" />
+            View Installation Map
+          </Link>
         </div>
 
         {/* Summary Stats */}

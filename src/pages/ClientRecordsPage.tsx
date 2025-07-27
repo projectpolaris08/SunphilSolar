@@ -107,7 +107,6 @@ const ClientRecordsPage: React.FC = () => {
       if (error) {
         alert("Error fetching client records: " + error.message);
       } else {
-        console.log("Fetched records:", data);
         setRecords(
           (data || []).map((rec: any) => ({
             id: rec.id,

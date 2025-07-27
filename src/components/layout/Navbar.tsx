@@ -14,6 +14,7 @@ import {
   FileText,
   LifeBuoy,
   BarChart2,
+  Map,
 } from "lucide-react";
 import { Logo } from "../Logo";
 import { Link as RouterLink, useLocation } from "react-router-dom";
@@ -138,6 +139,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 >
                   <FileText className="w-5 h-5 text-pink-500" />
                   Case Studies
+                </RouterLink>
+                <RouterLink
+                  to="/installation-map"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/installation-map")}
+                >
+                  <Map className="w-5 h-5 text-orange-500" />
+                  Installation Map
                 </RouterLink>
               </div>
             </div>
@@ -294,6 +303,17 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             >
               <FileText className="w-5 h-5 text-pink-500" />
               Case Studies
+            </RouterLink>
+            <RouterLink
+              to="/installation-map"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/installation-map");
+                toggleMenu();
+              }}
+            >
+              <Map className="w-5 h-5 text-orange-500" />
+              Installation Map
             </RouterLink>
           </div>
           {/* Services Dropdown (mobile, remove Statistics and Case Studies) */}
