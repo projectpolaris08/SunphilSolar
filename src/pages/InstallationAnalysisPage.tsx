@@ -25,6 +25,26 @@ const totalInverterKW = projects.reduce((sum, p) => {
 }, 0);
 
 // Geographic distribution analysis - Group by province
+const metroManilaCities = [
+  "Metro Manila",
+  "NCR",
+  "Manila",
+  "Quezon City",
+  "Caloocan",
+  "Pasig",
+  "Parañaque",
+  "Taguig",
+  "Marikina",
+  "Las Piñas",
+  "Makati",
+  "Mandaluyong",
+  "San Juan",
+  "Malabon",
+  "Navotas",
+  "Valenzuela",
+  "Muntinlupa",
+  "Pateros",
+];
 const provinceCounts = projects.reduce((acc, project) => {
   const location = project.location;
   // Extract province from location string
@@ -33,10 +53,9 @@ const provinceCounts = projects.reduce((acc, project) => {
   else if (location.includes("Batangas")) province = "Batangas Province";
   else if (location.includes("Rizal")) province = "Rizal Province";
   else if (
-    location.includes("Manila") ||
-    location.includes("Quezon City") ||
-    location.includes("Caloocan") ||
-    location.includes("Pasig")
+    metroManilaCities.some((city) =>
+      new RegExp(`\\b${city}\\b`, "i").test(location)
+    )
   )
     province = "Metro Manila";
   else if (location.includes("Nueva Ecija")) province = "Nueva Ecija Province";
@@ -52,6 +71,10 @@ const provinceCounts = projects.reduce((acc, project) => {
 const topLocations = Object.entries(provinceCounts)
   .sort(([, a], [, b]) => b - a)
   .slice(0, 5);
+
+// Debug: Log the province counts to see what's happening
+console.log("Province counts:", provinceCounts);
+console.log("Top locations:", topLocations);
 
 // System size analysis
 const systemSizes = projects.reduce(
@@ -69,6 +92,9 @@ const systemSizes = projects.reduce(
 );
 
 const InstallationAnalysisPage: React.FC = () => {
+  // Debug: Log province counts and top locations before rendering
+  console.log("provinceCounts", provinceCounts);
+  console.log("topLocations", topLocations);
   return (
     <div className="min-h-screen w-full bg-neutral-950">
       <div className="container mx-auto px-4 py-20">
@@ -292,7 +318,7 @@ const InstallationAnalysisPage: React.FC = () => {
                     <p className="text-gray-300 leading-relaxed flex-1">
                       Metro Manila leads with{" "}
                       <span className="text-blue-300 font-bold">
-                        25+ installations (39.7%)
+                        20 installations (27.0%)
                       </span>
                       , demonstrating strong adoption in urban areas with high
                       electricity costs.
