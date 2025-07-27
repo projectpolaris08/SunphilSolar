@@ -72,9 +72,16 @@ const topLocations = Object.entries(provinceCounts)
   .sort(([, a], [, b]) => b - a)
   .slice(0, 5);
 
-// Debug: Log the province counts to see what's happening
-console.log("Province counts:", provinceCounts);
-console.log("Top locations:", topLocations);
+// Calculate Metro Manila statistics dynamically
+const metroManilaCount = provinceCounts["Metro Manila"] || 0;
+const metroManilaPercentage = (
+  (metroManilaCount / totalInstallations) *
+  100
+).toFixed(1);
+
+// Debug: Log province counts and top locations before rendering
+console.log("provinceCounts", provinceCounts);
+console.log("topLocations", topLocations);
 
 // System size analysis
 const systemSizes = projects.reduce(
@@ -318,7 +325,8 @@ const InstallationAnalysisPage: React.FC = () => {
                     <p className="text-gray-300 leading-relaxed flex-1">
                       Metro Manila leads with{" "}
                       <span className="text-blue-300 font-bold">
-                        20 installations (27.0%)
+                        {metroManilaCount} installations (
+                        {metroManilaPercentage}%)
                       </span>
                       , demonstrating strong adoption in urban areas with high
                       electricity costs.
