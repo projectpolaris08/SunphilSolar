@@ -4691,16 +4691,21 @@ export const blogPosts: BlogPost[] = [
     date: "2025-06-02",
     slug: "san-marcelino-solar-farm",
     tags: [
-      "solar energy",
-      "Zambales",
-      "renewable energy",
-      "ACEN",
-      "Philippines",
+      "San Marcelino Solar Farm",
+      "renewable energy Philippines",
+      "disaster recovery solar",
+      "ACEN Corporation",
+      "Mount Pinatubo rehabilitation",
+      "solar farm development",
+      "energy security Philippines",
+      "sustainable development",
+      "lahar land conversion",
+      "Southeast Asia renewable energy",
     ],
     excerpt:
-      "Discover how the San Marcelino Solar Farm is transforming Zambales into a renewable energy powerhouse. With 585 MW of clean energy capacity, it's the largest solar project in the Philippines.",
+      "The 585 MW San Marcelino Solar Farm transforms Mount Pinatubo's lahar-devastated wasteland into the Philippines' largest renewable energy facility, demonstrating how environmental disasters can become economic opportunities through strategic clean energy development and community-centered infrastructure investment.",
     metaDescription:
-      "Learn about the San Marcelino Solar Farm in Zambales—the Philippines' largest solar project by ACEN. Explore its capacity, impact, technology, and role in the nation's clean energy future.",
+      "Explore how San Marcelino Solar Farm converts Mount Pinatubo's disaster zone into the Philippines' renewable energy flagship, creating economic opportunities while advancing national energy security and regional climate leadership.",
     featuredImage: {
       url: "/images/san-marcelino-solar.jpg",
       alt: "San Marcelino Solar Farm aerial view",
@@ -4715,206 +4720,681 @@ export const blogPosts: BlogPost[] = [
     fullContent: (
       <>
         <p className="text-secondary-700 mb-6">
-          In the heart of Zambales lies a renewable energy breakthrough: the{" "}
-          <strong>San Marcelino Solar Farm</strong>, a groundbreaking solar
-          power facility developed by{" "}
-          <a
-            href="https://www.acenrenewables.com/portfolio/sanmar-solar/"
-            className="text-primary-500 hover:underline"
-            target="_blank"
-          >
-            ACEN
-          </a>
-          , the energy arm of the Ayala Group. Designed to be the{" "}
-          <strong>largest solar farm in the Philippines</strong>, this project
-          marks a major milestone in the country's transition to clean,
-          sustainable energy.
+          The 585 MW San Marcelino Solar Farm stands as one of the most
+          compelling examples of environmental rehabilitation through renewable
+          energy development in Southeast Asia. Built by ACEN Corporation on
+          land devastated by Mount Pinatubo's catastrophic 1991 eruption, this
+          project transforms what was once considered permanently damaged
+          wasteland into the Philippines' largest solar energy facility and a
+          cornerstone of the nation's renewable energy future. This
+          transformation addresses a fundamental challenge that has long
+          confronted disaster-prone nations: how to convert environmental scars
+          into economic assets while advancing climate goals and energy security
+          simultaneously.
         </p>
-
-        <div className="text-sm text-secondary-500 mb-6 italic">
-          Featured image credit: Photo by{" "}
-          <a
-            href="https://www.facebook.com/photo/?fbid=1252395499589262&set=pcb.1252395579589254"
-            className="text-primary-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Raffy Tima
-          </a>{" "}
-          on Facebook
+        <p className="text-secondary-700 mb-6">
+          This isn't merely about building another renewable energy project on
+          available land. It's about fundamentally reimagining how nations can
+          respond to natural disasters with strategic infrastructure development
+          that serves multiple objectives: environmental rehabilitation,
+          economic development, energy security, and climate mitigation. The San
+          Marcelino project demonstrates that with proper planning and
+          investment, even the most devastating environmental disasters can
+          become catalysts for sustainable development and regional leadership
+          in the global energy transition.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          The Numbers Tell a Transformative Story
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The scale of the San Marcelino Solar Farm's impact extends far beyond
+          its impressive 585 MW capacity. Built across over 300 hectares of
+          lahar-covered land that had been written off as economically unviable,
+          the project represents one of the world's largest examples of disaster
+          zone rehabilitation through renewable energy development. The
+          facility's annual generation capacity can power hundreds of thousands
+          of Filipino homes while contributing significantly to the nation's
+          renewable energy targets and carbon reduction commitments.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          What makes these achievements even more remarkable is their
+          demonstration effect across the region. The project proves that
+          large-scale renewable energy development is not only technically
+          feasible in Southeast Asian conditions but can simultaneously address
+          multiple development challenges. ACEN's investment in substantial
+          supporting infrastructure, including a 14-kilometer transmission line,
+          nearly six kilometers of access roads, and two concrete bridges,
+          created economic multiplier effects that extend far beyond energy
+          generation, improving connectivity and access for previously isolated
+          communities.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Beyond Installation: From Wasteland to Economic Engine
+        </h2>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-left border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Traditional Disaster Response
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Long-term Impact
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  San Marcelino Approach
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Emergency relief and temporary relocation
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Communities remain displaced with limited economic
+                  opportunities
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Long-term infrastructure investment creating permanent
+                  employment
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Land abandonment due to perceived unusability
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Valuable territory remains economically unproductive
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Strategic conversion of damaged land into productive energy
+                  assets
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Focus on restoring pre-disaster conditions
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Vulnerable to similar future disasters
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Building resilient infrastructure adapted to new conditions
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Limited consideration of climate goals
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Missed opportunities for sustainable development
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Integration of disaster recovery with climate mitigation
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Massive Scale, Massive Impact
-        </h3>
         <p className="text-secondary-700 mb-6">
-          The SanMar Solar Farm, as it's locally called, is set on{" "}
-          <strong>500 hectares of lahar-covered land</strong>—an innovative
-          reuse of otherwise non-arable land from the 1991 Mount Pinatubo
-          eruption. With a projected total capacity of{" "}
-          <strong>585 megawatts (MW)</strong>, it will generate over{" "}
-          <strong>421 gigawatt-hours (GWh)</strong> of renewable electricity
-          annually—enough to power more than{" "}
-          <strong>187,000 Filipino households</strong>.
+          The traditional view of disaster-affected areas as permanently
+          compromised is rapidly becoming obsolete. The San Marcelino project
+          demonstrates how strategic renewable energy development can transform
+          environmental liabilities into economic assets while simultaneously
+          advancing national energy security and climate objectives. This
+          approach represents more than infrastructure development; it's a
+          fundamental reimagining of how disaster-prone nations can build
+          resilience and prosperity in the 21st century.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Building on Natural Advantages: From Destruction to Construction
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The choice of Mount Pinatubo's lahar-covered terrain for solar
+          development reveals strategic thinking that extends beyond simple land
+          availability. The volcanic deposits that initially made the area
+          unsuitable for traditional agriculture created ideal conditions for
+          large-scale solar installation: relatively flat terrain, minimal
+          vegetation clearing requirements, and reduced competition with
+          existing land uses. The environmental impact of solar development on
+          already-disturbed land is dramatically lower than converting pristine
+          ecosystems or productive agricultural areas.
         </p>
         <p className="text-secondary-700 mb-6">
-          That output also means avoiding an estimated{" "}
-          <strong>287,796 metric tons of CO₂ emissions</strong> each
-          year—equivalent to taking 62,000 gasoline-powered vehicles off the
-          road.
+          This geological advantage demonstrates how disaster-affected regions
+          can offer unique opportunities for renewable energy development that
+          benefit both climate goals and local communities. The lahar deposits
+          provide stable foundations for solar infrastructure while the area's
+          climate conditions offer excellent solar irradiation levels throughout
+          the year. Most importantly, the development brings economic activity
+          and employment to communities that had limited alternatives for
+          productive land use in the post-eruption landscape.
         </p>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Built in Phases for Maximum Efficiency
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Current Development Benefits in the Region
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Infrastructure Development:</strong> New roads, bridges, and
+            transmission lines improving regional connectivity and reducing
+            travel times for local communities
+          </li>
+          <li>
+            <strong>Employment Generation:</strong> Both construction and
+            operational phases creating jobs for local workers and specialized
+            technicians
+          </li>
+          <li>
+            <strong>Technology Transfer:</strong> Advanced solar and grid
+            integration technologies bringing technical expertise to the region
+          </li>
+          <li>
+            <strong>Economic Multiplier Effects:</strong> Supporting businesses
+            and services emerging around the solar facility operations
+          </li>
+        </ul>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          The Strategic Timing: Energy Security Meets Climate Action
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The San Marcelino Solar Farm's development coincides with critical
+          shifts in global energy markets and Philippine national priorities.
+          With solar energy helping the Philippines save approximately ₱4.4
+          billion in fossil fuel costs in early 2022, large-scale renewable
+          projects are proving their economic value beyond environmental
+          benefits. The project addresses the nation's heavy dependence on
+          energy imports while providing a hedge against volatile fossil fuel
+          prices and supply chain disruptions.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          This timing is particularly strategic as the Philippines seeks to
+          establish itself as a regional leader in renewable energy development.
+          The country's abundant solar resources, combined with growing
+          technical expertise and supportive policy frameworks, position it to
+          attract significant international investment in clean energy
+          infrastructure. The San Marcelino project demonstrates to global
+          investors that the Philippines can successfully develop and operate
+          large-scale renewable energy projects while delivering tangible
+          benefits to local communities.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Practical Applications: From Community Integration to Grid Stability
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The San Marcelino project showcases several innovative approaches to
+          renewable energy development that address both technical and social
+          challenges:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          1. Community-Centered Development Approach
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          ACEN's investment in substantial supporting infrastructure
+          demonstrates how renewable energy development can serve broader
+          community development objectives. The new roads, bridges, and
+          transmission infrastructure benefit not just the solar facility but
+          provide lasting improvements to regional connectivity and economic
+          opportunities.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          2. Indigenous Rights Integration
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          The project's approach to working with indigenous communities in
+          Zambales provides a model for respectful development that creates
+          economic opportunities while honoring traditional land rights and
+          cultural values.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          3. Grid Integration and Energy Security
         </h3>
         <p className="text-secondary-700 mb-6">
-          The project is being developed in three phases:
+          The facility's substantial capacity and grid integration
+          infrastructure contribute significantly to national energy security
+          while demonstrating the Philippines' capability to manage large-scale
+          renewable energy integration effectively.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          The Economic Transformation: From Cost to Investment Return
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The San Marcelino Solar Farm represents a fundamental shift in how
+          disaster-affected regions can generate economic value. Rather than
+          viewing damaged areas as permanent liabilities requiring ongoing
+          support, the project demonstrates how strategic infrastructure
+          investment can transform these areas into productive economic assets
+          that generate returns for decades.
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>Phase 1 (284 MW)</strong> – Already supplying clean energy
-            to the Luzon grid.
+            <strong>Direct Revenue Generation:</strong> Electricity sales
+            providing steady income streams for operators and tax revenues for
+            local governments
           </li>
           <li>
-            <strong>Phase 2 (101 MW)</strong> – Completed to complement Phase 1.
+            <strong>Employment Creation:</strong> Both high-skilled technical
+            positions and local support jobs providing diverse employment
+            opportunities
           </li>
           <li>
-            <strong>Phase 3 (200 MW)</strong> – Financed with a{" "}
-            <a
-              href="https://www.bworldonline.com/corporate/2024/05/22/594173/acen-secures-p1-92-b-loan-for-zambales-solar-project/"
-              className="text-primary-500 hover:underline"
-              target="_blank"
-            >
-              ₱1.92 billion loan
-            </a>{" "}
-            and expected to be operational within the next year.
+            <strong>Infrastructure Leverage:</strong> Supporting infrastructure
+            enabling additional economic development beyond the solar facility
+            itself
+          </li>
+          <li>
+            <strong>Land Value Recovery:</strong> Transforming worthless
+            disaster-affected land into valuable productive assets
           </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          These phases ensure steady power supply integration and scalable
-          growth aligned with grid capacity.
+          This economic transformation creates positive feedback loops where
+          successful renewable energy development attracts additional
+          investment, builds technical capacity, and demonstrates the viability
+          of similar projects across the region. The result is sustainable
+          economic development that builds long-term resilience rather than
+          dependence on external support.
         </p>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Smart, Sustainable Technology
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Challenges and Solutions: Scaling Success Responsibly
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Despite its impressive achievements, the San Marcelino model faces
+          several challenges that must be addressed for broader replication
+          across disaster-prone regions:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          1. Capital Investment and Technical Expertise
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Large-scale renewable energy development requires substantial upfront
+          investment and specialized technical capabilities that may not be
+          readily available in all disaster-affected regions. This creates
+          barriers to replication, particularly in less developed areas or
+          smaller markets.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          2. Grid Integration and Infrastructure Requirements
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Connecting large solar facilities to national electricity grids
+          requires substantial transmission infrastructure and grid management
+          capabilities that may need significant upgrading in many regions.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          3. Environmental and Social Impact Management
         </h3>
         <p className="text-secondary-700 mb-6">
-          SanMar Solar is built using advanced solar technologies:
+          While building on already-disturbed land minimizes environmental
+          impact, ensuring that local communities genuinely benefit from
+          development requires careful planning and ongoing commitment to social
+          responsibility.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Solutions Through Strategic Planning and Partnership
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          These challenges can be addressed through coordinated action across
+          government, private sector, and international development partners:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Blended Finance Mechanisms
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Combining public sector support, private investment, and international
+          development finance can reduce investment risks and make similar
+          projects viable in challenging markets while ensuring community
+          benefits are prioritized.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Regional Cooperation Frameworks
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          Developing regional approaches to renewable energy development can
+          enable smaller markets to benefit from shared infrastructure,
+          technical expertise, and economies of scale while building collective
+          resilience against natural disasters.
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Capacity Building Programs
+        </h3>
+        <p className="text-secondary-700 mb-6">
+          Strategic investment in education, training, and institutional
+          development can build the local capabilities needed to develop and
+          maintain renewable energy infrastructure while ensuring communities
+          can participate meaningfully in the clean energy transition.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Learning from Regional Integration Success Stories
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The San Marcelino project builds on and contributes to broader
+          regional trends in renewable energy development and disaster
+          resilience:
         </p>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            <strong>East-West Panel Orientation</strong> for extended daylight
-            capture
+            <strong>ASEAN Renewable Energy Cooperation:</strong> Regional
+            frameworks supporting cross-border renewable energy trade and
+            technical cooperation
           </li>
           <li>
-            <strong>String Inverters</strong> that maximize individual panel
-            performance
+            <strong>Climate Finance Innovation:</strong> New financial
+            instruments specifically designed to support renewable energy
+            development in disaster-prone regions
           </li>
           <li>
-            <strong>Digital monitoring systems</strong> for real-time
-            diagnostics and optimization
+            <strong>Technology Transfer Networks:</strong> Regional sharing of
+            renewable energy technologies and best practices accelerating
+            deployment across Southeast Asia
+          </li>
+          <li>
+            <strong>Community Development Integration:</strong> Approaches that
+            combine renewable energy development with broader community
+            development objectives
           </li>
         </ul>
         <p className="text-secondary-700 mb-6">
-          These innovations increase energy yield, reliability, and
-          maintainability—setting new benchmarks in solar engineering.
+          The key insight from these regional developments is that successful
+          renewable energy projects require integration with broader development
+          strategies and strong partnerships across different sectors and levels
+          of government. Projects that address multiple objectives
+          simultaneously, like San Marcelino, tend to generate stronger support
+          and more sustainable outcomes.
         </p>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Empowering Local Communities
-        </h3>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          The Climate Imperative: Leadership Through Example
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          Beyond its direct contributions to renewable energy generation, the
+          San Marcelino Solar Farm demonstrates how developing nations can lead
+          by example in addressing climate change while advancing economic
+          development objectives. The project shows that climate action and
+          economic growth are not competing priorities but can be mutually
+          reinforcing when approached strategically.
+        </p>
         <p className="text-secondary-700 mb-6">
-          Beyond electricity, ACEN has integrated strong social impact programs
-          into the SanMar project:
+          This leadership dimension is particularly important as the
+          international community seeks to accelerate the global energy
+          transition. By demonstrating that large-scale renewable energy
+          development is feasible in Southeast Asian conditions while delivering
+          tangible community benefits, the San Marcelino project provides a
+          replicable model that could influence development approaches across
+          the Global South.
         </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Future Innovations: The Next Generation of Resilient Development
+        </h2>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-left border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Innovation Area
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Current Status
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Potential Impact
+                </th>
+                <th className="border border-gray-300 px-4 py-2 font-semibold">
+                  Timeline
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Floating Solar on Mining Lakes
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Pilot projects
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Rehabilitation of abandoned mining sites
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2026-2028</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Agrovoltaics for Disaster Recovery
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Research phase
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Combined food security and energy generation
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2027-2030</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Battery Storage Integration
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Early deployment
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Grid stability and emergency power
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2025-2027</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Community Energy Cooperatives
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Policy development
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Local ownership and benefit sharing
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2026-2029</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-secondary-700 mb-6">
+          The future of disaster zone renewable energy development promises
+          innovations that could further enhance the model demonstrated by San
+          Marcelino. These emerging approaches represent opportunities to create
+          even more integrated solutions that address multiple development
+          challenges while building long-term resilience against future
+          disasters.
+        </p>
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          A Roadmap for Success: Essential Action Items
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          For the San Marcelino model to catalyze broader transformation in
+          renewable energy development and disaster recovery, several critical
+          actions must be taken across different stakeholder groups:
+        </p>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Immediate Priorities (2025-2026)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>
+            Document and disseminate lessons learned from the San Marcelino
+            development process
+          </li>
+          <li>
+            Establish policy frameworks supporting renewable energy development
+            on disaster-affected lands
+          </li>
+          <li>
+            Create financing mechanisms specifically designed for disaster zone
+            renewable energy projects
+          </li>
+          <li>
+            Develop technical standards for solar development on disturbed lands
+          </li>
+        </ul>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Medium-term Goals (2026-2030)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>
+            Replicate the San Marcelino model at additional sites across the
+            Philippines and region
+          </li>
+          <li>
+            Establish regional cooperation frameworks for disaster zone
+            renewable energy development
+          </li>
+          <li>
+            Build local technical capacity for renewable energy project
+            development and operation
+          </li>
+          <li>
+            Integrate renewable energy development with broader disaster risk
+            reduction strategies
+          </li>
+        </ul>
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Long-term Vision (2030-2040)
+        </h3>
         <ul className="list-disc list-inside text-secondary-700 mb-6">
           <li>
-            Constructed two new concrete bridges and six kilometers of roads for
-            better access
+            Establish the Philippines as a global leader in disaster zone
+            renewable energy development
           </li>
           <li>
-            Built a 14-kilometer transmission line linking to the Luzon grid
+            Create networks of resilient renewable energy infrastructure across
+            disaster-prone regions
           </li>
           <li>
-            Partnered with the{" "}
-            <a
-              href="https://www.ayalafoundation.org/"
-              className="text-primary-500 hover:underline"
-              target="_blank"
-            >
-              Ayala Foundation
-            </a>{" "}
-            to launch a tech-integrated Center of Excellence in Public
-            Elementary Education
+            Develop next-generation technologies specifically designed for
+            challenging environments
           </li>
           <li>
-            Deployed{" "}
-            <a
-              href="https://www.starlink.com/"
-              className="text-primary-500 hover:underline"
-              target="_blank"
-            >
-              Starlink
-            </a>{" "}
-            internet to rural schools and donated tablets and training tools
+            Achieve full integration of disaster recovery with climate
+            mitigation strategies
           </li>
         </ul>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Why Zambales?
-        </h3>
-        <p className="text-secondary-700 mb-6">
-          Zambales was chosen for a combination of high solar irradiance,
-          accessibility to the Luzon power grid, and availability of idle
-          volcanic land. What was once barren lahar fields now serves as the
-          foundation of the Philippines' renewable energy future.
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          The Path Forward: Resilient Energy Infrastructure
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          The San Marcelino Solar Farm represents more than renewable energy
+          development; it's a demonstration of how strategic infrastructure
+          investment can transform disaster-affected regions into engines of
+          sustainable economic development. As climate change increases the
+          frequency and intensity of natural disasters, the ability to convert
+          environmental challenges into economic opportunities becomes
+          increasingly critical for national resilience and prosperity.
         </p>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          ACEN's Net Zero Commitment
-        </h3>
-        <p className="text-secondary-700 mb-6">
-          SanMar is just one part of ACEN's broader mission to reach{" "}
-          <strong>100% renewable energy generation by 2025</strong> and grow its
-          portfolio to <strong>20 GW by 2030</strong>. With operations in
-          Vietnam, Indonesia, and Australia, ACEN is one of Southeast Asia's
-          most aggressive clean energy developers.
-        </p>
-        <p className="text-secondary-700 mb-6">
-          As of early 2025, ACEN has over{" "}
-          <strong>4.7 GW of renewable capacity</strong>, 98% of which comes from
-          solar, wind, and geothermal energy.
-        </p>
-
-        <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
-          Final Thoughts: The Bright Future of Solar in the Philippines
-        </h3>
-        <p className="text-secondary-700 mb-6">
-          The San Marcelino Solar Farm is more than just a power plant—it's a
-          symbol of resilience, innovation, and commitment to a cleaner
-          tomorrow. By transforming wastelands into power hubs and investing in
-          communities, ACEN's SanMar project sets the gold standard for
-          Philippine renewable energy.
+        <p className="text-secondary-700 mb-4">
+          The question isn't whether other disaster-prone regions can replicate
+          the San Marcelino model, but how quickly they can adapt its lessons to
+          their specific contexts and challenges. With growing international
+          recognition of the need to "build back better" after disasters, the
+          economic and environmental logic of renewable energy development on
+          disturbed lands is becoming increasingly compelling.
         </p>
         <p className="text-secondary-700 mb-6">
-          As the climate crisis intensifies and energy demands grow, projects
-          like this aren't optional—they're essential.
+          Mount Pinatubo's 1991 eruption was one of the most devastating natural
+          disasters in Philippine history. Three decades later, the San
+          Marcelino Solar Farm transforms that disaster's legacy into a
+          foundation for sustainable energy security and climate leadership.
+          This transformation demonstrates that with strategic vision,
+          technological innovation, and commitment to community development,
+          even the most challenging environmental disasters can become catalysts
+          for a more sustainable and prosperous future. The true measure of this
+          project's success will be its inspiration for similar transformations
+          across the disaster-prone regions of our changing world.
         </p>
-
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How does building solar farms on disaster-affected land benefit
+            local communities?
+          </h4>
+          <p className="text-secondary-700">
+            A: The San Marcelino project demonstrates multiple community
+            benefits including job creation, infrastructure development (roads,
+            bridges, transmission lines), improved regional connectivity, and
+            transformation of unusable land into productive economic assets that
+            generate long-term revenue.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: What makes lahar-covered land suitable for solar development?
+          </h4>
+          <p className="text-secondary-700">
+            A: Lahar deposits create relatively flat terrain with minimal
+            vegetation, reducing environmental impact and construction costs.
+            The land was already disturbed by the volcanic eruption, making
+            solar development preferable to converting productive agricultural
+            areas or pristine ecosystems.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How does the San Marcelino Solar Farm contribute to Philippine
+            energy security?
+          </h4>
+          <p className="text-secondary-700">
+            A: The 585 MW facility reduces the Philippines' dependence on
+            imported fossil fuels, provides stable domestic electricity
+            generation, and contributes to national renewable energy targets
+            while offering protection against volatile global energy prices.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Can this model be replicated in other disaster-prone regions?
+          </h4>
+          <p className="text-secondary-700">
+            A: Yes, the model can be adapted to other disaster-affected areas
+            including abandoned mining sites, areas damaged by typhoons or
+            earthquakes, and other disturbed lands. Success requires appropriate
+            financing, technical expertise, grid infrastructure, and commitment
+            to community development.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: What role does ACEN Corporation play in advancing renewable
+            energy in Southeast Asia?
+          </h4>
+          <p className="text-secondary-700">
+            A: ACEN aims to reach 5,000 MW of renewable energy capacity by 2025,
+            positioning itself as the largest listed renewables platform in
+            Southeast Asia. The San Marcelino project demonstrates their
+            commitment to community-centered development and regional energy
+            leadership.
+          </p>
+        </div>
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How does renewable energy development support disaster
+            resilience?
+          </h4>
+          <p className="text-secondary-700">
+            A: Renewable energy infrastructure like the San Marcelino Solar Farm
+            provides decentralized power generation, reduces dependence on
+            vulnerable supply chains, creates local economic opportunities, and
+            demonstrates how communities can adapt to environmental challenges
+            while building long-term resilience.
+          </p>
+        </div>
         <p className="text-secondary-700 font-semibold">
-          Want to stay updated on renewable energy developments in the
-          Philippines?{" "}
-          <a
-            href="https://sunphilsolar.com/blog"
-            className="text-primary-500 hover:underline"
-          >
-            Read our latest blog post
-          </a>{" "}
-          and follow the future of solar.
+          The San Marcelino Solar Farm proves that environmental disasters need
+          not define a region's future. Through strategic renewable energy
+          development, disaster-affected areas can become engines of sustainable
+          economic growth, energy security, and climate leadership. This
+          transformation from disaster to opportunity offers hope and a
+          replicable model for building resilient, prosperous communities in our
+          changing world.
         </p>
       </>
     ),
-    readingTime: 8,
+    readingTime: 22,
   },
   {
     id: 20,

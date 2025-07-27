@@ -79,10 +79,6 @@ const metroManilaPercentage = (
   100
 ).toFixed(1);
 
-// Debug: Log province counts and top locations before rendering
-console.log("provinceCounts", provinceCounts);
-console.log("topLocations", topLocations);
-
 // System size analysis
 const systemSizes = projects.reduce(
   (acc, project) => {
@@ -99,9 +95,6 @@ const systemSizes = projects.reduce(
 );
 
 const InstallationAnalysisPage: React.FC = () => {
-  // Debug: Log province counts and top locations before rendering
-  console.log("provinceCounts", provinceCounts);
-  console.log("topLocations", topLocations);
   return (
     <div className="min-h-screen w-full bg-neutral-950">
       <div className="container mx-auto px-4 py-20">
@@ -746,9 +739,9 @@ const InstallationAnalysisPage: React.FC = () => {
                     Comprehensive Approach
                   </h3>
                   <p className="text-gray-300 leading-relaxed flex-1">
-                    The company's comprehensive approach—combining
+                    The company's comprehensive approach combining
                     high-efficiency technology, custom design, and reliable
-                    backup power—has created a sustainable model for renewable
+                    backup power has created a sustainable model for renewable
                     energy adoption in the Philippines.
                   </p>
                 </div>
