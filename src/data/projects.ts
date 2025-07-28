@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "lipa-batangas-12kw-2025",
+    image: "/images/project65.jpg",
+    location: "Lipa City, Batangas, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-07-28",
+    clientType: "Residential Estate",
+    specification: [
+      "12kW Deye Hybrid Inverter – Advanced hybrid inverter that intelligently prioritizes solar, battery, and grid sources for maximum efficiency.",
+      "20 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules that absorb sunlight from both sides to increase total energy production.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Large-capacity lithium battery bank to power home appliances at night or during outages. Ideal for off-grid backup.",
+    ],
+    benefits: [
+      "Slash electric bills by up to 80–90%",
+      "Reliable power for air conditioning, refrigerators, lighting, desktop computers, Wi-Fi routers, and security systems",
+      "Offset approx. 2,500–3,000 kg of CO₂ emissions per month",
+      "Perfect for large homes, online professionals, or tech-savvy families",
+      "Full hybrid functionality ensures seamless power supply even during power failures",
+    ],
+    description:
+      "Sunphil Solar completed a 12kW hybrid solar installation in Lipa, Batangas, built for a modern home with high daytime and nighttime energy usage. Designed to reduce reliance on the grid while maintaining full operational power during brownouts, this system provides energy efficiency, security, and long-term cost savings.\n\nLipa's climate and growing residential communities make it ideal for solar. This 12kW hybrid system empowers homeowners with greater control over their energy consumption, while reducing their carbon footprint and reliance on utility providers.\n\nSunphil Solar offers free on-site energy consultations, customized system design based on actual load, professional installation & ongoing technical support. Request a free quote today and enjoy uninterrupted, affordable, and sustainable power now and into the future.",
+  },
+  {
     id: "tanza-cavite-6kw-2025",
     image: "/images/project63.jpg",
     location: "Tanza, Cavite, Philippines",
