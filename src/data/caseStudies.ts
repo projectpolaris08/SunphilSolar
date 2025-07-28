@@ -308,6 +308,175 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       },
     ],
   },
+  "upper-bicutan-taguig": {
+    projectOverview: {
+      challenge:
+        "Jose Rey Paguiton Paz was facing crippling Meralco bills of ₱12,994.27 monthly with 960 kWh consumption, representing a daily electricity cost of over ₱430. The household's high energy demands and complete grid dependency were creating significant financial strain in Upper Bicutan, Taguig City.",
+      solution:
+        "Sunphil Solar designed and installed a custom 8kW hybrid solar system on June 6, 2025, featuring an 8kW Deye Hybrid Inverter, 18 x 620W AE Bifacial Solar Panels (11.16kW total capacity), and 2 x 51.2V 314Ah LiFePO4 Batteries (32.2kWh total storage) for maximum energy independence and backup power.",
+      results:
+        "Mr. Paz's monthly consumption dropped from 960 kWh to just 134 kWh (86% reduction), with his Meralco bill plummeting from ₱12,994.27 to ₱1,781.59 achieving ₱11,212.68 monthly savings (86% cost reduction). The system now provides near-complete energy independence with reliable backup power.",
+    },
+    financialAnalysis: {
+      totalInvestment: 455000,
+      monthlySavings: 11212,
+      paybackPeriod: 3.4,
+      annualROI: 29.6,
+      lifetimeSavings: 2690880,
+    },
+    environmentalImpact: {
+      co2Reduction: 9900,
+      treesEquivalent: 471,
+      annualEnergyProduction: 12100,
+    },
+    performanceMetrics: {
+      systemEfficiency: 96,
+      uptime: 99.9,
+      peakOutput: 8,
+      averageDailyProduction: 33,
+    },
+    challenges: [
+      "Crippling Meralco bills of ₱12,994.27 monthly with 960 kWh consumption",
+      "Daily electricity costs exceeding ₱430 putting severe strain on household budget",
+      "Complete dependence on grid power with no backup system",
+      "High energy consumption from power-hungry household appliances",
+      "No protection from rising electricity rates in Metro Manila",
+    ],
+    solutions: [
+      "Custom-designed 8kW hybrid solar system with 11.16kW panel capacity",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency AE Bifacial panels capturing maximum sunlight",
+      "Dual LiFePO4 battery storage (32.2kWh) for nighttime use and backup power",
+      "Complete energy independence reducing grid consumption by 86%",
+    ],
+    testimonials: {
+      quote:
+        "Good day po. i-update ko lang po kayo ng performance ng installed 8kw solar, from almost 13k naging 1.7k na lang bill namin. thank you po ulit.",
+      author: "Jose Rey Paguiton Paz",
+      role: "Homeowner, Upper Bicutan, Taguig City",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Jose-Rey-before.jpg",
+      afterImage: "/images/Jose-Rey-after.jpg",
+      beforeDescription:
+        "May 2025: Meralco bill at ₱12,994.27 with 960 kWh consumption, representing daily electricity costs of over ₱430.",
+      afterDescription:
+        "July 2025: Bill reduced to just ₱1,781.59 with only 134 kWh consumption, achieving 86% savings and near-complete energy independence.",
+    },
+  },
+  "sampaloc-manila": {
+    projectOverview: {
+      challenge:
+        "Kath Start was struggling with extremely high Meralco bills of ₱13,075.83 monthly with 977 kWh consumption, representing a daily electricity cost of over ₱435. The household's high energy demands in Manila's urban environment were creating significant financial strain in Sampaloc, Manila.",
+      solution:
+        "Sunphil Solar designed and installed a custom 6kW hybrid solar system on June 26, 2025, featuring a 6kW Deye Hybrid Inverter, 13 x 615W Canadian Bifacial Solar Panels (7.995kW total capacity), and a 51.2V 314Ah LiFePO4 Battery (16.1kWh storage) for optimal energy independence in Manila's urban environment.",
+      results:
+        "Kath's monthly consumption dropped from 977 kWh to just 265 kWh (73% reduction), with her Meralco bill plummeting from ₱13,075.83 to ₱3,444.99 achieving ₱9,630.84 monthly savings (74% cost reduction). The system now provides significant energy independence with reliable backup power in Manila's dense urban setting.",
+    },
+    financialAnalysis: {
+      totalInvestment: 300000,
+      monthlySavings: 9630,
+      paybackPeriod: 2.6,
+      annualROI: 38.5,
+      lifetimeSavings: 2311200,
+    },
+    environmentalImpact: {
+      co2Reduction: 8760,
+      treesEquivalent: 417,
+      annualEnergyProduction: 11680,
+    },
+    performanceMetrics: {
+      systemEfficiency: 94,
+      uptime: 99.9,
+      peakOutput: 6,
+      averageDailyProduction: 32,
+    },
+    challenges: [
+      "Extremely high Meralco bills of ₱13,075.83 monthly with 977 kWh consumption",
+      "Daily electricity costs exceeding ₱435 putting severe strain on household budget",
+      "Complete dependence on grid power with no backup system in urban Manila",
+      "High energy consumption from power-hungry household appliances",
+      "No protection from rising electricity rates in Metro Manila",
+    ],
+    solutions: [
+      "Custom-designed 6kW hybrid solar system with 7.995kW panel capacity",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency Canadian Bifacial panels capturing maximum sunlight in urban environment",
+      "LiFePO4 battery storage (16.1kWh) for nighttime use and backup power",
+      "Significant energy independence reducing grid consumption by 73%",
+    ],
+    testimonials: {
+      quote:
+        "Good day po! I-uupdate ko lng kyo kc sobrang happy ko ngaun!dumating na kc un bill ko s meralco at sobrang nkka-excite ang bill ko! From 13k last june ngaun 3,400 nlng!! Salamat boss legit ang SunphilSolar/Fairview Solarista!",
+      author: "Kath Start",
+      role: "Homeowner, Sampaloc, Manila",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Kath-Start-before.jpg",
+      afterImage: "/images/Kath-Start-after.jpg",
+      beforeDescription:
+        "June 2025: Meralco bill at ₱13,075.83 with 977 kWh consumption, representing daily electricity costs of over ₱435.",
+      afterDescription:
+        "July 2025: Bill reduced to just ₱3,444.99 with only 265 kWh consumption, achieving 74% savings and significant energy independence.",
+    },
+  },
+  "antipolo-rizal": {
+    projectOverview: {
+      challenge:
+        "Jay-r Jaminola Salvador was facing extremely high Meralco bills ranging from ₱24,000 to ₱28,000 monthly, with his highest bill reaching ₱28,000+. The household's high energy consumption and complete grid dependency were creating severe financial strain in Antipolo, Rizal, especially during the challenging typhoon season.",
+      solution:
+        "Sunphil Solar designed and installed a custom 12kW hybrid solar system on June 25, 2025, featuring a 12kW Deye Hybrid Inverter, 24 x 615W Canadian Bifacial Solar Panels (14.76kW total capacity), and 3 x 51.2V 314Ah LiFePO4 Batteries (48.3kWh total storage) for maximum energy independence and extended backup power during outages.",
+      results:
+        "Mr. Salvador's monthly bill dropped from ₱24,000-₱28,000 to just ₱8,031.74, achieving 68-71% reduction in electricity costs despite continuous storms. The system now provides significant energy independence with 48.3kWh battery backup for 16-20 hours of typical household consumption.",
+    },
+    financialAnalysis: {
+      totalInvestment: 650000,
+      monthlySavings: 16000,
+      paybackPeriod: 3.4,
+      annualROI: 29.5,
+      lifetimeSavings: 4800000,
+    },
+    environmentalImpact: {
+      co2Reduction: 13200,
+      treesEquivalent: 629,
+      annualEnergyProduction: 18000,
+    },
+    performanceMetrics: {
+      systemEfficiency: 97,
+      uptime: 99.9,
+      peakOutput: 12,
+      averageDailyProduction: 66,
+    },
+    challenges: [
+      "Extremely high Meralco bills ranging from ₱24,000 to ₱28,000 monthly",
+      "Highest recorded bill of ₱28,000+ creating severe financial strain",
+      "Complete dependence on grid power with no backup system",
+      "High energy consumption household with significant electrical load",
+      "Challenging weather conditions with continuous storms and typhoons",
+      "No protection from rising electricity rates in Antipolo, Rizal",
+    ],
+    solutions: [
+      "Custom-designed 12kW hybrid solar system with 14.76kW panel capacity",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency Canadian Bifacial panels capturing maximum sunlight",
+      "Triple LiFePO4 battery storage (48.3kWh) for extended backup power",
+      "Weather-resistant system design maintaining performance during storms",
+      "Significant energy independence reducing grid consumption by 68-71%",
+    ],
+    testimonials: {
+      quote: "Past bill 28k, 25k 24k to 8k puro bagyo pa, salamat po.",
+      author: "Jay-r Jaminola Salvador",
+      role: "Homeowner, Antipolo, Rizal",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Jay-r-before.jpg",
+      afterImage: "/images/Jay-r-after.jpg",
+      beforeDescription:
+        "June-July 2025: Meralco bills ranging from ₱24,000 to ₱28,000 with highest recorded bill of ₱28,000+, representing severe financial strain.",
+      afterDescription:
+        "July 2025: Bill reduced to just ₱8,031.74 achieving 68-71% savings despite continuous storms and challenging weather conditions.",
+    },
+  },
 };
 
 export default caseStudies;

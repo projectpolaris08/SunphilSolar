@@ -378,11 +378,11 @@ export const projects: Project[] = [
     image: "/images/project37.jpg",
     location: "Sampaloc, Manila, Philippines",
     system: "6kW Hybrid Solar",
-    date: "2025-06-28",
+    date: "2025-06-26",
     clientType: "Residential (Urban Homeowner)",
     specification: [
       "6kW Deye Hybrid Inverter – Intelligent energy control that prioritizes solar power, manages battery charging, and draws from the grid only when necessary.",
-      "12 × 615W Canadian Bifacial Solar Panels – Bifacial design captures sunlight from both sides, increasing daily output—perfect for space-limited rooftops.",
+      "13 × 615W Canadian Bifacial Solar Panels – Bifacial design captures sunlight from both sides, increasing daily output—perfect for space-limited rooftops.",
       "51.2V 314Ah LiFePO₄ Battery – Lithium battery storage that ensures uninterrupted energy during blackouts or peak usage times.",
     ],
     benefits: [

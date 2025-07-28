@@ -374,27 +374,47 @@ const CaseStudiesPage: React.FC = () => {
               </div>
 
               {totalPages > 1 && (
-                <nav className="flex justify-center items-center space-x-2 sm:space-x-4 mt-12">
+                <div className="flex justify-center mt-12 gap-2 flex-wrap">
                   <button
                     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
+                    className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                      currentPage === 1
+                        ? "bg-white/10 text-white/40 cursor-not-allowed"
+                        : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                    }`}
                   >
-                    Previous
+                    Prev
                   </button>
-                  <span className="text-white font-medium">
-                    Page {currentPage} of {totalPages}
-                  </span>
+
+                  {Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                      key={i + 1}
+                      onClick={() => setCurrentPage(i + 1)}
+                      className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                        currentPage === i + 1
+                          ? "bg-blue-600 text-white"
+                          : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      }`}
+                    >
+                      {i + 1}
+                    </button>
+                  ))}
+
                   <button
                     onClick={() =>
                       setCurrentPage((p) => Math.min(totalPages, p + 1))
                     }
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
+                    className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                      currentPage === totalPages
+                        ? "bg-white/10 text-white/40 cursor-not-allowed"
+                        : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                    }`}
                   >
                     Next
                   </button>
-                </nav>
+                </div>
               )}
             </>
           ) : (
