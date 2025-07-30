@@ -50,7 +50,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       solution:
         "Sunphil Solar designed and installed a custom 6kW hybrid solar system on April 21, 2025, featuring a 6kW Deye Hybrid Inverter for smart energy management, 12 x 615W Canadian Bifacial Solar Panels for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery for reliable backup power and nighttime energy storage.",
       results:
-        "In just two months, Sir Arjay's energy consumption from the grid dropped to 0 kWh, with his Meralco bill plummeting from ₱6,695.57 to just ₱24.07—a 99.6% reduction in electricity costs. The system eliminated the disconnection threat and provided complete energy independence.",
+        "In just two months, Sir Arjay's energy consumption from the grid dropped to 0 kWh, with his Meralco bill plummeting from ₱6,695.57 to just ₱24.07, a 99.6% reduction in electricity costs. The system eliminated the disconnection threat and provided complete energy independence.",
     },
     financialAnalysis: {
       totalInvestment: 295000,
@@ -213,8 +213,8 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       averageDailyProduction: 27,
     },
     challenges: [
-      "Soaring Meralco bills in the ₱4,000–₱6,000 range.",
-      "High monthly energy consumption of 280–350 kWh.",
+      "Soaring Meralco bills in the ₱4,000-₱6,000 range.",
+      "High monthly energy consumption of 280-350 kWh.",
       "Lack of energy stability and no protection from power outages.",
       "Anticipated increase in electricity costs during summer.",
     ],
@@ -227,7 +227,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
     ],
     testimonials: {
       quote:
-        "Hindi ako nagkamali sa investment ko, saka syempre, hindi ako nagkamali na kayo nag-install. Sulit ang battery ninyo—hindi tulad ng iba na mababa ang capacity pero mahal.",
+        "Hindi ako nagkamali sa investment ko, saka syempre, hindi ako nagkamali na kayo nag-install. Sulit ang battery ninyo, hindi tulad ng iba na mababa ang capacity pero mahal.",
       author: "Gerry Pacammara",
       role: "Homeowner, Brgy. Commonwealth, Quezon City",
     },
@@ -247,7 +247,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       solution:
         "Sunphil Solar installed a custom 6kW hybrid solar system on February 28, 2025, featuring a 6kW Deye Hybrid Inverter for intelligent energy management, 13 x 600W Canadian Bifacial Solar Panels for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery for reliable backup power and nighttime energy storage.",
       results:
-        "Marvin's Meralco consumption dropped from 407 kWh to just 10 kWh, reducing his bill from ₱5,381.80 to ₱144.47—a 97.3% reduction. The system now generates nearly all his household energy needs, providing complete energy independence and significant monthly savings.",
+        "Marvin's Meralco consumption dropped from 407 kWh to just 10 kWh, reducing his bill from ₱5,381.80 to ₱144.47, a 97.3% reduction. The system now generates nearly all his household energy needs, providing complete energy independence and significant monthly savings.",
     },
     financialAnalysis: {
       totalInvestment: 280000,

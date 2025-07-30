@@ -2767,7 +2767,7 @@ export const blogPosts: BlogPost[] = [
     id: 11,
     title:
       "Is Solar Worth It? Understanding the Return on Investment (ROI) of Solar Installations in the Philippines",
-    author: "SunPhil Solar",
+    author: "Sunphil Solar",
     date: "2025-05-05",
     slug: "solar-roi-philippines",
     tags: [

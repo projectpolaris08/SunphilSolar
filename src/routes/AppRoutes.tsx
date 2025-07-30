@@ -12,6 +12,7 @@ import WeatherWidget from "../components/weather/WeatherWidget";
 import ProjectsPage from "../pages/ProjectsPage";
 import ProjectDetailPage from "../pages/ProjectDetailPage";
 import CaseStudiesPage from "../pages/CaseStudiesPage";
+import CaseStudyDetailPage from "../pages/CaseStudyDetailPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Cookies from "../pages/Cookies";
 import FAQ from "../pages/FAQ";
@@ -105,6 +106,10 @@ const AppRoutes = ({
           <Route path="/solar-panels" element={<SolarPanelsPage />} />
           <Route path="/aftersales" element={<AfterSalesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
+          <Route
+            path="/case-studies/:caseStudyId"
+            element={<CaseStudyDetailPage />}
+          />
           <Route path="/statistics" element={<StatisticsPage />} />
           <Route
             path="/installation-analysis"

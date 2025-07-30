@@ -69,6 +69,19 @@ const CaseStudiesPage: React.FC = () => {
   useEffect(() => {
     let results = Object.entries(caseStudies);
 
+    // Sort by date (most recent first)
+    results = results.sort(([projectIdA], [projectIdB]) => {
+      const projectA = projects.find((p) => p.id === projectIdA);
+      const projectB = projects.find((p) => p.id === projectIdB);
+
+      if (!projectA || !projectB) return 0;
+
+      const dateA = new Date(projectA.date);
+      const dateB = new Date(projectB.date);
+
+      return dateB.getTime() - dateA.getTime(); // Most recent first
+    });
+
     // Filter by search term
     if (searchTerm) {
       results = results.filter(([projectId, data]) => {
@@ -356,7 +369,7 @@ const CaseStudiesPage: React.FC = () => {
 
                         <div className="mt-6">
                           <Link
-                            to={`/solarprojects/${projectId}`}
+                            to={`/case-studies/${projectId}`}
                             className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors group"
                           >
                             <span>

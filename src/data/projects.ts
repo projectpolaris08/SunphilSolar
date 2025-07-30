@@ -140,7 +140,7 @@ export const projects: Project[] = [
       "Tailored for Metro Manila homes with limited space and medium energy needs",
     ],
     description:
-      "Sunphil Solar installed a 6kW hybrid solar system in Parañaque City to support a homeowner seeking reduced power bills and reliable energy during Metro Manila's frequent brownouts. Designed for efficiency and durability, this system delivers real value and 24/7 peace of mind. Parañaque households—especially in communities like BF Homes, Don Bosco, and Multinational Village—are switching to smart hybrid systems. With solar power, homeowners gain control over rising utility costs while contributing to a cleaner future.",
+      "Sunphil Solar installed a 6kW hybrid solar system in Parañaque City to support a homeowner seeking reduced power bills and reliable energy during Metro Manila's frequent brownouts. Designed for efficiency and durability, this system delivers real value and 24/7 peace of mind. Parañaque households, especially in communities like BF Homes, Don Bosco, and Multinational Village, are switching to smart hybrid systems. With solar power, homeowners gain control over rising utility costs while contributing to a cleaner future.",
   },
   {
     id: "batangas-8kw-hybrid",
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     clientType: "Residential Estate / Small Commercial Property",
     specification: [
       "8kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
-      "16 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "16 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below, perfect for wide, open rooftops.",
       "2 × 51.2V 280Ah LiFePO₄ Batteries – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
     ],
     benefits: [
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     clientType: "Residential Estate / Small Commercial Property",
     specification: [
       "6kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
-      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below perfect for wide, open rooftops.",
       "51.2V 280Ah LiFePO₄ Battery – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
     ],
     benefits: [
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     clientType: "Residential Estate / Small Commercial Property",
     specification: [
       "6kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
-      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below perfect for wide, open rooftops.",
       "51.2V 280Ah LiFePO₄ Battery – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
     ],
     benefits: [
@@ -214,7 +214,7 @@ export const projects: Project[] = [
     clientType: "Residential Estate / Small Commercial Property",
     specification: [
       "6kW Deye Hybrid Inverter – Smart hybrid control. Efficiently manages solar input, grid feed, and battery storage.",
-      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below—perfect for wide, open rooftops.",
+      "10 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules increase energy harvest by utilizing reflected sunlight from below perfect for wide, open rooftops.",
       "51.2V 280Ah LiFePO₄ Battery – Large-scale lithium storage solution for reliable nighttime usage and power backup, supporting extended outages or off-grid operation.",
     ],
     benefits: [
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     clientType: "Residential (High-Consumption Urban Household)",
     specification: [
       "12kW Deye Hybrid Inverter – Manages energy flow between solar production, battery storage, and grid input, ensuring seamless transitions and optimal efficiency.",
-      "24 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels increase daily yield by absorbing sunlight from both the front and back—ideal for rooftops with concrete or reflective surfaces.",
+      "24 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels increase daily yield by absorbing sunlight from both the front and back ideal for rooftops with concrete or reflective surfaces.",
       "2 × 51.2V 314Ah LiFePO₄ Batteries – Durable lithium batteries store excess solar power for night-time use and serve as backup during brownouts.",
     ],
     benefits: [
@@ -287,7 +287,7 @@ export const projects: Project[] = [
       "Optimized for rural and semi-urban households in Bataan",
     ],
     description:
-      "Sunphil Solar installed a robust 8kW hybrid solar system in Samal, Bataan, designed to provide reliable, cost-effective energy for a household experiencing frequent power interruptions and high electricity bills. With a hybrid setup, the homeowner now enjoys 24/7 access to clean energy—even during outages. Sunphil Solar is helping homes across Samal, Orion, Abucay, and Balanga City shift to sustainable energy solutions. Whether for savings, security, or sustainability, our hybrid solar systems are tailored to perform in real Filipino homes.",
+      "Sunphil Solar installed a robust 8kW hybrid solar system in Samal, Bataan, designed to provide reliable, cost-effective energy for a household experiencing frequent power interruptions and high electricity bills. With a hybrid setup, the homeowner now enjoys 24/7 access to clean energy, even during outages. Sunphil Solar is helping homes across Samal, Orion, Abucay, and Balanga City shift to sustainable energy solutions. Whether for savings, security, or sustainability, our hybrid solar systems are tailored to perform in real Filipino homes.",
   },
   {
     id: "naic-cavite",
@@ -308,7 +308,7 @@ export const projects: Project[] = [
       "Custom-fit for residential homes in Cavite's suburban areas",
     ],
     description:
-      "Sunphil Solar installed a 6kW hybrid solar system in Naic, Cavite for a homeowner looking to reduce monthly electricity expenses and ensure power availability during outages. With increasing utility costs and unreliable grid supply in parts of Cavite, this hybrid system offers a smart, long-term energy solution. This installation in Naic is part of Sunphil Solar's effort to bring sustainable and resilient energy solutions to Cavite households, including those in Tanza, Maragondon, Trece Martires, and beyond. Whether it's for savings, backup power, or both—our hybrid systems are built to perform.",
+      "Sunphil Solar installed a 6kW hybrid solar system in Naic, Cavite for a homeowner looking to reduce monthly electricity expenses and ensure power availability during outages. With increasing utility costs and unreliable grid supply in parts of Cavite, this hybrid system offers a smart, long-term energy solution. This installation in Naic is part of Sunphil Solar's effort to bring sustainable and resilient energy solutions to Cavite households, including those in Tanza, Maragondon, Trece Martires, and beyond. Whether it's for savings, backup power, or both, our hybrid systems are built to perform.",
   },
   {
     id: "bagong-ilog-pasig",
@@ -329,7 +329,7 @@ export const projects: Project[] = [
       "Engineered for urban rooftops with limited space and high power usage",
     ],
     description:
-      "Sunphil Solar installed a 6kW hybrid solar system for a homeowner in Bagong Ilog, Pasig City, offering an efficient energy solution that significantly lowers monthly electricity bills while providing dependable backup during outages. This system is ideal for dense residential areas where energy demand is high and power interruptions are common. Sunphil Solar continues to energize Metro Manila—especially Pasig City, Ortigas, Caniogan, and San Miguel—with reliable hybrid solar systems built for both savings and sustainability.",
+      "Sunphil Solar installed a 6kW hybrid solar system for a homeowner in Bagong Ilog, Pasig City, offering an efficient energy solution that significantly lowers monthly electricity bills while providing dependable backup during outages. This system is ideal for dense residential areas where energy demand is high and power interruptions are common. Sunphil Solar continues to energize Metro Manila, especially Pasig City, Ortigas, Caniogan, and San Miguel, with reliable hybrid solar systems built for both savings and sustainability.",
   },
   {
     id: "sun-valley-paranaque",
@@ -350,7 +350,7 @@ export const projects: Project[] = [
       "Designed for urban households with limited roof space but high energy demand",
     ],
     description:
-      "Sunphil Solar completed a 6kW hybrid solar energy system for a homeowner in Sun Valley, Parañaque City—a suburban area where utility costs are high and power stability is essential. This system helps reduce electricity bills significantly while ensuring uninterrupted power during outages. This installation is part of Sunphil Solar's ongoing mission to bring affordable, high-performance hybrid solar systems to residential areas like Sun Valley, BF Homes, Sucat, and Multinational Village in Parañaque and nearby cities.",
+      "Sunphil Solar completed a 6kW hybrid solar energy system for a homeowner in Sun Valley, Parañaque City, a suburban area where utility costs are high and power stability is essential. This system helps reduce electricity bills significantly while ensuring uninterrupted power during outages. This installation is part of Sunphil Solar's ongoing mission to bring affordable, high-performance hybrid solar systems to residential areas like Sun Valley, BF Homes, Sucat, and Multinational Village in Parañaque and nearby cities.",
   },
   {
     id: "sangandaan-south-caloocan",
@@ -361,7 +361,7 @@ export const projects: Project[] = [
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter – Smart hybrid inverter that automatically manages energy from solar panels, the battery, and grid input.",
-      "13 × 615W Canadian Bifacial Solar Panels – Bifacial design enables increased power generation by capturing sunlight from both sides—ideal for reflective urban rooftops.",
+      "13 × 615W Canadian Bifacial Solar Panels – Bifacial design enables increased power generation by capturing sunlight from both sides, ideal for reflective urban rooftops.",
       "51.2V 314Ah LiFePO₄ Battery – High-efficiency lithium battery stores surplus solar energy and provides reliable backup during brownouts or peak usage hours.",
     ],
     benefits: [
@@ -382,7 +382,7 @@ export const projects: Project[] = [
     clientType: "Residential (Urban Homeowner)",
     specification: [
       "6kW Deye Hybrid Inverter – Intelligent energy control that prioritizes solar power, manages battery charging, and draws from the grid only when necessary.",
-      "13 × 615W Canadian Bifacial Solar Panels – Bifacial design captures sunlight from both sides, increasing daily output—perfect for space-limited rooftops.",
+      "13 × 615W Canadian Bifacial Solar Panels – Bifacial design captures sunlight from both sides, increasing daily output, perfect for space-limited rooftops.",
       "51.2V 314Ah LiFePO₄ Battery – Lithium battery storage that ensures uninterrupted energy during blackouts or peak usage times.",
     ],
     benefits: [
@@ -392,7 +392,7 @@ export const projects: Project[] = [
       "Built for tight spaces typical of urban Manila residences",
     ],
     description:
-      "Sunphil Solar successfully installed a 6kW hybrid solar system for a homeowner in Sampaloc, Manila, providing reliable power savings and energy security. With the rising cost of electricity and frequent brownouts in Metro Manila, this hybrid setup is designed to meet the needs of city living—without compromise. This Sampaloc installation is part of Sunphil Solar's mission to bring energy freedom to Metro Manila neighborhoods like España, Lacson Avenue, Sta. Mesa, and University Belt—where sustainable power is no longer a luxury, but a necessity. We handle everything—from design and permits to installation and after-sales support. Trusted Components. Fast Turnaround. Real Energy Savings.",
+      "Sunphil Solar successfully installed a 6kW hybrid solar system for a homeowner in Sampaloc, Manila, providing reliable power savings and energy security. With the rising cost of electricity and frequent brownouts in Metro Manila, this hybrid setup is designed to meet the needs of city living, without compromise. This Sampaloc installation is part of Sunphil Solar's mission to bring energy freedom to Metro Manila neighborhoods like España, Lacson Avenue, Sta. Mesa, and University Belt where sustainable power is no longer a luxury, but a necessity. We handle everything, from design and permits to installation and after-sales support. Trusted Components. Fast Turnaround. Real Energy Savings.",
   },
   {
     id: "sampaloc-manila-12kw",
@@ -413,7 +413,7 @@ export const projects: Project[] = [
       "Tailored for high-consumption homes in tight, urban environments",
     ],
     description:
-      "Sunphil Solar completed a powerful 12kW hybrid solar system for a residential client in Sampaloc, Manila, designed to serve a household with high energy demands and the need for dependable backup power. This system is optimized for Manila's dense urban setup—maximizing performance despite space limitations and frequent grid fluctuations. Sunphil Solar continues to lead the hybrid solar movement across Sampaloc, Sta. Mesa, Lacson Avenue, and nearby districts in Metro Manila, helping homeowners future-proof their energy needs with smart, scalable systems. We offer free on-site assessments, fast turnaround & permit assistance, and reliable systems backed by warranty.",
+      "Sunphil Solar completed a powerful 12kW hybrid solar system for a residential client in Sampaloc, Manila, designed to serve a household with high energy demands and the need for dependable backup power. This system is optimized for Manila's dense urban setup maximizing performance despite space limitations and frequent grid fluctuations. Sunphil Solar continues to lead the hybrid solar movement across Sampaloc, Sta. Mesa, Lacson Avenue, and nearby districts in Metro Manila, helping homeowners future-proof their energy needs with smart, scalable systems. We offer free on-site assessments, fast turnaround & permit assistance, and reliable systems backed by warranty.",
   },
   {
     id: "marilao-bulacan",
@@ -429,12 +429,12 @@ export const projects: Project[] = [
     ],
     benefits: [
       "Save up to 75% on monthly electricity bills",
-      "Reliable backup power during brownouts—ideal for homes in suburban Bulacan",
+      "Reliable backup power during brownouts, ideal for homes in suburban Bulacan",
       "Reduces approximately 950–1,050 kg of CO₂ emissions every month",
       "Designed for compact rooftops and optimized solar exposure",
     ],
     description:
-      "Sunphil Solar completed a 6kW hybrid solar energy installation in Marilao, Bulacan, empowering a residential household with consistent daytime savings and essential backup power during outages. With rising electricity costs and periodic grid instability in the region, this system provides the homeowner with both peace of mind and long-term financial returns. This project is part of Sunphil Solar's ongoing commitment to helping communities across Bulacan—from Marilao to Meycauayan, Sta. Maria, and Bocaue—achieve energy independence with smart, affordable solar solutions. Whether you want to lower your bills or ensure energy security during blackouts, we've got you covered with expert consultation, fast & professional installation, and tier 1 equipment with warranty.",
+      "Sunphil Solar completed a 6kW hybrid solar energy installation in Marilao, Bulacan, empowering a residential household with consistent daytime savings and essential backup power during outages. With rising electricity costs and periodic grid instability in the region, this system provides the homeowner with both peace of mind and long-term financial returns. This project is part of Sunphil Solar's ongoing commitment to helping communities across Bulacan from Marilao to Meycauayan, Sta. Maria, and Bocaue achieve energy independence with smart, affordable solar solutions. Whether you want to lower your bills or ensure energy security during blackouts, we've got you covered with expert consultation, fast & professional installation, and tier 1 equipment with warranty.",
   },
   {
     id: "antipolo-rizal",
@@ -455,7 +455,7 @@ export const projects: Project[] = [
       "Tailored for Antipolo's elevated terrain and weather variability",
     ],
     description:
-      "Sunphil Solar installed a powerful 12kW hybrid solar energy system in Antipolo, Rizal, designed for a household with high daily power usage and a need for reliable backup. This installation ensures round-the-clock power independence—ideal for homes in hilly areas where brownouts and voltage drops are common. This Antipolo installation proves that solar energy works even in hillside environments, where sunlight is plentiful but grid reliability can be unpredictable. Sunphil Solar provides future-ready energy solutions for homeowners across Antipolo, Marikina, Taytay, and surrounding areas.",
+      "Sunphil Solar installed a powerful 12kW hybrid solar energy system in Antipolo, Rizal, designed for a household with high daily power usage and a need for reliable backup. This installation ensures round-the-clock power independence ideal for homes in hilly areas where brownouts and voltage drops are common. This Antipolo installation proves that solar energy works even in hillside environments, where sunlight is plentiful but grid reliability can be unpredictable. Sunphil Solar provides future-ready energy solutions for homeowners across Antipolo, Marikina, Taytay, and surrounding areas.",
   },
   {
     id: "montalban-rodriguez-rizal",
@@ -473,10 +473,10 @@ export const projects: Project[] = [
       "Up to 85% monthly savings on electricity bills",
       "Uninterrupted power supply for appliances like lights, refrigerator, internet, and CCTV",
       "Estimated 1,100–1,300 kg monthly CO₂ reduction",
-      "Built for hillside and flood-prone zones—reliable even during typhoons and blackouts",
+      "Built for hillside and flood-prone zones, reliable even during typhoons and blackouts",
     ],
     description:
-      "Sunphil Solar completed a customized 8kW hybrid solar system for a household in Montalban, Rizal—a fast-growing municipality where power reliability and high electricity bills are a common concern. This system delivers daytime savings and nighttime backup, giving the homeowner both financial freedom and energy peace of mind. From Montalban to San Mateo, Antipolo, and nearby municipalities, Sunphil Solar helps homeowners enjoy solar independence with properly engineered hybrid systems—built to withstand weather disruptions and rising power rates.",
+      "Sunphil Solar completed a customized 8kW hybrid solar system for a household in Montalban, Rizal, a fast-growing municipality where power reliability and high electricity bills are a common concern. This system delivers daytime savings and nighttime backup, giving the homeowner both financial freedom and energy peace of mind. From Montalban to San Mateo, Antipolo, and nearby municipalities, Sunphil Solar helps homeowners enjoy solar independence with properly engineered hybrid systems, built to withstand weather disruptions and rising power rates.",
   },
   {
     id: "sta-lucia-novaliches-qc",
@@ -497,7 +497,7 @@ export const projects: Project[] = [
       "Ideal for urban homes in high-consumption areas like Novaliches and Commonwealth",
     ],
     description:
-      "Sunphil Solar installed a complete 8kW hybrid solar system in Sta. Lucia, Novaliches, giving the homeowner long-term savings, dependable backup power, and a cleaner energy footprint. This setup is optimized for households in Metro Manila where utility rates are high and power interruptions are common. Sunphil Solar continues to lead the way in providing hybrid solar systems across Quezon City, including Sta. Lucia, Fairview, Commonwealth, and Bagumbong—helping families gain energy independence and reduce their reliance on expensive grid power.",
+      "Sunphil Solar installed a complete 8kW hybrid solar system in Sta. Lucia, Novaliches, giving the homeowner long-term savings, dependable backup power, and a cleaner energy footprint. This setup is optimized for households in Metro Manila where utility rates are high and power interruptions are common. Sunphil Solar continues to lead the way in providing hybrid solar systems across Quezon City, including Sta. Lucia, Fairview, Commonwealth, and Bagumbong, helping families gain energy independence and reduce their reliance on expensive grid power.",
   },
   {
     id: "san-pascual-batangas",
@@ -515,10 +515,10 @@ export const projects: Project[] = [
       "Up to 80% monthly bill reduction through solar self-consumption",
       "Reliable backup power for lights, fridge, Wi-Fi, and other essentials during grid failures",
       "~1,100–1,300 kg CO₂ saved every month, supporting Batangas' cleaner-energy goals",
-      "Built for coastal/provincial conditions—components specified for heat, humidity, and salt-air resilience",
+      "Built for coastal/provincial conditions, components specified for heat, humidity, and salt-air resilience",
     ],
     description:
-      "Sunphil Solar delivered a robust 8kW hybrid solar system for a home in San Pascual, Batangas. Engineered for big daytime savings and dependable nighttime backup, this setup helps the homeowner slash electricity costs while ensuring power security during brownouts—common in fast-growing provincial areas. From San Pascual to Lemery, Bauan, and Batangas City, Sunphil Solar equips homeowners with hybrid systems that deliver true energy independence, lower electric bills, and long-term peace of mind.",
+      "Sunphil Solar delivered a robust 8kW hybrid solar system for a home in San Pascual, Batangas. Engineered for big daytime savings and dependable nighttime backup, this setup helps the homeowner slash electricity costs while ensuring power security during brownouts, common in fast-growing provincial areas. From San Pascual to Lemery, Bauan, and Batangas City, Sunphil Solar equips homeowners with hybrid systems that deliver true energy independence, lower electric bills, and long-term peace of mind.",
   },
   {
     id: "commonwealth-quezon-city",
@@ -539,7 +539,7 @@ export const projects: Project[] = [
       "Ideal for urban homes with limited roof space and high energy costs",
     ],
     description:
-      "Sunphil Solar successfully installed a 6kW hybrid solar energy system for a homeowner in Barangay Commonwealth, Quezon City—a bustling residential area in Metro Manila. This system is designed to cut electricity costs while providing backup power during outages, making it ideal for families dealing with high Meralco bills and grid instability. This project highlights Sunphil Solar's commitment to powering Metro Manila with smart, reliable, and compact solar systems. We proudly serve Brgy. Commonwealth, Fairview, Novaliches, and other parts of Quezon City, helping homeowners reduce their dependency on grid electricity.",
+      "Sunphil Solar successfully installed a 6kW hybrid solar energy system for a homeowner in Barangay Commonwealth, Quezon City, a bustling residential area in Metro Manila. This system is designed to cut electricity costs while providing backup power during outages, making it ideal for families dealing with high Meralco bills and grid instability. This project highlights Sunphil Solar's commitment to powering Metro Manila with smart, reliable, and compact solar systems. We proudly serve Brgy. Commonwealth, Fairview, Novaliches, and other parts of Quezon City, helping homeowners reduce their dependency on grid electricity.",
   },
   {
     id: "vista-verde-north-caloocan",
@@ -626,7 +626,7 @@ export const projects: Project[] = [
       "Compact & Scalable: Ideal for medium-sized homes with room for future upgrades.",
     ],
     description:
-      "Sunphil Solar installed a 12kW hybrid solar power system for a homeowner in Cabanatuan City, Nueva Ecija—a growing urban center in Central Luzon. This system provides clean and reliable energy with built-in battery storage, helping the client enjoy lower electricity bills and backup power during outages.",
+      "Sunphil Solar installed a 12kW hybrid solar power system for a homeowner in Cabanatuan City, Nueva Ecija, a growing urban center in Central Luzon. This system provides clean and reliable energy with built-in battery storage, helping the client enjoy lower electricity bills and backup power during outages.",
   },
   {
     id: "porac-pampanga",
@@ -670,7 +670,7 @@ export const projects: Project[] = [
       "Future-Ready: Easily expandable with more panels or batteries as the client's needs grow.",
     ],
     description:
-      "Sunphil Solar installed a 12kW hybrid solar energy system for a household in BIR Village, Quezon City. Designed to optimize energy savings and provide backup during power outages, this system combines solar generation, battery storage, and smart energy management—ideal for homeowners in urban Metro Manila areas.",
+      "Sunphil Solar installed a 12kW hybrid solar energy system for a household in BIR Village, Quezon City. Designed to optimize energy savings and provide backup during power outages, this system combines solar generation, battery storage, and smart energy management, ideal for homeowners in urban Metro Manila areas.",
   },
   {
     id: "cabanatuan-nueva-ecija-6kw",
@@ -736,7 +736,7 @@ export const projects: Project[] = [
       "Future-Proof Setup: Allows easy expansion with more panels or additional batteries as needed.",
     ],
     description:
-      "Sunphil Solar successfully installed an 8kW hybrid solar system in Umingan, Pangasinan, designed to meet the energy needs of a modern Filipino household. With efficient solar panels, a powerful inverter, and reliable battery storage, this system ensures lower electricity bills and backup power during outages—perfect for rural and semi-urban homes in Northern Luzon.",
+      "Sunphil Solar successfully installed an 8kW hybrid solar system in Umingan, Pangasinan, designed to meet the energy needs of a modern Filipino household. With efficient solar panels, a powerful inverter, and reliable battery storage, this system ensures lower electricity bills and backup power during outages perfect for rural and semi-urban homes in Northern Luzon.",
   },
   {
     id: "bacoor-cavite-rescue",
@@ -821,7 +821,7 @@ export const projects: Project[] = [
       "Ideal for Urban Homes: Compact system layout suited for residential rooftops in dense city areas.",
     ],
     description:
-      "Sunphil Solar successfully installed an 8kW hybrid solar system in Pandacan, Manila, tailored to meet the high daytime energy demand of a Metro Manila household while ensuring dependable backup power. This setup provides clean, sustainable electricity and protection from frequent urban power interruptions. This project highlights Sunphil Solar's commitment to helping Manila residents gain energy independence through high-performance hybrid solar systems. From Pandacan to Sampaloc, Tondo, and beyond—we bring solar energy to every home that needs it.",
+      "Sunphil Solar successfully installed an 8kW hybrid solar system in Pandacan, Manila, tailored to meet the high daytime energy demand of a Metro Manila household while ensuring dependable backup power. This setup provides clean, sustainable electricity and protection from frequent urban power interruptions. This project highlights Sunphil Solar's commitment to helping Manila residents gain energy independence through high-performance hybrid solar systems. From Pandacan to Sampaloc, Tondo, and beyond we bring solar energy to every home that needs it.",
   },
   {
     id: "alisha-nueva-ecija",
@@ -839,10 +839,10 @@ export const projects: Project[] = [
       "Lower Energy Bills: Offsets a large portion of grid electricity use, saving the homeowner up to 60% monthly.",
       "Uninterrupted Power: Supports lighting, refrigeration, internet routers, and other essentials during brownouts.",
       "Eco-Friendly: Helps reduce approximately 400–600 kg of CO₂ emissions per month.",
-      "Rural-Ready: Durable and low-maintenance—perfect for homes in provincial areas.",
+      "Rural-Ready: Durable and low-maintenance, perfect for homes in provincial areas.",
     ],
     description:
-      "Sunphil Solar deployed a 6kW hybrid solar energy system for a residential client in Alisha, Nueva Ecija, tailored to handle everyday household power needs while ensuring reliable energy supply during frequent grid interruptions. This system is an ideal choice for provinces where stable energy access is crucial for comfort and savings. This project is part of Sunphil Solar's expanding reach in Central Luzon, delivering quality hybrid solar systems to residential communities in Alisha, Cabanatuan, San Jose, and beyond. Our mission is to bring affordable, clean, and reliable power to Filipino homes—wherever they are.",
+      "Sunphil Solar deployed a 6kW hybrid solar energy system for a residential client in Alisha, Nueva Ecija, tailored to handle everyday household power needs while ensuring reliable energy supply during frequent grid interruptions. This system is an ideal choice for provinces where stable energy access is crucial for comfort and savings. This project is part of Sunphil Solar's expanding reach in Central Luzon, delivering quality hybrid solar systems to residential communities in Alisha, Cabanatuan, San Jose, and beyond. Our mission is to bring affordable, clean, and reliable power to Filipino homes wherever they are.",
   },
   {
     id: "iba-zambales",
@@ -853,7 +853,7 @@ export const projects: Project[] = [
     clientType: "Residential",
     specification: [
       "8kW Deye Hybrid Inverter – Smart inverter that integrates solar, grid, and battery inputs to ensure consistent, efficient power flow.",
-      "13 × 615W Canadian Solar Bifacial Panels – High-efficiency panels with bifacial technology to harvest more sunlight—even from reflective surfaces—maximizing output.",
+      "13 × 615W Canadian Solar Bifacial Panels – High-efficiency panels with bifacial technology to harvest more sunlight, even from reflective surfaces, maximizing output.",
       "51.2V 314Ah LiFePO₄ Battery – Long-lasting, high-capacity battery designed to supply energy during nighttime use and grid outages.",
     ],
     benefits: [
@@ -915,17 +915,17 @@ export const projects: Project[] = [
     clientType: "Residential Estate / Small Business",
     specification: [
       "2 × 16kW Deye Hybrid Inverters – Intelligent hybrid inverters capable of managing high power loads and optimizing the use of solar, battery, and grid energy.",
-      "56 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules that capture sunlight from both sides, maximizing efficiency and output—perfect for open installations in provincial areas.",
+      "56 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules that capture sunlight from both sides, maximizing efficiency and output perfect for open installations in provincial areas.",
       "5 × 51.2V 314Ah LiFePO₄ Batteries – Large-capacity lithium batteries offering extended backup capabilities and deep-cycle performance for reliable, long-lasting energy storage.",
     ],
     benefits: [
       "Significant Power Capacity: Covers virtually all electrical needs including air conditioning, heavy appliances, refrigeration, and business operations.",
-      "Energy Independence: Enables off-grid capability or reduced reliance on the grid—essential in areas with unreliable electricity supply.",
+      "Energy Independence: Enables off-grid capability or reduced reliance on the grid, essential in areas with unreliable electricity supply.",
       "Major Cost Savings: Offsets up to 90% of monthly electricity costs, with long-term savings over the system's lifespan.",
       "Environmental Impact: Reduces carbon emissions by an estimated 2,000–2,600 kg per month.",
     ],
     description:
-      "Sunphil Solar designed and installed a powerful 32kW hybrid solar system for a large property in San Antonio, Quezon. This installation supports the energy needs of a spacious household or a small commercial operation, providing reliable daytime power and substantial energy storage for night use or grid outages. The system offers an excellent return on investment while promoting environmental sustainability. Sunphil Solar is committed to helping communities in Quezon Province—including San Antonio, Lucena, Candelaria, and beyond—achieve energy independence through advanced hybrid solar systems. Our mission is to make solar energy accessible, reliable, and financially rewarding for every Filipino home and business.",
+      "Sunphil Solar designed and installed a powerful 32kW hybrid solar system for a large property in San Antonio, Quezon. This installation supports the energy needs of a spacious household or a small commercial operation, providing reliable daytime power and substantial energy storage for night use or grid outages. The system offers an excellent return on investment while promoting environmental sustainability. Sunphil Solar is committed to helping communities in Quezon Province including San Antonio, Lucena, Candelaria, and beyond achieve energy independence through advanced hybrid solar systems. Our mission is to make solar energy accessible, reliable, and financially rewarding for every Filipino home and business.",
   },
   {
     id: "upper-bicutan-taguig",
@@ -946,7 +946,7 @@ export const projects: Project[] = [
       "Ideal for Urban Homes: Hybrid system provides both energy savings and power stability in Metro Manila's urban environment",
     ],
     description:
-      "Sunphil Solar installed a modern 8kW hybrid solar system for a home in Upper Bicutan, Taguig. This system offers clean, renewable energy with battery storage—perfect for homeowners in Metro Manila looking to reduce electricity costs and stay protected during grid outages. Sunphil Solar is dedicated to providing reliable hybrid solar systems in Taguig and across Metro Manila, helping families and businesses gain energy independence and cost control in a fast-growing urban setting.",
+      "Sunphil Solar installed a modern 8kW hybrid solar system for a home in Upper Bicutan, Taguig. This system offers clean, renewable energy with battery storage perfect for homeowners in Metro Manila looking to reduce electricity costs and stay protected during grid outages. Sunphil Solar is dedicated to providing reliable hybrid solar systems in Taguig and across Metro Manila, helping families and businesses gain energy independence and cost control in a fast-growing urban setting.",
   },
   {
     id: "taytay-rizal",
@@ -988,7 +988,7 @@ export const projects: Project[] = [
       "Urban Suitability: Tailored for homes in Metro Manila, where hybrid systems offer the best balance of savings and energy resilience",
     ],
     description:
-      "Sunphil Solar installed a 6kW hybrid solar system for a residential property in Batasan, Quezon City. Designed to provide energy savings and backup power, this system is ideal for Metro Manila households facing high electricity costs and frequent grid interruptions. Sunphil Solar is committed to helping residents in Quezon City and throughout Metro Manila enjoy the benefits of hybrid solar power—from reducing electricity bills to ensuring reliable energy access during outages. We proudly serve Batasan Hills, Fairview, Diliman, Commonwealth, and surrounding communities.",
+      "Sunphil Solar installed a 6kW hybrid solar system for a residential property in Batasan, Quezon City. Designed to provide energy savings and backup power, this system is ideal for Metro Manila households facing high electricity costs and frequent grid interruptions. Sunphil Solar is committed to helping residents in Quezon City and throughout Metro Manila enjoy the benefits of hybrid solar power from reducing electricity bills to ensuring reliable energy access during outages. We proudly serve Batasan Hills, Fairview, Diliman, Commonwealth, and surrounding communities.",
   },
   {
     id: "san-mateo-rizal",
@@ -1009,7 +1009,7 @@ export const projects: Project[] = [
       "Adapted for Rizal Homes: Excellent choice for residential homes in elevated and flood-prone areas like San Mateo, ensuring reliable power even during storm seasons",
     ],
     description:
-      "Sunphil Solar completed a custom-designed 8kW hybrid solar energy system for a home in San Mateo, Rizal. This hybrid solution provides sustainable energy, efficient battery storage, and strong protection against power outages—ideal for Rizal households that want to lower electricity bills and boost energy independence. Sunphil Solar proudly serves San Mateo, Rodriguez (Montalban), Antipolo, and the entire Rizal Province, offering expert solutions in hybrid solar installations for homeowners who want cost-effective, green, and dependable power.",
+      "Sunphil Solar completed a custom-designed 8kW hybrid solar energy system for a home in San Mateo, Rizal. This hybrid solution provides sustainable energy, efficient battery storage, and strong protection against power outages ideal for Rizal households that want to lower electricity bills and boost energy independence. Sunphil Solar proudly serves San Mateo, Rodriguez (Montalban), Antipolo, and the entire Rizal Province, offering expert solutions in hybrid solar installations for homeowners who want cost-effective, green, and dependable power.",
   },
   {
     id: "san-mateo-rizal-2",
@@ -1030,7 +1030,7 @@ export const projects: Project[] = [
       "Built for Metro Suburbs – Ideal for homes in elevated zones like San Mateo, where blackouts and grid instability are common",
     ],
     description:
-      "Sunphil Solar recently completed an 8kW hybrid solar system for a residential property in San Mateo, Rizal. This setup provides reliable, clean energy during the day and seamless battery backup at night or during outages—perfect for households looking to cut electricity costs and increase energy security. Sunphil Solar is proud to bring modern hybrid solar energy solutions to families in San Mateo, Antipolo, Rodriguez (Montalban), Taytay, and nearby Rizal towns—delivering dependable systems tailored for both everyday and emergency power needs.",
+      "Sunphil Solar recently completed an 8kW hybrid solar system for a residential property in San Mateo, Rizal. This setup provides reliable, clean energy during the day and seamless battery backup at night or during outages perfect for households looking to cut electricity costs and increase energy security. Sunphil Solar is proud to bring modern hybrid solar energy solutions to families in San Mateo, Antipolo, Rodriguez (Montalban), Taytay, and nearby Rizal towns delivering dependable systems tailored for both everyday and emergency power needs.",
   },
   {
     id: "lemery-batangas-2",
@@ -1051,7 +1051,7 @@ export const projects: Project[] = [
       "Local Adaptation: Engineered for Batangas' coastal climate, including heat resistance and enhanced panel durability",
     ],
     description:
-      "Sunphil Solar successfully completed a 12kW hybrid solar installation for a private residence in Lemery, Batangas. Designed for both power savings and energy resilience, this setup ensures the homeowner enjoys clean, reliable electricity—especially during grid interruptions, which are common in semi-rural and coastal areas like Lemery. Sunphil Solar is proud to support homeowners in Lemery, Taal, Calaca, and nearby areas with reliable hybrid solar solutions. Our systems are built for rural and semi-urban settings that require both cost-efficiency and dependable backup power.",
+      "Sunphil Solar successfully completed a 12kW hybrid solar installation for a private residence in Lemery, Batangas. Designed for both power savings and energy resilience, this setup ensures the homeowner enjoys clean, reliable electricity especially during grid interruptions, which are common in semi-rural and coastal areas like Lemery. Sunphil Solar is proud to support homeowners in Lemery, Taal, Calaca, and nearby areas with reliable hybrid solar solutions. Our systems are built for rural and semi-urban settings that require both cost-efficiency and dependable backup power.",
   },
   {
     id: "san-fernando-pampanga",
@@ -1062,7 +1062,7 @@ export const projects: Project[] = [
     clientType: "Residential / Light Commercial",
     specification: [
       "18kW Deye Hybrid Inverter – Versatile and powerful, this hybrid inverter intelligently manages solar production, grid interaction, and battery storage for optimal performance.",
-      "30 × 615W Canadian Bifacial Solar Panels – Top-tier bifacial technology allows these panels to generate more electricity by absorbing sunlight from both sides—maximizing output even in diffused light conditions.",
+      "30 × 615W Canadian Bifacial Solar Panels – Top-tier bifacial technology allows these panels to generate more electricity by absorbing sunlight from both sides maximizing output even in diffused light conditions.",
       "2 × 51.2V 314Ah LiFePO₄ Batteries – High-capacity lithium batteries ensure critical appliances stay powered during blackouts and nighttime hours, with long lifecycle and safe energy storage.",
     ],
     benefits: [
@@ -1072,7 +1072,7 @@ export const projects: Project[] = [
       "Built for Pampanga: Tailored for the area's hot climate and regular power fluctuations",
     ],
     description:
-      "This project in San Fernando, Pampanga features one of the latest additions to Sunphil Solar's hybrid lineup—the new 18kW Deye Hybrid Inverter. Engineered for homes or small businesses with higher power demands, this system delivers exceptional energy performance, smart backup, and maximum solar savings.",
+      "This project in San Fernando, Pampanga features one of the latest additions to Sunphil Solar's hybrid lineup, the new 18kW Deye Hybrid Inverter. Engineered for homes or small businesses with higher power demands, this system delivers exceptional energy performance, smart backup, and maximum solar savings.",
   },
   {
     id: "dasmariñas-cavite",
@@ -1093,7 +1093,7 @@ export const projects: Project[] = [
       "Perfect for suburban homes in Cavite dealing with high utility rates and inconsistent power",
     ],
     description:
-      "Sunphil Solar completed an 8kW hybrid solar installation for a residence in Dasmariñas, Cavite—a growing suburban area where reliable and cost-effective energy is in high demand. This system combines high-efficiency bifacial panels, smart energy management, and battery backup, ensuring the client experiences lower electricity bills and 24/7 energy reliability. Sunphil Solar proudly delivers modern solar energy systems across Dasmariñas, Imus, General Trias, and nearby towns—designed for long-term savings and energy security. Our hybrid systems are optimized for both on-grid use and emergency backup, giving Cavite homeowners peace of mind.",
+      "Sunphil Solar completed an 8kW hybrid solar installation for a residence in Dasmariñas, Cavite, a growing suburban area where reliable and cost-effective energy is in high demand. This system combines high-efficiency bifacial panels, smart energy management, and battery backup, ensuring the client experiences lower electricity bills and 24/7 energy reliability. Sunphil Solar proudly delivers modern solar energy systems across Dasmariñas, Imus, General Trias, and nearby towns, designed for long-term savings and energy security. Our hybrid systems are optimized for both on-grid use and emergency backup, giving Cavite homeowners peace of mind.",
   },
   {
     id: "balagtas-bulacan",
@@ -1114,7 +1114,7 @@ export const projects: Project[] = [
       "Designed for Bulacan homes dealing with high energy costs and grid instability",
     ],
     description:
-      "Sunphil Solar installed a reliable 8kW hybrid solar system for a homeowner in Balagtas, Bulacan, aiming to reduce their electricity expenses and provide backup power during frequent grid outages. This system was tailored for residential needs, ensuring stable energy use for day and night, rain or shine. From Balagtas to Malolos, Guiguinto, and Plaridel, Sunphil Solar is powering Central Luzon one home at a time—delivering hybrid solar systems that are efficient, durable, and built for the Philippine climate. We offer site assessment and load evaluation, turnkey installation services, and warranty-backed equipment.",
+      "Sunphil Solar installed a reliable 8kW hybrid solar system for a homeowner in Balagtas, Bulacan, aiming to reduce their electricity expenses and provide backup power during frequent grid outages. This system was tailored for residential needs, ensuring stable energy use for day and night, rain or shine. From Balagtas to Malolos, Guiguinto, and Plaridel, Sunphil Solar is powering Central Luzon one home at a time delivering hybrid solar systems that are efficient, durable, and built for the Philippine climate. We offer site assessment and load evaluation, turnkey installation services, and warranty-backed equipment.",
   },
   {
     id: "congressional-qc",
@@ -1125,17 +1125,17 @@ export const projects: Project[] = [
     clientType: "Residential (Mid-to-High Usage)",
     specification: [
       "12kW Deye Hybrid Inverter – Smart inverter that intelligently manages power from solar panels, batteries, and the grid to optimize energy usage.",
-      "20 × 615W Canadian Bifacial Solar Panels – Bifacial design increases energy yield by collecting light from both front and rear surfaces—perfect for rooftops with concrete reflection.",
+      "20 × 615W Canadian Bifacial Solar Panels – Bifacial design increases energy yield by collecting light from both front and rear surfaces perfect for rooftops with concrete reflection.",
       "51.2V 314Ah LiFePO₄ Battery – Durable and efficient lithium battery stores solar energy for night use and acts as a backup power source during brownouts.",
     ],
     benefits: [
       "Cut electricity bills by up to 85%",
       "Maintain 24/7 power for lights, cooling systems, refrigerator, and essential electronics",
-      "Reduce carbon footprint by around 1,600–1,800 kg of CO₂ monthly",
+      "Reduce carbon footprint by around 1,600-1,800 kg of CO₂ monthly",
       "Ideal for urban homes with moderate roof space but high power demand",
     ],
     description:
-      "Sunphil Solar delivered a custom-engineered 12kW hybrid solar system in Congressional, Quezon City, designed to meet the needs of a household with high energy consumption and a desire for reliable backup during power outages. The client sought energy independence and long-term savings—exactly what this setup provides. From Congressional Avenue to Tandang Sora, Project 8, and Muñoz, Sunphil Solar is powering Metro Manila's homes with smart, scalable hybrid solar systems that provide freedom from rising power costs and unreliable grid supply.",
+      "Sunphil Solar delivered a custom-engineered 12kW hybrid solar system in Congressional, Quezon City, designed to meet the needs of a household with high energy consumption and a desire for reliable backup during power outages. The client sought energy independence and long-term savings exactly what this setup provides. From Congressional Avenue to Tandang Sora, Project 8, and Muñoz, Sunphil Solar is powering Metro Manila's homes with smart, scalable hybrid solar systems that provide freedom from rising power costs and unreliable grid supply.",
   },
   {
     id: "marikina-city-2025",
@@ -1156,7 +1156,7 @@ export const projects: Project[] = [
       "Ideal for Marikina homes with medium energy consumption and limited rooftop space",
     ],
     description:
-      "Sunphil Solar installed a 6kW hybrid solar energy system for a client in Marikina City, providing consistent energy savings and dependable backup power. With frequent brownouts and rising utility costs in Metro Manila, this system was designed to give the homeowner long-term peace of mind, reduced electric bills, and increased energy independence. Marikina is known for its environmental challenges, but this installation proves that solar energy is both safe and sustainable when properly installed. With elevated components and weatherproof design, this system is built to last—even in flood-prone areas. Sunphil Solar offers free site evaluation, fast & professional installation, after-sales support, and energy monitoring for Marikina residents who want to go solar with confidence.",
+      "Sunphil Solar installed a 6kW hybrid solar energy system for a client in Marikina City, providing consistent energy savings and dependable backup power. With frequent brownouts and rising utility costs in Metro Manila, this system was designed to give the homeowner long-term peace of mind, reduced electric bills, and increased energy independence. Marikina is known for its environmental challenges, but this installation proves that solar energy is both safe and sustainable when properly installed. With elevated components and weatherproof design, this system is built to last even in flood-prone areas. Sunphil Solar offers free site evaluation, fast & professional installation, after-sales support, and energy monitoring for Marikina residents who want to go solar with confidence.",
   },
   {
     id: "las-pinas-metro-manila",
@@ -1177,7 +1177,7 @@ export const projects: Project[] = [
       "Perfect for Metro Manila homes with high energy usage and a desire for long-term independence",
     ],
     description:
-      "Sunphil Solar successfully installed a 12kW hybrid solar power system in Las Piñas, designed to support a household with heavy energy demands and the need for stable backup power. The homeowner wanted energy savings, self-reliance, and security during outages—this system delivers all three.\n\nThis project in Las Piñas is part of our continuing commitment to energize homes in BF Resort, Talon Dos, Pilar Village, and neighboring communities. With Sunphil Solar, clean power is within reach—whether for savings, backup, or peace of mind.\n\nSunphil Solar provides: Expert Solar Design & Installation, After-Sales Support, Premium Equipment with Warranty. Get a Free Solar Consultation Now.",
+      "Sunphil Solar successfully installed a 12kW hybrid solar power system in Las Piñas, designed to support a household with heavy energy demands and the need for stable backup power. The homeowner wanted energy savings, self-reliance, and security during outages this system delivers all three.\n\nThis project in Las Piñas is part of our continuing commitment to energize homes in BF Resort, Talon Dos, Pilar Village, and neighboring communities. With Sunphil Solar, clean power is within reach whether for savings, backup, or peace of mind.\n\nSunphil Solar provides: Expert Solar Design & Installation, After-Sales Support, Premium Equipment with Warranty. Get a Free Solar Consultation Now.",
   },
   {
     id: "porac-pampanga-2",
