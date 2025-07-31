@@ -434,43 +434,296 @@ const ProjectsPage = () => {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex justify-center mt-12 gap-2 flex-wrap">
+          <div className="flex justify-center mt-12 gap-1 sm:gap-2 flex-wrap">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+              className={`px-2 sm:px-4 py-2 rounded-lg font-semibold transition duration-300 text-sm sm:text-base ${
                 currentPage === 1
                   ? "bg-white/10 text-white/40 cursor-not-allowed"
                   : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
               }`}
             >
-              Prev
+              {isMobile ? "←" : "Prev"}
             </button>
 
-            {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i + 1}
-                onClick={() => handlePageChange(i + 1)}
-                className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
-                  currentPage === i + 1
-                    ? "bg-blue-600 text-white"
-                    : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
-                }`}
-              >
-                {i + 1}
-              </button>
-            ))}
+            {/* Smart pagination with ellipsis */}
+            {(() => {
+              const pages = [];
+              const maxVisiblePages = isMobile ? 5 : 7; // Fewer pages on mobile
+
+              if (totalPages <= maxVisiblePages) {
+                // Show all pages if total is small
+                for (let i = 1; i <= totalPages; i++) {
+                  pages.push(
+                    <button
+                      key={i}
+                      onClick={() => handlePageChange(i)}
+                      className={`px-2 sm:px-4 py-2 rounded-lg font-semibold transition duration-300 text-sm sm:text-base ${
+                        currentPage === i
+                          ? "bg-blue-600 text-white"
+                          : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      }`}
+                    >
+                      {i}
+                    </button>
+                  );
+                }
+              } else {
+                // Smart truncation for many pages
+                if (isMobile) {
+                  // Mobile-optimized pagination
+                  if (currentPage <= 3) {
+                    // Show first 3 pages + ellipsis + last page
+                    for (let i = 1; i <= 3; i++) {
+                      pages.push(
+                        <button
+                          key={i}
+                          onClick={() => handlePageChange(i)}
+                          className={`px-2 py-2 rounded-lg font-semibold transition duration-300 text-sm ${
+                            currentPage === i
+                              ? "bg-blue-600 text-white"
+                              : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                          }`}
+                        >
+                          {i}
+                        </button>
+                      );
+                    }
+                    pages.push(
+                      <span
+                        key="ellipsis1"
+                        className="px-2 py-2 text-white/60 text-sm"
+                      >
+                        ...
+                      </span>
+                    );
+                    pages.push(
+                      <button
+                        key={totalPages}
+                        onClick={() => handlePageChange(totalPages)}
+                        className={`px-2 py-2 rounded-lg font-semibold transition duration-300 text-sm ${
+                          currentPage === totalPages
+                            ? "bg-blue-600 text-white"
+                            : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                        }`}
+                      >
+                        {totalPages}
+                      </button>
+                    );
+                  } else if (currentPage >= totalPages - 2) {
+                    // Show first page + ellipsis + last 3 pages
+                    pages.push(
+                      <button
+                        key={1}
+                        onClick={() => handlePageChange(1)}
+                        className="px-2 py-2 rounded-lg font-semibold transition duration-300 text-sm bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      >
+                        1
+                      </button>
+                    );
+                    pages.push(
+                      <span
+                        key="ellipsis2"
+                        className="px-2 py-2 text-white/60 text-sm"
+                      >
+                        ...
+                      </span>
+                    );
+                    for (let i = totalPages - 2; i <= totalPages; i++) {
+                      pages.push(
+                        <button
+                          key={i}
+                          onClick={() => handlePageChange(i)}
+                          className={`px-2 py-2 rounded-lg font-semibold transition duration-300 text-sm ${
+                            currentPage === i
+                              ? "bg-blue-600 text-white"
+                              : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                          }`}
+                        >
+                          {i}
+                        </button>
+                      );
+                    }
+                  } else {
+                    // Show first page + ellipsis + current page + ellipsis + last page
+                    pages.push(
+                      <button
+                        key={1}
+                        onClick={() => handlePageChange(1)}
+                        className="px-2 py-2 rounded-lg font-semibold transition duration-300 text-sm bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      >
+                        1
+                      </button>
+                    );
+                    pages.push(
+                      <span
+                        key="ellipsis3"
+                        className="px-2 py-2 text-white/60 text-sm"
+                      >
+                        ...
+                      </span>
+                    );
+                    pages.push(
+                      <button
+                        key={currentPage}
+                        onClick={() => handlePageChange(currentPage)}
+                        className="px-2 py-2 rounded-lg font-semibold transition duration-300 text-sm bg-blue-600 text-white"
+                      >
+                        {currentPage}
+                      </button>
+                    );
+                    pages.push(
+                      <span
+                        key="ellipsis4"
+                        className="px-2 py-2 text-white/60 text-sm"
+                      >
+                        ...
+                      </span>
+                    );
+                    pages.push(
+                      <button
+                        key={totalPages}
+                        onClick={() => handlePageChange(totalPages)}
+                        className="px-2 py-2 rounded-lg font-semibold transition duration-300 text-sm bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      >
+                        {totalPages}
+                      </button>
+                    );
+                  }
+                } else {
+                  // Desktop pagination (existing logic)
+                  const showStart = currentPage <= 4;
+                  const showEnd = currentPage >= totalPages - 3;
+
+                  if (showStart) {
+                    // Show first 5 pages + ellipsis + last page
+                    for (let i = 1; i <= 5; i++) {
+                      pages.push(
+                        <button
+                          key={i}
+                          onClick={() => handlePageChange(i)}
+                          className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                            currentPage === i
+                              ? "bg-blue-600 text-white"
+                              : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                          }`}
+                        >
+                          {i}
+                        </button>
+                      );
+                    }
+                    pages.push(
+                      <span key="ellipsis1" className="px-4 py-2 text-white/60">
+                        ...
+                      </span>
+                    );
+                    pages.push(
+                      <button
+                        key={totalPages}
+                        onClick={() => handlePageChange(totalPages)}
+                        className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                          currentPage === totalPages
+                            ? "bg-blue-600 text-white"
+                            : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                        }`}
+                      >
+                        {totalPages}
+                      </button>
+                    );
+                  } else if (showEnd) {
+                    // Show first page + ellipsis + last 5 pages
+                    pages.push(
+                      <button
+                        key={1}
+                        onClick={() => handlePageChange(1)}
+                        className="px-4 py-2 rounded-lg font-semibold transition duration-300 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      >
+                        1
+                      </button>
+                    );
+                    pages.push(
+                      <span key="ellipsis2" className="px-4 py-2 text-white/60">
+                        ...
+                      </span>
+                    );
+                    for (let i = totalPages - 4; i <= totalPages; i++) {
+                      pages.push(
+                        <button
+                          key={i}
+                          onClick={() => handlePageChange(i)}
+                          className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                            currentPage === i
+                              ? "bg-blue-600 text-white"
+                              : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                          }`}
+                        >
+                          {i}
+                        </button>
+                      );
+                    }
+                  } else {
+                    // Show first page + ellipsis + current-1, current, current+1 + ellipsis + last page
+                    pages.push(
+                      <button
+                        key={1}
+                        onClick={() => handlePageChange(1)}
+                        className="px-4 py-2 rounded-lg font-semibold transition duration-300 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      >
+                        1
+                      </button>
+                    );
+                    pages.push(
+                      <span key="ellipsis3" className="px-4 py-2 text-white/60">
+                        ...
+                      </span>
+                    );
+                    for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+                      pages.push(
+                        <button
+                          key={i}
+                          onClick={() => handlePageChange(i)}
+                          className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+                            currentPage === i
+                              ? "bg-blue-600 text-white"
+                              : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                          }`}
+                        >
+                          {i}
+                        </button>
+                      );
+                    }
+                    pages.push(
+                      <span key="ellipsis4" className="px-4 py-2 text-white/60">
+                        ...
+                      </span>
+                    );
+                    pages.push(
+                      <button
+                        key={totalPages}
+                        onClick={() => handlePageChange(totalPages)}
+                        className="px-4 py-2 rounded-lg font-semibold transition duration-300 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
+                      >
+                        {totalPages}
+                      </button>
+                    );
+                  }
+                }
+              }
+
+              return pages;
+            })()}
 
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${
+              className={`px-2 sm:px-4 py-2 rounded-lg font-semibold transition duration-300 text-sm sm:text-base ${
                 currentPage === totalPages
                   ? "bg-white/10 text-white/40 cursor-not-allowed"
                   : "bg-white/10 backdrop-blur-lg text-white hover:bg-white/20"
               }`}
             >
-              Next
+              {isMobile ? "→" : "Next"}
             </button>
           </div>
         )}

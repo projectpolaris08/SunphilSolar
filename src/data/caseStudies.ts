@@ -477,6 +477,63 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
         "July 2025: Bill reduced to just ₱8,031.74 achieving 68-71% savings despite continuous storms and challenging weather conditions.",
     },
   },
+  "vista-verde-north-caloocan": {
+    projectOverview: {
+      challenge:
+        "Joel Padojinog was facing extremely high Meralco bills of ₱12,274.62 monthly with 910 kWh consumption, representing a daily electricity cost of over ₱410. The household's high energy demands in North Caloocan's urban environment were creating significant financial strain, with complete grid dependency and no backup power system.",
+      solution:
+        "Sunphil Solar designed and installed a custom 8kW hybrid solar system on June 21, 2025, featuring an 8kW Deye Hybrid Inverter, 18 x 620W AE Bifacial Solar Panels (11.16kW total capacity), and 2 x 51.2V 314Ah LiFePO4 Batteries (32.2kWh total storage) for maximum energy independence and extended backup power during outages.",
+      results:
+        "Mr. Padojinog's monthly consumption dropped from 910 kWh to just 16 kWh (98.2% reduction), with his Meralco bill plummeting from ₱12,274.62 to ₱225.03 achieving ₱12,049.59 monthly savings (98.2% cost reduction). The system now provides near-complete energy independence with reliable backup power, even during week-long storms.",
+    },
+    financialAnalysis: {
+      totalInvestment: 470000,
+      monthlySavings: 12049,
+      paybackPeriod: 3.25,
+      annualROI: 30.8,
+      lifetimeSavings: 3144875,
+    },
+    environmentalImpact: {
+      co2Reduction: 10920,
+      treesEquivalent: 520,
+      annualEnergyProduction: 15000,
+    },
+    performanceMetrics: {
+      systemEfficiency: 96,
+      uptime: 99.9,
+      peakOutput: 8,
+      averageDailyProduction: 41,
+    },
+    challenges: [
+      "Extremely high Meralco bills of ₱12,274.62 monthly with 910 kWh consumption",
+      "Daily electricity costs exceeding ₱410 putting severe strain on household budget",
+      "Complete dependence on grid power with no backup system in urban North Caloocan",
+      "High energy consumption from power-hungry household appliances",
+      "No protection from rising electricity rates in Metro Manila",
+      "Vulnerability to frequent power outages during storms",
+    ],
+    solutions: [
+      "Custom-designed 8kW hybrid solar system with 11.16kW panel capacity",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency AE Bifacial panels capturing maximum sunlight in urban environment",
+      "Dual LiFePO4 battery storage (32.2kWh) for extended backup power during outages",
+      "Weather-resistant system design maintaining performance during storms",
+      "Near-complete energy independence reducing grid consumption by 98.2%",
+    ],
+    testimonials: {
+      quote: "Solid kahit binagyo ng 1 week, laking ginhawa sa monthly bills.",
+      author: "Joel Padojinog",
+      role: "Homeowner, Vista Verde, North Caloocan",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Joel-Before.jpg",
+      afterImage: "/images/Joel-After.jpg",
+      beforeDescription:
+        "May 2025: Meralco bill at ₱12,274.62 with 910 kWh consumption, representing daily electricity costs of over ₱410.",
+      afterDescription:
+        "August 2025: Bill reduced to just ₱225.03 with only 16 kWh consumption, achieving 98.2% savings and near-complete energy independence even during week-long storms.",
+    },
+  },
 };
 
 export default caseStudies;

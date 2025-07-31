@@ -102,7 +102,7 @@ const InstallationAnalysisPage: React.FC = () => {
           <title>Installation Analysis | Sunphil Solar</title>
           <meta
             name="description"
-            content="Comprehensive analysis of Sunphil Solar's nationwide deployment across 63 installations, showcasing the transformation of Filipino households from grid dependency to energy independence."
+            content={`Comprehensive analysis of Sunphil Solar's nationwide deployment across ${totalInstallations} installations, showcasing the transformation of Filipino households from grid dependency to energy independence.`}
           />
         </Helmet>
 
@@ -719,7 +719,7 @@ const InstallationAnalysisPage: React.FC = () => {
             <p className="text-white mb-2 max-w-2xl mx-auto">
               Experience the same success as our{" "}
               <span className="text-blue-400 font-bold">
-                64+ satisfied customers
+                {totalInstallations}+ satisfied customers
               </span>
               . Get your free solar consultation and join thousands of Filipino
               households enjoying energy independence.

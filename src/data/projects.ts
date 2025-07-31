@@ -1375,4 +1375,48 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar installed a 6kW hybrid solar system in Pilar, Bataan, customized to meet the energy demands of a household with work-from-home or small business operations. Designed to reduce dependency on the grid and provide continuous power during brownouts, this hybrid setup delivers efficiency, comfort, and savings.\n\nThis Pilar-based hybrid installation is a testament to how homeowners can take control of their electricity costs and enjoy uninterrupted power. Whether you're working remotely or simply want reliable energy for your family, this setup offers a future-ready solution backed by top-tier components.\n\nSunphil Solar provides:\n- Free Energy Assessment & Load Sizing\n- Custom Engineering for Your Property\n- Expert Installation & After-Sales Support\n\nRequest Your Free Quote Today and experience energy independence in Bataan!",
   },
+  {
+    id: "calamba-laguna-6kw",
+    image: "/images/project66.jpg",
+    location: "Calamba, Laguna, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-29",
+    clientType: "Residential / Remote Work Household",
+    specification: [
+      "6kW Deye Hybrid Inverter - Smart hybrid inverter with real-time monitoring and smart energy prioritization. Automatically switches to battery during outages.",
+      "13 × 615W Canadian Bifacial Solar Panels - Premium bifacial modules that harvest both direct and reflected sunlight for enhanced daily energy output.",
+      "51.2V 314Ah LiFePO₄ Battery - High-efficiency lithium battery for extended backup power and night-time usage. Safe, long-lasting, and maintenance-free.",
+    ],
+    benefits: [
+      "Save up to 70% on electricity bills",
+      "Power key appliances like lights, aircon, Wi-Fi, refrigerator, desktop computers, and CCTV",
+      "Offset around 1,300 to 1,600 kg of CO₂ emissions per month",
+      "Ideal for Calamba homeowners, professionals working remotely, and small families",
+      "Ensures uninterrupted power in case of brownouts or unstable grid supply",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar power system in Calamba, Laguna. It is designed to meet the needs of a household aiming for power stability and energy savings. With smart hybrid control, solar panels with enhanced performance, and a reliable battery bank, this system ensures uninterrupted electricity even during local brownouts.\n\nLocated in a fast-growing city in Southern Luzon, this Calamba installation provides a reliable and sustainable energy source for a home that values convenience, comfort, and savings. With trusted components and expert engineering, the household now enjoys peace of mind and lower electric bills, rain or shine.\n\nSunphil Solar offers:\n- Free Technical Site Evaluation\n- Load-Based System Design and Simulation\n- Professional Installation with Local Support\n\nGet Your Free Quote Now and empower your home with reliable solar energy today!",
+  },
+  {
+    id: "sta-maria-bulacan-6kw",
+    image: "/images/project67.jpg",
+    location: "Sta. Maria, Bulacan, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-07-31",
+    clientType: "Residential Household",
+    specification: [
+      "6kW Deye Hybrid Inverter - Smart energy management with seamless switching between solar, battery, and grid power. Designed for residential use with built-in monitoring features.",
+      "13 × 615W Canadian Bifacial Solar Panels - High-efficiency bifacial panels that increase energy yield by capturing sunlight from both sides. Great for maximizing energy on open rooftops.",
+      "51.2V 314Ah LiFePO₄ Battery - Durable and maintenance-free lithium battery for nighttime usage and backup power during outages.",
+    ],
+    benefits: [
+      "Save up to 70% on monthly electricity bills",
+      "Supports essential loads like refrigerators, lights, fans, computers, routers, and CCTV",
+      "Offset approximately 1,300 to 1,600 kg of CO₂ emissions per month",
+      "Ideal for homes in Bulacan with moderate energy use and frequent power interruptions",
+      "Reliable power backup during outages or unstable grid supply",
+    ],
+    description:
+      "Sunphil Solar successfully completed a 6kW hybrid solar system in Sta. Maria, Bulacan. This system is designed to provide clean, uninterrupted power for a typical home with moderate daily energy needs. With reliable battery storage and smart inverter technology, it helps reduce electricity bills and ensures power security during brownouts.\n\nAs energy rates rise and brownouts continue to affect Central Luzon, more homeowners in Bulacan are turning to hybrid solar. This 6kW system helps this Sta. Maria family achieve energy independence, cut costs, and enjoy peace of mind with every sunny day.\n\nSunphil Solar offers:\n- Free On-Site Evaluation and Energy Consultation\n- Custom Load-Based System Design\n- Professional Installation with Lifetime Support\n\nGet Your Free Quote Today and start saving with solar in Sta. Maria, Bulacan.",
+  },
 ];
