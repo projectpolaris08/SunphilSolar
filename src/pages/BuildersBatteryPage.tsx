@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
+import { format } from "date-fns";
 
 const batteryTypes = [
   "12v 280Ah",
@@ -17,7 +18,6 @@ const builderNames = [
   "Joshua",
   "David",
   "Mark",
-  "Dong",
   "Eron",
   "Sam",
   "Buboy",
@@ -31,6 +31,7 @@ type BatteryBuild = {
   description: string;
   builder: string;
   status: string;
+  serial_number: string | null;
   date_started: string | null;
   date_completed: string | null;
 };
@@ -55,11 +56,7 @@ const builderColorMap: Record<
     invBg: "bg-purple-600",
     batBg: "bg-green-600",
   },
-  Dong: {
-    text: "text-pink-700 dark:text-pink-200",
-    invBg: "bg-pink-600",
-    batBg: "bg-green-600",
-  },
+
   Sam: {
     text: "text-orange-700 dark:text-orange-200",
     invBg: "bg-orange-600",
@@ -85,6 +82,7 @@ const builderColorMap: Record<
 const BuildersBatteryPage = () => {
   const navigate = useNavigate();
   const [builds, setBuilds] = useState<BatteryBuild[]>([]);
+  const [calendarEvents, setCalendarEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [filterType, setFilterType] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -94,22 +92,34 @@ const BuildersBatteryPage = () => {
     description: "",
     builder: builderNames[0],
     status: "In Progress",
+    serial_number: "",
     date_started: null,
     date_completed: null,
   });
 
-  // Fetch builds from Supabase on mount
+  // Fetch builds and calendar events from Supabase on mount
   useEffect(() => {
-    const fetchBuilds = async () => {
+    const fetchData = async () => {
       setLoading(true);
-      const { data, error } = await supabase
+
+      // Fetch battery builds
+      const { data: buildsData, error: buildsError } = await supabase
         .from("battery_builds")
         .select("*")
         .order("created_at", { ascending: false });
-      if (!error && data) setBuilds(data);
+
+      // Fetch calendar events
+      const { data: eventsData, error: eventsError } = await supabase
+        .from("calendar_events")
+        .select("*")
+        .order("start_date", { ascending: true });
+
+      if (!buildsError && buildsData) setBuilds(buildsData);
+      if (!eventsError && eventsData) setCalendarEvents(eventsData);
+
       setLoading(false);
     };
-    fetchBuilds();
+    fetchData();
   }, []);
 
   const handleStatusChange = async (id: number, status: string) => {
@@ -200,6 +210,47 @@ const BuildersBatteryPage = () => {
     count: builds.filter((b) => b.type === type).length,
   }));
 
+  // Monthly distribution from calendar events (batteries only)
+  const monthlyDistribution = calendarEvents.reduce(
+    (acc, event) => {
+      if (event.battery && event.battery !== "None") {
+        const monthKey = format(new Date(event.start_date), "yyyy-MM");
+        const monthName = format(new Date(event.start_date), "MMMM yyyy");
+
+        if (!acc[monthKey]) {
+          acc[monthKey] = {
+            monthName,
+            totalBatteries: 0,
+            batteryBreakdown: {} as Record<string, number>,
+          };
+        }
+
+        // Count batteries
+        const batteryMultiplier = event.battery_multiplier || 1;
+        acc[monthKey].totalBatteries += batteryMultiplier;
+
+        if (!acc[monthKey].batteryBreakdown[event.battery]) {
+          acc[monthKey].batteryBreakdown[event.battery] = 0;
+        }
+        acc[monthKey].batteryBreakdown[event.battery] += batteryMultiplier;
+      }
+      return acc;
+    },
+    {} as Record<
+      string,
+      {
+        monthName: string;
+        totalBatteries: number;
+        batteryBreakdown: Record<string, number>;
+      }
+    >
+  );
+
+  // Sort months in descending order (most recent first)
+  const sortedMonths = Object.keys(monthlyDistribution).sort((a, b) =>
+    b.localeCompare(a)
+  );
+
   // Add build handler
   const handleAddBuild = async () => {
     if (!newBuild.description.trim()) {
@@ -224,6 +275,7 @@ const BuildersBatteryPage = () => {
         description: "",
         builder: builderNames[0],
         status: "In Progress",
+        serial_number: "",
         date_started: null,
         date_completed: null,
       });
@@ -326,6 +378,61 @@ const BuildersBatteryPage = () => {
           </span>
         ))}
       </div>
+
+      {/* Monthly Distribution from Calendar */}
+      {sortedMonths.length > 0 && (
+        <>
+          <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2 mt-6">
+            Monthly Distribution (from Calendar)
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            {sortedMonths.map((monthKey) => {
+              const monthData = monthlyDistribution[monthKey];
+
+              return (
+                <div
+                  key={monthKey}
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow"
+                >
+                  <h4 className="font-semibold mb-3 text-gray-900 dark:text-gray-100 border-b pb-2">
+                    {monthData.monthName}
+                  </h4>
+
+                  {/* Battery Section */}
+                  <div>
+                    <h5 className="text-sm font-medium text-green-600 mb-2">
+                      Batteries: {monthData.totalBatteries} units
+                    </h5>
+                    {Object.keys(monthData.batteryBreakdown).length > 0 ? (
+                      <div className="space-y-1">
+                        {Object.entries(monthData.batteryBreakdown)
+                          .sort(([, a], [, b]) => (b as number) - (a as number))
+                          .map(([battery, count]) => (
+                            <div
+                              key={battery}
+                              className="flex justify-between text-xs"
+                            >
+                              <span className="font-medium text-gray-900 dark:text-gray-100">
+                                {battery}:
+                              </span>
+                              <span className="font-medium">
+                                {count as number} units
+                              </span>
+                            </div>
+                          ))}
+                      </div>
+                    ) : (
+                      <div className="text-xs text-gray-500 dark:text-gray-400">
+                        No battery data
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
       <div className="flex flex-col md:flex-row md:items-end gap-4 mb-6 mt-4">
         <div>
           <label className="block text-sm font-medium mb-1 dark:text-gray-200">
@@ -356,6 +463,23 @@ const BuildersBatteryPage = () => {
               setNewBuild((prev) => ({ ...prev, description: e.target.value }))
             }
             placeholder="Add new build description"
+            className="border rounded px-3 py-2 w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+          />
+        </div>
+        <div className="flex-1">
+          <label className="block text-sm font-medium mb-1 dark:text-gray-200">
+            Serial Number
+          </label>
+          <input
+            type="text"
+            value={newBuild.serial_number}
+            onChange={(e) =>
+              setNewBuild((prev) => ({
+                ...prev,
+                serial_number: e.target.value,
+              }))
+            }
+            placeholder="Enter serial number"
             className="border rounded px-3 py-2 w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           />
         </div>
@@ -437,6 +561,9 @@ const BuildersBatteryPage = () => {
                     Builder Name
                   </th>
                   <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
+                    Serial Number
+                  </th>
+                  <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
                     Status
                   </th>
                   <th className="px-4 py-2 text-left text-gray-700 dark:text-gray-200">
@@ -454,7 +581,7 @@ const BuildersBatteryPage = () => {
                 {currentBuilds.length === 0 && (
                   <tr>
                     <td
-                      colSpan={7}
+                      colSpan={8}
                       className="text-gray-400 dark:text-gray-500 px-4 py-2 text-center"
                     >
                       No builds found.
@@ -466,6 +593,7 @@ const BuildersBatteryPage = () => {
                     <td className="px-4 py-2">{b.type}</td>
                     <td className="px-4 py-2">{b.description}</td>
                     <td className="px-4 py-2">{b.builder}</td>
+                    <td className="px-4 py-2">{b.serial_number || "-"}</td>
                     <td className="px-4 py-2 flex items-center gap-2">
                       <select
                         value={b.status}

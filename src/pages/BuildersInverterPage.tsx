@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
+import { format } from "date-fns";
 
 const inverterTypes = [
   "3kW",
@@ -80,6 +81,7 @@ const builderColorMap: Record<
 const BuildersInverterPage = () => {
   const navigate = useNavigate();
   const [builds, setBuilds] = useState<InverterBuild[]>([]);
+  const [calendarEvents, setCalendarEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [filterType, setFilterType] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -93,18 +95,29 @@ const BuildersInverterPage = () => {
     date_completed: null,
   });
 
-  // Fetch builds from Supabase on mount
+  // Fetch builds and calendar events from Supabase on mount
   useEffect(() => {
-    const fetchBuilds = async () => {
+    const fetchData = async () => {
       setLoading(true);
-      const { data, error } = await supabase
+
+      // Fetch inverter builds
+      const { data: buildsData, error: buildsError } = await supabase
         .from("inverter_builds")
         .select("*")
         .order("created_at", { ascending: false });
-      if (!error && data) setBuilds(data);
+
+      // Fetch calendar events
+      const { data: eventsData, error: eventsError } = await supabase
+        .from("calendar_events")
+        .select("*")
+        .order("start_date", { ascending: true });
+
+      if (!buildsError && buildsData) setBuilds(buildsData);
+      if (!eventsError && eventsData) setCalendarEvents(eventsData);
+
       setLoading(false);
     };
-    fetchBuilds();
+    fetchData();
   }, []);
 
   const handleStatusChange = async (id: number, status: string) => {
@@ -194,6 +207,51 @@ const BuildersInverterPage = () => {
     type,
     count: builds.filter((b) => b.type === type).length,
   }));
+
+  // Monthly distribution from calendar events (system capacity only)
+  const monthlyDistribution = calendarEvents.reduce(
+    (acc, event) => {
+      if (event.system_capacity) {
+        const monthKey = format(new Date(event.start_date), "yyyy-MM");
+        const monthName = format(new Date(event.start_date), "MMMM yyyy");
+
+        if (!acc[monthKey]) {
+          acc[monthKey] = {
+            monthName,
+            totalCapacity: 0,
+            capacityBreakdown: {} as Record<string, number>,
+          };
+        }
+
+        // Count system capacity
+        const capacity = event.system_capacity.replace("kW", "");
+        const capacityNum = parseFloat(capacity);
+        if (!isNaN(capacityNum)) {
+          const capacityMultiplier = event.system_capacity_multiplier || 1;
+          acc[monthKey].totalCapacity += capacityNum * capacityMultiplier;
+
+          if (!acc[monthKey].capacityBreakdown[capacity]) {
+            acc[monthKey].capacityBreakdown[capacity] = 0;
+          }
+          acc[monthKey].capacityBreakdown[capacity] += capacityMultiplier;
+        }
+      }
+      return acc;
+    },
+    {} as Record<
+      string,
+      {
+        monthName: string;
+        totalCapacity: number;
+        capacityBreakdown: Record<string, number>;
+      }
+    >
+  );
+
+  // Sort months in descending order (most recent first)
+  const sortedMonths = Object.keys(monthlyDistribution).sort((a, b) =>
+    b.localeCompare(a)
+  );
 
   // Add build handler
   const handleAddBuild = async () => {
@@ -321,6 +379,61 @@ const BuildersInverterPage = () => {
           </span>
         ))}
       </div>
+
+      {/* Monthly Distribution from Calendar */}
+      {sortedMonths.length > 0 && (
+        <>
+          <div className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2 mt-6">
+            Monthly Distribution (from Calendar)
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            {sortedMonths.map((monthKey) => {
+              const monthData = monthlyDistribution[monthKey];
+
+              return (
+                <div
+                  key={monthKey}
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow"
+                >
+                  <h4 className="font-semibold mb-3 text-gray-900 dark:text-gray-100 border-b pb-2">
+                    {monthData.monthName}
+                  </h4>
+
+                  {/* System Capacity Section */}
+                  <div>
+                    <h5 className="text-sm font-medium text-blue-600 mb-2">
+                      System Capacity: {monthData.totalCapacity} kW
+                    </h5>
+                    {Object.keys(monthData.capacityBreakdown).length > 0 ? (
+                      <div className="space-y-1">
+                        {Object.entries(monthData.capacityBreakdown)
+                          .sort(([, a], [, b]) => (b as number) - (a as number))
+                          .map(([capacity, count]) => (
+                            <div
+                              key={capacity}
+                              className="flex justify-between text-xs"
+                            >
+                              <span className="font-medium text-gray-900 dark:text-gray-100">
+                                {capacity}kW:
+                              </span>
+                              <span className="font-medium">
+                                {count as number} units
+                              </span>
+                            </div>
+                          ))}
+                      </div>
+                    ) : (
+                      <div className="text-xs text-gray-500 dark:text-gray-400">
+                        No capacity data
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
       <div className="flex flex-col md:flex-row md:items-end gap-4 mb-6 mt-4">
         <div>
           <label className="block text-sm font-medium mb-1 dark:text-gray-200">

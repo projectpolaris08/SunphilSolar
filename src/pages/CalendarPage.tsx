@@ -119,6 +119,30 @@ const CalendarPage: React.FC = () => {
     {} as Record<string, number>
   );
 
+  // Count events per admin client by month
+  const adminClientMonthlyCount = events.reduce((acc, ev) => {
+    if (ev.adminClient) {
+      const monthKey = format(ev.start, "yyyy-MM");
+      const monthName = format(ev.start, "MMMM yyyy");
+
+      if (!acc[monthKey]) {
+        acc[monthKey] = { monthName, clients: {} };
+      }
+
+      if (!acc[monthKey].clients[ev.adminClient]) {
+        acc[monthKey].clients[ev.adminClient] = 0;
+      }
+
+      acc[monthKey].clients[ev.adminClient]++;
+    }
+    return acc;
+  }, {} as Record<string, { monthName: string; clients: Record<string, number> }>);
+
+  // Sort months in descending order (most recent first)
+  const sortedMonths = Object.keys(adminClientMonthlyCount).sort((a, b) =>
+    b.localeCompare(a)
+  );
+
   // Calculate total system capacity and battery requirements
   const capacitySummary = events.reduce(
     (acc, event) => {
@@ -150,6 +174,7 @@ const CalendarPage: React.FC = () => {
       totalBatteries: 0,
     }
   );
+
   const adminClientColorMap = uniqueAdminClients.reduce((acc, client, idx) => {
     if (client === "Boss Gar") {
       acc[client] = { border: "border-orange-600", bg: "bg-orange-400" };
@@ -577,6 +602,60 @@ const CalendarPage: React.FC = () => {
               </span>
             ) : null
           )}
+        </div>
+      </div>
+
+      {/* Monthly Admin Client Counts */}
+      <div className="mt-8">
+        <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100 text-center">
+          Monthly Admin Client Distribution
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {sortedMonths.map((monthKey) => {
+            const monthData = adminClientMonthlyCount[monthKey];
+            const totalClients = Object.values(monthData.clients).reduce(
+              (sum, count) => sum + count,
+              0
+            );
+
+            return (
+              <div
+                key={monthKey}
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow"
+              >
+                <h4 className="font-semibold mb-3 text-gray-900 dark:text-gray-100 border-b pb-2">
+                  {monthData.monthName}
+                  <span className="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">
+                    (Total: {totalClients})
+                  </span>
+                </h4>
+                <div className="space-y-2">
+                  {Object.entries(monthData.clients)
+                    .sort(([, a], [, b]) => b - a) // Sort by count descending
+                    .map(([client, count]) => (
+                      <div
+                        key={client}
+                        className="flex items-center justify-between text-sm"
+                      >
+                        <div className="flex items-center">
+                          <span
+                            className={`w-3 h-3 rounded-full mr-2 inline-block ${
+                              adminClientColorMap[client]?.bg || "bg-gray-400"
+                            }`}
+                          ></span>
+                          <span className="text-gray-700 dark:text-gray-300">
+                            {client}
+                          </span>
+                        </div>
+                        <span className="font-medium text-gray-900 dark:text-gray-100">
+                          {count}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 

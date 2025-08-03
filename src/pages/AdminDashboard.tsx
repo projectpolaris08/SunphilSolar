@@ -771,6 +771,42 @@ const AdminDashboard: React.FC = () => {
                                 : 100}
                               %
                             </span>
+                            {required > 0 &&
+                              Math.round((built / required) * 100) >= 100 && (
+                                <button
+                                  onClick={async () => {
+                                    if (
+                                      confirm(
+                                        `Remove ${capacity}kW from system capacity summary?`
+                                      )
+                                    ) {
+                                      // Remove this capacity from the events
+                                      const eventsToUpdate = events.filter(
+                                        (event) =>
+                                          event.systemCapacity ===
+                                          `${capacity}kW`
+                                      );
+
+                                      for (const event of eventsToUpdate) {
+                                        await supabase
+                                          .from("calendar_events")
+                                          .update({
+                                            system_capacity: null,
+                                            system_capacity_multiplier: null,
+                                          })
+                                          .eq("id", event.id);
+                                      }
+
+                                      // Refresh events
+                                      refetchEvents();
+                                    }
+                                  }}
+                                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-0.5 rounded-full font-bold text-xs transition-colors"
+                                  title="Remove from summary (100% complete)"
+                                >
+                                  🗑️ Remove
+                                </button>
+                              )}
                           </span>
                         </div>
                       );
@@ -860,6 +896,40 @@ const AdminDashboard: React.FC = () => {
                                 : 100}
                               %
                             </span>
+                            {required > 0 &&
+                              Math.round((built / required) * 100) >= 100 && (
+                                <button
+                                  onClick={async () => {
+                                    if (
+                                      confirm(
+                                        `Remove ${battery} from battery requirements?`
+                                      )
+                                    ) {
+                                      // Remove this battery from the events
+                                      const eventsToUpdate = events.filter(
+                                        (event) => event.battery === battery
+                                      );
+
+                                      for (const event of eventsToUpdate) {
+                                        await supabase
+                                          .from("calendar_events")
+                                          .update({
+                                            battery: null,
+                                            battery_multiplier: null,
+                                          })
+                                          .eq("id", event.id);
+                                      }
+
+                                      // Refresh events
+                                      refetchEvents();
+                                    }
+                                  }}
+                                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-0.5 rounded-full font-bold text-xs transition-colors"
+                                  title="Remove from summary (100% complete)"
+                                >
+                                  🗑️ Remove
+                                </button>
+                              )}
                           </span>
                         </div>
                       );
