@@ -12,6 +12,50 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "bignay-valenzuela-8kw-2025",
+    image: "/images/project68.jpg",
+    location: "Bignay, Valenzuela City, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-08-01",
+    clientType: "Urban Residential Household",
+    specification: [
+      "8kW Deye Hybrid Inverter - Manages solar production, battery storage, and grid usage. Automatically shifts to battery during blackouts and supports remote monitoring.",
+      "16 × 615W Canadian Bifacial Solar Panels - High-output bifacial panels designed to capture both direct and reflected sunlight, enhancing total system efficiency.",
+      "51.2V 314Ah LiFePO₄ Battery - Robust and maintenance-free lithium battery designed for nighttime consumption and critical load support.",
+    ],
+    benefits: [
+      "Cut monthly electricity bills by up to 75 to 85 percent",
+      "Powers essential and heavy-use appliances such as air conditioners, refrigerators, routers, desktop PCs, and lighting",
+      "Reduces environmental impact by offsetting 1,800 to 2,200 kg of CO₂ emissions monthly",
+      "Ideal for urban households and family homes in Metro Manila with moderate to high energy use",
+      "Provides backup power during brownouts or unstable Meralco supply",
+    ],
+    description:
+      "Sunphil Solar delivered an 8kW hybrid solar installation in Bignay, Valenzuela, built to support the energy demands of a modern family in Metro Manila. With reliable solar generation, a smart hybrid inverter, and lithium battery backup, this system offers energy security, daily savings, and power stability during frequent outages.\n\nMetro Manila's increasing energy demand and rising electricity costs make hybrid solar systems a smart investment for city dwellers. This 8kW system provides dependable energy, lower monthly bills, and peace of mind during power interruptions in Bignay, Valenzuela.\n\nSunphil Solar offers free site inspection and technical evaluation, custom system design based on actual load, and professional installation with local support team. Request your free quote today and take the first step toward energy independence in Valenzuela.",
+  },
+  {
+    id: "binalonan-pangasinan-6kw-2025",
+    image: "/images/project69.jpg",
+    location: "Brgy. Mangcasuy, Binalonan, Pangasinan, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-08-03",
+    clientType: "Residential Household",
+    specification: [
+      "6kW Deye Hybrid Inverter - Smart hybrid inverter that manages solar input, battery charging, and seamless switchover to backup power during outages.",
+      "13 × 615W Canadian Bifacial Solar Panels - Efficient bifacial panels that increase energy output by utilizing both direct sunlight and ground reflection.",
+      "51.2V 314Ah LiFePO₄ Battery - Reliable lithium battery designed for overnight use and emergency power supply with long cycle life and low maintenance.",
+    ],
+    benefits: [
+      "Reduce monthly electricity bills by up to 70 percent",
+      "Run daily household appliances like refrigerators, electric fans, lights, Wi-Fi, and CCTV",
+      "Offset approximately 1,300 to 1,600 kg of CO₂ emissions per month",
+      "Ideal for residential homes in Pangasinan with moderate energy usage",
+      "Keeps power running even during unexpected blackouts or grid fluctuations",
+    ],
+    description:
+      "Sunphil Solar completed a 6kW hybrid solar installation in Brgy. Mangcasuy, Binalonan, Pangasinan. This system was designed to support a family's daily energy needs while providing backup power during brownouts, which are common in provincial areas. It's an ideal solution for homeowners looking for long-term savings and energy independence.\n\nFor communities like Brgy. Mangcasuy, solar energy is more than just savings — it's security. This 6kW hybrid installation ensures continuous electricity for the household and contributes to a cleaner, more self-sustaining future in Northern Luzon.\n\nSunphil Solar offers free on-site energy consultation, customized system design and load matching, and professional installation and local support. Request your free quote today and enjoy clean, reliable power in Binalonan, Pangasinan.",
+  },
+  {
     id: "lipa-batangas-12kw-2025",
     image: "/images/project65.jpg",
     location: "Lipa City, Batangas, Philippines",
