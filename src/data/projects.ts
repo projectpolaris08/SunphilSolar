@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "ideal-subdivision-commonwealth-qc-16kw-2025",
+    image: "/images/project70.jpg",
+    location: "Ideal Subdivision, Brgy. Commonwealth, Quezon City, Philippines",
+    system: "16kW Hybrid Solar",
+    date: "2025-08-04",
+    clientType: "High-Energy Residential",
+    specification: [
+      "16kW Deye Hybrid Inverter - Smart hybrid inverter that efficiently manages energy from solar panels, battery storage, and grid input. Offers automatic switching and remote monitoring.",
+      "27 × 615W Canadian Bifacial Solar Panels - Premium bifacial solar modules that increase total energy yield by capturing sunlight from both sides. Ideal for spacious rooftops in urban homes.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries - High-capacity lithium batteries that provide long-lasting backup power for night use and brownout protection.",
+    ],
+    benefits: [
+      "Reduce electricity bills by up to 90 percent",
+      "Power essential and high-consumption loads including air conditioners, refrigerators, home office computers, routers, and security systems",
+      "Offset approximately 2,800 to 3,500 kg of CO₂ emissions per month",
+      "Ideal for premium residences, family compounds, and home-based businesses in Metro Manila",
+      "Full hybrid functionality offers uninterrupted power even during extended brownouts",
+    ],
+    description:
+      "Sunphil Solar installed a high-capacity 16kW hybrid solar system in Ideal Subdivision, Quezon City. This system is tailored for a large household with high energy consumption, including multiple air conditioning units, office equipment, and kitchen appliances. With intelligent hybrid control and large battery storage, this setup ensures maximum savings and uninterrupted power during outages.\n\nAs electricity costs continue to rise in Metro Manila, this 16kW hybrid solar installation provides energy security, long-term financial savings, and environmental benefits. Homeowners in Ideal Subdivision now enjoy peace of mind with clean, consistent power around the clock.\n\nSunphil Solar provides free site evaluation and load analysis, tailored system design based on real usage, and expert installation and lifetime support. Request your free quote today and discover the benefits of hybrid solar energy in Quezon City.",
+  },
+  {
     id: "bignay-valenzuela-8kw-2025",
     image: "/images/project68.jpg",
     location: "Bignay, Valenzuela City, Philippines",

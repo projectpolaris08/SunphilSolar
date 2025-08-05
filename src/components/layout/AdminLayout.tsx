@@ -69,6 +69,7 @@ const menuItems = [
     icon: FileText,
     link: "/admin/solar-quotation",
   },
+
   {
     id: "expenses",
     label: "Expenses",

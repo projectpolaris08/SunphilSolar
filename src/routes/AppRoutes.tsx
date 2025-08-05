@@ -80,6 +80,7 @@ const AppRoutes = ({
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="payroll" element={<PayrollPage />} />
           <Route path="solar-quotation" element={<Form />} />
+
           <Route path="expenses" element={<ExpensesPage />} />
           <Route path="settings" element={<SettingsPage />} />
           {/* Add more admin subpages here */}

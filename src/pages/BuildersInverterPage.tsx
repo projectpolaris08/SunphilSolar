@@ -14,15 +14,7 @@ const inverterTypes = [
   "32kW",
 ];
 
-const builderNames = [
-  "Joshua",
-  "David",
-  "Mark",
-  "Dong",
-  "Eron",
-  "Sam",
-  "Jaxel",
-];
+const builderNames = ["Joshua", "David", "Mark", "Eron", "Sam", "Jaxel"];
 
 const statusOptions = ["In Progress", "Done"];
 
@@ -56,11 +48,7 @@ const builderColorMap: Record<
     invBg: "bg-purple-600",
     batBg: "bg-green-600",
   },
-  Dong: {
-    text: "text-pink-700 dark:text-pink-200",
-    invBg: "bg-pink-600",
-    batBg: "bg-green-600",
-  },
+
   Sam: {
     text: "text-orange-700 dark:text-orange-200",
     invBg: "bg-orange-600",

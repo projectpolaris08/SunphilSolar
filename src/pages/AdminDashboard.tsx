@@ -74,6 +74,12 @@ const AdminDashboard: React.FC = () => {
   const [selectedAdmin, setSelectedAdmin] = useState<AdminUser | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteItem, setDeleteItem] = useState<{
+    type: "capacity" | "battery";
+    name: string;
+    action: () => Promise<void>;
+  } | null>(null);
 
   // Compute upcoming installations from calendar events (not projects)
   const now = new Date();
@@ -425,6 +431,35 @@ const AdminDashboard: React.FC = () => {
     localStorage.setItem("selectedAdmin", JSON.stringify(user));
   };
 
+  // Modal confirmation functions
+  const handleRemoveItem = (
+    type: "capacity" | "battery",
+    name: string,
+    action: () => Promise<void>
+  ) => {
+    setDeleteItem({ type, name, action });
+    setShowDeleteModal(true);
+  };
+
+  const confirmDeleteItem = async () => {
+    if (!deleteItem) return;
+    try {
+      await deleteItem.action();
+      // Refresh events after successful removal
+      refetchEvents();
+    } catch (error) {
+      console.error("Error removing item:", error);
+      alert("Failed to remove item. Please try again.");
+    }
+    setShowDeleteModal(false);
+    setDeleteItem(null);
+  };
+
+  const cancelDeleteItem = () => {
+    setShowDeleteModal(false);
+    setDeleteItem(null);
+  };
+
   // Restore selectedAdmin from localStorage on mount
   useEffect(() => {
     const saved = localStorage.getItem("selectedAdmin");
@@ -774,12 +809,8 @@ const AdminDashboard: React.FC = () => {
                             {required > 0 &&
                               Math.round((built / required) * 100) >= 100 && (
                                 <button
-                                  onClick={async () => {
-                                    if (
-                                      confirm(
-                                        `Remove ${capacity}kW from system capacity summary?`
-                                      )
-                                    ) {
+                                  onClick={() => {
+                                    const action = async () => {
                                       // Remove this capacity from the events
                                       const eventsToUpdate = events.filter(
                                         (event) =>
@@ -796,10 +827,12 @@ const AdminDashboard: React.FC = () => {
                                           })
                                           .eq("id", event.id);
                                       }
-
-                                      // Refresh events
-                                      refetchEvents();
-                                    }
+                                    };
+                                    handleRemoveItem(
+                                      "capacity",
+                                      `${capacity}kW`,
+                                      action
+                                    );
                                   }}
                                   className="bg-red-500 hover:bg-red-600 text-white px-2 py-0.5 rounded-full font-bold text-xs transition-colors"
                                   title="Remove from summary (100% complete)"
@@ -899,12 +932,8 @@ const AdminDashboard: React.FC = () => {
                             {required > 0 &&
                               Math.round((built / required) * 100) >= 100 && (
                                 <button
-                                  onClick={async () => {
-                                    if (
-                                      confirm(
-                                        `Remove ${battery} from battery requirements?`
-                                      )
-                                    ) {
+                                  onClick={() => {
+                                    const action = async () => {
                                       // Remove this battery from the events
                                       const eventsToUpdate = events.filter(
                                         (event) => event.battery === battery
@@ -919,10 +948,12 @@ const AdminDashboard: React.FC = () => {
                                           })
                                           .eq("id", event.id);
                                       }
-
-                                      // Refresh events
-                                      refetchEvents();
-                                    }
+                                    };
+                                    handleRemoveItem(
+                                      "battery",
+                                      battery,
+                                      action
+                                    );
                                   }}
                                   className="bg-red-500 hover:bg-red-600 text-white px-2 py-0.5 rounded-full font-bold text-xs transition-colors"
                                   title="Remove from summary (100% complete)"
@@ -1095,6 +1126,40 @@ const AdminDashboard: React.FC = () => {
           />
         )}
       </div>
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-sm">
+            <h3 className="text-lg font-bold mb-2 text-center text-gray-900 dark:text-gray-100">
+              Remove{" "}
+              {deleteItem?.type === "capacity" ? "System Capacity" : "Battery"}?
+            </h3>
+            <p className="mb-4 text-center text-gray-700 dark:text-gray-300">
+              Are you sure you want to remove{" "}
+              <strong>{deleteItem?.name}</strong> from the{" "}
+              {deleteItem?.type === "capacity"
+                ? "system capacity summary"
+                : "battery requirements"}
+              ? This action cannot be undone.
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={cancelDeleteItem}
+                className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDeleteItem}
+                className="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
