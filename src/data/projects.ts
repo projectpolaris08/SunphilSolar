@@ -21,7 +21,7 @@ export const projects: Project[] = [
     specification: [
       "16kW Deye Hybrid Inverter - Smart hybrid inverter that efficiently manages energy from solar panels, battery storage, and grid input. Offers automatic switching and remote monitoring.",
       "27 × 615W Canadian Bifacial Solar Panels - Premium bifacial solar modules that increase total energy yield by capturing sunlight from both sides. Ideal for spacious rooftops in urban homes.",
-      "2 × 51.2V 314Ah LiFePO₄ Batteries - High-capacity lithium batteries that provide long-lasting backup power for night use and brownout protection.",
+      "2 × 51.2V 324Ah LiFePO₄ Batteries - High-capacity lithium batteries that provide long-lasting backup power for night use and brownout protection.",
     ],
     benefits: [
       "Reduce electricity bills by up to 90 percent",
