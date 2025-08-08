@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "tuba-benguet-12kw-2025",
+    image: "/images/project71.jpg",
+    location: "Tuba, Benguet, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-08-08",
+    clientType: "Large Residential",
+    specification: [
+      "12kW Deye Hybrid Inverter – Intelligent hybrid control for managing solar generation, battery storage, and grid input. Features remote monitoring and seamless automatic switchover.",
+      "22 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules capture sunlight from both sides, maximizing power generation in the clear and reflective mountain environment.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Large-scale lithium storage solution for night usage and extended backup during brownouts.",
+    ],
+    benefits: [
+      "Save up to 85–90% on monthly electricity bills",
+      "Reliable power for air conditioning, refrigeration, computers, lighting, and essential appliances",
+      "Offset approximately 2,000 to 2,500 kg of CO₂ emissions monthly",
+      "Ideal for mountainous regions where weather conditions change frequently",
+      "Continuous operation even during prolonged power interruptions",
+    ],
+    description:
+      "Sunphil Solar completed a 12kW hybrid solar system in Tuba, Benguet, designed for both household and business use. This high-altitude installation delivers reliable, year-round solar energy despite the region's changing weather. With bifacial solar panels and large-capacity lithium storage, the system ensures consistent performance, substantial savings, and dependable power even during outages.\n\nIn Tuba's cooler, elevated climate, solar energy works exceptionally well. This 12kW hybrid solar system ensures the client enjoys stable energy, long-term savings, and environmental sustainability. By combining premium bifacial panels with robust lithium storage, Sunphil Solar delivers power security and independence in one complete package.\n\nSunphil Solar offers free on-site evaluation & energy assessment, custom-built system design, and professional installation with ongoing support. Get your free quote today and enjoy the benefits of hybrid solar in Benguet.",
+  },
+  {
     id: "ideal-subdivision-commonwealth-qc-16kw-2025",
     image: "/images/project70.jpg",
     location: "Ideal Subdivision, Brgy. Commonwealth, Quezon City, Philippines",
