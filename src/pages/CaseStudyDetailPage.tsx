@@ -273,41 +273,6 @@ const CaseStudyDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Gallery Section */}
-        {caseStudyData.gallery && caseStudyData.gallery.length > 0 && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <Zap className="text-yellow-400" size={24} />
-              Project Gallery
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {caseStudyData.gallery.map((image, index) => (
-                <div
-                  key={index}
-                  className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-                  onClick={() => openModal(image.src, image.alt)}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-sm font-medium">
-                      {image.caption}
-                    </p>
-                  </div>
-                  {/* Click indicator */}
-                  <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                    Click to enlarge
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Key Metrics - 3 Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* Project Overview */}
@@ -428,6 +393,44 @@ const CaseStudyDetailPage: React.FC = () => {
               <TrendingUp className="text-green-400" size={24} />
               Before & After Results
             </h2>
+
+            {/* Video Section */}
+            {caseStudyData.beforeAfter.videoUrl && (
+              <div className="mb-8">
+                <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Zap size={20} className="text-blue-400" />
+                    Installation Video
+                  </h3>
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src={`${caseStudyData.beforeAfter.videoUrl}?start=${
+                        caseStudyData.beforeAfter.videoTimestamp || 0
+                      }`}
+                      title="Solar Installation Video"
+                      className="w-full h-full rounded-lg"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-white/70 text-sm">
+                      Video courtesy of{" "}
+                      <a
+                        href="https://www.youtube.com/@kafarmlandtv851"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 hover:text-blue-300 font-medium"
+                      >
+                        KA FARMLAND TV
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">

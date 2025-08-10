@@ -24,7 +24,18 @@ const AboutPage: React.FC = () => {
     "core" | "admins" | "installers" | "builders"
   >("core");
 
-  const coreTeam = [
+  interface TeamMemberData {
+    initial: string;
+    name: string;
+    title: string;
+    description: string;
+    image: string;
+    facebook?: string;
+    viber?: string;
+    whatsapp?: string;
+  }
+
+  const coreTeam: TeamMemberData[] = [
     {
       initial: "K",
       name: "Ma. Katrina Bascon",
@@ -32,6 +43,7 @@ const AboutPage: React.FC = () => {
       description:
         "Ma. Katrina Bascon owns Sunphil Solar and leads its day-to-day operations based in Fairview, Quezon City. She oversees sales, operations, legal, and finance, and manages the company's customer relationship management (CRM) system to keep client interactions organized and efficient. Katrina is passionate about expanding access to clean energy and building a reliable, customer-focused solar company.",
       image: "/images/Sunphil.jpg",
+      facebook: "https://www.facebook.com/princesskkaaaatteee",
     },
     {
       initial: "J",
@@ -40,16 +52,21 @@ const AboutPage: React.FC = () => {
       description:
         "Jhayar is the Head of Operations and Chief Technical Officer at Sunphil Solar. He oversees daily operations and drives the company's technical direction - from system design to installation. Known for his hands-on expertise and strong leadership, Jhayar works closely with teams to ensure every project is completed efficiently, safely, and on time.",
       image: "/images/Sunphil.jpg",
+      facebook: "https://www.facebook.com/jhayar.bacolod.9",
+      viber: "+639353658092",
+      whatsapp: "+639353658092",
     },
   ];
 
-  const admins = [
+  const admins: TeamMemberData[] = [
     {
       initial: "D",
       name: "Diane",
       title: "Admin Officer",
       description: "Providing excellent administrative support every day.",
       image: "/images/Diane.jpeg",
+      facebook: "https://www.facebook.com/fairview.solarista.admn.diana",
+      viber: "+639923550463",
     },
     {
       initial: "A",
@@ -57,6 +74,7 @@ const AboutPage: React.FC = () => {
       title: "Admin Assistant",
       description: "Building strong client relationships daily.",
       image: "/images/Aira.jpeg",
+      facebook: "https://www.facebook.com/barallas.aira",
     },
     {
       initial: "E",
@@ -92,6 +110,9 @@ const AboutPage: React.FC = () => {
       title: "Admin Assistant/Web Developer",
       description: "Building strong client relationships daily.",
       image: "/images/Jayar.jpeg",
+      facebook: "https://www.facebook.com/fairview.solarista.admn.jayar",
+      viber: "+639164128813",
+      whatsapp: "+639164128813",
     },
     {
       initial: "S",
@@ -116,7 +137,7 @@ const AboutPage: React.FC = () => {
     },
   ];
 
-  const installers = [
+  const installers: TeamMemberData[] = [
     {
       initial: "J",
       name: "Joey",
@@ -224,7 +245,7 @@ const AboutPage: React.FC = () => {
     },
   ];
 
-  const builders = [
+  const builders: TeamMemberData[] = [
     {
       initial: "J",
       name: "Joshua",
@@ -615,8 +636,8 @@ const AboutPage: React.FC = () => {
                 transition={{ duration: 0.4 }}
                 className={`grid gap-8 ${
                   activeTab === "core"
-                    ? "grid-cols-1 sm:grid-cols-2 justify-center"
-                    : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+                    ? "grid-cols-1 lg:grid-cols-2 justify-center max-w-4xl mx-auto"
+                    : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
                 }`}
               >
                 {teamData.map((member, index) => (
@@ -627,6 +648,9 @@ const AboutPage: React.FC = () => {
                     title={member.title}
                     description={member.description}
                     image={member.image}
+                    facebook={member.facebook}
+                    viber={member.viber}
+                    whatsapp={member.whatsapp}
                   />
                 ))}
               </motion.div>
@@ -665,6 +689,9 @@ interface TeamMemberProps {
   title: string;
   description: string;
   image?: string;
+  facebook?: string;
+  viber?: string;
+  whatsapp?: string;
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({
@@ -673,19 +700,117 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   title,
   description,
   image,
+  facebook,
+  viber,
+  whatsapp,
 }) => {
   return (
-    <div className="bg-white rounded-lg p-6 text-center shadow-elevation-1 hover:shadow-elevation-3 transition-all duration-300 transform hover:-translate-y-2">
-      <div className="w-24 h-24 mx-auto rounded-full bg-primary-100 flex items-center justify-center mb-4 overflow-hidden">
-        {image ? (
-          <img src={image} alt={name} className="object-cover w-full h-full" />
-        ) : (
-          <span className="text-2xl font-bold text-primary-500">{initial}</span>
-        )}
+    <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+      {/* Profile image container */}
+      <div className="relative z-10 mb-6">
+        <div className="relative w-32 h-32 mx-auto">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+          <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:border-blue-200 transition-colors duration-500">
+            {image ? (
+              <img
+                src={image}
+                alt={name}
+                className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                <span className="text-4xl font-bold text-white">{initial}</span>
+              </div>
+            )}
+          </div>
+          {/* Status indicator */}
+          <div className="absolute bottom-2 right-2 w-6 h-6 bg-green-500 rounded-full border-3 border-white shadow-lg"></div>
+        </div>
       </div>
-      <h4 className="text-xl font-semibold text-secondary-900 mb-1">{name}</h4>
-      <p className="text-primary-500 font-medium mb-2">{title}</p>
-      <p className="text-secondary-600 text-sm">{description}</p>
+
+      {/* Content */}
+      <div className="relative z-10 text-center flex-1 flex flex-col">
+        <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+          {name}
+        </h4>
+        <p className="text-blue-600 font-semibold mb-3 text-lg">{title}</p>
+        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+          {description}
+        </p>
+
+        {/* Social links */}
+        <div className="flex justify-center items-center mb-4 min-h-[40px]">
+          <div className="flex space-x-3">
+            {facebook && (
+              <a
+                href={facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white transition-colors duration-300 shadow-md hover:shadow-lg"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+            )}
+            {viber && (
+              <a
+                href={`viber://chat?number=${viber.replace("+", "")}`}
+                className="w-10 h-10 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center text-white transition-colors duration-300 shadow-md hover:shadow-lg"
+              >
+                <img src="/images/viber.png" alt="Viber" className="w-5 h-5" />
+              </a>
+            )}
+            {whatsapp && (
+              <a
+                href={`https://wa.me/${whatsapp.replace("+", "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white transition-colors duration-300 shadow-md hover:shadow-lg"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Contact button */}
+        <button
+          onClick={() => {
+            if (whatsapp) {
+              window.open(
+                `https://wa.me/${whatsapp.replace("+", "")}`,
+                "_blank"
+              );
+            } else if (viber) {
+              window.open(
+                `viber://chat?number=${viber.replace("+", "")}`,
+                "_blank"
+              );
+            }
+          }}
+          className="mt-auto w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg opacity-100"
+        >
+          Contact {name.split(" ")[0]}
+        </button>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute bottom-4 left-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></div>
     </div>
   );
 };

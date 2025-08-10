@@ -52,6 +52,8 @@ interface CaseStudyData {
     afterImage: string;
     beforeDescription: string;
     afterDescription: string;
+    videoUrl?: string;
+    videoTimestamp?: number;
   };
   gallery?: {
     src: string;
@@ -360,35 +362,83 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ data, projectId }) => {
             {isRescueCase ? "Before & After Rescue" : "Before & After"}
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10">
-              <img
-                src={data.beforeAfter.beforeImage}
-                alt="Before installation"
-                className="w-full h-auto rounded-lg mb-4"
-              />
-              <h4 className="text-lg font-semibold text-white mb-2">
-                {isRescueCase ? "Failed System" : "Before Installation"}
-              </h4>
-              <p className="text-gray-300">
-                {data.beforeAfter.beforeDescription}
-              </p>
+          {data.beforeAfter.videoUrl ? (
+            <div className="bg-white/5 p-6 rounded-xl shadow-lg border border-white/10">
+              <div className="aspect-video w-full mb-6">
+                <iframe
+                  src={`${data.beforeAfter.videoUrl}?start=${
+                    data.beforeAfter.videoTimestamp || 0
+                  }`}
+                  title="Solar Installation Video"
+                  className="w-full h-full rounded-lg"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="text-center mb-6">
+                <p className="text-gray-600 text-sm">
+                  Video courtesy of{" "}
+                  <a
+                    href="https://www.youtube.com/@kafarmlandtv851"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-500 font-medium"
+                  >
+                    KA FARMLAND TV
+                  </a>
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-2">
+                    {isRescueCase ? "Failed System" : "Before Installation"}
+                  </h4>
+                  <p className="text-gray-300">
+                    {data.beforeAfter.beforeDescription}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-2">
+                    {isRescueCase ? "Rescued System" : "After Installation"}
+                  </h4>
+                  <p className="text-gray-300">
+                    {data.beforeAfter.afterDescription}
+                  </p>
+                </div>
+              </div>
             </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10">
+                <img
+                  src={data.beforeAfter.beforeImage}
+                  alt="Before installation"
+                  className="w-full h-auto rounded-lg mb-4"
+                />
+                <h4 className="text-lg font-semibold text-white mb-2">
+                  {isRescueCase ? "Failed System" : "Before Installation"}
+                </h4>
+                <p className="text-gray-300">
+                  {data.beforeAfter.beforeDescription}
+                </p>
+              </div>
 
-            <div className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10">
-              <img
-                src={data.beforeAfter.afterImage}
-                alt="After installation"
-                className="w-full h-auto rounded-lg mb-4"
-              />
-              <h4 className="text-lg font-semibold text-white mb-2">
-                {isRescueCase ? "Rescued System" : "After Installation"}
-              </h4>
-              <p className="text-gray-300">
-                {data.beforeAfter.afterDescription}
-              </p>
+              <div className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10">
+                <img
+                  src={data.beforeAfter.afterImage}
+                  alt="After installation"
+                  className="w-full h-auto rounded-lg mb-4"
+                />
+                <h4 className="text-lg font-semibold text-white mb-2">
+                  {isRescueCase ? "Rescued System" : "After Installation"}
+                </h4>
+                <p className="text-gray-300">
+                  {data.beforeAfter.afterDescription}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       )}
 

@@ -1000,7 +1000,7 @@ export const projects: Project[] = [
     location: "San Antonio, Quezon, PH",
     system: "32kW Hybrid Solar",
     date: "2025-06-04",
-    clientType: "Residential Estate / Small Business",
+    clientType: "Agricultural Farm / Livestock",
     specification: [
       "2 × 16kW Deye Hybrid Inverters – Intelligent hybrid inverters capable of managing high power loads and optimizing the use of solar, battery, and grid energy.",
       "56 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules that capture sunlight from both sides, maximizing efficiency and output perfect for open installations in provincial areas.",
@@ -1013,7 +1013,7 @@ export const projects: Project[] = [
       "Environmental Impact: Reduces carbon emissions by an estimated 2,000–2,600 kg per month.",
     ],
     description:
-      "Sunphil Solar designed and installed a powerful 32kW hybrid solar system for a large property in San Antonio, Quezon. This installation supports the energy needs of a spacious household or a small commercial operation, providing reliable daytime power and substantial energy storage for night use or grid outages. The system offers an excellent return on investment while promoting environmental sustainability. Sunphil Solar is committed to helping communities in Quezon Province including San Antonio, Lucena, Candelaria, and beyond achieve energy independence through advanced hybrid solar systems. Our mission is to make solar energy accessible, reliable, and financially rewarding for every Filipino home and business.",
+      "Sunphil Solar designed and installed a powerful 32kW hybrid solar system for a large agricultural farm in San Antonio, Quezon. This installation supports the energy needs of a comprehensive farming operation including fighting cock facilities, cattle management, and other livestock operations, providing reliable daytime power and substantial energy storage for night use or grid outages. The system offers an excellent return on investment while promoting environmental sustainability for agricultural businesses. Sunphil Solar is committed to helping farming communities in Quezon Province including San Antonio, Lucena, Candelaria, and beyond achieve energy independence through advanced hybrid solar systems. Our mission is to make solar energy accessible, reliable, and financially rewarding for every Filipino farm and agricultural business.",
   },
   {
     id: "upper-bicutan-taguig",

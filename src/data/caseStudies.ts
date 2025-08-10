@@ -34,6 +34,8 @@ export interface CaseStudyData {
     afterImage: string;
     beforeDescription: string;
     afterDescription: string;
+    videoUrl?: string;
+    videoTimestamp?: number;
   };
   gallery?: {
     src: string;
@@ -533,6 +535,76 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       afterDescription:
         "August 2025: Bill reduced to just ₱225.03 with only 16 kWh consumption, achieving 98.2% savings and near-complete energy independence even during week-long storms.",
     },
+  },
+  "san-antonio-quezon": {
+    projectOverview: {
+      challenge:
+        "Mr. Imperial was facing crippling Meralco bills of ₱38,000 monthly for his fighting cock farm in San Antonio, Quezon. The farm's massive energy consumption from lighting, ventilation, feeding systems, and climate control for hundreds of fighting cocks was creating severe financial strain, requiring a large-scale solar solution for agricultural operations.",
+      solution:
+        "Sunphil Solar designed and installed a massive 32kW hybrid solar system for the fighting cock farm, featuring multiple high-capacity Deye Hybrid Inverters, 52 x 615W Canadian Bifacial Solar Panels (32kW total capacity), and multiple 51.2V 314Ah LiFePO4 Batteries for maximum energy independence and extended backup power for agricultural operations.",
+      results:
+        "Mr. Imperial's monthly bill dropped from ₱38,000 to just ₱4,000, achieving ₱34,000 monthly savings (89.5% cost reduction). The massive 32kW system now provides near-complete energy independence for the fighting cock farm, representing one of the most significant agricultural solar transformations in the region.",
+    },
+    financialAnalysis: {
+      totalInvestment: 1300000,
+      monthlySavings: 34000,
+      paybackPeriod: 3.2,
+      annualROI: 31.4,
+      lifetimeSavings: 8160000,
+    },
+    environmentalImpact: {
+      co2Reduction: 38400,
+      treesEquivalent: 1829,
+      annualEnergyProduction: 52560,
+    },
+    performanceMetrics: {
+      systemEfficiency: 98,
+      uptime: 99.9,
+      peakOutput: 32,
+      averageDailyProduction: 144,
+    },
+    challenges: [
+      "Crippling Meralco bills of ₱38,000 monthly for fighting cock farm operations",
+      "Complete dependence on grid power with no backup system for agricultural operations",
+      "High energy consumption from lighting, ventilation, and climate control systems",
+      "Feeding systems and automated equipment requiring constant power supply",
+      "No protection from rising electricity rates affecting farm profitability",
+      "Requirement for large-scale solar solution to handle agricultural energy demands",
+      "Complex installation requiring multiple inverters and extensive battery storage",
+    ],
+    solutions: [
+      "Massive 32kW hybrid solar system with 32kW panel capacity for farm operations",
+      "Multiple Deye Hybrid Inverters for smart energy management at agricultural scale",
+      "High-efficiency Canadian Bifacial panels capturing maximum sunlight",
+      "Multiple LiFePO4 battery storage units for extended backup power during outages",
+      "Large-scale system design maintaining performance for agricultural energy demands",
+      "Near-complete energy independence reducing grid consumption by 89.5%",
+      "Reliable power supply for critical farm operations including lighting and ventilation",
+    ],
+    testimonials: {
+      quote:
+        "From ₱38,000 to ₱4,000 na lang ang bill namin. Sobrang laking tipid! Malaking tulong sa farm operations namin.",
+      author: "Mr. Imperial",
+      role: "Fighting Cock Farm Owner, San Antonio, Quezon",
+    },
+    beforeAfter: {
+      beforeImage: "https://img.youtube.com/vi/ZEqo9-cJKbI/maxresdefault.jpg",
+      afterImage: "https://img.youtube.com/vi/ZEqo9-cJKbI/maxresdefault.jpg",
+      beforeDescription:
+        "Before Installation: Meralco bill at ₱38,000 monthly for fighting cock farm operations, representing massive energy consumption and financial strain.",
+      afterDescription:
+        "After Installation: Bill reduced to just ₱4,000 achieving 89.5% savings and near-complete energy independence for farm operations.",
+      videoUrl: "https://www.youtube.com/embed/ZEqo9-cJKbI",
+      videoTimestamp: 1380, // 23:00 minutes = 1380 seconds
+    },
+    gallery: [
+      {
+        src: "https://img.youtube.com/vi/ZEqo9-cJKbI/maxresdefault.jpg",
+        alt: "32kW Hybrid Solar Installation for Fighting Cock Farm in San Antonio, Quezon",
+        caption:
+          "Massive 32kW hybrid solar system installation for fighting cock farm featuring 52 bifacial panels and multiple inverters.",
+      },
+    ],
   },
 };
 

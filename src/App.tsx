@@ -3,6 +3,7 @@ import AppRoutes from "./routes/AppRoutes"; // Correct path to your AppRoutes
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
 import ChatBot from "./components/ChatBot";
+import SplashCursor from "./components/SplashCursor";
 import { AdminAuthProvider } from "./contexts/AdminAuthContext";
 import { CalendarEventsProvider } from "./contexts/CalendarEventsContext";
 
@@ -33,6 +34,7 @@ function App() {
       <AdminAuthProvider>
         <BrowserRouter>
           <AppWithChatBot />
+          <SplashCursor />
         </BrowserRouter>
       </AdminAuthProvider>
     </CalendarEventsProvider>
