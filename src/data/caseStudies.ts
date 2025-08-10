@@ -539,7 +539,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
   "san-antonio-quezon": {
     projectOverview: {
       challenge:
-        "Mr. Imperial was facing crippling Meralco bills of ₱38,000 monthly for his fighting cock farm in San Antonio, Quezon. The farm's massive energy consumption from lighting, ventilation, feeding systems, and climate control for hundreds of fighting cocks was creating severe financial strain, requiring a large-scale solar solution for agricultural operations.",
+        "Mr. Imperial was facing crippling Electricity bill of ₱38,000 monthly for his fighting cock farm in San Antonio, Quezon. The farm's massive energy consumption from lighting, ventilation, feeding systems, and climate control for hundreds of fighting cocks was creating severe financial strain, requiring a large-scale solar solution for agricultural operations.",
       solution:
         "Sunphil Solar designed and installed a massive 32kW hybrid solar system for the fighting cock farm, featuring multiple high-capacity Deye Hybrid Inverters, 52 x 615W Canadian Bifacial Solar Panels (32kW total capacity), and multiple 51.2V 314Ah LiFePO4 Batteries for maximum energy independence and extended backup power for agricultural operations.",
       results:
@@ -564,7 +564,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       averageDailyProduction: 144,
     },
     challenges: [
-      "Crippling Meralco bills of ₱38,000 monthly for fighting cock farm operations",
+      "Crippling Electricity bill of ₱38,000 monthly for fighting cock farm operations",
       "Complete dependence on grid power with no backup system for agricultural operations",
       "High energy consumption from lighting, ventilation, and climate control systems",
       "Feeding systems and automated equipment requiring constant power supply",
@@ -591,7 +591,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       beforeImage: "https://img.youtube.com/vi/ZEqo9-cJKbI/maxresdefault.jpg",
       afterImage: "https://img.youtube.com/vi/ZEqo9-cJKbI/maxresdefault.jpg",
       beforeDescription:
-        "Before Installation: Meralco bill at ₱38,000 monthly for fighting cock farm operations, representing massive energy consumption and financial strain.",
+        "Before Installation: Electricity bill at ₱38,000 monthly for fighting cock farm operations, representing massive energy consumption and financial strain.",
       afterDescription:
         "After Installation: Bill reduced to just ₱4,000 achieving 89.5% savings and near-complete energy independence for farm operations.",
       videoUrl: "https://www.youtube.com/embed/ZEqo9-cJKbI",
