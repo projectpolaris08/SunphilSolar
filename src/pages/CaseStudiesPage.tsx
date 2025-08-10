@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
 import { projects } from "@/data/projects";
+import ShareButton from "../components/ShareButton";
 
 const CaseStudiesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -367,7 +368,7 @@ const CaseStudiesPage: React.FC = () => {
                           </p>
                         </div>
 
-                        <div className="mt-6">
+                        <div className="mt-6 flex items-center justify-between">
                           <Link
                             to={`/case-studies/${projectId}`}
                             className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors group"
@@ -379,6 +380,15 @@ const CaseStudiesPage: React.FC = () => {
                             </span>
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                           </Link>
+                          <ShareButton
+                            url={`${window.location.origin}/case-studies/${projectId}`}
+                            title={`${systemSize} - ${location}`}
+                            description={`${data.projectOverview.results.substring(
+                              0,
+                              100
+                            )}...`}
+                            className="flex-shrink-0"
+                          />
                         </div>
                       </article>
                     </div>

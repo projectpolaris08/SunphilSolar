@@ -22,6 +22,7 @@ import {
 import { caseStudies } from "@/data/caseStudies";
 import { projects } from "@/data/projects";
 import { HashLink } from "react-router-hash-link";
+import ShareButton from "../components/ShareButton";
 
 const CaseStudyDetailPage: React.FC = () => {
   const { caseStudyId } = useParams<{ caseStudyId: string }>();
@@ -202,15 +203,31 @@ const CaseStudyDetailPage: React.FC = () => {
                 )}
               </div>
 
-              <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
-                {projectData.system}
-                <span className="block text-lg text-blue-400 mt-2 font-medium">
-                  {projectData.location}
-                </span>
-                <span className="block bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium mt-2 w-fit">
-                  {caseStudyData.financialAnalysis.annualROI}% Annual ROI
-                </span>
-              </h1>
+              <div className="flex items-start justify-between">
+                <div className="flex-grow">
+                  <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
+                    {projectData.system}
+                    <span className="block text-lg text-blue-400 mt-2 font-medium">
+                      {projectData.location}
+                    </span>
+                    <span className="block bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium mt-2 w-fit">
+                      {caseStudyData.financialAnalysis.annualROI}% Annual ROI
+                    </span>
+                  </h1>
+                </div>
+                <ShareButton
+                  url={window.location.href}
+                  title={`${projectData.system} Case Study - ${projectData.location}`}
+                  description={`See how this ${
+                    projectData.system
+                  } installation achieved ${
+                    caseStudyData.financialAnalysis.annualROI
+                  }% ROI and ${formatCurrency(
+                    caseStudyData.financialAnalysis.monthlySavings
+                  )} monthly savings.`}
+                  className="flex-shrink-0"
+                />
+              </div>
 
               <p className="text-lg text-white mb-2 leading-relaxed font-normal">
                 {projectData.description?.split("\n")[0] ||
