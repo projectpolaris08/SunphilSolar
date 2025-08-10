@@ -588,8 +588,8 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       role: "Fighting Cock Farm Owner, San Antonio, Quezon",
     },
     beforeAfter: {
-      beforeImage: "https://img.youtube.com/vi/ZEqo9-cJKbI/maxresdefault.jpg",
-      afterImage: "https://img.youtube.com/vi/ZEqo9-cJKbI/maxresdefault.jpg",
+      beforeImage: "/images/project17.jpg",
+      afterImage: "/images/project17.jpg",
       beforeDescription:
         "Before Installation: Electricity bill at ₱38,000 monthly for fighting cock farm operations, representing massive energy consumption and financial strain.",
       afterDescription:
@@ -605,6 +605,62 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
           "Massive 32kW hybrid solar system installation for fighting cock farm featuring 52 bifacial panels and multiple inverters.",
       },
     ],
+  },
+  "mabalacat-pampanga-8kw": {
+    projectOverview: {
+      challenge:
+        "Sir Yhe Yhe Lansang was facing high Meralco bills of ₱4,912.80 monthly with a due date of June 25, 2025. The household's energy consumption and complete grid dependency were creating financial strain in Mabalacat, Pampanga, requiring a reliable solar solution for energy independence.",
+      solution:
+        "Sunphil Solar designed and installed a custom 8kW hybrid solar system on June 20, 2025, featuring an 8kW Deye Hybrid Inverter for smart energy management, 14 x 615W Canadian Bifacial Solar Panels for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery for reliable backup power and nighttime energy storage.",
+      results:
+        "Sir Yhe Yhe's monthly bill dropped from ₱4,912.80 to just ₱646.79, achieving ₱4,266.01 monthly savings (86.8% cost reduction). The system now provides significant energy independence with reliable backup power, reducing grid consumption by over 86%.",
+    },
+    financialAnalysis: {
+      totalInvestment: 360000,
+      monthlySavings: 4266,
+      paybackPeriod: 7.0,
+      annualROI: 14.2,
+      lifetimeSavings: 1023840,
+    },
+    environmentalImpact: {
+      co2Reduction: 9900,
+      treesEquivalent: 471,
+      annualEnergyProduction: 12100,
+    },
+    performanceMetrics: {
+      systemEfficiency: 95,
+      uptime: 99.9,
+      peakOutput: 8,
+      averageDailyProduction: 33,
+    },
+    challenges: [
+      "High Meralco bills of ₱4,912.80 monthly with June 25, 2025 due date",
+      "Complete dependence on grid power with no backup system",
+      "High energy consumption from household appliances",
+      "No protection from rising electricity rates in Pampanga",
+      "Limited energy conservation options despite efforts to save",
+    ],
+    solutions: [
+      "Custom-designed 8kW hybrid solar system tailored to household energy needs",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency bifacial panels capturing maximum sunlight",
+      "LiFePO₄ battery storage for nighttime use and backup power during outages",
+      "Significant energy independence reducing grid consumption by 86.8%",
+    ],
+    testimonials: {
+      quote:
+        "From ₱4,912.80 to ₱646.79 na lang ang bill namin. Malaking tipid talaga! Salamat sa Sunphil Solar.",
+      author: "Sir Yhe Yhe Lansang",
+      role: "Homeowner, Mabalacat, Pampanga",
+    },
+    beforeAfter: {
+      beforeImage: "/images/yhe-before.jpg",
+      afterImage: "/images/yhe-after.jpg",
+      beforeDescription:
+        "June 2025: Meralco bill at ₱4,912.80 with due date June 25, 2025, representing high energy consumption and financial strain.",
+      afterDescription:
+        "July 2025: Bill reduced to just ₱646.79 with due date July 25, 2025, achieving 86.8% savings and significant energy independence.",
+    },
   },
 };
 

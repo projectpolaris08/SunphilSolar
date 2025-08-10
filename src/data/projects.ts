@@ -1507,4 +1507,48 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar successfully completed a 6kW hybrid solar system in Sta. Maria, Bulacan. This system is designed to provide clean, uninterrupted power for a typical home with moderate daily energy needs. With reliable battery storage and smart inverter technology, it helps reduce electricity bills and ensures power security during brownouts.\n\nAs energy rates rise and brownouts continue to affect Central Luzon, more homeowners in Bulacan are turning to hybrid solar. This 6kW system helps this Sta. Maria family achieve energy independence, cut costs, and enjoy peace of mind with every sunny day.\n\nSunphil Solar offers:\n- Free On-Site Evaluation and Energy Consultation\n- Custom Load-Based System Design\n- Professional Installation with Lifetime Support\n\nGet Your Free Quote Today and start saving with solar in Sta. Maria, Bulacan.",
   },
+  {
+    id: "mabalacat-pampanga-8kw",
+    image: "/images/project72.jpg",
+    location: "Mabalacat, Pampanga, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-20",
+    clientType: "Residential with Moderate-to-High Energy Demand",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart hybrid control to manage solar input, battery storage, and grid power. Includes remote monitoring and automatic switchover for uninterrupted energy supply.",
+      "14 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules that capture sunlight from both sides, boosting overall energy yield.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery providing backup power during nighttime or outages.",
+    ],
+    benefits: [
+      "Cut electricity bills by up to 80–85%",
+      "Powers essential loads such as air conditioning, refrigeration, lighting, computers, and home electronics",
+      "Reduces approximately 1,500–1,800 kg of CO₂ emissions per month",
+      "Ideal for suburban homes in Pampanga where power stability and savings are equally important",
+      "Ensures uninterrupted operation during scheduled and unscheduled brownouts",
+    ],
+    description:
+      "Sunphil Solar completed an 8kW hybrid solar installation in Mabalacat, Pampanga, designed to provide reliable power and significant savings for a family home. The system is optimized for year-round performance, storing excess daytime energy for night use and offering protection during grid outages.\n\nWith its strategic location in Central Luzon, Mabalacat enjoys excellent solar exposure year-round. This 8kW hybrid system ensures the homeowner benefits from clean, consistent power while reducing reliance on the grid. The combination of premium bifacial panels and lithium storage guarantees optimal efficiency and long-term reliability.\n\nSunphil Solar offers:\n- Free On-Site Evaluation & Load Analysis\n- Tailor-Fit System Design for Your Energy Needs\n- Expert Installation with Lifetime Support\n\nRequest Your Free Quote Today and discover the benefits of hybrid solar power in Pampanga.",
+  },
+  {
+    id: "arayat-pampanga-6kw",
+    image: "/images/project73.jpg",
+    location: "Arayat, Pampanga, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-08-10",
+    clientType: "Residential with Moderate Energy Demand",
+    specification: [
+      "6kW Deye Hybrid Inverter – Intelligent energy management to balance solar generation, battery storage, and grid supply. Equipped with remote monitoring and automatic switchover for continuous power.",
+      "13 × 615W Canadian Bifacial Solar Panels – Dual-sided energy capture for increased efficiency, perfect for Pampanga's strong sunlight.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage providing nighttime power and blackout protection.",
+    ],
+    benefits: [
+      "Save up to 70–75% on electricity bills",
+      "Power essential household loads such as lighting, refrigerators, fans, air conditioning, and electronics",
+      "Offset approximately 1,200–1,500 kg of CO₂ emissions monthly",
+      "Ideal for residential homes in Pampanga seeking energy independence and cost efficiency",
+      "Reliable backup power during both planned and unplanned brownouts",
+    ],
+    description:
+      "Sunphil Solar completed a 6kW hybrid solar installation in Arayat, Pampanga, built to deliver consistent energy savings and dependable backup power. This system is tailored for households that want to cut monthly electricity costs while ensuring uninterrupted power during outages.\n\nLocated in Central Luzon, Arayat enjoys abundant sunshine, making it an ideal location for solar energy systems. This 6kW hybrid setup ensures the homeowner benefits from clean, reliable, and cost-effective power, supported by premium bifacial solar technology and robust lithium storage.\n\nSunphil Solar provides:\n- Free On-Site Energy Assessment\n- Custom System Design for Your Needs\n- Professional Installation & Lifetime Support\n\nRequest Your Free Quote Today and start enjoying the benefits of hybrid solar energy in Pampanga.",
+  },
 ];
