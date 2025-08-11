@@ -11581,6 +11581,692 @@ export const blogPosts: BlogPost[] = [
     ),
     readingTime: 22,
   },
+  {
+    id: 33,
+    title: "Best Solar Stocks in the Philippines (2025)",
+    author: "Sunphil Solar",
+    date: "2025-08-11",
+    slug: "best-solar-stocks-philippines-2025",
+    tags: [
+      "Solar Stocks Philippines",
+      "renewable energy investments",
+      "PSE listed companies",
+      "SPNEC stock analysis",
+      "CREIT solar REIT",
+      "Philippine Stock Exchange",
+      "clean energy investing",
+      "sustainable finance",
+      "emerging markets",
+      "energy transition",
+    ],
+    excerpt:
+      "The Philippine solar energy sector stands at a pivotal moment in 2025, with unprecedented growth opportunities driving investor interest to new heights. With the market growing at a CAGR of greater than 25.2%, discover the top solar stocks positioned to benefit from this explosive transformation in Southeast Asia's renewable energy landscape.",
+    metaDescription:
+      "Comprehensive analysis of the best solar stocks in the Philippines for 2025. Expert review of SPNEC, CREIT, ALTER, and EDC with current stock prices and investment insights for the booming Philippine renewable energy market.",
+    featuredImage: {
+      url: "/images/philippines-solar-stocks-investing.jpg",
+      alt: "Solar panels installation in the Philippines with stock market charts overlay, representing solar energy investment opportunities",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <div className="max-w-4xl mx-auto p-6 bg-white">
+        {/* Header Section */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Best Solar Stocks in the Philippines (2025)
+          </h1>
+          <div className="flex items-center text-gray-600 mb-4">
+            <span>By Sunphil Solar</span>
+            <span className="mx-2">•</span>
+            <span>2025-08-11</span>
+            <span className="mx-2">•</span>
+            <span>18 min read</span>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {[
+              "Solar Stocks Philippines",
+              "renewable energy investments",
+              "PSE listed companies",
+              "SPNEC stock analysis",
+              "CREIT solar REIT",
+              "Philippine Stock Exchange",
+              "clean energy investing",
+              "sustainable finance",
+              "emerging markets",
+              "energy transition",
+            ].map((tag, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Featured Image */}
+        <div className="mb-8">
+          <img
+            src="/images/philippines-solar-stocks-investing.jpg"
+            alt="Solar panels installation in the Philippines with stock market charts overlay, representing solar energy investment opportunities"
+            className="w-full h-64 object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
+        {/* Article Content */}
+        <div className="prose max-w-none">
+          <p className="text-gray-700 mb-6">
+            The Philippine solar energy sector stands at a pivotal moment in
+            2025, with unprecedented growth opportunities driving investor
+            interest to new heights. As someone who has closely followed the
+            renewable energy transformation across Southeast Asia, I believe the
+            convergence of government policy support, declining solar costs, and
+            rising energy demand has created a perfect storm for solar stock
+            investments in the Philippines.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            This isn't merely about environmental sentiment. The Philippines
+            Solar Energy Market is growing at a CAGR of greater than 25.2% over
+            the next 5 years, representing one of the most compelling investment
+            opportunities in the region. This explosive growth reflects a
+            fundamental shift in how the Philippines approaches energy security
+            and climate commitments, creating substantial opportunities for
+            investors who identify the right companies early.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            The Numbers Tell a Compelling Investment Story
+          </h2>
+
+          <p className="text-gray-700 mb-4">
+            The scale of opportunity in Philippine solar stocks is
+            extraordinary. The market dynamics have fundamentally changed since
+            2020, with investors now placing a higher value on pure plays in
+            renewables than on traditional utilities. This valuation premium
+            creates significant opportunities for companies focused exclusively
+            on clean energy.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            What makes this particularly exciting is the government's ambitious
+            renewable energy targets backed by concrete policy actions,
+            including opening renewable energy projects to full foreign
+            ownership and streamlining regulatory frameworks. The Department of
+            Energy's procurement programs create predictable demand for solar
+            developers, while international climate funds actively seek
+            Philippine renewable energy opportunities.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Top Solar Investment Opportunities
+          </h2>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            SP New Energy Corporation (SPNEC)
+          </h3>
+          <p className="text-lg font-semibold text-blue-600 mb-4">
+            Current Price: ₱1.22 (as of recent trading session)
+          </p>
+
+          <p className="text-gray-700 mb-4">
+            SP New Energy Corporation (SPNEC) is a subsidiary of Solar
+            Philippines, the largest solar energy provider in the Philippines,
+            making it the most obvious choice for investors seeking pure-play
+            solar exposure. What sets SPNEC apart is its first-mover advantage
+            in the public markets. SPNEC became the first company to list under
+            PSE's Supplemental Listing and Disclosure Requirements for
+            Petroleum, pioneering a new category of renewable energy listings.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            The company's recent inclusion in international indices demonstrates
+            growing institutional recognition. SP New Energy Corp. (SPNEC) is
+            seeing increased interest in its stocks after being included in the
+            MSCI Philippines Small Cap Index, which typically precedes increased
+            foreign investment flows. The stock was initially priced at ₱1 per
+            share during its IPO, showing solid appreciation since its public
+            debut.
+          </p>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Citicore Energy REIT Corporation (CREIT)
+          </h3>
+          <p className="text-lg font-semibold text-blue-600 mb-4">
+            Current Price: ₱3.64 (according to PSE Edge)
+          </p>
+
+          <p className="text-gray-700 mb-4">
+            CREIT represents the first Philippine REIT to list that derives rent
+            from the renewable energy sector, representing a groundbreaking
+            investment structure that combines the stability of real estate
+            investment trusts with the growth potential of renewable energy.
+            This hybrid approach offers investors steady dividend yields backed
+            by long-term solar power purchase agreements.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            The REIT structure is particularly attractive for income-focused
+            investors because it requires distribution of at least 90% of
+            distributable income to shareholders. With solar assets providing
+            predictable cash flows over 20-25 year contract periods, CREIT
+            offers both growth and income characteristics that traditional REITs
+            cannot match.
+          </p>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Alternergy Holdings Corporation (ALTER)
+          </h3>
+          <p className="text-lg font-semibold text-blue-600 mb-4">
+            Current Price: ₱0.98 (according to Investing.com and MarketWatch)
+          </p>
+
+          <p className="text-gray-700 mb-4">
+            Alternergy Holdings Corporation operates as a renewable energy
+            holding company, focusing on developing, building, and operating
+            wind, solar, hydro, floating solar, and battery storage power
+            projects. What makes Alternergy particularly attractive is its
+            diversified renewable energy portfolio that extends beyond just
+            solar.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            The company is a Philippines-based renewable power company with a
+            portfolio of project companies engaged in different RE projects,
+            particularly wind, run-of-river hydro, solar farm and commercial
+            rooftop, battery storage and offshore wind projects. This
+            diversification provides natural hedging against weather and
+            seasonal variations that can affect single-technology renewable
+            companies.
+          </p>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Energy Development Corporation (EDC)
+          </h3>
+          <p className="text-lg font-semibold text-blue-600 mb-4">
+            Current Price: ₱6.87 (according to Investing.com)
+          </p>
+
+          <p className="text-gray-700 mb-4">
+            While not exclusively focused on solar, Energy Development
+            Corporation deserves consideration as the Philippines' largest
+            renewable energy company with growing solar exposure. EDC's
+            established market position and expanding solar portfolio make it a
+            solid play for investors seeking exposure to the broader renewable
+            energy transition with solar components.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            The company's strong balance sheet and operational expertise across
+            multiple renewable technologies position it well to capitalize on
+            the solar boom while maintaining diversification across geothermal,
+            wind, and hydroelectric assets.
+          </p>
+
+          <p className="text-gray-700 mb-6 italic">
+            <strong>Important Note on Stock Prices:</strong> All stock prices
+            mentioned are subject to market fluctuations and should be verified
+            through real-time PSE data or your broker before making investment
+            decisions. Prices can change significantly during trading hours and
+            market volatility can be substantial, especially in emerging
+            renewable energy companies.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            The Economic Imperative: Why Solar Stocks Make Strategic Sense Now
+          </h2>
+
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-left border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-2 font-semibold">
+                    Current Energy Challenge
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 font-semibold">
+                    Market Impact
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 font-semibold">
+                    Solar Investment Opportunity
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Highest electricity costs in Southeast Asia
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Limits economic growth and competitiveness
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Solar companies with 20-25 year contracts benefit from cost
+                    advantages
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    80% fossil fuel dependence
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Vulnerable to volatile international prices
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Fixed costs create predictable revenue streams for solar
+                    stocks
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Gas reserves declining rapidly
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Potential energy shortages drive demand
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Abundant solar resources provide sustainable alternatives
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Import dependency drains reserves
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Foreign exchange pressure
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Domestic solar development retains capital locally
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-gray-700 mb-6">
+            The timing for solar investments in the Philippines has never been
+            better. Three critical factors are converging to create a multi-year
+            investment opportunity: government renewable energy policies gaining
+            concrete implementation, solar project economics improving
+            dramatically as costs fall while electricity prices remain elevated,
+            and the financing environment improving with international
+            development banks and ESG-focused investors actively seeking
+            Philippine opportunities.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Market Performance Analysis: Building on Proven Success
+          </h2>
+
+          <p className="text-gray-700 mb-4">
+            The Philippine solar sector isn't starting from zero. Current market
+            leaders have demonstrated the viability of solar investments in the
+            Philippine context through successful project execution and
+            consistent operational performance. This track record provides
+            confidence for investors evaluating the sector's growth potential.
+          </p>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Investment Performance Indicators
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 mb-6">
+            <li>
+              <strong>SPNEC Market Performance:</strong> From ₱1 IPO price to
+              current ₱1.22, demonstrating steady investor confidence in
+              pure-play solar exposure
+            </li>
+            <li>
+              <strong>CREIT REIT Structure:</strong> At ₱3.64, offers unique
+              combination of renewable energy growth with REIT income stability
+            </li>
+            <li>
+              <strong>ALTER Diversification Strategy:</strong> ₱0.98 entry point
+              for investors seeking broader renewable energy exposure beyond
+              just solar
+            </li>
+            <li>
+              <strong>EDC Established Market Position:</strong> ₱6.87 reflects
+              premium valuation for the Philippines' largest renewable energy
+              company with growing solar components
+            </li>
+          </ul>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Risk Considerations and Investment Strategy
+          </h2>
+
+          <p className="text-gray-700 mb-4">
+            Despite compelling opportunities, solar investing in the Philippines
+            requires careful consideration of specific risks. Grid integration
+            remains a significant challenge, particularly for large-scale
+            projects in remote areas. The intermittent nature of solar power
+            requires sophisticated grid management and energy storage solutions
+            that are still developing.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            Smart investors should focus on companies with three key
+            characteristics: proven execution capability, diversified project
+            portfolios, and strong balance sheets. The solar industry rewards
+            operational excellence because project development requires
+            navigating complex permitting processes, managing construction
+            risks, and maintaining long-term asset performance.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Investment Valuation Framework: What to Look For
+          </h2>
+
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-left border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-2 font-semibold">
+                    Company
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 font-semibold">
+                    Current Price
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 font-semibold">
+                    Investment Profile
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 font-semibold">
+                    Key Advantage
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">SPNEC</td>
+                  <td className="border border-gray-300 px-4 py-2">₱1.22</td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Pure-play solar growth
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    First-mover advantage, largest solar provider backing
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">CREIT</td>
+                  <td className="border border-gray-300 px-4 py-2">₱3.64</td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Growth + Income hybrid
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    REIT structure with renewable energy focus
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">ALTER</td>
+                  <td className="border border-gray-300 px-4 py-2">₱0.98</td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Diversified renewable
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Multiple technologies reduce single-source risk
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">EDC</td>
+                  <td className="border border-gray-300 px-4 py-2">₱6.87</td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Established market leader
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    Strong balance sheet, operational expertise
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            The Policy Environment: Government Support Creates Investment
+            Confidence
+          </h2>
+
+          <p className="text-gray-700 mb-4">
+            The Philippine government has demonstrated remarkable commitment to
+            renewable energy development through concrete policy actions that
+            directly benefit solar stock investors. The Department of Energy's
+            ambitious targets are backed by specific procurement programs and
+            grid integration plans that create predictable demand for solar
+            developers.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            More importantly, regulatory reforms including streamlined
+            permitting processes and foreign ownership liberalization have
+            improved the investment climate for renewable energy companies.
+            These policy changes reduce regulatory risk while creating new
+            opportunities for growth and expansion.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Technology Evolution and Competitive Advantages
+          </h2>
+
+          <p className="text-gray-700 mb-4">
+            The Philippine solar market benefits from rapidly advancing solar
+            technology that continues to drive down costs while improving
+            efficiency. Modern solar installations in the Philippines achieve
+            higher capacity factors than earlier generation projects, directly
+            improving project economics and investor returns.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            Companies that integrate energy storage capabilities with their
+            solar projects will have significant competitive advantages as grid
+            penetration increases. The convergence of solar with battery storage
+            creates new revenue opportunities and helps address intermittency
+            concerns that have historically limited renewable energy adoption.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Financial Performance Outlook: Beyond 2025
+          </h2>
+
+          <p className="text-gray-700 mb-4">
+            The Philippine solar market's growth trajectory extends well beyond
+            the current investment cycle. The country's geography, with over
+            7,000 islands and abundant sunshine, creates natural demand for
+            distributed solar solutions that larger regional markets cannot
+            replicate.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            Energy storage integration will become increasingly important as
+            solar penetration increases, creating additional investment
+            opportunities that current solar companies are well-positioned to
+            capture. Companies building integrated solar-plus-storage
+            capabilities now will have significant competitive advantages in the
+            next phase of market development.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Portfolio Strategy: Balancing Risk and Growth
+          </h2>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Conservative Approach
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 mb-4">
+            <li>
+              Focus on CREIT for steady income with renewable energy exposure
+            </li>
+            <li>
+              EDC provides established market position with growing solar
+              components
+            </li>
+            <li>Emphasizes dividend yield and capital preservation</li>
+          </ul>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Growth-Oriented Strategy
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 mb-4">
+            <li>
+              SPNEC offers pure-play solar exposure with significant upside
+              potential
+            </li>
+            <li>
+              ALTER provides diversified renewable energy growth opportunities
+            </li>
+            <li>
+              Higher risk but potentially substantial returns from sector
+              expansion
+            </li>
+          </ul>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Balanced Portfolio Allocation
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 mb-6">
+            <li>
+              Combine income-generating REITs with growth-oriented pure plays
+            </li>
+            <li>
+              Diversify across different renewable energy technologies and
+              business models
+            </li>
+            <li>Consider position sizing based on individual risk tolerance</li>
+          </ul>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Looking Forward: The Investment Thesis
+          </h2>
+
+          <p className="text-gray-700 mb-4">
+            The solar investment opportunity in the Philippines represents more
+            than just a play on renewable energy trends. It's a bet on the
+            country's economic development, energy independence, and commitment
+            to climate action. The convergence of declining technology costs,
+            supportive government policies, and growing energy demand creates a
+            multi-year investment opportunity that extends well beyond typical
+            market cycles.
+          </p>
+
+          <p className="text-gray-700 mb-6">
+            For investors willing to embrace the volatility inherent in emerging
+            market growth stories, Philippine solar stocks offer the potential
+            for substantial returns while contributing to a more sustainable
+            energy future. The question isn't whether to invest in Philippine
+            solar stocks, but rather which companies will emerge as the
+            long-term winners in this rapidly expanding market.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Q: Which Philippine solar stock offers the best pure-play
+              exposure?
+            </h4>
+            <p className="text-gray-700">
+              A: SP New Energy Corporation (SPNEC) at ₱1.22 provides the most
+              direct solar exposure as a subsidiary of Solar Philippines, the
+              country's largest solar energy provider, with first-mover
+              advantage in renewable energy public listings.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Q: How do I balance growth and income in solar stock investing?
+            </h4>
+            <p className="text-gray-700">
+              A: Citicore Energy REIT (CREIT) at ₱3.64 combines renewable energy
+              growth potential with REIT income requirements, distributing at
+              least 90% of income to shareholders while benefiting from
+              long-term solar power purchase agreements.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Q: What are the main risks in Philippine solar stock investing?
+            </h4>
+            <p className="text-gray-700">
+              A: Key risks include grid integration challenges, regulatory
+              changes, currency fluctuations, and market concentration with
+              Meralco controlling 80% of the energy market, though long-term
+              policy trends favor renewable energy development.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Q: Should I consider diversified renewable energy companies?
+            </h4>
+            <p className="text-gray-700">
+              A: Alternergy Holdings (ALTER) at ₱0.98 and Energy Development
+              Corporation (EDC) at ₱6.87 offer broader renewable energy exposure
+              including wind, hydro, and geothermal, providing natural hedging
+              against solar-specific risks.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Q: How do I verify current stock prices before investing?
+            </h4>
+            <p className="text-gray-700">
+              A: Always check real-time pricing through PSE Edge for official
+              Philippine Stock Exchange data, or consult with licensed brokers,
+              as prices mentioned here are subject to market fluctuations and
+              may change significantly during trading hours.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Q: What makes Philippine solar stocks attractive compared to
+              regional alternatives?
+            </h4>
+            <p className="text-gray-700">
+              A: The Philippines offers 25.2% CAGR market growth, abundant solar
+              resources across 7,000+ islands, supportive government policies
+              including foreign ownership liberalization, and valuations that
+              place premiums on renewable energy pure plays over traditional
+              utilities.
+            </p>
+          </div>
+
+          <p className="text-gray-700 font-semibold mb-8">
+            Based on current market positioning and growth trajectories, SPNEC
+            and CREIT represent the most accessible entry points for investors
+            seeking exposure to this transformative sector, while ALTER and EDC
+            provide diversification opportunities across the broader renewable
+            energy transition.
+          </p>
+
+          <hr className="my-8 border-gray-300" />
+
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Disclaimer</h3>
+            <p className="text-gray-700 text-sm">
+              This article is for informational purposes only and does not
+              constitute financial advice. All investments carry risk, including
+              the potential loss of principal. Stock prices can be volatile and
+              may fluctuate significantly based on market conditions, company
+              performance, and other factors. Before making any investment
+              decisions, readers should conduct their own research, consider
+              their financial situation and risk tolerance, and consult with a
+              qualified financial advisor. The author and publisher are not
+              responsible for any investment decisions made based on the
+              information provided in this article. Past performance does not
+              guarantee future results.
+            </p>
+          </div>
+        </div>
+      </div>
+    ),
+    readingTime: 18,
+    isFeatured: false,
+  },
 ];
 
 // Utility functions for handling large datasets
