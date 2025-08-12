@@ -45,6 +45,72 @@ export interface CaseStudyData {
 }
 
 export const caseStudies: { [key: string]: CaseStudyData } = {
+  "pinagsama-taguig-6kw-2025": {
+    projectOverview: {
+      challenge:
+        "Jason Palafox was facing crippling Meralco bills of ₱8,438.63 monthly with 210 kWh consumption, representing a daily electricity cost of over ₱280. The household's high energy demands from both residential use and sari-sari store operations were creating significant financial strain in Pinagsama, Taguig City, with complete grid dependency and no backup power system.",
+      solution:
+        "Sunphil Solar designed and installed a custom 6kW hybrid solar system on June 22, 2025, featuring a 6kW Deye Hybrid Inverter for intelligent energy management, 12 x 615W Canadian Bifacial Solar Panels (7.38kW total capacity) for maximum energy capture, and 2 x 51.2V 314Ah LiFePO4 Batteries (32.15kWh total storage) for reliable backup power and nighttime energy storage for both residential and commercial operations.",
+      results:
+        "Mr. Palafox's monthly consumption dropped from 210 kWh to just 4 kWh (98.1% reduction), with his Meralco bill plummeting from ₱8,438.63 to ₱76.65 achieving ₱8,361.98 monthly savings (99.1% cost reduction). The system now provides near-complete energy independence with reliable backup power for both household and sari-sari store operations.",
+    },
+    financialAnalysis: {
+      totalInvestment: 375000,
+      monthlySavings: 8361,
+      paybackPeriod: 3.7,
+      annualROI: 26.8,
+      lifetimeSavings: 2508300,
+    },
+    environmentalImpact: {
+      co2Reduction: 12000,
+      treesEquivalent: 571,
+      annualEnergyProduction: 13140,
+    },
+    performanceMetrics: {
+      systemEfficiency: 96,
+      uptime: 99.9,
+      peakOutput: 6,
+      averageDailyProduction: 36,
+    },
+    challenges: [
+      "Crippling Meralco bills of ₱8,438.63 monthly with 210 kWh consumption",
+      "Daily electricity costs exceeding ₱280 putting severe strain on household and business budget",
+      "Complete dependence on grid power with no backup system for sari-sari store operations",
+      "High energy consumption from both residential appliances and commercial refrigeration equipment",
+      "No protection from rising electricity rates affecting business profitability",
+      "Vulnerability to power outages disrupting sari-sari store operations",
+    ],
+    solutions: [
+      "Custom-designed 6kW hybrid solar system with 7.38kW panel capacity for dual residential/commercial use",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency Canadian Bifacial panels capturing maximum sunlight in urban environment",
+      "Dual LiFePO4 battery storage (32.15kWh) for extended backup power during outages",
+      "Reliable power supply for both household needs and sari-sari store operations",
+      "Near-complete energy independence reducing grid consumption by 98.1%",
+    ],
+    testimonials: {
+      quote:
+        "Ito na yung bill ko salamat Sunphil Solar/Fairview Solarista at sa buong team niyo sana marami pa kayong matulungan. Napakasaya ko talaga Sir salamat talaga.",
+      author: "Jason Palafox",
+      role: "Homeowner & Sari-Sari Store Owner, Pinagsama, Taguig City",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Jason-before.jpg",
+      afterImage: "/images/Jason-after.jpg",
+      beforeDescription:
+        "July 2025: Meralco bill at ₱8,438.63 with 210 kWh consumption, representing daily electricity costs of over ₱280 for both residential and sari-sari store operations.",
+      afterDescription:
+        "August 2025: Bill reduced to just ₱76.65 with only 4 kWh consumption, achieving 99.1% savings and near-complete energy independence for both household and business operations.",
+    },
+    gallery: [
+      {
+        src: "/images/project76.jpg",
+        alt: "6kW Hybrid Solar Installation for Jason Palafox in Pinagsama, Taguig",
+        caption:
+          "6kW hybrid solar system installation featuring 12 Canadian bifacial panels and dual battery storage for residential and sari-sari store operations.",
+      },
+    ],
+  },
   "bagong-ilog-pasig": {
     projectOverview: {
       challenge:

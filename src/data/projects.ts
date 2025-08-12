@@ -12,6 +12,70 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "pinagsama-taguig-6kw-2025",
+    image: "/images/project76.jpg",
+    location: "Pinagsama, Taguig, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-06-22",
+    clientType: "Residential – Sari-Sari Store",
+    specification: [
+      "6kW Deye Hybrid Inverter – Intelligent power management between solar, battery, and grid.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-efficiency, dual-sided panels that capture more sunlight and increase energy yield.",
+      "2 × 51.2V 314Ah LiFePO₄ Battery – Long-lasting lithium storage for dependable backup power.",
+    ],
+    benefits: [
+      "Reduces electricity bills by up to 80%",
+      "Reliable backup power for appliances like air conditioning, refrigeration, and entertainment systems",
+      "Lowers household carbon footprint by ~1,200–1,400 kg of CO₂ per month",
+      "Seamless power supply during blackouts or scheduled maintenance outages",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system in Pinagsama, Taguig, providing the homeowner with a reliable energy solution that drastically reduces electricity bills and ensures power availability during outages. The setup is optimized for the area's urban environment, where grid interruptions and rising power costs make hybrid solar an excellent investment.\n\nPinagsama, Taguig is a fast-developing community where consistent power is vital. This hybrid system ensures that the household remains powered even during unexpected outages, while maximizing savings from solar generation. The Canadian bifacial panels provide superior performance in the city environment, where reflective surfaces can boost energy capture.\n\nSunphil Solar offers free site survey & energy assessment, tailored solar system design, and professional installation & ongoing maintenance. Request your free quote today and start your journey to energy independence.",
+  },
+  {
+    id: "balangkas-valenzuela-6kw-2025",
+    image: "/images/project75.jpg",
+    location: "Balangkas, Valenzuela, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-08-12",
+    clientType: "Residential – Medium Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart hybrid control for solar, battery, and grid power with remote monitoring capabilities.",
+      "12 × 615W Canadian Bifacial Solar Panels – Dual-sided energy capture for maximum daily yield.",
+      "51.2V 324Ah LiFePO₄ Battery – Durable lithium battery providing hours of backup power during outages.",
+    ],
+    benefits: [
+      "Cuts electricity bills by up to 70–80%",
+      "Powers essential appliances such as air conditioning, refrigerator, washing machine, and entertainment devices",
+      "Reduces ~1,300–1,500 kg of CO₂ emissions per month",
+      "Ensures uninterrupted power during grid failures or scheduled brownouts",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar system in Balangkas, Valenzuela, designed to provide reliable power for a medium-sized household. This system offers strong daytime solar generation, nighttime battery backup, and significant bill reduction—perfect for homeowners seeking energy independence without oversizing their system.\n\nBalangkas, Valenzuela is a thriving residential area where power stability matters for daily life. This 6kW hybrid system not only reduces monthly bills but also safeguards comfort during outages—especially important for families with essential appliances running daily. The Canadian bifacial panels paired with LiFePO₄ battery storage guarantee long-term performance and reliability.\n\nSunphil Solar provides free site assessment, customized system design for your energy needs, and professional installation with ongoing support. Get your free quote today and take the first step toward energy independence.",
+  },
+  {
+    id: "tondo-manila-16kw-2025",
+    image: "/images/project74.jpg",
+    location: "Tondo, Manila, Philippines",
+    system: "16kW Hybrid Solar",
+    date: "2025-08-11",
+    clientType: "Residential with High Energy Demand & Business Operations",
+    specification: [
+      "16kW Deye Hybrid Inverter – Intelligent hybrid control managing solar production, battery storage, and grid integration. Features remote monitoring and seamless automatic switchover during blackouts.",
+      "22 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules capturing sunlight from both front and back for maximum yield.",
+      "2 × 51.2V 324Ah LiFePO₄ Batteries – Long-life lithium storage ensuring extended backup during nighttime or prolonged outages.",
+    ],
+    benefits: [
+      "Potential to cut electricity bills by up to 85–90%",
+      "Powers high-demand appliances such as multiple air conditioners, freezers, heavy-duty kitchen equipment, and office electronics",
+      "Reduces approximately 3,500–4,000 kg of CO₂ emissions per month",
+      "Supports residential comfort and uninterrupted business operations",
+      "Provides power continuity during frequent or unexpected brownouts in Manila",
+    ],
+    description:
+      "Sunphil Solar completed a 16kW hybrid solar installation in Tondo, Manila, designed to support both residential and small business energy requirements. The system provides high-capacity power output, significant cost savings, and complete energy security during outages, making it ideal for households with heavy energy usage and operations running into the evening.\n\nTondo is one of Manila's busiest districts, where power reliability is critical for daily living and business. This 16kW hybrid solar setup delivers clean, consistent energy, reducing dependency on the grid while ensuring stability for households and commercial activities. The use of Canadian bifacial panels and robust LiFePO₄ storage guarantees efficiency and resilience for years to come.\n\nSunphil Solar offers free on-site evaluation & load analysis, tailored system design based on your energy profile, and professional installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in the heart of Manila.",
+  },
+  {
     id: "tuba-benguet-12kw-2025",
     image: "/images/project71.jpg",
     location: "Tuba, Benguet, Philippines",
