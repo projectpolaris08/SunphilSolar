@@ -24,13 +24,13 @@ export const projects: Project[] = [
       "2 × 51.2V 314Ah LiFePO₄ Battery – Long-lasting lithium storage for dependable backup power.",
     ],
     benefits: [
-      "Reduces electricity bills by up to 80%",
+      "Reduces electricity bills by up to 99%",
       "Reliable backup power for appliances like air conditioning, refrigeration, and entertainment systems",
       "Lowers household carbon footprint by ~1,200–1,400 kg of CO₂ per month",
       "Seamless power supply during blackouts or scheduled maintenance outages",
     ],
     description:
-      "Sunphil Solar successfully installed a 6kW hybrid solar power system in Pinagsama, Taguig, providing the homeowner with a reliable energy solution that drastically reduces electricity bills and ensures power availability during outages. The setup is optimized for the area's urban environment, where grid interruptions and rising power costs make hybrid solar an excellent investment.\n\nPinagsama, Taguig is a fast-developing community where consistent power is vital. This hybrid system ensures that the household remains powered even during unexpected outages, while maximizing savings from solar generation. The Canadian bifacial panels provide superior performance in the city environment, where reflective surfaces can boost energy capture.\n\nSunphil Solar offers free site survey & energy assessment, tailored solar system design, and professional installation & ongoing maintenance. Request your free quote today and start your journey to energy independence.",
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system in Pinagsama, Taguig, providing Jason Palafox with a reliable energy solution that reduced his electricity bill from ₱5,711 to just ₱77 monthly (99% reduction). The system powers both his home and sari-sari store operations, achieving near-complete energy independence with only 4 kWh grid consumption.\n\nThis hybrid system ensures that both household and business operations remain powered even during unexpected outages, while maximizing savings from solar generation. The Canadian bifacial panels provide superior performance in the city environment, where reflective surfaces can boost energy capture. With ₱5,634 monthly savings and a 5.5-year payback period, this investment will generate ₱1.3 million in lifetime savings.\n\nSunphil Solar offers free site survey & energy assessment, tailored solar system design, and professional installation & ongoing maintenance. Request your free quote today and start your journey to energy independence.",
   },
   {
     id: "balangkas-valenzuela-6kw-2025",

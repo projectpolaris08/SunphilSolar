@@ -48,18 +48,18 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
   "pinagsama-taguig-6kw-2025": {
     projectOverview: {
       challenge:
-        "Jason Palafox was facing crippling Meralco bills of ₱8,438.63 monthly with 210 kWh consumption, representing a daily electricity cost of over ₱280. The household's high energy demands from both residential use and sari-sari store operations were creating significant financial strain in Pinagsama, Taguig City, with complete grid dependency and no backup power system.",
+        "Jason Palafox was facing crippling Meralco bills of ₱5,711 monthly with 428 kWh consumption, running both his home and sari-sari store operations. The household's high energy demands were creating significant financial strain in Pinagsama, Taguig City, with complete grid dependency and no backup power system.",
       solution:
         "Sunphil Solar designed and installed a custom 6kW hybrid solar system on June 22, 2025, featuring a 6kW Deye Hybrid Inverter for intelligent energy management, 12 x 615W Canadian Bifacial Solar Panels (7.38kW total capacity) for maximum energy capture, and 2 x 51.2V 314Ah LiFePO4 Batteries (32.15kWh total storage) for reliable backup power and nighttime energy storage for both residential and commercial operations.",
       results:
-        "Mr. Palafox's monthly consumption dropped from 210 kWh to just 4 kWh (98.1% reduction), with his Meralco bill plummeting from ₱8,438.63 to ₱76.65 achieving ₱8,361.98 monthly savings (99.1% cost reduction). The system now provides near-complete energy independence with reliable backup power for both household and sari-sari store operations.",
+        "Mr. Palafox's monthly consumption dropped from 428 kWh to just 4 kWh (99% reduction), with his Meralco bill plummeting from ₱5,711 to ₱77 achieving ₱5,634 monthly savings (98.6% cost reduction). The system now provides near-complete energy independence with reliable backup power for both household and sari-sari store operations.",
     },
     financialAnalysis: {
       totalInvestment: 375000,
-      monthlySavings: 8361,
-      paybackPeriod: 3.7,
-      annualROI: 26.8,
-      lifetimeSavings: 2508300,
+      monthlySavings: 5634,
+      paybackPeriod: 5.5,
+      annualROI: 18.2,
+      lifetimeSavings: 1300000,
     },
     environmentalImpact: {
       co2Reduction: 12000,
@@ -73,12 +73,12 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       averageDailyProduction: 36,
     },
     challenges: [
-      "Crippling Meralco bills of ₱8,438.63 monthly with 210 kWh consumption",
-      "Daily electricity costs exceeding ₱280 putting severe strain on household and business budget",
-      "Complete dependence on grid power with no backup system for sari-sari store operations",
-      "High energy consumption from both residential appliances and commercial refrigeration equipment",
-      "No protection from rising electricity rates affecting business profitability",
-      "Vulnerability to power outages disrupting sari-sari store operations",
+      "Crippling Meralco bills of ₱5,711 monthly with 428 kWh consumption",
+      "High energy demands from both residential use and sari-sari store operations",
+      "Complete dependence on grid power with no backup system for business operations",
+      "Vulnerability to rising electricity rates affecting business profitability",
+      "Risk of power outages disrupting sari-sari store operations",
+      "No protection from Meralco rate hikes impacting monthly expenses",
     ],
     solutions: [
       "Custom-designed 6kW hybrid solar system with 7.38kW panel capacity for dual residential/commercial use",
@@ -86,7 +86,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       "High-efficiency Canadian Bifacial panels capturing maximum sunlight in urban environment",
       "Dual LiFePO4 battery storage (32.15kWh) for extended backup power during outages",
       "Reliable power supply for both household needs and sari-sari store operations",
-      "Near-complete energy independence reducing grid consumption by 98.1%",
+      "99% reduction in grid consumption providing near-complete energy independence",
     ],
     testimonials: {
       quote:
@@ -98,9 +98,9 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       beforeImage: "/images/Jason-before.jpg",
       afterImage: "/images/Jason-after.jpg",
       beforeDescription:
-        "July 2025: Meralco bill at ₱8,438.63 with 210 kWh consumption, representing daily electricity costs of over ₱280 for both residential and sari-sari store operations.",
+        "June 2025: Meralco bill at ₱5,711 with 428 kWh consumption, running both home and sari-sari store operations.",
       afterDescription:
-        "August 2025: Bill reduced to just ₱76.65 with only 4 kWh consumption, achieving 99.1% savings and near-complete energy independence for both household and business operations.",
+        "August 2025: Bill reduced to just ₱77 with only 4 kWh consumption, achieving 98.6% savings and near-complete energy independence for both household and business operations.",
     },
     gallery: [
       {
