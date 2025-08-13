@@ -16,6 +16,7 @@ import {
   Sun,
 } from "lucide-react";
 import { projects } from "@/data/projects";
+import { caseStudies } from "@/data/caseStudies";
 
 // Calculate statistics from projects data
 const totalInstallations = projects.length;
@@ -94,6 +95,29 @@ const systemSizes = projects.reduce(
   { small: 0, medium: 0, large: 0 }
 );
 
+// Dynamic financial calculations from case studies
+const caseStudyData = Object.values(caseStudies);
+const totalMonthlySavings = caseStudyData.reduce(
+  (sum, study) => sum + study.financialAnalysis.monthlySavings,
+  0
+);
+const averageMonthlySavings =
+  caseStudyData.length > 0
+    ? Math.round(totalMonthlySavings / caseStudyData.length)
+    : 0;
+
+const paybackPeriods = caseStudyData.map(
+  (s) => s.financialAnalysis.paybackPeriod
+);
+const minPaybackPeriod =
+  paybackPeriods.length > 0 ? Math.min(...paybackPeriods) : 0;
+const maxPaybackPeriod =
+  paybackPeriods.length > 0 ? Math.max(...paybackPeriods) : 0;
+
+const annualROIs = caseStudyData.map((s) => s.financialAnalysis.annualROI);
+const minROI = annualROIs.length > 0 ? Math.min(...annualROIs) : 0;
+const maxROI = annualROIs.length > 0 ? Math.max(...annualROIs) : 0;
+
 const InstallationAnalysisPage: React.FC = () => {
   return (
     <div className="min-h-screen w-full bg-neutral-950">
@@ -165,7 +189,7 @@ const InstallationAnalysisPage: React.FC = () => {
           </div>
           <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
             <div className="text-3xl font-bold text-yellow-400 mb-2">
-              ₱315K+
+              ₱{(totalMonthlySavings / 1000).toFixed(0)}K+
             </div>
             <div className="text-white mb-2 text-sm font-medium">
               Monthly Savings
@@ -432,12 +456,14 @@ const InstallationAnalysisPage: React.FC = () => {
                   Monthly Savings
                 </h3>
                 <p className="text-white mb-2 leading-relaxed flex-1">
-                  Average monthly savings range from{" "}
+                  Average monthly savings of{" "}
                   <span className="text-green-400 font-bold">
-                    ₱5,000-₱16,000
+                    ₱{averageMonthlySavings.toLocaleString()}
                   </span>{" "}
                   per household, with total monthly savings exceeding{" "}
-                  <span className="text-yellow-400 font-bold">₱315,000</span>{" "}
+                  <span className="text-yellow-400 font-bold">
+                    ₱{totalMonthlySavings.toLocaleString()}
+                  </span>{" "}
                   across all installations.
                 </p>
               </div>
@@ -459,10 +485,13 @@ const InstallationAnalysisPage: React.FC = () => {
                 <p className="text-white mb-2 leading-relaxed flex-1">
                   Average ROI of{" "}
                   <span className="text-green-400 font-bold">
-                    20-40% annually
+                    {minROI.toFixed(1)}-{maxROI.toFixed(1)}% annually
                   </span>{" "}
                   with payback periods of{" "}
-                  <span className="text-yellow-400 font-bold">3.5-5 years</span>
+                  <span className="text-yellow-400 font-bold">
+                    {minPaybackPeriod.toFixed(1)}-{maxPaybackPeriod.toFixed(1)}{" "}
+                    years
+                  </span>
                   , demonstrating exceptional financial returns.
                 </p>
               </div>
