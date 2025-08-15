@@ -12,6 +12,50 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "imus-cavite-6kw-2025",
+    image: "/images/project78.jpg",
+    location: "Imus, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-08-15",
+    clientType: "Residential – Medium Energy Demand",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart power management between solar, battery, and grid with seamless automatic switchover and remote monitoring.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial panels that capture sunlight on both sides, maximizing performance even in reflective environments.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage for uninterrupted power during brownouts and nighttime use.",
+    ],
+    benefits: [
+      "Cut electricity bills by up to 75–80%",
+      "Reliable backup power for essential appliances like air conditioning, refrigeration, and electronics",
+      "Offsets approximately 1,100–1,300 kg of CO₂ emissions per month",
+      "Ideal for suburban Cavite homes where power stability and savings matter",
+      "Seamless power during scheduled or unexpected blackouts",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar system in Imus, Cavite, designed to help the homeowner achieve energy independence while reducing electricity costs. The system provides reliable backup power during outages and optimizes energy usage by storing excess solar power for nighttime consumption.\n\nImus residents can now enjoy consistent, sustainable power and significant savings with this advanced hybrid solar system. By combining premium bifacial panels with a robust lithium battery, Sunphil Solar ensures top-tier efficiency, durability, and long-term reliability.\n\nSunphil Solar offers free site survey & energy assessment, tailored system design for your energy needs, and professional installation & lifetime support. Request your free quote now and take control of your energy future in Cavite!",
+  },
+  {
+    id: "pamplona-las-pinas-8kw-2025",
+    image: "/images/project77.jpg",
+    location: "Pamplona, Las Piñas, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-08-14",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart energy management between solar, grid, and battery with remote monitoring.",
+      "16 × 615W Canadian Bifacial Solar Panels – Premium bifacial modules that capture sunlight from both sides for maximum efficiency.",
+      "51.2V 314Ah LiFePO₄ Battery – High-capacity lithium storage for reliable nighttime power and brownout protection.",
+    ],
+    benefits: [
+      "Save up to 80–85% on electricity costs",
+      "Provides uninterrupted power for essential appliances such as air conditioning, refrigeration, and home electronics",
+      "Offsets approximately 1,500–1,800 kg of CO₂ emissions monthly",
+      "Perfect for urban homes in Las Piñas where power stability and cost savings matter",
+      "Ensures consistent power even during extended blackouts",
+    ],
+    description:
+      "Sunphil Solar completed an 8kW hybrid solar power installation in Pamplona, Las Piñas, designed for a modern household with high energy usage. The system provides reliable power during outages and significantly reduces electricity bills by storing excess solar energy for nighttime use. This setup is ideal for homes seeking energy independence and protection from rising utility rates.\n\nPamplona homeowners now enjoy stable, sustainable energy with this advanced hybrid system. By leveraging high-efficiency bifacial panels and a robust lithium battery, this installation guarantees optimal performance and long-term reliability.\n\nSunphil Solar offers free site survey & load analysis, customized system design for your needs, and expert installation with lifetime support. Request your free quote today and discover the benefits of hybrid solar power in Las Piñas.",
+  },
+  {
     id: "pinagsama-taguig-6kw-2025",
     image: "/images/project76.jpg",
     location: "Pinagsama, Taguig, Philippines",
