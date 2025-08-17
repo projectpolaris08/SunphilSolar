@@ -448,7 +448,13 @@ const CaseStudyDetailPage: React.FC = () => {
               </div>
             )}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div
+              className={`grid gap-8 ${
+                caseStudyData.beforeAfter.middleImage
+                  ? "grid-cols-1 lg:grid-cols-3"
+                  : "grid-cols-1 lg:grid-cols-2"
+              }`}
+            >
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <AlertTriangle size={20} className="text-red-400" />
@@ -476,6 +482,37 @@ const CaseStudyDetailPage: React.FC = () => {
                   {caseStudyData.beforeAfter.beforeDescription}
                 </p>
               </div>
+
+              {caseStudyData.beforeAfter.middleImage && (
+                <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Zap size={20} className="text-blue-400" />
+                    {isRescueCase ? "System Upgrade" : "Installation Progress"}
+                  </h3>
+                  <div
+                    className="cursor-pointer group"
+                    onClick={() =>
+                      openModal(
+                        caseStudyData.beforeAfter!.middleImage!,
+                        "Installation progress"
+                      )
+                    }
+                  >
+                    <img
+                      src={caseStudyData.beforeAfter.middleImage}
+                      alt="Installation progress"
+                      className="w-full h-48 object-cover rounded-lg mb-4 transform group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="text-center text-xs text-white/60 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Click to enlarge
+                    </div>
+                  </div>
+                  <p className="text-white/90">
+                    {caseStudyData.beforeAfter.middleDescription ||
+                      "Solar system installation in progress"}
+                  </p>
+                </div>
+              )}
 
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">

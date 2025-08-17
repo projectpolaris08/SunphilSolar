@@ -52,6 +52,8 @@ interface CaseStudyData {
     afterImage: string;
     beforeDescription: string;
     afterDescription: string;
+    middleImage?: string;
+    middleDescription?: string;
     videoUrl?: string;
     videoTimestamp?: number;
   };
@@ -409,7 +411,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ data, projectId }) => {
               </div>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-8">
+            <div
+              className={`grid gap-8 ${
+                data.beforeAfter.middleImage
+                  ? "md:grid-cols-3"
+                  : "md:grid-cols-2"
+              }`}
+            >
               <div className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10">
                 <img
                   src={data.beforeAfter.beforeImage}
@@ -423,6 +431,23 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ data, projectId }) => {
                   {data.beforeAfter.beforeDescription}
                 </p>
               </div>
+
+              {data.beforeAfter.middleImage && (
+                <div className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10">
+                  <img
+                    src={data.beforeAfter.middleImage}
+                    alt="Installation progress"
+                    className="w-full h-auto rounded-lg mb-4"
+                  />
+                  <h4 className="text-lg font-semibold text-white mb-2">
+                    {isRescueCase ? "System Upgrade" : "Installation Progress"}
+                  </h4>
+                  <p className="text-gray-300">
+                    {data.beforeAfter.middleDescription ||
+                      "Solar system installation in progress"}
+                  </p>
+                </div>
+              )}
 
               <div className="bg-white/5 p-4 rounded-xl shadow-lg border border-white/10">
                 <img

@@ -43,7 +43,6 @@ const AboutPage: React.FC = () => {
       description:
         "Ma. Katrina Bascon owns Sunphil Solar and leads its day-to-day operations based in Fairview, Quezon City. She oversees sales, operations, legal, and finance, and manages the company's customer relationship management (CRM) system to keep client interactions organized and efficient. Katrina is passionate about expanding access to clean energy and building a reliable, customer-focused solar company.",
       image: "/images/Sunphil.jpg",
-      facebook: "https://www.facebook.com/princesskkaaaatteee",
     },
     {
       initial: "J",
@@ -52,7 +51,6 @@ const AboutPage: React.FC = () => {
       description:
         "Jhayar is the Head of Operations and Chief Technical Officer at Sunphil Solar. He oversees daily operations and drives the company's technical direction - from system design to installation. Known for his hands-on expertise and strong leadership, Jhayar works closely with teams to ensure every project is completed efficiently, safely, and on time.",
       image: "/images/Sunphil.jpg",
-      facebook: "https://www.facebook.com/jhayar.bacolod.9",
       viber: "+639353658092",
       whatsapp: "+639353658092",
     },
@@ -247,6 +245,13 @@ const AboutPage: React.FC = () => {
 
   const builders: TeamMemberData[] = [
     {
+      initial: "M",
+      name: "Mark",
+      title: "Builder",
+      description: "Expert in hybrid inverter setups and connections.",
+      image: "/images/Mark.jpeg",
+    },
+    {
       initial: "J",
       name: "Joshua",
       title: "Builder",
@@ -259,13 +264,6 @@ const AboutPage: React.FC = () => {
       title: "Builder",
       description: "Inverter Technical Specialist.",
       image: "/images/David.jpg",
-    },
-    {
-      initial: "M",
-      name: "Mark",
-      title: "Builder",
-      description: "Expert in hybrid inverter setups and connections.",
-      image: "/images/Mark.jpeg",
     },
     {
       initial: "J",

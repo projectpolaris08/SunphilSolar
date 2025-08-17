@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "san-pedro-laguna-8kw-2025",
+    image: "/images/project79.jpg",
+    location: "San Pedro, Laguna, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-08-17",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Intelligent power management between solar, grid, and battery with remote monitoring.",
+      "18 × 615W Canadian Bifacial Solar Panels – High-performance bifacial modules designed to capture sunlight from both sides for maximum yield.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage to power the home during the night and brownouts.",
+    ],
+    benefits: [
+      "Save up to 80–85% on electricity bills",
+      "Powers essential home appliances including air conditioning, refrigeration, and entertainment systems",
+      "Reduces approximately 1,500–1,800 kg of CO₂ emissions every month",
+      "Ideal for residential homes in Laguna seeking stability and savings",
+      "Ensures uninterrupted power supply during brownouts or maintenance outages",
+    ],
+    description:
+      "Sunphil Solar released and installed a newly designed pre-assembled 8kW hybrid solar power system in San Pedro, Laguna, tailored for a household with significant energy needs. This system ensures consistent power during outages and delivers major savings by storing excess solar energy for nighttime use. Perfect for families who want energy independence while shielding themselves from rising electricity costs.\n\nSan Pedro homeowners can now enjoy a dependable, sustainable power source with this advanced hybrid solar system. Combining high-efficiency bifacial panels and a robust LiFePO₄ battery, this installation guarantees optimal performance and long-term reliability.\n\nSunphil Solar provides free site survey & load analysis, customized solar system design, and professional installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Laguna.",
+  },
+  {
     id: "imus-cavite-6kw-2025",
     image: "/images/project78.jpg",
     location: "Imus, Cavite, Philippines",
@@ -1352,7 +1374,7 @@ export const projects: Project[] = [
       "Ideal for Marikina homes with medium energy consumption and limited rooftop space",
     ],
     description:
-      "Sunphil Solar installed a 6kW hybrid solar energy system for a client in Marikina City, providing consistent energy savings and dependable backup power. With frequent brownouts and rising utility costs in Metro Manila, this system was designed to give the homeowner long-term peace of mind, reduced electric bills, and increased energy independence. Marikina is known for its environmental challenges, but this installation proves that solar energy is both safe and sustainable when properly installed. With elevated components and weatherproof design, this system is built to last even in flood-prone areas. Sunphil Solar offers free site evaluation, fast & professional installation, after-sales support, and energy monitoring for Marikina residents who want to go solar with confidence.",
+      "Sunphil Solar installed a 6 kW hybrid solar system for a homeowner in Marikina City to help reduce electricity costs and maximize energy efficiency. With electricity rates continuously rising, the client wanted a smart solution that offers real savings and energy security. This system combines high-performance bifacial solar panels, a hybrid inverter, and reliable battery storage to ensure lower electric bills and efficient power use throughout the day and night. Designed for long-term performance, the installation reflects Sunphil Solar's commitment to quality service, professional installation, and dependable after-sales support.",
   },
   {
     id: "las-pinas-metro-manila",
