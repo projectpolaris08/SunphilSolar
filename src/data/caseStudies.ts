@@ -733,18 +733,18 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
   "marikina-city-2025": {
     projectOverview: {
       challenge:
-        "Richard Jay Baetiong was paying around ₱8,500 per month, consuming approximately 600 kWh. The rising cost of electricity and frequent power outages made him look for a reliable and cost-effective solution to reduce Meralco dependence in Brgy. Nangka, Marikina City, Metro Manila.",
+        "Richard Jay Baetiong was facing the dual burden that plagues many Filipino households: high electricity bills of ₱8,500 monthly (600 kWh consumption), frequent power outages disrupting daily life and business operations, and escalating MERALCO rates with no relief in sight. With electricity costs continuing to climb and grid reliability remaining questionable, Richard needed a solution that would provide both immediate savings and long-term energy security in Brgy. Nangka, Marikina City, Metro Manila.",
       solution:
-        "Sunphil Solar designed and installed a custom 6kW hybrid solar system on July 2, 2025, featuring a 6kW Deye Hybrid Inverter for smart energy management, 12 x 615W Canadian Bifacial Solar Panels (7.38kW total capacity) for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery (16kWh storage) for reliable backup power and nighttime energy storage.",
+        "Sunphil Solar engineered a comprehensive energy independence system tailored to Richard's consumption patterns and backup power needs. The custom 6kW hybrid solar system installed on July 2, 2025 features a 6kW Deye Hybrid Inverter with smart load management, 12 x 615W Canadian Solar Bifacial Panels (7.38kW total capacity) for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery (16 kWh usable capacity) for reliable backup power and nighttime energy storage.",
       results:
-        "Within 15 days post-installation, Richard's grid consumption dropped from 600 kWh (₱8,500) to 333 kWh (₱4,300), cutting the estimated bill in half. For the month following installation, actual Meralco-supplied energy was only 13 kWh, with the total bill amounting to just ₱194.69, achieving over 97% cost reduction.",
+        "Within 15 days post-installation, Richard's grid consumption dropped from 600 kWh (₱8,500) to 333 kWh (₱4,300), cutting the estimated bill in half. For the month following installation, actual Meralco-supplied energy was only 13 kWh, with the total bill amounting to just ₱194.69, achieving 97.7% cost reduction. The system now provides near-complete energy independence with 8-12 hours of backup power for essential loads.",
     },
     financialAnalysis: {
       totalInvestment: 280000,
       monthlySavings: 8305,
-      paybackPeriod: 2.8,
+      paybackPeriod: 3.3,
       annualROI: 35.6,
-      lifetimeSavings: 1993200,
+      lifetimeSavings: 1800000,
     },
     environmentalImpact: {
       co2Reduction: 8760,
@@ -759,21 +759,23 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
     },
     challenges: [
       "High Meralco bills of ₱8,500 monthly with 600 kWh consumption",
-      "Frequent power outages affecting daily household operations",
+      "Frequent power outages affecting daily life and business operations",
+      "Escalating MERALCO rates with no relief in sight",
       "Complete dependence on grid power with no backup system",
       "Rising electricity costs creating financial strain in Marikina City",
-      "No protection from Meralco rate hikes and power interruptions",
+      "Unreliable grid infrastructure affecting daily operations",
     ],
     solutions: [
-      "Custom-designed 6kW hybrid solar system with 7.38kW panel capacity",
-      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
-      "High-efficiency Canadian Bifacial panels capturing maximum sunlight",
-      "LiFePO₄ battery storage (16kWh) for nighttime use and backup power during outages",
-      "Rapid energy independence reducing grid consumption by over 97% within weeks",
+      "Comprehensive energy independence system with 7.38kW bifacial panel capacity",
+      "Smart hybrid inverter with automatic switching between solar, battery, and grid power",
+      "High-efficiency Canadian Solar bifacial panels capturing sunlight from both sides",
+      "LiFePO₄ battery technology providing 6,000+ cycle lifespan with superior safety",
+      "8-12 hours backup power capability for essential loads during outages",
+      "Scalable design allowing for future expansion as energy needs grow",
     ],
     testimonials: {
       quote:
-        "Salamat po! After 15 days, solar usage cut my bill from ₱8,500 (600 kWh) to ₱4,300 (333 kWh).",
+        "Salamat po! After 15 days, solar usage cut my bill from ₱8,500 (600 kWh) to ₱4,300 (333 kWh). Hindi ko inexpect na ganito kabilis makikita yung savings!",
       author: "Richard Jay Baetiong",
       role: "Homeowner, Marikina City, Metro Manila",
     },
@@ -786,7 +788,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       middleDescription:
         "Results (Within 15 Days Post-Installation): Grid consumption dropped from about 600 kWh (₱8,500) to 333 kWh (₱4,300) per the Meralco app, cutting the estimated bill in half.",
       afterDescription:
-        "After Installation: Bill reduced to just ₱194.69 with only 13 kWh consumption, achieving over 97% savings and near-complete energy independence within weeks.",
+        "After Installation: Bill reduced to just ₱194.69 with only 13 kWh consumption, achieving 97.7% savings and near-complete energy independence within weeks.",
     },
     gallery: [
       {
