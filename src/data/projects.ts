@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "meycauayan-bulacan-8kw-2025",
+    image: "/images/project80.jpg",
+    location: "Meycauayan, Bulacan, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-08-18",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart energy management between solar, battery, and grid, complete with remote monitoring.",
+      "16 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules that absorb sunlight from both sides for maximum energy harvest.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium storage for uninterrupted power during night hours and brownouts.",
+    ],
+    benefits: [
+      "Slash electricity bills by up to 80–85%",
+      "Powers essential household appliances such as air conditioning, refrigerators, and entertainment systems",
+      "Cuts down approximately 1,500–1,800 kg of CO₂ emissions every month",
+      "Perfect for Bulacan households looking for stability, savings, and sustainability",
+      "Guarantees uninterrupted power supply during brownouts and scheduled maintenance",
+    ],
+    description:
+      "Sunphil Solar successfully installed an 8kW hybrid solar power system in Meycauayan, Bulacan, designed for a household with significant energy demands. This setup provides consistent power during outages and substantial monthly savings by storing excess solar energy for nighttime use. It's the perfect solution for families seeking energy independence while protecting themselves from ever-increasing electricity rates.\n\nHomeowners in Meycauayan can now rely on clean, dependable energy with this advanced 8kW hybrid solar system. Featuring high-performance bifacial panels and a robust LiFePO₄ battery, this installation promises peak efficiency, long-term reliability, and true energy independence.\n\nSunphil Solar provides free site survey & load analysis, customized solar system design, and professional installation with lifetime support. Request your free quote today and experience the power of hybrid solar energy in Bulacan.",
+  },
+  {
     id: "san-pedro-laguna-8kw-2025",
     image: "/images/project79.jpg",
     location: "San Pedro, Laguna, Philippines",
