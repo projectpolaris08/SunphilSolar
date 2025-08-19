@@ -741,7 +741,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
     },
     financialAnalysis: {
       totalInvestment: 280000,
-      monthlySavings: 8305,
+      monthlySavings: 8258,
       paybackPeriod: 3.3,
       annualROI: 35.6,
       lifetimeSavings: 1800000,
