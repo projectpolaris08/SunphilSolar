@@ -733,11 +733,11 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
   "marikina-city-2025": {
     projectOverview: {
       challenge:
-        "Richard Jay Baetiong was facing the dual burden that plagues many Filipino households: high electricity bills of ₱8,500 monthly (600 kWh consumption), frequent power outages disrupting daily life and business operations, and escalating MERALCO rates with no relief in sight. With electricity costs continuing to climb and grid reliability remaining questionable, Richard needed a solution that would provide both immediate savings and long-term energy security in Brgy. Nangka, Marikina City, Metro Manila.",
+        "Richard Jay Baetiong was facing the dual burden that plagues many Filipino households: high electricity bills of ₱8,453.33 monthly (633 kWh consumption), frequent power outages disrupting daily life and business operations, and escalating MERALCO rates with no relief in sight. With electricity costs continuing to climb and grid reliability remaining questionable, Richard needed a solution that would provide both immediate savings and long-term energy security in Brgy. Nangka, Marikina City, Metro Manila.",
       solution:
         "Sunphil Solar engineered a comprehensive energy independence system tailored to Richard's consumption patterns and backup power needs. The custom 6kW hybrid solar system installed on July 2, 2025 features a 6kW Deye Hybrid Inverter with smart load management, 12 x 615W Canadian Solar Bifacial Panels (7.38kW total capacity) for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery (16 kWh usable capacity) for reliable backup power and nighttime energy storage.",
       results:
-        "Within 15 days post-installation, Richard's grid consumption dropped from 600 kWh (₱8,500) to 333 kWh (₱4,300), cutting the estimated bill in half. For the month following installation, actual Meralco-supplied energy was only 13 kWh, with the total bill amounting to just ₱194.69, achieving 97.7% cost reduction. The system now provides near-complete energy independence with 8-12 hours of backup power for essential loads.",
+        "Within 15 days post-installation, Richard's grid consumption dropped from 633 kWh (₱8,453.33) to 333 kWh (₱4,429.27), cutting the estimated bill in half. For the month following installation, actual Meralco-supplied energy was only 13 kWh, with the total bill amounting to just ₱194.69, achieving 97.7% cost reduction. The system now provides near-complete energy independence with 8-12 hours of backup power for essential loads.",
     },
     financialAnalysis: {
       totalInvestment: 280000,
@@ -758,7 +758,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       averageDailyProduction: 32,
     },
     challenges: [
-      "High Meralco bills of ₱8,500 monthly with 600 kWh consumption",
+      "High Meralco bills of ₱8,453.33 monthly with 633 kWh consumption",
       "Frequent power outages affecting daily life and business operations",
       "Escalating MERALCO rates with no relief in sight",
       "Complete dependence on grid power with no backup system",
@@ -775,7 +775,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
     ],
     testimonials: {
       quote:
-        "Salamat po! After 15 days, solar usage cut my bill from ₱8,500 (600 kWh) to ₱4,300 (333 kWh). Hindi ko inexpect na ganito kabilis makikita yung savings!",
+        "Salamat po! After 15 days, solar usage cut my bill from ₱8,453.33 (633 kWh) to ₱4,429.27 (333 kWh). Hindi ko inexpect na ganito kabilis makikita yung savings!",
       author: "Richard Jay Baetiong",
       role: "Homeowner, Marikina City, Metro Manila",
     },
@@ -783,10 +783,10 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       beforeImage: "/images/Richard-before.jpg",
       afterImage: "/images/Richard-after.jpg",
       beforeDescription:
-        "Before Installation: Meralco bill at ₱8,500 monthly with 600 kWh consumption, representing high energy costs and grid dependency.",
+        "Before Installation: Meralco bill at ₱8,453.33 monthly with 633 kWh consumption, representing high energy costs and grid dependency.",
       middleImage: "/images/richard-middle.jpg",
       middleDescription:
-        "Results (Within 15 Days Post-Installation): Grid consumption dropped from about 600 kWh (₱8,500) to 333 kWh (₱4,300) per the Meralco app, cutting the estimated bill in half.",
+        "Results (Within 15 Days Post-Installation): Grid consumption dropped from about 600 kWh (₱8,453.33) to 333 kWh (₱4,429.27) per the Meralco app, cutting the estimated bill in half.",
       afterDescription:
         "After Installation: Bill reduced to just ₱194.69 with only 13 kWh consumption, achieving 97.7% savings and near-complete energy independence within weeks.",
     },
@@ -795,7 +795,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
         src: "/images/Richard-before.jpg",
         alt: "Richard Jay Baetiong's Meralco bill before solar installation",
         caption:
-          "Before Installation: Meralco bill at ₱8,500 monthly with 600 kWh consumption.",
+          "Before Installation: Meralco bill at ₱8,453.33 monthly with 633 kWh consumption.",
       },
       {
         src: "/images/richard-middle.jpg",
