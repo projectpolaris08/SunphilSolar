@@ -117,7 +117,7 @@ const testimonials = [
     savings: "₱8,305/month",
     location: "Marikina City",
     system: "6kW Hybrid Solar",
-    beforeAfter: "₱8,500 → ₱194 (97.7% savings)",
+    beforeAfter: "₱8,453.33 → ₱194 (97.7% savings)",
     caseStudySlug: "marikina-city-2025",
   },
   {
