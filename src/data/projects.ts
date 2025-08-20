@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "brgy-calawis-antipolo-rizal-8kw-2025",
+    image: "/images/project81.jpg",
+    location: "Brgy. Calawis, Antipolo, Rizal, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-08-20",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Intelligent power management between solar, grid, and battery with remote monitoring.",
+      "13 × 615W Canadian Bifacial Solar Panels – High-efficiency bifacial modules designed to capture sunlight from both sides for maximum output.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage to power the home during nighttime and brownouts.",
+    ],
+    benefits: [
+      "Save up to 80–85% on electricity bills",
+      "Powers essential home appliances including air conditioning, refrigeration, and entertainment systems",
+      "Reduces approximately 1,500–1,800 kg of CO₂ emissions every month",
+      "Perfect for residential homes in Rizal seeking long-term stability and savings",
+      "Ensures uninterrupted power supply during brownouts and extended outages",
+    ],
+    description:
+      "Sunphil Solar recently completed an 8kW hybrid solar power installation in Brgy. Calawis, Antipolo. This system is designed for a modern household with substantial energy usage, ensuring consistent power during outages and major cost savings by storing excess solar energy for nighttime use. It's an ideal setup for families who want energy independence and protection from rising electricity costs.\n\nHomeowners in Brgy. Calawis can now enjoy clean, reliable energy with this advanced hybrid solar system. By integrating high-performance bifacial panels with a robust LiFePO₄ battery, this installation guarantees optimal efficiency and dependable performance for years to come. This setup is upgradable up to 18 pieces of 615W Canadian Bifacial Solar panels and 2 × 51.2V 314Ah batteries (32kWh total capacity), providing future expansion options as energy needs grow.\n\nSunphil Solar provides free site survey & load analysis, customized solar system design, and professional installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Antipolo.",
+  },
+  {
     id: "meycauayan-bulacan-8kw-2025",
     image: "/images/project80.jpg",
     location: "Meycauayan, Bulacan, Philippines",
