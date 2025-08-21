@@ -152,19 +152,19 @@ export const Footer: React.FC = () => {
               <li className="flex">
                 <Phone className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
                 <a
-                  href="tel:+639353658092"
+                  href="tel:+639606921760"
                   className="text-secondary-400 hover:text-primary-400 transition-colors"
                 >
-                  (+63) 935 365 8092
+                  (+63) 960 692 1760
                 </a>
               </li>
               <li className="flex">
                 <Mail className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
                 <a
-                  href="mailto:sunphilsolarpowerinstallation@gmail.com"
+                  href="mailto:sunphilsolar@sunphilsolar.com"
                   className="text-secondary-400 hover:text-primary-400 transition-colors"
                 >
-                  sunphilsolarpowerinstallation@gmail.com
+                  sunphilsolar@sunphilsolar.com
                 </a>
               </li>
             </ul>
