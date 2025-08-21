@@ -1,23 +1,50 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageSquare, X, Send, Phone, Headphones } from "lucide-react";
+import {
+  MessageSquare,
+  X,
+  Send,
+  Phone,
+  Headphones,
+  Sparkles,
+  Clock,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { useSound } from "react-sounds";
 
 interface Message {
   id: number;
   text: string;
   sender: "user" | "bot";
+  timestamp?: Date;
+}
+
+interface PopupNotification {
+  id: number;
+  type: "info" | "success" | "warning" | "error";
+  title: string;
+  message: string;
+  duration?: number;
 }
 
 const CONTACT_BAR_HIDE_DELAY = 5000;
 const CONTACT_BAR_REHIDE_DELAY = 1500;
+const WELCOME_POPUP_DELAY = 3000;
+const TYPING_INDICATOR_DELAY = 1000;
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showWelcomePopup, setShowWelcomePopup] = useState(false);
+  const [showTypingIndicator, setShowTypingIndicator] = useState(false);
+  const [notifications, setNotifications] = useState<PopupNotification[]>([]);
+  const [hasInteracted, setHasInteracted] = useState(false);
+
   const initialMessages: Message[] = [
     {
       id: 1,
       text: "Hello! I'm Solara, your solar energy assistant. I can help you with information about our solar solutions, projects, and services. How can I assist you today?",
       sender: "bot",
+      timestamp: new Date(),
     },
   ];
   const [messages, setMessages] = useState<Message[]>(initialMessages);
@@ -30,6 +57,9 @@ const ChatBot = () => {
 
   const { play: playButton } = useSound("ui/button_hard", { volume: 0.4 });
   const { play: playSubmit } = useSound("ui/submit", { volume: 0.5 });
+  const { play: playNotification } = useSound("ui/notification", {
+    volume: 0.3,
+  });
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -38,6 +68,17 @@ const ChatBot = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Show welcome popup after delay if user hasn't interacted
+  useEffect(() => {
+    if (!hasInteracted && !isOpen) {
+      const timer = setTimeout(() => {
+        setShowWelcomePopup(true);
+        playNotification();
+      }, WELCOME_POPUP_DELAY);
+      return () => clearTimeout(timer);
+    }
+  }, [hasInteracted, isOpen, playNotification]);
 
   // Hide contact bar after 5 seconds when chat is open
   useEffect(() => {
@@ -50,6 +91,18 @@ const ChatBot = () => {
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
+
+  // Auto-remove notifications
+  useEffect(() => {
+    notifications.forEach((notification) => {
+      const timer = setTimeout(() => {
+        setNotifications((prev) =>
+          prev.filter((n) => n.id !== notification.id)
+        );
+      }, notification.duration || 5000);
+      return () => clearTimeout(timer);
+    });
+  }, [notifications]);
 
   // Handlers for hover
   const handleContactIconEnter = () => {
@@ -64,15 +117,37 @@ const ChatBot = () => {
     setRehideTimeout(timeout);
   };
 
+  const addNotification = (
+    type: PopupNotification["type"],
+    title: string,
+    message: string,
+    duration = 5000
+  ) => {
+    const newNotification: PopupNotification = {
+      id: Date.now(),
+      type,
+      title,
+      message,
+      duration,
+    };
+    setNotifications((prev) => [...prev, newNotification]);
+    playNotification();
+  };
+
   const getBotResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
 
     // 💰 Cost & Financial Questions
     if (message.includes("how much") && message.includes("cost")) {
+      addNotification(
+        "info",
+        "Cost Calculator",
+        "Check out our solar calculator for personalized estimates!"
+      );
       return "The cost depends on your household's appliance usage and energy needs. You can use our free Solar Calculator at https://sunphilsolar.com/calculator to get a personalized recommendation for your setup.";
     }
     if (message.includes("roi") || message.includes("return on investment")) {
-      return "ROI varies depending on your energy consumption and system size. For a detailed explanation and real examples, check out our blog post about solar ROI in the Philippines: https://sunphilsolar.com/blog/solar-roi-philippines";
+      return "ROI varies depending on your energy consumption and system size. For real examples and detailed case studies, check out our case studies page: https://sunphilsolar.com/case-studies";
     }
     if (
       message.includes("financing") ||
@@ -83,6 +158,11 @@ const ChatBot = () => {
       return "Currently, we offer cash payment only.";
     }
     if (message.includes("save") && message.includes("electric")) {
+      addNotification(
+        "success",
+        "Great Savings!",
+        "Our clients typically save up to 70% on electricity bills!"
+      );
       return "Our clients typically save up to 70% on their electricity bills with a properly sized solar system.";
     }
 
@@ -181,26 +261,40 @@ const ChatBot = () => {
   const handleSendMessage = () => {
     if (inputMessage.trim() === "") return;
 
+    setHasInteracted(true);
+    setShowWelcomePopup(false);
+
     // Add user message
     const newMessage: Message = {
       id: messages.length + 1,
       text: inputMessage,
       sender: "user",
+      timestamp: new Date(),
     };
     setMessages((prev) => [...prev, newMessage]);
     setInputMessage("");
 
+    // Show typing indicator
+    setShowTypingIndicator(true);
+
     // Get and send bot response
     setTimeout(() => {
+      setShowTypingIndicator(false);
       const botResponse: Message = {
         id: messages.length + 2,
         text: getBotResponse(inputMessage),
         sender: "bot",
+        timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botResponse]);
-    }, 1000);
+    }, TYPING_INDICATOR_DELAY + Math.random() * 1000);
 
     playSubmit();
+  };
+
+  const handleQuickReply = (reply: string) => {
+    setInputMessage(reply);
+    handleSendMessage();
   };
 
   // Helper to convert URLs in text to clickable links
@@ -227,15 +321,111 @@ const ChatBot = () => {
     });
   }
 
+  const quickReplies = [
+    "How much does solar cost?",
+    "What's the ROI?",
+    "How long does installation take?",
+    "Do you offer batteries?",
+    "Contact a live agent",
+  ];
+
   return (
     <div className="fixed bottom-4 right-4 z-50">
+      {/* Welcome Popup */}
+      {showWelcomePopup && !isOpen && (
+        <div className="absolute bottom-20 right-0 bg-white rounded-lg shadow-xl p-4 w-72 border border-blue-200 animate-bounce">
+          <div className="flex items-center space-x-2 mb-2">
+            <Sparkles className="text-yellow-500" size={20} />
+            <h4 className="font-semibold text-gray-800">
+              Need help with solar?
+            </h4>
+          </div>
+          <p className="text-sm text-gray-600 mb-3">
+            Chat with Solara, your AI solar assistant! Get instant answers about
+            costs, installation, and more.
+          </p>
+          <div className="flex space-x-2">
+            <button
+              onClick={() => {
+                setIsOpen(true);
+                setShowWelcomePopup(false);
+                setHasInteracted(true);
+                playButton();
+              }}
+              className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition-colors"
+            >
+              Start Chat
+            </button>
+            <button
+              onClick={() => {
+                setShowWelcomePopup(false);
+                setHasInteracted(true);
+              }}
+              className="text-gray-500 px-3 py-1 rounded text-sm hover:bg-gray-100 transition-colors"
+            >
+              Maybe Later
+            </button>
+          </div>
+          <div className="absolute -top-2 -right-2">
+            <button
+              onClick={() => {
+                setShowWelcomePopup(false);
+                setHasInteracted(true);
+              }}
+              className="bg-gray-200 hover:bg-gray-300 rounded-full p-1"
+            >
+              <X size={12} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Notifications */}
+      {notifications.map((notification) => (
+        <div
+          key={notification.id}
+          className="absolute bottom-20 right-0 bg-white rounded-lg shadow-xl p-4 w-72 border-l-4 animate-slide-in"
+          style={{
+            borderLeftColor:
+              notification.type === "success"
+                ? "#10b981"
+                : notification.type === "warning"
+                ? "#f59e0b"
+                : notification.type === "error"
+                ? "#ef4444"
+                : "#3b82f6",
+          }}
+        >
+          <div className="flex items-center space-x-2 mb-2">
+            {notification.type === "success" && (
+              <CheckCircle className="text-green-500" size={20} />
+            )}
+            {notification.type === "warning" && (
+              <AlertCircle className="text-yellow-500" size={20} />
+            )}
+            {notification.type === "error" && (
+              <AlertCircle className="text-red-500" size={20} />
+            )}
+            {notification.type === "info" && (
+              <AlertCircle className="text-blue-500" size={20} />
+            )}
+            <h4 className="font-semibold text-gray-800">
+              {notification.title}
+            </h4>
+          </div>
+          <p className="text-sm text-gray-600">{notification.message}</p>
+        </div>
+      ))}
+
       {!isOpen ? (
         <button
           onClick={() => {
             setIsOpen(true);
+            setShowWelcomePopup(false);
+            setHasInteracted(true);
             playButton();
           }}
-          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition-all duration-300"
+          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
         >
           <MessageSquare size={24} />
         </button>
@@ -243,7 +433,10 @@ const ChatBot = () => {
         <div className="bg-white rounded-lg shadow-xl w-80 h-[400px] md:w-96 md:h-[500px] flex flex-col">
           {/* Header */}
           <div className="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
-            <h3 className="font-semibold">Solara</h3>
+            <div className="flex items-center space-x-2">
+              <Sparkles className="text-yellow-300" size={20} />
+              <h3 className="font-semibold">Solara</h3>
+            </div>
             <button
               onClick={() => {
                 setIsOpen(false);
@@ -275,11 +468,57 @@ const ChatBot = () => {
                   {message.sender === "bot"
                     ? linkify(message.text)
                     : message.text}
+                  {message.timestamp && (
+                    <div
+                      className={`text-xs mt-1 ${
+                        message.sender === "user"
+                          ? "text-blue-200"
+                          : "text-gray-500"
+                      }`}
+                    >
+                      {message.timestamp.toLocaleTimeString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
+
+            {/* Typing Indicator */}
+            {showTypingIndicator && (
+              <div className="flex justify-start">
+                <div className="bg-gray-100 text-gray-800 rounded-lg p-3">
+                  <div className="flex items-center space-x-1">
+                    <Clock size={16} className="text-gray-500" />
+                    <span className="text-sm text-gray-500">
+                      Solara is typing...
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div ref={messagesEndRef} />
           </div>
+
+          {/* Quick Reply Buttons */}
+          {messages.length === 1 && (
+            <div className="px-4 pb-2">
+              <div className="flex flex-wrap gap-2">
+                {quickReplies.slice(0, 3).map((reply, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleQuickReply(reply)}
+                    className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs hover:bg-blue-100 transition-colors border border-blue-200"
+                  >
+                    {reply}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Contact Options Bar or Icon */}
           <div className="relative">
