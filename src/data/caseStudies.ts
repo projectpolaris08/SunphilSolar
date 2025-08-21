@@ -60,8 +60,8 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       totalInvestment: 375000,
       monthlySavings: 5634,
       paybackPeriod: 5.5,
-      annualROI: 18.2,
-      lifetimeSavings: 1300000,
+      annualROI: 18.0,
+      lifetimeSavings: 1352160,
     },
     environmentalImpact: {
       co2Reduction: 12000,
@@ -125,8 +125,8 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
     financialAnalysis: {
       totalInvestment: 295000,
       monthlySavings: 6671,
-      paybackPeriod: 3.5,
-      annualROI: 28.6,
+      paybackPeriod: 3.7,
+      annualROI: 27.1,
       lifetimeSavings: 1601040,
     },
     environmentalImpact: {
@@ -188,8 +188,8 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       totalInvestment: 490000,
       monthlySavings: 16323,
       paybackPeriod: 2.5,
-      annualROI: 40,
-      lifetimeSavings: 4406900,
+      annualROI: 40.0,
+      lifetimeSavings: 3917520,
     },
     environmentalImpact: {
       co2Reduction: 2400,
@@ -269,7 +269,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       monthlySavings: 5000,
       paybackPeriod: 4.7,
       annualROI: 21.4,
-      lifetimeSavings: 1220000,
+      lifetimeSavings: 1200000,
     },
     environmentalImpact: {
       co2Reduction: 9600,
@@ -504,7 +504,7 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       monthlySavings: 16000,
       paybackPeriod: 3.4,
       annualROI: 29.5,
-      lifetimeSavings: 4800000,
+      lifetimeSavings: 3840000,
     },
     environmentalImpact: {
       co2Reduction: 13200,
@@ -559,9 +559,9 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
     financialAnalysis: {
       totalInvestment: 470000,
       monthlySavings: 12049,
-      paybackPeriod: 3.25,
+      paybackPeriod: 3.3,
       annualROI: 30.8,
-      lifetimeSavings: 3144875,
+      lifetimeSavings: 2891760,
     },
     environmentalImpact: {
       co2Reduction: 10920,
@@ -740,11 +740,11 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
         "Within 15 days post-installation, Richard's grid consumption dropped from 633 kWh (₱8,453.33) to 333 kWh (₱4,429.27), cutting the estimated bill in half. For the month following installation, actual Meralco-supplied energy was only 13 kWh, with the total bill amounting to just ₱194.69, achieving 97.7% cost reduction. The system now provides near-complete energy independence with 8-12 hours of backup power for essential loads.",
     },
     financialAnalysis: {
-      totalInvestment: 280000,
+      totalInvestment: 300000,
       monthlySavings: 8258,
-      paybackPeriod: 3.3,
-      annualROI: 35.6,
-      lifetimeSavings: 1800000,
+      paybackPeriod: 3.0,
+      annualROI: 33.0,
+      lifetimeSavings: 1981920,
     },
     environmentalImpact: {
       co2Reduction: 8760,
