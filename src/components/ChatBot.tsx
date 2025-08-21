@@ -163,7 +163,7 @@ const ChatBot = () => {
       message.includes("something goes wrong") ||
       message.includes("support")
     ) {
-      return "You can reach us anytime through our Contact Form (https://sunphilsolar.com/contact), Facebook Messenger, or by calling us at (+63) 935 365 8092. We're here to help!";
+      return "You can reach us anytime through our Contact Form (https://sunphilsolar.com/contact), Facebook Messenger, or by calling us at (+63) 960 692 1760. We're here to help!";
     }
     if (
       message.includes("where is your office") ||

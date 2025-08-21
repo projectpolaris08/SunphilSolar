@@ -166,10 +166,10 @@ export const ContactForm: React.FC = () => {
                   Email Us
                 </div>
                 <a
-                  href="mailto:sunphilsolarpowerinstallation@gmail.com"
+                  href="mailto:sunphilsolar@sunphilsolar.com"
                   className="text-primary-600 hover:text-primary-700"
                 >
-                  sunphilsolarpowerinstallation@gmail.com
+                  sunphilsolar@sunphilsolar.com
                 </a>
               </div>
               <div className="flex-1">
@@ -177,10 +177,10 @@ export const ContactForm: React.FC = () => {
                   Call Us
                 </div>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+639606921760"
                   className="text-primary-600 hover:text-primary-700"
                 >
-                  (+63) 935 365 8092
+                  (+63) 960 692 1760
                 </a>
               </div>
             </div>
