@@ -165,23 +165,45 @@ export const ContactForm: React.FC = () => {
                 <div className="text-secondary-900 font-medium mb-2">
                   Email Us
                 </div>
-                <a
-                  href="mailto:sunphilsolar@sunphilsolar.com"
-                  className="text-primary-600 hover:text-primary-700"
-                >
-                  sunphilsolar@sunphilsolar.com
-                </a>
+                <div className="space-y-1">
+                  <a
+                    href="mailto:sunphilsolar@sunphilsolar.com"
+                    className="block text-primary-600 hover:text-primary-700"
+                  >
+                    sunphilsolar@sunphilsolar.com
+                  </a>
+                  <a
+                    href="mailto:sunphilsolarpowerinstallation@gmail.com"
+                    className="block text-primary-600 hover:text-primary-700"
+                  >
+                    sunphilsolarpowerinstallation@gmail.com
+                  </a>
+                </div>
               </div>
               <div className="flex-1">
                 <div className="text-secondary-900 font-medium mb-2">
                   Call Us
                 </div>
-                <a
-                  href="tel:+639606921760"
-                  className="text-primary-600 hover:text-primary-700"
-                >
-                  (+63) 960 692 1760
-                </a>
+                <div className="space-y-1">
+                  <a
+                    href="tel:+639606921760"
+                    className="block text-primary-600 hover:text-primary-700"
+                  >
+                    (+63) 960 692 1760
+                  </a>
+                  <a
+                    href="tel:+639353658092"
+                    className="block text-primary-600 hover:text-primary-700"
+                  >
+                    (+63) 935 365 8092
+                  </a>
+                  <a
+                    href="tel:+639654474377"
+                    className="block text-primary-600 hover:text-primary-700"
+                  >
+                    (+63) 965 447 4377
+                  </a>
+                </div>
               </div>
             </div>
           </div>

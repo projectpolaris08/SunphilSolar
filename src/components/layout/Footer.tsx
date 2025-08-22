@@ -159,12 +159,39 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="flex">
+                <Phone className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
+                <a
+                  href="tel:+639353658092"
+                  className="text-secondary-400 hover:text-primary-400 transition-colors"
+                >
+                  (+63) 935 365 8092
+                </a>
+              </li>
+              <li className="flex">
+                <Phone className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
+                <a
+                  href="tel:+639654474377"
+                  className="text-secondary-400 hover:text-primary-400 transition-colors"
+                >
+                  (+63) 965 447 4377
+                </a>
+              </li>
+              <li className="flex">
                 <Mail className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
                 <a
                   href="mailto:sunphilsolar@sunphilsolar.com"
                   className="text-secondary-400 hover:text-primary-400 transition-colors"
                 >
                   sunphilsolar@sunphilsolar.com
+                </a>
+              </li>
+              <li className="flex">
+                <Mail className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
+                <a
+                  href="mailto:sunphilsolarpowerinstallation@gmail.com"
+                  className="text-secondary-400 hover:text-primary-400 transition-colors"
+                >
+                  sunphilsolarpowerinstallation@gmail.com
                 </a>
               </li>
             </ul>
