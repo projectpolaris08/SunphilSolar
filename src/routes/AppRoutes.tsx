@@ -13,6 +13,7 @@ import ProjectsPage from "../pages/ProjectsPage";
 import ProjectDetailPage from "../pages/ProjectDetailPage";
 import CaseStudiesPage from "../pages/CaseStudiesPage";
 import CaseStudyDetailPage from "../pages/CaseStudyDetailPage";
+import CaseStudyGraphsPage from "../pages/CaseStudyGraphsPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Cookies from "../pages/Cookies";
 import FAQ from "../pages/FAQ";
@@ -110,6 +111,10 @@ const AppRoutes = ({
           <Route
             path="/case-studies/:caseStudyId"
             element={<CaseStudyDetailPage />}
+          />
+          <Route
+            path="/case-studies-graphs"
+            element={<CaseStudyGraphsPage />}
           />
           <Route path="/statistics" element={<StatisticsPage />} />
           <Route

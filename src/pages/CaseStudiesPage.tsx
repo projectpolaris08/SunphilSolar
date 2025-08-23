@@ -10,6 +10,7 @@ import {
   Heart,
   CheckCircle,
   ChevronDown,
+  BarChart2,
 } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
 import { projects } from "@/data/projects";
@@ -172,11 +173,18 @@ const CaseStudiesPage: React.FC = () => {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             Solar Case Studies
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto mb-6">
             Explore detailed analysis of our solar installations across the
             Philippines. See real results, financial savings, and environmental
             impact from actual projects.
           </p>
+          <Link
+            to="/case-studies-graphs"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            <BarChart2 className="mr-2" size={20} />
+            View Performance Dashboard
+          </Link>
         </div>
 
         {/* Search and Filters */}
