@@ -811,6 +811,78 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       },
     ],
   },
+  "buenavista-general-trias-cavite": {
+    projectOverview: {
+      challenge:
+        "Our client in General Trias was struggling with consistently high electricity bills, consuming 618 kWh monthly with bills reaching ₱8,703.23. Living in a growing suburban area with increasing energy demands, they needed a robust solution for long-term energy independence.",
+      solution:
+        "Sunphil Solar designed and installed a comprehensive 8kW hybrid solar system on July 19, 2025, featuring an 8kW Deye Hybrid Inverter for smart energy management, 16 x 615W Canadian Solar Bifacial Panels for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery for reliable backup power and nighttime energy storage.",
+      results:
+        "The client's monthly consumption dropped from 618 kWh to just 82 kWh (87% reduction), with their Meralco bill plummeting from ₱8,703.23 to ₱1,267.74 achieving ₱7,435.49 monthly savings (85.4% cost reduction). The system performed excellently during the rainy season, providing significant energy independence despite challenging weather conditions.",
+    },
+    financialAnalysis: {
+      totalInvestment: 380000,
+      monthlySavings: 7435,
+      paybackPeriod: 4.3,
+      annualROI: 23.5,
+      lifetimeSavings: 1784400,
+    },
+    environmentalImpact: {
+      co2Reduction: 10560,
+      treesEquivalent: 503,
+      annualEnergyProduction: 14400,
+    },
+    performanceMetrics: {
+      systemEfficiency: 96,
+      uptime: 99.9,
+      peakOutput: 8,
+      averageDailyProduction: 39,
+    },
+    challenges: [
+      "Consistently high electricity bills of ₱8,703.23 monthly with 618 kWh consumption",
+      "Growing suburban area with increasing energy demands",
+      "Complete dependence on grid power with no backup system",
+      "High energy consumption from household appliances",
+      "No protection from rising electricity rates in Cavite",
+      "Need for robust solution for long-term energy independence",
+    ],
+    solutions: [
+      "Comprehensive 8kW hybrid solar system with 16 x 615W Canadian Solar Bifacial Panels",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency Canadian Solar Bifacial panels capturing maximum sunlight",
+      "LiFePO₄ battery storage for nighttime use and backup power",
+      "Weather-resilient setup designed for Philippine rainy season performance",
+      "Significant energy independence reducing grid consumption by 87%",
+    ],
+    testimonials: {
+      quote:
+        "We're happy sa significant decrease sa bill. Partida tag ulan pa.",
+      author: "Client",
+      role: "Homeowner, Buenavista I, General Trias, Cavite",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Asi-before.jpg",
+      afterImage: "/images/Asi-after.jpg",
+      beforeDescription:
+        "June 20 - July 19, 2025: Meralco bill at ₱8,703.23 with 618 kWh consumption, representing high energy costs and grid dependency.",
+      afterDescription:
+        "July 20 - August 19, 2025: Bill reduced to just ₱1,267.74 with only 82 kWh consumption, achieving 85.4% savings and significant energy independence even during rainy season.",
+    },
+    gallery: [
+      {
+        src: "/images/Asi-before.jpg",
+        alt: "Meralco electric bill before solar installation - ₱8,703.23",
+        caption:
+          "Before Installation: Meralco bill at ₱8,703.23 with 618 kWh consumption.",
+      },
+      {
+        src: "/images/Asi-after.jpg",
+        alt: "Meralco electric bill after solar installation - ₱1,267.74",
+        caption:
+          "After Installation: Bill reduced to just ₱1,267.74 with only 82 kWh consumption.",
+      },
+    ],
+  },
 };
 
 export default caseStudies;
