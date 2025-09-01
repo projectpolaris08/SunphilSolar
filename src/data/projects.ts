@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "alfonso-cavite-6kw-2025",
+    image: "/images/project86.jpg",
+    location: "Alfonso, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-08-31",
+    clientType: "Residential – Medium Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart power management with solar, battery, and grid integration, plus remote monitoring.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-efficiency panels that capture sunlight from both sides for maximum performance.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage for nighttime power and brownout backup.",
+    ],
+    benefits: [
+      "Reduce electricity bills by up to 80%",
+      "Ensures backup power for essential appliances like air conditioning, refrigeration, and entertainment systems",
+      "Offsets around 1,200–1,400 kg of CO₂ emissions per month",
+      "Perfect for residential homes in Cavite that value energy stability and long-term savings",
+      "Provides continuous power during outages and grid interruptions",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system in Alfonso, Cavite, tailored for a residential household seeking reliable energy solutions and significant savings on electricity costs. This hybrid setup provides uninterrupted power during brownouts and optimizes energy usage by storing excess solar power for nighttime consumption. Ideal for families who want energy independence while reducing their carbon footprint.\n\nWith this advanced 6kW hybrid solar system, Alfonso homeowners now enjoy sustainable, dependable energy. By combining bifacial solar panels with a robust lithium battery, this installation guarantees superior performance, cost efficiency, and energy security for years to come.\n\nSunphil Solar provides free site survey & load analysis, customized solar system design, and expert installation with lifetime support. Request your free quote today and take the first step toward energy independence in Cavite!",
+  },
+  {
     id: "brgy-cay-pombo-sta-maria-bulacan-8kw-2025",
     image: "/images/project85.jpg",
     location: "Brgy. Cay Pombo, Sta. Maria, Bulacan, Philippines",

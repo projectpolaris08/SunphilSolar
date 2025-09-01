@@ -2,6 +2,999 @@ import { BlogPost } from "@/types/blog";
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 36,
+    title:
+      "Deye Inverter F18 AC Overcurrent Error: Complete Fix Guide for AC Load Systems",
+    author: "Sunphil Solar",
+    date: "2025-09-01",
+    slug: "deye-inverter-f18-ac-overcurrent-error-complete-fix-guide",
+    tags: [
+      "Deye inverter error",
+      "F18 error code",
+      "AC overcurrent fault",
+      "AC load system troubleshooting",
+      "Deye SUN-5K-SG03LP1",
+      "Deye SUN-8K-SG04LP3",
+      "Deye SUN-12K-SG04LP3",
+      "AC system maintenance",
+      "inverter fault codes",
+      "SOLARMAN Smart app",
+      "AC current",
+      "AC connections",
+      "load management system",
+      "AC load capacity",
+      "overcurrent protection",
+      "AC troubleshooting Philippines",
+    ],
+    excerpt:
+      "The F18 AC overcurrent error in Deye inverters indicates too much current is being drawn by connected AC loads or there's an issue with the power supply or wiring. This comprehensive guide covers everything you need to diagnose and fix this critical AC system error.",
+    metaDescription:
+      "Complete troubleshooting guide for Deye F18 AC overcurrent error. Learn causes, solutions, and prevention strategies for Deye AC systems including SUN-5K-SG03LP1, SUN-8K-SG04LP3, and SUN-12K-SG04LP3 models.",
+    featuredImage: {
+      url: "/images/F18 AC_Overcurrent.jpg",
+      alt: "Deye hybrid inverter showing F18 error code with AC current measurement tools and load troubleshooting equipment",
+      width: 1200,
+      height: 630,
+    },
+    fullContent: (
+      <>
+        <h1 className="text-4xl font-bold text-secondary-900 mb-6">
+          Deye Inverter F18 AC Overcurrent Error: Complete Fix Guide for AC Load
+          Systems
+        </h1>
+        <p className="text-secondary-700 mb-6">
+          <em>
+            Last Updated: September 2025 | Reading Time: 8 minutes | Applies to:
+            Deye SUN-5K-SG03LP1, SUN-8K-SG04LP3, SUN-12K-SG04LP3, and other Deye
+            hybrid models
+          </em>
+        </p>
+        <p className="text-secondary-700 mb-6">
+          The F18 AC overcurrent error in Deye inverters indicates too much
+          current is being drawn by connected AC loads or there's an issue with
+          the power supply or wiring. This comprehensive guide covers everything
+          you need to diagnose and fix this critical AC system error that can
+          shut down your solar power system.
+        </p>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          What is the Deye F18 AC Overcurrent Error?
+        </h2>
+        <p className="text-secondary-700 mb-6">
+          The F18 AC overcurrent error in Deye hybrid inverters signifies that
+          the AC output current has exceeded the safe operating threshold. This
+          occurs when the connected loads draw too much current or when there
+          are issues with the power supply or AC wiring system that cause
+          overcurrent conditions.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          <strong>Quick Answer</strong>: Deye F18 error indicates AC overcurrent
+          fault from overloaded circuits. Common causes include backup loads
+          exceeding inverter capacity, faulty AC connections, damaged wiring, or
+          equipment drawing more current than rated specifications.
+        </p>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Common Causes of Deye F18 Error
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          1. Overloaded AC Load Systems
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Backup loads exceeding inverter capacity</strong>: Total
+            connected loads above rated AC output
+          </li>
+          <li>
+            <strong>Multiple high-power appliances</strong>: Air conditioning,
+            water heaters, motors running simultaneously
+          </li>
+          <li>
+            <strong>Incorrect load calculations</strong>: Underestimated total
+            power requirements
+          </li>
+          <li>
+            <strong>High inrush current devices</strong>: Motors and compressors
+            causing current spikes during startup
+          </li>
+          <li>
+            <strong>Non-essential load management</strong>: Failure to
+            prioritize critical vs non-critical circuits
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          2. AC Connection and Wiring Issues
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Loose AC output terminals</strong>: High resistance
+            connections causing voltage drops and current spikes
+          </li>
+          <li>
+            <strong>Corroded AC connections</strong>: Poor conductivity
+            affecting current flow characteristics
+          </li>
+          <li>
+            <strong>Undersized AC wiring</strong>: Inadequate wire gauge for
+            actual current requirements
+          </li>
+          <li>
+            <strong>Damaged AC cables</strong>: Cuts, nicks, or conductor damage
+            affecting current capacity
+          </li>
+          <li>
+            <strong>Poor grounding connections</strong>: Ground faults affecting
+            AC current flow
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          3. Equipment and Appliance Faults
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Short circuits in connected appliances</strong>: Internal
+            faults causing excessive current draw
+          </li>
+          <li>
+            <strong>Motor bearing failures</strong>: Mechanical problems causing
+            high electrical current consumption
+          </li>
+          <li>
+            <strong>Compressor malfunctions</strong>: Air conditioning systems
+            drawing above normal current
+          </li>
+          <li>
+            <strong>Faulty power supplies</strong>: Electronic devices with
+            failing internal components
+          </li>
+          <li>
+            <strong>Degraded electrical insulation</strong>: Equipment
+            insulation breakdown creating current leakage
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          4. Power Supply and Grid Issues
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Grid voltage fluctuations</strong>: Unstable utility power
+            causing current variations
+          </li>
+          <li>
+            <strong>Poor power quality conditions</strong>: Harmonics and
+            electrical noise affecting current draw
+          </li>
+          <li>
+            <strong>Grid frequency variations</strong>: Frequency changes
+            outside normal operating range
+          </li>
+          <li>
+            <strong>Utility power delivery problems</strong>: Grid connection
+            issues affecting inverter operation
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          5. Deye Inverter AC Component Failures
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>AC output relay malfunctions</strong>: Faulty switching
+            components affecting current control
+          </li>
+          <li>
+            <strong>Current sensor errors</strong>: Incorrect current readings
+            triggering false alarms
+          </li>
+          <li>
+            <strong>AC filter degradation</strong>: Components unable to handle
+            rated current
+          </li>
+          <li>
+            <strong>Internal AC converter issues</strong>: Problems with AC
+            generation circuits
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Deye Hybrid Model AC Specifications
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Popular Deye Hybrid Inverters:
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>SUN-5K-SG03LP1</strong>: AC output 5kW, Max current 22A at
+            230V
+          </li>
+          <li>
+            <strong>SUN-8K-SG04LP3</strong>: AC output 8kW, Max current 35A at
+            230V
+          </li>
+          <li>
+            <strong>SUN-12K-SG04LP3</strong>: AC output 12kW, Max current 52A at
+            230V
+          </li>
+          <li>
+            <strong>SUN-6K-SG05LP1</strong>: AC output 6kW, Max current 26A at
+            230V
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          AC System Requirements:
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Operating voltage range</strong>: Typically 200V-260V for
+            230V systems
+          </li>
+          <li>
+            <strong>Frequency tolerance</strong>: 50Hz ±2Hz for Philippine grid
+            standards
+          </li>
+          <li>
+            <strong>Current protection</strong>: Built-in overcurrent protection
+            at rated capacity
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Step-by-Step Deye F18 Troubleshooting
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Step 1: Check SOLARMAN Smart Platform
+        </h3>
+        <ol className="list-decimal list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Open SOLARMAN Smart app</strong> or web portal
+          </li>
+          <li>
+            <strong>Review AC output current</strong> - should be below rated
+            capacity
+          </li>
+          <li>
+            <strong>Check connected load consumption</strong> in real-time
+            monitoring
+          </li>
+          <li>
+            <strong>Examine AC voltage and frequency</strong> readings
+          </li>
+          <li>
+            <strong>Review load distribution</strong> across backup circuits
+          </li>
+          <li>
+            <strong>Check fault history</strong> for error patterns
+          </li>
+        </ol>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Step 2: AC Load System Inspection
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Safety First</strong>: Verify system is in safe mode before
+          inspection
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Calculate total connected AC loads</strong> of all backup
+            circuits
+          </li>
+          <li>
+            <strong>Inspect AC output terminals</strong> for looseness or
+            corrosion
+          </li>
+          <li>
+            <strong>Look for damaged AC wiring</strong> or signs of overheating
+          </li>
+          <li>
+            <strong>Verify AC load circuit breakers</strong> with proper ratings
+          </li>
+          <li>
+            <strong>Check appliance current ratings</strong> vs actual draw
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Step 3: Load Analysis
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Assess connected loads</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Calculate total power consumption</strong> of all connected
+            devices
+          </li>
+          <li>
+            <strong>Identify high-current appliances</strong> that may cause
+            overcurrent
+          </li>
+          <li>
+            <strong>Check for simultaneous usage</strong> of multiple high-draw
+            devices
+          </li>
+          <li>
+            <strong>Verify load priority settings</strong> in inverter
+            configuration
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Step 4: AC Current Measurements
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Using appropriate safety equipment</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Measure AC output current</strong> at inverter terminals
+          </li>
+          <li>
+            <strong>Test individual circuit currents</strong> for each load
+            branch
+          </li>
+          <li>
+            <strong>Check AC voltage stability</strong> under load conditions
+          </li>
+          <li>
+            <strong>Monitor current during appliance startup</strong> for inrush
+            spikes
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Step 5: Power Supply System Verification
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Check all power sources</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Grid voltage and frequency</strong> stability
+          </li>
+          <li>
+            <strong>Battery backup capacity</strong> for AC load support
+          </li>
+          <li>
+            <strong>AC output parameters</strong> in SOLARMAN app
+          </li>
+          <li>
+            <strong>Load balancing across phases</strong> for three-phase
+            systems
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Quick Fix Solutions for Deye F18 Error
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Solution 1: Load Reduction and Management
+        </h3>
+        <div className="bg-gray-100 p-4 rounded-lg mb-6">
+          <p className="text-secondary-700 font-mono">
+            Check current AC load: Should be &lt;80% of inverter rating
+            <br />
+            If load &gt;80%: Turn off non-essential appliances immediately
+            <br />
+            Adjust load settings: Configure priority circuits and current limits
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Solution 2: AC Connection Maintenance
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Secure AC connections</strong>:
+        </p>
+        <ol className="list-decimal list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Turn off all AC breakers</strong> and DC disconnect
+          </li>
+          <li>
+            <strong>Wait 10 minutes</strong> for system to safely discharge
+          </li>
+          <li>
+            <strong>Clean AC terminals</strong> with contact cleaner
+          </li>
+          <li>
+            <strong>Tighten connections</strong> to manufacturer torque
+            specifications
+          </li>
+          <li>
+            <strong>Apply terminal protectant</strong> to prevent future
+            corrosion
+          </li>
+        </ol>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Solution 3: Load Circuit Management
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Proper load distribution</strong>:
+        </p>
+        <ol className="list-decimal list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Turn off air conditioning</strong> temporarily during peak
+            usage
+          </li>
+          <li>
+            <strong>Stagger appliance operation</strong> (avoid simultaneous
+            high-power device startup)
+          </li>
+          <li>
+            <strong>Configure load priorities</strong> in SOLARMAN app
+          </li>
+          <li>
+            <strong>Set AC current limits</strong> to prevent overload
+            conditions
+          </li>
+        </ol>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Solution 4: AC System Capacity Expansion
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>For undersized AC systems</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Calculate actual AC load requirements</strong> over 24-hour
+            period
+          </li>
+          <li>
+            <strong>Upgrade to higher capacity Deye model</strong> if loads
+            consistently exceed rating
+          </li>
+          <li>
+            <strong>Install load management system</strong> for automatic
+            priority control
+          </li>
+          <li>
+            <strong>Update inverter settings</strong> for new load configuration
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Advanced Deye F18 Troubleshooting
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Using SOLARMAN Smart Advanced Features
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>AC monitoring tools</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Real-time current tracking</strong>: Monitor AC output
+            current continuously
+          </li>
+          <li>
+            <strong>Load curve analysis</strong>: Identify peak current demand
+            periods
+          </li>
+          <li>
+            <strong>Power quality monitoring</strong>: Track voltage and
+            frequency stability
+          </li>
+          <li>
+            <strong>Current efficiency monitoring</strong>: Optimize load
+            distribution
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Professional AC System Testing
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Current analysis testing</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Load bank testing</strong>: Verify actual AC capacity vs
+            rated specifications
+          </li>
+          <li>
+            <strong>Harmonic current measurement</strong>: Identify loads
+            causing current distortion
+          </li>
+          <li>
+            <strong>Inrush current analysis</strong>: Measure motor and
+            compressor startup current
+          </li>
+          <li>
+            <strong>Power factor testing</strong>: Check reactive current
+            components
+          </li>
+        </ul>
+
+        <p className="text-secondary-700 mb-4">
+          <strong>Thermal imaging inspection</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>AC connection temperature monitoring</strong>: Identify
+            overheating terminals
+          </li>
+          <li>
+            <strong>Load circuit temperature monitoring</strong>: Find
+            high-resistance connections
+          </li>
+          <li>
+            <strong>Inverter AC component assessment</strong>: Identify internal
+            heating issues
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          AC Load Type-Specific Solutions
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Motor Loads (Pumps, Compressors, Fans)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Soft start controllers</strong>: Reduce inrush current
+            during motor startup
+          </li>
+          <li>
+            <strong>Motor condition monitoring</strong>: Check for bearing wear
+            increasing current draw
+          </li>
+          <li>
+            <strong>Power factor correction</strong>: Manage reactive current
+            components
+          </li>
+          <li>
+            <strong>Variable frequency drives</strong>: Better control of motor
+            current consumption
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Resistive Loads (Water Heaters, Electric Stoves)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Sequential operation scheduling</strong>: Prevent
+            simultaneous operation of multiple heating elements
+          </li>
+          <li>
+            <strong>Thermostat optimization</strong>: Smart temperature control
+            to reduce current spikes
+          </li>
+          <li>
+            <strong>Load sizing verification</strong>: Ensure heater capacity
+            matches inverter rating
+          </li>
+          <li>
+            <strong>Time-of-use control</strong>: Operate during optimal power
+            availability
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Electronic Loads (Computers, TVs, LED Systems)
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Power supply condition monitoring</strong>: Check for
+            failing power supplies drawing excess current
+          </li>
+          <li>
+            <strong>LED driver inspection</strong>: Identify faulty LED fixtures
+            causing current spikes
+          </li>
+          <li>
+            <strong>Surge protector maintenance</strong>: Replace damaged surge
+            protection devices
+          </li>
+          <li>
+            <strong>Ground loop elimination</strong>: Remove ground loops
+            causing unwanted current flow
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Prevention Strategies for Philippine Climate
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          AC System Maintenance Schedule
+        </h3>
+        <p className="text-secondary-700 mb-4">
+          <strong>Monthly</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>Monitor AC current trends through SOLARMAN app</li>
+          <li>Visual inspection of AC terminals and connections</li>
+          <li>Check AC load distribution and usage patterns</li>
+          <li>Review appliance current consumption data</li>
+        </ul>
+
+        <p className="text-secondary-700 mb-4">
+          <strong>Quarterly</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-4">
+          <li>
+            <strong>Clean AC terminals</strong> and check connection torque
+          </li>
+          <li>
+            <strong>Test AC output current</strong> under various load
+            conditions
+          </li>
+          <li>
+            <strong>Inspect AC wiring</strong> for damage or degradation
+          </li>
+          <li>
+            <strong>Verify load management settings</strong> and operation
+          </li>
+        </ul>
+
+        <p className="text-secondary-700 mb-6">
+          <strong>Semi-Annually</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Professional AC system assessment</strong>
+          </li>
+          <li>
+            <strong>Load bank testing</strong> of inverter AC capacity
+          </li>
+          <li>
+            <strong>Connection torque verification</strong>
+          </li>
+          <li>
+            <strong>Thermal imaging</strong> of AC connections
+          </li>
+        </ul>
+
+        <p className="text-secondary-700 mb-6">
+          <strong>Annually</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Complete AC load analysis</strong>
+          </li>
+          <li>
+            <strong>Load growth assessment</strong> and system optimization
+          </li>
+          <li>
+            <strong>AC component performance review</strong>
+          </li>
+          <li>
+            <strong>Deye firmware updates</strong>
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Environmental Considerations for Philippines
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>High humidity protection</strong>: Use marine-grade
+            terminals and connections for AC circuits
+          </li>
+          <li>
+            <strong>Temperature management</strong>: Ensure adequate inverter
+            cooling and ventilation
+          </li>
+          <li>
+            <strong>Monsoon protection</strong>: Weatherproof AC connections in
+            outdoor installations
+          </li>
+          <li>
+            <strong>Corrosion prevention</strong>: Regular inspection and
+            maintenance in coastal installations
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          When to Contact Deye Support Philippines
+        </h2>
+        <p className="text-secondary-700 mb-4">
+          <strong>Immediate professional help needed if</strong>:
+        </p>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>F18 errors occur on properly sized and connected systems</li>
+          <li>AC current spikes occur without corresponding load increases</li>
+          <li>Multiple AC protection systems activate simultaneously</li>
+          <li>Burning smells or visible damage to AC components</li>
+          <li>System is under warranty (avoid DIY troubleshooting)</li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Deye Philippines Support Network
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Metro Manila</strong>: Authorized service centers in Quezon
+            City, Makati, Pasig
+          </li>
+          <li>
+            <strong>Cebu</strong>: Regional support for Visayas installations
+          </li>
+          <li>
+            <strong>Davao</strong>: Mindanao service coverage
+          </li>
+          <li>
+            <strong>Baguio</strong>: Northern Luzon service center
+          </li>
+          <li>
+            <strong>Technical hotline</strong>: 24/7 support through SOLARMAN
+            platform
+          </li>
+          <li>
+            <strong>Emergency service</strong>: Available for critical system
+            failures
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Cost Analysis for Deye F18 Repairs
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          DIY AC System Maintenance
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>AC terminal cleaning kit: $15-$30 (₱840-₱1,680)</li>
+          <li>Digital clamp meter (AC current): $50-$150 (₱2,800-₱8,400)</li>
+          <li>AC voltage tester: $25-$75 (₱1,400-₱4,200)</li>
+          <li>Terminal protectant and tools: $25-$50 (₱1,400-₱2,800)</li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Professional AC Services
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>AC system diagnosis: $150-$300 (₱8,400-₱16,800)</li>
+          <li>Connection repair/replacement: $200-$500 (₱11,200-₱28,000)</li>
+          <li>Load circuit troubleshooting: $100-$250 (₱5,600-₱14,000)</li>
+          <li>AC wiring upgrade: $300-$800 (₱16,800-₱44,800)</li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          System Upgrades
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>Load management system: $500-$1,200 (₱28,000-₱67,200)</li>
+          <li>
+            Higher capacity Deye inverter: $1,500-$4,000 (₱84,000-₱224,000)
+          </li>
+          <li>AC distribution upgrade: $300-$800 (₱16,800-₱44,800)</li>
+          <li>Professional installation: $400-$1,000 (₱22,400-₱56,000)</li>
+        </ul>
+
+        <p className="text-secondary-700 mb-6">
+          <em>
+            Prices reflect current Philippines market rates and may vary by
+            location, brand, and installation complexity.
+          </em>
+        </p>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: How much AC load can my Deye inverter handle safely?
+          </h4>
+          <p className="text-secondary-700">
+            A: Follow the 80% rule for continuous loads. For a 5kW Deye
+            inverter, limit continuous AC loads to 4kW maximum to prevent F18
+            overcurrent errors.
+          </p>
+        </div>
+
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Can I prevent F18 errors by managing my appliance usage?
+          </h4>
+          <p className="text-secondary-700">
+            A: Yes! Load management is the most effective prevention. Avoid
+            running multiple high-power devices simultaneously and prioritize
+            essential loads during backup operation.
+          </p>
+        </div>
+
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Why do F18 errors happen more during brownouts in the
+            Philippines?
+          </h4>
+          <p className="text-secondary-700">
+            A: During brownouts, your system operates on battery power which has
+            limited AC output capacity. High loads can exceed what the
+            battery-powered inverter can safely deliver, triggering overcurrent
+            protection.
+          </p>
+        </div>
+
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Should I upgrade my inverter or reduce my loads?
+          </h4>
+          <p className="text-secondary-700">
+            A: Depends on your actual power needs and budget. Load reduction is
+            more cost-effective short-term, but inverter upgrades provide better
+            long-term capability for growing AC power requirements.
+          </p>
+        </div>
+
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Can inverter settings cause false F18 alarms?
+          </h4>
+          <p className="text-secondary-700">
+            A: Yes, incorrect AC current protection settings or load
+            configuration parameters can trigger premature F18 errors. Verify
+            settings match your actual load requirements and safety margins.
+          </p>
+        </div>
+
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-secondary-900 mb-2">
+            Q: Do summer months increase F18 error frequency?
+          </h4>
+          <p className="text-secondary-700">
+            A: Yes, higher air conditioning usage during hot weather increases
+            AC load demand. Monitor cooling system current draw and consider
+            load management during peak usage periods.
+          </p>
+        </div>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Emergency Procedures for F18 Errors
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Immediate Response Steps
+        </h3>
+        <ol className="list-decimal list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Reduce AC loads</strong> - turn off non-essential appliances
+            immediately
+          </li>
+          <li>
+            <strong>Check current draw</strong> through SOLARMAN app monitoring
+          </li>
+          <li>
+            <strong>Verify AC connections</strong> - ensure all terminals are
+            secure
+          </li>
+          <li>
+            <strong>Test individual circuits</strong> - identify specific loads
+            causing overcurrent
+          </li>
+          <li>
+            <strong>Monitor system recovery</strong> after load reduction
+          </li>
+        </ol>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Temporary Workarounds
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Manual load shedding</strong>: Disconnect non-critical AC
+            circuits
+          </li>
+          <li>
+            <strong>Appliance scheduling</strong>: Operate high-power devices
+            sequentially
+          </li>
+          <li>
+            <strong>Load prioritization</strong>: Focus on essential circuits
+            only
+          </li>
+          <li>
+            <strong>Generator backup</strong>: Use backup generator for
+            non-critical loads
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Long-Term Solutions
+        </h2>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          AC System Optimization
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Right-size AC loads</strong> for actual inverter capacity
+          </li>
+          <li>
+            <strong>Implement automatic load management</strong> with smart
+            switching systems
+          </li>
+          <li>
+            <strong>Upgrade to higher capacity Deye model</strong> for increased
+            AC output capability
+          </li>
+          <li>
+            <strong>Install AC current monitoring</strong> for proactive load
+            management
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+          Load Management Strategies
+        </h3>
+        <ul className="list-disc list-inside text-secondary-700 mb-6">
+          <li>
+            <strong>Energy-efficient appliances</strong>: Reduce overall AC
+            current consumption
+          </li>
+          <li>
+            <strong>Smart scheduling systems</strong>: Operate high-power loads
+            during optimal conditions
+          </li>
+          <li>
+            <strong>Automatic load control</strong>: Smart switches for
+            non-essential AC circuits
+          </li>
+          <li>
+            <strong>Current limiting devices</strong>: Protect against
+            overcurrent conditions
+          </li>
+        </ul>
+
+        <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+          Conclusion
+        </h2>
+        <p className="text-secondary-700 mb-6">
+          The Deye F18 AC Overcurrent Fault is a protective function that
+          prevents damage when AC current exceeds safe operating limits. Most
+          F18 errors result from overloaded AC circuits, faulty connections, or
+          equipment drawing excessive current rather than inverter failures.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Proper load management, appropriate system sizing, and regular AC
+          connection maintenance will minimize F18 error occurrences. In the
+          Philippines, where backup power systems are heavily utilized during
+          frequent brownouts, careful attention to AC load prioritization and
+          current management is essential.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          For persistent F18 errors, professional AC system assessment can
+          identify capacity limitations and recommend appropriate upgrades or
+          load management solutions. Remember that a well-designed AC system
+          should handle your typical loads with adequate reserve capacity for
+          safe operation.
+        </p>
+        <p className="text-secondary-700 mb-6">
+          Understanding your Deye hybrid system's AC limitations and
+          implementing smart load management strategies is key to reliable
+          backup power operation and optimal energy independence during grid
+          outages.
+        </p>
+
+        <hr className="my-8" />
+
+        <p className="text-secondary-700 mb-6">
+          <em>
+            Experiencing frequent Deye F18 errors? Contact certified Deye AC
+            system specialists through our Philippines network for professional
+            assessment and optimization of your backup power system.
+          </em>
+        </p>
+      </>
+    ),
+    readingTime: 8,
+  },
+  {
     id: 35,
     title:
       "Deye Inverter F56 DC_Volt_Low Error: Complete Fix Guide for Battery Systems",
