@@ -12,6 +12,50 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "los-banos-laguna-8kw-2025",
+    image: "/images/project88.jpg",
+    location: "Los Baños, Laguna, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-06-08",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart energy management between solar, grid, and battery with remote monitoring.",
+      "16 × 615W Canadian Bifacial Solar Panels – Dual-sided panels designed for superior energy capture.",
+      "51.2V 314Ah LiFePO₄ Battery – High-capacity lithium storage for extended backup power.",
+    ],
+    benefits: [
+      "Save up to 80–85% on electricity bills",
+      "Provides uninterrupted power for essential home appliances",
+      "Offsets approximately 1,500–1,800 kg of CO₂ emissions monthly",
+      "Ideal for residential homes in Laguna seeking energy security and cost savings",
+      "Ensures continuous power during outages and brownouts",
+    ],
+    description:
+      "Sunphil Solar installed an 8kW hybrid solar power system in Los Baños, Laguna, tailored for a home with substantial energy requirements. This system provides reliable power during brownouts, maximizes solar energy usage, and stores excess power for nighttime consumption. It's a perfect solution for families aiming for energy independence and long-term savings.\n\nThis 8kW hybrid solar system empowers homeowners in Los Baños to embrace clean, renewable energy. With advanced bifacial panels and a durable lithium battery, this system guarantees efficiency, reliability, and long-term benefits for both the household and the environment.\n\nSunphil Solar provides free site survey & load analysis, custom solar system design for your needs, and professional installation with lifetime support. Request your free quote today and enjoy the benefits of hybrid solar power in Los Baños, Laguna!",
+  },
+  {
+    id: "binangonan-rizal-12kw-2025",
+    image: "/images/project87.jpg",
+    location: "Binangonan, Rizal, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-09-02",
+    clientType: "Residential – High Energy Consumption",
+    specification: [
+      "12kW Deye Hybrid Inverter – Advanced energy management between solar, grid, and battery with remote monitoring.",
+      "20 × 615W Canadian Bifacial Solar Panels – High-performance panels that capture sunlight on both sides for maximum energy yield.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Large-capacity lithium batteries for reliable storage and extended backup power.",
+    ],
+    benefits: [
+      "Potential savings of 80–85% on monthly electricity bills",
+      "Powers essential and high-demand appliances, including multiple air-conditioning units, refrigerators, and entertainment systems",
+      "Reduces approximately 2,500–3,000 kg of CO₂ emissions every month",
+      "Perfect for large residential properties in Rizal requiring stable and cost-effective energy solutions",
+      "Provides uninterrupted power during brownouts and grid outages",
+    ],
+    description:
+      "Sunphil Solar completed a 12kW hybrid solar power system in Binangonan, Rizal, designed for a household with heavy energy usage and a strong desire for energy independence. This system ensures continuous power supply, even during outages, and delivers significant savings by utilizing stored solar energy at night. Perfect for families who value sustainability and protection against rising electricity costs.\n\nWith this powerful 12kW hybrid solar system, the homeowners in Binangonan now enjoy a secure, eco-friendly, and cost-saving energy solution. Featuring high-efficiency bifacial panels and robust lithium battery storage, this system guarantees long-term reliability and maximum performance.\n\nSunphil Solar provides free site survey & load analysis, customized solar system design for your home, and professional installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Binangonan, Rizal!",
+  },
+  {
     id: "alfonso-cavite-6kw-2025",
     image: "/images/project86.jpg",
     location: "Alfonso, Cavite, Philippines",

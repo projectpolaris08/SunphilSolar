@@ -883,6 +883,77 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       },
     ],
   },
+  "los-banos-laguna-8kw-2025": {
+    projectOverview: {
+      challenge:
+        "Edwin Lizarda was facing extremely high electricity bills of ₱14,868.84 monthly with 1,072 kWh consumption, representing a daily electricity cost of over ₱495. The household's high energy demands in Los Baños, Laguna were creating significant financial strain, with complete grid dependency and no backup power system.",
+      solution:
+        "Sunphil Solar designed and installed a custom 8kW hybrid solar system on June 6, 2025, featuring an 8kW Deye Hybrid Inverter for intelligent energy management, 16 x 615W Canadian Bifacial Solar Panels (9.84kW total capacity) for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery (16kWh storage) for reliable backup power and nighttime energy storage.",
+      results:
+        "Mr. Lizarda's monthly bill dropped from ₱14,868.84 to just ₱1,691.15, achieving ₱13,177.69 monthly savings (88.6% cost reduction). The system now provides near-complete energy independence with reliable backup power, reducing grid consumption by approximately 89%.",
+    },
+    financialAnalysis: {
+      totalInvestment: 375000,
+      monthlySavings: 13177,
+      paybackPeriod: 2.3,
+      annualROI: 42.9,
+      lifetimeSavings: 2841000,
+    },
+    environmentalImpact: {
+      co2Reduction: 12600,
+      treesEquivalent: 600,
+      annualEnergyProduction: 12000,
+    },
+    performanceMetrics: {
+      systemEfficiency: 95,
+      uptime: 99.9,
+      peakOutput: 8,
+      averageDailyProduction: 40,
+    },
+    challenges: [
+      "Extremely high electricity bills of ₱14,868.84 monthly with 1,072 kWh consumption",
+      "Daily electricity costs exceeding ₱495 putting severe strain on household budget",
+      "Complete dependence on grid power with no backup system in Los Baños, Laguna",
+      "High energy consumption from power-hungry household appliances",
+      "No protection from rising electricity rates in Laguna province",
+      "Requirement for large-scale solar solution to handle high energy demands",
+    ],
+    solutions: [
+      "Custom-designed 8kW hybrid solar system with 9.84kW panel capacity",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency Canadian Bifacial panels capturing maximum sunlight",
+      "LiFePO₄ battery storage (16kWh) for nighttime use and backup power",
+      "Optimal system sizing providing 95% solar coverage of monthly consumption",
+      "Near-complete energy independence reducing grid consumption by 88.6%",
+    ],
+    testimonials: {
+      quote: "Nakakatuwa po, 1600 na lang po monthly from 15k.",
+      author: "Edwin Lizarda",
+      role: "Homeowner, Los Baños, Laguna",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Edwin-before.jpg",
+      afterImage: "/images/Edwin-after.jpg",
+      beforeDescription:
+        "June 2025: Electricity bill at ₱14,868.84 with 1,072 kWh consumption, representing high energy costs and grid dependency.",
+      afterDescription:
+        "August 2025: Bill reduced to just ₱1,691.15 achieving 88.6% savings and near-complete energy independence with the 8kW hybrid solar system.",
+    },
+    gallery: [
+      {
+        src: "/images/Edwin-before.jpg",
+        alt: "Edwin Lizarda's electricity bill before solar installation",
+        caption:
+          "Before Installation: Electricity bill at ₱14,868.84 with 1,072 kWh consumption.",
+      },
+      {
+        src: "/images/Edwin-after.jpg",
+        alt: "Edwin Lizarda's electricity bill after solar installation",
+        caption:
+          "After Installation: Bill reduced to just ₱1,691.15 achieving 88.6% savings and near-complete energy independence.",
+      },
+    ],
+  },
 };
 
 export default caseStudies;
