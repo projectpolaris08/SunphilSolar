@@ -12,7 +12,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "imus-cavite-6kw-2025",
+    id: "imus-cavite-6kw-sept-2025",
     image: "/images/project91.jpg",
     location: "Imus, Cavite, Philippines",
     system: "6kW Hybrid Solar",
