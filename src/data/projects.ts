@@ -12,6 +12,72 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "imus-cavite-6kw-2025",
+    image: "/images/project91.jpg",
+    location: "Imus, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-04",
+    clientType: "Residential – Moderate Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart power management across solar, grid, and battery with remote monitoring.",
+      "10 × 615W Canadian Bifacial Solar Panels – High-performance, dual-sided panels for optimal solar capture.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage for extended backup capacity.",
+    ],
+    benefits: [
+      "Save up to 70–75% on electricity bills",
+      "Provides uninterrupted backup for essential appliances and electronics",
+      "Offsets approximately 1,200–1,400 kg of CO₂ emissions monthly",
+      "Perfect for residential households in Cavite aiming for reliable and affordable solar power",
+      "Ensures continuous electricity during outages and brownouts",
+    ],
+    description:
+      "Sunphil Solar completed a 6kW hybrid solar power installation in Imus, Cavite, designed for a home with moderate energy requirements. This system provides reliable power during outages, maximizes daytime solar production, and stores surplus energy for evening use. It's a practical solution for families looking to cut down on electricity bills while ensuring continuous access to clean energy.\n\nThis 6kW hybrid solar system equips homeowners in Imus, Cavite, with the tools to embrace renewable energy confidently. With advanced bifacial solar panels and durable lithium storage, the system delivers efficiency, security, and long-term savings for both the household and the environment.\n\nSunphil Solar provides free site survey & load analysis, tailored solar system designs, and professional installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Imus, Cavite!",
+  },
+  {
+    id: "concepcion-dos-marikina-8kw-2025",
+    image: "/images/project90.jpg",
+    location: "Concepcion Dos, Marikina City, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-09-06",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Efficient power management between solar, grid, and battery with remote monitoring.",
+      "18 × 615W Canadian Bifacial Solar Panels – Dual-sided design for superior energy generation.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium storage for extended backup power.",
+    ],
+    benefits: [
+      "Save up to 80–85% on monthly electricity bills",
+      "Provides uninterrupted power for essential appliances and electronics",
+      "Offsets approximately 1,700–1,900 kg of CO₂ emissions monthly",
+      "Ideal for residential households in Marikina City seeking reliable, long-term energy savings",
+      "Ensures power availability during outages and brownouts",
+    ],
+    description:
+      "Sunphil Solar installed an 8kW hybrid solar power system in Concepcion Dos, Marikina City, customized for a household with moderate to high daily electricity use. This system ensures consistent energy supply during outages, optimizes solar usage throughout the day, and stores excess power for nighttime consumption. It is an excellent choice for families aiming for energy savings, security, and sustainable living.\n\nThis 8kW hybrid solar system empowers homeowners in Marikina City to take control of their energy consumption with clean, renewable power. Featuring high-efficiency bifacial panels and advanced lithium storage, the system guarantees long-term reliability, cost savings, and a reduced carbon footprint.\n\nSunphil Solar provides free site survey & load analysis, custom solar system design, and professional installation with lifetime support. Request your free quote today and enjoy the benefits of hybrid solar power in Marikina City!",
+  },
+  {
+    id: "lemery-batangas-12kw-2025",
+    image: "/images/project89.jpg",
+    location: "Lemery, Batangas, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-09-03",
+    clientType: "Residential – High Energy Consumption",
+    specification: [
+      "12kW Deye Hybrid Inverter – Smart power distribution between solar, grid, and battery with remote monitoring.",
+      "20 × 615W Canadian Bifacial Solar Panels – High-efficiency, dual-sided panels for optimal energy capture.",
+      "51.2V 314Ah LiFePO₄ Battery – Robust lithium storage for extended backup capacity.",
+    ],
+    benefits: [
+      "Save up to 85% on electricity bills",
+      "Provides uninterrupted backup for essential and high-load appliances",
+      "Offsets approximately 2,200–2,500 kg of CO₂ emissions monthly",
+      "Perfect for large residential properties in Batangas requiring stable and sustainable power",
+      "Guarantees continuous electricity supply during outages and brownouts",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 12kW hybrid solar power system in Lemery, Batangas, designed for a household with high energy demands. This setup ensures reliable energy during brownouts, maximizes daily solar utilization, and stores excess power for night usage. It's an ideal solution for homeowners who want complete energy independence, long-term cost reduction, and environmental sustainability.\n\nThis 12kW hybrid solar system allows homeowners in Lemery to fully embrace renewable energy while ensuring comfort and security. With premium bifacial panels and advanced lithium storage, the system delivers superior efficiency, reliability, and long-lasting value for both the family and the environment.\n\nSunphil Solar provides free site survey & load analysis, tailored solar system designs, and professional installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Lemery, Batangas!",
+  },
+  {
     id: "los-banos-laguna-8kw-2025",
     image: "/images/project88.jpg",
     location: "Los Baños, Laguna, Philippines",
