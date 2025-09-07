@@ -954,6 +954,78 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       },
     ],
   },
+  "taytay-rizal-6kw-2025": {
+    projectOverview: {
+      challenge:
+        "Diana Concepcion was facing extremely high Meralco bills of ₱10,532.82 monthly with 762 kWh consumption, representing a daily electricity cost of over ₱340. The household's high energy demands in San Juan, Taytay, Rizal were creating significant financial strain, with complete grid dependency and no backup power system.",
+      solution:
+        "Sunphil Solar designed and installed a custom 6kW hybrid solar system on July 15, 2025, featuring a 6kW Deye Hybrid Inverter for intelligent energy management, 12 x 615W Canadian Bifacial Solar Panels (7.38kW total capacity) for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery (16kWh storage) for reliable backup power and nighttime energy storage.",
+      results:
+        "Diana's monthly consumption dropped from 762 kWh to just 55 kWh (92.8% reduction), with her Meralco bill plummeting from ₱10,532.82 to ₱747.30 achieving ₱9,785.52 monthly savings (92.9% cost reduction). The system now provides near-complete energy independence with reliable backup power, representing one of the most successful residential solar transformations in the region.",
+    },
+    financialAnalysis: {
+      totalInvestment: 310000,
+      monthlySavings: 9785,
+      paybackPeriod: 2.6,
+      annualROI: 37.9,
+      lifetimeSavings: 2935656,
+    },
+    environmentalImpact: {
+      co2Reduction: 8400,
+      treesEquivalent: 400,
+      annualEnergyProduction: 12000,
+    },
+    performanceMetrics: {
+      systemEfficiency: 98,
+      uptime: 99.9,
+      peakOutput: 6,
+      averageDailyProduction: 40,
+    },
+    challenges: [
+      "Extremely high Meralco bills of ₱10,532.82 monthly with 762 kWh consumption",
+      "Daily electricity costs exceeding ₱340 putting severe strain on household budget",
+      "Complete dependence on grid power with no backup system in San Juan, Taytay, Rizal",
+      "High energy consumption from power-hungry household appliances",
+      "No protection from rising electricity rates in Rizal province",
+      "Vulnerability to frequent power outages during storms and maintenance",
+    ],
+    solutions: [
+      "Custom-designed 6kW hybrid solar system with 7.38kW panel capacity",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency Canadian Bifacial panels capturing maximum sunlight",
+      "LiFePO₄ battery storage (16kWh) for nighttime use and backup power",
+      "Optimal system sizing providing 95% solar coverage of monthly consumption",
+      "Near-complete energy independence reducing grid consumption by 92.8%",
+    ],
+    testimonials: {
+      quote:
+        "Good afternoon po. Eto na po meralco bill ko, Salamat po sa inyo.",
+      author: "Diana Concepcion",
+      role: "Homeowner, San Juan, Taytay, Rizal",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Diana-Before.jpg",
+      afterImage: "/images/Diana-After.jpg",
+      beforeDescription:
+        "June 29 - July 28, 2025: Meralco bill at ₱10,532.82 with 762 kWh consumption, representing daily electricity costs of over ₱340.",
+      afterDescription:
+        "July 29 - August 28, 2025: Bill reduced to just ₱747.30 with only 55 kWh consumption, achieving 92.8% savings and near-complete energy independence.",
+    },
+    gallery: [
+      {
+        src: "/images/Diana-Before.jpg",
+        alt: "Diana Concepcion's Meralco bill before solar installation",
+        caption:
+          "Before Installation: Meralco bill at ₱10,532.82 with 762 kWh consumption.",
+      },
+      {
+        src: "/images/Diana-After.jpg",
+        alt: "Diana Concepcion's Meralco bill after solar installation",
+        caption:
+          "After Installation: Bill reduced to just ₱747.30 with only 55 kWh consumption, achieving 92.8% savings.",
+      },
+    ],
+  },
 };
 
 export default caseStudies;
