@@ -17,6 +17,10 @@ import {
 } from "lucide-react";
 import { projects } from "@/data/projects";
 import { caseStudies } from "@/data/caseStudies";
+import {
+  InstallationLocationCharts,
+  SystemSizeCharts,
+} from "@/components/charts";
 
 // Calculate statistics from projects data
 const totalInstallations = projects.length;
@@ -300,6 +304,15 @@ const InstallationAnalysisPage: React.FC = () => {
               </div>
             </div>
 
+            {/* Charts Section */}
+            <div className="mb-8">
+              <InstallationLocationCharts
+                topLocations={topLocations}
+                totalInstallations={totalInstallations}
+              />
+            </div>
+
+            {/* Insights Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 h-full flex flex-col">
                 <h3 className="text-xl font-bold text-green-400 mb-4">
@@ -370,6 +383,15 @@ const InstallationAnalysisPage: React.FC = () => {
               </div>
             </div>
 
+            {/* Charts Section */}
+            <div className="mb-8">
+              <SystemSizeCharts
+                systemSizes={systemSizes}
+                totalInstallations={totalInstallations}
+              />
+            </div>
+
+            {/* System Size Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 text-center">
                 <div className="text-4xl font-bold text-green-400 mb-2">
