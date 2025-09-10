@@ -15,6 +15,7 @@ import {
   LifeBuoy,
   BarChart2,
   Map,
+  Star,
 } from "lucide-react";
 import { Logo } from "../Logo";
 import { Link as RouterLink, useLocation } from "react-router-dom";
@@ -196,6 +197,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                 >
                   <HelpCircle className="w-5 h-5 text-pink-500" />
                   FAQ
+                </RouterLink>
+                <RouterLink
+                  to="/special-offer"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/special-offer")}
+                >
+                  <Star className="w-5 h-5 text-yellow-500" />
+                  Special Offers
                 </RouterLink>
               </div>
             </div>
@@ -384,6 +393,17 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             >
               <HelpCircle className="w-5 h-5 text-pink-500" />
               FAQ
+            </RouterLink>
+            <RouterLink
+              to="/special-offer"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/special-offer");
+                toggleMenu();
+              }}
+            >
+              <Star className="w-5 h-5 text-yellow-500" />
+              Special Offers
             </RouterLink>
           </div>
           <div className="pt-2">

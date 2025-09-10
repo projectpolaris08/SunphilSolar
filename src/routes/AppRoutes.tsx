@@ -35,6 +35,7 @@ import Form from "../pages/Form";
 import ExpensesPage from "../pages/ExpensesPage";
 import SolarPanelsPage from "../pages/SolarPanelsPage";
 import PayrollPage from "../pages/PayrollPage";
+import SpecialOfferPage from "../pages/SpecialOfferPage";
 import AdminLayout from "../components/layout/AdminLayout";
 import AdminLoginPage from "../pages/AdminLoginPage";
 import { useAdminAuth } from "../contexts/AdminAuthContext";
@@ -105,6 +106,7 @@ const AppRoutes = ({
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/special-offer" element={<SpecialOfferPage />} />
           <Route path="/solar-panels" element={<SolarPanelsPage />} />
           <Route path="/aftersales" element={<AfterSalesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
