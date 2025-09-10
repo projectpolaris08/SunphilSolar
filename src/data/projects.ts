@@ -12,6 +12,95 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "ayala-alabang-village-muntinlupa-8kw-2025",
+    image: "/images/project95.jpg",
+    location: "Ayala Alabang Village, Muntinlupa City, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-09-10",
+    clientType: "Residential, High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter - intelligent energy management for solar, grid, and battery with remote monitoring.",
+      "16 × 620W Canadian Bifacial Solar Panels - dual-sided design for superior energy capture.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries - high-capacity lithium storage for longer backup power and dependable energy supply.",
+    ],
+    benefits: [
+      "Save up to 80–85% on monthly electricity bills",
+      "Extended backup power for large appliances, air-conditioning units, and essential home systems",
+      "Offsets approximately 1,800–2,200 kg of CO₂ emissions monthly",
+      "Perfect for large residential properties in Muntinlupa City seeking premium energy solutions",
+      "Assures continuous power even during long brownouts or grid outages",
+    ],
+    description:
+      "Sunphil Solar installed an 8kW hybrid solar system in Ayala Alabang Village, Muntinlupa City for a premium residence with high energy demands. This system is designed to provide maximum energy efficiency, reliable nighttime power storage, and extended backup capacity for critical appliances during brownouts. With a dual-battery setup, the homeowners benefit from enhanced energy independence, substantial monthly savings, and a reduced carbon footprint.\n\nThis 8kW hybrid solar system with dual lithium batteries ensures the homeowners in Ayala Alabang Village enjoy uninterrupted energy security, maximum efficiency, and long-term sustainability. With advanced bifacial panels and robust storage, the system guarantees consistent performance and significant cost savings.\n\nSunphil Solar provides free site survey and energy assessment, tailored solar design for your property, and professional installation and ongoing support. Request your free quote today and enjoy premium solar power in Ayala Alabang, Muntinlupa City!",
+  },
+  {
+    id: "gardenville-subd-calumpit-bulacan-6kw-2025",
+    image: "/images/project94.jpg",
+    location: "Gardenville Subdivision, Calumpit, Bulacan, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-08",
+    clientType: "Residential, Medium Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter - intelligent energy management for solar, battery, and grid integration with remote monitoring.",
+      "10 × 620W Canadian Bifacial Solar Panels - high-efficiency panels that capture sunlight on both sides to maximize output.",
+      "51.2V 314Ah LiFePO₄ Battery - reliable lithium battery providing consistent energy storage and brownout protection.",
+    ],
+    benefits: [
+      "Save up to 75–80% on electricity bills",
+      "Reliable backup power for home essentials like lighting, refrigeration, and entertainment systems",
+      "Offsets approximately 1,000–1,300 kg of CO₂ emissions monthly",
+      "Ideal for residential households in Bulacan seeking stability, savings, and sustainability",
+      "Seamless power supply during grid outages",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar system in Gardenville Subdivision, Calumpit, Bulacan for a household looking for dependable energy savings and backup power. The system stores excess solar energy for nighttime use and provides uninterrupted power during brownouts, making it a smart choice for families who want to lower their electricity bills and gain energy independence.\n\nWith this 6kW hybrid solar installation, the homeowners in Gardenville Subdivision now enjoy stable, eco-friendly energy that reduces costs while promoting sustainability. Using premium bifacial panels and advanced lithium storage, Sunphil Solar delivers efficient performance and dependable power for years to come.\n\nSunphil Solar offers free site survey and energy assessment, customized system design for your needs, and expert installation and lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Calumpit, Bulacan!",
+  },
+  {
+    id: "west-fairview-subd-qc-6kw-2025",
+    image: "/images/project93.jpg",
+    location: "West Fairview Subd., Quezon City, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-08",
+    clientType: "Residential – Medium Energy Consumption with EV Charging",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart energy management between solar, battery, and grid with remote monitoring.",
+      "12 × 615W Canadian Bifacial Solar Panels – High-efficiency dual-sided panels to maximize energy yield.",
+      "51.2V 314Ah LiFePO₄ Battery – Robust lithium storage for nighttime use and brownout protection.",
+    ],
+    benefits: [
+      "Save up to 75–80% on electricity bills",
+      "Reliable backup power for air conditioning, refrigerators, and home electronics",
+      "Charge a Tesla Model 3 at home with renewable solar energy",
+      "Offset approximately 1,200–1,400 kg of CO₂ emissions per month",
+      "Ideal for urban households in Quezon City seeking energy savings, EV readiness, and stability",
+      "Seamless operation during brownouts or grid outages",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system in West Fairview Subdivision, Quezon City. This setup was customized for a household looking to cut electricity costs, secure backup power during outages, and conveniently charge their Tesla Model 3 using clean, renewable energy. By combining efficient solar panels, lithium battery storage, and smart hybrid management, the system delivers both cost savings and sustainable EV charging at home.\n\nThis installation highlights the future of sustainable living in Metro Manila combining solar power, battery storage, and electric vehicle charging. The homeowners in West Fairview Subdivision can now drive their Tesla Model 3 powered by the sun, reduce dependence on the grid, and enjoy long-term savings while contributing to a cleaner environment.\n\nSunphil Solar provides free site survey & load analysis, custom solar + EV charging design, and professional installation with lifetime support. Request your free quote today and experience the benefits of solar-powered living in Quezon City!",
+  },
+  {
+    id: "brgy-dalima-tuy-batangas-8kw-2025",
+    image: "/images/project92.jpg",
+    location: "Brgy. Dalima, Tuy, Batangas, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-09-07",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart energy control between solar, grid, and battery with remote monitoring.",
+      "14 × 620W Canadian Bifacial Solar Panels – High-efficiency bifacial modules that capture sunlight from both sides for maximum yield.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium storage ensuring reliable backup power.",
+    ],
+    benefits: [
+      "Save up to 80–85% on electricity bills",
+      "Provides uninterrupted power for appliances like air conditioning, refrigeration, and entertainment systems",
+      "Reduces approximately 1,500–1,800 kg of CO₂ emissions monthly",
+      "Perfect for residential homes in Batangas looking for reliable, cost-saving energy solutions",
+      "Ensures continuous power during outages and grid interruptions",
+    ],
+    description:
+      "Sunphil Solar completed an 8kW hybrid solar power system installation in Brgy. Dalima, Tuy, Batangas, designed for a household with significant energy usage. This system provides stable power during brownouts, reduces electricity costs, and ensures excess solar energy is stored for nighttime use. It's an excellent solution for families in Batangas who want to secure energy independence while protecting themselves from rising utility rates.\n\nWith this hybrid solar system, homeowners in Brgy. Dalima now enjoy clean, sustainable energy while gaining protection from frequent brownouts and rising power costs. The use of premium bifacial panels and a robust lithium battery ensures maximum performance and long-term savings.\n\nSunphil Solar provides free site survey & load analysis, customized solar system design, and professional installation with lifetime support. Request your free quote today and enjoy the benefits of hybrid solar power in Tuy, Batangas!",
+  },
+  {
     id: "imus-cavite-6kw-sept-2025",
     image: "/images/project91.jpg",
     location: "Imus, Cavite, Philippines",
