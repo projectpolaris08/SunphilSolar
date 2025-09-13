@@ -12,6 +12,94 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "brgy-niog-ii-bacoor-cavite-6kw-2025",
+    image: "/images/project99.jpg",
+    location: "Brgy. Niog II, Bacoor, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-13",
+    clientType: "Residential – Medium Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart energy control between solar, battery, and grid with remote monitoring.",
+      "13 × 620W Canadian Bifacial Solar Panels – Dual-sided panels designed for maximum solar capture and efficiency.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage for nighttime use and protection during outages.",
+    ],
+    benefits: [
+      "Save up to 80% on electricity bills",
+      "Provides backup power for essential appliances such as lighting, refrigeration, and entertainment systems",
+      "Reduces approximately 1,200–1,400 kg of CO₂ emissions monthly",
+      "Ideal for Cavite households seeking affordable and sustainable energy solutions",
+      "Ensures continuous power even during grid interruptions",
+    ],
+    description:
+      "Sunphil Solar completed a 6kW hybrid solar power system in Brgy. Niog II, Bacoor, Cavite, designed for a household with moderate energy needs. This installation allows the homeowners to significantly cut down on electricity costs while ensuring stable power supply during brownouts. By storing excess solar energy in the lithium battery, the system guarantees reliable power both day and night, making it a practical solution for Cavite households.\n\nWith this 6kW hybrid solar system, the homeowners in Brgy. Niog II now enjoy dependable, eco-friendly, and cost-saving energy. By combining high-efficiency bifacial solar panels with a durable lithium battery, the system delivers optimal performance and peace of mind for years to come.\n\nSunphil Solar provides free site survey and load analysis, custom solar system design, and professional installation with lifetime support. Request your free quote today and discover the benefits of hybrid solar power in Bacoor, Cavite!",
+  },
+  {
+    id: "brgy-h-concepcion-cabanatuan-city-nueva-ecija-16kw-2025",
+    image: "/images/project98.jpg",
+    location: "Brgy. H. Concepcion, Cabanatuan City, Nueva Ecija, Philippines",
+    system: "16kW Hybrid Solar",
+    date: "2025-09-12",
+    clientType: "Residential – High Energy Consumption",
+    specification: [
+      "16kW Deye Hybrid Inverter – Advanced smart control for seamless solar, battery, and grid integration with remote monitoring.",
+      "28 × 620W Canadian Bifacial Solar Panels – Dual-sided, high-efficiency modules that maximize sunlight capture.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Large-capacity lithium storage for reliable nighttime power and extended brownout protection.",
+    ],
+    benefits: [
+      "Potential savings of up to 85% on monthly electricity bills",
+      "Powers multiple high-demand appliances including air conditioners, refrigerators, entertainment systems, and more",
+      "Offsets approximately 3,500–4,000 kg of CO₂ emissions every month",
+      "Ideal for large residential properties in Nueva Ecija seeking stability and energy independence",
+      "Ensures uninterrupted power supply during extended blackouts and grid fluctuations",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 16kW hybrid solar power system in Brgy. H. Concepcion, Cabanatuan City, Nueva Ecija, tailored for a large residential property with high energy demand. This system provides uninterrupted power during outages, stores excess energy for nighttime use, and significantly reduces electricity bills. Designed for families who value both comfort and sustainability, the system ensures long-term energy independence.\n\nThis powerful 16kW hybrid solar system allows homeowners in Brgy. H. Concepcion to enjoy a secure, cost-efficient, and eco-friendly energy solution. With premium bifacial solar panels and robust lithium storage, the system is built for long-term durability, maximum efficiency, and peace of mind.\n\nSunphil Solar provides free site survey and load analysis, custom solar system design, and professional installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Nueva Ecija!",
+  },
+  {
+    id: "brgy-kaligayahan-quezon-city-6kw-2025",
+    image: "/images/project97.jpg",
+    location: "Brgy. Kaligayahan, Quezon City, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-11",
+    clientType: "Residential, Moderate Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter - intelligent energy control with remote monitoring for solar, battery, and grid.",
+      "10 × 620W Canadian Bifacial Solar Panels - dual-sided high-efficiency modules that capture more sunlight.",
+      "Optional future upgrade available for lithium storage to extend backup capability.",
+    ],
+    benefits: [
+      "Save up to 70–75% on monthly electricity bills",
+      "Reliable power backup for essential household appliances such as lights, refrigerator, and air conditioning",
+      "Reduces about 1,000–1,200 kg of CO₂ emissions every month",
+      "Ideal for residential homes in Quezon City looking for cost savings and energy stability",
+      "Provides continuous power during brownouts and grid interruptions",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar power system in Brgy. Kaligayahan, Quezon City for a residential client looking to save on electricity and gain energy independence. The system efficiently generates solar energy, stores excess power for nighttime use, and provides backup electricity during outages. This installation ensures reliable performance while lowering monthly bills and reducing carbon emissions.\n\nThis 6kW hybrid solar system ensures that the household in Brgy. Kaligayahan enjoys affordable, sustainable, and reliable energy. Combining bifacial solar technology with a scalable hybrid setup, the system is designed for long-term efficiency and future expansion.\n\nSunphil Solar provides free site survey and load analysis, tailor-fit solar system design, and professional installation with lifetime support. Request your free quote today and enjoy the benefits of solar power in Quezon City!",
+  },
+  {
+    id: "brgy-mayamot-antipolo-city-6kw-2025",
+    image: "/images/project96.jpg",
+    location: "Brgy. Mayamot, Antipolo City, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-09",
+    clientType: "Residential, Moderate Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter - smart energy management for solar, battery, and grid with remote monitoring.",
+      "9 × 620W Canadian Bifacial Solar Panels - dual-sided technology to maximize energy harvest.",
+      "51.2V 314Ah LiFePO₄ Battery - dependable storage solution for nighttime use and brownout protection.",
+    ],
+    benefits: [
+      "Reduce electricity bills by up to 75–80%",
+      "Reliable backup power for essential appliances such as lights, refrigerator, and air conditioning",
+      "Offsets around 1,000–1,200 kg of CO₂ emissions every month",
+      "Perfect for households in Antipolo City seeking cost savings and energy security",
+      "Continuous power supply during grid interruptions",
+    ],
+    description:
+      "Sunphil Solar completed a 6kW hybrid solar system in Brgy. Mayamot, Antipolo City for a household aiming to reduce electricity costs and achieve greater energy independence. This setup efficiently generates solar power, stores excess energy for nighttime use, and provides backup power during brownouts. With its high-efficiency bifacial panels and durable lithium battery, the system is designed for reliable long-term performance.\n\nThis 6kW hybrid solar system ensures that the homeowners in Brgy. Mayamot enjoy stable, eco-friendly energy with long-term financial savings. Equipped with bifacial panels and a robust lithium battery, the installation delivers reliable performance and protection against rising electricity costs.\n\nSunphil Solar provides free site survey and energy assessment, customized solar system design for your home, and professional installation and lifetime support. Request your free quote today and start your solar journey in Antipolo City!",
+  },
+  {
     id: "ayala-alabang-village-muntinlupa-8kw-2025",
     image: "/images/project95.jpg",
     location: "Ayala Alabang Village, Muntinlupa City, Philippines",
