@@ -147,13 +147,17 @@ const AdminPaymentPage: React.FC = () => {
     const mdrAmount = mdrRate
       ? Math.round(((amount * mdrRate) / 100) * 100) / 100
       : 0;
-    const totalAmountWithMDR = Math.round((amount + mdrAmount) * 100) / 100;
-    const monthlyPayment = Math.round((totalAmountWithMDR / tenor) * 100) / 100;
-    const totalPayments = totalAmountWithMDR;
+    const taxAmount = Math.round(mdrAmount * 0.01 * 100) / 100; // 1% tax on MDR
+    const totalAdditionalFees = Math.round((mdrAmount + taxAmount) * 100) / 100;
+    const totalAmountWithFees =
+      Math.round((amount + totalAdditionalFees) * 100) / 100;
+    const monthlyPayment =
+      Math.round((totalAmountWithFees / tenor) * 100) / 100;
+    const totalPayments = totalAmountWithFees;
     const totalMonthlyAmount = Math.round(monthlyPayment * tenor * 100) / 100;
-    const savings = mdrAmount; // This is the additional amount customer pays
+    const savings = totalAdditionalFees; // This is the additional amount customer pays (MDR + Tax)
     const monthlyBreakdown = generateMonthlyBreakdown(
-      totalAmountWithMDR,
+      totalAmountWithFees,
       tenor
     );
 
@@ -162,7 +166,7 @@ const AdminPaymentPage: React.FC = () => {
       bank,
       tenor,
       mdrRate: mdrRate || 0,
-      merchantDiscount: mdrAmount, // Keep same field name for compatibility
+      merchantDiscount: totalAdditionalFees, // Keep same field name for compatibility (now includes MDR + Tax)
       monthlyPayment,
       totalPayments,
       totalMonthlyAmount,
@@ -236,7 +240,7 @@ const AdminPaymentPage: React.FC = () => {
     const headers = [
       "Bank",
       "Tenor",
-      "Additional Fee",
+      "Additional Fee (MDR + Tax)",
       "Monthly Payment",
       "Total Monthly Amount",
       "Total Payments",
@@ -293,9 +297,9 @@ const AdminPaymentPage: React.FC = () => {
 
     doc.setFont("helvetica", "normal");
     doc.text(
-      `Best Interest Rate: ${computations[0]?.mdrRate.toFixed(2)}% (${
-        computations[0]?.bank
-      })`,
+      `Best Monthly Interest Rate: ${(
+        computations[0]?.mdrRate / computations[0]?.tenor
+      ).toFixed(2)}% (${computations[0]?.bank})`,
       20,
       yPosition
     );
@@ -339,7 +343,9 @@ const AdminPaymentPage: React.FC = () => {
       45
     );
     doc.text(
-      `Interest Rate: ${selectedComputation.mdrRate.toFixed(2)}%`,
+      `Monthly Interest Rate: ${(
+        selectedComputation.mdrRate / selectedComputation.tenor
+      ).toFixed(2)}%`,
       20,
       50
     );
@@ -573,7 +579,7 @@ const AdminPaymentPage: React.FC = () => {
                       Tenor
                     </th>
                     <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
-                      Additional Fee
+                      Additional Fee (MDR + Tax)
                     </th>
                     <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
                       Monthly Payment
@@ -812,7 +818,7 @@ const AdminPaymentPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-blue-700 dark:text-blue-300">
-                      Additional Fee:
+                      Additional Fee (MDR + Tax):
                     </span>
                     <p
                       className={`font-bold ${
