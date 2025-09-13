@@ -147,7 +147,7 @@ const AdminPaymentPage: React.FC = () => {
     const mdrAmount = mdrRate
       ? Math.round(((amount * mdrRate) / 100) * 100) / 100
       : 0;
-    const taxAmount = Math.round(mdrAmount * 0.01 * 100) / 100; // 1% tax on MDR
+    const taxAmount = Math.round(amount * 0.01 * 100) / 100; // 1% tax on transaction amount
     const totalAdditionalFees = Math.round((mdrAmount + taxAmount) * 100) / 100;
     const totalAmountWithFees =
       Math.round((amount + totalAdditionalFees) * 100) / 100;
