@@ -124,7 +124,7 @@ const maxROI = annualROIs.length > 0 ? Math.max(...annualROIs) : 0;
 
 const InstallationAnalysisPage: React.FC = () => {
   return (
-    <div className="min-h-screen w-full bg-neutral-950">
+    <div className="min-h-screen w-full bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900">
       <div className="container mx-auto px-4 py-20">
         <Helmet>
           <title>Installation Analysis | Sunphil Solar</title>

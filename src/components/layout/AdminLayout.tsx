@@ -20,6 +20,7 @@ import {
   Calendar,
   Sun,
   Moon,
+  Calculator,
 } from "lucide-react";
 import { adminUsers } from "../../data/adminUsers";
 
@@ -75,6 +76,12 @@ const menuItems = [
     label: "Expenses",
     icon: Database,
     link: "/admin/expenses",
+  },
+  {
+    id: "payment-computation",
+    label: "Payment Computation",
+    icon: Calculator,
+    link: "/admin/payment-computation",
   },
   {
     id: "analytics",

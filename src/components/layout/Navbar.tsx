@@ -16,6 +16,7 @@ import {
   BarChart2,
   Map,
   Star,
+  CreditCard,
 } from "lucide-react";
 import { Logo } from "../Logo";
 import { Link as RouterLink, useLocation } from "react-router-dom";
@@ -191,20 +192,28 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   After Sales
                 </RouterLink>
                 <RouterLink
-                  to="/faq"
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
-                  onClick={() => handleNavClick("/faq")}
-                >
-                  <HelpCircle className="w-5 h-5 text-pink-500" />
-                  FAQ
-                </RouterLink>
-                <RouterLink
                   to="/special-offer"
                   className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
                   onClick={() => handleNavClick("/special-offer")}
                 >
                   <Star className="w-5 h-5 text-yellow-500" />
                   Special Offers
+                </RouterLink>
+                <RouterLink
+                  to="/payment"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/payment")}
+                >
+                  <CreditCard className="w-5 h-5 text-green-500" />
+                  Payment Options
+                </RouterLink>
+                <RouterLink
+                  to="/faq"
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-primary-100 text-gray-900"
+                  onClick={() => handleNavClick("/faq")}
+                >
+                  <HelpCircle className="w-5 h-5 text-pink-500" />
+                  FAQ
                 </RouterLink>
               </div>
             </div>
@@ -384,17 +393,6 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               After Sales
             </RouterLink>
             <RouterLink
-              to="/faq"
-              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
-              onClick={() => {
-                handleNavClick("/faq");
-                toggleMenu();
-              }}
-            >
-              <HelpCircle className="w-5 h-5 text-pink-500" />
-              FAQ
-            </RouterLink>
-            <RouterLink
               to="/special-offer"
               className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
               onClick={() => {
@@ -404,6 +402,28 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             >
               <Star className="w-5 h-5 text-yellow-500" />
               Special Offers
+            </RouterLink>
+            <RouterLink
+              to="/payment"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/payment");
+                toggleMenu();
+              }}
+            >
+              <CreditCard className="w-5 h-5 text-green-500" />
+              Payment Options
+            </RouterLink>
+            <RouterLink
+              to="/faq"
+              className="flex items-center gap-2 px-2 py-2 rounded hover:bg-primary-100 text-gray-900"
+              onClick={() => {
+                handleNavClick("/faq");
+                toggleMenu();
+              }}
+            >
+              <HelpCircle className="w-5 h-5 text-pink-500" />
+              FAQ
             </RouterLink>
           </div>
           <div className="pt-2">

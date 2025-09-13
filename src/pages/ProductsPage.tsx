@@ -131,13 +131,20 @@ const ProductsPage: React.FC = () => {
   };
 
   return (
-    <section id="products" ref={sectionRef} className="py-20 bg-secondary-50">
+    <section
+      id="products"
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-6">
-          <ol className="flex items-center space-x-2 text-sm text-secondary-600">
+          <ol className="flex items-center space-x-2 text-sm text-white/70">
             <li>
-              <Link to="/" className="flex items-center hover:text-blue-600">
+              <Link
+                to="/"
+                className="flex items-center hover:text-blue-400 text-white/80"
+              >
                 <svg
                   className="mr-2"
                   width="16"
@@ -157,17 +164,17 @@ const ProductsPage: React.FC = () => {
             </li>
             <li className="flex items-center">
               <ChevronRight size={16} className="mx-1" />
-              <span className="text-blue-600">Products</span>
+              <span className="text-blue-400">Products</span>
             </li>
           </ol>
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Our Products
           </h2>
           <div className="h-1 w-20 bg-primary-500 mx-auto rounded mb-6"></div>
-          <p className="text-lg text-secondary-600">
+          <p className="text-lg text-white/80">
             Explore our high-quality batteries and pre-assembled hybrid
             inverters.
           </p>
@@ -180,7 +187,7 @@ const ProductsPage: React.FC = () => {
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "battery"
                 ? "bg-primary-500 text-white shadow-elevation-2"
-                : "bg-white text-secondary-700 border border-primary-500 hover:bg-primary-100"
+                : "bg-white/10 text-white border border-white/30 hover:bg-white/20"
             }`}
           >
             Battery Storage
@@ -190,7 +197,7 @@ const ProductsPage: React.FC = () => {
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "inverter"
                 ? "bg-primary-500 text-white shadow-elevation-2"
-                : "bg-white text-secondary-700 border border-primary-500 hover:bg-primary-100"
+                : "bg-white/10 text-white border border-white/30 hover:bg-white/20"
             }`}
           >
             Pre-assembled Inverters
@@ -217,7 +224,7 @@ const ProductsPage: React.FC = () => {
                   </div>
                   {product.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3 text-center">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 text-center">
                   {product.title}
                 </h3>
                 <div className="flex flex-col items-center space-y-2 mb-4">

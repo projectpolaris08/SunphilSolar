@@ -291,7 +291,7 @@ const AboutPage: React.FC = () => {
       : builders;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900">
       <Helmet>
         <title>About Us | Sunphil Solar</title>
         <meta

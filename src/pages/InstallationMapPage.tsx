@@ -47,7 +47,7 @@ const InstallationMapPage: React.FC<InstallationMapPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen w-full bg-neutral-950">
+    <div className="min-h-screen w-full bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900">
       <Helmet>
         <title>Solar Installation Map - Sunphil Solar</title>
         <meta

@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen w-full bg-neutral-950">
+    <div className="min-h-screen w-full bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900">
       <div className="container mx-auto px-4 py-20">
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-6">

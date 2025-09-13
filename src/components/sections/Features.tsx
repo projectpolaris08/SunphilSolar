@@ -36,7 +36,7 @@ export const Features: React.FC = () => {
       icon: <PiggyBank className="h-10 w-10 text-primary-500" />,
       title: "Financing Options",
       description:
-        "Currently accepting cash payments, with flexible financing options coming soon to make solar energy even more accessible!",
+        "Flexible payment options including major credit cards, EastWest Bank 0% installment plans, cash payments, and cashless transfers to make solar energy accessible!",
     },
     {
       icon: <Clock className="h-10 w-10 text-primary-500" />,

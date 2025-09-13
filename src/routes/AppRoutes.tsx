@@ -36,6 +36,8 @@ import ExpensesPage from "../pages/ExpensesPage";
 import SolarPanelsPage from "../pages/SolarPanelsPage";
 import PayrollPage from "../pages/PayrollPage";
 import SpecialOfferPage from "../pages/SpecialOfferPage";
+import PaymentPage from "../pages/PaymentPage";
+import AdminPaymentPage from "../pages/AdminPaymentPage";
 import AdminLayout from "../components/layout/AdminLayout";
 import AdminLoginPage from "../pages/AdminLoginPage";
 import { useAdminAuth } from "../contexts/AdminAuthContext";
@@ -84,6 +86,7 @@ const AppRoutes = ({
           <Route path="solar-quotation" element={<Form />} />
 
           <Route path="expenses" element={<ExpensesPage />} />
+          <Route path="payment-computation" element={<AdminPaymentPage />} />
           <Route path="settings" element={<SettingsPage />} />
           {/* Add more admin subpages here */}
         </Route>
@@ -107,6 +110,7 @@ const AppRoutes = ({
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/special-offer" element={<SpecialOfferPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/solar-panels" element={<SolarPanelsPage />} />
           <Route path="/aftersales" element={<AfterSalesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />

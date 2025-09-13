@@ -16,9 +16,7 @@ const SpecialOfferPage = () => {
     {
       id: 1,
       title: "Complete Solar Installation Package",
-      originalPrice: "₱300,000.00",
-      discountedPrice: "₱225,000.00",
-      discount: "25% OFF",
+      status: "Coming Soon",
       description:
         "Complete solar panel installation with premium components and professional service",
       features: [
@@ -29,8 +27,8 @@ const SpecialOfferPage = () => {
         "Smart energy monitoring",
         "Hybrid Capability",
       ],
-      validUntil: "December 31, 2025",
-      badge: "Limited Time Offer",
+      validUntil: "TBA",
+      badge: "Coming Soon",
     },
   ];
 
@@ -126,9 +124,9 @@ const SpecialOfferPage = () => {
                   </span>
                 </div>
 
-                {/* Discount Badge */}
-                <div className="absolute -top-2 -right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                  {offer.discount}
+                {/* Status Badge */}
+                <div className="absolute -top-2 -right-2 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  {offer.badge}
                 </div>
 
                 <div className="text-center mb-6">
@@ -137,20 +135,15 @@ const SpecialOfferPage = () => {
                   </h3>
                   <p className="text-white/70 mb-4">{offer.description}</p>
 
-                  {/* Pricing */}
+                  {/* Status */}
                   <div className="mb-6">
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-3xl font-bold text-white">
-                        {offer.discountedPrice}
-                      </span>
-                      <span className="text-lg text-white/50 line-through">
-                        {offer.originalPrice}
+                    <div className="flex items-center justify-center mb-2">
+                      <span className="text-3xl font-bold text-yellow-400">
+                        {offer.status}
                       </span>
                     </div>
-                    <p className="text-sm text-green-400 font-medium">
-                      You save ₱
-                      {parseInt(offer.originalPrice.replace(/[₱,]/g, "")) -
-                        parseInt(offer.discountedPrice.replace(/[₱,]/g, ""))}
+                    <p className="text-sm text-white/70 font-medium">
+                      Pricing details will be announced soon
                     </p>
                   </div>
                 </div>
@@ -165,12 +158,12 @@ const SpecialOfferPage = () => {
                   ))}
                 </div>
 
-                {/* Valid Until */}
+                {/* Status Info */}
                 <div className="text-center mb-6">
                   <div className="flex items-center justify-center gap-2 text-yellow-400 mb-4">
                     <Clock className="w-4 h-4" />
                     <span className="text-sm font-medium">
-                      Valid until {offer.validUntil}
+                      Launch date: {offer.validUntil}
                     </span>
                   </div>
                 </div>
@@ -180,7 +173,7 @@ const SpecialOfferPage = () => {
                   to="/#contact"
                   className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-blue-500/25"
                 >
-                  Get This Offer
+                  Get Notified
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -330,18 +323,19 @@ const SpecialOfferPage = () => {
         {/* Call to Action */}
         <div className="text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Go Solar?
+            Stay Updated on Our Special Offer
           </h2>
           <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Don't miss out on this exclusive offer. Contact us today for a free
-            consultation and quote.
+            Be the first to know when our special solar package becomes
+            available. Contact us today for a free consultation and get notified
+            when pricing is announced.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/#contact"
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-blue-500/25"
             >
-              Get Free Quote
+              Get Notified
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
