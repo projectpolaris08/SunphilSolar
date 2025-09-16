@@ -257,7 +257,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
         className={`lg:hidden fixed top-20 left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out overflow-y-auto ${
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
-        style={{ zIndex: 40 }}
+        style={{ zIndex: 40, maxHeight: isOpen ? "calc(100vh - 5rem)" : "0" }}
       >
         <div className="px-4 pt-2 pb-6 space-y-3">
           {navItems.map((item) =>

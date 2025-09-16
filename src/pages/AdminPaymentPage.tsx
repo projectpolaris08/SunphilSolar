@@ -37,7 +37,7 @@ interface BankRates {
 
 const AdminPaymentPage: React.FC = () => {
   const { isAuthenticated, loading } = useAdminAuth();
-  const [transactionAmount, setTransactionAmount] = useState<number>(0);
+  const [transactionAmount, setTransactionAmount] = useState<number | "">("");
   const [selectedBank, setSelectedBank] = useState<string>("");
   const [selectedTenor, setSelectedTenor] = useState<number>(0);
   const [computations, setComputations] = useState<PaymentComputation[]>([]);
@@ -176,7 +176,12 @@ const AdminPaymentPage: React.FC = () => {
   };
 
   const calculateAllBanks = () => {
-    if (transactionAmount <= 0 || selectedTenor <= 0) return;
+    if (
+      transactionAmount === "" ||
+      transactionAmount <= 0 ||
+      selectedTenor <= 0
+    )
+      return;
 
     const newComputations: PaymentComputation[] = [];
 
@@ -198,7 +203,12 @@ const AdminPaymentPage: React.FC = () => {
   };
 
   const calculateSpecificBank = () => {
-    if (transactionAmount <= 0 || selectedBank === "" || selectedTenor <= 0)
+    if (
+      transactionAmount === "" ||
+      transactionAmount <= 0 ||
+      selectedBank === "" ||
+      selectedTenor <= 0
+    )
       return;
 
     const computation = calculatePayment(
@@ -230,7 +240,9 @@ const AdminPaymentPage: React.FC = () => {
     doc.setFont("helvetica", "normal");
     doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 20, 30);
     doc.text(
-      `Transaction Amount: PHP ${transactionAmount.toLocaleString()}`,
+      `Transaction Amount: PHP ${
+        transactionAmount === "" ? "0" : transactionAmount.toLocaleString()
+      }`,
       20,
       35
     );
@@ -402,7 +414,53 @@ const AdminPaymentPage: React.FC = () => {
       20,
       yPosition
     );
-    yPosition += 6;
+    yPosition += 15;
+
+    // Conforme Section
+    // Check if we need a new page for conforme section
+    if (yPosition > 200) {
+      doc.addPage();
+      yPosition = 20;
+    }
+
+    // Conforme title
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+    doc.text("CONFORME", 20, yPosition);
+    yPosition += 20;
+
+    // Conforme fields
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+
+    // Printed Name
+    doc.text("Printed Name:", 20, yPosition);
+    doc.line(60, yPosition - 3, 120, yPosition - 3);
+    yPosition += 15;
+
+    // Signature
+    doc.text("Signature:", 20, yPosition);
+    doc.line(60, yPosition - 3, 120, yPosition - 3);
+    yPosition += 15;
+
+    // Date
+    doc.text("Date:", 20, yPosition);
+    doc.line(60, yPosition - 3, 120, yPosition - 3);
+    yPosition += 20;
+
+    // Terms and conditions note
+    doc.setFontSize(10);
+    doc.text(
+      "I acknowledge that I have read and understood the terms and conditions",
+      20,
+      yPosition
+    );
+    yPosition += 5;
+    doc.text(
+      "of this payment plan and agree to the monthly payment schedule above.",
+      20,
+      yPosition
+    );
 
     // Save the PDF
     doc.save(
@@ -476,7 +534,10 @@ const AdminPaymentPage: React.FC = () => {
               <input
                 type="number"
                 value={transactionAmount}
-                onChange={(e) => setTransactionAmount(Number(e.target.value))}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setTransactionAmount(value === "" ? "" : Number(value));
+                }}
                 className="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                 placeholder="Enter amount"
                 min="3000"
@@ -665,7 +726,10 @@ const AdminPaymentPage: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">
-                  ₱{transactionAmount.toLocaleString()}
+                  ₱
+                  {transactionAmount === ""
+                    ? "0"
+                    : transactionAmount.toLocaleString()}
                 </p>
               </div>
 
@@ -762,30 +826,30 @@ const AdminPaymentPage: React.FC = () => {
 
       {/* Monthly Breakdown Modal */}
       {showBreakdown && selectedComputation && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
-            <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden my-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 gap-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                 Monthly Payment Breakdown
               </h2>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                 <button
                   onClick={exportBreakdownToPDF}
-                  className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                  className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors w-full sm:w-auto"
                 >
                   <FileText className="h-4 w-4" />
                   Export PDF
                 </button>
                 <button
                   onClick={() => setShowBreakdown(false)}
-                  className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+                  className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors w-full sm:w-auto"
                 >
                   Close
                 </button>
               </div>
             </div>
 
-            <div className="p-6">
+            <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
               <div className="mb-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
                   {selectedComputation.bank} - {selectedComputation.tenor} Month
@@ -835,7 +899,7 @@ const AdminPaymentPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="overflow-auto max-h-96 border border-gray-200 dark:border-gray-600 rounded-lg">
+              <div className="overflow-auto max-h-96 border border-gray-200 dark:border-gray-600 rounded-lg -webkit-overflow-scrolling-touch">
                 <table className="w-full border-collapse">
                   <thead className="sticky top-0 bg-white dark:bg-gray-800 z-10">
                     <tr className="border-b border-gray-200 dark:border-gray-600">

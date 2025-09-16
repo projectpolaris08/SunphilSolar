@@ -105,4 +105,31 @@ html {
   .animated-gradient-border {
     max-width: 100%;
   }
+
+  /* Mobile scrolling fixes */
+  body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ensure proper mobile viewport */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Mobile modal fixes */
+  .fixed.inset-0 {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better mobile table scrolling */
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+  }
 }

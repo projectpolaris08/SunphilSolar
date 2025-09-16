@@ -45,7 +45,7 @@ export const Layout: React.FC = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar scrolled={scrolled} />
       {/* Main content area with smooth scroll padding */}
-      <main className="flex-grow pt-24 scroll-smooth">
+      <main className="flex-grow pt-20 scroll-smooth overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />
