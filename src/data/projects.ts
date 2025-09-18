@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "brgy-navarro-gen-trias-cavite-6kw-2025",
+    image: "/images/project100.jpg",
+    location: "Brgy. Navarro, Gen. Trias, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-17",
+    clientType: "Residential – Medium Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter – Intelligent energy management between solar, battery, and grid with remote monitoring.",
+      "10 × 620W Canadian Bifacial Solar Panels – High-efficiency, dual-sided modules that maximize solar energy capture.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium storage for nighttime energy use and brownout protection.",
+    ],
+    benefits: [
+      "Reduces electricity bills by up to 75–80%",
+      "Provides backup power for essential appliances such as air conditioning, refrigeration, and lighting",
+      "Cuts approximately 1,100–1,300 kg of CO₂ emissions monthly",
+      "Perfect for Cavite households aiming for energy independence and long-term savings",
+      "Guarantees uninterrupted power during outages and scheduled maintenance",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system in Brgy. Navarro, Gen. Trias, Cavite, providing the household with dependable and cost-efficient energy. This setup helps reduce monthly electricity expenses while ensuring a reliable power supply during brownouts. The system is designed to store excess solar energy for nighttime use, offering both savings and energy security for the family.\n\nWith this 6kW hybrid solar system, the homeowners in Brgy. Navarro now enjoy the advantages of clean, renewable energy. Featuring high-performance bifacial panels and a robust lithium battery, this system is built for efficiency, reliability, and sustainable living.\n\nSunphil Solar provides free site survey and load analysis, customized solar system design, and expert installation with lifetime support. Request your free quote today and experience the benefits of hybrid solar power in Gen. Trias, Cavite!",
+  },
+  {
     id: "brgy-niog-ii-bacoor-cavite-6kw-2025",
     image: "/images/project99.jpg",
     location: "Brgy. Niog II, Bacoor, Cavite, Philippines",
