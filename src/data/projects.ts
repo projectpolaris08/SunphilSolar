@@ -12,6 +12,73 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "tayuman-binangonan-rizal-16kw-2025",
+    image: "/images/project103.jpg",
+    location: "Tayuman, Binangonan, Rizal, Philippines",
+    system: "16kW Hybrid Solar",
+    date: "2025-09-21",
+    clientType: "Large residential property with high electricity demand",
+    specification: [
+      "16kW Deye Hybrid Inverter – Intelligent hybrid management with smart monitoring and grid-tie functionality.",
+      "30 × 620W Canadian Bifacial Solar Panels – High-output modules with bifacial design for maximum efficiency.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – Reliable lithium storage designed for deep cycling and consistent nighttime backup power.",
+    ],
+    benefits: [
+      "Save up to 90% on monthly electricity costs",
+      "Continuous power for both residential needs and garment production",
+      "Reliable backup energy during outages",
+      "Eco-friendly system that reduces carbon emissions by approximately 1,300–1,500 kg every month",
+      "High-efficiency solar panels that maximize energy yield",
+    ],
+    description:
+      "Sunphil Solar completed a 16kW hybrid solar power system for a combined residential property and garments business in Tayuman, Binangonan, Rizal. With heavy energy consumption from both household appliances and sewing equipment, the client required a strong and reliable energy solution. This hybrid solar setup ensures consistent power supply during daytime and nighttime, significant monthly savings, and stable operation even during power interruptions.\n\nWith this 16kW hybrid solar system, the homeowner and garments business owner now benefit from long-term cost savings, reliable energy security, and uninterrupted garment production. The system not only powers daily household needs but also supports business operations sustainably while reducing environmental impact.\n\nSunphil Solar provides free site assessment, customized solar system design, and professional installation with ongoing support. Contact us today and enjoy the benefits of hybrid solar for your home and business.",
+  },
+  {
+    id: "brgy-poblacion-san-pascual-batangas-12kw-2025",
+    image: "/images/project102.jpg",
+    location: "Brgy. Poblacion, San Pascual, Batangas, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-09-20",
+    clientType:
+      "Residential with high energy usage (multiple appliances & air conditioning units)",
+    specification: [
+      "12kW Deye Hybrid Inverter – Advanced hybrid control with remote monitoring, smart load shifting, and grid-tie functionality.",
+      "18 × 620W Canadian Bifacial Solar Panels – High-efficiency modules capturing energy from both front and rear sides for maximum yield.",
+      "51.2V 324Ah LiFePO₄ Battery – Reliable lithium storage with long lifespan, designed for deep cycling and dependable nighttime/back-up power.",
+    ],
+    benefits: [
+      "Massive savings – up to 80–90% reduction in electricity bills",
+      "Backup-ready – continuous power during outages, perfect for Batangas households with frequent brownouts",
+      "High-capacity system – supports multiple air conditioners, refrigerators, and heavy loads",
+      "Sustainability impact – prevents an estimated 2,000+ kg of CO₂ emissions monthly",
+      "Future-proof setup – scalable and designed for long-term performance",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 12kW hybrid solar power system for a household in Brgy. Poblacion, San Pascual, Batangas. This setup was tailored for a family with high daily consumption, requiring both cost savings and reliable backup power. With hybrid technology, the system prioritizes solar energy during the day, stores excess power in batteries, and provides seamless supply during brownouts ensuring the home never experiences downtime.\n\nWith this 12kW hybrid solar system, the family in Brgy. Poblacion now enjoys true energy independence. From daily cost savings to blackout protection, this installation showcases how advanced hybrid solar technology can transform homes in Batangas into sustainable, self-reliant power hubs.\n\nSunphil Solar provides free on-site assessment, custom design for your energy needs, and professional installation with lifetime support. Contact us today and let's build your hybrid solar solution in Batangas!",
+  },
+  {
+    id: "brgy-langgam-san-pedro-laguna-8kw-2025",
+    image: "/images/project101.jpg",
+    location: "Brgy. Langgam, San Pedro, Laguna, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-09-19",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Smart power management between solar, grid, and battery with remote monitoring.",
+      "13 × 620W Canadian Bifacial Solar Panels – High-efficiency dual-sided modules that maximize energy capture.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-lasting lithium storage providing dependable nighttime power and brownout protection.",
+    ],
+    benefits: [
+      "Cuts electricity bills by up to 80–85%",
+      "Provides backup power for essential loads such as air conditioning, refrigerators, and lighting",
+      "Reduces about 1,500–1,800 kg of CO₂ emissions monthly",
+      "Ideal for San Pedro households seeking energy stability and long-term savings",
+      "Ensures uninterrupted operation during power outages and maintenance periods",
+    ],
+    description:
+      "Sunphil Solar installed an 8kW hybrid solar power system in Brgy. Langgam, San Pedro, Laguna, designed for a household with substantial energy requirements. This system efficiently reduces monthly electricity costs while ensuring uninterrupted power during outages. By storing excess energy for night use, the homeowners now enjoy reliable energy independence and protection from rising electricity rates.\n\nWith this 8kW hybrid solar system, the homeowners in Brgy. Langgam can now enjoy stable and sustainable power. Combining high-efficiency bifacial solar panels with robust lithium storage, this setup guarantees long-term reliability and efficiency, while promoting greener living in Laguna. This system is designed for future expansion, allowing homeowners to add more panels or batteries as their energy needs grow.\n\nSunphil Solar provides free site survey and load analysis, custom solar system design, and professional installation with lifetime support. Request your free quote today and discover the benefits of hybrid solar power in San Pedro, Laguna!",
+  },
+  {
     id: "brgy-navarro-gen-trias-cavite-6kw-2025",
     image: "/images/project100.jpg",
     location: "Brgy. Navarro, Gen. Trias, Cavite, Philippines",
