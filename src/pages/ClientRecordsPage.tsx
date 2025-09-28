@@ -132,6 +132,23 @@ const ClientRecordsPage: React.FC = () => {
   }, []);
 
   const handleExport = () => {
+    // Helper function to properly escape CSV values
+    const escapeCsvValue = (
+      value: string | number | null | undefined
+    ): string => {
+      if (value === null || value === undefined) return "";
+      const stringValue = String(value);
+      // If value contains comma, quote, or newline, wrap in quotes and escape internal quotes
+      if (
+        stringValue.includes(",") ||
+        stringValue.includes('"') ||
+        stringValue.includes("\n")
+      ) {
+        return `"${stringValue.replace(/"/g, '""')}"`;
+      }
+      return stringValue;
+    };
+
     const csv = [
       [
         "Date",
@@ -147,22 +164,23 @@ const ClientRecordsPage: React.FC = () => {
         "Amount",
       ],
       ...records.map((r) => [
-        r.date,
-        r.name,
-        r.address,
-        r.inverter,
-        r.solar_panel_pcs + " pcs, " + r.solar_panel_wattage + "W",
-        r.battery_type + " " + r.battery_qty,
-        r.contact,
-        r.facebook,
-        r.visitation,
-        r.notes,
-        r.amount,
+        escapeCsvValue(r.date),
+        escapeCsvValue(r.name),
+        escapeCsvValue(r.address),
+        escapeCsvValue(r.inverter),
+        escapeCsvValue(`${r.solar_panel_pcs} pcs, ${r.solar_panel_wattage}W`),
+        escapeCsvValue(`${r.battery_type} ${r.battery_qty}`),
+        escapeCsvValue(r.contact),
+        escapeCsvValue(r.facebook),
+        escapeCsvValue(r.visitation),
+        escapeCsvValue(r.notes),
+        escapeCsvValue(r.amount),
       ]),
     ]
       .map((row) => row.join(","))
       .join("\n");
-    const blob = new Blob([csv], { type: "text/csv" });
+
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -662,6 +680,7 @@ const ClientRecordsPage: React.FC = () => {
                     className="block border border-gray-300 dark:border-gray-700 rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/2"
                   >
                     <option value="">Wattage</option>
+                    <option value="550W">550W</option>
                     <option value="580W">580W</option>
                     <option value="600W">600W</option>
                     <option value="615W">615W</option>
@@ -692,8 +711,10 @@ const ClientRecordsPage: React.FC = () => {
                     <option value="24v 314Ah">24v 314Ah</option>
                     <option value="48v 280Ah">48v 280Ah</option>
                     <option value="48v 314Ah">48v 314Ah</option>
+                    <option value="51.2v 200Ah">51.2v 200Ah</option>
                     <option value="51.2v 280Ah">51.2v 280Ah</option>
                     <option value="51.2v 314Ah">51.2v 314Ah</option>
+                    <option value="51.2v 324Ah">51.2v 324Ah</option>
                   </select>
                   <input
                     type="number"
