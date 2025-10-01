@@ -20,6 +20,8 @@ interface PaymentComputation {
   totalMonthlyAmount: number;
   savings: number;
   monthlyBreakdown: MonthlyPayment[];
+  whtAmount: number; // 0.5% withholding tax on base amount
+  netPayoutAfterWHT: number; // cash deposit after WHT (CWT issued)
 }
 
 interface MonthlyPayment {
@@ -107,6 +109,48 @@ const AdminPaymentPage: React.FC = () => {
   const tenors = [3, 6, 9, 12, 18, 24, 36];
   const banks = Object.keys(bankRates);
 
+  // Configurable BPI Add-On monthly rates (decimal per month). Defaults to 1% if missing.
+  const bpiAddOnMonthlyRates: { [tenor: number]: number } = {
+    3: 0.01,
+    6: 0.01,
+    9: 0.01,
+    12: 0.01,
+    18: 0.01,
+    24: 0.01,
+    36: 0.01,
+  };
+
+  // Helper: compute effective rate (%) for a given bank/tenor, or null if N/A
+  const getEffectiveRate = (bank: string, tenor: number): number | null => {
+    if (bank === "Bank of the Philippine Islands (BPI)") {
+      const monthly = bpiAddOnMonthlyRates[tenor];
+      if (monthly === undefined || monthly === null) return null;
+      return monthly * tenor * 100; // convert to total percent
+    }
+    const rate = bankRates[bank]?.[tenor.toString()];
+    return rate === null || rate === undefined ? null : (rate as number);
+  };
+
+  // Compute lowest banks by tenor (handles ties and N/A)
+  const lowestRatesByTenor: {
+    [tenor: number]: { banks: string[]; rate: number } | null;
+  } = tenors.reduce((acc, tenor) => {
+    const rates: { bank: string; rate: number }[] = banks
+      .map((bank) => {
+        const r = getEffectiveRate(bank, tenor);
+        return r === null ? null : { bank, rate: r };
+      })
+      .filter(Boolean) as { bank: string; rate: number }[];
+    if (rates.length === 0) {
+      acc[tenor] = null;
+      return acc;
+    }
+    const minRate = Math.min(...rates.map((r) => r.rate));
+    const winners = rates.filter((r) => r.rate === minRate).map((r) => r.bank);
+    acc[tenor] = { banks: winners, rate: minRate };
+    return acc;
+  }, {} as { [tenor: number]: { banks: string[]; rate: number } | null });
+
   // Generate monthly breakdown
   const generateMonthlyBreakdown = (
     amount: number,
@@ -144,18 +188,56 @@ const AdminPaymentPage: React.FC = () => {
     tenor: number
   ): PaymentComputation => {
     const mdrRate = bankRates[bank]?.[tenor.toString()] || 0;
-    const mdrAmount = mdrRate
-      ? Math.round(((amount * mdrRate) / 100) * 100) / 100
-      : 0;
-    const taxAmount = Math.round(amount * 0.01 * 100) / 100; // 1% tax on transaction amount
-    const totalAdditionalFees = Math.round((mdrAmount + taxAmount) * 100) / 100;
-    const totalAmountWithFees =
-      Math.round((amount + totalAdditionalFees) * 100) / 100;
+    // Special case: BPI uses Add-On Interest (e.g., 1% per month)
+    if (bank === "Bank of the Philippine Islands (BPI)") {
+      const addOnMonthlyRate = bpiAddOnMonthlyRates[tenor] ?? 0.01; // default 1% per month
+      const addOnInterest =
+        Math.round(amount * addOnMonthlyRate * tenor * 100) / 100;
+      const totalAmountWithFees =
+        Math.round((amount + addOnInterest) * 100) / 100;
+      const monthlyPayment =
+        Math.round((totalAmountWithFees / tenor) * 100) / 100;
+      const totalPayments = totalAmountWithFees;
+      const totalMonthlyAmount = Math.round(monthlyPayment * tenor * 100) / 100;
+      const savings = addOnInterest;
+      const whtAmount = Math.round(amount * 0.005 * 100) / 100; // 0.5% WHT on base amount
+      const netPayoutAfterWHT = Math.round((amount - whtAmount) * 100) / 100;
+      const monthlyBreakdown = generateMonthlyBreakdown(
+        totalAmountWithFees,
+        tenor
+      );
+
+      return {
+        transactionAmount: amount,
+        bank,
+        tenor,
+        // Represent "rate" as total add-on percentage for comparability
+        mdrRate: addOnMonthlyRate * tenor * 100,
+        merchantDiscount: addOnInterest,
+        monthlyPayment,
+        totalPayments,
+        totalMonthlyAmount,
+        savings,
+        monthlyBreakdown,
+        whtAmount,
+        netPayoutAfterWHT,
+      };
+    }
+
+    // Default: Gross-up so after MDR you still net the base amount
+    const grossedUpAmount = mdrRate
+      ? Math.round((amount / (1 - (mdrRate as number) / 100)) * 100) / 100
+      : amount;
+    const mdrAmount = Math.round((grossedUpAmount - amount) * 100) / 100;
+    const totalAdditionalFees = mdrAmount; // MDR only
+    const totalAmountWithFees = grossedUpAmount;
     const monthlyPayment =
       Math.round((totalAmountWithFees / tenor) * 100) / 100;
     const totalPayments = totalAmountWithFees;
     const totalMonthlyAmount = Math.round(monthlyPayment * tenor * 100) / 100;
-    const savings = totalAdditionalFees; // This is the additional amount customer pays (MDR + Tax)
+    const savings = totalAdditionalFees; // Additional amount the customer pays due to MDR gross-up
+    const whtAmount = Math.round(amount * 0.005 * 100) / 100; // 0.5% WHT on base amount
+    const netPayoutAfterWHT = Math.round((amount - whtAmount) * 100) / 100;
     const monthlyBreakdown = generateMonthlyBreakdown(
       totalAmountWithFees,
       tenor
@@ -166,12 +248,14 @@ const AdminPaymentPage: React.FC = () => {
       bank,
       tenor,
       mdrRate: mdrRate || 0,
-      merchantDiscount: totalAdditionalFees, // Keep same field name for compatibility (now includes MDR + Tax)
+      merchantDiscount: totalAdditionalFees, // Keep same field name for compatibility (MDR only)
       monthlyPayment,
       totalPayments,
       totalMonthlyAmount,
       savings,
       monthlyBreakdown,
+      whtAmount,
+      netPayoutAfterWHT,
     };
   };
 
@@ -186,6 +270,11 @@ const AdminPaymentPage: React.FC = () => {
     const newComputations: PaymentComputation[] = [];
 
     banks.forEach((bank) => {
+      // Skip N/A rates except BPI which uses add-on formula
+      const rate = bankRates[bank]?.[selectedTenor.toString()];
+      if (bank !== "Bank of the Philippine Islands (BPI)" && rate === null) {
+        return;
+      }
       const computation = calculatePayment(
         transactionAmount,
         bank,
@@ -210,6 +299,16 @@ const AdminPaymentPage: React.FC = () => {
       selectedTenor <= 0
     )
       return;
+
+    // If selected bank/tenor is marked N/A (no rate), skip computation
+    const selectedRate = bankRates[selectedBank]?.[selectedTenor.toString()];
+    if (
+      selectedBank !== "Bank of the Philippine Islands (BPI)" &&
+      (selectedRate === null || selectedRate === undefined)
+    ) {
+      setComputations([]);
+      return;
+    }
 
     const computation = calculatePayment(
       transactionAmount,
@@ -241,7 +340,12 @@ const AdminPaymentPage: React.FC = () => {
     doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 20, 30);
     doc.text(
       `Transaction Amount: PHP ${
-        transactionAmount === "" ? "0" : transactionAmount.toLocaleString()
+        transactionAmount === ""
+          ? "0.00"
+          : (transactionAmount as number).toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })
       }`,
       20,
       35
@@ -252,12 +356,11 @@ const AdminPaymentPage: React.FC = () => {
     const headers = [
       "Bank",
       "Tenor",
-      "Additional Fee (MDR + Tax)",
+      "Additional Fee (MDR)",
       "Monthly Payment",
-      "Total Monthly Amount",
       "Total Payments",
     ];
-    const colWidths = [40, 20, 30, 30, 30, 30];
+    const colWidths = [40, 20, 30, 40, 40];
     let yPosition = 55;
 
     // Draw table headers
@@ -281,16 +384,24 @@ const AdminPaymentPage: React.FC = () => {
       xPosition = 20;
       const additionalFeeDisplay =
         comp.merchantDiscount > 0
-          ? `+PHP ${comp.merchantDiscount.toLocaleString()}`
+          ? `+PHP ${comp.merchantDiscount.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}`
           : "PHP 0.00";
 
       const rowData = [
         comp.bank,
         `${comp.tenor}m`,
         additionalFeeDisplay,
-        `PHP ${comp.monthlyPayment.toLocaleString()}`,
-        `PHP ${comp.totalMonthlyAmount.toLocaleString()}`,
-        `PHP ${comp.totalPayments.toLocaleString()}`,
+        `PHP ${comp.monthlyPayment.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`,
+        `PHP ${comp.totalPayments.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`,
       ];
 
       rowData.forEach((data, colIndex) => {
@@ -317,7 +428,28 @@ const AdminPaymentPage: React.FC = () => {
     );
     yPosition += 6;
     doc.text(
-      `Lowest MDR Fee: PHP ${computations[0]?.merchantDiscount.toLocaleString()}`,
+      `Lowest MDR Fee: PHP ${computations[0]?.merchantDiscount.toLocaleString(
+        undefined,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+      )}`,
+      20,
+      yPosition
+    );
+    yPosition += 6;
+    doc.text(
+      `WHT (0.5%) on Base: PHP ${computations[0]?.whtAmount.toLocaleString(
+        undefined,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+      )}`,
+      20,
+      yPosition
+    );
+    yPosition += 6;
+    doc.text(
+      `Net Payout After WHT: PHP ${computations[0]?.netPayoutAfterWHT.toLocaleString(
+        undefined,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+      )}`,
       20,
       yPosition
     );
@@ -345,12 +477,18 @@ const AdminPaymentPage: React.FC = () => {
     doc.text(`Bank: ${selectedComputation.bank}`, 20, 30);
     doc.text(`Tenor: ${selectedComputation.tenor} months`, 20, 35);
     doc.text(
-      `Total Amount: PHP ${selectedComputation.transactionAmount.toLocaleString()}`,
+      `Total Amount: PHP ${selectedComputation.transactionAmount.toLocaleString(
+        undefined,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+      )}`,
       20,
       40
     );
     doc.text(
-      `Monthly Payment: PHP ${selectedComputation.monthlyPayment.toLocaleString()}`,
+      `Monthly Payment: PHP ${selectedComputation.monthlyPayment.toLocaleString(
+        undefined,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+      )}`,
       20,
       45
     );
@@ -394,8 +532,14 @@ const AdminPaymentPage: React.FC = () => {
       const rowData = [
         payment.month.toString(),
         payment.paymentDate,
-        `PHP ${payment.amount.toLocaleString()}`,
-        `PHP ${payment.remainingBalance.toLocaleString()}`,
+        `PHP ${payment.amount.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`,
+        `PHP ${payment.remainingBalance.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`,
       ];
 
       rowData.forEach((data, colIndex) => {
@@ -410,7 +554,10 @@ const AdminPaymentPage: React.FC = () => {
     yPosition += 10;
     doc.setFont("helvetica", "bold");
     doc.text(
-      `Total Payments: PHP ${selectedComputation.totalPayments.toLocaleString()}`,
+      `Total Payments: PHP ${selectedComputation.totalPayments.toLocaleString(
+        undefined,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+      )}`,
       20,
       yPosition
     );
@@ -613,6 +760,18 @@ const AdminPaymentPage: React.FC = () => {
           </div>
         </div>
 
+        {/* Not Applicable notice for specific bank */}
+        {!showAllBanks &&
+          selectedBank &&
+          selectedTenor > 0 &&
+          bankRates[selectedBank]?.[selectedTenor.toString()] === null && (
+            <div className="mb-6 p-4 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-200 border border-yellow-200 dark:border-yellow-700">
+              The selected tenor is{" "}
+              <span className="font-semibold">Not Applicable</span> for{" "}
+              {selectedBank}.
+            </div>
+          )}
+
         {/* Results Section */}
         {computations.length > 0 && (
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -640,13 +799,10 @@ const AdminPaymentPage: React.FC = () => {
                       Tenor
                     </th>
                     <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
-                      Additional Fee (MDR + Tax)
+                      Additional Fee (MDR)
                     </th>
                     <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
                       Monthly Payment
-                    </th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
-                      Total Monthly Amount
                     </th>
                     <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
                       Total Payments
@@ -657,61 +813,74 @@ const AdminPaymentPage: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {computations.map((comp, index) => (
-                    <tr
-                      key={`${comp.bank}-${comp.tenor}`}
-                      className={`border-b border-gray-100 dark:border-gray-700 ${
-                        index === 0 && showAllBanks
-                          ? "bg-green-50 dark:bg-green-900/20"
-                          : ""
-                      }`}
-                    >
-                      <td className="py-3 px-4">
-                        <div className="flex items-center gap-2">
-                          <Building2 className="h-4 w-4 text-blue-500" />
-                          <span className="font-medium text-gray-900 dark:text-white">
-                            {comp.bank}
-                          </span>
-                          {index === 0 && showAllBanks && (
-                            <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                              Best Rate
+                  {computations.map((comp) => {
+                    const winners =
+                      lowestRatesByTenor[selectedTenor]?.banks || [];
+                    const isWinner =
+                      showAllBanks && winners.includes(comp.bank);
+                    return (
+                      <tr
+                        key={`${comp.bank}-${comp.tenor}`}
+                        className={`border-b border-gray-100 dark:border-gray-700 ${
+                          isWinner ? "bg-green-50 dark:bg-green-900/20" : ""
+                        }`}
+                      >
+                        <td className="py-3 px-4">
+                          <div className="flex items-center gap-2">
+                            <Building2 className="h-4 w-4 text-blue-500" />
+                            <span className="font-medium text-gray-900 dark:text-white">
+                              {comp.bank}
+                            </span>
+                            {isWinner && (
+                              <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                                Lowest Rate
+                              </span>
+                            )}
+                          </div>
+                        </td>
+                        <td className="py-3 px-4 text-gray-700 dark:text-gray-300">
+                          {comp.tenor} months
+                        </td>
+                        <td className="py-3 px-4 text-right">
+                          {comp.merchantDiscount > 0 ? (
+                            <span className="text-orange-600 dark:text-orange-400 font-semibold">
+                              +₱
+                              {comp.merchantDiscount.toLocaleString(undefined, {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              })}
+                            </span>
+                          ) : (
+                            <span className="text-green-600 dark:text-green-400 font-semibold">
+                              ₱0.00
                             </span>
                           )}
-                        </div>
-                      </td>
-                      <td className="py-3 px-4 text-gray-700 dark:text-gray-300">
-                        {comp.tenor} months
-                      </td>
-                      <td className="py-3 px-4 text-right">
-                        {comp.merchantDiscount > 0 ? (
-                          <span className="text-orange-600 dark:text-orange-400 font-semibold">
-                            +₱{comp.merchantDiscount.toLocaleString()}
-                          </span>
-                        ) : (
-                          <span className="text-green-600 dark:text-green-400 font-semibold">
-                            ₱0.00
-                          </span>
-                        )}
-                      </td>
-                      <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
-                        ₱{comp.monthlyPayment.toLocaleString()}
-                      </td>
-                      <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
-                        ₱{comp.totalMonthlyAmount.toLocaleString()}
-                      </td>
-                      <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
-                        ₱{comp.totalPayments.toLocaleString()}
-                      </td>
-                      <td className="py-3 px-4 text-center">
-                        <button
-                          onClick={() => handleShowBreakdown(comp)}
-                          className="px-3 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
-                        >
-                          View Breakdown
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
+                          ₱
+                          {comp.monthlyPayment.toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
+                          ₱
+                          {comp.totalPayments.toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
+                        </td>
+                        <td className="py-3 px-4 text-center">
+                          <button
+                            onClick={() => handleShowBreakdown(comp)}
+                            className="px-3 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
+                          >
+                            View Breakdown
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -728,8 +897,11 @@ const AdminPaymentPage: React.FC = () => {
                 <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">
                   ₱
                   {transactionAmount === ""
-                    ? "0"
-                    : transactionAmount.toLocaleString()}
+                    ? "0.00"
+                    : (transactionAmount as number).toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
                 </p>
               </div>
 
@@ -760,13 +932,141 @@ const AdminPaymentPage: React.FC = () => {
                 <p className="text-2xl font-bold text-orange-900 dark:text-orange-100">
                   ₱
                   {computations.length > 0
-                    ? computations[0].merchantDiscount.toLocaleString()
-                    : "0"}
+                    ? computations[0].merchantDiscount.toLocaleString(
+                        undefined,
+                        {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        }
+                      )
+                    : "0.00"}
                 </p>
               </div>
             </div>
           </div>
         )}
+
+        {/* Bank Comparison (always based on entered amount and selected tenor) */}
+        {transactionAmount !== "" &&
+          transactionAmount > 0 &&
+          selectedTenor > 0 && (
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Bank Comparison
+                </h2>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  Based on entered amount and selected tenor
+                </span>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b border-gray-200 dark:border-gray-600">
+                      <th className="text-left py-3 px-4 font-semibold text-gray-900 dark:text-white">
+                        Bank
+                      </th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-900 dark:text-white">
+                        Effective Rate
+                      </th>
+                      <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
+                        Additional Fee
+                      </th>
+                      <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
+                        Monthly Payment
+                      </th>
+                      <th className="text-right py-3 px-4 font-semibold text-gray-900 dark:text-white">
+                        Total Payments
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {banks
+                      .filter(
+                        (b) =>
+                          b === "Bank of the Philippine Islands (BPI)" ||
+                          bankRates[b]?.[selectedTenor.toString()] !== null
+                      )
+                      .map((b) =>
+                        calculatePayment(
+                          transactionAmount as number,
+                          b,
+                          selectedTenor
+                        )
+                      )
+                      .sort((a, b) => a.merchantDiscount - b.merchantDiscount)
+                      .map((comp) => {
+                        const winners =
+                          lowestRatesByTenor[selectedTenor]?.banks || [];
+                        const isWinner = winners.includes(comp.bank);
+                        return (
+                          <tr
+                            key={`${comp.bank}-comparison`}
+                            className={`border-b border-gray-100 dark:border-gray-700 ${
+                              isWinner ? "bg-green-50 dark:bg-green-900/20" : ""
+                            }`}
+                          >
+                            <td className="py-3 px-4">
+                              <div className="flex items-center gap-2">
+                                <Building2 className="h-4 w-4 text-blue-500" />
+                                <span className="font-medium text-gray-900 dark:text-white">
+                                  {comp.bank}
+                                </span>
+                                {isWinner && (
+                                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                                    Lowest Rate
+                                  </span>
+                                )}
+                              </div>
+                            </td>
+                            <td className="py-3 px-4 text-gray-700 dark:text-gray-300">
+                              {comp.mdrRate.toFixed(2)}%
+                            </td>
+                            <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
+                              ₱
+                              {comp.merchantDiscount.toLocaleString(undefined, {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              })}
+                            </td>
+                            <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
+                              ₱
+                              {comp.monthlyPayment.toLocaleString(undefined, {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              })}
+                            </td>
+                            <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
+                              ₱
+                              {comp.totalPayments.toLocaleString(undefined, {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              })}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+        {/* NA banks note in all-banks view */}
+        {showAllBanks &&
+          selectedTenor > 0 &&
+          (() => {
+            const naBanks = banks.filter(
+              (b) =>
+                b !== "Bank of the Philippine Islands (BPI)" &&
+                bankRates[b]?.[selectedTenor.toString()] === null
+            );
+            return naBanks.length > 0 ? (
+              <div className="mt-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-700/40 text-gray-700 dark:text-gray-300">
+                Not Applicable for this tenor: {naBanks.join(", ")}
+              </div>
+            ) : null;
+          })()}
 
         {/* Information Section */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-6">
@@ -861,7 +1161,11 @@ const AdminPaymentPage: React.FC = () => {
                       Total Amount:
                     </span>
                     <p className="font-bold text-blue-900 dark:text-blue-100">
-                      ₱{selectedComputation.transactionAmount.toLocaleString()}
+                      ₱
+                      {selectedComputation.transactionAmount.toLocaleString(
+                        undefined,
+                        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+                      )}
                     </p>
                   </div>
                   <div>
@@ -869,20 +1173,16 @@ const AdminPaymentPage: React.FC = () => {
                       Monthly Payment:
                     </span>
                     <p className="font-bold text-blue-900 dark:text-blue-100">
-                      ₱{selectedComputation.monthlyPayment.toLocaleString()}
+                      ₱
+                      {selectedComputation.monthlyPayment.toLocaleString(
+                        undefined,
+                        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+                      )}
                     </p>
                   </div>
                   <div>
                     <span className="text-blue-700 dark:text-blue-300">
-                      Total Monthly Amount:
-                    </span>
-                    <p className="font-bold text-blue-900 dark:text-blue-100">
-                      ₱{selectedComputation.totalMonthlyAmount.toLocaleString()}
-                    </p>
-                  </div>
-                  <div>
-                    <span className="text-blue-700 dark:text-blue-300">
-                      Additional Fee (MDR + Tax):
+                      Additional Fee (MDR):
                     </span>
                     <p
                       className={`font-bold ${
@@ -892,8 +1192,38 @@ const AdminPaymentPage: React.FC = () => {
                       }`}
                     >
                       {selectedComputation.merchantDiscount > 0
-                        ? `+₱${selectedComputation.merchantDiscount.toLocaleString()}`
+                        ? `+₱${selectedComputation.merchantDiscount.toLocaleString(
+                            undefined,
+                            {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            }
+                          )}`
                         : "₱0.00"}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-blue-700 dark:text-blue-300">
+                      WHT (0.5%) on Base:
+                    </span>
+                    <p className="font-bold text-blue-900 dark:text-blue-100">
+                      ₱
+                      {selectedComputation.whtAmount.toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-blue-700 dark:text-blue-300">
+                      Net Payout After WHT:
+                    </span>
+                    <p className="font-bold text-blue-900 dark:text-blue-100">
+                      ₱
+                      {selectedComputation.netPayoutAfterWHT.toLocaleString(
+                        undefined,
+                        { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+                      )}
                     </p>
                   </div>
                 </div>
@@ -935,10 +1265,21 @@ const AdminPaymentPage: React.FC = () => {
                             {payment.paymentDate}
                           </td>
                           <td className="py-3 px-4 text-right font-semibold text-green-600 dark:text-green-400">
-                            ₱{payment.amount.toLocaleString()}
+                            ₱
+                            {payment.amount.toLocaleString(undefined, {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            })}
                           </td>
                           <td className="py-3 px-4 text-right text-gray-700 dark:text-gray-300">
-                            ₱{payment.remainingBalance.toLocaleString()}
+                            ₱
+                            {payment.remainingBalance.toLocaleString(
+                              undefined,
+                              {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              }
+                            )}
                           </td>
                         </tr>
                       )
@@ -953,7 +1294,11 @@ const AdminPaymentPage: React.FC = () => {
                     Total Payments:
                   </span>
                   <span className="text-2xl font-bold text-green-900 dark:text-green-100">
-                    ₱{selectedComputation.totalPayments.toLocaleString()}
+                    ₱
+                    {selectedComputation.totalPayments.toLocaleString(
+                      undefined,
+                      { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+                    )}
                   </span>
                 </div>
                 <p className="text-sm text-green-600 dark:text-green-400 mt-2">
