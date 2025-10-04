@@ -33,7 +33,7 @@ const CaseStudyDetailPage: React.FC = () => {
 
   if (!caseStudyId || !caseStudies[caseStudyId]) {
     return (
-      <div className="min-h-screen bg-neutral-950 text-white flex items-center justify-center">
+      <div className="min-h-screen w-full bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900 text-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Case Study Not Found</h1>
           <p className="text-white mb-6">
@@ -56,7 +56,7 @@ const CaseStudyDetailPage: React.FC = () => {
 
   if (!projectData) {
     return (
-      <div className="min-h-screen bg-neutral-950 text-white flex items-center justify-center">
+      <div className="min-h-screen w-full bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900 text-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Project Data Not Found</h1>
           <p className="text-white mb-6">
@@ -109,7 +109,7 @@ const CaseStudyDetailPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen w-full bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900 text-white">
       <Helmet>
         <title>{`${projectData.system} Case Study - ${projectData.location} | Sunphil Solar`}</title>
         <meta

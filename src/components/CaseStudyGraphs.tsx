@@ -115,7 +115,7 @@ const CaseStudyGraphs: React.FC = () => {
       <div className="mb-6">
         <Link
           to="/case-studies"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+          className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
         >
           <ArrowLeft className="mr-2" size={20} />
           Back to Case Studies
@@ -123,45 +123,45 @@ const CaseStudyGraphs: React.FC = () => {
       </div>
 
       <div className="text-center mb-8">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
           Solar Case Studies Performance Dashboard
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-xl text-white/80">
           Comprehensive analysis of {stats.totalSystems} solar installations
         </p>
       </div>
 
       {/* Summary Statistics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-lg font-semibold text-white mb-2">
             Total Monthly Savings
           </h3>
-          <p className="text-3xl font-bold text-green-600">
+          <p className="text-3xl font-bold text-green-400">
             ₱{stats.totalMonthlySavings.toLocaleString()}
           </p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-lg font-semibold text-white mb-2">
             Total Investment
           </h3>
-          <p className="text-3xl font-bold text-blue-600">
+          <p className="text-3xl font-bold text-blue-400">
             ₱{stats.totalInvestment.toLocaleString()}
           </p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-lg font-semibold text-white mb-2">
             Lifetime Savings
           </h3>
-          <p className="text-3xl font-bold text-purple-600">
+          <p className="text-3xl font-bold text-purple-400">
             ₱{(stats.totalLifetimeSavings / 1000000).toFixed(1)}M
           </p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-lg font-semibold text-white mb-2">
             CO₂ Reduction
           </h3>
-          <p className="text-3xl font-bold text-emerald-600">
+          <p className="text-3xl font-bold text-emerald-400">
             {stats.totalCO2Reduction.toLocaleString()} kg/year
           </p>
         </div>
@@ -170,21 +170,22 @@ const CaseStudyGraphs: React.FC = () => {
       {/* Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Monthly Savings Chart */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-xl font-semibold text-white mb-4">
             Monthly Savings by Project
           </h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis
                 dataKey="name"
                 angle={-45}
                 textAnchor="end"
                 height={100}
                 fontSize={12}
+                tick={{ fill: "#ffffff" }}
               />
-              <YAxis />
+              <YAxis tick={{ fill: "#ffffff" }} />
               <Tooltip content={<CustomTooltip />} />
               <Bar dataKey="monthlySavings" fill="#10B981" />
             </BarChart>
@@ -192,19 +193,25 @@ const CaseStudyGraphs: React.FC = () => {
         </div>
 
         {/* ROI vs Payback Period */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-xl font-semibold text-white mb-4">
             ROI vs Payback Period
           </h3>
           <ResponsiveContainer width="100%" height={300}>
             <ScatterChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis
                 dataKey="paybackPeriod"
                 name="Payback Period (years)"
                 type="number"
+                tick={{ fill: "#ffffff" }}
               />
-              <YAxis dataKey="annualROI" name="Annual ROI (%)" type="number" />
+              <YAxis
+                dataKey="annualROI"
+                name="Annual ROI (%)"
+                type="number"
+                tick={{ fill: "#ffffff" }}
+              />
               <Tooltip content={<CustomTooltip />} />
               <Scatter dataKey="annualROI" fill="#3B82F6" />
             </ScatterChart>
@@ -212,21 +219,22 @@ const CaseStudyGraphs: React.FC = () => {
         </div>
 
         {/* System Efficiency */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-xl font-semibold text-white mb-4">
             System Efficiency
           </h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis
                 dataKey="name"
                 angle={-45}
                 textAnchor="end"
                 height={80}
                 fontSize={12}
+                tick={{ fill: "#ffffff" }}
               />
-              <YAxis domain={[85, 100]} />
+              <YAxis domain={[85, 100]} tick={{ fill: "#ffffff" }} />
               <Tooltip content={<CustomTooltip />} />
               <Line
                 type="monotone"
@@ -240,21 +248,22 @@ const CaseStudyGraphs: React.FC = () => {
         </div>
 
         {/* Environmental Impact */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-xl font-semibold text-white mb-4">
             Environmental Impact
           </h3>
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis
                 dataKey="name"
                 angle={-45}
                 textAnchor="end"
                 height={80}
                 fontSize={12}
+                tick={{ fill: "#ffffff" }}
               />
-              <YAxis />
+              <YAxis tick={{ fill: "#ffffff" }} />
               <Tooltip content={<CustomTooltip />} />
               <Area
                 type="monotone"
@@ -275,21 +284,22 @@ const CaseStudyGraphs: React.FC = () => {
         </div>
 
         {/* Investment vs Savings */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-xl font-semibold text-white mb-4">
             Investment vs Lifetime Savings
           </h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis
                 dataKey="name"
                 angle={-45}
                 textAnchor="end"
                 height={100}
                 fontSize={12}
+                tick={{ fill: "#ffffff" }}
               />
-              <YAxis />
+              <YAxis tick={{ fill: "#ffffff" }} />
               <Tooltip content={<CustomTooltip />} />
               <Legend />
               <Bar dataKey="totalInvestment" fill="#3B82F6" name="Investment" />
@@ -303,21 +313,22 @@ const CaseStudyGraphs: React.FC = () => {
         </div>
 
         {/* Energy Production */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+          <h3 className="text-xl font-semibold text-white mb-4">
             Annual Energy Production
           </h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis
                 dataKey="name"
                 angle={-45}
                 textAnchor="end"
                 height={100}
                 fontSize={12}
+                tick={{ fill: "#ffffff" }}
               />
-              <YAxis />
+              <YAxis tick={{ fill: "#ffffff" }} />
               <Tooltip content={<CustomTooltip />} />
               <Bar dataKey="annualEnergyProduction" fill="#F59E0B" />
             </BarChart>
@@ -326,28 +337,28 @@ const CaseStudyGraphs: React.FC = () => {
       </div>
 
       {/* Performance Metrics Summary */}
-      <div className="mt-8 bg-white p-6 rounded-lg shadow-md border border-gray-200">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">
+      <div className="mt-8 bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-md border border-white/20">
+        <h3 className="text-xl font-semibold text-white mb-4">
           Performance Summary
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center">
-            <p className="text-2xl font-bold text-blue-600">
+            <p className="text-2xl font-bold text-blue-400">
               {stats.avgPaybackPeriod.toFixed(1)} years
             </p>
-            <p className="text-gray-600">Average Payback Period</p>
+            <p className="text-white/80">Average Payback Period</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl font-bold text-green-600">
+            <p className="text-2xl font-bold text-green-400">
               {stats.avgAnnualROI.toFixed(1)}%
             </p>
-            <p className="text-gray-600">Average Annual ROI</p>
+            <p className="text-white/80">Average Annual ROI</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl font-bold text-purple-600">
+            <p className="text-2xl font-bold text-purple-400">
               {stats.avgSystemEfficiency.toFixed(1)}%
             </p>
-            <p className="text-gray-600">Average System Efficiency</p>
+            <p className="text-white/80">Average System Efficiency</p>
           </div>
         </div>
       </div>

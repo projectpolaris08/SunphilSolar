@@ -36,7 +36,7 @@ const CaseStudyGraphsPage: React.FC = () => {
         />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen w-full bg-gradient-to-br from-neutral-950 via-blue-950 to-neutral-900">
         <CaseStudyGraphs />
       </div>
     </>
