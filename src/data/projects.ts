@@ -2211,4 +2211,114 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar completed an 8kW hybrid solar installation in Vista Verde, North Caloocan, providing the homeowner with clean energy generation, seamless battery backup, and significant monthly savings. Designed for energy-conscious urban families, this system is ideal for homes looking to cut costs and secure reliable power during outages. Sunphil Solar continues to bring high-quality hybrid solar systems to urban communities in North Caloocan, Bagumbong, Novaliches, and nearby areas. This project highlights our ability to deliver energy freedom in tightly packed residential villages without compromising system performance.",
   },
+  {
+    id: "mambog-3-bacoor-cavite-6kw-2025",
+    image: "/images/project104.jpg",
+    location: "Mambog 3, Bacoor, Cavite, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-24",
+    clientType: "Residential – Moderate Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart energy control between solar, battery, and grid with remote monitoring.",
+      "10 × 620W Canadian Bifacial Solar Panels – Dual-sided panels designed for maximum solar capture and efficiency.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage for nighttime use and protection during outages.",
+    ],
+    benefits: [
+      "Save up to 75–80% on electricity bills",
+      "Powers essential home appliances including air conditioning, refrigeration, and entertainment systems",
+      "Reliable backup energy during power outages",
+      "Eco-friendly system that reduces carbon emissions by approximately 500–600 kg every month",
+      "Compact, efficient setup ideal for residential homes in Bacoor",
+    ],
+    description:
+      "Sunphil Solar completed a 6kW hybrid solar power installation in Mambog 3, Bacoor, Cavite, for a residential household with moderate electricity needs. The system is designed to cut monthly electricity costs, provide stable nighttime power, and ensure uninterrupted energy supply during brownouts. This solution offers both financial savings and environmental benefits for the homeowners.\n\nWith this 6kW hybrid solar system, the homeowners in Mambog 3 can now enjoy sustainable and reliable power. The installation ensures significant cost savings, stable energy supply during outages, and a reduced carbon footprint, supporting a greener and more energy-independent lifestyle.\n\nSunphil Solar provides free site assessment, customized solar system design, and professional installation with lifetime support. Contact us today and discover the benefits of hybrid solar for your home in Cavite.",
+  },
+  {
+    id: "tandang-sora-quezon-city-6kw-2025",
+    image: "/images/project105.jpg",
+    location: "Tandang Sora, Quezon City, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-09-26",
+    clientType: "Residential – Moderate to High Energy Consumption",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart energy control between solar, battery, and grid with remote monitoring",
+      "13 × 620W Canadian Bifacial Solar Panels – Dual-sided panels designed for maximum solar capture and efficiency",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage for nighttime use and protection during outages",
+    ],
+    benefits: [
+      "Save up to 75–80% on monthly electricity bills",
+      "Continuous power for essential appliances including air conditioning, refrigerators, and lighting",
+      "Stable backup energy during outages",
+      "Eco-friendly system that reduces carbon emissions by approximately 600–700 kg every month",
+      "Maximizes efficiency with premium bifacial solar panels",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system in Tandang Sora, Quezon City, tailored for a household with growing energy needs. This hybrid setup provides reliable daytime solar power, stores excess energy for nighttime use, and delivers uninterrupted electricity during brownouts. The system ensures long-term savings while helping the family reduce their environmental footprint.\n\nWith this 6kW hybrid solar installation, the homeowners in Tandang Sora now enjoy dependable, cost-efficient, and sustainable energy. The system not only powers daily household needs but also ensures uninterrupted electricity during outages, securing both comfort and savings.\n\nSunphil Solar provides free site assessment, customized solar system design, and professional installation with lifetime support. Contact us today and enjoy the benefits of hybrid solar in Quezon City.",
+  },
+  {
+    id: "brgy-marcelo-paranaque-8kw-2025",
+    image: "/images/project106.jpg",
+    location: "Brgy. Marcelo, Parañaque City, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-10-01",
+    clientType: "Residential – Medium to High Energy Consumption",
+    specification: [
+      "8kW Deye Hybrid Inverter – Intelligent hybrid management with smart monitoring and grid-tie functionality.",
+      "18 × 620W Canadian Bifacial Solar Panels – High-output modules with bifacial design for maximum efficiency and enhanced energy yield.",
+      "51.2V 314Ah LiFePO₄ Battery – Reliable lithium storage designed for deep cycling and consistent nighttime backup power.",
+    ],
+    benefits: [
+      "Save up to 80–85% on monthly electricity costs",
+      "Provides uninterrupted power for essential home appliances including air conditioning, refrigerators, and entertainment systems",
+      "Reliable backup supply during grid outages or maintenance interruptions",
+      "Eco-friendly system that reduces approximately 1,600–1,900 kg of CO₂ emissions per month",
+      "High-efficiency bifacial panels ensure maximum solar harvest, even in limited rooftop space",
+    ],
+    description:
+      "Sunphil Solar installed an 8kW hybrid solar power system in Brgy. Marcelo, Parañaque, for a modern household with medium to high energy requirements. This system generates clean solar energy during the day, stores excess power for nighttime use, and ensures a reliable backup supply during brownouts. The homeowners now enjoy lower monthly bills, stable power, and energy independence.\n\nWith this 8kW hybrid solar installation, the family in Brgy. Marcelo has secured long-term savings, dependable power, and reduced environmental impact. This system supports their household's daily needs while contributing to a greener community.\n\nSunphil Solar provides free site survey and load assessment, customized solar system design, and professional installation with lifetime support. Contact us today and enjoy the benefits of hybrid solar power in Parañaque City.",
+  },
+  {
+    id: "concepcion-dos-marikina-6kw-2025",
+    image: "/images/project107.jpg",
+    location: "Concepcion Dos, Marikina City, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-10-02",
+    clientType: "Residential – Medium Household Energy Demand",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart hybrid inverter with grid-tie capability and intelligent energy management.",
+      "13 × 620W Canadian Bifacial Solar Panels – High-efficiency modules with bifacial design that captures energy from both sides for maximum yield.",
+      "51.2V 314Ah LiFePO₄ Battery – Durable lithium battery designed for deep cycling, ensuring dependable backup power at night and during outages.",
+    ],
+    benefits: [
+      "Reduce electricity bills by up to 75–80% monthly",
+      "Continuous power for essential household appliances like air conditioning, refrigerators, lights, and entertainment systems",
+      "Stable backup supply during brownouts and grid interruptions",
+      "Eco-friendly system that lowers carbon emissions by around 1,200–1,400 kg per month",
+      "Enhanced solar harvest thanks to bifacial panel technology, even in partially shaded areas",
+    ],
+    description:
+      "Sunphil Solar installed a 6kW hybrid solar power system in Concepcion Dos, Marikina City, designed to meet the energy needs of a modern household with consistent daily consumption. The system provides clean and efficient daytime power, reliable nighttime backup, and protection during grid brownouts—helping the homeowner cut down electricity bills while enjoying stable energy 24/7.\n\nWith this 6kW hybrid solar installation, the homeowner in Concepcion Dos now enjoys dependable energy independence, significant cost savings, and a more sustainable lifestyle. The system ensures daily comfort while contributing to a cleaner environment for the community.\n\nSunphil Solar provides free site survey and energy assessment, customized solar system design, and professional installation with ongoing support. Contact us today and power your home with hybrid solar in Marikina City.",
+  },
+  {
+    id: "malainen-luma-naic-cavite-8kw-2025",
+    image: "/images/project108.jpg",
+    location: "Malainen Luma, Naic, Cavite, Philippines",
+    system: "8kW Hybrid Solar",
+    date: "2025-10-03",
+    clientType: "Residential – High Household Energy Demand",
+    specification: [
+      "8kW Deye Hybrid Inverter – Intelligent hybrid management with grid-tie functionality and smart monitoring.",
+      "14 × 620W Canadian Bifacial Solar Panels – High-output modules with bifacial design to capture sunlight from both sides for maximum efficiency.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-lasting lithium storage designed for deep cycling and consistent nighttime backup power.",
+    ],
+    benefits: [
+      "Cut electricity bills by up to 80% every month",
+      "Reliable power supply for household essentials such as air conditioners, refrigerators, lights, and entertainment systems",
+      "Backup energy during grid brownouts and power interruptions",
+      "Eco-friendly system that reduces carbon emissions by around 1,600–1,700 kg per month",
+      "Durable and efficient panels that maximize solar energy harvest throughout the year",
+    ],
+    description:
+      "Sunphil Solar completed the installation of an 8kW hybrid solar power system for a household in Malainen Luma, Naic, Cavite. The client required a dependable and efficient solution to power multiple appliances daily while minimizing electricity expenses. This system ensures continuous clean energy supply, substantial monthly savings, and reliable backup during outages.\n\nThis 8kW hybrid solar installation now provides the household in Malainen Luma with stable, cost-efficient, and sustainable energy. The system not only secures their daily comfort but also contributes to a cleaner, greener future for Cavite.\n\nSunphil Solar provides free energy assessment, customized solar design, and professional installation and ongoing support. Contact us today and discover the benefits of hybrid solar for your home.",
+  },
 ];
