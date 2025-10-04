@@ -1026,6 +1026,84 @@ export const caseStudies: { [key: string]: CaseStudyData } = {
       },
     ],
   },
+  "imus-cavite-6kw-2025": {
+    projectOverview: {
+      challenge:
+        "Rolanda Ragus was facing consistently high Meralco bills of ₱6,044.52 monthly with 418 kWh consumption, representing a daily electricity cost of over ₱195. The household's high energy demands in Imus, Cavite were creating significant financial strain, with complete grid dependency and no backup power system.",
+      solution:
+        "Sunphil Solar designed and installed a custom 6kW hybrid solar system featuring a 6kW Deye Hybrid Inverter for smart power management, 12 x 615W Canadian Bifacial Solar Panels (7.38kW total capacity) for maximum energy capture, and a 51.2V 314Ah LiFePO₄ Battery (16kWh storage) for reliable backup power and nighttime energy storage.",
+      results:
+        "Ms. Ragus's monthly consumption dropped from 418 kWh to just 44 kWh (89.5% reduction), with her Meralco bill plummeting from ₱6,044.52 to ₱594.50 achieving ₱5,450.02 monthly savings (90.2% cost reduction). The system now provides near-complete energy independence with reliable backup power during outages.",
+    },
+    financialAnalysis: {
+      totalInvestment: 300000,
+      monthlySavings: 5450,
+      paybackPeriod: 4.6,
+      annualROI: 21.8,
+      lifetimeSavings: 1308000,
+    },
+    environmentalImpact: {
+      co2Reduction: 3600,
+      treesEquivalent: 160,
+      annualEnergyProduction: 8760,
+    },
+    performanceMetrics: {
+      systemEfficiency: 95,
+      uptime: 99.9,
+      peakOutput: 6,
+      averageDailyProduction: 24,
+    },
+    challenges: [
+      "Consistently high Meralco bills of ₱6,044.52 monthly with 418 kWh consumption",
+      "Daily electricity costs exceeding ₱195 putting strain on household budget",
+      "Complete dependence on grid power with no backup system in Imus, Cavite",
+      "High energy consumption from power-hungry household appliances",
+      "No protection from rising electricity rates in Cavite",
+      "Vulnerability to frequent power outages during storms and maintenance",
+    ],
+    solutions: [
+      "Custom-designed 6kW hybrid solar system with 7.38kW panel capacity",
+      "Smart energy management with Deye Hybrid Inverter for optimal power flow",
+      "High-efficiency Canadian Bifacial panels capturing maximum sunlight",
+      "LiFePO₄ battery storage (16kWh) for nighttime use and backup power",
+      "Remote monitoring and automatic switchover capabilities",
+      "Near-complete energy independence reducing grid consumption by 89.5%",
+    ],
+    testimonials: {
+      quote:
+        "From ₱6,000+ to under ₱600 monthly - malaking ginhawa sa budget namin! Hindi na kami nangangamba sa brownouts.",
+      author: "Rolanda Ragus",
+      role: "Homeowner, Imus, Cavite",
+    },
+    beforeAfter: {
+      beforeImage: "/images/Ragus-before.jpg",
+      afterImage: "/images/Ragus-after.jpg",
+      beforeDescription:
+        "July 14 - August 13, 2025: Meralco bill at ₱6,044.52 with 418 kWh consumption, representing daily electricity costs of over ₱195.",
+      afterDescription:
+        "August 14 - September 13, 2025: Bill reduced to just ₱594.50 with only 44 kWh consumption, achieving 90.2% savings and near-complete energy independence.",
+    },
+    gallery: [
+      {
+        src: "/images/Ragus-before.jpg",
+        alt: "Rolanda Ragus's Meralco bill before solar installation",
+        caption:
+          "Before Installation: Meralco bill at ₱6,044.52 with 418 kWh consumption.",
+      },
+      {
+        src: "/images/Ragus-after.jpg",
+        alt: "Rolanda Ragus's Meralco bill after solar installation",
+        caption:
+          "After Installation: Bill reduced to just ₱594.50 with only 44 kWh consumption, achieving 90.2% savings.",
+      },
+      {
+        src: "/images/project-imus-cavite-6kw.jpg",
+        alt: "6kW Hybrid Solar Installation for Rolanda Ragus in Imus, Cavite",
+        caption:
+          "6kW hybrid solar system installation featuring 12 Canadian bifacial panels and LiFePO₄ battery storage, completed August 15, 2025.",
+      },
+    ],
+  },
 };
 
 export default caseStudies;
