@@ -2321,4 +2321,71 @@ export const projects: Project[] = [
     description:
       "Sunphil Solar completed the installation of an 8kW hybrid solar power system for a household in Malainen Luma, Naic, Cavite. The client required a dependable and efficient solution to power multiple appliances daily while minimizing electricity expenses. This system ensures continuous clean energy supply, substantial monthly savings, and reliable backup during outages.\n\nThis 8kW hybrid solar installation now provides the household in Malainen Luma with stable, cost-efficient, and sustainable energy. The system not only secures their daily comfort but also contributes to a cleaner, greener future for Cavite.\n\nSunphil Solar provides free energy assessment, customized solar design, and professional installation and ongoing support. Contact us today and discover the benefits of hybrid solar for your home.",
   },
+  {
+    id: "anyatam-san-ildefonso-bulacan-6kw-2025",
+    image: "/images/project109.jpg",
+    location: "Anyatam, San Ildefonso, Bulacan, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-10-04",
+    clientType: "Residential – Medium Household Energy Demand",
+    specification: [
+      "6kW Deye Hybrid Inverter – Smart power management with grid-tie functionality and real-time monitoring.",
+      "13 × 620W Canadian Bifacial Solar Panels – Dual-sided panels designed to capture sunlight from both sides for optimal energy yield.",
+      "51.2V 314Ah LiFePO₄ Battery – High-capacity lithium battery providing reliable nighttime and backup power.",
+    ],
+    benefits: [
+      "Save up to 80% on monthly electricity bills",
+      "Continuous power supply even during grid interruptions",
+      "Smart hybrid system that automatically prioritizes solar and battery usage",
+      "Environmentally friendly — reduces carbon emissions by over 1,200 kg per month",
+      "Durable bifacial panels ensure high performance throughout the year",
+    ],
+    description:
+      "Sunphil Solar successfully completed a 6kW hybrid solar power system for a residential client in Anyatam, San Ildefonso, Bulacan. The homeowner wanted to reduce monthly electricity costs and gain reliable backup power during brownouts. This hybrid system delivers continuous clean energy while intelligently managing solar, battery, and grid sources for maximum efficiency and savings.\n\nWith this 6kW hybrid solar setup, the household in Anyatam now enjoys energy independence, reduced utility costs, and peace of mind during power outages. This installation represents another step toward a cleaner and more sustainable Bulacan.\n\nSunphil Solar provides free energy assessment, customized solar design, and professional installation and after-sales support. Contact us today and experience the freedom of hybrid solar energy.",
+  },
+  {
+    id: "centro-balucuc-apalit-pampanga-6kw-2025",
+    image: "/images/project110.jpg",
+    location: "Centro Balucuc, Apalit, Pampanga, Philippines",
+    system: "6kW Hybrid Solar",
+    date: "2025-10-04",
+    clientType: "Residential – Medium Household Energy Demand",
+    specification: [
+      "6kW Deye Hybrid Inverter – Advanced hybrid management with automatic switching and remote monitoring.",
+      "13 × 620W Canadian Bifacial Solar Panels – High-efficiency bifacial panels that absorb sunlight from both sides for greater energy generation.",
+      "51.2V 314Ah LiFePO₄ Battery – Long-lasting lithium storage ensuring dependable backup during nighttime and outages.",
+    ],
+    benefits: [
+      "Cut electricity bills by up to 80% every month",
+      "Reliable power supply during grid interruptions",
+      "Intelligent hybrid operation for maximum energy utilization",
+      "Environmentally friendly system reducing up to 1,200 kg of CO₂ emissions per month",
+      "Durable and efficient solar panels designed for all weather conditions",
+    ],
+    description:
+      "Sunphil Solar successfully installed a 6kW hybrid solar power system for a homeowner in Centro Balucuc, Apalit, Pampanga. The client wanted to reduce electricity expenses and ensure an uninterrupted power supply during brownouts. This smart hybrid system efficiently combines solar, battery, and grid power sources to deliver consistent energy, long-term savings, and enhanced reliability.\n\nThis 6kW hybrid solar installation empowers the household in Centro Balucuc to enjoy energy independence, lower energy costs, and a dependable backup power solution. It marks another step toward a cleaner and more sustainable Pampanga.\n\nSunphil Solar provides free energy assessment, customized solar design, and professional installation with after-sales support. Contact us today and experience the power of smart, sustainable solar energy.",
+  },
+  {
+    id: "gilmore-twins-new-manila-qc-12kw-2025",
+    image: "/images/project111.jpg",
+    location:
+      "Gilmore Twins, Gilmore Ave., New Manila, Quezon City, Philippines",
+    system: "12kW Hybrid Solar",
+    date: "2025-10-05",
+    clientType: "Commercial – Medium to High Energy Consumption",
+    specification: [
+      "12kW Deye Hybrid Inverter – Advanced hybrid inverter with smart load management, grid-tie capability, and remote monitoring.",
+      "24 × 620W Canadian Bifacial Solar Panels – High-efficiency bifacial modules that harness sunlight on both sides for superior energy generation.",
+      "2 × 51.2V 314Ah LiFePO₄ Batteries – High-capacity lithium batteries providing extended backup power and smooth nighttime energy use.",
+    ],
+    benefits: [
+      "Reduce electricity costs by up to 80%",
+      "Continuous power supply for office equipment, lighting, and air conditioning systems",
+      "Automatic switchover during brownouts and power interruptions",
+      "Environmentally sustainable solution reducing up to 2,400 kg of CO₂ emissions monthly",
+      "Durable and high-performing panels ideal for urban rooftop setups",
+    ],
+    description:
+      "Sunphil Solar proudly completed a 12kW hybrid solar power installation for a commercial client at Gilmore Twins, New Manila, Quezon City. The client required a reliable and efficient solar solution to support continuous operations, reduce monthly utility expenses, and ensure seamless power availability during outages. The hybrid system intelligently manages energy flow between solar panels, battery storage, and the grid to deliver optimal performance and savings.\n\nWith this 12kW hybrid solar installation, the establishment at Gilmore Twins now enjoys stable, efficient, and eco-friendly energy. The system ensures operational reliability while lowering carbon footprint—an investment that supports both business efficiency and environmental responsibility in Quezon City.\n\nSunphil Solar provides free energy assessment, customized solar design, and professional installation with after-sales support. Contact us today and take the next step toward energy independence with hybrid solar power.",
+  },
 ];
